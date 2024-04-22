@@ -1,0 +1,11 @@
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\1. Programas con Recursos Concurrentes por Ordenes de Gobierno.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\10. Difusion de los Resultados de las Evaluaciones.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\2. Seguimiento a Recursos Federales Ejercicio del Gasto FORTAMUN.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\3. Seguimiento de Recursos Federales Destino del Gasto FAIS.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\4. Ejercicio y Destino de Gasto Federalizado y Reintegros.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\5. Avance Aplicacion Recursos Asignados a Seguridad Publica.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\6. Obligaciones pagadas o garantizadas con Fondos Federales.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\7. Montos Pagados por Ayudas y Subsidios..pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\8. Bienes Muebles.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\9. Bienes Inmuebles.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\transparencia\lista_archivos_ruta.txt
