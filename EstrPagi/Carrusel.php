@@ -22,6 +22,7 @@
                     $CarpImag = $RegTab01['CTDCarpeta'];
                     $ImagPagi = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$ImagTrab";
                     $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$DocuTrab";
+                    echo "$RutaArch";
                     // echo($DocuLiga);
                     // echo($VentRefe);
                     $InicHtml = '';

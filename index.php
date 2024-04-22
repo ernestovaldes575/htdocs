@@ -6,12 +6,8 @@ $ClavAyun = '105';
     include 'EstrPagi/Layer.php';
     include 'EstrPagi/NavPriv.php';
     include 'EstrPagi/DepeAuxi.php';
-
     include 'Components/RedesSociales.php';
 ?>
-
-
-
 
     <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
