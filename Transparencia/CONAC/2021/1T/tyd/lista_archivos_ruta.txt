@@ -1,0 +1,4 @@
+C:\xampp\htdocs\Transparencia\CONAC\2021\1T\tyd\Inventario de Bienes Inmuebles-1t2021.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2021\1T\tyd\Inventario de Bienes Muebles-1t2021.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2021\1T\tyd\lista_archivos_ruta.txt
+C:\xampp\htdocs\Transparencia\CONAC\2021\1T\tyd\Montos Pagados x Subsidios y Ayudas-1t2021.pdf
