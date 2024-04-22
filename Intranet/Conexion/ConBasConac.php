@@ -10,4 +10,3 @@
 	}catch(PDOException $error){
 		die("Conexion Fallida: ".$error->getMessage());
 	}
-?>
