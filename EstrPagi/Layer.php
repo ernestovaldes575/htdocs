@@ -18,6 +18,7 @@
                     $ImagTrab = $RegTab01[2];
                     $CarpImag = $RegTab01[3];
                     $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$ImagTrab"; 
+                    // echo "1) $RutaArch"
             ?>
             <div class="swiper-slide">
                 <img src="<?=$RutaArch?>" alt="">
