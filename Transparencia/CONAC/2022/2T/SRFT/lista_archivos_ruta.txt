@@ -1,0 +1,9 @@
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\1. EJERCICIO DEL GASTO 2DO TRIMESTRE 2022 VALIDADO.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\2. INDICADORES 2DO TRIMESTRE 2022 VALIDADOS.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\3. DESTINO DEL GASTO 2DO TRIMESTRE 2022 (1).pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\lista_archivos_ruta.txt
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\SRFT CIERRE 2021\1. EJERCICIO DEL GASTO CIERRE 2021 VALIDADO.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\SRFT CIERRE 2021\2. INDICADORES CIERRE 2021 VALIDADO.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\SRFT CIERRE 2021\3. DESTINO DEL GASTO CIERRE 2021 VALIDADO.pdf
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\SRFT CIERRE 2021\lista_archivos_ruta.csv
+C:\xampp\htdocs\Transparencia\CONAC\2022\2T\SRFT\SRFT CIERRE 2021\lista_archivos_ruta.txt
