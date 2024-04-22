@@ -1,6 +1,6 @@
 <header class="header">
     <div class="contenedor__principal navegacion">
-        <a href="" class="a">
+        <a href="/" class="a">
             <img src="/img/logo/LOGO-PRINCIPAL.png" class="escudo_mur" alt="Logo">
         </a>
         

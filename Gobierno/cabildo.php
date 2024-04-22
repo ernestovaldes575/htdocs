@@ -1,4 +1,4 @@
-    <?php include 'Components/Encabezado.php'?>
+<?php include 'Components/Encabezado.php'?>
     <main class="contenedor-layer">
         <img src="../img/layer/1.png" alt="">
     </main>
@@ -41,7 +41,7 @@
                     <?php }?>
                     <div class="card-body">
                         <h5 class="card-title fs-5 fw-bold text-center">Dulce María Bastida Alvarez</h5>
-                        <p class="card-text shadow-md text-center">Sindico Municipal</p>
+                        <p class="card-text text-center">Sindico Municipal</p>
                         <p class="card-text text-center">
                             <i class="bi bi-telephone-fill"></i>
                             7229177206
