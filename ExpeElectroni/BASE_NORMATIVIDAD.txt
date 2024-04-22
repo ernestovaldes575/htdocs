@@ -1,0 +1,2 @@
+INSERT INTO `ctconac`(`ctipo`, `cejercicio`, `cperiodo`, `campo02`, `cclasinfo`, `campo03`, `campo04`, `cruta`, `carchivo`) 
+VALUES ('NO','2020','00','','00','','','NORMATIVIDAD/','bdo123')
