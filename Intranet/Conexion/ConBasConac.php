@@ -1,7 +1,7 @@
 <?php	
 	$contraseña = "";
 	$user = "root";
-	$dbname = "comsocial";
+	$dbname = "conac";
 	
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
