@@ -1,9 +1,10 @@
 <?php
-	$contraseña = "";
-	$user = "root";
-	$dbname = "acceso";
+	$contraseña = 'NXBWSHJ4E46L';
+	$user = 'difzinac_intranet';
+	$dbname = 'difzinac_acceso';
+
 	try{
-		$con = new PDO("mysql:host=localhost;dbname=acceso", "root", $contraseña);
+		$con = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$con->exec("SET CHARACTER SET utf8");
 	}catch(PDOException $error){
