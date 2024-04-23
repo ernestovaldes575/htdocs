@@ -2,7 +2,7 @@
 	$contraseña = "";
 	$user = "root";
 	$dbname = "conac";
-	
+
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
 		$ConeBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
