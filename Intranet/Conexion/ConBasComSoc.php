@@ -1,7 +1,13 @@
 <?php
+	//!Servidor 
+	// $contraseña = "";
+	// $user = "difzinac_intranet";
+	// $dbname = "difzinac_comsocial";
+
+	//!Local
 	$contraseña = "";
-	$user = "difzinac_intranet";
-	$dbname = "difzinac_comsocial";
+	$user = "root";
+	$dbname = "comsocial";
 
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
