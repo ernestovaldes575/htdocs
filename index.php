@@ -16,6 +16,7 @@ $ClavAyun = '105';
             </h2>
         </div>
     </section>
+    
     <?php include 'EstrPagi/Transparencia.php'?>
 
     <!-- <section class="contenedor--titulo">
