@@ -1,13 +1,13 @@
 <?php
 	//!Servidor
-	$contraseña = 'NXBWSHJ4E46L';
-	$user = 'difzinac_intranet';
-	$dbname = 'difzinac_acceso';
+	// $contraseña = 'NXBWSHJ4E46L';
+	// $user = 'difzinac_intranet';
+	// $dbname = 'difzinac_acceso';
 
 	//!Local
-	// $contraseña = '';
-	// $user = 'root';
-	// $dbname = 'acceso';
+	$contraseña = '';
+	$user = 'root';
+	$dbname = 'acceso';
 
 
 	try{
