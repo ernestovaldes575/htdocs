@@ -1,4 +1,4 @@
-	<html>
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,56 +17,43 @@
 	session_start();
 ?>
 <?php
-//Carga las variables
-$ArCooki1 = $_COOKIE['CMenu'];
-$AMenu = explode("|", $ArCooki1);
-$Nivel  = $AMenu[0]; 
-$OpcMen = $AMenu[1]; 
-$OpcSub = $AMenu[2]; 
+	//Carga las variables
+	$ArCooki1 = $_COOKIE['CMenu'];
+	$AMenu = explode("|", $ArCooki1);
+	$Nivel  = $AMenu[0]; 
+	$OpcMen = $AMenu[1]; 
+	$OpcSub = $AMenu[2];
+	echo "Nivel=$Nivel<br>";
+	echo "OpcMen=$OpcMen<br>";
+	echo "OpcSub=$OpcSub<br>";
 
+	//Carga las variables
+	$ArCooki2 = $_COOKIE['CEncaAcc'];
+	$AEncaMae = explode("|", $ArCooki2);
+	$ConsUsua = $AEncaMae[0]; 
+	$ClavAyun = $AEncaMae[1];
+	$DescAyun = $AEncaMae[2];
+	$ConsUnid = $AEncaMae[3];
+	$DescUnid = $AEncaMae[4];
+	$EjerTrab = $AEncaMae[5];
+	
+	$BandMens = false;
+	if(isset($_GET["Param0"]) ){
+		$BandMens = true;
+	}
 
-//Carga las variables
-$ArCooki2 = $_COOKIE['CEncaAcc'];
-$AEncaMae = explode("|", $ArCooki2);
+	include_once 'Archivos/Conexiones/conexion.php';
 
-$ConsUsua = $AEncaMae[0]; 
-$ClavAyun = $AEncaMae[1];
-$DescAyun = $AEncaMae[2];
-$ConsUnid = $AEncaMae[3];
-$DescUnid = $AEncaMae[4];
-$EjerTrab = $AEncaMae[5];
-
-$BandMens = false;
-if(isset($_GET["Param0"]) ){
-	$BandMens = true;
-}
-
-if(isset($_GET["Param1"]) ){
-	$Nivel = $_GET["Param1"];
-	$OpcMen = $_GET["Param2"];
-	$ArCooki3 = $Nivel.'|'.$OpcMen.'||';
-	setcookie("CMenu", "$ArCooki3");
-}
-
-if(isset($_GET["Param3"]) ){
-	$Nivel = $_GET["Param3"];
-	$OpcSub = $_GET["Param4"];
-	$ArCooki4 = $Nivel.'|'.$OpcMen.'|'.$OpcSub.'|';
-	setcookie("CMenu", "$ArCooki4");
-}
-
-include_once 'Archivos/Conexiones/conexion.php';
-
-$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
-			"FROM acceso.atpermen ".
-			"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
-			"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
+	$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
+				"FROM acceso.atpermen ".
+				"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
+				"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
 
 			if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
 				$ResuSql = $conexion->prepare($InstSql);
 				$ResuSql->execute();
 				$MenuBase = $ResuSql->fetchAll();
-?>	
+?>
 	<div class="table-responsive container-sm">
 		<table class="tabla mt-4">
 			<?php 
@@ -76,7 +63,7 @@ $InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
 					$CMEBasDat = $valor['CMEBasDat'];?>
 			<tr>
 				<td>
-					<a href="MenuIntranet.php?Param1=2&Param2=<?=$CMEClave?>" 
+					<a href="MenuIntranetApi.php?Param1=2&Param2=<?=$CMEClave?>" 
 						class="enlace_primero text-success fw-semibold text-uppercase fs-4 text-decoration-none">
 						<i class="bi bi-folder-fill"></i>	
 						<?=$CMEDescri?>
@@ -103,7 +90,7 @@ $InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
 
 			<tr>
 				<td>
-					<a href="MenuIntranet.php?Param3=3&Param4=<?=$CTSClave?>" 
+					<a href="MenuIntranetApi.php?Param3=3&Param4=<?=$CTSClave?>" 
 						class="enlace_segundo text-info-emphasis text-uppercase fw-semibold 
 						fs-5 text-decoration-none fw-semibold">
 						<i class="bi bi-folder"></i>
@@ -112,14 +99,15 @@ $InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
 				</td>
 			</tr>	
 			<?php 
-				if ( $Nivel > 2 && $CTSClave == $OpcSub) {
+				if ($Nivel > 2 && $CTSClave == $OpcSub){
 					$InstSql = 	"SELECT COSClave,COSDescripcion,COSDireccion ".
 								"FROM ".$CMEBasDat.".adpermi ".
 								"Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
 								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
 											"PConsServ ='".$ConsUsua."' AND ". 
 											"PTipoServ = '".$OpcSub."'";
-					if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
+					echo "3)$InstSql";
+				if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
 					$ResSql3 = $conexion->prepare($InstSql);
 					$ResSql3->execute();
 					$resultado = $ResSql3->fetchAll();
