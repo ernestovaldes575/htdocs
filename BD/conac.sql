@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2024 a las 22:35:09
+-- Tiempo de generación: 17-05-2024 a las 21:22:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -145,7 +145,7 @@ INSERT INTO `ccclasinfo` (`cciclave`, `ccidescri`, `cccarpeta`) VALUES
 ('07', 'OTRA INFO', ''),
 ('08', 'OPDAPAS', ''),
 ('09', 'LEY DE DISCIPLINA FINANCIERA', ''),
-('10', 'INFORNACION CONTABLE', 'contable'),
+('10', 'INFORNACION CONTABLE', ''),
 ('11', 'PROGRAMATICA PRESUPUESTAL', ''),
 ('12', 'ESTADO ANALITICO DEL  EJERCICIO DEL PRESUPUESTO DE EGRESOS', ''),
 ('13', 'CUENTA PUBLICA', ''),

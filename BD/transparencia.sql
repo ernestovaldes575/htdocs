@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-04-2024 a las 00:45:28
+-- Tiempo de generación: 17-05-2024 a las 21:25:34
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `transparencia`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `acinformacion`
+--
+
+CREATE TABLE `acinformacion` (
+  `clavdire` varchar(50) NOT NULL,
+  `clavarea` varchar(90) NOT NULL,
+  `clanome` varchar(60) NOT NULL,
+  `clavnom` varchar(50) NOT NULL,
+  `clacorreo` varchar(70) NOT NULL,
+  `clacontra` varchar(50) NOT NULL,
+  `clacarpeta` int(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `acinformacion`
+--
+
+INSERT INTO `acinformacion` (`clavdire`, `clavarea`, `clanome`, `clavnom`, `clacorreo`, `clacontra`, `clacarpeta`) VALUES
+('A00-04', 'UNIDAD DE TRANSPARENCIA', 'BRENDA SELENE HERNANDEZ LOPEZ ', '? ? ? ? ? ? ? ? ? ? ', 'transparencia@zinacantepec.gob.mx', 'Tr@n5_202?', 0);
 
 -- --------------------------------------------------------
 
