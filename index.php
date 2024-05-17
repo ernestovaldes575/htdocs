@@ -12,7 +12,8 @@ $ClavAyun = '105';
     <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
             <h2 class="contenedor--titulo--posicion--contenido animate">
-                TRANSPARENCIA            </h2>
+                TRANSPARENCIA            
+            </h2>
         </div>
     </section>
     
