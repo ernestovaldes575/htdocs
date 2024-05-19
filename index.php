@@ -1,10 +1,10 @@
 <?php 
-$ClavAyun = '105';
-    include 'Components/EncaPrin.php';
-    include 'Components/Menu.php';
-    include 'EstrPagi/NavImg.php';
-    include 'EstrPagi/Layer.php';
-    include 'EstrPagi/NavPriv.php';
+    $ClavAyun = '105';
+    $Title = "Zinacantepec";
+    include 'Components/HeadHtml.php';
+    include 'Components/menuPrin.php';
+    include 'Components/menuSecu.php';
+    
     include 'EstrPagi/DepeAuxi.php';
     include 'Components/RedesSociales.php';
 ?>
