@@ -8,11 +8,10 @@
     include 'EstrPagi/DepeAuxi.php';
     include 'Components/RedesSociales.php';
 ?>
-
     <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
             <h2 class="contenedor--titulo--posicion--contenido animate">
-                TRANSPARENCIA - Nuevo       
+                TRANSPARENCIA  
             </h2>
         </div>
     </section>
