@@ -8,6 +8,6 @@ function (event) {
       }
 else if (event.target.classList.contains('Modi')) {
         CampBusq = event.target.getAttribute('data-CaBu');					
-        window.location.href = 'Fraccion.php?PaAMB01='+CampBusq;
+        window.location.href = 'A9203/InformaLisInic.php?PaAMB01='+CampBusq;
       } 
 });
