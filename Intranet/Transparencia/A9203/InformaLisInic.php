@@ -3,10 +3,17 @@ include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
 date_default_timezone_set('America/Mexico_City');
 
+
 //Bandera de visualizar msg
 $BandMens = false;
 if ( isset($_GET["Param0"]) )
   $BandMens = true;
+  
+
+ if ( isset($_GET["PaAMB01"]) )
+  { $Fracc = $_GET["PaAMB01"];
+	 $ArCooki2 = "$EjerTrab|$Fracc";
+    setcookie("CBusqMae", "$ArCooki2");}
 
 //Fecha del sistema
 $FechSist = getdate();
