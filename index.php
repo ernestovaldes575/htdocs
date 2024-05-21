@@ -11,7 +11,7 @@
     <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
             <h2 class="contenedor--titulo--posicion--contenido animate">
-                Transparencia
+                
             </h2>
         </div>
     </section>
