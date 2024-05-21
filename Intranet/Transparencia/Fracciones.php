@@ -30,7 +30,7 @@
 			    Regresar
 			    </a>		    
 				<i class="bi bi-x-square btn-01 Regre"
-				   title="Regresar"></i>	
+				   title="Regresar">Regresar</i>	
 			</td>
 		</tr>
 		<tr>
