@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/build/css/style.css">
 </head>	
-<script src="EstaPagiList.js"></script>  <!-- -<-Modificar Nom  -->
+<script src="EstaClasiList.js"></script>  <!-- -<-Modificar Nom  -->
 <body>
 <header class="shadow mb-4 bg-white">
 <?php
