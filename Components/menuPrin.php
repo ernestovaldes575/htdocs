@@ -1,4 +1,4 @@
-<header class="header shadow-xl text-base">
+<header class="header text-base">
     <div class="contenedor__principal navegacion">
         <a href="" class="a animate">
             <img src="/img/logo/LOGO-PRINCIPAL.png" class="escudo_mur" alt="Logo">

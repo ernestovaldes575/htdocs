@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo"$Title"?></title>
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/build/css/app.css">
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css">
     <link rel="shortcut icon" href="/img/logo/LOGO-PRINCIPAL.png"/>
-    <link rel="stylesheet" href="/layouts/Reset.css">
-    <link rel="stylesheet" href="/layouts/Menu.css">
     <link rel="stylesheet" href="/layouts/Imagenes.css">
     <link rel="stylesheet" href="/layouts/MenuCont.css">
     <link rel="stylesheet" href="/layouts/Transparencia.css">
