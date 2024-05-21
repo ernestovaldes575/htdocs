@@ -21,7 +21,7 @@ $DescCata = $_POST['C04'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO pcestapagi ".	//Cambiar tabla
+		$InstSql = "INSERT INTO cctipoclas ".	//Cambiar tabla
 				   "VALUES ('$ClavCata','$DescCata')";
 		break;
 	case "PUT": //Cambio
