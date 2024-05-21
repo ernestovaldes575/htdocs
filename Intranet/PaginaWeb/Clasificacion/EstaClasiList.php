@@ -16,7 +16,7 @@
 ?>
 </header>
 <?php
-	include 'EstaPagiListSERP.php';  //<- Modificar aarchivo
+	include 'EstaClasiListSERP.php';  //<- Modificar aarchivo
 ?>	
 <!--encabezado--> 
 <div class="container table-responsive">
