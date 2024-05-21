@@ -1,6 +1,6 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
-include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
+include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranspa.php');
 date_default_timezone_set('America/Mexico_City');
 
 $ArCook01 = $_COOKIE['CBusqMae'];
@@ -13,12 +13,8 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
   $BandMens = true;
   
-
- if ( isset($_GET["PaAMB01"]) )
-  { $ConsFrac = $_GET["PaAMB01"];
-	  $ArCooki2 = "$EjerTrab|$ConsFrac|";
-    setcookie("CBusqMae", "$ArCooki2");}
-
+if ( isset($_GET["PaAMB01"]) )
+  $ConsFrac = $_GET["PaAMB01"];
 
 //Datos del Catalogo
 $InstSql = "SELECT  FAFraccion, FAInciso, FASubinciso, FNormatividad ".

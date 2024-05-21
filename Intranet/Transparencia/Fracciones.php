@@ -55,7 +55,7 @@
 			<td></td>
 			<td data-titulo="Inciso:">
 	  		  <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-CaBu='<?= $Frac?>' title="Facción"></i>
+				 data-CaBu='<?= $VC03?>' title="Facción"></i>
 			</td>
 		</tr>
 		<?php	} ?> 
