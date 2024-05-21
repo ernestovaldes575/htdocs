@@ -16,7 +16,7 @@ if ( isset($_GET["PaAMB01"]) ){
 }
 
 //Carga el registro para Consulta
-$InstSql = "SELECT FAFraccion, FAInciso, FASubinciso, FNormatividad ".
+$InstSql = "SELECT FAConsecutivo, FAFraccion, FAInciso, FASubinciso, FNormatividad ".
 		   "FROM   ttfracarea ".
 		   "INNER JOIN ttfraccion ON  FFraccion = FAFraccion AND ".
 		   							 "FInciso = FAInciso AND ".

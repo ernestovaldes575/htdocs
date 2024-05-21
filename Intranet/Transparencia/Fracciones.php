@@ -42,14 +42,16 @@
 			  $VC04 = $RegiTabl[1];	
 			  $VC05 = $RegiTabl[2];
 			  $VC06 = $RegiTabl[3];
-			  $Frac = "$VC03-$VC04-$VC05";
+			  $VC07 = $RegiTabl[3];
+			  $Frac = "$VC04-$VC05";
+			  $Frac = ($VC06 != "" )? $Frac."-$VC06": $Frac;  
 		?>
 		<tr>
 			<td><?=$Frac?></td>
-			<td><?=$VC06?> </td>
+			<td><?=$VC07?> </td>
 			<td></td>
-			<td data-titulo="Eliminar:">
-	  		  <i class="bi bi-x-square btn-Eliminar Elim"
+			<td data-titulo="Inciso:">
+	  		  <i class="bi bi-x-square btn-Modificar PaSi"
 				 data-CaBu='<?= $Frac?>' title="Facción"></i>
 			</td>
 		</tr>

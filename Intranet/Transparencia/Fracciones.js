@@ -6,8 +6,8 @@ function (event) {
 	 if (event.target.classList.contains('Regr')) {
         window.location.href = '/Intranet/menuintranet.php';
       }
-else if (event.target.classList.contains('Modi')) {
+else if (event.target.classList.contains('PaSi')) {
         CampBusq = event.target.getAttribute('data-CaBu');					
-        window.location.href = 'A9203/InformaLisInic.php?PaAMB01='+CampBusq;
+        window.location.href = 'Inciso.php?PaAMB01='+CampBusq;
       } 
 });
