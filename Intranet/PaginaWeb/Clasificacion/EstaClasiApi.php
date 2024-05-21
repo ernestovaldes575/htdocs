@@ -25,13 +25,13 @@ switch ( $CRUD )
 				   "VALUES ('$ClavCata','$DescCata')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE pcestapagi ". 	//Cambiar tabla
+		$InstSql = 	"UPDATE cctipoclas ". 	//Cambiar tabla
 					"SET    CEPClave = '$ClavCata', ". //Cambiar campo
 							"CEPDescri = '$DescCata' ".  //Cambiar campo
 					"WHERE CEPClave = '$CampBusq'  ";  //Cambiar campo
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM pcestapagi ". //Cambiar tabla
+		$InstSql = "DELETE FROM cctipoclas ". //Cambiar tabla
 				   "WHERE CEPClave = '$CampBusq'  "; //Cambiar campo
 	break;	
 }		
