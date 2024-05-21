@@ -3,6 +3,10 @@ include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
 date_default_timezone_set('America/Mexico_City');
 
+$ArCook01 = $_COOKIE['CBusqMae'];
+$ABusqMae = explode("|", $ArCook01);
+//echo '$ABusqMae'.$ABusqMae.'<br>';
+$EjerTrab = $ABusqMae[0]; 
 
 //Bandera de visualizar msg
 $BandMens = false;
@@ -12,7 +16,7 @@ if ( isset($_GET["Param0"]) )
 
  if ( isset($_GET["PaAMB01"]) )
   { $ConsFrac = $_GET["PaAMB01"];
-	$ArCooki2 = "$EjerTrab|$ConsFrac|";
+	  $ArCooki2 = "$EjerTrab|$ConsFrac|";
     setcookie("CBusqMae", "$ArCooki2");}
 
 
@@ -24,7 +28,7 @@ $InstSql = "SELECT  FAFraccion, FAInciso, FASubinciso, FNormatividad ".
 						  			"FSubinciso = FASubinciso ".
 			"WHERE  FAAyuntamiento = '$ClavAyun' AND ".
 	   			   "FAEjercicio = $EjerTrab AND ".
-	   			   "FAConsecutivo = $ConsFrac ".;
+	   			   "FAConsecutivo = $ConsFrac ";
 if ($BandMens)  echo "1)<br>$InstSql<br>"; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
