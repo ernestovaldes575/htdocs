@@ -9,7 +9,7 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ctplave, ctpdescrip ". //Cambiar campos
+$InstSql = 	"SELECT ctpclave, ctpdescrip ". //Cambiar campos
 			"FROM   cctipoclas ".			//Cambiar tabla
 			"ORDER BY ctpclave";			//Cambiar campo
 			
