@@ -17,7 +17,7 @@ if( isset($_GET['PaAMB01']) != ''){
 $CRUD = "GET";
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ctpclave AS Clave, ctpdescrip AS Descri ". //Cambiar campos
-			"FROM   pcestapagi ".  //Cambiar tabla
+			"FROM   cctipoclas ".  //Cambiar tabla
 			"WHERE  ctpclave = '$CampBusq' "; //Cambiar campo
 			
 if ($BandMens)  
