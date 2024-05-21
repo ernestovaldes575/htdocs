@@ -34,7 +34,7 @@ if ($ResuSql)
  } 
 else
  { //Busca el sisguiente registro
-	$InstSql = "SELECT MAX(CEPClave) + 1 AS Clave ". //Cambiar campo
+	$InstSql = "SELECT MAX(ctplave) + 1 AS Clave ". //Cambiar campo
 	 		   "FROM pcestapagi "; //Cambiar tabla
   if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
