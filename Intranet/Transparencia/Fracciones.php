@@ -28,7 +28,10 @@
 			  <a href="/Intranet/menuintranet.php" 
 					class="btn-Regresar">
 			    Regresar
-			    </a>		    </td>
+			    </a>		    
+				<i class="bi bi-x-square btn-01 Regre"
+				   title="Regresar"></i>	
+			</td>
 		</tr>
 		<tr>
 			<th>Ejercicio</th>
@@ -51,7 +54,7 @@
 			<td><?=$VC07?> </td>
 			<td></td>
 			<td data-titulo="Inciso:">
-	  		  <i class="bi bi-x-square btn-Modificar PaSi"
+	  		  <i class="bi bi-x-square btn-Modificar Inciso"
 				 data-CaBu='<?= $Frac?>' title="Facción"></i>
 			</td>
 		</tr>
