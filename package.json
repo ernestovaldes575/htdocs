@@ -5,7 +5,6 @@
   "author": "Zinacantepec-E",
   "license": "ISC",
   "description": "",
-  "type": "module",
   "scripts": {
     "compilar:sass": "sass --watch src/scss:build/css/"
   },
