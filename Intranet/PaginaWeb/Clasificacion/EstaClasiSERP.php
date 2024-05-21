@@ -18,7 +18,7 @@ $CRUD = "GET";
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ctplave AS Clave, ctpdescrip AS Descri ". //Cambiar campos
 			"FROM   pcestapagi ".  //Cambiar tabla
-			"WHERE  CEPClave = '$CampBusq' "; //Cambiar campo
+			"WHERE  ctplave = '$CampBusq' "; //Cambiar campo
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
