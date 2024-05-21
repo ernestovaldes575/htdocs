@@ -10,7 +10,7 @@ function (event) {
 else if (event.target.classList.contains('Modi')) {
         CampBusq = event.target.getAttribute('data-CaBu');					
         //Cambiar nombre
-		window.location.href = 'EstaPagi.php?PaAMB01=M&PaAMB02='+CampBusq;
+		window.location.href = 'EstaClasi.php?PaAMB01=M&PaAMB02='+CampBusq;
       } 
 else if (event.target.classList.contains('Elim'))
 	  if (confirm('¿Estás seguro de que deseas eliminar el registro?')) 
