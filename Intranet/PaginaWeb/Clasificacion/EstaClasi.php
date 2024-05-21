@@ -23,7 +23,7 @@
 	
 <?php 
 	//Carga de la Informacion	
-	include 'EstaPagiSERP.php';	 //<- Cambiar nombra
+	include 'EstaClasiSERP.php';	 //<- Cambiar nombra
 ?>
 <!-- <caption>
 <?=	$DescTiSe?>	
