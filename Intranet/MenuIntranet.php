@@ -82,36 +82,32 @@
 								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
 								"PConsServ = ".$ConsUsua.")";
 
-				if ($BandMens)  echo '2)<br>'.$InstSql.'<br><br>';
-					$ResSql2 = $conexion->prepare($InstSql);
-					$ResSql2->execute();
-					$submenu = $ResSql2->fetchAll();
-				foreach($submenu as $valor){
-						$CTSClave = $valor['CTSClave'];
-						$CTSDescripcion = $valor['CTSDescripcion'];
-			?>
-
+			if ($BandMens)  echo '2)<br>'.$InstSql.'<br><br>';
+			$ResSql2 = $ConeBase->prepare($InstSql);
+			$ResSql2->execute();
+			$submenu = $ResSql2->fetchAll();
+			foreach($submenu as $valor):
+		  		$CTSClave       = $valor['CTSClave'];
+		  		$CTSDescripcion = $valor['CTSDescripcion'];
+			?>	
 			<tr>
-				<td>
-					<a href="MenuIntranetApi.php?Param3=3&Param4=<?=$CTSClave?>" 
-						class="enlace_segundo text-info-emphasis text-uppercase fw-semibold 
-						fs-5 text-decoration-none fw-semibold">
-						<i class="bi bi-folder"></i>
+				<td>&nbsp;&nbsp;
+					<a href="MenuIntranet.php?Param3=3&Param4=<?=$CTSClave?>" class="enlace_segundo">
+					    <i class="bi bi-folder"></i>
 						<?=$CTSDescripcion?>
 					</a>		
 				</td>
 			</tr>	
 			<?php 
-				if ($Nivel > 2 && $CTSClave == $OpcSub){
-					$InstSql = 	"SELECT COSClave,COSDescripcion,COSDireccion ".
-								"FROM ".$CMEBasDat.".adpermi ".
-								"Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
-								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
-											"PConsServ ='".$ConsUsua."' AND ". 
-											"PTipoServ = '".$OpcSub."'";
-					echo "3)$InstSql";
-				if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
-					$ResSql3 = $conexion->prepare($InstSql);
+				if ( $Nivel > 2 && $CTSClave == $OpcSub) {
+					$InstSql = "SELECT COSClave,COSDescripcion,COSDireccion ".
+							   "FROM ".$CMEBasDat.".adpermi ".
+							   "Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
+							   "WHERE PAyuntamiento = '".$ClavAyun."' AND ".
+									   		 "PConsServ ='".$ConsUsua."' AND ". 
+											 "PTipoServ = '".$OpcSub."'";
+					if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
+					$ResSql3 = $ConeBase->prepare($InstSql);
 					$ResSql3->execute();
 					$resultado = $ResSql3->fetchAll();
 					foreach($resultado as $valor){
@@ -128,7 +124,7 @@
 					</a>	
 				</td>
 			</tr>
-			<?php			}
+			<?php			
 						}	
 					}
 				}
