@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>	
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="../css/style.css">
-</head>
+<?php
+	$Titulo = "Facultades de área";
+	include '../../../components/encabezado.php';
+	include '../../../components/EncaPrin.php'
+?>
 <script language="JavaScript" src="PWRegistro.js"></script>
 <body>
 	<header class="shadow mb-4 bg-white">
 		<?php 
    			//Varibales Globales
 			include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
-   			//Encabezado	
-			require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
 		?> 
 	</header>
 	<?php

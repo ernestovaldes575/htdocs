@@ -4,9 +4,6 @@
     @extend .d-flex, .justify-content-between;
     .logo{
         @extend .img-fluid;
-        width: 10%;  
+        width: 8em;  
     }
-}
-.intra{
-    background-image: url('/Intranet/img/header.jpg');
 }

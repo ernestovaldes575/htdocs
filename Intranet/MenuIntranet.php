@@ -44,7 +44,7 @@
 	<div class="intra">
 		<divc class="container-sm d-flex justify-content-between">
 			<div>
-				<h2 class="text-uppercase">
+				<h2 class="text-uppercase fw-bolder	">
 					Menu Intranet
 				</h2>
 			</div>
