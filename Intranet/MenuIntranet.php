@@ -82,24 +82,24 @@
 			$ResSql2->execute();
 			$submenu = $ResSql2->fetchAll();
 			foreach($submenu as $valor):
-		  		$CTSClave       = $valor['CTSClave'];
-		  		$CTSDescripcion = $valor['CTSDescripcion'];
+					$CTSClave       = $valor['CTSClave'];
+					$CTSDescripcion = $valor['CTSDescripcion'];
 			?>	
 			<tr>
 				<td>&nbsp;&nbsp;
 					<a href="MenuIntranet.php?Param3=3&Param4=<?=$CTSClave?>" class="enlace_segundo">
-					    <i class="bi bi-folder"></i>
+						<i class="bi bi-folder"></i>
 						<?=$CTSDescripcion?>
 					</a>		
 				</td>
 			</tr>	
 			<?php 
 				if ( $Nivel > 2 && $CTSClave == $OpcSub) {
-					$InstSql = "SELECT COSClave,COSDescripcion,COSDireccion ".
-							   "FROM ".$CMEBasDat.".adpermi ".
-							   "Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
-							   "WHERE PAyuntamiento = '".$ClavAyun."' AND ".
-									   		 "PConsServ ='".$ConsUsua."' AND ". 
+					$InstSql = 	"SELECT COSClave,COSDescripcion,COSDireccion ".
+								"FROM ".$CMEBasDat.".adpermi ".
+								"Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
+								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
+											"PConsServ ='".$ConsUsua."' AND ". 
 											 "PTipoServ = '".$OpcSub."'";
 					if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
 					$ResSql3 = $ConeBase->prepare($InstSql);
@@ -118,7 +118,7 @@
 					</a>	
 				</td>
 			</tr>
-			<?php			}
+			<?php			
 						}	
 					}
 				}
