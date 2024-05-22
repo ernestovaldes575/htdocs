@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2024 a las 21:23:24
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 23-05-2024 a las 01:03:22
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `acopcser` (
   `COSClave` char(3) NOT NULL,
   `COSDescripcion` varchar(50) NOT NULL,
   `COSDireccion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `acopcser`
@@ -51,7 +51,7 @@ INSERT INTO `acopcser` (`COSTipSer`, `COSClave`, `COSDescripcion`, `COSDireccion
 CREATE TABLE `actipser` (
   `CTSClave` char(2) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `CTSDescripcion` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `actipser`
@@ -76,7 +76,7 @@ CREATE TABLE `adpermi` (
   `PModifica` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PBaja` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PNumePerm` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `adpermi`
@@ -95,7 +95,7 @@ INSERT INTO `adpermi` (`PAyuntamiento`, `PConsServ`, `PTipoServ`, `POpciServ`, `
 CREATE TABLE `ecsexo` (
   `CSEClave` char(1) NOT NULL,
   `CSEDescripcion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ecsexo`
@@ -126,7 +126,7 @@ CREATE TABLE `edplaza` (
   `PFechModi` date NOT NULL,
   `PPlazAcIn` char(1) NOT NULL,
   `PEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `edplaza`
@@ -155,14 +155,14 @@ CREATE TABLE `etempresa` (
   `ESerPubMo` int(11) NOT NULL,
   `EFechModi` date NOT NULL,
   `EEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `etempresa`
 --
 
 INSERT INTO `etempresa` (`EConsecut`, `EAyuntamiento`, `EEmpresa`, `ERespresentante`, `EContacto`, `ETeleCont`, `EHoraAten`, `ECorreo`, `EContra`, `ESerPubMo`, `EFechModi`, `EEstado`) VALUES
-(1, '105', 'Implore Ideal S.A. de C.V', '', 'Daniel Serrano', '55 71 98 12 35', '9 a.m a 5 p.m de lun', 'daniel@implore.com.mx', 'd4n13l', 1, '2023-09-22', 'A');
+(1, '105', 'Implore Ideal S.A. de C.V', 'gggg', 'Daniel Serrano', '55 71 98 12 35', '9 a.m a 5 p.m de lun', 'daniel@implore.com.mx', 'd4n13l', 1, '2023-09-22', 'A');
 
 --
 -- Índices para tablas volcadas
