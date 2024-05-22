@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<style>
-  .tb { border-collapse: collapse; width:300px; }
-  .tb th, .tb td { padding: 5px; border: solid 1px #777; }
-  .tb th { background-color: lightblue; }
-</style>
-
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/Intranet/Includes/Header.php')?>
+<?php 
+	$Titulo = "Conac";
+	include '../components/encabezado.php';
+	include '../components/logoHeader.php'	
+?>
 
 <script language="JavaScript" >
 //-------------------------------------------------------------------------
@@ -60,20 +56,20 @@ include 'ConacClasApi.php';
 ?>	
 <!--encabezado-->
 <table class="tb">
-  <tr>
-	<td>
-		<select name="AAreaResp" onChange="CargEjer(this.value)">
-			<?php 
-				foreach($CataEjer as $RegiTabl): 
-					$ClavCata = $RegiTabl[0];		
-					$DescCata = $RegiTabl[1];  
-					$Activo = ( $ClavCata == $EjerTrab) ? "selected" : ""; 
-			?>
-			<option value="<?=$ClavCata?>" <?=$Activo?>> <?=$ClavCata?> </option>
-			<?php	
-				endforeach;
-			?>
-		</select>
+	<tr>
+		<td>
+			<select name="AAreaResp" onChange="CargEjer(this.value)">
+				<?php 
+					foreach($CataEjer as $RegiTabl): 
+							$ClavCata = $RegiTabl[0];		
+							$DescCata = $RegiTabl[1];  
+							$Activo = ( $ClavCata == $EjerTrab) ? "selected" : ""; 
+				?>
+				<option value="<?=$ClavCata?>" <?=$Activo?>> <?=$ClavCata?> </option>
+				<?php	
+					endforeach;
+				?>
+			</select>
 	</td>
 	<td></td>
 	<td>
@@ -101,9 +97,7 @@ include 'ConacClasApi.php';
 	<!-- iconos dentro de la libreria font-awesome.min.css -->
 	<td data-titulo="Editar: ">
 		<?php if($Modi == "A" ){ ?>
-			<button class='Modi' ParBus01='<?= $VC03?>' 
-			style="cursor: pointer; background-color:#EB6320; border-color:blue; color:white; border-radius: 5px;" 
-			class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
+			<button class='Modi btn-Nuevo' ParBus01='<?= $VC03?>'
 			onMouseOver="this.style.background='#FF8000';" onMouseOut="this.style.background = '#EB6320';">
 			SubClas
 			 </button></a>
