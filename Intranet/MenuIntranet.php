@@ -3,66 +3,56 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Intranet</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="/Intranet/Estilos/Formulario.css"/>
-	<link rel="stylesheet" href="/Intranet/Estilos/Header.css">
 </head> 
 <body>
-<header class="header">
-	<img class="img-1" src="/Intranet/imagen/SIMGA_intra01.png" alt="">
-	<img class="img-2" src="/Intranet/imagen/SIMGA02.png" alt="">
-</header>
+	<header class="header">
+		<img class="img-1" src="http://201.122.44.34/img/SIMGA_intra01.png" alt="">
+		<img class="img-2" src="http://201.122.44.34/img/SIMGA02.png" alt="">
+	</header>
 
 <?php
-session_start();
+	session_start();
+?>
+<?php
+	//Carga las variables
+	$ArCooki1 = $_COOKIE['CMenu'];
+	$AMenu = explode("|", $ArCooki1);
+	$Nivel  = $AMenu[0]; 
+	$OpcMen = $AMenu[1]; 
+	$OpcSub = $AMenu[2];
+	echo "Nivel=$Nivel<br>";
+	echo "OpcMen=$OpcMen<br>";
+	echo "OpcSub=$OpcSub<br>";
 
-include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasIntra.php');
+	//Carga las variables
+	$ArCooki2 = $_COOKIE['CEncaAcc'];
+	$AEncaMae = explode("|", $ArCooki2);
+	$ConsUsua = $AEncaMae[0]; 
+	$ClavAyun = $AEncaMae[1];
+	$DescAyun = $AEncaMae[2];
+	$ConsUnid = $AEncaMae[3];
+	$DescUnid = $AEncaMae[4];
+	$EjerTrab = $AEncaMae[5];
 	
-//Carga las variables
-$ArCooki1 = $_COOKIE['CMenu'];
-$AMenu = explode("|", $ArCooki1);
-$Nivel  = $AMenu[0]; 
-$OpcMen = $AMenu[1]; 
-$OpcSub = $AMenu[2]; 
+	$BandMens = false;
+	if(isset($_GET["Param0"]) ){
+		$BandMens = true;
+	}
 
+	include_once 'Archivos/Conexiones/conexion.php';
 
-//Carga las variables
-$ArCooki2 = $_COOKIE['CEncaAcc'];
-$AEncaMae = explode("|", $ArCooki2);
+	$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
+				"FROM acceso.atpermen ".
+				"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
+				"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
 
-$ConsUsua = $AEncaMae[0]; 
-$ClavAyun = $AEncaMae[1];
-$DescAyun = $AEncaMae[2];
-$ConsUnid = $AEncaMae[3];
-$DescUnid = $AEncaMae[4];
-$EjerTrab = $AEncaMae[5];
-
-$BandMens = false;
-
-if ( isset($_GET["Param1"]) ){
-	$Nivel = $_GET["Param1"];
-	$OpcMen = $_GET["Param2"];
-	$ArCooki3 = $Nivel.'|'.$OpcMen.'||';
-	setcookie("CMenu", "$ArCooki3");
- }
-
-if ( isset($_GET["Param3"]) ){
-	$Nivel = $_GET["Param3"];
-	$OpcSub = $_GET["Param4"];
-	$ArCooki4 = $Nivel.'|'.$OpcMen.'|'.$OpcSub.'|';
-	setcookie("CMenu", "$ArCooki4");
- }
-
-$InstSql = "SELECT CMEClave,CMEDescri,CMEBasDat ".
-		   "FROM acceso.atpermen ".
-		   "INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
-		   "WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
-if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
-$ResuSql = $ConeBase->prepare($InstSql);
-$ResuSql->execute();
-$MenuBase = $ResuSql->fetchAll();
-?>	
-		<table>
+			if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
+				$ResuSql = $conexion->prepare($InstSql);
+				$ResuSql->execute();
+				$MenuBase = $ResuSql->fetchAll();
+?>
+	<div class="table-responsive container-sm">
+		<table class="tabla mt-4">
 			<?php 
 				foreach($MenuBase as $valor):
 					$CMEClave  = $valor['CMEClave'];
@@ -120,35 +110,27 @@ $MenuBase = $ResuSql->fetchAll();
 						$COSDescripcion = $valor['COSDescripcion'];
 						$COSDireccion   = $valor['COSDireccion'];
 					?>
-				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="ModuloIntra.php?Param1=<?=$CMEBasDat?>&Param2=<?=$CTSClave?>&Param3=<?=$CTSDescripcion?>&Param4=<?=$COSClave?>&Param5=<?=$COSDescripcion?>&Param6=<?=$COSDireccion?>" class="enlace_tercero">
-						<i class="bi bi-file-earmark-check-fill"></i>
-							<?=$COSDescripcion?>
-						</a>	
-					</td>
-				</tr>	
-
-	<?php			endforeach;
-				}	
-			 endforeach;
-		}
-		endforeach; ?>
+			<tr>
+				<td>
+					<a href="ModuloIntra.php?Param1=<?=$CMEBasDat?>&Param2=<?=$CTSClave?>&Param3=<?=$CTSDescripcion?>&Param4=<?=$COSClave?>&Param5=<?=$COSDescripcion?>&Param6=<?=$COSDireccion?>" class="enlace_tercero">
+					<i class="bi bi-file-earmark-check-fill"></i>
+						<?=$COSDescripcion?>
+					</a>	
+				</td>
+			</tr>
+			<?php			}
+						}	
+					}
+				}
+			}
+			?>
 		</table>
-	<a href="/Intranet/Intranet.php" class="enlace1 exit">Salir</a>
-<footer class="footer">
-		<div class="footer-1">
-			<p class="p">
-				Sistema de Integración de Módulos para la Gestión del Ayuntamiento. <br>
-				© 2018 Todos los Derechos Reservados
-			</p>
-		</div>
-		<div class="footer-2">
-			<a href="">
-				<img src="/Intranet/Imagen/SIMGA_intra02.png" alt="">
+		<div class="container mt-4 d-grid">
+			<a href="/Intranet/Intranet.php" 
+			class="btn-Regresar">
+				Salir
 			</a>
-		</div>
-	</footer>	
+		</div>	
 </body>
 </html>
 							
