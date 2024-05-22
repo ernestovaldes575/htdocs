@@ -3,21 +3,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Intranet</title>
+	<link rel="shortcut icon" href="Archivos/Img/logoEnc.ico"/>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="/Intranet/Estilos/Formulario.css"/>
 	<link rel="stylesheet" href="/Intranet/Estilos/Header.css">
+	<link rel="stylesheet" href="/Intranet/Estilos/CRUD.css">
 </head> 
 <body>
-<header class="header">
-	<img class="img-1" src="/Intranet/imagen/SIMGA_intra01.png" alt="">
-	<img class="img-2" src="/Intranet/imagen/SIMGA02.png" alt="">
-</header>
+	<header class="header">
+		<img class="img-1" src="http://201.122.44.34/img/SIMGA_intra01.png" alt="">
+		<img class="img-2" src="http://201.122.44.34/img/SIMGA02.png" alt="">
+	</header>
 
 <?php
-session_start();
-
-include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasIntra.php');
-	
+	session_start();
+?>
+<?php
 //Carga las variables
 $ArCooki1 = $_COOKIE['CMenu'];
 $AMenu = explode("|", $ArCooki1);
@@ -53,14 +53,17 @@ if ( isset($_GET["Param3"]) ){
 	setcookie("CMenu", "$ArCooki4");
  }
 
+include_once 'Archivos/Conexiones/conexion.php';
+
 $InstSql = "SELECT CMEClave,CMEDescri,CMEBasDat ".
 		   "FROM acceso.atpermen ".
 		   "INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
 		   "WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
 if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
-$ResuSql = $ConeBase->prepare($InstSql);
+$ResuSql = $conexion->prepare($InstSql);
 $ResuSql->execute();
 $MenuBase = $ResuSql->fetchAll();
+
 ?>	
 		<table>
 			<?php 
@@ -88,7 +91,7 @@ $MenuBase = $ResuSql->fetchAll();
 						"PConsServ = ".$ConsUsua.")";
 
 			if ($BandMens)  echo '2)<br>'.$InstSql.'<br><br>';
-			$ResSql2 = $ConeBase->prepare($InstSql);
+			$ResSql2 = $conexion->prepare($InstSql);
 			$ResSql2->execute();
 			$submenu = $ResSql2->fetchAll();
 			foreach($submenu as $valor):
@@ -112,7 +115,7 @@ $MenuBase = $ResuSql->fetchAll();
 									   		 "PConsServ ='".$ConsUsua."' AND ". 
 											 "PTipoServ = '".$OpcSub."'";
 					if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
-					$ResSql3 = $ConeBase->prepare($InstSql);
+					$ResSql3 = $conexion->prepare($InstSql);
 					$ResSql3->execute();
 					$resultado = $ResSql3->fetchAll();
 					foreach($resultado as $valor):
@@ -136,19 +139,6 @@ $MenuBase = $ResuSql->fetchAll();
 		endforeach; ?>
 		</table>
 	<a href="/Intranet/Intranet.php" class="enlace1 exit">Salir</a>
-<footer class="footer">
-		<div class="footer-1">
-			<p class="p">
-				Sistema de Integración de Módulos para la Gestión del Ayuntamiento. <br>
-				© 2018 Todos los Derechos Reservados
-			</p>
-		</div>
-		<div class="footer-2">
-			<a href="">
-				<img src="/Intranet/Imagen/SIMGA_intra02.png" alt="">
-			</a>
-		</div>
-	</footer>	
 </body>
 </html>
 							

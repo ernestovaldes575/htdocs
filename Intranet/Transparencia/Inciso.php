@@ -14,7 +14,8 @@ if ( isset($_GET["Param0"]) )
   $BandMens = true;
   
 if ( isset($_GET["PaAMB01"]) )
-  $ConsFrac = $_GET["PaAMB01"];
+ { $ConsFrac = $_GET["PaAMB01"];
+   $TrimTrab = $_GET["PaAMB02"];}
 
 //Datos del Catalogo
 $InstSql = "SELECT  FAFraccion, FAInciso, FASubinciso, FNormatividad ".
@@ -41,7 +42,8 @@ if ( $ResuSql )
    
    $Carpeta = "A$NumeFrac$NumeInci";
    $Carpeta = ( $NumeSubi == "" )? $Carpeta : $Carpeta.$NumeSubi;
-   $ArCook02 = "$EjerTrab|$ConsFrac|$NumeFrac|$NumeInci|$NumeSubi|$Nomativi|";
+   $ArCook02 = "$EjerTrab|$ConsFrac|$TrimTrab|".
+	   		   "$NumeFrac|$NumeInci|$NumeSubi|$Nomativi|";
    setcookie("CBusqMae", "$ArCook02"); 
    
    header( "Location: $Carpeta/InformaList.php" );

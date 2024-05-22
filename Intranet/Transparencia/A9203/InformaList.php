@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/build/css/style.css">
 </head>
-<script src="EstaPagiList.js"></script>
+<script src="InformaList.js"></script>
 <body>
 <header class="shadow mb-4 bg-white">
 <?php
@@ -16,7 +16,7 @@
 ?>
 </header>
 <?php
-	include 'EstaPagiListSERP.php';
+	include 'InformaListSERP.php';
 ?>	
 <!--encabezado--> 
 <div class="container table-responsive">
@@ -41,12 +41,14 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03=$RegiTabl['CEPClave'];	//LConsecut,
-			  $VC04=$RegiTabl['CEPDescri'];	//LEjercicio,
+			  $VC03=$RegiTabl['AConsecutivo'];
+			  $VC04=$RegiTabl['AFechaInici'];
+			  $VC05=$RegiTabl['AFechaTermino'];
+			  $VC06=$RegiTabl['ADenominacion'];
 		?>
 		<tr>
-			<td><?=$VC03?></td>
 			<td><?=$VC04?></td>
+			<td><?=$VC05?></td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"
