@@ -7,3 +7,15 @@
         width: 8em;  
     }
 }
+.intra{
+    width: 100%;
+    // height: 20em;
+    background-image: url('/Intranet/img/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
