@@ -9,7 +9,7 @@
     @extend .btn, .bg-success, .shadow-lg, .fw-semibold, .text-white, .p-1;
 }
 .btn-Regresar{
-    @extend .btn, .text-decoration-none, .btn-secondary, .shadow, .text-uppercase, .fw-semibold;
+    @extend .btn, .text-decoration-none, .btn-danger, .shadow, .text-uppercase, .fw-semibold;
 }
 .btn-Submit{
     @extend .btn, .btn-primary , .shadow, .text-uppercase, .fw-semibold;

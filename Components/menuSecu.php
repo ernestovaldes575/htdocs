@@ -10,10 +10,10 @@
             <?php
             include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');
 
-            $InstSql =  "SELECT PEjercicio, PMesRegi, PImagenPagi, CTDCarpeta ".
-                        "FROM ptpagina ". 
-                        "INNER JOIN pctipodocu ON CTDClave = PTipoDocu ".
-                        "WHERE PAyuntamiento = '$ClavAyun' AND PTipoDocu = '01' AND PEstado = 'A'";
+                $InstSql =  "SELECT PEjercicio, PMesRegi, PImagenPagi, CTDCarpeta ".
+                            "FROM ptpagina ". 
+                            "INNER JOIN pctipodocu ON CTDClave = PTipoDocu ".
+                            "WHERE PAyuntamiento = '$ClavAyun' AND PTipoDocu = '01' AND PEstado = 'A'";
             //echo($InstSql);
             $RespSql = $ConeBase->prepare($InstSql);     
             $RespSql->execute();

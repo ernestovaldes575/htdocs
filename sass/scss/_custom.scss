@@ -1,6 +1,7 @@
-//?Importar BOOTSTRAP
-@import '../../bootstrap/scss/bootstrap.scss';
 
+
+$rojo: #dc2626;
+$danger: $rojo;
 
 $Azul-Profundo: #3498db;
 $Azul-Profundo-hover:  #2874a6;
@@ -31,3 +32,6 @@ $Oscuro-hover:#1e293b;
 
 $Azul:#4f46e5;
 $Azul-hover:#3730a3;
+
+//?Importar BOOTSTRAP
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'; 
