@@ -12386,11 +12386,7 @@ textarea.form-control-lg {
 }
 
 .encabezado-prin .logo {
-  width: 10%;
-}
-
-.intra {
-  background-image: url("/Intranet/img/header.jpg");
+  width: 8em;
 }
 
 .contenedor-tabla {
