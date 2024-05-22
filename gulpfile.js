@@ -12,11 +12,20 @@ function css(done){
         .pipe(dest('build/css'))//Generamos los archivos
     done()
 }
+function bootstrap(done){
+    src('sass/scss/style.scss')
+        .pipe(sass())
+        .pipe(postcss([autoprefixer()]))
+        .pipe(dest('dest/css'))
+    done()
+}
 //Funcion para que escuche cada que hacemos un modificacion en el codigo
 function dev(){
-    watch('src/scss/**/*.scss',css)
+    watch('src/scss/**/*.scss',css);
+    watch('sass/scss/**/*.scss',bootstrap);
 }
 
 exports.css = css;
+exports.bootstrap = bootstrap;
 
-exports.default = series(css, dev);
+exports.default = series(css, bootstrap, dev);
