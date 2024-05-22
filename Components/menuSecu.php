@@ -1,8 +1,9 @@
-<nav class="nav__secondary punchline">
+<div class="nav__secondary punchline">
     <div class="contenedor__barra">
         <img class="barra" src="/img/logo/BARRA.png" alt="">
     </div>
-</nav>
+</div>
+
 <div class="contenedor__layer tagline">
     <div class="swiper" id="swiper-1">
         <div class="swiper-wrapper">
@@ -26,7 +27,7 @@
                     // echo "1) $RutaArch"
             ?>
             <div class="swiper-slide">
-                <img src="<?=$RutaArch?>" alt="">
+                <img src="<?=$RutaArch?>" alt="Carrusel de Imagenes">
             </div>
             <?php
                 }
