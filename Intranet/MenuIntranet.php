@@ -1,5 +1,5 @@
 <?php 
-		$Titulo = 'MenuIntranet';
+		$Titulo = 'Menu-Intranet';
 		include 'components/encabezado.php';
 		include 'components/logoHeader.php';
 		session_start();
