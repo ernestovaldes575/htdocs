@@ -1,8 +1,8 @@
-<script src="../app.js"></script>
-
 	<?php 
-	include_once "Archivos/Files/fecha.php";
-	require("Archivos/Conexiones/conlogin.php");
+		$Titulo = "Registro";
+		include 'components/encabezado.php';
+		include_once "Archivos/Files/fecha.php";
+		require("Archivos/Conexiones/conlogin.php");
 
 	if(isset($_POST['Ingresar'])){
 		echo 'entrar';
@@ -51,20 +51,32 @@
 	
 	?>
 	<!--Formulario de login-->
-<?php include 'Includes/Header.php'?>
+	<?php 
+		$Titulo = "Registro";
+		include 'components/encabezado.php';
+		// include 'components/EncaPrin.php';
+	?>
 
-<div class="contenedor">
-	<form class="form" method="post" name="formulario" onsubmit="return validarl(this)">
-		<img class="img-3" src="http://201.122.44.34/img/SIMGAMod.jpg" alt="">
-		<input class="clave" type="text" placeholder="Digita Clave" name="InputCla" />
-		<input class="password" type="password" placeholder="Digita Contraseña" name="InputCon" />
-		<!-- <input type="submit" name="Ingresar" class="ingresar" value="Ingresar" > -->
-		<button type="submit" name="Ingresar" class="ingresar" value="Ingresar" >
+	<form class="p-4" method="post" name="formulario" onsubmit="return validarl(this)">
+		<div>
+			<img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt="">
+		</div>
+		<div>
+			<div class="mt-3">
+				<label for="Usuario" class="fw-semibold text-uppercase form-label">Usuario</label>
+				<input class="clave form-control" id="usuario" type="text" placeholder="Digita Clave" name="InputCla" />
+			</div>
+			<div class="mt-3">
+				<label for="password" class="fw-semibold text-uppercase form-label">Clave</label>
+				<input class="password form-control" type="password" placeholder="Digita Contraseña" name="InputCon" />
+			</div>
+		</div>
+
+		<button type="submit" name="Ingresar" class="btn-Submit mt-3" value="Ingresar" >
 			Ingresar
 		</button>
-				<!-- <a href="../index.php">Salir</a> -->
 	</form>
-</div>
 
+<script src="../app.js"></script>
 
-<?php include 'Includes/Footer.php'?>
+<?php include 'components/Footer.php'?>
