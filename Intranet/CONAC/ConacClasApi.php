@@ -31,81 +31,78 @@ switch ($CRUT)
 			$ArCooki  =  $TipoDocu .'|'. $EjerTrab .'|'. $ClavClas .'|';
 			setcookie("CBusqMae", "$ArCooki");
 			
-			$InstSql = "SELECT CSCClave,CSCDescripcion,".
-							  "(SELECT count(*) ".
-						 	   "FROM ctconac ".
-							   "WHERE CAyuntamiento = '$ClavAyun' AND ".
-							   		 "CEjercicio= $EjerTrab AND ".
-							   		 "CTipo = '$TipoDocu' AND ".
-							   		 "CClasifica = CSCClasifi AND ". 
-									 "Csubclasifi = CSCClave ) AS TotaRegi ".
-					  "FROM   ccsubcalsifica ".
-					  "WHERE  CSCClasifi = '$ClavClas' ".
-					  "GROUP BY CSCClave";
-		 }
+			$InstSql = 	"SELECT CSCClave,CSCDescripcion,".
+								"(SELECT count(*) ".
+								"FROM ctconac ".
+								"WHERE 	CAyuntamiento = '$ClavAyun' AND ".
+										"CEjercicio= $EjerTrab AND ".
+										"CTipo = '$TipoDocu' AND ".
+										"CClasifica = CSCClasifi AND ". 
+										"Csubclasifi = CSCClave ) AS TotaRegi ".
+						"FROM   ccsubcalsifica ".
+						"WHERE  CSCClasifi = '$ClavClas' ".
+						"GROUP BY CSCClave";
+		}
 		//------------------------------------------------------------ 
 		//Consulta 03 para conac
 		elseif( isset($_GET['ParBus02']) != '')
 		 { $SubcClas = $_GET["ParBus02"];	//Subclasificacion 
 
-		   $ArCooki  =  $TipoDocu .'|'. $EjerTrab .'|'. 
-						 $ClavClas .'|'. $SubcClas .'|';
-		   setcookie("CBusqMae", "$ArCooki");
+		$ArCooki  = $TipoDocu .'|'. $EjerTrab .'|'. 
+					$ClavClas .'|'. $SubcClas .'|';
+			setcookie("CBusqMae", "$ArCooki");
 
-			$InstSql = "SELECT CNumeCona, CDescDocu, CTDCarpeta,CArchivo ". 
-					   "FROM   ctconac ". 
-					   "INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
-					   "WHERE  CAyuntamiento = '$ClavAyun' AND ". 
-							  "CEjercicio= $EjerTrab AND ". 
-							  "CClasifica = '$ClavClas' AND ". 
-							  "Csubclasifi = '$SubcClas' ".
-		   			   "ORDER BY CNumeCona ";  
-		   }
-	    
+			$InstSql = 	"SELECT CNumeCona, CDescDocu, CTDCarpeta,CArchivo ". 
+						"FROM   ctconac ". 
+						"INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
+						"WHERE  CAyuntamiento = '$ClavAyun' AND ". 
+								"CEjercicio= $EjerTrab AND ". 
+								"CClasifica = '$ClavClas' AND ". 
+								"Csubclasifi = '$SubcClas' ".
+						"ORDER BY CNumeCona ";  
+		}
 		//------------------------------------------------------------   
 		//Consulta 04 para conac ABC
 		elseif( isset($_GET['PaAMB01']) != '')
-		 { $TipoMovi = $_GET["PaAMB01"];	#Tipo de Movimiento 
-		   $ConsBusq = $_GET["PaAMB02"];	#COINCIDENCIA CON LA BD  
-		   $BandMens = true;
-		   //REcupera el siguiente numero
-		   if ( $TipoMovi == "A" )
-		    { $InstSql = "SELECT CASE WHEN MAX(CNumeCona) IS NULL ".
-		   						  "THEN 1 ".
-								  "ELSE MAX(CNumeCona) ". 
-					   "FROM   ctconac ". 
-					   "INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
-					   "WHERE  CAyuntamiento = '$ClavAyun' AND ". 
-							  "CEjercicio= $EjerTrab AND ". 
-							  "CClasifica = '$ClavClas' AND ". 
-							  "Csubclasifi = '$SubcClas'  ";
-			  if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
-			  $RespSql = $ConeBase->prepare($InstSql);
-			  $RespSql->execute();
-			  $ResuSql = $RespSql->fetch();
-						 
-			  $NumeSigu = 0;		
-			  if ($ResuSql)
-				$NumeSigu = $ResuSql[0]; 				  
-			}  
+		{ 	$TipoMovi = $_GET["PaAMB01"];	#Tipo de Movimiento 
+			$ConsBusq = $_GET["PaAMB02"];	#COINCIDENCIA CON LA BD  
+			$BandMens = true;
+			//REcupera el siguiente numero
+		if ( $TipoMovi == "A" )
+		{ $InstSql = 	"SELECT CASE WHEN MAX(CNumeCona) IS NULL ".
+										"THEN 1 ".
+										"ELSE MAX(CNumeCona) ". 
+						"FROM   ctconac ". 
+						"INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
+						"WHERE  CAyuntamiento = '$ClavAyun' AND ". 
+								"CEjercicio= $EjerTrab AND ". 
+								"CClasifica = '$ClavClas' AND ". 
+								"Csubclasifi = '$SubcClas'  ";
+			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+			$RespSql = $ConeBase->prepare($InstSql);
+			$RespSql->execute();
+			$ResuSql = $RespSql->fetch();
+			$NumeSigu = 0;		
+			if ($ResuSql)
+			$NumeSigu = $ResuSql[0]; 				  
+		}  
 
-		   $InstSql = "SELECT CNumeCona, CDescDocu, CTDCarpeta, CArchivo ". 
-					   "FROM   ctconac ". 
-					   "INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
-					   "WHERE  CAyuntamiento = '$ClavAyun' AND ". 
-							  "CEjercicio= $EjerTrab AND ". 
-							  "CClasifica = '$ClavClas' AND ". 
-							  "Csubclasifi = '$SubcClas' AND ".
-							  "CNumeCona = $ConsBusq ";
-		   }
+			$InstSql = 	"SELECT CNumeCona, CDescDocu, CTDCarpeta, CArchivo ". 
+						"FROM   ctconac ". 
+						"INNER JOIN CCTipoDocu ON CTipo = CTDClave ". 
+						"WHERE  CAyuntamiento = '$ClavAyun' AND ". 
+								"CEjercicio= $EjerTrab AND ". 
+								"CClasifica = '$ClavClas' AND ". 
+								"Csubclasifi = '$SubcClas' AND ".
+								"CNumeCona = $ConsBusq ";
+		}
 		//------------------------------------------------------------
 		//Consulta 01 para Clasificacion
-		else
-		  { //Datos del Catalogo
-			$InstSql = "SELECT * ".
-					   "FROM acceso.acejercicio ".
-					   "ORDER BY CEJclave ";
-		    if ($BandMens)  echo '2)'.$InstSql.'<br>'; 			
+		else{ //Datos del Catalogo
+			$InstSql = 	"SELECT * ".
+						"FROM acceso.acejercicio ".
+						"ORDER BY CEJclave ";
+		if ($BandMens)  echo '2)'.$InstSql.'<br>'; 			
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
 			$CataEjer = $EjInSql->fetchAll(); 
@@ -113,15 +110,15 @@ switch ($CRUT)
 		  	//--------------------------------------------------	
 			//Carga el registro para Consulta
 			$InstSql = "SELECT CCLClave, CCLDescripcion,".	
-			 				   "(SELECT count(*) ".
-							    "FROM   ctconac ". 
-							    "WHERE  CAyuntamiento = '$ClavAyun' AND ". 
-									   "CEjercicio= $EjerTrab AND ". 
-									   "CTipo = CCLTipoDocu AND ".
-									   "CClasifica = CCLClave ) AS TotaRegi ". 
-					   "FROM  CCClasifica ".
-					   "WHERE CCLTipoDocu = '$TipoDocu' ". 
-					   "ORDER BY CCLClave "; 
+								"(SELECT count(*) ".
+								"FROM   ctconac ". 
+								"WHERE  CAyuntamiento = '$ClavAyun' AND ". 
+										"CEjercicio= $EjerTrab AND ". 
+										"CTipo = CCLTipoDocu AND ".
+										"CClasifica = CCLClave ) AS TotaRegi ". 
+						"FROM  CCClasifica ".
+						"WHERE CCLTipoDocu = '$TipoDocu' ". 
+						"ORDER BY CCLClave "; 
 
 		}	
 
@@ -138,7 +135,7 @@ switch ($CRUT)
 
 		break;
 	case "POST": //Alta
-	  /*`LConsecut`, `LAyuntamiento`, `LUnidad`, 
+		/*`LConsecut`, `LAyuntamiento`, `LUnidad`, 
 		`LEjercicio`, `LMesRegi`, 
 		`LTipoDocu`, `LTitulo`, `LDescripcion`, 
 		`LSerPubCre`, `LFechAlta`, `LFechPublI`, `LFechPublF`, 

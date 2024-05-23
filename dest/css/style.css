@@ -12389,6 +12389,18 @@ textarea.form-control-lg {
   width: 8em;
 }
 
+.intra {
+  width: 100%;
+  background-image: url("/Intranet/img/header.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .contenedor-tabla {
   width: 100%;
 }

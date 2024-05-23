@@ -36,7 +36,8 @@
 				"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
 				"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
 
-			if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
+			if ($BandMens)  
+				echo '1)<br>'.$InstSql.'<br><br>';		   
 				$ResuSql = $conexion->prepare($InstSql);
 				$ResuSql->execute();
 				$MenuBase = $ResuSql->fetchAll();
@@ -44,7 +45,7 @@
 	<div class="intra">
 		<divc class="container-sm d-flex justify-content-between">
 			<div>
-				<h2 class="text-uppercase fw-bolder	">
+				<h2 class="text-uppercase fw-bolder	text-light">
 					Menu Intranet
 				</h2>
 			</div>
@@ -109,7 +110,7 @@
 								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
 											"PConsServ ='".$ConsUsua."' AND ". 
 											"PTipoServ = '".$OpcSub."'";
-					echo "3)$InstSql";
+					// echo "3)$InstSql";
 				if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
 					$ResSql3 = $conexion->prepare($InstSql);
 					$ResSql3->execute();
