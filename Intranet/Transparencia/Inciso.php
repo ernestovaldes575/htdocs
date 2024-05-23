@@ -18,7 +18,7 @@ if ( isset($_GET["PaAMB01"]) )
    $TrimTrab = $_GET["PaAMB02"];}
 
 //Datos del Catalogo
-$InstSql = "SELECT  FAFraccion, FAInciso, FASubinciso, FNormatividad ".
+$InstSql = "SELECT FAFraccion, FAInciso, FASubinciso, FNormatividad ".
 		   "FROM   ttfracarea ".
 		   "INNER JOIN ttfraccion ON  FFraccion = FAFraccion AND ".
 									 "FInciso = FAInciso AND ".

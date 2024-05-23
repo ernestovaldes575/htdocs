@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/build/css/style.css">
+	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
-<script src="Fracciones.js"></script>
 <body>
+<script src="Fracciones.js"></script>
 <header class="shadow mb-4 bg-white">
 <?php
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
@@ -23,15 +23,12 @@
 	<table width="70%" class="ListInfo tabla">
 		<tr>
 			<td width="12%"></td>
-			<td colspan="5"></td>
-			<td>
-			  <a href="/Intranet/menuintranet.php" 
-					class="btn-Regresar">
-			    Regresar
-			    </a>		    
-				<i class="bi bi-x-square btn-01 Regre"
-				   title="Regresar">Regresar</i>	
-			</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td colspan="2"><a href="Ejercicio.php" 
+					class="btn-Regresar">Regresar </a> <i class="bi bi-x-square btn-01 Regre"
+				   title="Regresar">Regresar</i></td>
 		</tr>
 		<tr>
 			<th>Fracción</th>
@@ -40,7 +37,6 @@
 			<th width="6%">Trim02</th>
 			<th width="12%">Trim03</th>
 			<th width="12%">Trim04</th>
-			<th width="14%">&nbsp;</th>
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
@@ -63,31 +59,35 @@
 			<td><?=$VC07?> </td>
 			<td>
 			  <?php if ($VC08) {?>
-				 <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-Cons='<?= $VC03?>' data-Trim='1' title="Facción"></i>
+				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 data-Cons='<?= $VC03?>' data-Trim='01' title="1er Trimestre"></i>
+			  <?php } else { ?>	
+				<i class="bi bi-file-earmark-break btn-Eliminar" title="1er trimestre"></i>
 			  <?php } ?>	
 			</td>
 			<td>
 			 <?php if ($VC09) {?>
-				 <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-Cons='<?= $VC03?>' data-Trim='2' title="Facción"></i>
+				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 data-Cons='<?= $VC03?>' data-Trim='02' title="2do Trimestre"></i>
+			  <?php } else { ?>	
+				<i class="bi bi-file-earmark-break btn-Eliminar" title="2do trimestre"></i>
 			  <?php } ?>	
 			</td>
 			<td>
 			 <?php if ($VC10) {?>
-				 <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-Cons='<?= $VC03?>' data-Trim='3' title="Facción"></i>
+				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 data-Cons='<?= $VC03?>' data-Trim='03' title="3er Trimestre"></i>
+			  <?php } else { ?>	
+				<i class="bi bi-file-earmark-break btn-Eliminar" title="3er trimestre"></i>
 			  <?php } ?>	 
 			</td>
 			<td>
 			 <?php if ($VC11) {?>
-				 <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-Cons='<?= $VC03?>' data-Trim='4' title="Facción"></i>
+				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 data-Cons='<?= $VC03?>' data-Trim='04' title="4to Trimestre"></i>
+			  <?php } else { ?>	
+				<i class="bi bi-file-earmark-break btn-Eliminar" title="4to trimestre"></i>
 			  <?php } ?>	
-			</td>
-			<td data-titulo="Inciso:">
-	  		  <i class="bi bi-x-square btn-Modificar Inciso"
-				 data-CaBu='<?= $VC03?>' title="Facción"></i>
 			</td>
 		</tr>
 		<?php	} ?> 

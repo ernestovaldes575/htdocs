@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/build/css/style.css">
+	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
 <script src="InformaList.js"></script>
 <body>
@@ -25,7 +25,7 @@
 			<td width="17%"></td>
 			<td width="68%"></td>
 			<td colspan="2">
-			  <a href="/Intranet/menuintranet.php" 
+			  <a href="../Fracciones.php" 
 					class="btn-Regresar">
 			    Regresar
 			    </a>		    </td>
@@ -33,9 +33,10 @@
 		<tr>
 			<th>Titulo</th>
 			<th>Descripción</th>
-			<th width="7%"><?php 
+			<th width="7%">
+			 <?php 
 					if ($Alta == "A"){ ?>
-              <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
+               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
 			<th width="8%">&nbsp;</th>
 		</tr>

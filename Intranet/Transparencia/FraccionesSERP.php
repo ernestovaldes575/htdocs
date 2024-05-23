@@ -17,7 +17,7 @@ if ( isset($_GET["PaAMB01"]) ){
 
 //Carga el registro para Consulta
 $InstSql = "SELECT FAConsecutivo, FAFraccion, FAInciso, FASubinciso, FNormatividad, ".
-				  "FATrimes01, FATrimes02, FATrimes03, FATrimes04, "
+				  "FATrimes01, FATrimes02, FATrimes03, FATrimes04 ".
 		   "FROM   ttfracarea ".
 		   "INNER JOIN ttfraccion ON  FFraccion = FAFraccion AND ".
 		   							 "FInciso = FAInciso AND ".
@@ -27,8 +27,7 @@ $InstSql = "SELECT FAConsecutivo, FAFraccion, FAInciso, FASubinciso, FNormativid
 				  "FAUnidad = $ConsUnid ".
 		   "ORDER BY FAFraccion, FAInciso, FASubinciso ";
 			
-if ($BandMens)  
-   echo '1)'.$InstSql.'<br>'; 
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetchAll();

@@ -1,6 +1,13 @@
 <?php
-	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
-	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
+include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
+
+$ConsFrac = $ABusqMae[1];
+$TrimTrab = $ABusqMae[2];
+$NumeFrac = $ABusqMae[3];
+$NumeInci = $ABusqMae[4];
+$NumeSubi = $ABusqMae[5];
+$Nomativi = $ABusqMae[6];
 
 //********************************************************************
 //Informacion de la Lista
@@ -16,9 +23,13 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT CEPClave AS Clave, CEPDescri AS Descri ".
-			"FROM   pcestapagi ".
-			"WHERE  CEPClave = '$CampBusq' ";
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ".
+				   "ADenominacion, AFunadamento, AHipervinculo, ".
+				   "AAreaRespon, ANota ".
+			"FROM  tt9203facare ".
+			"WHERE AAyuntamiento = '$ClavAyun' AND ".
+				  "AEjercicio = $EjerTrab AND ".
+				  "AConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -26,18 +37,30 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;  $VC04 = "";
+$VC03 = 0;  $VC04 = ""; $VC05 = "";
+$VC06 = 0;  $VC07 = ""; $VC08 = "";
+$VC09 = 0;  $VC10 = ""; $VC11 = "";
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['Clave'];	
-   $VC04 = $ResuSql['Descri'];
+   $VC03 = $ResuSql['ANumeRegi'];	
+   $VC04 = $ResuSql['AFechaInicio'];	
+   $VC05 = $ResuSql['AFechaTermino'];
+   $VC06 = $ResuSql['AArea'];
+   $VC07 = $ResuSql['ADenominacion'];
+   $VC08 = $ResuSql['AFunadamento'];
+   $VC09 = $ResuSql['AHipervinculo'];
+   $VC10 = $ResuSql['AAreaRespon'];	
+   $VC11 = $ResuSql['ANota'];		
  } 
 else
  { //Busca el sisguiente registro
-	$InstSql = "SELECT MAX(CEPClave) + 1 AS Clave ".
-	 		   "FROM pcestapagi ";
-  if ($BandMens)  
-   echo '1)'.$InstSql.'<br>'; 
+	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
+	 		   "FROM  tt9203facare ".
+			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
+				  "AEjercicio = $EjerTrab AND ".
+				  "AConsFrac = $ConsFrac AND ".
+				  "ANumeTrim = '$TrimTrab' ";
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();
