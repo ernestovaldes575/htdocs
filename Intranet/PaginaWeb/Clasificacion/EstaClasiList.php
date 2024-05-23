@@ -41,8 +41,8 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03=$RegiTabl['ctpclave'];	//<- Modificar
-			  $VC04=$RegiTabl['ctpdescrip'];	//<- Modificar
+			  $VC03=$RegiTabl['CTCClave'];	//<- Modificar
+			  $VC04=$RegiTabl['CTCDescri'];	//<- Modificar
 			  //<- Agregar 	
 		?>
 		<tr>
