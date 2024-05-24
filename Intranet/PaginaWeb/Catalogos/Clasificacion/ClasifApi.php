@@ -44,6 +44,6 @@ $MensResp = ($ResuSql) ?  "Algo ha fallado!!!" : "Registro actualizado correctam
 if (!$ResuSql) 
 	echo '<script>alert("'.$MensResp.'");</script>'; 
 //Cambiar archivo
-$PagiRegr = "location: EstaPagiList.php";
+$PagiRegr = "location: ClasiList.php";
 header($PagiRegr);	
 ?>
