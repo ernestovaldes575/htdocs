@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
-<script language="JavaScript" src="Clasif.js"></script> <!-- <-Cambiar nombre -->
+<script language="JavaScript" src="Clasi.js"></script> <!-- <-Cambiar nombre -->
 
 <body> 
 <header class="shadow mb-4 bg-white">
@@ -21,13 +21,13 @@
 	
 <?php 
 	//Carga de la Informacion	
-	include 'ClasifSERP.php';	 //<- Cambiar nombra
+	include 'ClasiSERP.php';	 //<- Cambiar nombra
 ?>
 <!-- <caption>
 <?=	$DescTiSe?>	
 </caption> -->
 <div>
-	<form id="PideDato" method="post" name="formulario" onsubmit="validarFormulario()" action="ClasifApi.php">
+	<form id="PideDato" method="post" name="formulario" onsubmit="validarFormulario()" action="ClasiApi.php">
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
@@ -40,7 +40,7 @@
 						Campo
 					</td>
 					<td width="71%">
-						<a class="btn-Regresar container" href="EstaPagiList.php">
+						<a class="btn-Regresar container" href="ClasiList.php">
 							Regresar
 						</a>
 					</td>
