@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>	
 <body>
-<script src="EstaPagiList.js"></script>  <!-- -<-Modificar Nom  -->
+<script src="ClasiList.js"></script>  <!-- -<-Modificar Nom  -->
 <header class="shadow mb-4 bg-white">
 <?php
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
@@ -16,7 +16,7 @@
 ?>
 </header>
 <?php
-	include 'EstaPagiListSERP.php';  //<- Modificar aarchivo
+	include 'ClasiListSERP.php';  //<- Modificar aarchivo
 ?>	
 <!--encabezado--> 
 <div class="container table-responsive">
