@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/spinner.css">
 </head>
-<script language="JavaScript" src="EstaPagi.js"></script> <!-- <-Cambiar nombre -->
+<script language="JavaScript" src="EstaClasi.js"></script> <!-- <-Cambiar nombre -->
 
 <body> 
 <header class="shadow mb-4 bg-white">

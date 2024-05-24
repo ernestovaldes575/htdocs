@@ -9,9 +9,9 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ctpclave, ctpdescrip ". //Cambiar campos
+$InstSql = 	"SELECT CTCClave, CTCDescri ". //Cambiar campos
 			"FROM   cctipoclas ".			//Cambiar tabla
-			"ORDER BY ctpclave";			//Cambiar campo
+			"ORDER BY CTCClave";			//Cambiar campo
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 

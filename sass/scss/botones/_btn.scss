@@ -1,4 +1,7 @@
 @use '../custom' as *;
+.btn-Submit{
+    @extend .btn, .btn-primary, .shadow-lg;
+}
 .btn-Eliminar{
     @extend .btn, .btn-danger, .shadow-lg, .p-1;
 }

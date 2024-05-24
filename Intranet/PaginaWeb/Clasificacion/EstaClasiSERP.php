@@ -16,9 +16,9 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ctpclave AS Clave, ctpdescrip AS Descri ". //Cambiar campos
+$InstSql = 	"SELECT CTCClave AS Clave, CTCDescri AS Descri ". //Cambiar campos
 			"FROM   cctipoclas ".  //Cambiar tabla
-			"WHERE  ctpclave = '$CampBusq' "; //Cambiar campo
+			"WHERE  CTCClave = '$CampBusq' "; //Cambiar campo
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -34,8 +34,8 @@ if ($ResuSql)
  } 
 else
  { //Busca el sisguiente registro
-	$InstSql = "SELECT MAX(ctpclave) + 1 AS Clave ". //Cambiar campo
-	 		   "FROM pcestapagi "; //Cambiar tabla
+	$InstSql = "SELECT MAX(CTCClave) + 1 AS Clave ". //Cambiar campo
+	 		   "FROM cctipoclas "; //Cambiar tabla
   if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
