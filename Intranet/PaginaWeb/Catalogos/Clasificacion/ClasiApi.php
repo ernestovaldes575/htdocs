@@ -26,13 +26,13 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE ccclasifica ". 	//Cambiar tabla
-					"SET    CSCClave = '$ClavCata', ". //Cambiar campo
-							"CSCDescripcion = '$DescCata' ".  //Cambiar campo
-					"WHERE CSCClave = '$CampBusq'  ";  //Cambiar campo
+					"SET    CCLClave = '$ClavCata', ". //Cambiar campo
+							"CCLDescripcion = '$DescCata' ".  //Cambiar campo
+					"WHERE CCLClave = '$CampBusq'  ";  //Cambiar campo
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM ccclasifica ". //Cambiar tabla
-				   "WHERE CSCClave = '$CampBusq'  "; //Cambiar campo
+				   "WHERE CCLClave = '$CampBusq'  "; //Cambiar campo
 	break;	
 }		
 
