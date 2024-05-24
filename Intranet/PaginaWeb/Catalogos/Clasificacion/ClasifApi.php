@@ -21,18 +21,18 @@ $DescCata = $_POST['C04'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO pcestapagi ".	//Cambiar tabla
+		$InstSql = "INSERT INTO ccclasifica ".	//Cambiar tabla
 				   "VALUES ('$ClavCata','$DescCata')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE pcestapagi ". 	//Cambiar tabla
-					"SET    CEPClave = '$ClavCata', ". //Cambiar campo
-							"CEPDescri = '$DescCata' ".  //Cambiar campo
-					"WHERE CEPClave = '$CampBusq'  ";  //Cambiar campo
+		$InstSql = 	"UPDATE ccclasifica ". 	//Cambiar tabla
+					"SET    CSCClave = '$ClavCata', ". //Cambiar campo
+							"CSCDescripcion = '$DescCata' ".  //Cambiar campo
+					"WHERE CSCClave = '$CampBusq'  ";  //Cambiar campo
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM pcestapagi ". //Cambiar tabla
-				   "WHERE CEPClave = '$CampBusq'  "; //Cambiar campo
+		$InstSql = "DELETE FROM ccclasifica ". //Cambiar tabla
+				   "WHERE CSCClave = '$CampBusq'  "; //Cambiar campo
 	break;	
 }		
 
