@@ -18,11 +18,12 @@ $TipoMovi = $_POST['C01'];
 $CampBusq = $_POST['C02']; 
 $ClavCata = $_POST['C03'];
 $DescCata = $_POST['C04'];
+$DocuCata = $_POST['C05'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO ccclasifica ".	//Cambiar tabla
-				   "VALUES ('$ClavCata','$DescCata')";
+				   "VALUES ('$DocuCata','$ClavCata','$DescCata')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE ccclasifica ". 	//Cambiar tabla
