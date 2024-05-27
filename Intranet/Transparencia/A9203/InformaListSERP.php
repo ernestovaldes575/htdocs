@@ -4,12 +4,8 @@
 
 //********************************************************************
 //Informacion de la Lista
-$ConsFrac = $ABusqMae[1];
-$TrimTrab = $ABusqMae[2];
-$NumeFrac = $ABusqMae[3];
-$NumeInci = $ABusqMae[4];
-$NumeSubi = $ABusqMae[5];
-$Nomativi = $ABusqMae[6];
+$ConsFrac = $ABusqMae[2];	//Consecutivo de la Fraccion del Unidad
+$TrimTrab = $ABusqMae[3];	//Trimestre de trabajo 
 
 $BandMens = false;
 if ( isset($_GET["Param0"]) )

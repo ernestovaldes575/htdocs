@@ -8,6 +8,14 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
+//Estado de la revision
+if ( isset($_GET["Param01"]) ){
+	$EjerTrab = 2024;
+	$FracTrab = $_GET["PaAMB01"];
+	$ArCooki1 = "$EjerTrab|$FracTrab|";
+	setcookie("CBusqMae", "$ArCooki1");
+}
+
 //Carga el registro para Consulta
 $InstSql = "SELECT CEJClave,CEJDescri,".
 				  "(SELECT COUNT(*) ".

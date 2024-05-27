@@ -43,7 +43,7 @@
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03=$RegiTabl['AConsecutivo'];
-			  $VC04=$RegiTabl['AFechaInici'];
+			  $VC04=$RegiTabl['AFechaInicio'];
 			  $VC05=$RegiTabl['AFechaTermino'];
 			  $VC06=$RegiTabl['ADenominacion'];
 		?>

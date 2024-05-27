@@ -27,7 +27,7 @@
 <?=	$DescTiSe?>	
 </caption> -->
 <div>
-	<form id="PideDato" method="post" name="formulario" action="InformaCRUD.php">
+	<form id="PideDato" method="post" name="formulario" action="InformaCRUD.php">	
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
@@ -48,14 +48,14 @@
 				<tr>
 					<th>No</th>
 					<td>
-						<input id="VC03" type="text" name="C03" value="<?=$VC03?>"
+						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
 					<th>Fecha Inicio</th>
 					<td>
-						<input id="VC04" type="date" name="C04" value="<?=$VC04?>" 
+						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
@@ -67,37 +67,52 @@
 				</tr>
 				<tr>
 				  <td>Fecha de Termino</td>
-				  <td><input id="VC05" type="date" name="C05" value="<?=$VC05?>" 
+				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Area</td>
-				  <td><input id="VC06" type="text" name="VC06" value="<?=$VC06?>" 
+				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Denominacion</td>
-				  <td><input id="VC07" type="text" name="VC07" value="<?=$VC07?>" 
+				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Fundamento</td>
-				  <td><input id="VC08" type="text" name="VC08" value="<?=$VC08?>" 
+				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+			  <tr>
 				  <td>Hipervinculo</td>
-				  <td><input id="VC09" type="text" name="VC09" value="<?=$VC09?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC09 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>Area Responsable</td>
-				  <td><input id="VC10" type="text" name="VC10" value="<?=$VC10?>" 
+				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Nota</td>
-				  <td><input id="VC11" type="text" name="VC11" value="<?=$VC11?>" 
+				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
@@ -108,19 +123,8 @@
 						</button></td>
 			  </tr>
 			</table>
-			<div class="visually-hidden">
-					<div class="spinner">
-						<div class="bounce1"></div>
-						<div class="bounce2"></div>
-						<div class="bounce3"></div>
-					  </div>
-				  </div>
-			   </div>
-		    </div>
 	</form>	
-
-	
 </div>
-	<script src="ValiForm.js"></script>
+<script src="/Intranet/Js/ValiForm.js"></script>
 </body>
 </html>

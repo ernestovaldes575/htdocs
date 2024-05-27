@@ -12389,6 +12389,10 @@ textarea.form-control-lg {
   width: 8em;
 }
 
+.formulario {
+  height: 50vh;
+}
+
 .intra {
   width: 100%;
   background-image: url("/Intranet/img/header.jpg");

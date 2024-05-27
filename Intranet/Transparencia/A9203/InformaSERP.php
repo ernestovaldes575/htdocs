@@ -2,12 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
 
-$ConsFrac = $ABusqMae[1];
-$TrimTrab = $ABusqMae[2];
-$NumeFrac = $ABusqMae[3];
-$NumeInci = $ABusqMae[4];
-$NumeSubi = $ABusqMae[5];
-$Nomativi = $ABusqMae[6];
+$FracTrab = $ABusqMae[1];	//Fraccion de trabajo 92,93
+$ConsFrac = $ABusqMae[2];	//Consecutivo de la Fraccion del Unidad
+$TrimTrab = $ABusqMae[3];	//Trimestre de trabajo 
 
 //********************************************************************
 //Informacion de la Lista
@@ -37,9 +34,9 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;  $VC04 = ""; $VC05 = "";
-$VC06 = 0;  $VC07 = ""; $VC08 = "";
-$VC09 = 0;  $VC10 = ""; $VC11 = "";
+$VC03 = 0;   $VC04 = ""; $VC05 = "";
+$VC06 = 0;   $VC07 = ""; $VC08 = "";
+$VC09 = "";  $VC10 = 0; $VC11 = "";
 if ($ResuSql)
  { //Carga los campos
    $VC03 = $ResuSql['ANumeRegi'];	
@@ -68,6 +65,9 @@ else
     $VC03 = $ResuSql['Clave'];
   }
 
+$RutaArch = $_SERVER['DOCUMENT_ROOT'].
+			"/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
+	
 $MesnTiMo = "";
 switch( $TipoMovi ){
   case "A":	$MesnTiMo = "Registrar";  
