@@ -54,28 +54,31 @@
 	<?php 
 		$Titulo = "Registro";
 		include 'components/encabezado.php';
-		// include 'components/EncaPrin.php';
+		include 'components/EncaPrin.php';
 	?>
-
-	<form class="p-4" method="post" name="formulario" onsubmit="return validarl(this)">
-		<div>
-			<img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt="">
-		</div>
-		<div>
-			<div class="mt-3">
-				<label for="Usuario" class="fw-semibold text-uppercase form-label">Usuario</label>
-				<input class="clave form-control" id="usuario" type="text" placeholder="Digita Clave" name="InputCla" />
+	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
+	<div class="container mt-5 pt-5 formulario">
+		<div class="row justify-content-center">
+			<div class="col-6 col-xl-4 col-md-6">
+				<div class="card shadow">
+					<div class="card-header d-flex justify-content-between align-items-center">
+						Iniciar Sesion<i class="bi bi-person-fill"></i>
+					</div>
+					<div class="card-body">
+						<form  method="post" name="formulario" onsubmit="return validarl(this)">
+							<input class="form-control mb-3" id="usuario" type="text" placeholder="Digita Clave" name="InputCla" />
+							<input class="form-control mb-3" type="password" placeholder="Digita Contraseña" name="InputCon" />
+							<div class="d-grid gap-2 mb-3">
+								<button class="btn btn-primary" type="submit" name="Ingresar" value="Ingresar" >
+									Iniciar Sesion
+								</button>
+							</div>
+						</form>	
+					</div>
+				</div>
 			</div>
-			<div class="mt-3">
-				<label for="password" class="fw-semibold text-uppercase form-label">Clave</label>
-				<input class="password form-control" type="password" placeholder="Digita Contraseña" name="InputCon" />
-			</div>
 		</div>
-
-		<button type="submit" name="Ingresar" class="btn-Submit mt-3" value="Ingresar" >
-			Ingresar
-		</button>
-	</form>
+	</div>
 
 <script src="../app.js"></script>
 
