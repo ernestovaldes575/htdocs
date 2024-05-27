@@ -32,13 +32,13 @@ switch ( $CRUD )
 					"SET    CCLClave = '$ClavCata', ". //Cambiar campo
 							"CCLDescripcion = '$DescCata' ".  //Cambiar campo
 							"CCLTipoDocu = '$DocuCata' ".  //Cambiar campo
-					"WHERE CCTipoClas = '$TipoClas' AND "
-						  "CCLClave = '$CampBusq'  ";  //Cambiar campo
+					"WHERE CCTipoClas = '$TipoClas' AND 
+						  CCLClave = '$CampBusq'  ";  //Cambiar campo
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM ccclasifica ". //Cambiar tabla
-				   "WHERE CCTipoClas = '$TipoClas' AND "
-						  "CCLClave = '$CampBusq'  "; //Cambiar campo
+				   "WHERE CCTipoClas = '$TipoClas' AND 
+						  CCLClave = '$CampBusq'  "; //Cambiar campo
 	break;	
 }		
 

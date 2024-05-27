@@ -9,8 +9,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-
-
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
