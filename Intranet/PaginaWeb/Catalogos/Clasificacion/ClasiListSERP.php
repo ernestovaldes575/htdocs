@@ -3,6 +3,11 @@
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
 
 //********************************************************************
+
+//$ArCooki1 = $_COOKIE['CBuscEnc'];
+$ABuscEnc = explode("|", $ArCooki1);
+$TipoClas = $ABuscEnc[0];
+
 //Informacion de la Lista
 $BandMens = false;
 if ( isset($_GET["Param0"]) )
@@ -17,7 +22,7 @@ if ( isset($_GET["Param1"]) )
 //Carga el registro para Consulta
 $InstSql = 	"SELECT CCLClave, CCLDescripcion ". //Cambiar campos
 			"FROM   ccclasifica ".
-			"WHERE CCLTipoDocu = '$TipoClas' 			//Cambiar tabla
+			"WHERE CCLTipoDocu = '$TipoClas'. 			//Cambiar tabla
 			ORDER BY CCLClave";			//Cambiar campo
 			
 if ($BandMens)  
