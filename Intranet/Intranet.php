@@ -57,7 +57,7 @@
 		include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
-	<div class="container mt-5 pt-5 formulario">
+	<div class="container mt-5 mb-5 pt-5 formulario">
 		<div class="row justify-content-center">
 			<div class="col-6 col-xl-4 col-md-6">
 				<div class="card shadow">
