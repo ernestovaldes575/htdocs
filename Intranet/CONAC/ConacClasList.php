@@ -27,10 +27,11 @@ if ( isset($_GET["Param1"]) ){
 	include 'ConacClasApi.php';
 ?>	
 <!--encabezado-->
-	<table class="tb">
+<div class="container table-responsive">
+	<table class="tabla">
 		<tr>
 			<td>
-				<select name="AAreaResp" onChange="CargEjer(this.value)">
+				<select name="AAreaResp" onChange="CargEjer(this.value)" class="btn btn-Nuevo">
 					<?php 
 						foreach($CataEjer as $RegiTabl): 
 								$ClavCata = $RegiTabl[0];		
@@ -43,9 +44,8 @@ if ( isset($_GET["Param1"]) ){
 					?>
 				</select>
 			</td>
-			<td></td>
-			<td>
-				<a href="/Intranet/menuintranet.php" class="regresar">Regresar</a>
+			<td colspan="3">
+				<a href="/Intranet/menuintranet.php" class="regresar btn btn-Regresar">Regresar</a>
 			</td>
 		</tr>
 		<tr>
@@ -75,5 +75,6 @@ if ( isset($_GET["Param1"]) ){
 		</tr>
 		<?php	endforeach; ?> 
 	</table>
+</div>
 </body>
 </html>

@@ -61,7 +61,7 @@
 		<div class="row justify-content-center">
 			<div class="col-6 col-xl-4 col-md-6">
 				<div class="card shadow">
-					<div class="card-header d-flex justify-content-between align-items-center">
+					<div class="card-header d-flex justify-content-between align-items-center fw-semibold">
 						Iniciar Sesion<i class="bi bi-person-fill"></i>
 					</div>
 					<div class="card-body">
