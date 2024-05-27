@@ -21,7 +21,7 @@ else if (event.target.classList.contains('Elim'))
 else if (event.target.classList.contains('Clasi')) {
       CampBusq = event.target.getAttribute('data-CaBu');					
       //Cambiar nombre
-  window.location.href = '../Clasificacion/ClasiList.php?Param='+CampBusq;
+  window.location.href = '../Clasificacion/ClasiList.php?Param1='+CampBusq;
     } 
      
 });

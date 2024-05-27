@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
+	<title>Clasificacion</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>	
@@ -31,7 +31,7 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
-			<th>Titulo</th>
+			<th>Clave</th>
 			<th>Descripción</th>
 			<th width="7%"><?php 
 					if ($Alta == "A"){ ?>
