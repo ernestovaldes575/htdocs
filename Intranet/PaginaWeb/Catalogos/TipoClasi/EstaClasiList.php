@@ -65,8 +65,8 @@
 			<!--Boton para Tipo de Clasificacion-->
 			<td data-titulo="Clasifica:">
 	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-1 Clasi
-				data-CaBu='<?= $TipoDocu?>' title="Clasifica"></i>
+					<i class="bi bi-arrow-right-square"
+				data-CaBu='<?= $TipoDocu?>' title="CLASIFICAR"></i>
 				<?php } ?>
 			</td>
 
