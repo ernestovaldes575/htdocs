@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
+<head>  
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/build/css/style.css">
+	<link rel="stylesheet" href="/IntraInvi/Css/style.css">
 </head>
 <script language="JavaScript" src="SolicitudList.js"></script>
 <body>

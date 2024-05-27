@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
 <script language="JavaScript" src="EstaPagi.js"></script> <!-- <-Cambiar nombre -->
-
 <body> 
 <header class="shadow mb-4 bg-white">
 <?php 
@@ -27,7 +26,7 @@
 <?=	$DescTiSe?>	
 </caption> -->
 <div>
-	<form id="PideDato" method="post" name="formulario" onsubmit="validarFormulario()" action="EstaPagiApi.php">
+	<form id="PideDato" method="post" name="formulario" action="EstaPagiApi.php">
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
@@ -72,6 +71,6 @@
 			</table>
 	</form>	
 </div>
-	<script src="ValiForm.js"></script>
+	<script src="/Intranet/Js/ValiForm.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@
 			<td><?=$VC07?> </td>
 			<td>
 			  <?php if ($VC08) {?>
-				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 <i class="bi bi-file-arrow-down btn-Modificar NumeTrim"
 				 data-Cons='<?= $VC03?>' data-Trim='01' title="1er Trimestre"></i>
 			  <?php } else { ?>	
 				<i class="bi bi-file-earmark-break btn-Eliminar" title="1er trimestre"></i>
@@ -67,7 +67,7 @@
 			</td>
 			<td>
 			 <?php if ($VC09) {?>
-				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 <i class="bi bi-file-arrow-down btn-Modificar NumeTrim"
 				 data-Cons='<?= $VC03?>' data-Trim='02' title="2do Trimestre"></i>
 			  <?php } else { ?>	
 				<i class="bi bi-file-earmark-break btn-Eliminar" title="2do trimestre"></i>
@@ -75,7 +75,7 @@
 			</td>
 			<td>
 			 <?php if ($VC10) {?>
-				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 <i class="bi bi-file-arrow-down btn-Modificar NumeTrim"
 				 data-Cons='<?= $VC03?>' data-Trim='03' title="3er Trimestre"></i>
 			  <?php } else { ?>	
 				<i class="bi bi-file-earmark-break btn-Eliminar" title="3er trimestre"></i>
@@ -83,7 +83,7 @@
 			</td>
 			<td>
 			 <?php if ($VC11) {?>
-				 <i class="bi bi-file-earmark-arrow-up btn-Modificar NumeTrim"
+				 <i class="bi bi-file-arrow-down btn-Modificar NumeTrim"
 				 data-Cons='<?= $VC03?>' data-Trim='04' title="4to Trimestre"></i>
 			  <?php } else { ?>	
 				<i class="bi bi-file-earmark-break btn-Eliminar" title="4to trimestre"></i>

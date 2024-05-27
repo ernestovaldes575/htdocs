@@ -4,23 +4,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
-</head>
-<script language="JavaScript" src="PWRegistro.js"></script>
+	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="/IntraInvi/Css/style.css">
+</head>	
+<script language="JavaScript" src="Solicitud.js"></script>
 
 <body> 
- <header>
+<header>
   <?php 
    //Varibales Globales
-   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+   include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php');
    //Encabezado	
-   require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
+   require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaPrin.php'); 
   ?> 
  </header>
 <?php 
 //Carga de la Informacion	
 $CRUD = "GET";
-include 'PWRegistroApi.php';
+include 'SolicitudSERP.php';
 echo "Valor CRUD: $CRUD ";
 ?>
 <form method="post" name="formulario" onsubmit="validarFormulario()" action="PWRegistroApi.php">

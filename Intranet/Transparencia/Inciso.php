@@ -5,8 +5,9 @@ date_default_timezone_set('America/Mexico_City');
 
 $ArCook01 = $_COOKIE['CBusqMae'];
 $ABusqMae = explode("|", $ArCook01);
-//echo '$ABusqMae'.$ABusqMae.'<br>';
+echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0]; 
+$FracTrab = $ABusqMae[1]; 
 
 //Bandera de visualizar msg
 $BandMens = false;
@@ -42,7 +43,8 @@ if ( $ResuSql )
    
    $Carpeta = "A$NumeFrac$NumeInci";
    $Carpeta = ( $NumeSubi == "" )? $Carpeta : $Carpeta.$NumeSubi;
-   $ArCook02 = "$EjerTrab|$ConsFrac|$TrimTrab|".
+   $ArCook02 = "$EjerTrab|$FracTrab|". 
+	   		   "$ConsFrac|$TrimTrab|".
 	   		   "$NumeFrac|$NumeInci|$NumeSubi|$Nomativi|";
    setcookie("CBusqMae", "$ArCook02"); 
    

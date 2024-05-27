@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
-</head>
+	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="/IntraInvi/Css/style.css">
+</head>	
 <script language="JavaScript" src="PWRegistro.js"></script>
 
 <body> 
@@ -13,7 +14,7 @@
  <?php 
     require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php'); 
     //Encabezado	
-   require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaPrin.php'); 
+    require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaPrin.php'); 
   ?>
  </header>
 <?php 
@@ -25,10 +26,10 @@ include 'InvitadoApi.php';
 $RegrPagi = ( $TipoMovi == "A") ? "Anfitrion.php":"/IntraInvi/MenuIntranet.php"; 
 
 ?>
-<form method="post" name="PideDato" onsubmit="validarFormulario()" action="InvitadoApi.php">
-  <input type="hidden" name="C00" value="<?=$CRUD?>">
-  <input type="hidden" name="C01" value="<?=$TipoMovi?>">
-  <input type="hidden" name="C02" value="<?=$ConsBusq?>">
+<form id= "PideDato" name="PideDato" method="post" action="InvitadoApi.php">
+  <input type="hidden" id="SV00" name="C00" value="<?=$CRUD?>">
+  <input type="hidden" id="SV01" name="C01" value="<?=$TipoMovi?>">
+  <input type="hidden" id="SV02" name="C02" value="<?=$ConsBusq?>">
   <table width="48%" class="ListInfo01" with="50%">
     <caption>
       <?=$DescTiSe?>
@@ -43,100 +44,104 @@ $RegrPagi = ( $TipoMovi == "A") ? "Anfitrion.php":"/IntraInvi/MenuIntranet.php";
 	<tr>
 		<th>No. Anfitrion </th>
 		<td colspan="2">
-			<input type="text" name="C03" value="<?=$VC03?>" 
+			<input type="text" id="VC03" name="C03" value="<?=$VC03?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="No Anfitrion">
 		</td>
 	</tr>	
 	<tr>
 		<th>Razon Social</th>
 		<td colspan="2">
-			<input type="text" name="C04" value="<?=$VC04?>" 
+			<input type="text" id="VC04" name="C04" value="<?=$VC04?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Razon Social">
 		</td>
 	</tr>	
 	<tr>
 		<th>RFC </th>
 		<td colspan="2">
-			<input type="text" name="C05" value="<?=$VC05?>" 
+			<input type="text" id="VC05" name="C05" value="<?=$VC05?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="RFC">
 		</td>
 	</tr>	
 	<tr>
 		<th>CURP</th>
 		<td colspan="2">
-			<input type="text" name="C06" value="<?=$VC06?>" 
+			<input type="text" id="VC06" name="C06" value="<?=$VC06?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="CURP">
 		</td>
 	</tr>	
 	<tr>
 		<th>Calle</th>
 		<td colspan="2">
-			<input type="text" name="C07" value="<?=$VC07?>" 
+			<input type="text" id="VC07" name="C07" value="<?=$VC07?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Calle">
 		</td>
 	</tr>	
 	<tr>
 		<th>No. </th>
 		<td colspan="2">
-			<input type="text" name="C08" value="<?=$VC08?>" 
+			<input type="text" id="VC08" name="C08" value="<?=$VC08?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="No">
 		</td>
 	</tr>	
 	<tr>
 		<th>Colonia</th>
 		<td colspan="2">
-			<input type="text" name="C09" value="<?=$VC09?>" 
+			<input type="text" id="VC09" name="C09" value="<?=$VC09?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Colonia">
 		</td>
 	</tr>	
 	<tr>
 		<th>Delegacion</th>
 		<td colspan="2">
-			<input type="text" name="C10" value="<?=$VC10?>" 
+			<input type="text" id="VC10" name="C10" value="<?=$VC10?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Delegacion">
 		</td>
 	</tr>	
 	<tr>
 		<th>C.P.</th>
 		<td colspan="2">
-			<input type="text" name="C11" value="<?=$VC11?>" 
+			<input type="text" id="VC11" name="C11" value="<?=$VC11?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="C.P.">
 		</td>
 	</tr>	
 	<tr>
 		<th>Municipio</th>
 		<td colspan="2">
-			<input type="text" name="C12" value="<?=$VC12?>" 
+			<input type="text" id="VC12" name="C12" value="<?=$VC12?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Municipio">
 		</td>
 	</tr>	
 	<tr>
 		<th>Estado</th>
 		<td colspan="2">
-			<input type="text" name="C13" value="<?=$VC13?>" 
+			<input type="text" id="VC13" name="C13" value="<?=$VC13?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Estado">
 		</td>
 	</tr>	
 	<tr>
 		<th>Correo</th>
 		<td colspan="2">
-			<input type="text" name="C14" value="<?=$VC14?>" 
+			<input type="text" id="VC14" name="C14" value="<?=$VC14?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Correo">
 		</td>
 	</tr>	
 	<tr>
 		<th>Contraseña</th>
 		<td colspan="2">
-			<input type="text" name="C15" value="<?=$VC15?>" 
+			<input type="text" id="VC15" name="C15" value="<?=$VC15?>" 
 					onkeyup="checaMensaje(this.value)" placeholder="Contraseña">
 		</td>
 	</tr>		
 	<tr>
 		<td></td>
 		<td colspan="2" >
-			<input type="submit" name="Enviar" value="<?=$MesnTiMo?>" >
+			<button type="submit" name="Enviar" placeholder="Registrar"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
+							Registrar
+			</button>
 		</td>
 	</tr>	
-</table>	
+</table>
+<script src="/IntraInvi/js/ValiForm.js"></script>
 </body>
 </html>

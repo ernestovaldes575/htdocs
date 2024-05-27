@@ -47,7 +47,7 @@
 			<td><?=$VC04?></td>
 			<td><?=$VC05?></td>
 			<td data-titulo="Modificar:">
-	  		  <i class="bi bi-x-square btn-Eliminar Modi"
+	  		  <i class="bi bi-file-earmark-zip btn-Modificar Modi"
 				 data-CaBu='<?= $VC03?>' title="Facción"></i>
 			</td>
 		</tr>
