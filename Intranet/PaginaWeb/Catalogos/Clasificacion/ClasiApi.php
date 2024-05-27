@@ -7,16 +7,12 @@
 $ArCooki1 = $_COOKIE['CBuscEnc'];
 $ABuscEnc = explode("|", $ArCooki1);
 $TipoClas = $ABuscEnc[0]; 
-
 //********************************************************************
 //Informacion de la Lista
 //Bandera de visualizar msg
 $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
-
-
-
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
