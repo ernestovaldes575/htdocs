@@ -11,8 +11,8 @@ if ( isset($_GET["Param0"]) )
 //Ingresar cookie de Tipo de Clasificacion
 if ( isset($_GET["Param1"]) )
  { $TipoClas= $_GET["Param1"];
-   $ArCookie = "$TipoClas|"
-	setcookie("CBuscEnc", "$ArCookie");
+   $ArCookie = "$TipoClas|";
+	setcookie("CBuscEnc", $ArCookie);
  }
 //Carga el registro para Consulta
 $InstSql = 	"SELECT CCLClave, CCLDescripcion ". //Cambiar campos
