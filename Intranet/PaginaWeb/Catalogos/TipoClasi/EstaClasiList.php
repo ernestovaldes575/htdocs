@@ -55,12 +55,20 @@
 				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
 				<?php } ?>
 			</td>
+
 			<td data-titulo="Editar: ">
 				<?php if($Modi == "A" ){ ?>
 					<i class="bi bi-pencil-square btn-Modificar Modi" 
 					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
 				<?php } ?>
 			</td>
+			<td data-titulo="Clasifica:">
+	  			<?php if($Baja == "A"  ) { ?>
+				<i class="bi bi-x-square btn-1 Clasi
+				data-CaBu='<?= $TipoDocu?>' title="Clasifica"></i>
+				<?php } ?>
+			</td>
+
 		</tr>
 		<?php	} ?> 
 	</table>

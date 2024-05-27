@@ -8,10 +8,17 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
+	
+if ( isset($_GET["Param1"]) )
+ { $TipoClas= $_GET["Param1"];
+   $ArCookie = "$TipoClas|"
+	setcookie("CBuscEnc", "$ArCookie");
+ }
 //Carga el registro para Consulta
-$InstSql = 	"SELECT CCLTipoDocu,CCLClave, CCLDescripcion ". //Cambiar campos
-			"FROM   ccclasifica ".			//Cambiar tabla
-			"ORDER BY CCLTipoDocu";			//Cambiar campo
+$InstSql = 	"SELECT CCLClave, CCLDescripcion ". //Cambiar campos
+			"FROM   ccclasifica ".
+			"WHERE CCLTipoDocu = '$TipoClas' "			//Cambiar tabla
+			"ORDER BY CCLClave";			//Cambiar campo
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 

@@ -8,7 +8,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-
 if( isset($_GET['PaAMB01']) != ''){	
 	$TipoMovi = $_GET["PaAMB01"];	#Tipo de Movimiento 
 	$CampBusq = $_GET["PaAMB02"];	#Campo de busqueda
