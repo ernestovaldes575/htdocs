@@ -8,7 +8,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-
 if( isset($_GET['PaAMB01']) != ''){	
 	$TipoMovi = $_GET["PaAMB01"];	#Tipo de Movimiento 
 	$CampBusq = $_GET["PaAMB02"];	#Campo de busqueda
@@ -18,7 +17,8 @@ $CRUD = "GET";
 //Carga el registro para Consulta
 $InstSql = 	"SELECT CCLClave AS Clave, CCLDescripcion AS Descri ". //Cambiar campos
 			"FROM   ccclasifica ".  //Cambiar tabla
-			"WHERE  CCLClave = '$CampBusq' "; //Cambiar campo
+      "WHERE CCTipoClas = '$TipoClas' AND 
+						  CCLClave = '$CampBusq'  ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
