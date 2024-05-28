@@ -6,15 +6,15 @@ $Ruta = $ASubiArc[1];
 $Nomb = $ASubiArc[2]; 
 $Pagi = $ASubiArc[3]; 
 
-      echo '$Tipo'.$Tipo.'<br>';
-      echo '$Ruta'.$Ruta.'<br>';
-      echo '$Nomb'.$Nomb.'<br>';
-      echo '$Pagi'.$Pagi.'<br>';
+echo "Tipo: $Tipo <br>";
+echo "Ruta: $Ruta <br>";
+echo "Nomb: $Nomb <br>";
+echo "Pagi: $Pagi <br>";
 
 
-   if(isset($_FILES['image'])){
+if (isset($_FILES['image'])){
 
-      $ArCooki4 = $_COOKIE['CSubiArc'];
+   $ArCooki4 = $_COOKIE['CSubiArc'];
       $ASubiArc = explode("|", $ArCooki4);
       $Tipo = $ASubiArc[0]; 
       $Ruta = $ASubiArc[1]; 

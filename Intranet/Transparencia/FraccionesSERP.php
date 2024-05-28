@@ -2,11 +2,6 @@
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranspa.php');
 
-$ArCook01 = $_COOKIE['CBusqMae'];
-$ABusqMae = explode("|", $ArCook01);
-$EjerTrab = $ABusqMae[0]; 
-$FracTrab = $ABusqMae[1]; 
-
 //********************************************************************
 //Informacion de la Lista
 $BandMens = false;
@@ -16,7 +11,7 @@ if ( isset($_GET["Param0"]) )
 //Estado de la revision
 if ( isset($_GET["PaAMB01"]) ){
 	$EjerTrab = $_GET["PaAMB01"];
-	$ArCooki1 = "$EjerTrab|$FracTrab|";
+	$ArCooki1 = "$EjerTrab|";
 	setcookie("CBusqMae", "$ArCooki1");
 }
 

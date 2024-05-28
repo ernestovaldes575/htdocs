@@ -22,8 +22,11 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td width="17%"></td>
-			<td width="68%"></td>
+			<td>Ejercicio: <?=$EjerTrab?></td>
+			<td>Fraccion:
+            <?=$NumeFrac?></td>
+			<td colspan="2">Inc
+		    iso: <?=$NumeInci?><?=$NumeSubi?> <?=$Nomativi?></td>
 			<td colspan="2">
 			  <a href="../Fracciones.php" 
 					class="btn-Regresar">
@@ -31,25 +34,30 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
-			<th>Titulo</th>
-			<th>Descripción</th>
-			<th width="7%">
+			<th>No</th>
+			<th>Fecha</th>
+			<th width="15%">Fecha</th>
+			<th width="41%">Descripción</th>
+			<th width="6%">
 			 <?php 
 					if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
-			<th width="8%">&nbsp;</th>
+			<th width="12%">&nbsp;</th>
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03=$RegiTabl['AConsecutivo'];
-			  $VC04=$RegiTabl['AFechaInicio'];
-			  $VC05=$RegiTabl['AFechaTermino'];
-			  $VC06=$RegiTabl['ADenominacion'];
+			  $VC04=$RegiTabl['ANumeRegi'];
+			  $VC05=$RegiTabl['AFechaInicio'];
+			  $VC06=$RegiTabl['AFechaTermino'];
+			  $VC07=$RegiTabl['ADenominacion'];
 		?>
 		<tr>
-			<td><?=$VC04?></td>
-			<td><?=$VC05?></td>
+			<td width="13%"><?=$VC04?></td>
+			<td width="13%"><?=$VC05?></td>
+			<td><?=$VC06?></td>
+			<td><?=$VC07?></td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

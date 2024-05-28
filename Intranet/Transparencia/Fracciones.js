@@ -8,7 +8,7 @@ function (event) {
       }
 else if (event.target.classList.contains('NumeTrim')) {
         ConsBusq = event.target.getAttribute('data-Cons');
-		TrimBusq = event.target.getAttribute('data-Trim');
+	    TrimBusq = event.target.getAttribute('data-Trim');
         window.location.href = 'Inciso.php?PaAMB01='+ConsBusq+'&PaAMB02='+TrimBusq;
       } 
 });

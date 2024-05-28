@@ -2,9 +2,12 @@
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
 
-$FracTrab = $ABusqMae[1];	//Fraccion de trabajo 92,93
+$TrimTrab = $ABusqMae[1];	//Trimestre de trabajo 
 $ConsFrac = $ABusqMae[2];	//Consecutivo de la Fraccion del Unidad
-$TrimTrab = $ABusqMae[3];	//Trimestre de trabajo 
+$FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
+$NumeInci = $ABusqMae[4];	//Numero Inciso
+$NumeSubi = $ABusqMae[5];	//Numero de Subinciso
+$Nomativi = $ABusqMae[6];	//Normatividad
 
 //********************************************************************
 //Informacion de la Lista
@@ -65,8 +68,7 @@ else
     $VC03 = $ResuSql['Clave'];
   }
 
-$RutaArch = $_SERVER['DOCUMENT_ROOT'].
-			"/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
+$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
