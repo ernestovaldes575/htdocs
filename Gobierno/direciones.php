@@ -1,4 +1,7 @@
-<?php include 'Components/Encabezado.php'?>
+<?php 
+    $Titulo = 'Directores';
+    include 'Components/Encabezado.php'
+?>
 
 <?php
     include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php')
