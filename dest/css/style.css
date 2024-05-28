@@ -701,7 +701,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid, .encabezado-prin .logo {
+.img-fluid {
   max-width: 100%;
   height: auto;
 }
@@ -12386,7 +12386,7 @@ textarea.form-control-lg {
 }
 
 .encabezado-prin .logo {
-  width: 8em;
+  width: 15em;
 }
 
 .formulario {

@@ -3,8 +3,7 @@
 .encabezado-prin{
     @extend .d-flex, .justify-content-between;
     .logo{
-        @extend .img-fluid;
-        width: 8em;  
+        width: 15em; 
     }
 }
 .formulario{
