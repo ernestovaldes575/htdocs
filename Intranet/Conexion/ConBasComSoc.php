@@ -1,4 +1,4 @@
-<?php
+	<?php
 	//!Servidor 
 	// $contraseña = "";
 	// $user = "difzinac_intranet";

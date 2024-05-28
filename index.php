@@ -204,7 +204,7 @@
         </div>
     </main>
 
-    <?php include 'EstrPagi/Footer.php'?> 
+
 
     <script src="/scripts/app.js"></script>
     <script src="./swiperjs/swiper-bundle.min.js"></script>
@@ -215,5 +215,6 @@
     </script>
     <script src="./scripts/anime.min.js"></script>  
     <script src="/scripts/animate.js"></script>
+    <?php include 'Components/Footer.php';?>
 </body>
 </html>
