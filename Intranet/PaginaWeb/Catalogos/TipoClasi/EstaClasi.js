@@ -18,4 +18,9 @@ else if (event.target.classList.contains('Elim')) {
         //Cambiar nombre archivo
 	    window.location.href = 'EstaClasi.php?PaAMB01=B&PaAMB02='+ClaEsPa;
     }    
+else if (event.target.classList.contains('Clasi')) {
+        ClaEsPa = event.target.getAttribute('data-CaBu');					
+      //Cambiar nombre
+      window.location.href = '../Clasificacion/ClasiList.php?Param1='+ClaEsPa;
+    }
 });

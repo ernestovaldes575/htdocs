@@ -3,19 +3,21 @@
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
 
-$FracTrab = $ABusqMae[1];
-$ConsFrac = $ABusqMae[2];
-$TrimTrab = $ABusqMae[3];
-$NumeFrac = $ABusqMae[4];
-$NumeInci = $ABusqMae[5];
-$NumeSubi = $ABusqMae[6];
+$TrimTrab = $ABusqMae[1];	//Trimestre de trabajo
+$ConsFrac = $ABusqMae[2];	//Conssecutivo de la Fraccion
+$NumeFrac = $ABusqMae[3];	//Numero Fraccion
+$NumeInci = $ABusqMae[4];	//Numero del Inciso
+$NumeSubi = $ABusqMae[5];	//Numero del Subinciso
+
+$CarpFrac = "A$NumeFrac$NumeInci";
+$CarpFrac = ($NumeSubi != "" )? $CarpFrac."-$NumeSubi": $CarpFrac;
 
 setcookie("CSubiArc", "",time()-1);
 setcookie("CImpoArc", "",time()-1);
 
 if( trim($_GET['Param1']) != ''){
     $ConsInci = $_GET["Param1"];	#Consecutivo de la noticia a trabajar}
-	$NumeRegi = $_GET["Param1"]; 
+	$NumeRegi = $_GET["Param2"]; 
 }
 
 $ArCook02  = "$ConsInci|$NumeRegi|";
@@ -27,11 +29,10 @@ setcookie("CImpoArc", "$ArCook02",time() + (60*60),'/');
    Param3:	Archivo con extencion
    Param4:	Redireccionara a otro archivo SinP.- Sin redireccionar pagina */
 $Tipo = '1';
-//C:\xampp\htdocs\ExpeElectroni\105\2024\Transparen\92\01
 $Ruta = $_SERVER['DOCUMENT_ROOT'].
-		"/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
-$Nomb = "$ConsNoti.'_'.$ArchTrab";
-$Pagi = "/Intranet/Transparencia/A9203/ImagPagiSalvArch.php";
+		"/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$NumeFrac/$TrimTrab/";
+$Nomb = "$CarpFrac-$NumeRegi-$ConsInci";
+$Pagi = "/Intranet/Transparencia/$CarpFrac/URLSalvArch.php";
 $ArCook03  = $Tipo .'|'. $Ruta .'|'. $Nomb .'|' .$Pagi. '|';
 setcookie("CSubiArc", "$ArCook03",time() + (60*60),'/');
 
@@ -56,5 +57,5 @@ if ( isset( $_COOKIE['CSubiArc']) )
     echo '$Nomb: '.$Nomb1.'<br>';
     echo '$Pagi: '.$Pagi1.'<br>';
  }    
-header('location: /Intranet/CargArch/SubirArchD.php');
+header('location: /Intranet/CargArch/SubirArch.php');
 ?>

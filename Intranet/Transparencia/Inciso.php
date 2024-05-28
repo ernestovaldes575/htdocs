@@ -7,7 +7,6 @@ $ArCook01 = $_COOKIE['CBusqMae'];
 $ABusqMae = explode("|", $ArCook01);
 echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0]; 
-$FracTrab = $ABusqMae[1]; 
 
 //Bandera de visualizar msg
 $BandMens = false;
@@ -43,9 +42,9 @@ if ( $ResuSql )
    
    $Carpeta = "A$NumeFrac$NumeInci";
    $Carpeta = ( $NumeSubi == "" )? $Carpeta : $Carpeta.$NumeSubi;
-   $ArCook02 = "$EjerTrab|$FracTrab|". 
-	   		   "$ConsFrac|$TrimTrab|".
-	   		   "$NumeFrac|$NumeInci|$NumeSubi|$Nomativi|";
+   $ArCook02 = "$EjerTrab|$TrimTrab|". 
+	   		   "$ConsFrac|$NumeFrac|".
+	   		   "$NumeInci|$NumeSubi|$Nomativi|";
    setcookie("CBusqMae", "$ArCook02"); 
    
    header( "Location: $Carpeta/InformaList.php" );

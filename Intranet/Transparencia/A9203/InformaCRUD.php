@@ -2,8 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
 
+$TrimTrab = $ABusqMae[1];	//Trimestre de trabajo 
 $ConsFrac = $ABusqMae[2];	//Consecutivo de la Fraccion del Unidad
-$TrimTrab = $ABusqMae[3];	//Trimestre de trabajo 
+$FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 
 //********************************************************************
 //Informacion de la Lista
