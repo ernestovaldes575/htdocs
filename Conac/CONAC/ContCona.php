@@ -1,4 +1,3 @@
-
 <section class="contenedor-conac container-sm mb-5 mt-5">
     <div class="contenedor-conac-centrar">
         <h2 class="text-uppercase text-success fw-bolder text-center fs-1 mb-5">
@@ -6,7 +5,7 @@
         </h2>
         <div class="accordion secondary-focus shadow-lg" id="accordionPanelsStayOpenExample">        
         <?php $QuerTrab = '01';
-                include('../Recursos/Query/ConacQuery.php');
+                include('ConacQuery.php');
                 foreach($ResuEjer as $RegTab01){
                         $EjerTrab = $RegTab01[0];?>
         <div class="accordion-item rounded" >
@@ -23,7 +22,7 @@
             <div class="accordion-body">
                 <?php   
                     $QuerTrab = '02';
-                    include('../Recursos/Query/ConacQuery.php');
+                    include('ConacQuery.php');
                     foreach($ResuPeri as $RegTab02){   
                             $ClavPeri = $RegTab02[0];
                             $DescPeri = $RegTab02[1];   
@@ -44,7 +43,7 @@
                         <div class="accordion-body">
                             <?php
                                 $QuerTrab = '03';
-                                include('../Recursos/Query/ConacQuery.php');
+                                include('ConacQuery.php');
                                 foreach($ResuClIn as $RegTab03){
                                         $ClavClIn = $RegTab03[0];
                                         $DescClIn = $RegTab03[1];
@@ -62,7 +61,7 @@
                                     <div class="accordion-body">
                                         <?php
                                             $QuerTrab = '04';
-                                            include('../Recursos/Query/ConacQuery.php');
+                                            include('ConacQuery.php');
                                             foreach($ResuCona as $RegTab04){
                                                     $RutaOrig = $RegTab04[0];
                                                     $NombArch = $RegTab04[1];

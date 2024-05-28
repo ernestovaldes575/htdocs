@@ -118,9 +118,12 @@
 						</select>
 					</td>
 				</tr>	
-				<?php if ( $TipoMovi != "A" && ( $VC08 != 'N' && $VC08 != 'L' ) ) { ?>
+				<?php if($TipoMovi == "A" ){ ?>
+						<input type="hidden" name="C08" id="VS08" value="">
+						<input type="hidden" name="C09" id="VS09" value="">
+				<?php } else if ($VC08 != 'N' && $VC08 != 'L' ) { ?>
 				<tr>
-					<th>Documento a mostrar <?=$VC08?> </th>
+					<th>Documento a mostrar <?=$VC08?></th>
 					<td><!-- Ayuda imagen -->
 						<a href="javascript:window.open('PWAyuda.php?Ayuda02=S','','width=500,height=300,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<img src="/Intranet/ComSocial/Imagen/BtnInfo01.jpg" Title="Subir"/>

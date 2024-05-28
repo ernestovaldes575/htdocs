@@ -1,7 +1,0 @@
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\1.Estado Analitico de Egresos por Clasificacion Administrativa.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\2.Estado Analitico de Egresos por Clasificacion Economica.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\3.Estado Analitico de Egresos por Objeto de Gasto.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\4.Estado Analitico de Egresos por Clasificacion Funcional.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\5.Estado Analitico del Ingreso.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\6.Endeudamiento Neto e Intereses de la Deuda.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2021\4T\presupuestaria\lista_archivos_ruta.txt

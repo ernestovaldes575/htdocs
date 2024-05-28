@@ -9,12 +9,13 @@
         <div class="swiper-wrapper">
             <?php
             include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');
-
+                $BandInst = true; 
                 $InstSql =  "SELECT PEjercicio, PMesRegi, PImagenPagi, CTDCarpeta ".
                             "FROM ptpagina ". 
                             "INNER JOIN pctipodocu ON CTDClave = PTipoDocu ".
                             "WHERE PAyuntamiento = '$ClavAyun' AND PTipoDocu = '01' AND PEstado = 'A'";
-            //echo($InstSql);
+            if($BandInst) echo("1)<br>$InstSql<br>");
+                            
             $RespSql = $ConeBase->prepare($InstSql);     
             $RespSql->execute();
             $ResuEjer = $RespSql->fetchAll();
@@ -24,7 +25,7 @@
                     $ImagTrab = $RegTab01[2];
                     $CarpImag = $RegTab01[3];
                     $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$ImagTrab"; 
-                    // echo "1) $RutaArch"
+                    echo "1) $RutaArch"
             ?>
             <div class="swiper-slide">
                 <img src="<?=$RutaArch?>" alt="Carrusel de Imagenes">

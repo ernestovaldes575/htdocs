@@ -3,11 +3,16 @@
         <div class="swiper-wrapper">
             <?php
             include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');
+            $BandInst = false;
+
             $InstSql =  "SELECT PEjercicio, PMesRegi, PImagenPagi, ".
                                 "PDocuLiga, PDocumento, PLiga, PVentRefe, CTDCarpeta  ".
                         "FROM ptpagina ".
                         "INNER JOIN pctipodocu ON CTDClave = PTipoDocu ".
                         "WHERE PAyuntamiento = $ClavAyun AND PTipoDocu = '02' AND PEstado = 'A'";
+
+            if($BandInst) echo "1)<br>$InstSql<br>";
+            
             $RespSql = $ConeBase->prepare($InstSql);
             $RespSql->execute();
             $ResuEjer = $RespSql->fetchAll();
@@ -20,10 +25,13 @@
                     $LigaTrab = $RegTab01['PLiga'];
                     $VentRefe = $RegTab01['PVentRefe']; //N NADA, P PAGINA, V VENTANA
                     $CarpImag = $RegTab01['CTDCarpeta'];
+
                     $ImagPagi = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$ImagTrab";
+                    if($BandInst) echo "2)<br>$ImagPagi<br>";
                     $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpImag/$DocuTrab";
+
                     // echo "$RutaArch";
-                    // echo($DocuLiga);
+                    // echo  "<br>$ImagPagi<br>";
                     // echo($VentRefe);
                     $InicHtml = '';
                     $TermHtml = '';

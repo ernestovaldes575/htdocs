@@ -18,13 +18,13 @@
     
     <?php include 'EstrPagi/Transparencia.php'?>
     
-    <!-- <section class="contenedor--titulo">
+    <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
             <h2 class="contenedor--titulo--posicion--contenido">
                 Ultimas Noticias
             </h2>
         </div>
-    </section> -->
+    </section>
     <?php 
         // include 'EstrPagi/Noticias.php'
     ?>
@@ -55,15 +55,15 @@
     </section>
     <?php include 'EstrPagi/SitiInte.php'?>
 
-    <!-- <section class="contenedor--titulo">
+    <section class="contenedor--titulo">
         <div class="contenedor--titulo--posicion">
             <h2 class="contenedor--titulo--posicion--contenido">
                 Redes Sociales
             </h2>
         </div>
-    </section>-->
+    </section>
     <?php 
-        // include 'EstrPagi/RedeSoci.php'
+        include 'EstrPagi/RedeSoci.php'
     ?>
 
     <?php include 'EstrPagi/Footer.php'?> 
