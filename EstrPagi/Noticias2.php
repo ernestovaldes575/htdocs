@@ -1,5 +1,4 @@
 <?php
-    
     include_once('Recursos/Consultas/QuerNoti.php')
 ?>
 
