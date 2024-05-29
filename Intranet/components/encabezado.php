@@ -5,5 +5,5 @@
 	<title><?php echo"$Titulo";?></title>
 	<link rel="stylesheet" href="/dest/css/style.css">
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="shortcut icon" href="../../img/logo/LOGO-PRINCIPAL.png">
+	<link rel="shortcut icon" href="https://www.simga.com.mx/img/SIMGA03.png">
 </head>

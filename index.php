@@ -6,8 +6,8 @@
     include 'Components/menuSecu.php';
     include 'Components/RedesSociales.php';
 ?>
-    <main class="container">
-        <div class="container-center container-grid">
+    <main class="contenedor">
+        <div class="contenedor-centrar contenedor-grid">
             <article class="article__carrusel item-1">
                 <div class="swiper" id="swiper-2">
                     <div class="swiper-wrapper">
@@ -79,9 +79,9 @@
             </article>
         </div>
     </main>
-    <main class="container">
-        <div class="container-center">
-            <div class="container-title">
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-title">
                 <h2 class="titulo">
                     Transparencia
                 </h2>
@@ -105,16 +105,15 @@
         </div>
     </section>  
     
-    <main class="container">
-        <div class="container-center">
-            <div class="container-title">
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-title">
                 <h2 class="titulo">
                     Ultimas Noticias
                 </h2>
             </div>
         </div>
     </main> 
-
     <main class="card">
         <div class="contenedor__principal ">
             <article class="card__content__grid">
@@ -164,9 +163,9 @@
     </main>
 
     <!-- Avisos -->
-    <main class="container">
-        <div class="container-center">
-            <div class="container-title">
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-title">
                 <h2 class="titulo">
                     Avisos
                 </h2>
@@ -253,7 +252,7 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div> 
-</article>
+            </article>
             <article class="item2 item2-grid">
                 <div class="emg">
                     <img src="../img/tel2.png" alt="">
@@ -284,9 +283,9 @@
         </div>
     </main>
 
-    <main class="container">
-        <div class="container-center">
-            <div class="container-title">
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-title">
                 <h2 class="titulo">
                     Sitios de Interes
                 </h2>
@@ -294,9 +293,10 @@
         </div>
     </main>
     <?php include 'EstrPagi/SitiInte.php'?>
-    <main class="container">
-        <div class="container-center">
-            <div class="container-title">
+    
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-title">
                 Redes Sociales
             </div>
         </div>
@@ -304,11 +304,11 @@
     <main class="contenedor__redes__sociales" id="facebook">
         <div class="contenedor__principal">
             <article>
-                <div class="fb-page" data-href="https://www.facebook.com/ManuelVilchisV" data-tabs="timeline"  data-height="610" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ManuelVilchisV" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ManuelVilchisV">Manuel Vilchis Viveros</a></blockquote>
+                <div class="fb-page" data-href="https://www.facebook.com/ManuelVilchisV" data-tabs="timeline"  data-height="610" data-small-header="false" data-adapt-contenedor-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ManuelVilchisV" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ManuelVilchisV">Manuel Vilchis Viveros</a></blockquote>
                 </div>
             </article>
             <article>
-                <div class="fb-page" data-href="https://www.facebook.com/AyuntamientoZinacantepecOficial" data-tabs="timeline" data-width="" data-height="610" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/AyuntamientoZinacantepecOficial" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AyuntamientoZinacantepecOficial">Ayuntamiento de Zinacantepec 2022-2024</a></blockquote>
+                <div class="fb-page" data-href="https://www.facebook.com/AyuntamientoZinacantepecOficial" data-tabs="timeline" data-width="" data-height="610" data-small-header="false" data-adapt-contenedor-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/AyuntamientoZinacantepecOficial" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AyuntamientoZinacantepecOficial">Ayuntamiento de Zinacantepec 2022-2024</a></blockquote>
                 </div>
             </article>
         </div>

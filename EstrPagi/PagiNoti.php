@@ -3,9 +3,8 @@
 $BandMens = false;
     if (isset($_GET["Param0"]) )
     $BandMens = true;
-    
     //?Conexion
-    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
     $QuerNoti = '01';
     include 'NoticiasQuery.php'
 ?>
