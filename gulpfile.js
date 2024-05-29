@@ -7,11 +7,12 @@ const autoprefixer = require('autoprefixer');
 
 function css(done){
     src('src/scss/app.scss')
-        .pipe(sass())// {outputStyle:'expanded'}Compilamos SASS
+        .pipe(sass({outputStyle:'compact'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('build/css'))//Generamos los archivos
     done()
 }
+
 function bootstrap(done){
     src('sass/scss/style.scss')
         .pipe(sass())

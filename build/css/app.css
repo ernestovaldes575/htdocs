@@ -506,6 +506,30 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 } */
+.container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.container .container-center {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .container-center .container-title {
+  margin: 2em 0;
+}
+.container .container-center .titulo {
+  font-size: 3.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+  font-weight: 600;
+  color: var(--Slate-800);
+  overflow: hidden;
+}
+
 .footer {
   width: 100%;
   display: grid;
@@ -587,4 +611,9 @@ body {
   .footer .enlaces {
     grid-column: 2/2;
   }
+}
+.container .container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
 }

@@ -6,8 +6,8 @@
     include 'Components/menuSecu.php';
     include 'Components/RedesSociales.php';
 ?>
-    <main class="main">
-        <div class="contenedor__principal contenedor__grid">
+    <main class="container">
+        <div class="container-center container-grid">
             <article class="article__carrusel item-1">
                 <div class="swiper" id="swiper-2">
                     <div class="swiper-wrapper">
@@ -79,13 +79,15 @@
             </article>
         </div>
     </main>
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido animate">
-                Transparencia
-            </h2>
+    <main class="container">
+        <div class="container-center">
+            <div class="container-title">
+                <h2 class="titulo">
+                    Transparencia
+                </h2>
+            </div>
         </div>
-    </section>
+    </main>
     <section class="contenedor--transparencia">
         <div class="contenedor--transparencia--contenido">
             <a href="https://www.zinacantepec.gob.mx/conac.php" class="shadow-xl bg-green-1000">
@@ -103,13 +105,15 @@
         </div>
     </section>  
     
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Ultimas Noticias
-            </h2>
+    <main class="container">
+        <div class="container-center">
+            <div class="container-title">
+                <h2 class="titulo">
+                    Ultimas Noticias
+                </h2>
+            </div>
         </div>
-    </section>
+    </main> 
 
     <main class="card">
         <div class="contenedor__principal ">
@@ -160,13 +164,15 @@
     </main>
 
     <!-- Avisos -->
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Avisos
-            </h2>
+    <main class="container">
+        <div class="container-center">
+            <div class="container-title">
+                <h2 class="titulo">
+                    Avisos
+                </h2>
+            </div>
         </div>
-    </section>
+    </main> 
 
     <main class="main__secondary">
         <div class="contenedor__principal">
@@ -278,22 +284,23 @@
         </div>
     </main>
 
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Sitios de Interes
-            </h2>
+    <main class="container">
+        <div class="container-center">
+            <div class="container-title">
+                <h2 class="titulo">
+                    Sitios de Interes
+                </h2>
+            </div>
         </div>
-    </section>
+    </main>
     <?php include 'EstrPagi/SitiInte.php'?>
-
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
+    <main class="container">
+        <div class="container-center">
+            <div class="container-title">
                 Redes Sociales
-            </h2>
+            </div>
         </div>
-    </section>
+    </main>
     <main class="contenedor__redes__sociales" id="facebook">
         <div class="contenedor__principal">
             <article>

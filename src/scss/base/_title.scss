@@ -1,0 +1,15 @@
+.container{
+    .container-center{
+        .container-title{
+            margin: 2em 0;
+        }
+        .titulo{
+            font-size: 3.5em;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+            font-weight: 600;
+            color: var(--Slate-800);
+            overflow: hidden;
+        }
+    }
+}
