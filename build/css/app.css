@@ -518,10 +518,10 @@ body {
   justify-content: center;
 }
 
-.contenedor .contenedo-centrar .contenedor-titulo {
+.contenedor .contenedor-centrar .contenedor-titulo {
   margin: 2em 0;
 }
-.contenedor .contenedo-centrar .titulo {
+.contenedor .contenedor-centrar .titulo {
   font-size: 3.5em;
   text-transform: uppercase;
   text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
