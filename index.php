@@ -1,11 +1,18 @@
-<?php 
-    $ClavAyun = '105';
-    $Title = "Zinacantepec";
-    include 'Components/HeadHtml.php';
-    include 'Components/menuPrin.php';
-    include 'Components/menuSecu.php';
-    include 'Components/RedesSociales.php';
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+        $ClavAyun = '105';
+        $Titulo = "Zinacantepec";
+        include 'Components/HeadHtml.php';
+    ?>
+</head>
+    <body>
+        <?php
+            include 'Components/menuPrin.php';
+            include 'Components/menuSecu.php';
+            include 'Components/RedesSociales.php';
+        ?>
     <main class="contenedor">
         <div class="contenedor-centrar contenedor-grid">
             <article class="article__carrusel item-1">
@@ -81,7 +88,7 @@
     </main>
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="contenedor-title">
+            <div class="contenedor-titulo">
                 <h2 class="titulo">
                     Transparencia
                 </h2>
@@ -107,7 +114,7 @@
     
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="contenedor-title">
+            <div class="contenedor-titulo">
                 <h2 class="titulo">
                     Ultimas Noticias
                 </h2>
@@ -145,7 +152,7 @@
                     </div>
                     <div class="card__Not">
                         <a href="#">
-                            <span class="title"><?=$TituNoti?></span>
+                            <span class="titulo"><?=$TituNoti?></span>
                         </a>
                         <p class="card__content__text">
                             <?=$DescNoti?>
@@ -165,7 +172,7 @@
     <!-- Avisos -->
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="contenedor-title">
+            <div class="contenedor-titulo">
                 <h2 class="titulo">
                     Avisos
                 </h2>
@@ -285,7 +292,7 @@
 
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="contenedor-title">
+            <div class="contenedor-titulo">
                 <h2 class="titulo">
                     Sitios de Interes
                 </h2>
@@ -296,7 +303,7 @@
     
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="contenedor-title">
+            <div class="contenedor-titulo">
                 Redes Sociales
             </div>
         </div>

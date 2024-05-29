@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo"$Title"?></title>
+    <title><?php echo"$Titulo"?></title>
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/build/css/app.css">
     <link rel="shortcut icon" href="/img/logo/LOGO-PRINCIPAL.png"/>
@@ -27,6 +24,3 @@
     <link rel="stylesheet" href="/layouts/AvisoPrivacidad.css">
     <link rel="stylesheet" href="/FrameworkCSS/Framework.css">
     <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-<body class="">
-    

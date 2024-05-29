@@ -43,5 +43,5 @@
     </div>
 </footer>
 <div class="footer-2 uppercase">
-    ©Copyright 2022 | Ayuntamiento de Zinacantepec
+    ©Copyright  | Ayuntamiento de Zinacantepec
 </div>
