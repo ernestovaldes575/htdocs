@@ -1,9 +1,4 @@
 @import url(Colores.css);
-.main {
-    width:100%;
-    display:grid;
-    place-items:center
-}
 .main .contenedor__grid {
     display:grid;
     grid-template-columns:repeat(3,1fr);
