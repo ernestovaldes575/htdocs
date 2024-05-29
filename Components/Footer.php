@@ -43,5 +43,5 @@
     </div>
 </footer>
 <div class="footer-2 uppercase">
-    ©Copyright  | Ayuntamiento de Zinacantepec
+    ©Copyright <?php $año = date('Y'); echo $año;?> | Ayuntamiento de Zinacantepec
 </div>
