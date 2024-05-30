@@ -1,4 +1,4 @@
-//Importamos los datos de la liberias que vamos ocupando
+//Importamos los datos de las liberias que vamos ocupando
 const {src,dest,watch,series} = require('gulp');
 //Exportamos SASS
 const sass = require('gulp-sass')(require('sass'));
@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 function css(done){
     src('src/scss/app.scss')
-        .pipe(sass())// {outputStyle:'expanded'}Compilamos SASS
+        .pipe(sass({outputStyle:'compressed'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('build/css'))//Generamos los archivos
     done()

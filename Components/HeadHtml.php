@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/layouts/Imagenes.css">
     <link rel="stylesheet" href="/layouts/MenuCont.css">
     <link rel="stylesheet" href="/layouts/Transparencia.css">
-
     <link rel="stylesheet" href="/layouts/Main.css">
     
     <link rel="stylesheet" href="/layouts/Noticias.css">
