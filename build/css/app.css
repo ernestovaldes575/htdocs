@@ -521,13 +521,26 @@ body {
 .contenedor .contenedor-centrar .contenedor-titulo {
   margin: 2em 0;
 }
-.contenedor .contenedor-centrar .titulo {
+.contenedor .contenedor-centrar .contenedor-titulo .titulo {
   font-size: 3.5em;
   text-transform: uppercase;
   text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
   font-weight: 600;
   color: var(--Slate-800);
   overflow: hidden;
+}
+.contenedor .contenedor-centrar .contenedor-titulo .titulo {
+  font-size: 3.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+  font-weight: 600;
+  color: var(--Slate-800);
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .contenedor .contenedor-centrar .contenedor-titulo .titulo {
+    font-size: 2em;
+  }
 }
 
 .footer {

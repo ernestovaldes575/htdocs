@@ -1,15 +1,33 @@
+@use 'base/mixins' as m;
 .contenedor{
     .contenedor-centrar{
         .contenedor-titulo{
             margin: 2em 0;
-        }
-        .titulo{
-            font-size: 3.5em;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
-            font-weight: 600;
-            color: var(--Slate-800);
-            overflow: hidden;
+            .titulo{
+                font-size: 3.5em;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+                font-weight: 600;
+                color: var(--Slate-800);
+                overflow: hidden;
+            }
+            .titulo{
+                font-size: 3.5em;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+                font-weight: 600;
+                color: var(--Slate-800);
+                overflow: hidden;
+                @include m.telefono{
+                    font-size: 1.5em;
+                }
+                @include m.tablet{
+                    font-size: 2.5em;
+                }
+                @include m.desktop{
+                    font-size: 3em;
+                }
+            }
         }
     }
 }
