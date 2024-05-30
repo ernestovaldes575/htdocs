@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/layouts/Transparencia.css">
 
     <link rel="stylesheet" href="/layouts/Main.css">
+    
     <link rel="stylesheet" href="/layouts/Noticias.css">
     <link rel="stylesheet" href="/layouts/CardNot.css">
     <link rel="stylesheet" href="/layouts/Interes.css">
