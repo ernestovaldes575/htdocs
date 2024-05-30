@@ -1,3 +1,4 @@
+@use 'mixins' as m;
 .contenedor{
     .contenedor-centrar{
         .contenedor-titulo{
@@ -17,6 +18,12 @@
                 font-weight: 600;
                 color: var(--Slate-800);
                 overflow: hidden;
+                @include m.telefono{
+                    font-size: 2em;
+                }
+                @include m.tableta{
+                    font-size: 2.5em;
+                }
             }
         }
     }
