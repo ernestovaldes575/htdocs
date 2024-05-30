@@ -542,6 +542,11 @@ body {
     font-size: 2em;
   }
 }
+@media (max-width: 320px) {
+  .contenedor .contenedor-centrar .contenedor-titulo .titulo {
+    font-size: 1.5em;
+  }
+}
 
 .footer {
   width: 100%;

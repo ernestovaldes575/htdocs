@@ -4,3 +4,8 @@
         @content;
     }
 }
+@mixin telefonoSlim{
+    @media (max-width: v.$telefonoSlim){
+        @content;
+    }
+}

@@ -21,6 +21,9 @@
                 @include m.telefono{
                     font-size: 2em;
                 }
+                @include m.telefonoSlim{
+                    font-size: 1.5em;
+                }
             }
         }
     }
