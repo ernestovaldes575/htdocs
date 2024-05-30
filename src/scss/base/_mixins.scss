@@ -9,3 +9,13 @@
         @content;
     }
 }
+@mixin tablet{
+    @media (max-width: v.$tablet){
+        @content;
+    }
+}
+@mixin dektop{
+    @media (max-width: v.$desktop){
+        @content;
+    }
+}
