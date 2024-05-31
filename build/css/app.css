@@ -683,6 +683,9 @@ body {
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2823529412);
   border-radius: 0.6em;
 }
+.contenedor .contenedor-centrar .Noticias-Grid .card-contenido .card__Not {
+  padding: 1em;
+}
 .contenedor .contenedor-centrar .Noticias-Grid .card-contenido .card__Not .titulo {
   font-weight: 600;
   text-transform: uppercase;
@@ -705,7 +708,7 @@ body {
   font-weight: 600;
   border-radius: 0.6em;
 }
-.contenedor .contenedor-centrar .Noticias-Grid .card-contenido .card__Not .action:hover {
+.contenedor .contenedor-centrar .Noticias-Grid .card-contenido .card__Not .action :hover {
   background-color: #db2777;
 }
 
