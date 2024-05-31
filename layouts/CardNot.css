@@ -10,12 +10,12 @@
     border:1px solid var(--Gray-300);
     box-shadow:.2em .2em .8em var(--Gray-300)
 }
-.img__not {
-    width:100%;
-    object-fit:cover;
-    object-position:center;
-    background-color:#ff0
-}
+    /* .img__not {
+        width:100%;
+        object-fit:cover;
+        object-position:center;
+        background-color:#ff0
+    } */
 .img__not img {
     width:100%;
     height:15em

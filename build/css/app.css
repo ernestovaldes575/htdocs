@@ -682,3 +682,12 @@ body {
   border: 1px solid #d1d5db;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2823529412);
 }
+
+.img__not {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: cover;
+     object-position: cover;
+  background-color: gray;
+}
