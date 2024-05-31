@@ -677,7 +677,7 @@ body {
   }
 }
 .contenedor .contenedor-centrar .Noticias-Grid .card-contenido {
-  width: 100%;
+  max-width: 100%;
   background-color: #f8fafc;
   border: 1px solid #d1d5db;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2823529412);
@@ -690,4 +690,8 @@ body {
   -o-object-position: cover;
      object-position: cover;
   background-color: gray;
+}
+.img__not img {
+  max-width: 100%;
+  max-height: 18em;
 }
