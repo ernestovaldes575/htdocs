@@ -638,6 +638,7 @@ body {
 }
 
 .contenedor .contenedor-centrar .contenedor-conac {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5em;
@@ -658,4 +659,9 @@ body {
   border: solid #334155;
   box-shadow: 0.178em 0.178em 0.4em #475569;
   color: #f3f4f6;
+}
+@media (max-width: 1024px) {
+  .contenedor .contenedor-centrar .contenedor-conac {
+    grid-template-columns: 100%;
+  }
 }

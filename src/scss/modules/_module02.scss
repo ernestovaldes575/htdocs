@@ -4,6 +4,7 @@
 .contenedor{
     .contenedor-centrar{
         .contenedor-conac{
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 5em;
@@ -24,7 +25,9 @@
                 box-shadow: .178em .178em .4em c.$Slate-600;
                 color: c.$Gray-100;
             }
-            
+            @include m.dektop{
+                grid-template-columns: 100%;
+            }
         }
     }
 }
