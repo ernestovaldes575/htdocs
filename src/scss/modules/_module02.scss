@@ -1,0 +1,28 @@
+@use '../base/colores' as c;
+@use '../base/mixins' as m;
+
+.contenedor{
+    .contenedor-centrar{
+        .contenedor-conac{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5em;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.7em;
+                text-align: center;
+                height: 5em;
+                background-image: url(/img/pngegg.png);
+                background-position: center;
+                background-size: cover;
+                text-shadow: 2px 2px .2em c.$Slate-600;
+                font-weight: 600;
+                border-radius: .5em;
+                border: solid c.$Slate-700;
+                box-shadow: .178em .178em .4em c.$Slate-600;
+            }
+        }
+    }
+}
