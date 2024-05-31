@@ -22,7 +22,7 @@
                 font-weight: 600;
                 border-radius: .5em;
                 border: solid c.$Slate-700;
-                box-shadow: .178em .178em .4em c.$Slate-600;
+                @include m.neo(10px);
                 color: c.$Gray-100;
             }
             @include m.dektop{

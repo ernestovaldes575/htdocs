@@ -657,7 +657,7 @@ body {
   font-weight: 600;
   border-radius: 0.5em;
   border: solid #334155;
-  box-shadow: 0.178em 0.178em 0.4em #475569;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2823529412);
   color: #f3f4f6;
 }
 @media (max-width: 1024px) {
@@ -666,9 +666,6 @@ body {
   }
 }
 
-.contenedor .contenedor-centrar {
-  background-color: aqua;
-}
 .contenedor .contenedor-centrar .Noticias-Grid {
   display: flex;
   gap: 3em;
@@ -681,4 +678,7 @@ body {
 }
 .contenedor .contenedor-centrar .Noticias-Grid .card-contenido {
   width: 100%;
+  background-color: #f8fafc;
+  border: 1px solid #d1d5db;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2823529412);
 }

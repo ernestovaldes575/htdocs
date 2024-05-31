@@ -1,8 +1,7 @@
 @use '../base/mixins' as m;
-@use '../base/mixins' as c;
+@use '../base/colores' as c;
 .contenedor{
     .contenedor-centrar{
-        background-color: aqua;
         .Noticias-Grid{
             display: flex;
             gap: 3em;
@@ -13,6 +12,8 @@
             .card-contenido{
                 width: 100%;
                 background-color: c.$Slate-50;
+                border: 1px solid c.$Gray-300;
+                @include m.neo(4px);
             }
         }
     }
