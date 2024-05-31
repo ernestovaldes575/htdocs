@@ -665,3 +665,20 @@ body {
     grid-template-columns: 100%;
   }
 }
+
+.contenedor .contenedor-centrar {
+  background-color: aqua;
+}
+.contenedor .contenedor-centrar .Noticias-Grid {
+  display: flex;
+  gap: 3em;
+}
+@media (max-width: 1024px) {
+  .contenedor .contenedor-centrar .Noticias-Grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.contenedor .contenedor-centrar .Noticias-Grid .card-contenido {
+  width: 100%;
+}

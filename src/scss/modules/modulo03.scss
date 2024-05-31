@@ -1,0 +1,19 @@
+@use '../base/mixins' as m;
+@use '../base/mixins' as c;
+.contenedor{
+    .contenedor-centrar{
+        background-color: aqua;
+        .Noticias-Grid{
+            display: flex;
+            gap: 3em;
+            @include m.dektop{
+                display: flex;
+                flex-direction: column;
+            }
+            .card-contenido{
+                width: 100%;
+                background-color: c.$Slate-50;
+            }
+        }
+    }
+}

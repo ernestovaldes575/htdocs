@@ -1,6 +1,6 @@
 <main class="contenedor">
         <div class="contenedor-centrar">
-            <article class="card__content__grid">
+            <article class="Noticias-Grid">
                 <?php
                     $BandInst = false;
                     include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
@@ -23,7 +23,7 @@
                             $TituNoti = $RegTab01['PTitulo'];
                             $ImagPagi = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpNoti /$ImagNoti";
                 ?>
-                <div class="card__content">
+                <div class="card-contenido">
                     <div class="img__not">
                         <img src="<?=$ImagPagi?>" alt="Not1">
                     </div>
