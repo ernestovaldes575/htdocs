@@ -36,17 +36,7 @@
     line-height:2em;
     margin-top:.5em
 }
-.card__Not .action {
-    text-align:center;
-    background-color:var(--Pink-500);
-    color:var(--Slate-50);
-    padding:.4em;
-    border-radius:.2em;
-    margin-top:.8em
-}
-.action:hover {
-    background-color:var(--Pink-600)
-}
+
 @media screen and (max-width:1400px) {
     .card__content__grid {
         display:grid;

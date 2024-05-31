@@ -28,10 +28,12 @@
                         <img src="<?=$ImagPagi?>" alt="Not1">
                     </div>
                     <div class="card__Not">
-                        <a href="#">
-                            <span class="titulo"><?=$TituNoti?></span>
+                        <a href="#" class="titulo">
+                            <span>
+                                <?=$TituNoti?>
+                            </span>
                         </a>
-                        <p class="card__content__text">
+                        <p class="text-contenido">
                             <?=$DescNoti?>
                         </p>
                         <a href="" class="action">

@@ -14,6 +14,34 @@
                 background-color: c.$Slate-50;
                 border: 1px solid c.$Gray-300;
                 @include m.neo(4px);
+                border-radius: .7em;
+                .card__Not{
+                    .titulo{
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: .5em;
+                        font-size: 1.2em;
+                        :hover{
+                            color: c.$Pink-600;
+                        }
+                    }
+                    .text-contenido{
+                        line-height: 1.898em;
+                    }
+                    .action{
+                        background-color: c.$Pink-500;
+                        color: c.$Gray-50;
+                        text-transform: uppercase;
+                        text-align: center;
+                        padding: .4em 0;
+                        margin-top: .5em;
+                        font-weight: 600;
+                        border-radius: .7em;
+                        :hover{
+                            
+                        }
+                    }
+                }
             }
         }
     }
