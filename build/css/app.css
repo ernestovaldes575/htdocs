@@ -290,9 +290,7 @@ header .button {
 }
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation: none !important;
     animation: none !important;
-    -webkit-transition: none !important;
     transition: none !important;
   }
 }
@@ -300,7 +298,6 @@ header .button {
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: baseline;
 }
@@ -361,7 +358,6 @@ button, form, input, label, select, textarea {
   font-family: inherit;
   font-size: inherit;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   background-color: transparent;
   color: inherit;
@@ -386,7 +382,6 @@ body {
   min-height: 100vh;
   font-family: var(--tipo-principal);
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   -font-smooth: always;
   -webkit-font-smoothing: antialiased;
@@ -662,6 +657,5 @@ body {
   border-radius: 0.5em;
   border: solid #334155;
   box-shadow: 0.178em 0.178em 0.4em #475569;
+  color: #f3f4f6;
 }
-
-/*# sourceMappingURL=app.css.map */
