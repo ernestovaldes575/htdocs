@@ -14,7 +14,7 @@
         @content;
     }
 }
-@mixin dektop{
+@mixin desktop{
     @media (max-width: v.$desktop){
         @content;
     }

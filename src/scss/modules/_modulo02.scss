@@ -25,7 +25,7 @@
                 @include m.neo(10px);
                 color: c.$Gray-100;
             }
-            @include m.dektop{
+            @include m.desktop{
                 grid-template-columns: 100%;
             }
         }

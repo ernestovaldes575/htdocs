@@ -4,6 +4,10 @@
         .aviso-grid{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            @include m.desktop{
+                display: grid;
+                grid-template-columns: 100%;
+            }
         }
     }
 }
