@@ -724,3 +724,8 @@ body {
   max-width: 100%;
   max-height: 18em;
 }
+
+.contenedor .contenedor-centrar .aviso-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
