@@ -1,9 +1,9 @@
 @use 'variables' as v;
-%grid-col-5{
+%grid-5{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
-%grid-col-3{
+%grid-3{
     display:grid;
     grid-template-columns:repeat(3,1fr);
 }

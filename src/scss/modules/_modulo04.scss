@@ -2,7 +2,7 @@
 .contenedor{
     .contenedor-centrar{
         .aviso-grid{
-            @extend %grid-col-3;
+            @extend %grid-3;
             @include m.desktop{
                 display: grid;
                 grid-template-columns: 100%;
