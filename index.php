@@ -58,7 +58,7 @@
             </div>
         </div>
     </main>
-    <?php include 'EstrPagi/SitiInte.php'?>
+    <?php include 'EstrPagi/Modulo05.php'?>
     
     <main class="contenedor">
         <div class="contenedor-centrar">

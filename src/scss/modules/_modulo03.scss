@@ -5,7 +5,7 @@
         .Noticias-Grid{
             display: flex;
             gap: 3em;
-            @include m.dsktop{
+            @include m.desktop{
                 display: flex;
                 flex-direction: column;
             }
