@@ -523,6 +523,11 @@ body {
   grid-template-columns: repeat(5, 1fr);
 }
 
+.contenedor .contenedor-centrar .aviso-grid, .contenedor .contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .contenedor .contenedor-centrar .contenedor-titulo {
   margin: 2em 0;
 }
@@ -628,8 +633,6 @@ body {
   }
 }
 .contenedor .contenedor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1em;
 }
 .contenedor .contenedor-grid .item-2 {
@@ -730,10 +733,6 @@ body {
   max-height: 18em;
 }
 
-.contenedor .contenedor-centrar .aviso-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
 @media (max-width: 1024px) {
   .contenedor .contenedor-centrar .aviso-grid {
     display: grid;
