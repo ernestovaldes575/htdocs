@@ -735,3 +735,8 @@ body {
     grid-template-columns: 100%;
   }
 }
+
+.contenedor .contenedor-centrar .col-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

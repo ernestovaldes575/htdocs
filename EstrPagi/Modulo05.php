@@ -1,6 +1,9 @@
 
-<div class="contenedor__interes">
-    <div class="contenedor__principal contenedor__interes__grid">
+<div class="contenedor">
+    <div class="contenedor-centrar">
+        <div class="col-5">
+
+        </div>
         <div class="contenedor__interes__infoem shadow-lg">
             <a href="https://www.infoem.org.mx/" target="_blank">
                 <img src="../img/Interes/1.svg" alt="infoem">
