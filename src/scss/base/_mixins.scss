@@ -1,4 +1,8 @@
 @use 'variables' as v;
+%grid-col-5{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
 @mixin telefono{
     @media (max-width: v.$telefono){
         @content;

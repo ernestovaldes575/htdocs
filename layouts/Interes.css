@@ -1,17 +1,4 @@
-.contenedor__interes,.contenedor__interes__grid div {
-    display:grid;
-    place-items:center;
-    width:100%
-}
-.contenedor__interes .contenedor__principal {
-    display:grid;
-    place-content:center
-}
-.contenedor__interes .contenedor__interes__grid {
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:1em
-}
+
 .contenedor__interes__grid div {
     min-height:17vh;
     overflow:hidden;

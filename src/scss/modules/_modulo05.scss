@@ -1,8 +1,8 @@
+@use '../base/mixins';
 .contenedor{
     .contenedor-centrar{
         .col-5{
-            display: grid;
-            grid-template-columns: repeat(5,1fr);
+            @extend m.grid-col-5;  
         }
     }
 }
