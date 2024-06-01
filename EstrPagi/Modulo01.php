@@ -46,7 +46,7 @@
                         ?>
                         <div class="swiper-slide">
                             <a href="<?=$InicHtml?>">
-                                <img src="<?=$ImagPagi?>" alt="" style="max-width:100%;heigth:auto;">
+                                <img src="<?=$ImagPagi?>" alt="">
                             </a>
                         </div>
                         <?php
