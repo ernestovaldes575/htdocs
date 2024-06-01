@@ -518,6 +518,11 @@ body {
   justify-content: center;
 }
 
+.contenedor .contenedor-centrar .col-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .contenedor .contenedor-centrar .contenedor-titulo {
   margin: 2em 0;
 }
