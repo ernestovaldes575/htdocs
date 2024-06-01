@@ -1,8 +1,23 @@
 @use '../base/mixins' as m;
+@use '../base/colores' as c;
 .contenedor{
     .contenedor-centrar{
         .col-5{
-            @extend %grid-5;  
+            @extend %grid-5;
+            gap: 1em;
+            div{
+                @include m.neo(3px);
+                min-height: 17vh;
+                overflow: hidden;
+                border: 1.59px solid c.$Slate-500;
+                border-radius: .5em;
+                @extend %grid-center;
+                img{
+                    display: block;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            } 
         }
     }
 }

@@ -7,6 +7,10 @@
     display:grid;
     grid-template-columns:repeat(3,1fr);
 }
+%grid-center{
+    display: grid;
+    place-items: center;
+}
 @mixin telefono{
     @media (max-width: v.$telefono){
         @content;
