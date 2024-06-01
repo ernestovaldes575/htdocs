@@ -63,7 +63,9 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                Redes Sociales
+                <h2 class="titulo">
+                    Redes Sociales
+                </h2>   
             </div>
         </div>
     </main>
