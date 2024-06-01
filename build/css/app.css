@@ -534,14 +534,14 @@ body {
 }
 
 .contenedor .contenedor-centrar .contenedor-titulo {
-  margin: 2em 0;
+  margin: 4em 0;
 }
 .contenedor .contenedor-centrar .contenedor-titulo .titulo {
   font-size: 3.5em;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px var(--Neutral-700), 2px 2px 1px var(--Neutral-500);
+  text-shadow: 1px 1px 1px #404040, 2px 2px 1px var #a3a3a3;
   font-weight: 600;
-  color: var(--Slate-700);
+  color: #334155;
   overflow: hidden;
 }
 @media (max-width: 480px) {
