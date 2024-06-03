@@ -11,6 +11,17 @@
     display: grid;
     place-items: center;
 }
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
 @mixin telefono{
     @media (max-width: v.$telefono){
         @content;

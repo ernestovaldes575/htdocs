@@ -1,6 +1,6 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
-            <div class="aviso-grid">
+            <div class="aviso-grid" >
                 <article class="item1">
                 <main>
                     <div class="swiper" id="swiper-3">

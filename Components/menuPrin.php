@@ -3,18 +3,20 @@
         <a href="" class="a">
             <img src="/img/logo/LOGO-PRINCIPAL.png" class="escudo_mur" alt="Logo">
         </a>
+        
         <button class="button">
             <i style="font-size: 3em; margin-top:.2em;" class="bi bi-list"></i>
         </button>
+
         <nav class="nav">
             <ul class="ul">
                 <li class="li">
-                    <a class="a" href="/index.php">
+                    <a class="a" href="/">
                         Inicio
                     </a>
                 </li>
                 <li class="li">
-                    <div class="flex items-center">
+                    <div>
                         <a href="#">Tramites y Servicios</a>
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
@@ -30,7 +32,7 @@
                     </div>    
                 </li>
                 <li class="li">
-                    <div class="flex items-center">
+                    <div>
                         <a href="#">Transparencia</a>
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
@@ -59,7 +61,7 @@
                     </div>
                 </li>
                 <li class="li">
-                    <div class="flex items-center">
+                    <div>
                         <a href="#">Gobierno</a>
                         <i class="bi bi-caret-down-fill"></i>
                     </div>

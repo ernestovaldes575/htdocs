@@ -1,3 +1,24 @@
+.contenedor .contenedor-centrar .col-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.contenedor .contenedor-centrar .aviso-grid, .contenedor .contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contenedor .contenedor-centrar .col-5 div {
+  display: grid;
+  place-items: center;
+}
+
+header, header .ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   --color-body:#f0f0f0;
   --color-nav:#70635A;
@@ -8,9 +29,6 @@
 header {
   width: 100%;
   background-color: var(--color-nav);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 0.9em;
   position: sticky;
   z-index: 1;
@@ -19,10 +37,10 @@ header {
 }
 
 header .ul {
+  gap: 1.5em;
+}
+header .ul .li div {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
 }
 
 .escudo_mur {
@@ -55,9 +73,8 @@ header .ul {
   display: none;
   position: absolute;
   width: 5em;
-  background-color: var(--Gray-500);
+  background-color: #6b7280;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2509803922);
 }
 
 .nav .ul .li:hover .mini {
@@ -65,6 +82,7 @@ header .ul {
   flex-direction: column;
   justify-content: center;
   width: 25em;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2823529412);
 }
 
 .mini a {
@@ -124,7 +142,7 @@ header .button {
 
 /* ? Cierre Info */
 .contenedor__principal {
-  width: 85%;
+  width: 80%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -157,12 +175,6 @@ header .button {
   display: grid;
   place-items: center;
   padding: 1.5em;
-}
-
-.header__secundario .contenedor__principal__flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-gray i, .btn-invert i {
@@ -516,21 +528,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.contenedor .contenedor-centrar .col-5 {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.contenedor .contenedor-centrar .aviso-grid, .contenedor .contenedor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.contenedor .contenedor-centrar .col-5 div {
-  display: grid;
-  place-items: center;
 }
 
 .contenedor .contenedor-centrar .contenedor-titulo {
