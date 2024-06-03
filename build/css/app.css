@@ -82,7 +82,7 @@ header .ul .li div {
   flex-direction: column;
   justify-content: center;
   width: 25em;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2823529412);
+  box-shadow: 20px 20px 53.3px rgba(0, 0, 0, 0.537254902);
 }
 
 .mini a {
@@ -667,7 +667,7 @@ body {
   font-weight: 600;
   border-radius: 0.5em;
   border: solid #334155;
-  box-shadow: 90px 90px 270px rgba(0, 0, 0, 0.2823529412);
+  box-shadow: 90px 90px 239.85px rgba(0, 0, 0, 0.537254902);
   color: #f3f4f6;
 }
 @media (max-width: 1024px) {
@@ -690,7 +690,7 @@ body {
   max-width: 100%;
   background-color: #f8fafc;
   border: 1px solid #d1d5db;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2823529412);
+  box-shadow: 4px 4px 10.66px rgba(0, 0, 0, 0.537254902);
   border-radius: 0.6em;
 }
 .contenedor .contenedor-centrar .Noticias-Grid .card-contenido .card__Not {
@@ -746,7 +746,7 @@ body {
   gap: 1em;
 }
 .contenedor .contenedor-centrar .col-5 div {
-  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2823529412);
+  box-shadow: 3px 3px 7.995px rgba(0, 0, 0, 0.537254902);
   min-height: 17vh;
   overflow: hidden;
   border: 1.59px solid #64748b;
