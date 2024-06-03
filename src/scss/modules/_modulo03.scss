@@ -1,13 +1,12 @@
 @use '../base/mixins' as m;
 @use '../base/colores' as c;
+@use '../base/variables' as v;
 .contenedor{
     .contenedor-centrar{
         .Noticias-Grid{
-            display: flex;
-            gap: 3em;
+            @include m.grid(3, 2em);
             @include m.desktop{
-                display: flex;
-                flex-direction: column;
+                grid-template-columns: 100%;
             }
             .card-contenido{
                 max-width: 100%;
