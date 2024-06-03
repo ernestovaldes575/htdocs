@@ -76,7 +76,7 @@
     
     <script src="/scripts/swiper.js"></script>  
     <script>
-        ScrollReveal().reveal('.effect',{interval:150});
+        ScrollReveal().reveal('.effect',{interval:130});
     </script>
     <script src="./scripts/anime.min.js"></script>  
     <script src="/scripts/animate.js"></script>
