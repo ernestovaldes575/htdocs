@@ -1,13 +1,12 @@
 @use '../base/colores' as c;
 @use '../base/mixins' as m;
+@use '../base/variables' as v;
 
 .contenedor{
     .contenedor-centrar{
         .contenedor-conac{
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5em;
+            @include m.grid(4,v.$separacion);
             a{
                 display: flex;
                 align-items: center;
@@ -22,7 +21,7 @@
                 font-weight: 600;
                 border-radius: .5em;
                 border: solid c.$Slate-700;
-                @include m.neo(10px);
+                @include m.neo(90px);
                 color: c.$Gray-100;
             }
             @include m.desktop{

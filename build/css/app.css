@@ -650,8 +650,8 @@ body {
 .contenedor .contenedor-centrar .contenedor-conac {
   width: 100%;
   display: grid;
+  gap: 5rem;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5em;
 }
 .contenedor .contenedor-centrar .contenedor-conac a {
   display: flex;
@@ -667,7 +667,7 @@ body {
   font-weight: 600;
   border-radius: 0.5em;
   border: solid #334155;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2823529412);
+  box-shadow: 90px 90px 270px rgba(0, 0, 0, 0.2823529412);
   color: #f3f4f6;
 }
 @media (max-width: 1024px) {
