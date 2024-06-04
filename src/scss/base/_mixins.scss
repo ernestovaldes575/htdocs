@@ -1,8 +1,4 @@
 @use 'variables' as v;
-%grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-}
 %grid-center{
     display: grid;
     place-items: center;
