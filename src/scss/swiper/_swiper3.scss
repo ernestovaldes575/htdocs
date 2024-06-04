@@ -1,0 +1,22 @@
+#swiper-3 {
+    width:17vw;
+    z-index:0;
+    .swiper-wrapper{
+        img{
+            display:block;
+            width:100%;
+            object-fit:cover;
+            border-radius:.5em;
+        }
+    }
+    .swiper-slide {
+        border-radius:.5em;
+    }
+    .swiper-pagination-bullet {
+        width:1.2em;
+        height:1.2em;
+        margin:0 1em;
+        background-color:green;
+        border:solid .1em gray;
+    }
+}

@@ -51,26 +51,7 @@
     width:100%;
     object-fit:cover;
 }
-#swiper-3 {
-    width:17vw;
-    z-index:0;
-}
-#swiper-3 .swiper-wrapper img {
-    display:block;
-    width:100%;
-    object-fit:cover;
-    border-radius:.5em;
-}
-#swiper-3 .swiper-slide {
-    border-radius:.5em;
-}
-#swiper-3 .swiper-pagination-bullet {
-    width:1.2em;
-    height:1.2em;
-    margin:0 1em;
-    background-color:var(--Sky-500);
-    border:solid .1em var(--Gray-500);
-}
+
 
 @media screen and (max-width:1400px) {
     .main__secondary .contenedor__principal {
