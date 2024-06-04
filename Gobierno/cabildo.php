@@ -24,7 +24,7 @@
     <main class="contenedor__principal__cabildo">
         <div class="principal__cabildo effect">
             <div class="princial__cabildo__grid">
-                <div class="card shadow  rounded-4" style="width: 20rem;">
+                <div class="card" style="width: 22rem;">
                     <?php
                     
                         $InstSql =  "SELECT LImagen ". 
