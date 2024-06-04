@@ -37,7 +37,7 @@
                         foreach($ResuImag as $RegTab01){
                                 $ImagSind = $RegTab01[0];
                                 $RutaImag = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
-                        ?>
+                    ?>
                         <img src="<?=$RutaImag?><?=$ImagSind?>" 
                         class="card-img-top rounded-lg" alt="Sindico-Municipal">
                     <?php }?>
