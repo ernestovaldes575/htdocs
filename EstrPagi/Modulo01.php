@@ -56,6 +56,7 @@
                     <div class="swiper-pagination"></div>
                 </div> 
             </article>
+            
             <article class="article__exp item-2">
                 <div class="gallery">
                     <a href="https://dif.zinacantepec.gob.mx/">

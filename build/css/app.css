@@ -738,7 +738,8 @@ body {
 @media (max-width: 1024px) {
   .contenedor .contenedor-centrar .aviso-grid {
     display: grid;
-    grid-template-columns: 100%;
+    gap: 1em;
+    grid-template-columns: repeat(100%, 1fr);
   }
 }
 

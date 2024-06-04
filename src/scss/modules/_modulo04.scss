@@ -5,8 +5,7 @@
             // @extend %grid-3;
             @include m.grid(3,1em);
             @include m.desktop{
-                display: grid;
-                grid-template-columns: 100%;
+                @include m.grid(100%,1em);
             }
         }
     }

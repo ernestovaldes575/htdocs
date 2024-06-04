@@ -1,7 +1,7 @@
 @use '../base/mixins' as m;
 .contenedor{
     .contenedor-grid{
-        @extend %grid-3;
+        // @include m.grid(2,1em);
         gap:1em;
         .item-2{
             grid-column: 2/4;
