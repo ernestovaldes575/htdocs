@@ -1,8 +1,4 @@
-#swiper-4 {
-    max-width:25em;
-    z-index:0;
-    grid-column:2/3;
-}
+
 #swiper-5 {
     width: auto;
     max-height:45vh;
@@ -39,7 +35,7 @@
     max-width:100%;
     object-fit:cover;
     border-radius:1em;
-}
+}   
 .item2-grid .emg {
     width:100%;
     display:grid;
@@ -64,7 +60,6 @@
         width:100%;
     }
     #swiper-4 {
-        grid-column:2/3;
         width:48vw;
         z-index:0;
         grid-column:2/3;

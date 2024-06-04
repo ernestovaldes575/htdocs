@@ -731,9 +731,7 @@ body {
 }
 @media (max-width: 1245px) {
   .contenedor .contenedor-centrar .aviso-grid {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(100%, 1fr);
+    grid-template-columns: 100%;
   }
 }
 
@@ -876,4 +874,15 @@ body {
   margin: 0 1em;
   background-color: green;
   border: solid 0.1em gray;
+}
+
+#swiper-4 {
+  width: 25em;
+  height: auto;
+  z-index: 0;
+  grid-column: 2/3;
+}
+
+.item2 {
+  background-color: blue;
 }

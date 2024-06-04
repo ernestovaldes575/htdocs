@@ -82,8 +82,8 @@
                     </div> 
                 </article>
 
-                <article class="item2 item2-grid">
-                    <div class="emg">
+                <article class="">
+                    <div class="">
                         <img src="../img/tel2.png" alt="">
                     </div>
                     <div class="swiper" id="swiper-4">
