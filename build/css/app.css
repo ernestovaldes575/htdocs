@@ -810,6 +810,12 @@ body {
   background-color: red;
   border: solid 0.1em black;
 }
+@media (max-width: 1245px) {
+  #swiper-2 {
+    width: 80vw;
+    z-index: 0;
+  }
+}
 @media (max-width: 480px) {
   #swiper-2 {
     width: 80vw;

@@ -18,10 +18,6 @@
         height:15rem;
         object-fit:cover;
     }
-    #swiper-2 {
-        width:80vw;
-        z-index:0;
-    }
 }
 @media (max-width:425px) {
     #swiper-1 .swiper-slide img {

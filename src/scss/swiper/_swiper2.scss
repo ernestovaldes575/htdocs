@@ -20,6 +20,10 @@
         background-color:red;
         border:solid .1em black;
     }
+    @include m.desktop{
+        width:80vw;
+        z-index:0;
+    }
     @include m.telefono{
         width: 80vw;
     }
