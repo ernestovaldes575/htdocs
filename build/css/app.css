@@ -514,7 +514,7 @@ body {
   place-items: center;
 }
 .contenedor .contenedor-centrar {
-  width: 85%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
