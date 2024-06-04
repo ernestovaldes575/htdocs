@@ -3,8 +3,16 @@
 .contenedor{
     .contenedor-centrar{
         .col-5{
-            @extend %grid-5;
-            gap: 1em;
+            @include m.grid(5,1em);
+            @include m.desktop{
+                @include m.grid(3,1em);
+            }
+            @include m.tablet{
+                @include m.grid(2,1em)
+            }
+            @include m.telefono{
+                grid-template-columns: 100%
+            }
             div{
                 @include m.neo(3px);
                 min-height: 17vh;
@@ -15,7 +23,7 @@
                 img{
                     display: block;
                     width: 100%;
-                    object-fit: cover;
+                    object-fit: cover;  
                 }
             } 
         }
