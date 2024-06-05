@@ -24,26 +24,25 @@ include 'SolicitudListSERP.php';
 <!--encabezado-->
 <table class="ListInfo tabla">
   <tr>
-	<td>
+	<td width="10%">
 	 <?php //Catalogo de Ejercicio
 	    $DatoList = "01";
 		include ('SolicitudListVC.php');
 	 ?>
 	</td>
-	<td colspan="13">
+	<td width="11%">
 	<?php //Catalogo de mes
 	    $DatoList = "02";
 		include ('SolicitudListVC.php'); ?>	
 	</td>
-	<td>
-	<?php 
+	<td width="17%">&nbsp;</td>
+	<td width="15%">&nbsp;</td>
+	<td width="27%">&nbsp;</td>
+	<td width="10%"><?php 
 	  if ($Alta == "A"){ ?>
-		<i class="bi bi-plus-lg Repa btn-Nuevo" title="AGREGAR" data-id='0'></i>
-	<?php } ?>	
-	</td>
-	<td>
-		<a href="/IntraInvi/MenuIntranet.php" class="btn-Regresar">Regresar</a>
-	</td>
+      <i class="bi bi-plus-lg Repa btn-Nuevo" title="AGREGAR" data-id='0'></i>
+    <?php } ?></td>
+	<td width="10%"><a href="/IntraInvi/MenuIntranet.php" class="btn-Regresar">Regresar</a></td>
   </tr>
   <tr>
     <th>Mes</th>
@@ -52,11 +51,6 @@ include 'SolicitudListSERP.php';
     <th>Estado</th>
     <th>&nbsp;</th>
     <th colspan="2">&nbsp;</th>
-	<th colspan="3">&nbsp;</th>
-	<th>&nbsp;</th>
-	<th colspan="3">&nbsp;</th>
-	<th></th>
-	<th></th>
   </tr>
   <?php 
 	foreach ($ResuSql as $RegiTabl):
@@ -78,9 +72,10 @@ include 'SolicitudListSERP.php';
 	</td>
 	<td data-titulo="Editar: ">
 	 <?php if($Modi == "A" ){ ?>
-			<i class="bi bi-pencil-square btn-Modificar Modi" 
+		<i class="bi bi-pencil-square btn-Modificar Modi" 
 					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
 	 <?php } ?>
+		<a href="SoliDetaListInic.php?Param1=<?= $VC03?>">Detalle</a>
 	</td>
   </tr>
   <?php	endforeach; ?> 

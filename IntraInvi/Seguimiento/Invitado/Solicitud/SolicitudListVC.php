@@ -34,7 +34,7 @@ switch ($DatoList){
 		  		
 		 $VC11=$RegiTabl['SSeguimi'];
 						
-		 $RutaArch = "/ExpeElectroni/$ClavAyun/PaguWeb/$EjerTrab/$CarpTiDo/";
+		 //$RutaArch = "/ExpeElectroni/$ClavAyun/PaguWeb/$EjerTrab/$CarpTiDo/";
 		break;
   } // switch ($DatoList){
 ?>		

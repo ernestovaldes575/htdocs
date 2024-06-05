@@ -13,7 +13,7 @@
 	$InstSql =  "SELECT SUnidad,CUNClaveUnidad,CUNDescripcion ". 
 				"FROM Stsupeunid ". 
 				"INNER JOIN acceso.ACUnidades ON SUnidad=CUNConsecutivo ". 
-				"WHERE SAyuntamiento = '".$ClavAyun."' ";
+				"WHERE SAyuntamiento = '$ClavAyun' ";
 	if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 	$ResuSql = $ConeBase->prepare($InstSql);
 	$ResuSql->execute();

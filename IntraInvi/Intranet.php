@@ -4,8 +4,10 @@ if (isset($_POST['Ingresar'])){
 	include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
 	$usuario = htmlentities(addslashes($_POST["InputCla"]));
 	$password = htmlentities(addslashes($_POST["InputCon"]));
-	$InstSql = "SELECT IConsecutivo,INombRazon ".
+	$InstSql = "SELECT IConsecutivo,INumeFoli,INombRazon,".
+					  "IAnfitrion,AAnfitrion ".
 			   "FROM   stinvitado ". 
+			   "INNER JOIN STAnfitrion ON IAnfitrion = AConsecutivo ".
 			   "WHERE  ICorreo = '".$usuario."' AND ". 
 			   		  "IContra = '".$password."' ";
 	echo $InstSql;				  
@@ -14,16 +16,19 @@ if (isset($_POST['Ingresar'])){
 	$result = $ResuSql->fetch();
 	if( $result ){
 		$ConsInvi = $result['IConsecutivo'];
+		$NumeInvi = $result['INumeFoli'];
 		$NombInvi = $result['INombRazon'];
+		$ConsAnfi = $result['IAnfitrion'];
+		$NombAnfi = $result['AAnfitrion'];
+		
 		$FechSist = getdate();
 		$EjerTrab = $FechSist['year'];
 		$MesTrab  = $FechSist['mon'];
 
-		$ArCookie = "$ConsInvi|$NombInvi|$EjerTrab|$MesTrab|";
+		$ArCookie = "$ConsInvi|$NumeInvi|$NombInvi|".
+					"$ConsAnfi|$NombAnfi|".
+					"$EjerTrab|$MesTrab|";
 		setcookie("CEncaAcc", "$ArCookie");
-
-		session_start();
-		$_SESSION["usua"] = $result['AAyuntamiento'];
 
 		$Nivel = 1;
 		$ArCooki2 = $Nivel.'|||';
@@ -74,7 +79,7 @@ else
 		<button type="submit" name="Ingresar" class="ingresar" value="Ingresar" >
 			Ingresar
 		</button>
-		<a href="Seguimiento/Invitado/Registro/Anfitrion.php">
+		<a href="Seguimiento/Invitado/RegiInic/Anfitrion.php">
 		Registro
 		</a>
 				<!-- <a href="../index.php">Salir</a> -->

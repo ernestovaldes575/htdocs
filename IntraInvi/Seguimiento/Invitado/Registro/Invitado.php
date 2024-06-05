@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/IntraInvi/Css/style.css">
+	<?php
+	$TituEnca = "Invitado";
+	include $_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaLiga.php';
+	?>
 </head>	
-<script language="JavaScript" src="PWRegistro.js"></script>
-
+<script language="JavaScript" src="Invitado.js"></script>
 <body> 
- <header>
+<header>
  <?php 
     require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php'); 
     //Encabezado	
@@ -18,19 +16,17 @@
   ?>
  </header>
 <?php 
-//Carga de la Informacion	
-$CRUD = "GET";
-include 'InvitadoApi.php';
-//echo "Valor CRUD: $CRUD ";
 
+//Carga de la Informacion	
+include 'InvitadoSERP.php';
 $RegrPagi = ( $TipoMovi == "A") ? "Anfitrion.php":"/IntraInvi/MenuIntranet.php"; 
 
 ?>
-<form id= "PideDato" name="PideDato" method="post" action="InvitadoApi.php">
+<form id= "PideDato" name="PideDato" method="post" action="InvitadoCRUD.php">
   <input type="hidden" id="SV00" name="C00" value="<?=$CRUD?>">
   <input type="hidden" id="SV01" name="C01" value="<?=$TipoMovi?>">
   <input type="hidden" id="SV02" name="C02" value="<?=$ConsBusq?>">
-  <table width="48%" class="ListInfo01" with="50%">
+  <table width="48%" class="ListInfo" with="50%">
     <caption>
       <?=$DescTiSe?>
     </caption>
@@ -44,8 +40,8 @@ $RegrPagi = ( $TipoMovi == "A") ? "Anfitrion.php":"/IntraInvi/MenuIntranet.php";
 	<tr>
 		<th>No. Anfitrion </th>
 		<td colspan="2">
-			<input type="text" id="VC03" name="C03" value="<?=$VC03?>" 
-					onkeyup="checaMensaje(this.value)" placeholder="No Anfitrion">
+			<input name="C03" type="text" id="VC03" placeholder="No Anfitrion" 
+					onkeyup="checaMensaje(this.value)" value="<?=$VC03?>" size="5" maxlength="5" readonly>
 		</td>
 	</tr>	
 	<tr>

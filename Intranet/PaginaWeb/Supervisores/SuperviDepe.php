@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
+	<?php
+	   $TituEnca = "Supervisores por área";
+	   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaLiga.php'); ?>
 </head>
 <body>
 <script language="JavaScript" src="SuperviDepe.js"></script>	
@@ -17,20 +16,17 @@
   ?> 
  </header> 
 <?php	
-include 'SuperviDepeApi.php';
+  include 'SuperviDepeSERP.php';
 ?>	
 <br>
-<table class="ListInfo">
+<table width="70%" class="ListInfo tabla">
 	<thead>
 		<tr>
 			<td width="35">Clave</td>				<!--Cambiar-->
 			<td width="138">Descripcion</td>		<!--Cambiar-->
 			<td width="79">
-				<button class='Regr' 
-				style="cursor: pointer; background-color:#EB6320; border-color:blue; color:white; border-radius: 5px;" 
-				class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
-				onMouseOver="this.style.background='#FF8000';" onMouseOut="this.style.background = '#EB6320';">Regresar</button>
-			</td>	<!--Cambiar-->
+			 <i class="bi bi-arrow-bar-left btn-8 btn-Regresar Regr">Regresar</i>
+			</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -45,11 +41,8 @@ include 'SuperviDepeApi.php';
 			<td><?=$VC05?></td>				<!--Cambiar-->
 			<td>
 			<?php if($Modi == "A" ){ ?>
-				<button class='Modi' data-id='<?= $VC03?>'
-			style="cursor: pointer; background-color:#EB6320; border-color:blue; color:white; border-radius: 5px;" 
-			class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
-			onMouseOver="this.style.background='#FF8000';" onMouseOut="this.style.background = '#EB6320';">
-			 Modificar </button>
+				<i class="bi bi-pencil-square btn-Modificar Modi" 
+					data-CoUn="<?= $VC03?>" title="Supervisor"></i>
 			<?php } ?>
 			</td>
 		</tr>

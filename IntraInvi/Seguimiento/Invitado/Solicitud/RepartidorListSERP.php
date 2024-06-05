@@ -12,7 +12,6 @@ if ( isset($_GET["Param0"]) )
 
 $BandMens = true;
 
-		
 //------------------------------------------------------------------------	
 //Carga el registro para Consulta
 $InstSql = "SELECT CREConsecut,CREEstado,CREClave,CREDescri ". 

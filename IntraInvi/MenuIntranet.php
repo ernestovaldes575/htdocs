@@ -15,9 +15,10 @@
 	</header>
 
 <?php
-	session_start();
-
+	
 $ClavAyun = '105';
+include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php'); 
+	
 //Carga las variables
 $ArCooki1 = $_COOKIE['CMenu'];
 $AMenu = explode("|", $ArCooki1);
@@ -25,13 +26,6 @@ $Nivel  = $AMenu[0];
 $OpcMen = $AMenu[1]; 
 $OpcSub = $AMenu[2]; 
 
-//Carga las variables
-$ArCooki2 = $_COOKIE['CEncaAcc'];
-$AEncaMae = explode("|", $ArCooki2);
-$ConsInvi = $AEncaMae[0]; 
-$NombInvi = $AEncaMae[1]; 
-$EjerTrab = $AEncaMae[2]; 
-//$MesTrab  = $AEncaMae[3]; 
 
 $BandMens = false;
 
@@ -63,10 +57,10 @@ $MenuBase = $ResuSql->fetchAll();
 ?>	
 		<table>
 			<?php 
-				foreach($MenuBase as $valor):
-					$CMEClave  = $valor['CMEClave'];
-					$CMEDescri = $valor['CMEDescri'];
-					$CMEBasDat = $valor['CMEBasDat'];?>
+			//	foreach($MenuBase as $valor):
+					$CMEClave  = '10';			///$valor['CMEClave'];
+					$CMEDescri = 'Seguimineto';	//$valor['CMEDescri'];
+					$CMEBasDat = 'Seguimiento';	//$valor['CMEBasDat'];?>
 
 			<tr>
 				<td>
@@ -132,7 +126,7 @@ $MenuBase = $ResuSql->fetchAll();
 				}	
 			 endforeach;
 		}
-		endforeach; ?>
+		//endforeach; ?>
 		</table>
 	<a href="/IntraInvi/Intranet.php" class="enlace1 exit">Salir</a>
 </body>

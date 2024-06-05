@@ -23,10 +23,3 @@ function (event) {
  }    
 });
 
-//-------------------------------------------------------------------------
-function CargEjer(Param1)
-{ location.href = "SolicitudList.php?Param1="+Param1; }
-
-
-function CargEsta(Param2)
-{ location.href = "SolicitudList.php?Param2="+Param2; }

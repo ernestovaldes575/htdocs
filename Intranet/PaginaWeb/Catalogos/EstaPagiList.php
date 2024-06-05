@@ -33,10 +33,11 @@
 		<tr>
 			<th>Titulo</th>
 			<th>Descripción</th>
-			<th width="7%"><?php 
-					if ($Alta == "A"){ ?>
-              <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
-              <?php } ?>            </th>
+			<th width="7%">
+			 <?php if ($Alta == "A"){ ?>
+              		 <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
+             <?php } ?>
+			</th>
 			<th width="8%">&nbsp;</th>
 		</tr>
 		<?php 

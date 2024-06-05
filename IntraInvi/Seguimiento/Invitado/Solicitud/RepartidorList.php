@@ -50,7 +50,8 @@ include 'RepartidorListSERP.php';
 	<td data-titulo="Editar: ">
 	 <?php if($Alta == "A" ){ ?>
 			<i class="bi bi-pencil-square btn-Modificar Empr" 
-					data-CaBu="<?= $VC03?>" title="Empresa"></i>
+			   data-CoRe="<?= $VC03?>"  title="Empresa"></i>
+		
 	 <?php } ?>
 	</td>
   </tr>

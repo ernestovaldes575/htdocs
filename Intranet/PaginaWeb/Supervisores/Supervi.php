@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-		<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Form Facultades de área</title>
-		<link rel="stylesheet" href="/Intranet/Archivos/CSS/CRUD.css">
-		<!--icono de la pestaña (logo)-->
-		<link rel="shortcut icon" href="/Intranet/Archivos/Img/logoEnc.ico" />
-		<!--jquery para validar campos-->
-		<script src="/Intranet/Archivos/JS/jquery-1.11.1.js"></script>
-</head>
-	
-<body>
+<head>
 <?php
-$CRUD = "GET";
-include 'SuperviApi.php';
-?>	
-	
-<!--encabezado-->
-<header> 
-	<?php require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Archivos/Files/header.php'); ?> 
-</header>
+	   $TituEnca = "Supervisores por área";
+	   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaLiga.php'); ?>
+</head>
+<body>
+<?php 
+  //Varibales Globales
+  include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+  //Encabezado	
+  require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
+  ?> 
+ </header>  
+<?php
+  include 'SuperviSERP.php';
+?>
 <br>
 <!--formulario de Actualizacion-->
-<form method="post" name="PideDato" action="SuperviApi.php">
+<form method="post" name="PideDato" action="SuperviCRUD.php">
 	<!-- opciones de crud-->
 	<input type="hidden" name="C00" value="<?=$CRUD?>">
 	<input type="hidden" name="C01" value="<?=$TipoMovi?>">
@@ -31,7 +26,7 @@ include 'SuperviApi.php';
 	<table class="ListInfo">
 		<tr>
 			<td></td>
-			<td><a href="SuperviList.php" name="cancelar">Regresar</a></td>
+			<td><i class="bi bi-arrow-bar-left btn-Regresar Regr">Regresar</i></td>
 		</tr>	
 		<tr>
 			<th>No empleado</th>

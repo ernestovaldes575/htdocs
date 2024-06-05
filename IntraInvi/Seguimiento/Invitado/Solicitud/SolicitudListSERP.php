@@ -62,7 +62,7 @@ $InstSql = "SELECT SConsecutivo, SMes,SNumeFoli,".
 		   "FROM  stsolicitud ".
 		   "WHERE SEjercicio = $EjerTrab AND ".
 				 "SMes = '$MesTrab' AND ".
-			  	 "SConsAnfi = $ConsInvi AND ".
+			  	 "SConsInvi = $ConsInvi AND ".
 			  	 "SEstado = 'A'  ";
 			
 if ($BandMens)  echo '1)'.$InstSql.'<br>'; 

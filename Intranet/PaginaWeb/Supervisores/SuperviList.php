@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
+	<?php
+	   $TituEnca = "Listado de Supervisores";
+	   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaLiga.php'); ?>
 </head>
 <body>
-<script language="JavaScript" src="Supervi.js"></script>	
+<script language="JavaScript" src="SuperviList.js"></script>	
 <header>
 <?php 
   //Varibales Globales
@@ -18,22 +17,23 @@
  </header>  
 <?php
 $CRUD = "GET";
-include 'SuperviApi.php';
+include 'SuperviListSERP.php';
 ?>	
-<table class="ListInfo">
+<table width="70%" class="ListInfo tabla">
   <thead>
 	<tr>
-		<th>No Empleado</th>
-		<th>Nombre</th>
-		<th>Categoria</th>
-		<th>Foto</th>	
-		<th>
-		 <button class='Nuev'  
-			style="cursor: pointer; background-color:#40826D; border-color:blue; color:white; border-radius: 5px;" 
-			class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
-			onMouseOver="this.style.background='#49B675';" onMouseOut="this.style.background = '#40826D ';">
-		  +Nuevo
-		 </button>  
+		<th width="15%">No Empleado</th>
+		<th width="28%">Nombre</th>
+		<th width="25%">Categoria</th>
+		<th width="13%">Foto</th>	
+		<th width="7%">
+		<?php 
+		   if ($Alta == "A"){ ?>
+             <i class="bi bi-plus-lg Nuev btn-Nuevo" title="Agregar"></i>
+        <?php } ?>   	  
+		</th>
+		<th width="12%">
+			<i class="bi bi-arrow-bar-left btn-Regresar Regr">Regresar</i>
 		</th>	
 	</tr>
   </thead>
@@ -59,26 +59,16 @@ include 'SuperviApi.php';
 		  img </a>  
 		<? } ?>					
 		</td>	
-		
-		<!-- iconos dentro de la libreria font-awesome.min.css -->
-		<td>
-		 <?php if($Baja == "A" ){ ?>	
-			<button class='Elim' data-id='<?= $VC03?>' 
-			style="cursor: pointer; background-color:#820000 ; border-color:blue; color:white; border-radius: 8px;" 
-			class="flex-1 shadow-2xl bg-gray-800 text-white flex justify-center gap-2 items-center p-3 focus:bg-red-500"
-			onMouseOver="this.style.background='#E21313';" onMouseOut="this.style.background = '#820000 ';"
-			> Eliminar </button>
-		 <?php } ?>
-		</td>
-		<td>
-		  <?php if($Modi == "A" ){ ?>
-			<button class='Modi' data-id='<?= $VC03?>' 
-			style="cursor: pointer; background-color:#EB6320; border-color:blue; color:white; border-radius: 5px;" 
-			class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
-			onMouseOver="this.style.background='#FF8000';" onMouseOut="this.style.background = '#EB6320';">			
-			 Modificar </button>
+		<td data-titulo="Eliminar:">
+	  	  <?php if ($Baja == "A"  ) { ?>
+				<i class="bi bi-x-square btn-Eliminar Elim"
+				data-CaBu='<?= $VC03?>' title="Eliminar"></i>
 		  <?php } ?>
 		</td>
+		<td data-titulo="Eliminar:"><?php if ($Modi == "A" ){ ?>
+          <i class="bi bi-pencil-square btn-Modificar Modi" 
+					data-CaBu="<?= $VC03?>" title="Modificar"></i>
+        <?php } ?></td>
 	</tr>
 	<?php endforeach ?>
   </tbody>

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
+<?php
+   $TituEnca = "Empresas";
+   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaLiga.php'); ?>
 </head>
-<script language="JavaScript" src="PWRegistro.js"></script>
+<script language="JavaScript" src="Empresa.js"></script>
 
 <body> 
  <header>
@@ -19,21 +18,24 @@
  </header>
 <?php 
 //Carga de la Informacion	
-$CRUD = "GET";
-include 'EmpresaApi.php';
-echo "Valor CRUD: $CRUD ";
+include 'EmpresaSERP.php';
 ?>
-<form method="post" name="formulario"  action="EmpresaApi.php">
+<br>
+<form method="post" name="formulario"  action="EmpresaCRUD.php">
   <input type="hidden" name="C00" value="<?=$CRUD?>">
   <input type="hidden" name="C01" value="<?=$TipoMovi?>">
   <input type="hidden" name="C02" value="<?=$ConsBusq?>">
-			<table width="44%" class="ListInfo01" >
-			<tr>
-				<th width="24%">Empresa</th>
-				<td width="76%"><input type="text" name="C03" value="<?=$VC03?>" onkeyup="checaMensaje(this.value)"></td>
-			</tr>
-			<tr>
-			<th>Representante Legal</td>
+  <table width="44%" class="ListInfo" >
+	<tr>
+	  <th>&nbsp;</th>
+	  <td>&nbsp;</td>
+    </tr>
+	<tr>
+		<th width="24%">Empresa</th>
+		<td width="76%"><input type="text" name="C03" value="<?=$VC03?>" onkeyup="checaMensaje(this.value)"></td>
+	</tr>
+	<tr>
+	<th>Representante Legal</td>
 				<td><input type="text" name="C04" placeholder="Digitar Descripcion" value="<?=$VC04?>" onkeyup="checaMensaje(this.value)"></td>
 			</tr>
 			<tr>

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
+	<?php
+	   $TituEnca = "Unidad";
+	   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaLiga.php'); ?>
 </head>
 <script language="JavaScript" src="SupeUnidRegi.js"></script>
 <body>
@@ -17,10 +16,10 @@
   ?> 
  </header> 
 <?php
-	include 'SupeUnidRegiApi.php';
+	include 'SupeUnidRegiSERP.php';
 ?>	
 <br>
-<table class="ListInfo">
+<table width="50%" class="ListInfo tabla">
   <thead>
 	<tr>
 		<th width="34">Titulo</th>
@@ -40,12 +39,8 @@
 		<td><?=$VC05?></td>
 		<td>
 		<?php if($Baja == "A" ){ ?>
-			<button class='Elim' data-id='<?= $VC03?>'
-			style="cursor: pointer; background-color:#820000 ; border-color:blue; color:white; border-radius: 8px;" 
-			class="flex-1 shadow-2xl bg-gray-800 text-white flex justify-center gap-2 items-center p-3 focus:bg-red-500"
-			onMouseOver="this.style.background='#E21313';" onMouseOut="this.style.background = '#820000 ';"
-			>
-		  -Borrar</a>		
+			<i class="bi bi-x-square Elim btn-Eliminar"
+				data-id='<?= $VC03?>' title="ELIMINAR"></i>
 		<?php } ?>
         </td>				
 	</tr>
@@ -53,7 +48,7 @@
   </tbody>
 </table>
 <br>
-<table class="ListInfo">
+<table width="50%" class="ListInfo tabla">
   <thead>
 	<tr>
 		<th width="34">Titulo</th>
@@ -73,11 +68,7 @@
 		<td><?=$VC05?></td>
 		<td>
 		 <?php if($Baja == "A"  ){ ?>
-			<button class='Nuev' data-id='<?= $VC03?>' 
-			style="cursor: pointer; background-color:#40826D; border-color:blue; color:white; border-radius: 5px;" 
-			class="flex-1 shadow-2xl transition-all opacity-50 bg-green-500 text-white flex justify-center gap-2 items-center p-3 focus:bg-black"
-			onMouseOver="this.style.background='#49B675';" onMouseOut="this.style.background = '#40826D ';">
-		  +Agregar</a>	
+			<i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='<?= $VC03?>'></i> 
 		  <?php } ?>		
 		</td>				
 	</tr>

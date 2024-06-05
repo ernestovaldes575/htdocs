@@ -40,7 +40,7 @@
 			<th width="41%">Descripción</th>
 			<th width="6%">
 			 <?php 
-					if ($Alta == "A"){ ?>
+			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
 			<th width="12%">&nbsp;</th>
