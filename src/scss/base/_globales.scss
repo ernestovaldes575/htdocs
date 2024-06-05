@@ -1,0 +1,13 @@
+.contenedor{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    // background-color: red;
+    .contenedor-centrar{
+        width: 80%;
+        // background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

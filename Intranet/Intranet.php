@@ -52,8 +52,6 @@
 	?>
 	<!--Formulario de login-->
 	<?php 
-		$Titulo = "Registro";
-		include 'components/encabezado.php';
 		include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->

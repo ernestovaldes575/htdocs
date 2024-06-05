@@ -1,5 +1,5 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
 
     $InstSql =  "SELECT LTitulo, LDescripcion, ".
                                 "LImagen, LAbrirLiDoIm, LAImagDocu, LPublicacion, ".
@@ -10,3 +10,4 @@
     $RespSql = $ConeBase->prepare($InstSql);
     $RespSql->execute();
     $ResuEjer = $RespSql->fetchAll();
+?>

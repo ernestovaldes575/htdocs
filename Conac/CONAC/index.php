@@ -1,8 +1,8 @@
-<?php include '../Recursos/Encabezado.php'?>
+    <?php include '../Recursos/Encabezado.php'?>
 
-    <main class="contenedor-layer">
-        <img src="../../img/layer/1.png" alt="">
-    </main>
+        <main class="contenedor-layer">
+            <img src="../../img/layer/1.png" alt="">
+        </main>
     
     <?php include 'ContCona.php'?>
     

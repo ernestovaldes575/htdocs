@@ -135,7 +135,7 @@ switch ($CRUT)
 
 		break;
 	case "POST": //Alta
-		/*`LConsecut`, `LAyuntamiento`, `LUnidad`, 
+			/*`LConsecut`, `LAyuntamiento`, `LUnidad`, 
 		`LEjercicio`, `LMesRegi`, 
 		`LTipoDocu`, `LTitulo`, `LDescripcion`, 
 		`LSerPubCre`, `LFechAlta`, `LFechPublI`, `LFechPublF`, 

@@ -6,6 +6,7 @@
     <title>Botones</title>
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/build/css/style.css">
+    <link rel="stylesheet" href="/dest/css/style.css">
 </head>
 <body>
     <div class="container d-flex justify-content-center">

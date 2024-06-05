@@ -1,9 +1,0 @@
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\1.- Estado Analitico de Egresos por Objeto de Gasto.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\2.- Estado Analitico de Egresos por Clasificacion Economica.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\3.- Estado Analitico de Egresos por Clasificacion Programatica.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\4.- Estado Analitico de Egresos por Clasificacion Administrativa.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\5.- Estado Analitico de Egresos por Clasificacion Funcional.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\6.-Estado Anal¡tico de Ingresos.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\7.-Estado Comparativo presupuestal de Egresos.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\8.-Estado Comparativo presupuestal de Ingresos.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\2T\presupuestaria\lista_archivos_ruta.txt

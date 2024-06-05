@@ -1,15 +1,18 @@
-<?php include '../../Components/EncaPrin.php';?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php $Titulo = 'Aviso de Privacidad';?>
+    <?php include '../../Components/HeadHtml.php'?>
+</head>
+<body>
+    <?php include '../../Components/menuPrin.php'?>
 
-<?php include '../../Components/Menu.php'?>
-
-<?php include '../../EstrPagi/NavImg.php'?>
-
-<div class="header__layer">
-    <div class="header__layer__contenedor">
-        <h1>Avisos de Privacidad</h1>
-    </div>
-</div>   
-<!-- Empieza Codigo -->
+    <div class="header__layer">
+        <div class="header__layer__contenedor">
+            <h1>Avisos de Privacidad</h1>
+        </div>
+    </div>   
+    <!-- Empieza Codigo -->
     <div class="contenedor__titulo">
         <h1>
             Aviso de Privacidad
@@ -85,11 +88,7 @@
             </ul>
         </div>
     </main>
-
-<?php include '../../EstrPagi/Footer.php'?>
-
-<?php //$jslibs=["menujs"=>"y"]; printJSlibs($jslibs);?>
-
+    <?php include '../../Components/Footer.php'?>
     <script src="/scripts/app.js"></script>
 </body>
 <html>

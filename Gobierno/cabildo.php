@@ -1,10 +1,11 @@
-<?php include 'Components/Encabezado.php'?>
-    <main class="contenedor-layer">
-        <img src="../img/layer/1.png" alt="">
-    </main>
-<?php
-    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');
-?>
+    <?php 
+        $Titulo = "Integrantes de Cabildo";
+        include 'Components/Encabezado.php'
+    ?>
+        <main class="contenedor-layer">
+            <img src="../img/layer/1.png" alt="">
+        </main>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');?>
     <main class="ContPres mb-5">
         <div class="PresImag">
             <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" 
@@ -23,8 +24,9 @@
     <main class="contenedor__principal__cabildo">
         <div class="principal__cabildo effect">
             <div class="princial__cabildo__grid">
-                <div class="card shadow  rounded-4" style="width: 20rem;">
+                <div class="card" style="width: 22rem;">
                     <?php
+                    
                         $InstSql =  "SELECT LImagen ". 
                                     "FROM   stlayers ". 
                                     "WHERE  LTipoDocu = '10' AND ". 
@@ -35,7 +37,7 @@
                         foreach($ResuImag as $RegTab01){
                                 $ImagSind = $RegTab01[0];
                                 $RutaImag = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
-                        ?>
+                    ?>
                         <img src="<?=$RutaImag?><?=$ImagSind?>" 
                         class="card-img-top rounded-lg" alt="Sindico-Municipal">
                     <?php }?>
@@ -60,12 +62,15 @@
         <div class="contenedor__cabildo__posicion">
             <div class="contenedor__grid">
             <?php
-                $InstSql =  "SELECT CNombre, CCargo, CTelefono, CDireccion, CImagen, CAYDescripcion, Colonia, CodiPost, CFondo ". 
+                $BandInst = false;
+                $InstSql =  "SELECT CNombre, CCargo, CTelefono, CDireccion, ".
+                                    "CImagen, CAYDescripcion, Colonia, CodiPost, CFondo ". 
                             "FROM stcabidire ".
                             "INNER JOIN acceso.acayuntamiento ON CAyuntamiento = CAYClave ".
                             "WHERE CCabiDir = 'C' ". 
                             "AND CTipo = 'R' ".
                             "ORDER BY CNumero ASC";
+                if($BandInst) echo "1)$InstSql<br>";
                 $RespSql = $ConeBase->prepare($InstSql);
                 $RespSql->execute();
                 $ResuCabi = $RespSql->fetchAll();
@@ -81,6 +86,7 @@
                         $CodiAyun = $RegTab02[7];
                         $ClasFond = $RegTab02[8];
                         $LigaRegi = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
+                        if($BandInst) echo "2)$LigaRegi<br>";
             ?> 
             <div class="card shadow mb-5" style="width: 20rem;">
                 <img src="<?=$LigaRegi?><?=$ImagRegi?>" class="card-img-top" alt="Imagen-Cabildo">
@@ -108,7 +114,7 @@
 
     <script src="/scripts/app.js"></script>
     <script>ScrollReveal().reveal('.effect',{interval:150});</script>
-    <?php include '../EstrPagi/Footer.php'?>  
+    <?php include '../Components/Footer.php'?>  
 
 </body>
 </html>

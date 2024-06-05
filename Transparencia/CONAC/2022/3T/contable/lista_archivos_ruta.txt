@@ -1,9 +1,0 @@
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\1.-Estado de Actividades.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\2.-Estado de la Situci¢n Financiera.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\3.-Estado de Cambios en la Situaci¢n Financiera.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\4.-Estado de Variaci¢n en la hacienda P£blica.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\5.-Estado de Flujo de Efectivo.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\6.-Notas a los Estados Financieros.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\7.-Estado Anal¡tico del Activo.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\8.-Estado Anal¡tico de Deuda y Otros Pasivos.pdf
-C:\xampp\htdocs\Transparencia\CONAC\2022\3T\contable\lista_archivos_ruta.txt

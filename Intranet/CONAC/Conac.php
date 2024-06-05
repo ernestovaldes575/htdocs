@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" type="text/css" href="/Intranet/Encabezado/EstiIntr.css">
-</head>
+<?php
+	$Titulo = "Facultades de Área";
+	include '../components/encabezado.php';
+	include '../components/EncaPrin.php';
+?>
 <script language="JavaScript" >
 function CargImag(Param1)
 { Ruta = "ImgPagSubiArch.php?Param1="+Param1; 
@@ -13,57 +10,43 @@ function CargImag(Param1)
   Cata = window.open(Ruta,"Carga documento",Dime);
 }
 </script>
-<body> 
- <header>
-  <?php 
-   //Varibales Globales
-   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
-   //Encabezado	
-   require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
-   include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');
-  ?> 
- </header>
- 	
-<?php 
+	<?php 
+   		//Varibales Globales
+		include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+		include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');
+		//Carga las variables
+		$ArCooki3 = $_COOKIE['CBusqMae'];
+		$ABusqMae = explode("|", $ArCooki3);
+		//echo '$ABusqMae'.$ABusqMae.'<br>';
+		$TipoDocu = $ABusqMae[0];
+		$EjerTrab = $ABusqMae[1];
 
-
-
-//Carga las variables
-$ArCooki3 = $_COOKIE['CBusqMae'];
-$ABusqMae = explode("|", $ArCooki3);
-//echo '$ABusqMae'.$ABusqMae.'<br>';
-$TipoDocu = $ABusqMae[0];
-$EjerTrab = $ABusqMae[1];
-
-//Bandera de visualizar msg */
-$BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
-
-//Carga de la Informacion	
-$CRUT = "GET";
-include 'ConacClasApi.php';
-		
-$VC03 = "";  $VC04 = ""; 
-$VC05 = "";  $VC06 = "";
-if ($ResuSql)
-  { $VC03 = $ResuSql[0];	//CNumeCona
-	$VC04 = $ResuSql[1];	//CDescDocu
-	$VC05 = $ResuSql[2];	//CTDCarpeta
-	$VC06 = $ResuSql[3];	//CArchivo
-  }
-  
-  $RutaArch = '/ExpeElectroni/'.$ClavAyun.'/'.$EjerTrab.'/'.$VC05.'/';
-		
-$MesnTiMo = "";
-switch( $TipoMovi ){
-	case "A": $MesnTiMo = "Alta";  
-			  $CURT = "POST";		  break;
-	case "M": $MesnTiMo = "Modificar"; 
-			  $CURT = "PUT";		  break;
-	case "B": $MesnTiMo = "Eliminar";   
-			  $CURT = "DELETE";		  break;
-  } ?>
+		//Bandera de visualizar msg */
+		$BandMens = false;
+		if(isset($_GET["Param0"]) )
+				$BandMens = true;
+			//Carga de la Informacion	
+			$CRUT = "GET";
+		include 'ConacClasApi.php';
+		$VC03 = "";  $VC04 = ""; 
+		$VC05 = "";  $VC06 = "";
+		if ($ResuSql){ 
+			$VC03 = $ResuSql[0];	//CNumeCona
+			$VC04 = $ResuSql[1];	//CDescDocu
+			$VC05 = $ResuSql[2];	//CTDCarpeta
+			$VC06 = $ResuSql[3];	//CArchivo
+		}
+		$RutaArch = '/ExpeElectroni/'.$ClavAyun.'/'.$EjerTrab.'/'.$VC05.'/';
+		$MesnTiMo = "";
+		switch( $TipoMovi ){
+			case "A": 	$MesnTiMo = "Alta";  
+						$CURT = "POST";		  break;
+			case "M": 	$MesnTiMo = "Modificar"; 
+						$CURT = "PUT";		  break;
+			case "B": 	$MesnTiMo = "Eliminar";   
+						$CURT = "DELETE";	break;
+			} 
+		?>
 	
 <!--encabezado-->
 <br>

@@ -1,0 +1,30 @@
+@use '../base/mixins' as m;
+#swiper-2 {
+    width:24vw;
+    z-index:0;
+    img{
+        width: 100%;
+        height: auto;
+        overflow:hidden;
+        border:solid 1px gray;
+        object-fit: cover;
+
+        display:block;
+        width:100%;
+        object-fit:cover;
+    }
+    .swiper-pagination-bullet{
+        width:1.3em;
+        height:1.3em;
+        margin:0 .8em;
+        background-color:red;
+        border:solid .1em black;
+    }
+    @include m.desktop{
+        width:80vw;
+        z-index:0;
+    }
+    @include m.telefono{
+        width: 80vw;
+    }
+}

@@ -71,7 +71,7 @@ const swiper5 = new Swiper('#swiper-5',{
         el: '.swiper-pagination'
     },
     autoplay:{
-        delay:4000,
+        delay:3000,
         pauseOnMouseEnter:true
     },
     mousewheel:{

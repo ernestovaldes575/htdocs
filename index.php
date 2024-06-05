@@ -1,81 +1,85 @@
-<?php 
-    $ClavAyun = '105';
-    $Title = "Zinacantepec";
-    include 'Components/HeadHtml.php';
-    include 'Components/menuPrin.php';
-    include 'Components/menuSecu.php';
-    
-    include 'EstrPagi/DepeAuxi.php';
-    include 'Components/RedesSociales.php';
-?>
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido animate">
-                Transparencia
-            </h2>
-        </div>
-    </section>
-    
-    <?php include 'EstrPagi/Transparencia.php'?>
-    
-    <!-- <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Ultimas Noticias
-            </h2>
-        </div>
-    </section> -->
-    <?php 
-        // include 'EstrPagi/Noticias.php'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+        $ClavAyun = '105';
+        $Titulo = "Zinacantepec";
+        include 'Components/HeadHtml.php';
     ?>
+</head>
+<body>
+    <?php
+        include 'Components/menuPrin.php';
+        include 'Components/menuSecu.php';
+        include 'Components/RedesSociales.php';
+    ?>
+    <?php include 'EstrPagi/Modulo01.php'?>
 
-    <!-- Avisos -->
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Avisos
-            </h2>
-        </div>
-    </section>
-
-    <main class="main__secondary">
-        <div class="contenedor__principal">
-            <?php include 'EstrPagi/Avisos02.php'?>
-            <?php include 'EstrPagi/Avisos03.php'?>
-            <?php include 'EstrPagi/Avisos01.php'?>
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h2 class="titulo">
+                    Transparencia
+                </h2>
+            </div>
         </div>
     </main>
-
-    <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Sitios de Interes
-            </h2>
+    <?php include 'EstrPagi/Modulo02.php';?>
+    
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h2 class="titulo">
+                    Ultimas Noticias
+                </h2>
+            </div>
         </div>
-    </section>
-    <?php include 'EstrPagi/SitiInte.php'?>
+    </main> 
+    <?php include 'EstrPagi/Modulo03.php';?>
 
-    <!-- <section class="contenedor--titulo">
-        <div class="contenedor--titulo--posicion">
-            <h2 class="contenedor--titulo--posicion--contenido">
-                Redes Sociales
-            </h2>
+    <!-- Avisos -->
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h2 class="titulo">
+                    Avisos
+                </h2>
+            </div>
         </div>
-    </section>-->
-    <?php 
-        // include 'EstrPagi/RedeSoci.php'
-    ?>
+    </main> 
+    <?php include 'EstrPagi/Modulo04.php'?>
 
-    <?php include 'EstrPagi/Footer.php'?> 
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h2 class="titulo">
+                    Sitios de Interes
+                </h2>
+            </div>
+        </div>
+    </main>
+    <?php include 'EstrPagi/Modulo05.php'?>
+    
+    <main class="contenedor">
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h2 class="titulo">
+                    Redes Sociales
+                </h2>   
+            </div>
+        </div>
+    </main>
+    <?php include 'EstrPagi/Modulo06.php'?>
 
     <script src="/scripts/app.js"></script>
     <script src="./swiperjs/swiper-bundle.min.js"></script>
     
     <script src="/scripts/swiper.js"></script>  
     <script>
-        ScrollReveal().reveal('.effect',{interval:150});
+        ScrollReveal().reveal('.effect',{interval:130});
     </script>
     <script src="./scripts/anime.min.js"></script>  
     <script src="/scripts/animate.js"></script>
+    <?php include 'Components/Footer.php';?>
 </body>
 </html>
