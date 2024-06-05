@@ -1,18 +1,18 @@
-<?php 
-    $Titulo = 'Directores';
-    include 'Components/Encabezado.php'
-?>
-
-<?php
-    include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php')
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php 
+        $Titulo = 'Directores';
+        include 'Components/Encabezado.php'
+    ?>
+</head>
+<body>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');?>
     <main class="contenedor__img__presidente">
         <div class="img__presidente shadow-lg">
             <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png">
         </div>
     </main>
-
-
     <main class="w-100 flex justify-center text-center items-center" style="margin: 2.5em 0 2em 0;">
         <div class="w-70">
             <h1 class="text-5xl font-bold uppercase text-slate-600">
