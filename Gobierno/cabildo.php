@@ -20,7 +20,7 @@
         </div>
     </main>
 
-            <div class="container d-flex justify-content-center">
+            <div class="container d-flex justify-content-center mt-5">
                 <?php
                     $BandInst = false;
                     $InstSql =  "SELECT CImagen ". 
