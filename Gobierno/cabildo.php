@@ -1,66 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <?php 
         $Titulo = "Integrantes de Cabildo";
         include 'Components/Encabezado.php'
     ?>
-        <main class="contenedor-layer">
-            <img src="../img/layer/1.png" alt="">
-        </main>
+</head>
+<body>
+    <main class="contenedor-layer">
+        <img src="/img/layer/1.png" alt="">
+    </main>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');?>
-    <main class="ContPres mb-5">
-        <div class="PresImag">
-            <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" 
-            alt="Imagen Presidente" class="shadow-lg">
+    <div class="container">
+        <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="">
+    </div>
+    <main class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <h2 class="fs-2 text-uppercase fw-bold">Integrantes de Cabildo</h2>
         </div>
     </main>
 
-    <main class="w-100 flex justify-center text-center items-center">
-        <div class="w-70">
-            <h1 class="text-5xl font-bold uppercase text-slate-600">
-                Integrantes de Cabildo
-            </h1>
-        </div>
-    </main>
-
-    <main class="contenedor__principal__cabildo">
-        <div class="principal__cabildo effect">
-            <div class="princial__cabildo__grid">
-                <div class="card" style="width: 22rem;">
-                    <?php
-                    
-                        $InstSql =  "SELECT LImagen ". 
-                                    "FROM   stlayers ". 
-                                    "WHERE  LTipoDocu = '10' AND ". 
-                                    "LTitulo LIKE '%Sind%'";
-                        $RespSql = $ConeBase->prepare($InstSql);
-                        $RespSql->execute();
-                        $ResuImag = $RespSql->fetchAll();
-                        foreach($ResuImag as $RegTab01){
-                                $ImagSind = $RegTab01[0];
-                                $RutaImag = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
-                    ?>
-                        <img src="<?=$RutaImag?><?=$ImagSind?>" 
-                        class="card-img-top rounded-lg" alt="Sindico-Municipal">
-                    <?php }?>
-                    <div class="card-body">
-                        <h5 class="card-title fs-5 fw-bold text-center">Dulce María Bastida Alvarez</h5>
-                        <p class="card-text text-center">Sindico Municipal</p>
-                        <p class="card-text text-center">
-                            <i class="bi bi-telephone-fill"></i>
-                            7229177206
-                        </p>
-                        <p class="card-text text-center">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            Constitucion 101, Centro, 51350 San Miguel Zinacantepec, Méx.
-                        </p>
+            <div class="container d-flex justify-content-center mt-5">
+                <?php
+                    $BandInst = false;
+                    $InstSql =  "SELECT CImagen ". 
+                                "FROM   stcabidire ". 
+                                "WHERE  CTipo = 'S' AND ". 
+                                "CNombre LIKE '%Dulce%'";
+                            if($BandInst) echo "1)$InstSql<br>";
+                    $RespSql = $ConeBase->prepare($InstSql);
+                    $RespSql->execute();
+                    $ResuImag = $RespSql->fetchAll();
+                            foreach($ResuImag as $RegTab01){
+                                    $ImagSind = $RegTab01[0];
+                                    $RutaImag = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
+                            if($BandInst) echo "2)$ImagSind<br>";
+                ?>
+                <div class="d-flex justify-content-center">
+                    <div class="card shadow mb-5" style="width: 22rem;">
+                        <img src="<?=$RutaImag?><?=$ImagSind?>" class="card-img-top" alt="Imagen-Cabildo">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold text-center text-lg">
+                                Dulce María Bastida Alvarez
+                            </h2>
+                            <h3 class="card-title fw-semibold text-center text-base">
+                                Sindico Municipal
+                            </h3>
+                            <p class="card-text text-center">
+                                <i class="bi bi-telephone-fill"></i>
+                                7229177206
+                            </p>
+                            <p class="card-text text-center">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                Constitucion 101, Centro, 51350 San Miguel Zinacantepec, Méx.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <?php }?>
         </div>
-    </main>
 
-    <main class="contenedor__secundario">
-        <div class="contenedor__cabildo__posicion">
-            <div class="contenedor__grid">
+    <main class="container mt-5">
+        <div class="row">
             <?php
                 $BandInst = false;
                 $InstSql =  "SELECT CNombre, CCargo, CTelefono, CDireccion, ".
@@ -88,26 +89,27 @@
                         $LigaRegi = '/ExpeElectroni/105/PaguWeb/2022/Cabildo/';
                         if($BandInst) echo "2)$LigaRegi<br>";
             ?> 
-            <div class="card shadow mb-5" style="width: 20rem;">
-                <img src="<?=$LigaRegi?><?=$ImagRegi?>" class="card-img-top" alt="Imagen-Cabildo">
-                <div class="card-body">
-                    <h2 class="card-title fw-bold text-center text-lg"><?=$ResuNomb?></h2>
-                    <h3 class="card-title fw-semibold text-center text-base"><?=$ResuCarg?></h3>
-                    <p class="card-text text-center">
-                    <i class="bi bi-telephone-fill"></i>
-                    <?=$ResuTele?>
-                    </p>
-                    <p class="card-text text-center">
-                        <i class="bi bi-geo-alt-fill"></i>
-                            <?=$ResuDire?> <?=$DescAyun?>, Méx 
-                            <?=$ColoAyun?>,<?=$CodiAyun?>
-                    </p>
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card shadow mb-5" style="width: 22rem;">
+                    <img src="<?=$LigaRegi?><?=$ImagRegi?>" class="card-img-top" alt="Imagen-Cabildo">
+                    <div class="card-body">
+                        <h2 class="card-title fw-bold text-center text-lg"><?=$ResuNomb?></h2>
+                        <h3 class="card-title fw-semibold text-center text-base"><?=$ResuCarg?></h3>
+                        <p class="card-text text-center">
+                        <i class="bi bi-telephone-fill"></i>
+                        <?=$ResuTele?>
+                        </p>
+                        <p class="card-text text-center">
+                            <i class="bi bi-geo-alt-fill"></i>
+                                <?=$ResuDire?> <?=$DescAyun?>, Méx 
+                                <?=$ColoAyun?>,<?=$CodiAyun?>
+                        </p>
+                    </div>
                 </div>
             </div>
             <?php
                 }
             ?>
-            </div>
         </div>
     </main>
 
