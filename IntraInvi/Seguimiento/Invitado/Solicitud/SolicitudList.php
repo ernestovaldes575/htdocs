@@ -35,9 +35,9 @@ include 'SolicitudListSERP.php';
 	    $DatoList = "02";
 		include ('SolicitudListVC.php'); ?>	
 	</td>
-	<td width="17%">&nbsp;</td>
-	<td width="15%">&nbsp;</td>
-	<td width="27%">&nbsp;</td>
+	<td width="29%">&nbsp;</td>
+	<td width="10%">&nbsp;</td>
+	<td colspan="2" align="center">Detalle</td>
 	<td width="10%"><?php 
 	  if ($Alta == "A"){ ?>
       <i class="bi bi-plus-lg Repa btn-Nuevo" title="AGREGAR" data-id='0'></i>
@@ -47,9 +47,10 @@ include 'SolicitudListSERP.php';
   <tr>
     <th>Mes</th>
     <th>Folio</th>
+    <th>Repartidos</th>
     <th>Importe</th>
-    <th>Estado</th>
-    <th>&nbsp;</th>
+    <th width="10%">Articulo</th>
+    <th width="10%">Importe</th>
     <th colspan="2">&nbsp;</th>
   </tr>
   <?php 
@@ -60,9 +61,10 @@ include 'SolicitudListSERP.php';
   <tr>
     <td><?=$VC04?></td>
     <td><?=$VC05?></td>
-    <td><?=$VC09?></td>
+    <td><?=$VC07?></td>
     <td><?=$VC10?></td>
-    <td><?=$VC11?></td>
+    <td><?=$VC14?></td>
+    <td><?=$VC15?></td>
 	<!-- iconos dentro de la libreria font-awesome.min.css -->
 	<td data-titulo="Eliminar:">
 	 <?php if($Baja == "A"  ) { ?>

@@ -25,14 +25,21 @@ switch ($DatoList){
 		 $VC04=$RegiTabl['SMes'];	
 		 $VC05=$RegiTabl['SNumeFoli'];
 		
-		 $VC06=$RegiTabl['SFormaPago'];
-		 $VC07=$RegiTabl['SMetoPago'];
+		 $VC06=$RegiTabl['SRepartidor'];
+		 $VC07=$RegiTabl['CREDescri'];
 		
-		 $VC08=$RegiTabl['SUso'];	
-		 $VC09=$RegiTabl['SFechAlta'];	
-		 $VC10=$RegiTabl['SImporte'];	
+		 $VC08=$RegiTabl['SFormaPago'];
+		 $VC09=$RegiTabl['SMetoPago'];
+		 $VC10=$RegiTabl['SUso'];	
+		
+		 $VC11=$RegiTabl['SFechAlta'];	
+		 $VC12=$RegiTabl['SImporte'];	
 		  		
-		 $VC11=$RegiTabl['SSeguimi'];
+		 $VC13=$RegiTabl['SSeguimi'];
+		
+		 $VC14=$RegiTabl['TotaArti'];
+		 $VC15=$RegiTabl['ImpoDeta'];
+
 						
 		 //$RutaArch = "/ExpeElectroni/$ClavAyun/PaguWeb/$EjerTrab/$CarpTiDo/";
 		break;

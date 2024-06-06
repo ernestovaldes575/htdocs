@@ -56,16 +56,26 @@ $CataMes = $EjInSql->fetchAll();
 		
 //------------------------------------------------------------------------	
 //Carga el registro para Consulta
-$InstSql = "SELECT SConsecutivo, SMes,SNumeFoli,". 
-			  	  "SFormaPago, SMetoPago,". 
-			  	  "SUso, SFechAlta, SImporte, SSeguimi ".
+$InstSql = "SELECT SConsecutivo, SMes,SNumeFoli,".
+				  "SRepartidor,CREDescri,".
+			  	  "SFormaPago, SMetoPago, SUso, ". 
+			  	  "SFechAlta, SImporte, SSeguimi, ".
+				  "(SELECT COUNT(*) ".
+				   "FROM   SDSoliDeta ".
+				   "WHERE  DConseSoli = SConsecutivo AND ".
+						  "DEstado = 'A') AS TotaArti, ".
+				  "(SELECT SUM(DImporte) ".
+				   "FROM   SDSoliDeta ".
+				   "WHERE  DConseSoli = SConsecutivo AND ".
+						  "DEstado = 'A') AS ImpoDeta ".
 		   "FROM  stsolicitud ".
+		   "INNER JOIN SCRepartidor ON SRepartidor = CREConsecut ".	
 		   "WHERE SEjercicio = $EjerTrab AND ".
 				 "SMes = '$MesTrab' AND ".
 			  	 "SConsInvi = $ConsInvi AND ".
 			  	 "SEstado = 'A'  ";
 			
-if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetchAll();
