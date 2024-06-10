@@ -5,14 +5,14 @@
 	//echo '$ABusqMae'.$ABusqMae.'<br>';
 	$EjerTrab = $ABusqMae[0];
 	//!Servidor
-	$contraseña = 'E9TQE4QXOP3A';
-	$user = 'difzinac_intranet';
-	$dbname = 'difzinac_paginaweb';
+	// $contraseña = 'E9TQE4QXOP3A';
+	// $user = 'difzinac_intranet';
+	// $dbname = 'difzinac_paginaweb';
 
 	//!Local
-	// $contraseña = "";
-	// $user = "root";
-	// $dbname = "transpa$EjerTrab";
+	$contraseña = "";
+	$user = "root";
+	$dbname = "transpa$EjerTrab";
 	
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
