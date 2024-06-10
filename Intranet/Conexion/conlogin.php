@@ -1,13 +1,13 @@
 <?php
 	//!Servidor
-	// $contraseña = 'NXBWSHJ4E46L';
-	// $user = 'difzinac_intranet';
-	// $dbname = 'difzinac_acceso';
+	$contraseña = 'E9TQE4QXOP3A';
+	$user = 'difzinac_intranet';
+	$dbname = 'difzinac_acceso';
 
 	//!Local
-	$contraseña = '';
-	$user = 'root';
-	$dbname = 'acceso';
+	// $contraseña = '';
+	// $user = 'root';
+	// $dbname = 'acceso';
 
 	try{
 		$con = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
