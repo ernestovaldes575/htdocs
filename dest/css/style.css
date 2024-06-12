@@ -12405,6 +12405,14 @@ textarea.form-control-lg {
   justify-content: center;
 }
 
+.logoveda, .logo-simga {
+  width: 18%;
+}
+
+header img {
+  width: 10%;
+}
+
 .contenedor-tabla {
   width: 100%;
 }

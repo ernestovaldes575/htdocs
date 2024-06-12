@@ -1,6 +1,6 @@
 	<?php
 	//!Servidor 
-	// $contraseña = "";
+	// $contraseña = "E9TQE4QXOP3A";
 	// $user = "difzinac_intranet";
 	// $dbname = "difzinac_comsocial";
 

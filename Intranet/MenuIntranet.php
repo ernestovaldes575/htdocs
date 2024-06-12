@@ -1,9 +1,11 @@
 <?php 
-		$Titulo = 'MenuIntranet';
-		include 'components/encabezado.php';
-		include 'components/logoHeader.php';
-		session_start();
-
+	$Titulo = 'Menu Intranet';
+	include 'components/encabezado.php';
+	include 'components/logoHeader.php';
+	
+	session_start();
+	$ConeInEx = $_SESSION['ConeInEx'];
+	// echo "Conexion: $ConeInEx";
 	//Carga las variables
 	$ArCooki1 = $_COOKIE['CMenu'];
 	$AMenu = explode("|", $ArCooki1);
@@ -43,7 +45,7 @@
 				$MenuBase = $ResuSql->fetchAll();
 ?>
 	<div class="intra">
-		<divc class="container-sm d-flex justify-content-between">
+		<divc class="container-xl d-flex justify-content-between">
 			<div>
 				<h2 class="text-uppercase fw-bolder	text-light">
 					Menu Intranet

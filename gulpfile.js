@@ -15,7 +15,7 @@ function css(done){
 
 function bootstrap(done){
     src('sass/scss/style.scss')
-        .pipe(sass())
+        .pipe(sass({outputStyle:'expanded'}))
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('dest/css'))
     done()
