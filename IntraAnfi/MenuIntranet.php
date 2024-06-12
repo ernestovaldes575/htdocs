@@ -17,7 +17,7 @@
 <?php
 	
 $ClavAyun = '105';
-include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php'); 
+include($_SERVER['DOCUMENT_ROOT'].'/IntraAnfi/Encabezado/EncaCook.php'); 
 	
 //Carga las variables
 $ArCooki1 = $_COOKIE['CMenu'];
@@ -48,7 +48,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
 $InstSql = "SELECT CMEClave,CMEDescri,CMEBasDat ".
 		   "FROM acceso.atpermen ".
 		   "INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
-		   "WHERE PAyuntamiento='$ClavAyun' and PConsServ='$ConsInvi' ";
+		   "WHERE PAyuntamiento='$ClavAyun' and PConsServ='$ConsAnfi' ";
 if ($BandMens)  echo "1)<br>$InstSql<br><br>";
 $ResuSql = $ConeBase->prepare($InstSql);
 $ResuSql->execute();
@@ -78,7 +78,7 @@ $MenuBase = $ResuSql->fetchAll();
 						"WHERE CTSClave in (SELECT PTipoServ ".
 										   "FROM   $CMEBasDat.adPermi ".
 										   "WHERE  PAyuntamiento = '".$ClavAyun."' AND ".
-												  "PConsServ = ".$ConsInvi.")";
+												  "PConsServ = ".$ConsAnfi.")";
 
 			if ($BandMens)  echo "2)<br>$InstSql<br><br>";
 			$ResSql2 = $ConeBase->prepare($InstSql);
@@ -102,7 +102,7 @@ $MenuBase = $ResuSql->fetchAll();
 							   "FROM ".$CMEBasDat.".adpermi ".
 							   "Inner Join ".$CMEBasDat.".acopcser ON PTipoServ=COSTipSer AND POpciServ=COSClave ".
 							   "WHERE PAyuntamiento = '".$ClavAyun."' AND ".
-									   		 "PConsServ ='".$ConsInvi."' AND ". 
+									   		 "PConsServ ='".$ConsAnfi."' AND ". 
 											 "PTipoServ = '".$OpcSub."'";
 					if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
 					$ResSql3 = $ConeBase->prepare($InstSql);
@@ -128,7 +128,7 @@ $MenuBase = $ResuSql->fetchAll();
 		}
 		//endforeach; ?>
 		</table>
-	<a href="/IntraInvi/Intranet.php" class="enlace1 exit">Salir</a>
+	<a href="/IntraAnfi/Intranet.php" class="enlace1 exit">Salir</a>
 </body>
 </html>
 							

@@ -75,7 +75,24 @@ $ResuSql->execute();
 $MensResp = ($ResuSql) ?  "Algo ha fallado!!!" : "Registro actualizado correctamente";
 if (!$ResuSql) 
 	echo '<script>alert("'.$MensResp.'");</script>'; 
-//Cambiar archivo
-$PagiRegr = "location: InformaList.php"; 
+
+//Para la ALTA
+if ($CRUD == "POST") 
+ { //Recupera la secuencia 
+   $InstSql = "SELECT @@identity AS id "; 	
+   if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+   $RespSql = $ConeBase->prepare($InstSql);
+   $RespSql->execute();
+   $ResuSql = $RespSql->fetch();
+
+   $CampBusq = 0;		
+   if ($ResuSql)
+	    $CampBusq = $ResuSql[0];
+  }
+
+//Defina pagina de regreso
+$PagiRegr = ($CRUD == "DELETE") ? "location: InformaList.php" :
+								  "location: Informa.php?PaAMB01=M&PaAMB02=".$CampBusq ; 
+
 if (!$BandMens) header($PagiRegr);	
 ?>

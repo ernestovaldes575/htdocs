@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php');
-include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
+include($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Encabezado/EncaCook.php');
+include($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Conexion/ConBasInvita.php');
 
 //********************************************************************
 //Carga las variables
@@ -29,7 +29,8 @@ if( isset($_GET['PaCRUD01']) != ''){
 
 //------------------------------------------------------------------------
 //Catalogo de Repartidor
-$InstSql =  "SELECT DDescri, DCatindad, DImporte ".
+$InstSql =  "SELECT DDescri, DCatindad, ".
+				   "DClavUnidMedi, DDescUnidMedi, DClaveProdu, DImporte ".	
 			"FROM  sdsolideta ".
 			"WHERE DConseSoli = $ConsSoli AND ".
 				  "DNumero = $NumeArti ";
@@ -39,12 +40,16 @@ $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
 //Valores de la tabla
-$VC04 = $NumeArti;  $VC05 = "";  $VC06 = 1; $VC07 = 0;  
+$VC04 = $NumeArti;  $VC05 = "";  $VC06 = 1; $VC07 = 0; 
+$VC08 = ""; $VC09 = ""; $VC10 = "";
 			
 if ($ResuSql)
  { $VC05 = $ResuSql['DDescri'];	
-   $VC06 = $ResuSql['DCatindad'];	
+   $VC06 = $ResuSql['DCatindad'];
    $VC07 = $ResuSql['DImporte'];	
+   $VC08 = $ResuSql['DClavUnidMedi'];	
+   $VC09 = $ResuSql['DDescUnidMedi'];	
+   $VC10 = $ResuSql['DClaveProdu'];	
 }
 else
  { 

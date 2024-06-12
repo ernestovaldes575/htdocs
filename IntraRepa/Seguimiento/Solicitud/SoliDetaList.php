@@ -5,16 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/IntraInvi/Css/style.css">
+	<link rel="stylesheet" href="/IntraRepa/Css/style.css">
 </head>
 <script language="JavaScript" src="SoliDetaList.js"></script>
 <body>
 <header>
   <?php 
    //Varibales Globales
-   include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php');
+   include($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Encabezado/EncaCook.php');
    //Encabezado	
-   require_once($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaPrin.php'); 
+   require_once($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Encabezado/EncaPrin.php'); 
   ?> 
  </header>
 <?php

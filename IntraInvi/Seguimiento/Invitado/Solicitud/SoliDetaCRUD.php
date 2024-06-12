@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php');
-include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
+include($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Encabezado/EncaCook.php');
+include($_SERVER['DOCUMENT_ROOT'].'/IntraRepa/Conexion/ConBasInvita.php');
 
 //********************************************************************
 //Carga las variables
@@ -26,13 +26,16 @@ $DescArti = $_POST['C05'];
 $CantArti = $_POST['C06']; 
 $ImpoArti = $_POST['C07']; 
 
+$ClavUnid = $_POST['C08'];
+$DescUnid = $_POST['C09'];
+$ClavProd = $_POST['C10'];
 
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO sdsolideta ". 
 				   "VALUES ($ConsSoli, $NumeArti, ". 
 						   "'$DescArti', $CantArti, ".
-						   "'','','', ".
+						   "'$ClavUnid','$DescUnid','$ClavProd', ".
 						   "$ImpoArti, 'A') "; 
 		break;
 	case "PUT": //Cambio
@@ -40,7 +43,10 @@ switch ( $CRUD )
 				   "SET    DNumero = $NumeArti, ".
 						  "DDescri = '$DescArti',". 
 						  "DCatindad = $CantArti,". 
-						  "DImporte =  $ImpoArti ". 
+						  "DImporte =  $ImpoArti, ".
+						  "DClavUnidMedi = '$ClavUnid',".
+						  "DDescUnidMedi = '$DescUnid',".
+						  "DClaveProdu = '$ClavProd' ".
 				   "WHERE  DConseSoli = $ConsSoli AND ".
 						  "DNumero  = $NumeBusq ";
 		break;

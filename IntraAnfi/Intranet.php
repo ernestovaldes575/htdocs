@@ -4,29 +4,23 @@ if (isset($_POST['Ingresar'])){
 	include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
 	$usuario = htmlentities(addslashes($_POST["InputCla"]));
 	$password = htmlentities(addslashes($_POST["InputCon"]));
-	$InstSql = "SELECT IConsecutivo,INumeFoli,INombRazon,".
-					  "IAnfitrion,AAnfitrion ".
-			   "FROM   stinvitado ". 
-			   "INNER JOIN STAnfitrion ON IAnfitrion = AConsecutivo ".
-			   "WHERE  ICorreo = '".$usuario."' AND ". 
-			   		  "IContra = '".$password."' ";
+	$InstSql = "SELECT AConsecutivo, AAnfitrion ".
+			   "FROM `stanfitrion` ".
+			   "WHERE  Aclave = '".$usuario."' AND ". 
+			   		  "AContra = '".$password."' ";
 	echo $InstSql;				  
 	$ResuSql = $ConeBase->prepare($InstSql);
 	$ResuSql->execute();
 	$result = $ResuSql->fetch();
 	if( $result ){
-		$ConsInvi = $result['IConsecutivo'];
-		$NumeInvi = $result['INumeFoli'];
-		$NombInvi = $result['INombRazon'];
-		$ConsAnfi = $result['IAnfitrion'];
+		$ConsAnfi = $result['AConsecutivo'];
 		$NombAnfi = $result['AAnfitrion'];
 		
 		$FechSist = getdate();
 		$EjerTrab = $FechSist['year'];
 		$MesTrab  = $FechSist['mon'];
 
-		$ArCookie = "$ConsInvi|$NumeInvi|$NombInvi|".
-					"$ConsAnfi|$NombAnfi|".
+		$ArCookie = "$ConsAnfi|$NombAnfi|".
 					"$EjerTrab|$MesTrab|";
 		setcookie("CEncaAcc", "$ArCookie");
 

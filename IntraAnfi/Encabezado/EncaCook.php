@@ -3,13 +3,10 @@
 $ArCooki1 = $_COOKIE['CEncaAcc'];
 $AEncaAcc = explode("|", $ArCooki1);
 
-$ConsInvi = $AEncaAcc[0];
-$NumeInvi = $AEncaAcc[1];
-$NombInvi = $AEncaAcc[2];
-$ConsAnfi = $AEncaAcc[3];
-$NombAnfi = $AEncaAcc[4];
-$EjerTrab = $AEncaAcc[5];
-$MesTrab  = $AEncaAcc[6];
+$ConsAnfi = $AEncaAcc[0];
+$NombAnfi = $AEncaAcc[1];
+$EjerTrab = $AEncaAcc[2];
+$MesTrab  = $AEncaAcc[3];
 
 $ArCooki2 = $_COOKIE['CModulo'];
 $AModulo = explode("|", $ArCooki2);

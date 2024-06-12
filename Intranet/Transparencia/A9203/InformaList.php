@@ -23,10 +23,14 @@
 	<table width="70%" class="ListInfo tabla">
 		<tr>
 			<td>Ejercicio: <?=$EjerTrab?></td>
-			<td>Fraccion:
-            <?=$NumeFrac?></td>
+			<td>Fraccion: <?=$NumeFrac?></td>
+			<td>Trimestre:
+            <?=$TrimTrab?></td>
 			<td colspan="2">Inc
-		    iso: <?=$NumeInci?><?=$NumeSubi?> <?=$Nomativi?></td>
+		    iso:
+<?=$NumeInci?>
+              <?=$NumeSubi?>
+            <?=$Nomativi?></td>
 			<td colspan="2">
 			  <a href="../Fracciones.php" 
 					class="btn-Regresar">
@@ -37,7 +41,7 @@
 			<th>No</th>
 			<th>Fecha</th>
 			<th width="15%">Fecha</th>
-			<th width="41%">Descripción</th>
+			<th colspan="2">Descripción</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -47,17 +51,29 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03=$RegiTabl['AConsecutivo'];
-			  $VC04=$RegiTabl['ANumeRegi'];
-			  $VC05=$RegiTabl['AFechaInicio'];
-			  $VC06=$RegiTabl['AFechaTermino'];
-			  $VC07=$RegiTabl['ADenominacion'];
+			  $VC03 = $RegiTabl['AConsecutivo'];
+			  $VC04 = $RegiTabl['ANumeRegi'];
+			  $VC05 = $RegiTabl['AFechaInicio'];
+			  $VC06 = $RegiTabl['AFechaTermino'];
+			  $VC07 = $RegiTabl['ADenominacion'];
+			  $VC08 = $RegiTabl['AHipervinculo'];
+			  
+			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
+				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
 			<td><?=$VC06?></td>
-			<td><?=$VC07?></td>
+			<td width="34%"><?=$VC07?></td>
+			<td width="7%">
+			<?php if ( $VC08 != '' ) { ?> 
+				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+				<i class="bi bi-eye-fill fs-1 text-success"></i>
+				</a>	
+			<?php 
+				  } ?>
+			</td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"
