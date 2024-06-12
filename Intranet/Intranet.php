@@ -48,10 +48,9 @@
 			header("location: Intranet.php");
 		}
 	}
-		include 'components/EncaPrin.php';
+		// include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
-	<div class="container-xl mt-5 mb-5 pt-5 formulario">
 		<div class="row justify-content-center">
 			<div class="col-6 col-xl-4 col-md-6">
 				<div class="card shadow">
@@ -76,4 +75,4 @@
 
 <script src="../app.js"></script>
 
-<?php include 'components/Footer.php'?>
+<?php //include 'components/Footer.php'?>

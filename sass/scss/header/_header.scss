@@ -15,7 +15,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 10em;
+    height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,4 +28,7 @@ header{
     img{
         width: 10%;
     }
+}
+.full-height{
+    height: 100vh;
 }
