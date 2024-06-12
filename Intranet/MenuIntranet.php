@@ -1,9 +1,11 @@
 <?php 
-		$Titulo = 'MenuIntranet';
-		include 'components/encabezado.php';
-		include 'components/logoHeader.php';
-		session_start();
-
+	$Titulo = 'Menu Intranet';
+	include 'components/encabezado.php';
+	include 'components/logoHeader.php';
+	
+	session_start();
+	$ConeInEx = $_SESSION['ConeInEx'];
+	// echo "Conexion: $ConeInEx";
 	//Carga las variables
 	$ArCooki1 = $_COOKIE['CMenu'];
 	$AMenu = explode("|", $ArCooki1);

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2024 a las 01:03:50
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Tiempo de generación: 11-06-2024 a las 21:08:28
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -92,24 +92,24 @@ INSERT INTO `adpermi` (`PAyuntamiento`, `PConsServ`, `PTipoServ`, `POpciServ`, `
 --
 
 CREATE TABLE `pdcampos` (
-  `CTabla` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `CNumero` char(2) COLLATE utf8_spanish_ci NOT NULL,
-  `CDescripcion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `CTipo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `CTabla` varchar(50) NOT NULL,
+  `CNumero` char(2) NOT NULL,
+  `CDescripcion` varchar(50) NOT NULL,
+  `CTipo` varchar(50) NOT NULL,
   `CAncho` int(11) NOT NULL,
-  `CListaKey` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CListaDefa` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `CDespLista` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CBusqLista` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CPagiRefe` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CCampoCapt` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  `CListaKey` char(1) NOT NULL,
+  `CListaDefa` varchar(20) NOT NULL,
+  `CDespLista` char(1) NOT NULL,
+  `CBusqLista` char(1) NOT NULL,
+  `CPagiRefe` char(1) NOT NULL,
+  `CCampoCapt` char(1) NOT NULL,
   `CCampoTama` int(11) NOT NULL,
-  `CCampokey` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CCampDefa` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `CUtilCata` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `CCatalogo` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `CClaveCata` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `CDescriCata` varchar(20) COLLATE utf8_spanish_ci NOT NULL
+  `CCampokey` char(1) NOT NULL,
+  `CCampDefa` varchar(20) NOT NULL,
+  `CUtilCata` char(1) NOT NULL,
+  `CCatalogo` varchar(20) NOT NULL,
+  `CClaveCata` varchar(20) NOT NULL,
+  `CDescriCata` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -186,10 +186,10 @@ INSERT INTO `pdcampos` (`CTabla`, `CNumero`, `CDescripcion`, `CTipo`, `CAncho`, 
 --
 
 CREATE TABLE `pttabla` (
-  `TNombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `TTipoMovi` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  `TNombre` varchar(50) NOT NULL,
+  `TTipoMovi` char(1) NOT NULL,
   `TNumero` int(11) NOT NULL,
-  `TInstruccion` varchar(450) COLLATE utf8_spanish_ci NOT NULL
+  `TInstruccion` varchar(450) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --

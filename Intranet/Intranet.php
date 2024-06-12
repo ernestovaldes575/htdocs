@@ -1,8 +1,11 @@
 	<?php 
 		$Titulo = "Registro";
 		include 'components/encabezado.php';
+		session_start();
+		$_SESSION["ConeInEx"] = 'Interno';//Interno/Externo
 		include_once "Archivos/Files/fecha.php";
 		require("Archivos/Conexiones/conlogin.php");
+		
 
 	if(isset($_POST['Ingresar'])){
 		echo 'entrar';
@@ -32,9 +35,6 @@
 			$ArCookie = $ConsUsua.'|'.$ClavAyun.'|'.$DescAyun.'|'.$ConsUnid.'|'.$DescUnid.'|'.$EjerTrab.'|';
 			setcookie("CEncaAcc", "$ArCookie");
 
-			session_start();
-			$_SESSION["usua"] = $result['AAyuntamiento'];
-
 			$Nivel = 1;
 			$ArCooki2 = $Nivel.'|||';
 			setcookie("CMenu", "$ArCooki2");
@@ -48,14 +48,10 @@
 			header("location: Intranet.php");
 		}
 	}
-	
-	?>
-	<!--Formulario de login-->
-	<?php 
 		include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
-	<div class="container mt-5 mb-5 pt-5 formulario">
+	<div class="container-xl mt-5 mb-5 pt-5 formulario">
 		<div class="row justify-content-center">
 			<div class="col-6 col-xl-4 col-md-6">
 				<div class="card shadow">

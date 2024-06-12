@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 function css(done){
     src('src/scss/app.scss')
-        .pipe(sass({outputStyle:'compressed'}))// {outputStyle:'expanded'}Compilamos SASS
+        .pipe(sass({outputStyle:'expanded'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('build/css'))//Generamos los archivos
     done()
@@ -15,7 +15,7 @@ function css(done){
 
 function bootstrap(done){
     src('sass/scss/style.scss')
-        .pipe(sass({outputStyle:'compressed'}))
+        .pipe(sass({outputStyle:'expanded'}))
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('dest/css'))
     done()

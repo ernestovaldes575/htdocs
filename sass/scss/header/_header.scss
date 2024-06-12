@@ -1,5 +1,4 @@
 @use '../custom' as *;
-
 .encabezado-prin{
     @extend .d-flex, .justify-content-between;
     .logo{
@@ -8,6 +7,9 @@
 }
 .formulario{
     height: 50vh;
+}
+.logo{
+    width: 1em;
 }
 .intra{
     width: 100%;

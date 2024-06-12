@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2024 a las 21:31:40
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Tiempo de generación: 11-06-2024 a las 21:07:51
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `acopcser` (
   `COSClave` char(3) NOT NULL,
   `COSDescripcion` varchar(50) NOT NULL,
   `COSDireccion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `acopcser`
@@ -72,7 +72,7 @@ INSERT INTO `acopcser` (`COSTipSer`, `COSClave`, `COSDescripcion`, `COSDireccion
 CREATE TABLE `actipser` (
   `CTSClave` char(2) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `CTSDescripcion` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `actipser`
@@ -105,7 +105,7 @@ CREATE TABLE `adpermi` (
   `PModifica` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PBaja` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PNumePerm` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `adpermi`
@@ -148,14 +148,14 @@ CREATE TABLE `btboletinextr` (
   `BSerPubMo` int(11) NOT NULL,
   `BFechModi` date NOT NULL,
   `BEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `btboletinextr`
 --
 
 INSERT INTO `btboletinextr` (`BConsecut`, `BAyuntamiento`, `BPersoExtra`, `BFechExtra`, `BFoto`, `BSerPubMo`, `BFechModi`, `BEstado`) VALUES
-(1, '105', 'Pedro Morales Gonzalez', '2024-03-21', '1_Bole.jpg', 1, '2024-03-22', 'A');
+(1, '105', 'Pedro Morales Gonzalez', '2024-03-21', '1_Bole.jpg', 1, '2024-05-27', 'A');
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE `ccclasifica` (
   `CCLTipoDocu` char(2) NOT NULL,
   `CCLClave` char(2) NOT NULL,
   `CCLDescripcion` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ccclasifica`
@@ -200,7 +200,7 @@ CREATE TABLE `ccsubclasifica` (
   `CSCClasifi` char(2) NOT NULL,
   `CSCClave` char(2) NOT NULL,
   `CSCDescripcion` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ccsubclasifica`
@@ -285,7 +285,7 @@ INSERT INTO `ccsubclasifica` (`CSCClasifi`, `CSCClave`, `CSCDescripcion`) VALUES
 CREATE TABLE `cctipoclas` (
   `CTCClave` char(2) NOT NULL,
   `CTCDescri` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cctipoclas`
@@ -312,7 +312,7 @@ CREATE TABLE `ctconac` (
   `CNumeCona` int(11) NOT NULL,
   `CDescDocu` varchar(801) NOT NULL,
   `CArchivo` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ctconac`
@@ -338,7 +338,7 @@ INSERT INTO `ctconac` (`CConsect`, `CAyuntamiento`, `CEjercicio`, `CTipo`, `CCla
 CREATE TABLE `ecsexo` (
   `CSEClave` char(1) NOT NULL,
   `CSEDescripcion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ecsexo`
@@ -369,7 +369,7 @@ CREATE TABLE `edplaza` (
   `PFechModi` date NOT NULL,
   `PPlazAcIn` char(1) NOT NULL,
   `PEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `edplaza`
@@ -398,7 +398,7 @@ CREATE TABLE `etempresa` (
   `ESerPubMo` int(11) NOT NULL,
   `EFechModi` date NOT NULL,
   `EEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `etempresa`
@@ -416,7 +416,7 @@ INSERT INTO `etempresa` (`EConsecut`, `EAyuntamiento`, `EEmpresa`, `ERespresenta
 CREATE TABLE `pcestapagi` (
   `CEPClave` char(2) NOT NULL,
   `CEPDescri` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcestapagi`
@@ -441,7 +441,7 @@ INSERT INTO `pcestapagi` (`CEPClave`, `CEPDescri`) VALUES
 CREATE TABLE `pcmostdoclig` (
   `CMDClave` char(1) NOT NULL,
   `CMDDescri` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcmostdoclig`
@@ -468,7 +468,7 @@ CREATE TABLE `pctipodocu` (
   `CTDAncImgSub` int(11) NOT NULL,
   `CTDLarImgSub` int(11) NOT NULL,
   `CTDTamImgSub` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pctipodocu`
@@ -489,7 +489,7 @@ INSERT INTO `pctipodocu` (`CTDClave`, `CTDDescri`, `CTDCarpeta`, `CTDAncImgPag`,
 CREATE TABLE `pcverdoclig` (
   `CVDClave` char(1) NOT NULL,
   `CVDDescrip` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcverdoclig`
@@ -535,24 +535,26 @@ CREATE TABLE `ptpagina` (
   `PFechaCier` date DEFAULT NULL,
   `PEstaSegu` char(2) NOT NULL,
   `PEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ptpagina`
 --
 
 INSERT INTO `ptpagina` (`PConsecut`, `PAyuntamiento`, `PUnidad`, `PEjercicio`, `PMesRegi`, `PTipoDocu`, `PTitulo`, `PDescripcion`, `PFechPublI`, `PFechPublF`, `PImagenPagi`, `PDocuLiga`, `PDocumento`, `PLiga`, `PVentRefe`, `PSenaSord`, `PSerPubCre`, `PFechAlta`, `PSerPubRec`, `PFechReci`, `PSerPubRev`, `PFechRevi`, `PSerPubPub`, `PFechPubl`, `PSerPubCier`, `PFechaCier`, `PEstaSegu`, `PEstado`) VALUES
-(13, '105', 37, 2023, '10', '01', 'Palacio', 'Ayuntamiento de Zinacantepec', '2022-01-01', '2024-12-31', '13_I.png', 'N', '', '', 'N', 'N', 1, '2023-10-04', 0, NULL, -1, '0000-00-00', 0, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(14, '105', 37, 2023, '10', '01', 'Palacio', 'Palacio Municipal', '2022-01-01', '2024-12-31', '14_I.jpg', 'N', '', '', 'N', '', 1, '2023-10-04', 0, NULL, -1, '0000-00-00', 0, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(15, '105', 37, 2023, '11', '01', 'Fuente', 'Fuente de Palacio', '2022-01-01', '2024-12-31', '', 'N', '', 'paso asa', 'N', '', 1, '2023-11-11', 0, NULL, -1, '0000-00-00', -1, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(16, '105', 37, 2023, '11', '02', 'Ejemplo 01', 'Ejemplo 01', '2022-01-01', '2023-12-31', '', 'I', '', '', 'N', '', 1, '2023-11-12', 0, NULL, -1, '0000-00-00', -1, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(17, '105', 37, 2024, '01', '01', 'Reyes Contadoro', 'Los Reyes Magos en Contadero', '2024-01-01', '2024-01-27', '17_I.png', 'N', '', 'ffff', 'N', '', 1, '2024-01-11', 0, NULL, 2, '2024-03-01', -1, '0000-00-00', -1, '0000-00-00', '09', 'A'),
-(18, '105', 37, 2024, '03', '04', 'ejemplo', 'ejemplo01yyyyy', '2024-03-03', '2024-03-03', '18_I.jpg', 'I', '18_I.jpg', '', 'P', '', 1, '2024-03-03', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(19, '105', 37, 2024, '03', '04', 'Noticia 01', 'Noticia 01 Noticia 01', '2024-03-04', '2024-03-30', '19_I.jpg', 'A', '', '', 'V', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(20, '105', 37, 2024, '03', '04', 'Noticia 02', 'Noticia 02 ejemplo de texto de 2050', '2024-03-04', '2024-03-29', '', 'N', '', '', '', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(21, '105', 37, 2024, '03', '04', 'Noticia 03', 'Ejemplo de noticia 03', '2024-03-04', '2024-03-29', '21_I.jpg', 'L', '', 'www.google.com.mx', 'P', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(22, '105', 37, 2024, '03', '01', 'ejemplo', 'Ejemplo01', '2024-03-06', '2024-03-06', '', 'I', '', '', '', '', 1, '2024-03-06', -1, NULL, 2, '2024-03-06', -1, NULL, -1, NULL, '08', 'A'),
-(23, '', 4, 0, '', '1', '1', 'aa', '0000-00-00', '0000-00-00', '', 'd', '', 'e', 'f', '', 0, '2024-04-03', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A');
+(23, '', 4, 0, '', '1', '1', 'aa', '0000-00-00', '0000-00-00', '', 'd', '', 'e', 'f', '', 0, '2024-04-03', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(24, '105', 37, 2024, '05', '01', 'Baner', 'Baner', '2024-05-28', '2024-12-31', '24_I.png', 'N', '', '', 'N', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(25, '105', 37, 2024, '05', '01', 'baner02', 'baner02', '2024-05-28', '2024-12-31', '25_I.png', 'N', '', '', 'N', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(26, '105', 37, 2024, '05', '01', 'Baner03Modi', 'Baner03Modi', '2024-05-28', '2024-12-31', '26_I.png', 'N', '', '', '', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(27, '105', 37, 2024, '05', '02', 'info01', 'info01', '2024-05-28', '2024-12-31', '27_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(28, '105', 37, 2024, '05', '02', 'info02', 'info02', '2024-05-28', '2024-12-31', '28_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(30, '105', 37, 2024, '05', '02', 'info03', 'info03', '2024-05-28', '2024-12-31', '30_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(31, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '31_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(32, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '32_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(33, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '33_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(34, '105', 37, 2024, '05', '03', 'Ejemplo01', 'Ejemplo01', '2024-05-31', '2024-12-31', '34_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(35, '105', 37, 2024, '05', '03', 'Ejemplo02', 'Ejemplo02', '2024-05-31', '2024-12-31', '35_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(36, '105', 37, 2024, '05', '03', 'Ejemplo03', 'Ejemplo03', '2024-05-31', '2024-12-31', '36_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A');
 
 -- --------------------------------------------------------
 
@@ -564,7 +566,7 @@ CREATE TABLE `ptserpub` (
   `SConsecutivo` int(11) NOT NULL,
   `SAyuntamiento` char(3) NOT NULL,
   `SNombre` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ptserpub`
@@ -595,7 +597,7 @@ CREATE TABLE `streporte` (
   `RSerPubMo` int(11) NOT NULL,
   `RFechMovi` date NOT NULL,
   `REstado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `streporte`
@@ -622,7 +624,7 @@ CREATE TABLE `stsupervisor` (
   `SSerPubMo` int(11) NOT NULL,
   `SFechModi` date NOT NULL,
   `SEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `stsupervisor`
@@ -644,7 +646,7 @@ INSERT INTO `stsupervisor` (`SConsecut`, `SAyuntamiento`, `SUnidad`, `SNumeEmpl`
 CREATE TABLE `stsupeunid` (
   `SAyuntamiento` char(3) NOT NULL,
   `SUnidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `stsupeunid`
@@ -750,7 +752,7 @@ ALTER TABLE `btboletinextr`
 -- AUTO_INCREMENT de la tabla `ptpagina`
 --
 ALTER TABLE `ptpagina`
-  MODIFY `PConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `PConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `ptserpub`
