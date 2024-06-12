@@ -45,7 +45,7 @@
 				$MenuBase = $ResuSql->fetchAll();
 ?>
 	<div class="intra">
-		<divc class="container-sm d-flex justify-content-between">
+		<divc class="container-xl d-flex justify-content-between">
 			<div>
 				<h2 class="text-uppercase fw-bolder	text-light">
 					Menu Intranet

@@ -1,5 +1,8 @@
-
-    <header class="header d-flex justify-content-between shadow">
-		<img class="img-1" src="http://201.122.44.34/img/SIMGA_intra01.png" alt="">
-		<img class="img-2" src="http://201.122.44.34/img/SIMGA02.png" alt="">
-	</header>
+<nav class="navbar bg-body-tertiary border-bottom">
+	<div class="">
+		<img src="/img/simgaLOGO.png" alt="">
+	</div>
+	<div>
+		<img src="/img/SIMGA02.png" alt="">
+	</div>
+</nav>

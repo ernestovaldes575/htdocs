@@ -8,9 +8,6 @@
 .formulario{
     height: 50vh;
 }
-.logo{
-    width: 1em;
-}
 .intra{
     width: 100%;
     // height: 20em;
@@ -22,4 +19,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.logoveda, .logo-simga{
+    width: 18%;
+}
+header{
+    img{
+        width: 10%;
+    }
 }

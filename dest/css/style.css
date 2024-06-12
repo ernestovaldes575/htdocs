@@ -12393,10 +12393,6 @@ textarea.form-control-lg {
   height: 50vh;
 }
 
-.logo {
-  width: 1em;
-}
-
 .intra {
   width: 100%;
   background-image: url("/Intranet/img/header.jpg");
@@ -12407,6 +12403,14 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logoveda, .logo-simga {
+  width: 18%;
+}
+
+header img {
+  width: 10%;
 }
 
 .contenedor-tabla {
