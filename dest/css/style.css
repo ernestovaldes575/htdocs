@@ -12665,3 +12665,8 @@ body {
 .ingresar {
   width: 100%;
 }
+
+.full-height {
+  height: 100svh;
+  flex-direction: column;
+}

@@ -51,8 +51,9 @@
 		// include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
-		<div class="row justify-content-center">
-			<div class="col-6 col-xl-4 col-md-6">
+		<div class="full-height d-flex justify-content-center align-items-center">
+			<?php //include 'components/EncaPrin.php';?>
+			<div class="col-xl-3 col-md-5 col-sm-10">
 				<div class="card shadow">
 					<div class="card-header d-flex justify-content-between align-items-center fw-semibold">
 						Iniciar Sesion<i class="bi bi-person-fill"></i>
@@ -70,8 +71,8 @@
 					</div>
 				</div>
 			</div>
+			<?php //include 'components/Footer.php'?>
 		</div>
-	</div>
 
 <script src="../app.js"></script>
 
