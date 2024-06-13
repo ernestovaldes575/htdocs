@@ -51,7 +51,7 @@
 		// include 'components/EncaPrin.php';
 	?>
 	<!-- <img class="img-3 img-fluid rounded" src="img/SIMGA.jpg" alt=""> -->
-		<div class="full height d-flex justify-content-center align-items-center">
+		<div class="full-height d-flex justify-content-center align-items-center">
 			<div class="col-xl-3	 col-md-5 col-sm-10">
 				<div class="card shadow">
 					<div class="card-header d-flex justify-content-between align-items-center fw-semibold">
