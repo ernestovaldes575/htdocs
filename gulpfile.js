@@ -17,7 +17,7 @@ function bootstrap(done){
     src('sass/scss/style.scss')
         .pipe(sass({outputStyle:'expanded'}))
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest('intranet/build/css'))
+        .pipe(dest('Intranet/build/css'))
     done()
 }
 //Funcion para que escuche cada que hacemos un modificacion en el codigo
