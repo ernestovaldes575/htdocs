@@ -1,0 +1,29 @@
+@use '../custom' as *;
+.encabezado-prin{
+    @extend .d-flex, .justify-content-between;
+    .logo{
+        width: 15em; 
+    }
+}
+.formulario{
+    height: 50vh;
+}
+.intra{
+    width: 100%;
+    height: 40em;
+    background-image: url('/Intranet/img/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.logoveda, .logo-simga{
+    width: 18%;
+}
+header{
+    img{
+        width: 10%;
+    }
+}
+.full-height{
+    height: 100vh;
+}
