@@ -25,8 +25,7 @@ if ($BandMens)
      echo 'TipoMovi)'.$TipoMovi.'<br>';
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
-
-$VC03 = $_POST['C03'];					//Leer campos
+$VC03 = $_POST['C03'];
 $VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
@@ -59,15 +58,13 @@ switch ( $CRUD )
 						   "ANota = '$VC11' ".  					//Cambiar campo
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";				//Cambiar campo
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9203facare ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM tt9203facare ". 						//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";				//Cambiar campo
 	break;	
 }		
 

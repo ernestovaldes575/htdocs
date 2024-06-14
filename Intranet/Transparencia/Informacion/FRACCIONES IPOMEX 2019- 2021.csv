@@ -1,6 +1,7 @@
 92;1;;Normatividad Aplicable;T;E
 92;2; A;Estructura Org nica;T;N
 92;2; B;Organigrama;T;N
+92;2; B;Organigrama;A;N
 92;3;;Facultades de µrea;T;E
 92;4;;Metas y Objetivos de µrea;A;E
 92;5; A;Indicadores Interes P£blico;A;E
@@ -72,10 +73,10 @@
 92;45;;Estados finaciados con recursos p£blicos;T;E
 92;46; A;Hipervinculo al listado de pensionados y jubilados;T;
 92;46; B;Listado de Jubilados y Pensionados y el monto que reciben;;
-92;47; A;Ingresos Recibidos;T;
-92;47; B;Responsables de recibir, administrar y ejercer los ingresos;S;
-92;48; A;Donaciones en dinero realizada;S;
-92;48; B;Donaciones en especie realizadas;S;
+92;17; A;Ingresos Recibidos;T;
+92;17; B;Responsables de recibir, administrar y ejercer los ingresos;S;
+92;18; A;Donaciones en dinero realizada;S;
+92;18; B;Donaciones en especie realizadas;S;
 92;49;;Cat logo de disposici¢n y gu¡a de archivo documental;A;
 92;50;;Actas de consejo consultivo ;;
 92;50; B;Opiniones y recomendaciones del consejo consultivo;;
@@ -94,10 +95,10 @@
 94;1; C2;Listado de exproipaciones;;
 94;1; D1;Hipervinculo a las cancelaciones y condonaciones;T;
 94;1; D2;Coontribuyentes que recibieron cancelaci¢n o condonaci¢n de cr‚ditos fiscales;T;
-94;1;D3;Estadisticas sobre conexiciones ;T;
+94;#­VALOR!;;Estadisticas sobre conexiciones ;T;
 94;1; E1;Hipervinculo a la informaci¢n de los corredores ;T;
 94;1; E2;Corredores y notarios p£blicos;T;
-94;1; E3;Sanciones aplicadas a corredores y notarios;;
+94;1; E 3;Sanciones aplicadas a corredores y notarios;;
 94;1; F1;Hipervinculo a los planes de desarrollo urbano;T;
 94;1; F2;Planes y /o Programas de desarrollo urbano;T;
 94;1; F3;Planes y Programas de ordenamiento territorial;T;
