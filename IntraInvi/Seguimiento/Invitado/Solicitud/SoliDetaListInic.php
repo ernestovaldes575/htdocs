@@ -8,6 +8,7 @@ $ABusqMae = explode("|", $ArCook01);
 //echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0];
 $MesTrab  = $ABusqMae[1];
+$EstaSoli = $ABusqMae[2];
 
 //Bandera de visualizar msg
 $BandInst = false;
@@ -17,7 +18,7 @@ if ( isset($_GET["Param0"]) )
 if ( isset($_GET["Param1"]) )
   $ConsSoli = $_GET["Param1"];
 
-$ArCook02  = "$EjerTrab|$MesTrab|$ConsSoli|";
+$ArCook02  = "$EjerTrab|$MesTrab|$EstaSoli|$ConsSoli|";
 setcookie("CBusqMae", "$ArCook02");
 
 //------------------------------------------------------------------------

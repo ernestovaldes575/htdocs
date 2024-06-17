@@ -9,7 +9,8 @@ $ABusqMae = explode("|", $ArCook01);
 //echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0];
 $MesTrab  = $ABusqMae[1];
-$ConsSoli = $ABusqMae[2];
+$EstaSoli = $ABusqMae[2];
+$ConsSoli = $ABusqMae[3];
 
 //********************************************************************
 //Informacion de la Lista

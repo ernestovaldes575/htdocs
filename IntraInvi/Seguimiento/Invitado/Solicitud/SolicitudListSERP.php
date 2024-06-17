@@ -9,7 +9,8 @@ $ABusqMae = explode("|", $ArCook01);
 //echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0];
 $MesTrab  = $ABusqMae[1];
-$ConSolBu = $ABusqMae[2];
+$EstaSoli = $ABusqMae[2];
+$ConSolBu = $ABusqMae[3];
 
 //********************************************************************
 //Informacion de la Lista
@@ -22,14 +23,20 @@ if ( isset($_GET["Param0"]) )
 //Ejercicio
 if ( isset($_GET["Param1"]) ){
 	$EjerTrab = $_GET["Param1"];
-	$ArCook01 =  "$EjerTrab|$MesTrab|$ConSolBu|";
+	$ArCook01 =  "$EjerTrab|$MesTrab|$EstaSoli|$ConSolBu|";
 	setcookie("CBusqMae", "$ArCook01");
 }
 
 //Estado de la revision
 if ( isset($_GET["Param2"]) ){
 	$MesTrab = $_GET["Param2"];
-	$ArCook02 =  "$EjerTrab|$MesTrab|$ConSolBu|";
+	$ArCook02 =  "$EjerTrab|$MesTrab|$EstaSoli|$ConSolBu|";
+	setcookie("CBusqMae", "$ArCook02");
+}
+
+if ( isset($_GET["Param3"]) ){
+	$EstaSoli = $_GET["Param3"];
+	$ArCook02 =  "$EjerTrab|$MesTrab|$EstaSoli|$ConSolBu|";
 	setcookie("CBusqMae", "$ArCook02");
 }
 
@@ -53,13 +60,25 @@ if ($BandMens)  echo '2)'.$InstSql.'<br>';
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $CataMes = $EjInSql->fetchAll(); 
-		
+
+//Catalogo de Solicitud
+$InstSql = "SELECT '00' AS Clave, 'Todos' AS Descri ". 
+		   "UNION ".
+		   "SELECT CESClave AS Clave, CESDescri AS Descri ".
+		   "FROM   scestasoli ".
+		   "ORDER BY Clave ";
+if ($BandMens)  echo '2)'.$InstSql.'<br>'; 			
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$CataEsSo = $EjInSql->fetchAll(); 
+
 //------------------------------------------------------------------------	
 //Carga el registro para Consulta
+$CondIst = ($EstaSoli == "00" )? "": " AND SSeguimi = '$EstaSoli' ";
 $InstSql = "SELECT SConsecutivo, SMes,SNumeFoli,".
 				  "SRepartidor,CREDescri,".
 			  	  "SFormaPago, SMetoPago, SUso, ". 
-			  	  "SFechAlta, SImporte, SSeguimi, ".
+			  	  "SFechAlta, SImporte, SSeguimi, CESDescri, ".
 				  "(SELECT COUNT(*) ".
 				   "FROM   SDSoliDeta ".
 				   "WHERE  DConseSoli = SConsecutivo AND ".
@@ -69,11 +88,13 @@ $InstSql = "SELECT SConsecutivo, SMes,SNumeFoli,".
 				   "WHERE  DConseSoli = SConsecutivo AND ".
 						  "DEstado = 'A') AS ImpoDeta ".
 		   "FROM  stsolicitud ".
+		   "INNER JOIN scestasoli ON SSeguimi = CESClave ".	
 		   "INNER JOIN SCRepartidor ON SRepartidor = CREConsecut ".	
 		   "WHERE SEjercicio = $EjerTrab AND ".
 				 "SMes = '$MesTrab' AND ".
 			  	 "SConsInvi = $ConsInvi AND ".
-			  	 "SEstado = 'A'  ";
+			  	 "SEstado = 'A'  ".
+				 $CondIst;
 			
 if ($BandMens) echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);

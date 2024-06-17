@@ -11,7 +11,7 @@ $NombAnfi = $AEncaAcc[4];
 $EjerTrab = $AEncaAcc[5];
 $MesTrab  = $AEncaAcc[6];
 
-$ArCooki2 = $_COOKIE['CModulo'];
+if (isset($_COOKIE['CModulo'] ) )$ArCooki2 = $_COOKIE['CModulo'];
 $AModulo = explode("|", $ArCooki2);
 $ClavTiSe = $AModulo[0];
 $DescTiSe = $AModulo[1];

@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Encabezado/EncaCook.php');
 include($_SERVER['DOCUMENT_ROOT'].'/IntraInvi/Conexion/ConBasInvita.php');
 
-$BandMens = true;
+$BandMens = false;
 
 //Carga el registro para ABC	
 if( isset($_GET['PaAMB01']) != ''){	
@@ -71,5 +71,5 @@ switch( $TipoMovi ){
       case "B":	$MesnTiMo = "Eliminar";
                   $CRUD = "DELETE";		  break;
      }
-	 echo "2) CRUD: $CRUD ";  
+
 ?>	

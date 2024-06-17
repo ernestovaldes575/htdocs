@@ -24,3 +24,6 @@ function CargEjer(Param1)
 
 function CargMes(Param2)
 { location.href = "SolicitudList.php?Param2="+Param2; }
+
+function CargEsSo(Param3)
+{ location.href = "SolicitudList.php?Param3="+Param3; }

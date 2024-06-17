@@ -9,7 +9,8 @@ $ABusqMae = explode("|", $ArCook01);
 //echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0];
 $MesTrab  = $ABusqMae[1];
-$ConsSoli = $ABusqMae[2];
+$EstaSoli = $ABusqMae[2];
+$ConsSoli = $ABusqMae[3];
 
 //********************************************************************
 //Informacion de la Lista
@@ -23,7 +24,7 @@ if ( isset($_GET["Param0"]) )
 $InstSql =  "SELECT DNumero, DDescri, DCatindad, DImporte ".
 			"FROM  sdsolideta ".
 			"WHERE DConseSoli = $ConsSoli AND ".
-				   "DEstado = 'A' ";
+				  "DEstado = 'A' ";
 if ($BandInst)  echo "5)<br>$InstSql<br>"; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
