@@ -1,63 +1,66 @@
-<?php 
-	$Titulo = 'Menu Intranet';
-	include 'components/encabezado.php';
-	include 'components/logoHeader.php';
-	
-	session_start();
-	$ConeInEx = $_SESSION['ConeInEx'];
-	// echo "Conexion: $ConeInEx";
-	//Carga las variables
-	$ArCooki1 = $_COOKIE['CMenu'];
-	$AMenu = explode("|", $ArCooki1);
-	$Nivel  = $AMenu[0]; 
-	$OpcMen = $AMenu[1]; 
-	$OpcSub = $AMenu[2];
-	// echo "Nivel=$Nivel<br>";
-	// echo "OpcMen=$OpcMen<br>";
-	// echo "OpcSub=$OpcSub<br>";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<?php 
+		$Titulo = 'Menu Intranet';
+		include 'components/encabezado.php';
+		include 'components/logoHeader.php';
+	?>
+</head>
+<body>
+	<?php 
+		session_start();
+		$ConeInEx = $_SESSION['ConeInEx'];
+		// echo "Conexion: $ConeInEx";
+		//Carga las variables
+		$ArCooki1 = $_COOKIE['CMenu'];
+		$AMenu = explode("|", $ArCooki1);
+		$Nivel  = $AMenu[0]; 
+		$OpcMen = $AMenu[1]; 
+		$OpcSub = $AMenu[2];
+		// echo "Nivel=$Nivel<br>";
+		// echo "OpcMen=$OpcMen<br>";
+		// echo "OpcSub=$OpcSub<br>";
 
-	//Carga las variables
-	$ArCooki2 = $_COOKIE['CEncaAcc'];
-	$AEncaMae = explode("|", $ArCooki2);
-	$ConsUsua = $AEncaMae[0]; 
-	$ClavAyun = $AEncaMae[1];
-	$DescAyun = $AEncaMae[2];
-	$ConsUnid = $AEncaMae[3];
-	$DescUnid = $AEncaMae[4];
-	$EjerTrab = $AEncaMae[5];
-	
-	$BandMens = false;
-	if(isset($_GET["Param0"]) ){
-		$BandMens = true;
-	}
+		//Carga las variables
+		$ArCooki2 = $_COOKIE['CEncaAcc'];
+		$AEncaMae = explode("|", $ArCooki2);
+		$ConsUsua = $AEncaMae[0]; 
+		$ClavAyun = $AEncaMae[1];
+		$DescAyun = $AEncaMae[2];
+		$ConsUnid = $AEncaMae[3];
+		$DescUnid = $AEncaMae[4];
+		$EjerTrab = $AEncaMae[5];
 
-	include_once 'Archivos/Conexiones/conexion.php';
+		$BandMens = false;
+		if(isset($_GET["Param0"]) ){
+			$BandMens = true;
+		}
 
-	$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
-				"FROM acceso.atpermen ".
-				"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
-				"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
+		include_once 'Archivos/Conexiones/conexion.php';
 
-			if ($BandMens)  
-				echo '1)<br>'.$InstSql.'<br><br>';		   
-				$ResuSql = $conexion->prepare($InstSql);
-				$ResuSql->execute();
-				$MenuBase = $ResuSql->fetchAll();
-?>
+		$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
+					"FROM acceso.atpermen ".
+					"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
+					"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
+
+				if ($BandMens)  
+					echo '1)<br>'.$InstSql.'<br><br>';		   
+					$ResuSql = $conexion->prepare($InstSql);
+					$ResuSql->execute();
+					$MenuBase = $ResuSql->fetchAll();
+	?>
 	<div class="intra">
-		<divc class="container-xl d-flex justify-content-between">
+		<div class="container-xl">
+			<h2 class="text-light">
+				Menu Intranet
+			</h2>
 			<div>
-				<h2 class="text-uppercase fw-bolder	text-light">
-					Menu Intranet
-				</h2>
-			</div>
-			<div>
-				<a href="/Intranet/Intranet.php" 
-				class="btn-Regresar">
+				<a href="/Intranet/Intranet.php" class="text-light">
 					Salir
 				</a>
 			</div>
-		</divc>
+		</div>
 	</div>
 
 	<div class="table-responsive container-sm">
