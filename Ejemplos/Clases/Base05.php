@@ -63,14 +63,12 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
   <tbody>
     <tr>
       <td>&nbsp;</td>
-      <td colspan="3"><a href="Base04.php?Param2=I"></a>
-		  <a href="Base04.php?Param3=I"></a>
-		  </td>
+      <td colspan="3"></td>
     </tr>
     <tr>
       <td>Clave</td>
       <td>Descripcion</td>
-      <td colspan="2"><a href="Base04.php?Param1=I">Alta</a></td>
+      <td colspan="2"><a href="Base05.php?Param2=A&Param3=0">Alta</a></td>
     </tr>
 	<?php
 	  

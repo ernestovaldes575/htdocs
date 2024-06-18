@@ -5,10 +5,12 @@
 <title>Documento sin título</title>
 </head>
 <?php
+	
 //1) conexion de base de Datos
 $contraseña = '';
 $user = 'root';
 $dbname = 'paginaweb';
+	
 try{
 	$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
 	$ConeBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,12 +25,13 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
 			"FROM   cctipoclas ".
 			//"WHERE  CTCClave < '03' ".
 			"ORDER BY CTCClave ";
-			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
-			$EjInSql = $ConeBase->prepare($InstSql);
-			$EjInSql->execute();
-			$ResuSql = $EjInSql->fetchall();
+if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$ResuSql = $EjInSql->fetchall();
 
 ?>	
+	
 <body>
 <table width="200" border="1">
   <tbody>
@@ -41,7 +44,7 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
     <tr>
       <td>Clave</td>
       <td>Descripcion</td>
-      <td colspan="2"><a href="Base04.php?Param1=I">Alta</a></td>
+      <td colspan="2"><a href="ConacOrigCRUD.php?Param2=A&Param3=0">Alta</a></td>
     </tr>
 	<?php
 	  
@@ -51,8 +54,8 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
     <tr>
       <td><?php echo ($VC03); ?></td>
       <td><?=$VC04?></td>
-      <td><a href="Base06CRUD.php?Param2=M&Param3=<?=$VC03?>">Modi</a></td>
-      <td><a href="Base06CRUD.php?Param2=B&Param3=<?=$VC03?>">Borr</a></td>
+      <td><a href="ConacOrigCRUD.php?Param2=M&Param3=<?=$VC03?>">Modi</a></td>
+      <td><a href="ConacOrigCRUD.php?Param2=B&Param3=<?=$VC03?>">Borr</a></td>
     </tr>
 	<?php 
 	   endforeach ?>  

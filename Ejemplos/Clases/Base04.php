@@ -24,7 +24,7 @@ $BandMens = false;
 
 if ( isset($_GET["Param1"]) ){	
 $InstSql =  "INSERT cctipoclas ".
-			"VALUE ('09','XX') ";
+			"VALUE ('09','tenedor') ";
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
@@ -32,7 +32,7 @@ $InstSql =  "INSERT cctipoclas ".
 
 if ( isset($_GET["Param2"]) ){	
 $InstSql =  "UPDATE cctipoclas ".
-			"SET  CTCDescri = 'hola02'".
+			"SET  CTCDescri = 'cuchara'".
 			"WHERE  CTCClave = '09' ";
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);

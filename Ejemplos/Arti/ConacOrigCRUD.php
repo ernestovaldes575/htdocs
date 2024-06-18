@@ -25,16 +25,8 @@ $BandMens = false;
 if(isset($_POST['Enviar'])){ 
    $TipoMovi = $_POST['C01'];
    $ClavBusq = $_POST['C02'];	
-
-   echo "$TipoMovi<br>";
-   echo "$ClavBusq<br><br>";		
-	
-	$Clave = $_POST['C03'];
+   $Clave = $_POST['C03'];
    $Descr = $_POST['C04'];	
-
-   echo "$Clave<br>";
-   echo "$Descr<br>";	   
-	
    switch ( $TipoMovi )	
 	{ case "A": $InstSql =  "INSERT cctipoclas ".
 			                 "VALUE ('$Clave','$Descr') ";
@@ -46,72 +38,58 @@ if(isset($_POST['Enviar'])){
 	 case "B":  $InstSql = "DELETE FROM cctipoclas ".
 			    		   "WHERE  CTCClave = '$ClavBusq' ";
 	 			break;
-}
-
+	}
 	if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 	$EjInSql = $ConeBase->prepare($InstSql);
 	$EjInSql->execute();
 	
-	header("location: Base05.php");
+	header("location: ConacOrig.php");
 }
 	
 else	
 {
- if ( isset($_GET["Param2"]) ){	
-  $TipoMovi = $_GET["Param2"];
-  $ClavBusq = $_GET["Param3"]; 
-  }	
+  if ( isset($_GET["Param2"]) ){	
+    $TipoMovi = $_GET["Param2"];
+    $ClavBusq = $_GET["Param3"]; 
+   }	
 
 	//Consulta
-$InstSql =  "SELECT CTCClave, CTCDescri ".
-			"FROM   cctipoclas ".
-			"WHERE  CTCClave =  '$ClavBusq' ".
-			"ORDER BY CTCClave ";
-			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
-			$EjInSql = $ConeBase->prepare($InstSql);
-			$EjInSql->execute();
-			$ResuSql = $EjInSql->fetchall();
+	$InstSql =  "SELECT CTCClave, CTCDescri ".
+				"FROM   cctipoclas ".
+				"WHERE  CTCClave =  '$ClavBusq' ".
+				"ORDER BY CTCClave ";
+	if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+	$EjInSql = $ConeBase->prepare($InstSql);
+	$EjInSql->execute();
+	$ResuSql = $EjInSql->fetchall();
 
-$DescTiMo = "";
-switch( $TipoMovi)
-{ case "A": $DescTiMo = "Alta";
- 			break;
- case "M":  $DescTiMo = "Modificar";
- 			break;
- case "B":  $DescTiMo = "Baja";
- 			break;
-}
+	$VC03=""; 	$VC04="";
+	foreach ($ResuSql as $RegiTabl):
+			$VC03=$RegiTabl['CTCClave'];
+			$VC04=$RegiTabl[1]; 
+	endforeach;	
+
+	$DescTiMo = "";
+	switch( $TipoMovi)
+	{ case "A": $DescTiMo = "Alta";
+				break;
+	 case "M":  $DescTiMo = "Modificar";
+				break;
+	 case "B":  $DescTiMo = "Baja";
+				break;
+	}
 ?>	
 	
 <body>
-<table width="200" border="1">
-  <tbody>
-    <tr>
-      <td>&nbsp;</td>
-      <td><a href="Base05.php">Regresar</a></td>
-    </tr>
-    <tr>
-      <td>Clave</td>
-      <td>Descripcion</td>
-    </tr>
-	<?php
-	  
-	  foreach ($ResuSql as $RegiTabl):
-			$VC03=$RegiTabl['CTCClave'];
-			$VC04=$RegiTabl[1]; ?>
-    <tr>
-      <td><?php echo ($VC03); ?></td>
-      <td><?=$VC04?></td>
-    </tr>
-	<?php 
-	   endforeach ?>  
-  </tbody>
-</table>
 <form method="post" name="formulario">
 	<input type="hidden" name="C01" value="<?=$TipoMovi?>">
 	<input type="hidden" name="C02" value="<?=$ClavBusq?>">
   <table width="200" border="1">
     <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td><a href="ConacOrig.php">Regresar</a></td>
+      </tr>
       <tr>
         <td width="79">Calve</td>
         <td width="105"><input type="text" name="C03" value="<?=$VC03?>"></td>
@@ -123,7 +101,7 @@ switch( $TipoMovi)
       <tr>
         <td>&nbsp;</td>
         <td><span class="botones">
-          <input type="submit" name="Enviar" class="registrar" value="$DescTiMo" >
+          <input type="submit" name="Enviar" class="registrar" value="<?=$DescTiMo?>" >
         </span></td>
       </tr>
     </tbody>
