@@ -17,22 +17,21 @@
       </tr>
 		
       <tr>
-        <td width="79">Calve</td>		<!-- Campo de la linea 9 de ConacSERP -->
+        <td width="79">No</td>		<!-- Campo de la linea 9 de ConacSERP -->
         <td width="105"><input type="text" name="C03" value="<?=$VC03?>"></td>
       </tr>
 
 	  <tr>
-        <td>Descrio</td>				<!-- Campo de la linea 9 de ConacSERP -->
-        <td><input type="text" name="C04" value="<?=$VC04?>"></td>
+        <td>Fecha Inicio</td>				<!-- Campo de la linea 9 de ConacSERP -->
+        <td><input type="date" name="C04" value="<?=$VC04?>"></td>
       </tr>
 	
-	<!--	
-	  Agregar mas campos  
+	<!--	  Agregar mas campos  -->
 	  <tr>
-        <td>Descrio</td>				
-        <td><input type="text" name="C04" value="<?=$VC04?>"></td>
+        <td>Hipervinculo</td>				
+        <td><input type="text" name="C05" value="<?=$VC05?>"></td>
       </tr>
-	-->	
+	
       <tr>
         <td>&nbsp;</td>
         <td><span class="botones">
