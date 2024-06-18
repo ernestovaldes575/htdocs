@@ -19,7 +19,7 @@ echo "Mes: $MesTrab  <br>";
 echo "Año: $EjerTrab <br>";
 echo "Hora:$HoraTrab <br>";
 
-$ArCook02  = "$EjerTrab|$MesTrab|0|";
+$ArCook02  = "$EjerTrab|$MesTrab|00|0|";
 setcookie("CBusqMae", "$ArCook02");
 
 //header( "Location: PWRegistroList.php" );

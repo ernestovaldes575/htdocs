@@ -21,22 +21,56 @@ try{
 
 //2) Query	
 $BandMens = false;
+
+if ( isset($_GET["Param1"]) ){	
+$InstSql =  "INSERT cctipoclas ".
+			"VALUE ('09','tenedor') ";
+			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+			$EjInSql = $ConeBase->prepare($InstSql);
+			$EjInSql->execute();
+}			
+
+if ( isset($_GET["Param2"]) ){	
+$InstSql =  "UPDATE cctipoclas ".
+			"SET  CTCDescri = 'cuchara'".
+			"WHERE  CTCClave = '09' ";
+			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+			$EjInSql = $ConeBase->prepare($InstSql);
+			$EjInSql->execute();
+}			
+
+	if ( isset($_GET["Param3"]) ){	
+$InstSql =  "DELETE FROM cctipoclas ".
+			"WHERE  CTCClave = '09' ";
+			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+			$EjInSql = $ConeBase->prepare($InstSql);
+			$EjInSql->execute();
+}
+	
 $InstSql =  "SELECT CTCClave, CTCDescri ".
 			"FROM   cctipoclas ".
+			//"WHERE  CTCClave < '03' ".
 			"ORDER BY CTCClave ";
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
-	
+
 ?>	
 	
 <body>
 <table width="200" border="1">
   <tbody>
     <tr>
+      <td>&nbsp;</td>
+      <td colspan="2"><a href="Base04.php?Param1=I">Alta</a>
+		  <a href="Base04.php?Param2=I">Modi</a>
+		  <a href="Base04.php?Param3=I">Borr</a>
+		  </td>
+    </tr>
+    <tr>
       <td>Clave</td>
-      <td>Descripcion</td>
+      <td colspan="2">Descripcion</td>
     </tr>
 	<?php
 	  
@@ -44,8 +78,9 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
 			$VC03=$RegiTabl['CTCClave'];
 			$VC04=$RegiTabl[1]; ?>
     <tr>
-      <td>01</td>
-      <td>Conac</td>
+      <td><?php echo ($VC03); ?></td>
+      <td><?=$VC04?></td>
+      <td>&nbsp;</td>
     </tr>
 	<?php 
 	   endforeach ?>  

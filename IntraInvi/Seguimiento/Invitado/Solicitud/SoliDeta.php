@@ -52,19 +52,19 @@ include 'SoliDetaSERP.php';
 	<tr>
 	  <th>Clave de la unidad</th>
 	  <td><input type="text" name="C08" value="<?=$VC08?>" 
-				 placeholder="Clave de la unidad" 
+				 placeholder="Datos del Repartidor" 
 				 style="background:#FCCCCD " readonly></td>
     </tr>
 	<tr>
 		<th>Unidad de Medida</th>
 		<td><input type="text" name="C09" value="<?=$VC09?>" 
-				   placeholder="Unidad Medida" 
+				   placeholder="Datos del Repartidor" 
 				   style="background:#FCCCCD " readonly></td>
 	</tr>	
 	<tr>
 	  <th>Clave del Producto</th>
 	  <td><input type="text" name="C10" value="<?=$VC10?>" 
-				 placeholder="Clave del Producto" 
+				 placeholder="Datos del Repartidor" 
 				 style="background:#FCCCCD " readonly></td>
     </tr>
 	<tr>

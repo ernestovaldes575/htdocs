@@ -9,7 +9,8 @@ $ABusqMae = explode("|", $ArCook01);
 //echo '$ABusqMae'.$ABusqMae.'<br>';
 $EjerTrab = $ABusqMae[0];
 $MesTrab  = $ABusqMae[1];
-$ConsSoli = $ABusqMae[2];
+$EstaSoli = $ABusqMae[2];
+$ConSolBu = $ABusqMae[3];
 
 //********************************************************************
 //Informacion de la Lista
@@ -21,14 +22,14 @@ if ( isset($_GET["Param0"]) )
 
 if ( isset($_GET["Param1"]) )
   { $EjerTrab = $_GET["Param1"];
-    $ArCook02  = "$EjerTrab|$MesTrab|$ConsSoli|";
+    $ArCook02  = "$EjerTrab|$MesTrab|$EstaSoli|$ConSolBu|";
    	setcookie("CBusqMae", "$ArCook02");
   }
 
 //Mes de trabajo
 if ( isset($_GET["Param2"]) )
   { $MesTrab = $_GET["Param2"];
-    $ArCook02  = "$EjerTrab|$MesTrab|$ConsSoli|";
+    $ArCook02  = "$EjerTrab|$MesTrab|$EstaSoli|$ConSolBu|";
    	setcookie("CBusqMae", "$ArCook02");
   }
 

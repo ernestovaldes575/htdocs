@@ -125,7 +125,10 @@ include 'SolicitudSERP.php';
 	<tr>
 		<td></td>
 		<td >
+			<?php 
+	  			if ( $EstaSoli == '01' ) { ?>
 			<input type="submit" name="Enviar" value="<?=$MesnTiMo?>" >
+			<?php } ?>
 		</td>
 	</tr>	
 </table>	

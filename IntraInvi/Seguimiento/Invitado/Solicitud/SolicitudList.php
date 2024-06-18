@@ -26,19 +26,21 @@ include 'SolicitudListSERP.php';
   <tr>
 	<td width="10%">
 	 <?php //Catalogo de Ejercicio
-	    $DatoList = "01";
+	    $DatoList = "02";
 		include ('SolicitudListVC.php');
 	 ?>
 	</td>
 	<td width="11%">
 	<?php //Catalogo de mes
-	    $DatoList = "02";
+	    $DatoList = "03";
 		include ('SolicitudListVC.php'); ?>	
 	</td>
-	<td width="29%">&nbsp;</td>
+	<td width="29%"><?php //Catalogo de mes
+	    $DatoList = "04";
+		include ('SolicitudListVC.php'); ?></td>
 	<td width="10%">&nbsp;</td>
 	<td colspan="2" align="center">Detalle</td>
-	<td width="10%"><?php 
+	<td width="4%"><?php 
 	  if ($Alta == "A"){ ?>
       <i class="bi bi-plus-lg Repa btn-Nuevo" title="AGREGAR" data-id='0'></i>
     <?php } ?></td>
@@ -48,23 +50,23 @@ include 'SolicitudListSERP.php';
     <th>Mes</th>
     <th>Folio</th>
     <th>Repartidos</th>
-    <th>Importe</th>
-    <th width="10%">Articulo</th>
+    <th>Articulo</th>
     <th width="10%">Importe</th>
+    <th width="16%">Edo Solicitud</th>
     <th colspan="2">&nbsp;</th>
   </tr>
   <?php 
 	foreach ($ResuSql as $RegiTabl):
-		$DatoList = "03"; 
+		$DatoList = "01"; 
 		include ('SolicitudListVC.php'); 	
 	?>
   <tr>
     <td><?=$VC04?></td>
     <td><?=$VC05?></td>
     <td><?=$VC07?></td>
-    <td><?=$VC10?></td>
-    <td><?=$VC14?></td>
     <td><?=$VC15?></td>
+    <td><?=$VC16?></td>
+    <td><?=$VC14?></td>
 	<!-- iconos dentro de la libreria font-awesome.min.css -->
 	<td data-titulo="Eliminar:">
 	 <?php if($Baja == "A"  ) { ?>

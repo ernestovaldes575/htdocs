@@ -5,20 +5,13 @@
 <title>Documento sin título</title>
 </head>
 <?php
-//1) conexion de base de Datos
-$contraseña = '';
-$user = 'root';
-$dbname = 'paginaweb';
-try{
-	$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
-	$ConeBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$ConeBase->exec("SET CHARACTER SET utf8");
-}catch(PDOException $error){
-		die("Conexion Fallida: ".$error->getMessage());
-}
+	
+include("Conexion.php");
 
 //2) Query	
 $BandMens = false;
+
+
 $InstSql =  "SELECT CTCClave, CTCDescri ".
 			"FROM   cctipoclas ".
 			//"WHERE  CTCClave < '03' ".
@@ -29,6 +22,7 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
 			$ResuSql = $EjInSql->fetchall();
 
 ?>	
+	
 <body>
 <table width="200" border="1">
   <tbody>
@@ -51,8 +45,8 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".
     <tr>
       <td><?php echo ($VC03); ?></td>
       <td><?=$VC04?></td>
-      <td><a href="Base06CRUD.php?Param2=M&Param3=<?=$VC03?>">Modi</a></td>
-      <td><a href="Base06CRUD.php?Param2=B&Param3=<?=$VC03?>">Borr</a></td>
+      <td><a href="Base07.php?Param2=M&Param3=<?=$VC03?>">Modi</a></td>
+      <td><a href="Base07.php?Param2=B&Param3=<?=$VC03?>">Borr</a></td>
     </tr>
 	<?php 
 	   endforeach ?>  

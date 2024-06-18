@@ -37,7 +37,7 @@
     <tbody>
       <tr>
         <td>No 1 :</td>
-        <td><input type="number" name="Dato01"></td>
+        <td><input type="text" name="Dato01"></td>
       </tr>
       <tr>
         <td>No 2</td>
@@ -45,9 +45,9 @@
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><input name="Calcu" type="radio" value="S" checked="checked"> Suma<br>
+        <td><input name="Calcu" type="radio" value="S" > Suma<br>
 			<input type="radio" name="Calcu" value="R"> Resta<br>
-			<input type="radio" name="Calcu" value="M"> Resta<br>
+			<input name="Calcu" type="radio" value="M" checked="checked"> Multi<br>
 	    </td>
       </tr>
       <tr>

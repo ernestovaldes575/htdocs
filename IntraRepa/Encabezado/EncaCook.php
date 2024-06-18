@@ -9,16 +9,18 @@ $NombRepa = $AEncaAcc[2];
 $EjerTrab = $AEncaAcc[3];
 $MesTrab  = $AEncaAcc[4];
 
-$ArCooki2 = $_COOKIE['CModulo'];
-$AModulo = explode("|", $ArCooki2);
-$ClavTiSe = $AModulo[0];
-$DescTiSe = $AModulo[1];
-$ClavOpSe = $AModulo[2];
-$DescOpSe = $AModulo[3];
-$Cons = $AModulo[4];
-$Alta = $AModulo[5];
-$Modi = $AModulo[6];
-$Baja = $AModulo[7];
+if (isset($_COOKIE['CModulo'] ) )
+ { $ArCooki2 = $_COOKIE['CModulo'];
+   $AModulo = explode("|", $ArCooki2);
+   $ClavTiSe = $AModulo[0];
+   $DescTiSe = $AModulo[1];
+   $ClavOpSe = $AModulo[2];
+   $DescOpSe = $AModulo[3];
+   $Cons = $AModulo[4];
+   $Alta = $AModulo[5];
+   $Modi = $AModulo[6];
+   $Baja = $AModulo[7];
+}
 
 $FechSist = getdate();
 $EjerSist = $FechSist['year'];
