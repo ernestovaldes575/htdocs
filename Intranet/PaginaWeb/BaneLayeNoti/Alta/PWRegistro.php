@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/build/css/style.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/spinner.css">
+	<link rel="stylesheet" href="css/spinner.css">	
 </head>
 <script language="JavaScript" src="PWRegistro.js"></script>
 
