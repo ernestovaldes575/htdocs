@@ -1,4 +1,16 @@
 <?php
+	$ConeInEx = $_SESSION['ConeInEx'];
+	//!Local
+	$db_contraseña = '';
+	$db_usuario = 'root';
+	$db_nombre = 'comsocial';
+
+	if($ConeInEx == 'Externo'){
+		//!Servidor
+		$db_contraseña = 'NXBWSHJ4E46L';
+		$db_usuario = 'difzinac_intranet';
+		$db_nombre = 'difzinac_comsocial';
+	}
 	$contraseña = "";
 	$user = "root";
 	$dbname = "transparencia";

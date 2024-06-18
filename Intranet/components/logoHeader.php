@@ -1,4 +1,4 @@
-<nav class="navbar bg-body-tertiary border-bottom">
+<nav class="d-flex justify-content-between">
 	<div class="">
 		<img src="/img/simgaLOGO.png" alt="">
 	</div>
