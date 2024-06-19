@@ -2042,7 +2042,7 @@ progress {
   border-color: var(--bs-table-border-color);
 }
 
-.table-responsive {
+.table-responsive, .tabla {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -12527,7 +12527,6 @@ svg {
 }
 
 body {
-  min-height: 100vh;
   font-family: var(--tipo-principal);
   -webkit-hyphens: auto;
   hyphens: auto;
