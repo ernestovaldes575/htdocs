@@ -5,11 +5,13 @@ $BandMens = false;
 $TipoMovi = $_POST['C01']; //Leer los hidden
 $ClavBusq = $_POST['C02']; //Leer los hidden	
 $Consec = $_POST['C03'];	   //Leer los campos linea 21 Conac
-$FechI = $_POST['C04'];	   //Leer los campos linea 26 Conac
-$Hiperv = $_POST['C05'];
+$Ayuntam = $_POST['C04'];	   //Leer los campos linea 26 Conac
+$Ejercicio = $_POST['C05'];
+$FechIn = $_POST['C06'];
+$FechTe = $_POST['C07'];
 switch ( $TipoMovi )	
 	{ case "A": $InstSql =  "INSERT tt9202borgan ".
-			                 "VALUE ('$Consec','$FechI','$Hiperv') "; //Colocar variables Linea 7-8n
+			                 "VALUE ('$Consec','$Ayuntam','$Ejercicio','$FechIn','$FechTe') "; //Colocar variables Linea 7-8n
 	 			break;
 	 case "M": $InstSql = "UPDATE tt9202borgan ".
 						  "SET  OFechInicio = '$FechI'".  //Colocar variables Linea 7-8n

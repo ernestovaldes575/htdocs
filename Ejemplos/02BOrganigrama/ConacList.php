@@ -21,9 +21,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>No</td>			<!-- Cambiar campo de acuerdoa ConacListSERP Linea 7 -->
-					<td>Fecha Inicio</td>		<!-- Cambiar campo de acuerdoa ConacListSERP Linea 7 -->
-					<td>Hipervinculo</td>
+					<td>No</td>				<!-- Cambiar campo de ConacListSERP Linea 7 -->
+					<td>Fecha Inicio</td>
+					<td>Fecha Termino</td>
 					<td colspan="2">
 						<a href="Conac.php?Param2=M&Param3=0" class="btn-Nuevo">
 							<i class="bi bi-bookmark-plus-fill"></i>
@@ -34,7 +34,7 @@
 					foreach($ResuSql as $RegiTabl):
 							$VC03=$RegiTabl['OConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
 							$VC04=$RegiTabl['OFechInicio'];				//Mod. campos ConacListSERP Linea 7
-							$VC05=$RegiTabl['OHipervin'];
+							$VC05=$RegiTabl['OFechTerm'];
 				?>			
 				<tr>
 					<td><?php echo ($VC03); ?></td>

@@ -6,7 +6,7 @@ if ( isset($_GET["Param2"]) ){
   $ClavBusq = $_GET["Param3"]; }	
 
 //Consulta
-$InstSql =  "SELECT OConsecutivo, OFechInicio, OHipervin ".  //Modifac Campos de tabla
+$InstSql =  "SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ONota".  //Modifac Campos de tabla
 				    " ".
 			"FROM   tt9202borgan ".			//Modificxar Tabla
 			"WHERE  OConsecutivo =  '$ClavBusq' ". //Modificar campo
@@ -16,11 +16,18 @@ $InstSql =  "SELECT OConsecutivo, OFechInicio, OHipervin ".  //Modifac Campos de
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="";	$VC05="";			//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="";	$VC05="";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
 	$VC03=$RegiTabl['OConsecutivo'];	//campos en base s la base de linea 9
-	$VC04=$RegiTabl['OFechInicio']; 
-	$VC05=$RegiTabl['OHipervin'];
+	$VC04=$RegiTabl['OAyuntam']; 
+	$VC05=$RegiTabl['OEjercicio'];
+	$VC06=$RegiTabl['OFechInicio'];
+	$VC07=$RegiTabl['OFechTerm'];
+	$VC08=$RegiTabl['OHipervin'];
+	$VC09=$RegiTabl['OAreaResp'];
+	$VC10=$RegiTabl['OFechAct'];
+	$VC11=$RegiTabl['OFechValid'];
+	$VC12=$RegiTabl['ONota'];
 endforeach;	
 	
 $DescTiMo = "";
