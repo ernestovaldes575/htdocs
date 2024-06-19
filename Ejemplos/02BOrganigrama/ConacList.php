@@ -25,7 +25,7 @@
 					<td>Fecha Inicio</td>
 					<td>Fecha Termino</td>
 					<td colspan="2">
-						<a href="Conac.php?Param2=M&Param3=0" class="btn-Nuevo">
+						<a href="Conac.php?Param2=A&Param3=0" class="btn-Nuevo">
 							<i class="bi bi-bookmark-plus-fill"></i>
 						</a>
 					</td>

@@ -53,7 +53,7 @@
       </tr>
 
       <tr>
-        <td>Fecha Actividad</td>				
+        <td>Fecha Actualizacion</td>				
         <td><input type="date" name="C10" value="<?=$VC10?>"></td>
       </tr>
 

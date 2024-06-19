@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Organigrama</title>
+<title>Matriz</title>
 </head>
 <?php include("ConacSERP.php"); ?>	
 <body>
@@ -53,7 +53,7 @@
       </tr>
 
       <tr>
-        <td>Fecha Actividad</td>				
+        <td>Fecha Actualizacion</td>				
         <td><input type="date" name="C10" value="<?=$VC10?>"></td>
       </tr>
 
