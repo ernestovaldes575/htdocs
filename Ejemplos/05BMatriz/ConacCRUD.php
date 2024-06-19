@@ -12,14 +12,14 @@ $FechTe   = $_POST['C07'];
 $Hiperv   = $_POST['C08'];
 $AreaRes  = $_POST['C09'];
 $FechAct  = $_POST['C10'];
-$FechVali = $_POST['C11'];
+$FechVal  = $_POST['C11'];
 $Nota 	  = $_POST['C12'];
 switch ( $TipoMovi )	
 	{ case "A": $InstSql =  "INSERT INTO tt9205bmatriz ".
-			                 "VALUES ('$Consec','$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechValid','$Nota') "; //Colocar variables Linea 7-8n
+			                 "VALUES ('$Consec','$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
 	 			break;
 	 case "M": $InstSql = "UPDATE tt9205bmatriz ".
-						  "SET  MFechInicio = '$FechIn'".  //Colocar variables Linea 7-8n
+							"SET  MFechInicio = '$FechIn', MFechTerm = '$FechTe',MHipervin = '$Hiperv, MAreaRes = '$AreaRes' MFechAct = '$FechAct', MFechValid = '$FechVal', MNota = '$Nota'".
 						  "WHERE  MConsecutivo = '$ClavBusq' "; //Modificar el campo llave
 	 			break;
 	 case "B":  $InstSql = "DELETE FROM tt9205bmatriz ".
