@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Organigrama</title>
+	<title>Matriz</title>
 	<link rel="stylesheet" href="../../Intranet/build/css/style.css">
 	<link rel="stylesheet" href="../../bootstrap-icons/font/bootstrap-icons.min.css">
 </head>
@@ -32,9 +32,9 @@
 				</tr>
 				<?php
 					foreach($ResuSql as $RegiTabl):
-							$VC03=$RegiTabl['OConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
-							$VC04=$RegiTabl['OFechInicio'];				//Mod. campos ConacListSERP Linea 7
-							$VC05=$RegiTabl['OFechTerm'];
+							$VC03=$RegiTabl['MConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
+							$VC04=$RegiTabl['MFechInicio'];				//Mod. campos ConacListSERP Linea 7
+							$VC05=$RegiTabl['MFechTerm'];
 				?>			
 				<tr>
 					<td><?php echo ($VC03); ?></td>

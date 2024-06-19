@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Organigrama</title>
+<title>Matriz</title>
 </head>
 <?php include("ConacSERP.php"); ?>	
 <body>
