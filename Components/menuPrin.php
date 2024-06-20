@@ -119,9 +119,6 @@
                 A-
             </button>
         </div>
-
-
-
         <a href="" class="a">
             <img src="/img/logo/escudo.png" class="escudo animate" alt="Logo">
         </a>

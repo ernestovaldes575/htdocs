@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css">
     <link rel="shortcut icon" href="/img/logo/LOGO-PRINCIPAL.png"/>
+    
     <link rel="stylesheet" href="/build/css/app.css">
     
     <link rel="stylesheet" href="/layouts/AvisoPrivacidad.css">
@@ -14,6 +15,4 @@
     <link rel="stylesheet" href="/layouts/Noticias.css">
     <link rel="stylesheet" href="/layouts/MenuCont.css">
     <link rel="stylesheet" href="/layouts/Sociales.css">
-
-
     <script src="https://unpkg.com/scrollreveal"></script>
