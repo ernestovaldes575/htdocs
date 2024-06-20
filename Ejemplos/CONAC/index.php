@@ -20,7 +20,7 @@
 					<th class="text-uppercase fw-semibold text-center">
 						Descripcion
 					</th><!-- Cambiar campo de acuerdoa ConacListSERP Linea 7 -->
-					<th colspan="2" class="text-center">
+					<th colspan="3" class="text-center">
 						<a href="Conac.php?Param2=A&Param3=0" class="btn-Nuevo">
 							<i class="bi bi-plus-lg"></i>
 						</a>
