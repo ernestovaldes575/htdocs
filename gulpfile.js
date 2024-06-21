@@ -9,21 +9,13 @@ function css(done){
     src('src/scss/app.scss')
         .pipe(sass({outputStyle:'expanded'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest('build/css'))//Generamos los archivos
+        .pipe(dest('PaginaWeb/css/Estilos'))//Generamos los archivos
     done()
 }
 
-function bootstrap(done){
-    src('sass/scss/style.scss')
-        .pipe(sass({outputStyle:'expanded'}))
-        .pipe(postcss([autoprefixer()]))
-        .pipe(dest('dest/css'))
-    done()
-}
 //Funcion para que escuche cada que hacemos un modificacion en el codigo
 function dev(){
     watch('src/scss/**/*.scss',css);
-    watch('sass/scss/**/*.scss',bootstrap);
 }
 
 exports.css = css;
