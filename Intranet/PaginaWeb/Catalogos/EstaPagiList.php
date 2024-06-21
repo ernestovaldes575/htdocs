@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<link rel="stylesheet" href="../../build/css/style.css">
 </head>	
 <body>
 <script src="EstaPagiList.js"></script>  <!-- -<-Modificar Nom  -->
@@ -22,10 +22,10 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td width="17%"></td>
-			<td width="68%"></td>
+			<td></td>
+			<td></td>
 			<td colspan="2">
-			  <a href="/Intranet/menuintranet.php" 
+				<a href="/Intranet/menuintranet.php" 
 					class="btn-Regresar">
 			    Regresar
 			    </a>		    </td>

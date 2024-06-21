@@ -1,26 +1,37 @@
 <?php
- include("Conexion.php");
+	include("Conexion.php");
 $BandMens= false;
 if ( isset($_GET["Param2"]) ){	
-  $TipoMovi = $_GET["Param2"];
-  $ClavBusq = $_GET["Param3"]; }	
+	$TipoMovi = $_GET["Param2"];
+	$ClavBusq = $_GET["Param3"]; }	
 
 //Consulta
 $InstSql =  "SELECT CTCClave, CTCDescri ".  //Modifac Campos de tabla
-				    " ".
+			" ".
 			"FROM   cctipoclas ".			//Modificxar Tabla
 			"WHERE  CTCClave =  '$ClavBusq' ". //Modificar campo
 			"ORDER BY CTCClave ";			//Modificar campo	
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
-			$ResuSql = $EjInSql->fetchall();
+			$ResuSql = $EjInSql->fetch();
 
 $VC03=""; 	$VC04="";				//Definir variables en base a los campos Linea 9
-foreach ($ResuSql as $RegiTabl):
-	$VC03=$RegiTabl['CTCClave'];	//campos en base s la base de linea 9
-	$VC04=$RegiTabl[1]; 
-endforeach;	
+if ($ResuSql){
+	$VC03=$ResuSql['CTCClave'];	//campos en base s la base de linea 9
+	$VC04=$ResuSql[1];
+}	 
+else
+{
+
+   $InstSql = 	"SELECT  LPAD(MAX(CTCClave)+1,2,'0') AS NumeRegi ".  //Modifac Campos de tabla
+				"FROM   cctipoclas ";			//Modificxar Tabla
+				if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
+			$EjInSql = $ConeBase->prepare($InstSql);
+			$EjInSql->execute();
+			$ResuSql = $EjInSql->fetch();
+			$VC03=$ResuSql['NumeRegi'];
+}	
 	
 $DescTiMo = "";
 switch( $TipoMovi)
