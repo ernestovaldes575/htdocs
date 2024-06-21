@@ -1,17 +1,15 @@
 <?php
-	$ConeInEx = $_SESSION['ConeInEx'];
 
 	//!Local
 	$db_contraseña = '';
 	$db_usuario = 'root';
 	$db_nombre = 'acceso';
 
-	if($ConeInEx == 'Externo'){
-		//!Servidor
-		$db_contraseña = 'E9TQE4QXOP3A';
-		$db_usuario = 'difzinac_intranet';
-		$db_nombre = 'difzinac_acceso';
-	}
+	//!Servidor
+	// $db_contraseña = 'E9TQE4QXOP3A';
+	// $db_usuario = 'difzinac_intranet';
+	// $db_nombre = 'difzinac_acceso';
+
 	try{
 		$con = new PDO("mysql:host=localhost;dbname=$db_nombre", $db_usuario, $db_contraseña);
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

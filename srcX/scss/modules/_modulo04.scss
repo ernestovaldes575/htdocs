@@ -1,0 +1,12 @@
+@use '../base/mixins' as m;
+.contenedor{
+    .contenedor-centrar{
+        .aviso-grid{
+            // @extend %grid-3;
+            @include m.grid(3,1em);
+            @include m.desktop{
+                grid-template-columns: 100%;
+            }
+        }
+    }
+}

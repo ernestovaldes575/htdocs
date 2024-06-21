@@ -10,7 +10,7 @@
 	<?php 
 		session_start();
 		$_SESSION["ConeInEx"] = 'Interno';//Interno/Externo
-		include_once "Archivos/Files/fecha.php";
+		include_once "Con";
 		require("Archivos/Conexiones/conlogin.php");
 		if(isset($_POST['Ingresar'])){
 			echo 'entrar';
