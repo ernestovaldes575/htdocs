@@ -16,11 +16,11 @@ $InstSql =  "SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, OFechTerm, 
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="";	$VC05="";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
 	$VC03=$RegiTabl['OConsecutivo'];	//campos en base s la base de linea 9
-	$VC04=$RegiTabl['OAyuntam']; 
-	$VC05=$RegiTabl['OEjercicio'];
+	$VC04="105"; 
+	$VC05="2024";
 	$VC06=$RegiTabl['OFechInicio'];
 	$VC07=$RegiTabl['OFechTerm'];
 	$VC08=$RegiTabl['OHipervin'];

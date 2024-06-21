@@ -16,10 +16,10 @@ $FechVal  = $_POST['C11'];
 $Nota   = $_POST['C12'];
 switch ( $TipoMovi )	
 	{ case "A": $InstSql =  "INSERT tt9202borgan ".
-			                 "VALUE ('$Consec','$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
+			                 "VALUE (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
 	 			break;
 	 case "M": $InstSql = "UPDATE tt9202borgan ".
-						  "SET  OFechInicio = '$FechIn', OFechTerm = '$FechTe',OHipervin = '$Hiperv, OAreaResp = '$AreaRes' OFechAct = '$FechAct', OFechValid = '$FechVal', ONota = '$Nota'".  //Colocar variables Linea 7-8n
+						  "SET  OFechInicio = '$FechIn', OFechTerm = '$FechTe', OHipervin = '$Hiperv', OAreaResp = '$AreaRes', OFechAct = '$FechAct', OFechValid = '$FechVal', ONota = '$Nota'".  //Colocar variables Linea 7-8n
 						  "WHERE  OConsecutivo = '$ClavBusq' "; //Modificar el campo llave
 	 			break;
 	 case "B":  $InstSql = "DELETE FROM tt9202borgan ".

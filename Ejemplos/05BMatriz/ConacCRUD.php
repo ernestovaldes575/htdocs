@@ -16,7 +16,7 @@ $FechVal  = $_POST['C11'];
 $Nota 	  = $_POST['C12'];
 switch ( $TipoMovi )	
 	{ case "A": $InstSql =  "INSERT INTO tt9205bmatriz ".
-			                 "VALUES ('$Consec','$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
+			                 "VALUES (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
 	 			break;
 	 case "M": $InstSql = "UPDATE tt9205bmatriz ".
 							"SET  MFechInicio = '$FechIn', MFechTerm = '$FechTe',MHipervin = '$Hiperv, MAreaRes = '$AreaRes' MFechAct = '$FechAct', MFechValid = '$FechVal', MNota = '$Nota'".

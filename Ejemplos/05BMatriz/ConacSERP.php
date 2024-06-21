@@ -16,11 +16,11 @@ $InstSql =  "SELECT MConsecutivo, MAyuntam, MEjercicio, MFechInicio, MFechTerm, 
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="";	$VC05="";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
 	$VC03=$RegiTabl['MConsecutivo'];	//campos en base s la base de linea 9
-	$VC04=$RegiTabl['MAyuntam']; 
-	$VC05=$RegiTabl['MEjercicio'];
+	$VC04="105"; 
+	$VC05="2024";
 	$VC06=$RegiTabl['MFechInicio'];
 	$VC07=$RegiTabl['MFechTerm'];
 	$VC08=$RegiTabl['MHipervin'];
