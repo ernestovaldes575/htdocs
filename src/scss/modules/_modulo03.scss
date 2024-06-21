@@ -29,7 +29,7 @@
                         line-height: 1.898em;
                     }
                     .action{
-                        background-color: c.$Pink-500;
+                        background-color: c.$Red-500;
                         color: c.$Gray-50;
                         text-transform: uppercase;
                         text-align: center;
@@ -37,10 +37,9 @@
                         margin-top: .5em;
                         font-weight: 600;
                         border-radius: .6em;
-                        transition: all .2s ease-in-out;
-                    }
-                    .action:hover{
-                        background-color: c.$Pink-600;
+                    :hover{
+                            background-color: c.$Pink-600;
+                        }
                     }
                 }
             }

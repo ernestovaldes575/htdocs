@@ -4,15 +4,16 @@
     <?php
         $ClavAyun = '105';
         $Titulo = "Zinacantepec";
-        include 'PaginaWeb/EstrPagi/Encabezados/HeadHtml.php';
+        include 'Components/HeadHtml.php';
     ?>
 </head>
 <body>
     <?php
-        include 'PaginaWeb/EstrPagi/Encabezados/MenuPrin.php';
-        include 'PaginaWeb/EstrPagi/Encabezados/RedesSociales.php';
+        include 'Components/menuPrin.php';
+        include 'Components/menuSecu.php';
+        include 'Components/RedesSociales.php';
     ?>
-    <?php include 'PaginaWeb/EstrPagi/Modulo01.php'?>
+    <?php include 'EstrPagi/Modulo01.php'?>
 
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -23,7 +24,7 @@
             </div>
         </div>
     </main>
-    <?php include 'PaginaWeb/EstrPagi/Modulo02.php';?>
+    <?php include 'EstrPagi/Modulo02.php';?>
     
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -34,7 +35,7 @@
             </div>
         </div>
     </main> 
-    <?php include 'PaginaWeb/EstrPagi/Modulo03.php';?>
+    <?php include 'EstrPagi/Modulo03.php';?>
 
     <!-- Avisos -->
     <main class="contenedor">
@@ -46,7 +47,7 @@
             </div>
         </div>
     </main> 
-    <?php include 'PaginaWeb/EstrPagi/Modulo04.php';?>
+    <?php include 'EstrPagi/Modulo04.php'?>
 
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -57,7 +58,7 @@
             </div>
         </div>
     </main>
-    <?php include 'PaginaWeb/EstrPagi/Modulo05.php'?>
+    <?php include 'EstrPagi/Modulo05.php'?>
     
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -68,7 +69,7 @@
             </div>
         </div>
     </main>
-    <?php include 'PaginaWeb/EstrPagi/Modulo06.php'?>
+    <?php include 'EstrPagi/Modulo06.php'?>
 
     <script src="/scripts/app.js"></script>
     <script src="./swiperjs/swiper-bundle.min.js"></script>
@@ -79,6 +80,6 @@
     </script>
     <script src="./scripts/anime.min.js"></script>  
     <script src="/scripts/animate.js"></script>
-    <?php include 'PaginaWeb/EstrPagi/Encabezados/Footer.php';?>
+    <?php include 'Components/Footer.php';?>
 </body>
 </html>
