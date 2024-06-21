@@ -6,34 +6,28 @@ if ( isset($_GET["Param2"]) ){
   $ClavBusq = $_GET["Param3"]; }	
 
 //Consulta
-$InstSql =  "SELECT TConsecutivo, TAyuntam, TEjercicio, TFechInicio, TFechTerm, TTotPlazBas, TTotPBOcup, TTotPBVacan, TTotPlazConf, TTotPCOcup, TTotPCVacan, TAreaResp, TFechAct, TFechValid, TNota".  //Modifac Campos de tabla
+$InstSql =  "SELECT MConsecutivo, MAyuntam, MEjercicio, MFechInicio, MFechTerm, MHipervin, MAreaResp, MFechAct, MFechValid, MNota".  //Modifac Campos de tabla
 				    " ".
-			"FROM    tt9210btotalplazvac ".			//Modificxar Tabla
-			"WHERE  TConsecutivo =  '$ClavBusq' ". //Modificar campo
-			"ORDER BY TConsecutivo ";			//Modificar campo	
+			"FROM   tt9205bmatriz ".			//Modificxar Tabla
+			"WHERE  MConsecutivo =  '$ClavBusq' ". //Modificar campo
+			"ORDER BY MConsecutivo ";			//Modificar campo	
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	$VC13="";
-$VC14="";	$VC15="";	$VC16="";	$VC17="";//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	//Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
-	$VC03=$RegiTabl['TConsecutivo'];	//campos en base s la base de linea 9
+	$VC03=$RegiTabl['MConsecutivo'];	//campos en base s la base de linea 9
 	$VC04="105"; 
 	$VC05="2024";
-	$VC06=$RegiTabl['TFechInicio'];
-	$VC07=$RegiTabl['TFechTerm'];
-	$VC08=$RegiTabl['TTotPlazBas'];
-	$VC09=$RegiTabl['TTotPBOcup'];
-	$VC10=$RegiTabl['TTotPBVacan'];
-	$VC11=$RegiTabl['TTotPlazConf'];
-	$VC12=$RegiTabl['TTotPCOcup'];
-	$VC13=$RegiTabl['TTotPCVacan'];
-	$VC14=$RegiTabl['TAreaResp'];
-	$VC15=$RegiTabl['TFechAct'];
-	$VC16=$RegiTabl['TFechValid'];
-	$VC17=$RegiTabl['TNota'];
+	$VC06=$RegiTabl['MFechInicio'];
+	$VC07=$RegiTabl['MFechTerm'];
+	$VC08=$RegiTabl['MHipervin'];
+	$VC09=$RegiTabl['MAreaResp'];
+	$VC10=$RegiTabl['MFechAct'];
+	$VC11=$RegiTabl['MFechValid'];
+	$VC12=$RegiTabl['MNota'];
 endforeach;	
 	
 $DescTiMo = "";
