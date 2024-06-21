@@ -1,8 +1,7 @@
-.contenedor .contenedor-centrar .col-5 div {
+.contenedor .contenedor-centrar .col-5 div{
   display: grid;
   place-items: center;
 }
-
 header, header .ul {
   display: flex;
   justify-content: center;
