@@ -19,6 +19,5 @@ function dev(){
 }
 
 exports.css = css;
-exports.bootstrap = bootstrap;
 
-exports.default = series(css, bootstrap, dev);
+exports.default = series(css, dev);
