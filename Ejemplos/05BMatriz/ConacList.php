@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Matriz</title>
+	<title>Total Plazas Vacantes</title>
 	<link rel="stylesheet" href="../../Intranet/build/css/style.css">
 	<link rel="stylesheet" href="../../bootstrap-icons/font/bootstrap-icons.min.css">
 </head>
@@ -32,9 +32,9 @@
 				</tr>
 				<?php
 					foreach($ResuSql as $RegiTabl):
-							$VC03=$RegiTabl['MConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
-							$VC04=$RegiTabl['MFechInicio'];				//Mod. campos ConacListSERP Linea 7
-							$VC05=$RegiTabl['MFechTerm'];
+							$VC03=$RegiTabl['TConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
+							$VC04=$RegiTabl['TFechInicio'];				//Mod. campos ConacListSERP Linea 7
+							$VC05=$RegiTabl['TFechTerm'];
 				?>			
 				<tr>
 					<td><?php echo ($VC03); ?></td>
