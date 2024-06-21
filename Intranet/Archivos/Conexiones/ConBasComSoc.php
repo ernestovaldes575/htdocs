@@ -1,5 +1,5 @@
 <?php
-
+$ConeInEx = $_SESSION['ConeInEx'];
 	//!Local
 	$db_contraseña = '';
 	$db_usuario = 'root';
