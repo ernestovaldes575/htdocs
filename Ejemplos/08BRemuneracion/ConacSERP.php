@@ -6,7 +6,7 @@ if ( isset($_GET["Param2"]) ){
   $ClavBusq = $_GET["Param3"]; }	
 
 //Consulta
-$InstSql =  "SELECT RConsecutivo, RAyuntam, REjercicio, RFechInicio, RFechTerm, RTipoInte, RTipoInteOtro, RClave, RDenomPuest, RDenomCarg, RAreaAds, RNombre, RPrimerApell, RSegunApell, RSexo, RSexoOtro,  RRemunBruta, RTipoMoneBrut, RRemunNeta, RTipoMoneNet, RPercepDinero, RPercepEspec, RIngresos, RCompensa, RGratifica, RPrimas, RComision, RDietas, RBonos, REstimulo, RApoyoEcon, RPrestaEcon, RPrestaEspecie,RAreaResp, RNota".  //Modifac Campos de tabla
+$InstSql =  "SELECT RConsecutivo, RAyuntam, REjercicio, RFechInicio, RFechTerm, RTipoInte, RTipoInteOtro, RClave, RDenomPuest, RDenomCarg, RAreaAds, RNombre, RPrimerApell, RSegunApell, RSexo, RSexoOtro,  RRemunBruta, RTipoMoneBrut, RRemunNeta, RTipoMoneNet, RPercepDinero, RPercepEspec, RIngresos, RCompensa, RGratifica, RPrimas, RComision, RDietas, RBonos, REstimulo, RApoyoEcon, RPrestacEcon, RPrestaEspecie,RAreaResp, RNota".  //Modifac Campos de tabla
 				    " ".
 			"FROM   tt9208bremun ".			//Modificxar Tabla
 			"WHERE  RConsecutivo =  '$ClavBusq' ". //Modificar campo
@@ -16,13 +16,8 @@ $InstSql =  "SELECT RConsecutivo, RAyuntam, REjercicio, RFechInicio, RFechTerm, 
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";	$VC13="";	$VC14="";
-$VC15="";	$VC16="";	$VC17="";	$VC18="";
-$VC19="";	$VC20="";	$VC21="";	$VC22="";
-$VC23="";	$VC24="";	$VC25="";	$VC26="";
-$VC27="";	$VC28="";	$VC29="";	$VC30="";
-$VC31="";	$VC32="";	$VC33="";	$VC34="";
-$VC35="";	$VC36="";	$VC37="";	
+$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";		$VC12="";		$VC13="";	$VC14="";	$VC15="";	$VC16="";	$VC17="";	$VC18="";		$VC19="";		$VC20="";	$VC21="";	$VC22="";	$VC23="";	$VC24="";	$VC25="";		$VC26="";		$VC27="";	$VC28="";	$VC29="";	$VC30="";
+$VC31="";	$VC32="";		$VC33="";		$VC34="";	$VC35="";	$VC36="";	$VC37="";	
 //Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
 	$VC03=$RegiTabl['RConsecutivo'];	//campos en base s la base de linea 9

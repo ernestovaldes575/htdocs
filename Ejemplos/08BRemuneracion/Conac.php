@@ -36,12 +36,12 @@
 
       <tr>
         <td>Clave</td>				
-        <td><input type="date" name="C10" value="<?=$VC10?>"></td>
+        <td><input type="text" name="C10" value="<?=$VC10?>"></td>
       </tr>
 
       <tr>
         <td>Denominacion de puesto</td>				
-        <td><input type="date" name="C11" value="<?=$VC11?>"></td>
+        <td><input type="text" name="C11" value="<?=$VC11?>"></td>
       </tr>
 
       <tr>

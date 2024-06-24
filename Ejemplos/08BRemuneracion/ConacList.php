@@ -24,7 +24,7 @@
 					<td>No</td>				<!-- Cambiar campo de ConacListSERP Linea 7 -->
 					<td>Fecha Inicio</td>
 					<td>Fecha Termino</td>
-					<td>Denominacion Puesto</td>
+					<td>Tipo Integrante</td>
 					<td colspan="2">
 						<a href="Conac.php?Param2=A&Param3=0" class="btn-Nuevo">
 							<i class="bi bi-bookmark-plus-fill"></i>
@@ -36,7 +36,7 @@
 							$VC03=$RegiTabl['RConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
 							$VC04=$RegiTabl['RFechInicio'];				//Mod. campos ConacListSERP Linea 7
 							$VC05=$RegiTabl['RFechTerm'];
-							$VC06=$RegiTabl['RDenomPuest'];
+							$VC06=$RegiTabl['RTipoInte'];
 				?>			
 				<tr>
 					<td><?php echo ($VC03); ?></td>
