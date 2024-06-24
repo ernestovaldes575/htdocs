@@ -1,8 +1,7 @@
-.contenedor .contenedor-centrar .col-5 div {
+.contenedor .contenedor-centrar .col-5 div{
   display: grid;
   place-items: center;
 }
-
 header, header .ul {
   display: flex;
   justify-content: center;
@@ -12,7 +11,7 @@ header, header .ul {
 :root {
   --color-body:#f0f0f0;
   --color-nav:#70635A;
-  --color-text:#323232 ;
+  --color-text:#323232;
 }
 
 /* * */

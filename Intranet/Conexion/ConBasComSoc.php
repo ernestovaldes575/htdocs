@@ -1,17 +1,13 @@
 <?php
-	$ConeInEx = $_SESSION['ConeInEx'];
-	
 	//!Local
 	$db_contraseña = "";
 	$db_usuario = "root";
 	$db_nombre = "comsocial";
 
-	if($ConeInEx == 'Externo'){
-		//!Servidor 
-		$db_contraseña = "E9TQE4QXOP3A";
-		$db_usuario = "difzinac_intranet";
-		$db_nombre = "difzinac_comsocial";
-	}
+	//!Servidor 
+	// $db_contraseña = "E9TQE4QXOP3A";
+	// $db_usuario = "difzinac_intranet";
+	// $db_nombre = "difzinac_comsocial";
 
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$db_nombre", "$db_usuario", $db_contraseña);
