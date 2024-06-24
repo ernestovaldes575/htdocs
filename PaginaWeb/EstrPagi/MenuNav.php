@@ -66,7 +66,7 @@
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
                     <div class="mini desplaza">
-                        <a class="elemento5" href="/Gobierno/cabildo.php">
+                        <a class="elemento5" href="/PaginaWeb/Gobierno/cabildo.php">
                             Integrantes de Cabildo
                         </a>
                         <a class="elemento4" href="/Gobierno/vcabildos.php">
