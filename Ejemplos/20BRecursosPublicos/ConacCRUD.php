@@ -9,21 +9,28 @@ $Ayuntam  = $_POST['C04'];	   //Leer los campos linea 26 Conac
 $Ejercicio = $_POST['C05'];
 $FechIn   = $_POST['C06'];
 $FechTe   = $_POST['C07'];
-$Hiperv   = $_POST['C08']; 
-$AreaRes  = $_POST['C09'];
-$FechAct  = $_POST['C10'];
-$FechVal  = $_POST['C11'];
-$Nota   = $_POST['C12'];
+$Tipo     = $_POST['C08']; 
+$TipoOtro = $_POST['C09'];
+$Descr    = $_POST['C10'];
+$Motivo   = $_POST['C11'];
+$FechEnt  = $_POST['C12']; 
+$Denom    = $_POST['C13'];
+$HipOfic  = $_POST['C14'];
+$HipInf   = $_POST['C15'];
+$HipProg  = $_POST['C16']; 
+$HipDona  = $_POST['C17'];
+$AreaRes  = $_POST['C18'];
+$Nota     = $_POST['C19'];
 switch ( $TipoMovi )	
-	{ case "A": $InstSql =  "INSERT tt9202borgan ".
-			                 "VALUE (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Hiperv','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
+	{ case "A": $InstSql =  "INSERT  tt9220brecurspublic  ".
+			                 "VALUE (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$Tipo', '$TipoOtro', '$Descr', '$Motivo', '$FechEnt', '$Denom', '$HipOfic', '$HipInf', '$HipProg', '$HipDona', '$AreaRes','$Nota') "; //Colocar variables Linea 7-8n
 	 			break;
-	 case "M": $InstSql = "UPDATE tt9202borgan ".
-						  "SET  OFechInicio = '$FechIn', OFechTerm = '$FechTe', OHipervin = '$Hiperv', OAreaResp = '$AreaRes', OFechAct = '$FechAct', OFechValid = '$FechVal', ONota = '$Nota'".  //Colocar variables Linea 7-8n
-						  "WHERE  OConsecutivo = '$ClavBusq' "; //Modificar el campo llave
+	 case "M": $InstSql = "UPDATE  tt9220brecurspublic  ".
+						  "SET  RPFechInicio = '$FechIn', RPFechTerm = '$FechTe', RPTipoRec = '$Tipo', RPTipoReOtro = '$TipoOtro', RPDescr = '$Descr', RPMotivo = '$Motivo', RPFechEntr = '$FechEnt', RPDenom = '$Denom', RPHipervOfic = '$HipOfic', RPHipervInf = '$HipInf', RPHipervProg = '$HipProg', RPHipervDonat = '$HipDona', RPAreaResp = '$AreaRes', RPNota = '$Nota'".  //Colocar variables Linea 7-8n
+						  "WHERE  RPConsecutivo = '$ClavBusq' "; //Modificar el campo llave
 	 			break;
-	 case "B":  $InstSql = "DELETE FROM tt9202borgan ".
-			    		   "WHERE  OConsecutivo = '$ClavBusq' ";//Modificar el campo llave
+	 case "B":  $InstSql = "DELETE FROM  tt9220brecurspublic  ".
+			    		   "WHERE  RPConsecutivo = '$ClavBusq' ";//Modificar el campo llave
 	 			break;
 }
 
