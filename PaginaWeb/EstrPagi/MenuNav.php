@@ -69,7 +69,7 @@
                         <a class="elemento5" href="/PaginaWeb/Gobierno/cabildo.php">
                             Integrantes de Cabildo
                         </a>
-                        <a class="elemento4" href="/Gobierno/vcabildos.php">
+                        <a class="elemento4" href="/PaginaWeb/Gobierno/vcabildos.php">
                             Sesiones de Cabildo
                         </a>
                         <a class="elemento3" href="/Gobierno/vivo.php">
