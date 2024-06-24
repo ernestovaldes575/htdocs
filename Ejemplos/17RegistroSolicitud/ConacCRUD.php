@@ -9,26 +9,27 @@ $Ayuntam  = $_POST['C04'];	   //Leer los campos linea 26 Conac
 $Ejercicio = $_POST['C05'];
 $FechIn   = $_POST['C06'];
 $FechTe   = $_POST['C07'];
-$PlazBase = $_POST['C08'];
-$PBOcup   = $_POST['C09'];
-$PBVacan  = $_POST['C10'];
-$PlazConf = $_POST['C11'];
-$PCOcup   = $_POST['C12'];
-$PCVacan  = $_POST['C13'];
-$AreaRes  = $_POST['C14'];
-$FechAct  = $_POST['C15'];
-$FechVal  = $_POST['C16'];
-$Nota   = $_POST['C17'];
+$FechSoli = $_POST['C08'];
+$Folio    = $_POST['C09'];
+$Inforeq  = $_POST['C10'];
+$Respuesta= $_POST['C11'];
+$Recurri  = $_POST['C12'];
+$RecurriO = $_POST['C13'];
+$Docs     = $_POST['C14'];
+$TipoSoli = $_POST['C15'];
+$TipoSoliO= $_POST['C16'];
+$AreaRes  = $_POST['C17'];
+$Nota  = $_POST['C18'];
 switch ( $TipoMovi )	
-	{ case "A": $InstSql =  "INSERT INTO tt9210btotalplazvac ".
-			                 "VALUES (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$PlazBase','$PBOcup','$PBVacan','$PlazConf','$PCOcup','$PCVacan','$AreaRes','$FechAct','$FechVal','$Nota') "; //Colocar variables Linea 7-8n
+	{ case "A": $InstSql =  "INSERT INTO tt9217regisolic  ".
+			                 "VALUES (NULL,'$Ayuntam','$Ejercicio','$FechIn','$FechTe','$FechSoli','$Folio','$Inforeq','$Respuesta','$$Recurri','$RecurriO','$Docs','$TipoSoli','$TipoSoliO','$AreaRes','$Nota') "; //Colocar variables Linea 7-8n
 	 			break;
-	 case "M": $InstSql = "UPDATE tt9210btotalplazvac ".
-							"SET  TFechInicio = '$FechIn', TFechTerm = '$FechTe', TTotPlazBas = '$PlazBase', TTotPBOcup = '$PBOcup' , TTotPBVacan = '$PBVacan', TTotPlazConf = '$PlazConf', TTotPCOcup = '$PCOcup',  	TTotPCVacan = '$PCVacan', TAreaResp = '$AreaRes', TFechAct = '$FechAct', TFechValid = '$FechVal', TNota = '$Nota'".
-						  "WHERE  TConsecutivo = '$ClavBusq' "; //Modificar el campo llave
+	 case "M": $InstSql = "UPDATE tt9217regisolic  ".
+							"SET  RSFechInicio = '$FechIn', RSFechTerm = '$FechTe', RSFechSoli = '$FechSoli', RSFolioSoli = '$Folio' , RSInfoReq = '$Inforeq', RSRespuesta = '$$Respuesta', RSRecurrida = '$Recurri',  	RSRecurrOtro = '$RecurriO', RSDocs = '$Docs', RSTipoSoli = '$TipoSoli', RSTipoSoliOtro = '$TipoSoliO', RSAreaResp = '$AreaRes', RSNota = '$Nota'".
+						  "WHERE  RSConsecutivo = '$ClavBusq' "; //Modificar el campo llave
 	 			break;
-	 case "B":  $InstSql = "DELETE FROM tt9210btotalplazvac ".
-			    		   "WHERE  TConsecutivo = '$ClavBusq' ";//Modificar el campo llave
+	 case "B":  $InstSql = "DELETE FROM tt9217regisolic  ".
+			    		   "WHERE  RSConsecutivo = '$ClavBusq' ";//Modificar el campo llave
 	 			break;
 }
 

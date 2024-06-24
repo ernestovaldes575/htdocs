@@ -4,10 +4,10 @@ include("Conexion.php");
 
 $BandMens = false;
 //Query
-$InstSql =  "SELECT TConsecutivo, TAyuntam, TEjercicio, TFechInicio, TFechTerm ".	//Modificar los campos
-			"FROM   tt9210btotalplazvac ".			//Modificar la tabla
+$InstSql =  "SELECT RSConsecutivo, RSAyuntam, RSEjercicio, RSFechInicio, RSFechTerm , RSFechSoli".	//Modificar los campos
+			"FROM    tt9217regisolic  ".			//Modificar la tabla
 			//"WHERE  MAyuntam =  105 AND MEjercicio = 2024".
-			"ORDER BY TConsecutivo ";			//Modificar campos
+			"ORDER BY RSConsecutivo ";			//Modificar campos
 if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
