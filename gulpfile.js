@@ -5,6 +5,10 @@ const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
+//Imagenes
+const webp = require('gulp-webp');
+
+
 function css(done){
     src('src/scss/app.scss')
         .pipe(sass({outputStyle:'expanded'}))// {outputStyle:'expanded'}Compilamos SASS
@@ -12,12 +16,17 @@ function css(done){
         .pipe(dest('PaginaWeb/css/Estilos'))//Generamos los archivos
     done()
 }
-
+function versionWebp(done){
+    src('src/img/**/*.{png,jpg}')
+        .pipe(webp())
+        .pipe(dest('PaginaWeb/img'))
+    done()
+}
 //Funcion para que escuche cada que hacemos un modificacion en el codigo
 function dev(){
     watch('src/scss/**/*.scss',css);
 }
 
 exports.css = css;
-
-exports.default = series(css, dev);
+exports.versionWebp = versionWebp;
+exports.default = series(css, dev, versionWebp);
