@@ -1,5 +1,4 @@
 <?php
-	$ConeInEx = $_SESSION['ConeInEx'];
 
 	//!Local
 	$db_contraseña = '';
@@ -7,9 +6,9 @@
 	$db_nombre = 'paginaweb';
 
 	//!Servidor
-	$db_contraseña = 'E9TQE4QXOP3A';
-	$db_usuario = 'difzinac_intranet';
-	$db_nombre = 'difzinac_paginaweb';
+	// $db_contraseña = 'E9TQE4QXOP3A';
+	// $db_usuario = 'difzinac_intranet';
+	// $db_nombre = 'difzinac_paginaweb';
 
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$db_nombre", "$db_usuario", $db_contraseña);
