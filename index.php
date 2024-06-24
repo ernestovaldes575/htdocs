@@ -4,16 +4,15 @@
     <?php
         $ClavAyun = '105';
         $Titulo = "Zinacantepec";
-        include 'Components/HeadHtml.php';
+        include 'PaginaWeb/EstrPagi/Encabezados/LigasHTML.php';
     ?>
 </head>
 <body>
     <?php
-        include 'Components/menuPrin.php';
-        include 'Components/menuSecu.php';
-        include 'Components/RedesSociales.php';
+        include 'PaginaWeb/EstrPagi/MenuNav.php';
+        include 'PaginaWeb/EstrPagi/RedesSociales.php';
     ?>
-    <?php include 'EstrPagi/Modulo01.php'?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo01.php';?>
 
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -24,7 +23,7 @@
             </div>
         </div>
     </main>
-    <?php include 'EstrPagi/Modulo02.php';?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo02.php';?>
     
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -80,6 +79,7 @@
     </script>
     <script src="./scripts/anime.min.js"></script>  
     <script src="/scripts/animate.js"></script>
-    <?php include 'Components/Footer.php';?>
+
+    <?php include 'PaginaWeb/EstrPagi/Encabezados/Footer.php';?>
 </body>
 </html>
