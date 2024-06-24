@@ -78,7 +78,7 @@
                         <a class="elemento2" href="/PaginaWeb/Gobierno/direciones.php">
                             Direcciones
                         </a>
-                        <a class="elemento1" href="/Gobierno/normatividad.php">
+                        <a class="elemento1" href="/PaginaWeb/Gobierno/normatividad.php">
                             Normatividad
                         </a>
                         <a class="elemento5" href="javascript:window.open('/Gobierno/1ER%20INFORME%20ZINACANTEPEC%20MVV.pdf','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
