@@ -34,7 +34,7 @@
             </div>
         </div>
     </main> 
-    <?php include 'EstrPagi/Modulo03.php';?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo03.php';?>
 
     <!-- Avisos -->
     <main class="contenedor">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </main> 
-    <?php include 'EstrPagi/Modulo04.php'?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo04.php'?>
 
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -57,7 +57,7 @@
             </div>
         </div>
     </main>
-    <?php include 'EstrPagi/Modulo05.php'?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo05.php'?>
     
     <main class="contenedor">
         <div class="contenedor-centrar">
@@ -68,7 +68,7 @@
             </div>
         </div>
     </main>
-    <?php include 'EstrPagi/Modulo06.php'?>
+    <?php include 'PaginaWeb/EstrPagi/Modulo06.php'?>
 
     <script src="/scripts/app.js"></script>
     <script src="./swiperjs/swiper-bundle.min.js"></script>
