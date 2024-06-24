@@ -1,6 +1,6 @@
 <header class="header text-base">
     <div class="contenedor__principal navegacion">
-        <a href="" class="a">
+        <a href="/" class="a">
             <img src="/img/logo/LOGO-PRINCIPAL.png" class="escudo_mur" alt="Logo">
         </a>
         
@@ -66,10 +66,10 @@
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
                     <div class="mini desplaza">
-                        <a class="elemento5" href="/Gobierno/cabildo.php">
+                        <a class="elemento5" href="/PaginaWeb/Gobierno/cabildo.php">
                             Integrantes de Cabildo
                         </a>
-                        <a class="elemento4" href="/Gobierno/vcabildos.php">
+                        <a class="elemento4" href="/PaginaWeb/Gobierno/vcabildos.php">
                             Sesiones de Cabildo
                         </a>
                         <a class="elemento3" href="/Gobierno/vivo.php">
@@ -129,7 +129,6 @@
         <img class="barra" src="/img/logo/BARRA.png" alt="">
     </div>
 </div>
-
 <div class="contenedor__layer tagline">
     <div class="swiper" id="swiper-1">
         <div class="swiper-wrapper">
