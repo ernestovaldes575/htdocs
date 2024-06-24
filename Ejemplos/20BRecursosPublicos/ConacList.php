@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Registro solicitudes de acceso</title>
+	<title>Recursos publicos</title>
 	<link rel="stylesheet" href="../../Intranet/build/css/style.css">
 	<link rel="stylesheet" href="../../bootstrap-icons/font/bootstrap-icons.min.css">
 </head>
@@ -24,7 +24,7 @@
 					<td>No</td>				<!-- Cambiar campo de ConacListSERP Linea 7 -->
 					<td>Fecha Inicio</td>
 					<td>Fecha Termino</td>
-					<td>Fecha Solicitud</td>
+					<td>Tipo Recurso</td>
 					<td colspan="2">
 						<a href="Conac.php?Param2=A&Param3=0" class="btn-Nuevo">
 							<i class="bi bi-bookmark-plus-fill"></i>
@@ -33,10 +33,10 @@
 				</tr>
 				<?php
 					foreach($ResuSql as $RegiTabl):
-							$VC03=$RegiTabl['RSConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
-							$VC04=$RegiTabl['RSFechInicio'];				//Mod. campos ConacListSERP Linea 7
-							$VC05=$RegiTabl['RSFechTerm'];
-							$VC06=$RegiTabl['RSFechSoli'];
+							$VC03=$RegiTabl['RPConsecutivo']; 	//Mod. campos ConacListSERP Linea 7
+							$VC04=$RegiTabl['RPFechInicio'];				//Mod. campos ConacListSERP Linea 7
+							$VC05=$RegiTabl['RPFechTerm'];
+							$VC06=$RegiTabl['RPTipoRec'];
 				?>			
 				<tr>
 					<td><?php echo ($VC03); ?></td>
