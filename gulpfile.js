@@ -7,19 +7,14 @@ const autoprefixer = require('autoprefixer');
 
 //Imagenes
 const webp = require('gulp-webp');
+const imagemin = require('gulp-imagemin');
 
-
+//imagenes
 function css(done){
     src('src/scss/app.scss')
         .pipe(sass({outputStyle:'expanded'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest('PaginaWeb/css/Estilos'))//Generamos los archivos
-    done()
-}
-function versionWebp(done){
-    src('src/img/**/*.{png,jpg}')
-        .pipe(webp())
-        .pipe(dest('PaginaWeb/img'))
+        .pipe(dest('PaginaWeb/css/Estilos/img'))//Generamos los archivos
     done()
 }
 //Funcion para que escuche cada que hacemos un modificacion en el codigo
@@ -28,5 +23,4 @@ function dev(){
 }
 
 exports.css = css;
-exports.versionWebp = versionWebp;
-exports.default = series(css, dev, versionWebp);
+exports.default = series(css, dev);
