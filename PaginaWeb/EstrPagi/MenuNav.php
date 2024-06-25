@@ -75,7 +75,7 @@
                         <a class="elemento3" href="/Gobierno/vivo.php">
                             Cabildo en vivo
                         </a>
-                        <a class="elemento2" href="/Gobierno/direciones.php">
+                        <a class="elemento2" href="/PaginaWeb/Gobierno/direciones.php">
                             Direcciones
                         </a>
                         <a class="elemento1" href="/Gobierno/normatividad.php">
