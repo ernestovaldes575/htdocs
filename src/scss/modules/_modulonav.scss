@@ -1,0 +1,49 @@
+@use '../base/mixins' as m;
+@use '../base/colores' as c;
+.priv{
+    background:linear-gradient(327deg,#878787 8%,#989696 17%,#a8a8a8 23%,#aeaeae 29%,#bababa 35%,#b2b2b2 40%,#c6c6c6 47%,#cfcfcf 61%,#858585 78%);
+    margin-bottom:2em;
+    font-size:1em;
+    ul{
+        width:100%;
+        display:grid;
+        grid-template-columns:repeat(6,1fr);
+        grid-auto-flow:row;
+        li{
+            a{
+                text-align:center;
+                transition:.2s ease-in-out;
+                padding:1em 0;
+                font-weight: 600;
+            }
+        }
+    }
+    @include m.desktop{
+        display: grid;
+        grid-auto-columns: repeat(3,1fr);
+    }
+}
+.priva:hover{
+    background-color:#743089;
+    color:c.$Slate-200;
+}
+.datos:hover{
+    background-color:#c4579b;
+    color:c.$Slate-200;
+}
+.trami:hover {
+    background-color:#96c11f;
+    color:c.$Slate-200;
+}
+.super:hover {
+    background-color:#e8b900;
+    color:c.$Slate-200;
+}
+.traba:hover {
+    background-color:#f49929;
+    color:c.$Slate-200;
+}
+
+
+@include m.telefono{
+}

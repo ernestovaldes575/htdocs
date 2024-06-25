@@ -161,7 +161,8 @@
         </div>
     </div>
 </div>
-<nav class="nav__priv">
+
+<nav class="contenedor priv">
     <div class="contenedor__principal">
         <ul>
             <li class="effect">
