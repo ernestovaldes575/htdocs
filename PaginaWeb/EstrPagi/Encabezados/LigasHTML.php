@@ -1,6 +1,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo"$Titulo"?></title>
+    <title><?=$Titulo?></title>
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css">
     <link rel="shortcut icon" href="/PaginaWeb/img/LOGO-PRINCIPAL.webp"/>
