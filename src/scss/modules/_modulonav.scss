@@ -9,6 +9,18 @@
         display:grid;
         grid-template-columns:repeat(6,1fr);
         grid-auto-flow:row;
+        @include m.desktop{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include m.telefono{
+            display: grid;
+            grid-template-columns: 100%;
+        }
         li{
             a{
                 text-align:center;

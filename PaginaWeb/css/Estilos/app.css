@@ -797,6 +797,24 @@ body {
   grid-template-columns: repeat(6, 1fr);
   grid-auto-flow: row;
 }
+@media (max-width: 1245px) {
+  .priv ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .priv ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .priv ul {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
 .priv ul li a {
   text-align: center;
   transition: 0.2s ease-in-out;
