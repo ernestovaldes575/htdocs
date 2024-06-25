@@ -52,7 +52,7 @@
                         <a class="elemento1" href="/Conac/Cuenta/index.php">
                             Cuenta Pública
                         </a>
-                        <a class="elemento2" href="/Transparencia/Aviso/aviso_privacidad.php">
+                        <a class="elemento2" href="/PaginaWeb/Transparencia/Aviso/aviso_privacidad.php">
                             Aviso de Privacidad
                         </a>
                         <a class="elemento3" href="javascript:window.open('/Transparencia/ACUSE%20CUENTA%20PUBLICA%202021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
