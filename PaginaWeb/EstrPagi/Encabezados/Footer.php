@@ -1,8 +1,11 @@
+<?php
+    $año = date('Y');
+?>
 <footer class="footer">
     <div class="contenedor__principal">
         <article class="logo">
             <div>
-                <img src="../img/logo/logveda.png" alt="">
+                <img src="/PaginaWeb/img/logveda.webp" alt="">
                 <p>
                     Jardin Constitucion 101, Centro, 51350 San Miguel Zinacantepec, Méx.
                 </p>
@@ -43,5 +46,5 @@
     </div>
 </footer>
 <div class="footer-2 uppercase">
-    ©Copyright <?php $año = date('Y'); echo $año;?> | Ayuntamiento de Zinacantepec
+    ©Copyright <?=$año?> | Ayuntamiento de Zinacantepec
 </div>
