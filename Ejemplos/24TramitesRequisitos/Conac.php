@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Recursos publicos</title>
+<title>Tramites y requisitos</title>
 </head>
 <?php include("ConacSERP.php"); ?>	
 <body>
@@ -30,12 +30,12 @@
       </tr>
 
       <tr>
-        <td>Tipo de Recurso</td>				
+        <td>Denominacion</td>				
         <td><input type="text" name="C08" value="<?=$VC08?>"></td>
       </tr>
 
       <tr>
-        <td>Tipo de Recurso (Otro)</td>				
+        <td>Tipo de Usuario</td>				
         <td><input type="text" name="C09" value="<?=$VC09?>"></td>
       </tr>
 
@@ -45,48 +45,93 @@
       </tr>
 
       <tr>
-        <td>Motivo</td>				
+        <td>Modalidad</td>				
         <td><input type="text" name="C11" value="<?=$VC11?>"></td>
       </tr>
 
       <tr>
-        <td>Fecha de entrega</td>				
-        <td><input type="date" name="C12" value="<?=$VC12?>"></td>
+        <td>Hipervinculo Requ</td>				
+        <td><input type="text" name="C12" value="<?=$VC12?>"></td>
       </tr>
 
       <tr>
-        <td>Denominacion</td>				
+        <td>Documentos Requ</td>				
         <td><input type="text" name="C13" value="<?=$VC13?>"></td>
       </tr>
 
       <tr>
-        <td>Hipervinculo al oficio </td>				
+        <td>Hipervinculo al Form </td>				
         <td><input type="text" name="C14" value="<?=$VC14?>"></td>
       </tr>
 
       <tr>
-        <td>Hipervinculo al Inf de uso</td>				
+        <td>Tiempo res</td>				
         <td><input type="text" name="C15" value="<?=$VC15?>"></td>
       </tr>
 
       <tr>
-        <td>Hipervinculo a prestaciones </td>				
+        <td>Vigencia </td>				
         <td><input type="text" name="C16" value="<?=$VC16?>"></td>
       </tr>
 
       <tr>
-        <td>Hipervinculo a donativos </td>				
+        <td>Area de contacto</td>				
         <td><input type="text" name="C17" value="<?=$VC17?>"></td>
       </tr>
 
       <tr>
-        <td>Area Responsiva </td>				
+        <td>Costo </td>				
         <td><input type="text" name="C18" value="<?=$VC18?>"></td>
       </tr>
 
       <tr>
-        <td>Nota </td>				
+        <td>Sustento </td>				
         <td><input type="text" name="C19" value="<?=$VC19?>"></td>
+      </tr>
+
+      <tr>
+        <td>Lugar de pago </td>				
+        <td><input type="text" name="C19" value="<?=$VC20?>"></td>
+      </tr>
+
+      <tr>
+        <td>Fund Juridica </td>				
+        <td><input type="text" name="C19" value="<?=$VC21?>"></td>
+      </tr>
+
+      <tr>
+        <td>Derechos </td>				
+        <td><input type="text" name="C19" value="<?=$VC22?>"></td>
+      </tr>
+
+      <tr>
+        <td>Lugar Repor </td>				
+        <td><input type="text" name="C19" value="<?=$VC23?>"></td>
+      </tr>
+
+      <tr>
+        <td>Otros </td>				
+        <td><input type="text" name="C19" value="<?=$VC24?>"></td>
+      </tr>
+
+      <tr>
+        <td>Hipervinculo Inf </td>				
+        <td><input type="text" name="C19" value="<?=$VC25?>"></td>
+      </tr>
+
+      <tr>
+        <td>Hipervinculo Sist </td>				
+        <td><input type="text" name="C19" value="<?=$VC26?>"></td>
+      </tr>
+
+      <tr>
+        <td>Area Responsable </td>				
+        <td><input type="text" name="C19" value="<?=$VC27?>"></td>
+      </tr>
+
+      <tr>
+        <td>Nota </td>				
+        <td><input type="text" name="C19" value="<?=$VC28?>"></td>
       </tr>
 	
       <tr>

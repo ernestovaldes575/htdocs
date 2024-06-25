@@ -6,35 +6,44 @@ if ( isset($_GET["Param2"]) ){
   $ClavBusq = $_GET["Param3"]; }	
 
 //Consulta
-$InstSql =  "SELECT RPConsecutivo, RPAyuntam, RPejercicio, RPFechInicio, RPFechTerm, RPTipoRec, RPTipoReOtro, RPDescr, RPMotivo, RPFechEntr, RPDenom, RPHipervOfic, RPHipervInf, RPHipervProg, RPHipervDonat, RPAreaResp, RPNota".  //Modifac Campos de tabla
+$InstSql =  "SELECT TRConsecutivo, TRAyuntam, TREjercicio, TRFechInicio, TRFechTerm, TRDenom, TRTipoUsu, TRDesc, TRModalidad, TRHipervRequ, TRDocReque, TRHipervForm, TRTiempoRes, TRVigencia, TRAreaContact, TRCosto, TRSustento, TRLugarPago, TRFundJuri, TRDerech, TRLugarRepor, TROtros, TRHipervInf, TRHipervSist, TRAreaResp, TRNota".  //Modifac Campos de tabla
 				    " ".
-			"FROM   tt9220brecurspublic ".			//Modificxar Tabla
-			"WHERE  RPConsecutivo =  '$ClavBusq' ". //Modificar campo
-			"ORDER BY RPConsecutivo ";			//Modificar campo	
+			"FROM   tt9224tramreq  ".			//Modificxar Tabla
+			"WHERE  TRConsecutivo =  '$ClavBusq' ". //Modificar campo
+			"ORDER BY TRConsecutivo ";			//Modificar campo	
 			if ($BandMens)  echo '1)'.$InstSql.'<br>'; 
 			$EjInSql = $ConeBase->prepare($InstSql);
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";		$VC12="";		$VC13="";	$VC14="";	$VC15="";	$VC16="";$VC17="";	 $VC18="";		 $VC19="";//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="105";	$VC05="2024";	$VC06="";	$VC07="";	$VC08="";	$VC09="";	$VC10="";	$VC11="";	$VC12="";		$VC13="";		$VC14="";	$VC15="";	$VC16="";	$VC17="";	$VC18="";		 $VC19="";	 $VC20="";		 $VC21="";		 $VC22="";	 $VC23="";	 $VC24="";	 $VC25="";	 $VC26="";$VC27="";	  $VC28="";//Definir variables en base a los campos Linea 9
 foreach ($ResuSql as $RegiTabl):
-	$VC03=$RegiTabl['RPConsecutivo'];	//campos en base s la base de linea 9
+	$VC03=$RegiTabl['TRConsecutivo'];	//campos en base s la base de linea 9
 	$VC04="105"; 
 	$VC05="2024";
-	$VC06=$RegiTabl['RPFechInicio'];
-	$VC07=$RegiTabl['RPFechTerm'];
-	$VC08=$RegiTabl['RPTipoRec'];
-	$VC09=$RegiTabl['RPTipoReOtro'];
-	$VC10=$RegiTabl['RPDescr'];
-	$VC11=$RegiTabl['RPMotivo'];
-	$VC12=$RegiTabl['RPFechEntr'];
-	$VC13=$RegiTabl['RPDenom'];
-	$VC14=$RegiTabl['RPHipervOfic'];
-	$VC15=$RegiTabl['RPHipervInf'];
-	$VC16=$RegiTabl['RPHipervProg'];
-	$VC17=$RegiTabl['RPHipervDonat'];
-	$VC18=$RegiTabl['RPAreaResp'];
-	$VC19=$RegiTabl['RPNota'];
+	$VC06=$RegiTabl['TRFechInicio'];
+	$VC07=$RegiTabl['TRFechTerm'];
+	$VC08=$RegiTabl['TRDenom'];
+	$VC09=$RegiTabl['TRTipoUsu'];
+	$VC10=$RegiTabl['TRDesc'];
+	$VC11=$RegiTabl['TRModalidad'];
+	$VC12=$RegiTabl['TRHipervRequ'];
+	$VC13=$RegiTabl['TRDocReque'];
+	$VC14=$RegiTabl['TRHipervForm'];
+	$VC15=$RegiTabl['TRTiempoRes'];
+	$VC16=$RegiTabl['TRVigencia'];
+	$VC17=$RegiTabl['TRAreaContact'];
+	$VC18=$RegiTabl['TRCosto'];
+	$VC19=$RegiTabl['TRSustento'];
+	$VC20=$RegiTabl['TRLugarPago'];
+	$VC21=$RegiTabl['TRFundJuri'];
+	$VC22=$RegiTabl['TRDerech'];
+	$VC23=$RegiTabl['TRLugarRepor'];
+	$VC24=$RegiTabl['TROtros'];
+	$VC25=$RegiTabl['TRHipervInf'];
+	$VC26=$RegiTabl['TRHipervSist'];
+	$VC27=$RegiTabl['RPAreaResp'];
+	$VC28=$RegiTabl['RPNota'];
 endforeach;	
 	
 $DescTiMo = "";
