@@ -13,6 +13,5 @@
     <link rel="stylesheet" href="/layouts/Imagenes.css">
     <link rel="stylesheet" href="/layouts/Main_Sec.css">
     <link rel="stylesheet" href="/layouts/Noticias.css">
-    <link rel="stylesheet" href="/layouts/MenuCont.css">
     <link rel="stylesheet" href="/layouts/Sociales.css">
     <script src="https://unpkg.com/scrollreveal"></script>
