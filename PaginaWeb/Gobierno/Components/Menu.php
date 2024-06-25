@@ -1,7 +1,7 @@
 <header class="header text-base">
     <div class="contenedor__principal navegacion">
         <a href="" class="a">
-            <img src="/img/logo/LOGO-PRINCIPAL.png" class="escudo_mur" alt="Logo">
+            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo">
         </a>
         
         <button class="button">
@@ -120,7 +120,7 @@
             </button>
         </div>
         <a href="" class="a">
-            <img src="/img/logo/escudo.png" class="escudo animate" alt="Logo">
+            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo">
         </a>
     </div>
 </header>
