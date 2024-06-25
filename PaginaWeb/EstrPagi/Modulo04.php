@@ -74,7 +74,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <a href="">
-                                    <img src="/PaginaWeb/img/conmutador.webp" alt="conmutador">
+                                    <img src="/PaginaWeb/img/conmutador2.webp" alt="conmutador">
                                 </a> 
                             </div>
                         </div>
@@ -84,22 +84,30 @@
 
                 <article class="">
                     <div class="">
-                        <img src="../img/tel2.png" alt="">
+                        <img src="/PaginaWeb/img/tel2.webp" alt="">
                     </div>
                     <div class="swiper" id="swiper-4">
                         <!-- Imagenes Inicio -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href=""><img src="../img/busq/1.jpg" alt=""></a> 
+                                <a href="">
+                                    <img src="/PaginaWeb/img/Perdido01.webp" alt="Perdido">
+                                </a> 
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="../img/busq/2.jpg" alt=""></a> 
+                                <a href="">
+                                    <img src="/PaginaWeb/img/Perdido02.webp" alt="Perdido">
+                                </a> 
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="../img/busq/1.jpg" alt=""></a> 
+                                <a href="">
+                                    <img src="/PaginaWeb/img/Perdido01.webp" alt="Perdido">
+                                </a> 
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="../img/busq/2.jpg" alt=""></a> 
+                                <a href="">
+                                    <img src="/PaginaWeb/img/Perdido02.webp" alt="Perdido">
+                                </a> 
                             </div>
                         </div>
                         <!-- Imagenes Fin -->
