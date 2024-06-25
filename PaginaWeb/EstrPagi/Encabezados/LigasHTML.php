@@ -3,7 +3,7 @@
     <title><?php echo"$Titulo"?></title>
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../swiperjs/swiper-bundle.min.css">
-    <link rel="shortcut icon" href="/img/logo/LOGO-PRINCIPAL.png"/>
+    <link rel="shortcut icon" href="/PaginaWeb/img/LOGO-PRINCIPAL.webp"/>
     
     <link rel="stylesheet" href="/PaginaWeb/css/Estilos/app.css">
     

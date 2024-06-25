@@ -63,7 +63,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="">
-                                <img src="/PaginaWeb/img/conmutador2.webp" alt="conmutador">
+                                <img src="/PaginaWeb/img/conmutador.webp" alt="conmutador">
                             </a> 
                         </div>
                         <div class="swiper-slide">
