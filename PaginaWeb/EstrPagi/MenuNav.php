@@ -126,7 +126,7 @@
 </header>
 <div class="nav__secondary punchline">
     <div class="contenedor__barra">
-        <img class="barra" src="/img/logo/BARRA.png" alt="">
+        <img class="barra" src="/PaginaWeb/img/BARRA.webp" alt="BARRA">
     </div>
 </div>
 <div class="contenedor__layer tagline">
