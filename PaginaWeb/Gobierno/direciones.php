@@ -37,7 +37,7 @@
                         $ResuCorr = $RegTab01[3];
                         $ResuImag = $RegTab01[4];
                         $ResuFond = $RegTab01[5];
-                        $RutaImag = '/Gobierno/Directorio/';
+                        $RutaImag = 'Directorio/';
             ?>
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card shadow mb-5 border-solid" style="width: 22rem;">
@@ -79,7 +79,7 @@
                             $ResuCorr = $RegTab02[3];
                             $ResuImag = $RegTab02[4];
                             $ResuFond = $RegTab02[5];
-                            $RutaImag = '/Gobierno/Directorio/';
+                            $RutaImag = 'Directorio/';
                 ?>
                 <div class="col-md-6 d-flex justify-content-center">
                     <div class="card shadow mb-5" style="width: 22rem;">
@@ -109,10 +109,13 @@
     <div class="container">
         <div class="row">
             <?php
+                $BandInst = false;
+                echo "<br>Direcciones<br>";
                 $InstSql =  "SELECT CNombre, CCargo, CTelefono, CCorreo, CImagen, CFondo ".
                             "FROM stdire ". 
                             "WHERE CTipo = 'O' ".
                             "ORDER BY CNumero ASC";
+                if($BandInst) echo "1)$InstSql<br>";
                 $RespSql = $ConeBase->prepare($InstSql);
                 $RespSql->execute();
                 $ResuDire = $RespSql->fetchAll();
@@ -123,7 +126,8 @@
                         $ResuCorr = $RegTab01[3];
                         $ResuImag = $RegTab01[4];
                         $ResuFond = $RegTab01[5];
-                        $RutaImag = '/Gobierno/Directorio/';
+                        $RutaImag = 'Directorio/';
+                        if($BandInst) echo "2)$RutaImag<br>";
             ?>
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card shadow mb-5" style="width: 20rem;">
