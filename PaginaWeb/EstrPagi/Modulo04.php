@@ -64,17 +64,17 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a href="">
-                                    <img src="../img/Interes/conmutador.png" alt="">
+                                    <img src="/PaginaWeb/img/conmutador2.webp" alt="conmutador">
                                 </a> 
                             </div>
                             <div class="swiper-slide">
                                 <a href="">
-                                    <img src="../img/conmutador2.png" alt="">
+                                    <img src="/PaginaWeb/img/conmutador2.webp" alt="conmutador">
                                 </a> 
                             </div>
                             <div class="swiper-slide">
                                 <a href="">
-                                    <img src="../img/Interes/conmutador.png" alt="">
+                                    <img src="/PaginaWeb/img/conmutador.webp" alt="conmutador">
                                 </a> 
                             </div>
                         </div>
