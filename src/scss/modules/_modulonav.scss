@@ -18,10 +18,6 @@
             }
         }
     }
-    @include m.desktop{
-        display: grid;
-        grid-auto-columns: repeat(3,1fr);
-    }
 }
 .priva:hover{
     background-color:#743089;

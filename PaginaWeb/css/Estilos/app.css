@@ -803,12 +803,6 @@ body {
   padding: 1em 0;
   font-weight: 600;
 }
-@media (max-width: 1245px) {
-  .priv {
-    display: grid;
-    grid-auto-columns: repeat(3, 1fr);
-  }
-}
 
 .priva:hover {
   background-color: #743089;
