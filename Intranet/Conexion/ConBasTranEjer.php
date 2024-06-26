@@ -14,6 +14,7 @@
 	$contraseña = "";
 	$user = "root";
 	$dbname = "transpa$EjerTrab";
+	//$dbname = "transparencia";
 	
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
