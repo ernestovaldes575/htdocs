@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Documento sin título</title>
+<title>Documento sin</title>
 
 <link rel="stylesheet" href="../../Intranet/build/css/style.css">
 
