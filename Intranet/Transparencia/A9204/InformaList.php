@@ -51,12 +51,12 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['AConsecutivo'];	 <!--Modificar--> 
-			  $VC04 = $RegiTabl['ANumeRegi'];		 <!--Modificar--> 
-			  $VC05 = $RegiTabl['AFechaInicio'];	 <!--Modificar--> 
-			  $VC06 = $RegiTabl['AFechaTermino'];	 <!--Modificar--> 
-			  $VC07 = $RegiTabl['ADenominacion'];	 <!--Modificar--> 
-			  $VC08 = $RegiTabl['AHipervinculo'];	 <!--Modificar--> 
+			  $VC03 = $RegiTabl['AConsecutivo'];	 //Modificar
+			  $VC04 = $RegiTabl['ANumeRegi'];		 //Modificar
+			  $VC05 = $RegiTabl['AFechaInicio'];	 //Modificar
+			  $VC06 = $RegiTabl['AFechaTermino'];	 //Modificar
+			  $VC07 = $RegiTabl['ADenominacion'];	 //Modificar 
+			  $VC08 = $RegiTabl['AHipervinculo'];	 //Modificar
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

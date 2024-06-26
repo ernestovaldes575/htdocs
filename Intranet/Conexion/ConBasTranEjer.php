@@ -2,7 +2,7 @@
 
 	$ArCook01 = $_COOKIE['CBusqMae'];
 	$ABusqMae = explode("|", $ArCook01);
-	//echo '$ABusqMae'.$ABusqMae.'<br>';
+	echo '$ABusqMae'.$ABusqMae.'<br>';
 	$EjerTrab = $ABusqMae[0];
 	//!Servidor
 	// $contraseña = 'E9TQE4QXOP3A';
@@ -13,6 +13,7 @@
 	$contraseña = "";
 	$user = "root";
 	$dbname = "transpa$EjerTrab";
+	//$dbname = "transparencia";
 	
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$dbname", "$user", $contraseña);
