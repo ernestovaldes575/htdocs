@@ -37,7 +37,7 @@
 			<th width="14%">&nbsp;</th>
 		</tr>
 		<?php 
-		  foreach($ResuSql as $RegiTabl){
+		  		foreach($ResuSql as $RegiTabl){
 			  $VC03=$RegiTabl[0];	
 			  $VC04=$RegiTabl[1];	
 			  $VC05=$RegiTabl[2];	
