@@ -3,7 +3,7 @@
 <head>
     <?php
         $ClavAyun = '105';
-        $Titulo = "Zinacantepec";
+        $Titulo = "Zinacantepec2";
         include 'PaginaWeb/EstrPagi/Encabezados/LigasHTML.php';
     ?>
 </head>
