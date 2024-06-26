@@ -2,8 +2,9 @@
 
 	$ArCook01 = $_COOKIE['CBusqMae'];
 	$ABusqMae = explode("|", $ArCook01);
-	//echo '$ABusqMae'.$ABusqMae.'<br>';
+	echo '$ABusqMae'.$ABusqMae.'<br>';
 	$EjerTrab = $ABusqMae[0];
+	
 	//!Servidor
 	// $contraseña = 'E9TQE4QXOP3A';
 	// $user = 'difzinac_intranet';

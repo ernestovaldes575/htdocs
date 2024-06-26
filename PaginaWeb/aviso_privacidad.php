@@ -11,8 +11,10 @@
     <?php include 'EstrPagi/MenuNav.php';?>
 
     <div class="contenedor">
-        <div class="header__layer__contenedor">
-            <h1>Avisos de Privacidad</h1>
+        <div class="contenedor-centrar">
+            <div class="contenedor-titulo">
+                <h1 class="titulo">Avisos de Privacidad</h1>
+            </div>
         </div>
     </div> 
 
@@ -27,7 +29,7 @@
                         Por lo anterior, este Sujeto Obligado en apego a lo establecido por la Ley de Protección de Datos Personales en Posesión de los Sujetos Obligados del Estado de México y Municipios en sus Artículos 29, 30, 31, 32, 33 y 34, donde se señalan los elementos que deberán contener los Avisos de Privacidad Integral y Simplificado.
                         Es por ello que, la Unidad de Transparencia de Zinacantepec pone a su entera disposición, los Avisos de Privacidad para su consulta y conocer como serán tratados sus datos personales por las diferentes Direcciones de Zinacantepec 2022 - 2024.
                     </p>
-                    <h2 class="Subtitulo_n">Aviso de Privacidad Integral</h2>
+                    <h2 class="Titulo-Secundario">Aviso de Privacidad Integral</h2>
                     <p>
                         <span>Artículo 30:</span> Cuando los datos hayan sido obtenidos personalmente de la o el titular, el aviso de privacidad integral deberá ser facilitado en el momento en el que se recabe el dato de forma clara y fehaciente, a través de los formatos por los que se recaban, salvo que se hubiere facilitado el aviso con anterioridad, supuesto en el que podrá instrumentarse una señal de aviso para cumplir con el principio de responsabilidad.
                         Cuando los datos se obtengan de manera indirecta, el responsable adoptará los mecanismos necesarios para que la o el titular acceda al aviso de privacidad integral, salvo que exista constancia de que la o el titular ya fue informado del contenido del aviso de privacidad.

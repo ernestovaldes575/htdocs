@@ -1,11 +1,25 @@
 @use '../base/mixins' as m;
 @use '../base/colores' as c;
 .contenedor-Aviso{
-    @include m.grid(3,1em);
+    @include m.grid(3,5em);
     .Articulo-1{
-        background-color: red;
+        grid-column: 1/3;
+        p{
+            line-height: 2em;
+        }
+        h2{
+            font-weight: 600;
+            margin-bottom: .3em;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+        .Titulo-Secundario{
+            margin-top: 2em;
+        }
     }
     .Articulo-2{
-        background-color: blue;
+        iframe{
+            height: 100%;
+        }
     }
 }
