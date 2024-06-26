@@ -16,7 +16,7 @@ $InstSql =  "SELECT CTCClave, CTCDescri ".  //Modifac Campos de tabla
 			$EjInSql->execute();
 			$ResuSql = $EjInSql->fetchall();
 
-$VC03=""; 	$VC04="";				//Definir variables en base a los campos Linea 9
+$VC03=""; 	$VC04="";				//Definir variables en base a los campos Linea 9  ayundamiento 2024 105
 foreach ($ResuSql as $RegiTabl):
 	$VC03=$RegiTabl['CTCClave'];	//campos en base s la base de linea 9
 	$VC04=$RegiTabl[1]; 
