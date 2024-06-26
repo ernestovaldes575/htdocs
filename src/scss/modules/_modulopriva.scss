@@ -2,4 +2,10 @@
 @use '../base/colores' as c;
 .contenedor-Aviso{
     @include m.grid(3,1em);
+    .Articulo-1{
+        background-color: red;
+    }
+    .Articulo-2{
+        background-color: blue;
+    }
 }

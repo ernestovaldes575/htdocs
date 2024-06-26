@@ -852,6 +852,12 @@ body {
   gap: 1em;
   grid-template-columns: repeat(3, 1fr);
 }
+.contenedor-Aviso .Articulo-1 {
+  background-color: red;
+}
+.contenedor-Aviso .Articulo-2 {
+  background-color: blue;
+}
 
 #swiper-1 .swiper-slide img {
   display: block;
