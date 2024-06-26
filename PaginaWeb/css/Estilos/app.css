@@ -870,6 +870,12 @@ body {
 .contenedor-Aviso .Articulo-2 iframe {
   height: 100%;
 }
+@media (max-width: 768px) {
+  .contenedor-Aviso {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
 
 #swiper-1 .swiper-slide img {
   display: block;

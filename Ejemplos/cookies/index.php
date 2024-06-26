@@ -1,7 +1,6 @@
 <?php
     if(isset($_POST['enviar'])){
         $usuario = htmlentities($_POST['usuario']);
-
         //?Creacion de la cookie
         setcookie('usuario', $usuario, time()+3600);
         
