@@ -40,10 +40,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.7em;
 }
+.article__aviso{    
+    grid-column: 1/3;
+}
 .main__contenedor__aviso .contenedor__aviso{
     width: 80%;
     color: #3F3844;
-    font-size: 1.1  em;
+    font-size: 1.1em;
     line-height: 2em;
 }
 
@@ -52,9 +55,7 @@
     text-transform: uppercase;
 }
 /* **** */
-.article__aviso{    
-    grid-column: 1/3;
-}
+
 .article__aviso span{
     font-weight: 600;
 }

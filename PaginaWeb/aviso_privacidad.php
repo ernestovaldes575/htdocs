@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php $Titulo = 'Aviso de Privacidad';?>
-    <?php include '../../Components/HeadHtml.php'?>
+    <?php
+        $ClavAyun = '105';
+        $Titulo = "Aviso de Privacidad";
+        include 'EstrPagi/Encabezados/LigasHTML.php';
+    ?>
 </head>
 <body>
-    <?php include '../../Components/menuPrin.php'?>
+    <?php include 'EstrPagi/MenuNav.php';?>
 
-    <div class="header__layer">
+    <div class="contenedor">
         <div class="header__layer__contenedor">
             <h1>Avisos de Privacidad</h1>
         </div>
-    </div>   
-    <!-- Empieza Codigo -->
-    <div class="contenedor__titulo">
-        <h1>
-            Aviso de Privacidad
-        </h1>
-    </div>
+    </div> 
 
-    <main class="main__contenedor__aviso">
+    <main class="contenedor">
         <div class="contenedor__aviso">
             <article class="article__aviso">
                 <h2>Aviso de Privacidad</h2>
@@ -36,12 +33,10 @@
                 </p>
             </article>
             <article class="article__secundario__aviso">
-                <div class="contenedor__iframe">
-                    <iframe class="pdf" 
-                        src="AVISO DE PRIVACIDAD INTEGRAL.pdf#toolbar=0"  
+                <iframe class="pdf" 
+                        src="Transparencia/Aviso/AVISO DE PRIVACIDAD INTEGRAL.pdf"  
                         frameborder="0" >
-                    </iframe>
-                </div>
+                </iframe>
             </article>
         </div>
     </main>
@@ -49,7 +44,7 @@
         <div class="contenedor__secundario__aviso">
             <article class="article__iframe">
                 <iframe class="pdf" 
-                    src="aviso de privacidad simplificado.pdf#toolbar=0" style="width:100%; height:700px;" frameborder="0">
+                    src="Transparencia/Aviso/aviso de privacidad simplificado.pdf" frameborder="0">
                 </iframe>
             </article>
             <article class="article__secundario__aviso">
@@ -88,7 +83,9 @@
             </ul>
         </div>
     </main>
-    <?php include '../../Components/Footer.php'?>
+    <?php include '../../EstrPagi/Encabezados/Footer.php'?>
     <script src="/scripts/app.js"></script>
+    <script src="../../../scripts/app.js"></script>
+    <script src="../../../swiperjs/swiper-bundle.min.js"></script>
 </body>
 <html>

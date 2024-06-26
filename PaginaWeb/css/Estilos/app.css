@@ -847,6 +847,12 @@ body {
   color: #e2e8f0;
 }
 
+.contenedor-Aviso {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 #swiper-1 .swiper-slide img {
   display: block;
   width: 100%;

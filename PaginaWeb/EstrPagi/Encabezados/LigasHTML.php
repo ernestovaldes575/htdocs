@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="/PaginaWeb/img/LOGO-PRINCIPAL.webp"/>
 
     <link rel="stylesheet" href="/PaginaWeb/css/Estilos/app.css">
-    <link rel="stylesheet" href="/layouts/AvisoPrivacidad.css">
+    <link rel="stylesheet" href="/layouts/AvisoPrivacidad.css">    
     
     <link rel="stylesheet" href="/layouts/Cabildo.css">
     <link rel="stylesheet" href="/layouts/Direcciones.css">

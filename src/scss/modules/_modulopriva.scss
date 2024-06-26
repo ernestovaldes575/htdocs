@@ -1,0 +1,5 @@
+@use '../base/mixins' as m;
+@use '../base/colores' as c;
+.contenedor-Aviso{
+    @include m.grid(3,1em);
+}
