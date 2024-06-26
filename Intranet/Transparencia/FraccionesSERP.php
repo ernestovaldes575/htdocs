@@ -4,7 +4,7 @@
 
 //********************************************************************
 //Informacion de la Lista
-$BandMens = false;
+$BandMens = true;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
@@ -18,9 +18,10 @@ if ( isset($_GET["PaAMB01"]) ){
 //ttfracarea
 
 //Carga el registro para Consulta
-$InstSql = "SELECT FAConsecutivo, FAFraccion, FAInciso, FASubinciso, FNormatividad, ".
+$InstSql = "SELECT 	FAConsecutivo, FAFraccion, FAInciso, FASubinciso, FNormatividad, ".
 					"FATrimes01, FATrimes02, FATrimes03, FATrimes04 ".
 			"FROM   ttfracarea ".
+
 			"INNER JOIN ttfraccion ON  	FFraccion = FAFraccion AND ".
 										"FInciso = FAInciso AND ".
 										"FSubinciso = FASubinciso ".

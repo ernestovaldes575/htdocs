@@ -26,9 +26,11 @@
 			<td></td>
 			<td></td>
 			<td></td>
-			<td colspan="2"><a href="Ejercicio.php" 
-					class="btn-Regresar">Regresar </a> <i class="bi bi-x-square btn-01 Regre"
-				   title="Regresar">Regresar</i></td>
+			<td colspan="2">
+				<a href="Ejercicio.php" class="btn-Regresar">
+					Regresar
+				</a>
+			</td>
 		</tr>
 		<tr>
 			<th>Fracción</th>

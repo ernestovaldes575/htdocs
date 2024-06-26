@@ -4,7 +4,7 @@
 
 //********************************************************************
 //Informacion de la Lista
-$BandMens = true;
+$BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
