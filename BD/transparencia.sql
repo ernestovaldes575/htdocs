@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2024 a las 21:08:55
+-- Tiempo de generación: 26-06-2024 a las 22:00:10
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `transparencia`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `acejercicio`
+--
+
+CREATE TABLE `acejercicio` (
+  `CEJClave` int(11) NOT NULL,
+  `CEJDescri` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `acejercicio`
+--
+
+INSERT INTO `acejercicio` (`CEJClave`, `CEJDescri`) VALUES
+(2023, '2023'),
+(2024, '2024');
 
 -- --------------------------------------------------------
 
@@ -62,7 +81,7 @@ CREATE TABLE `acopcser` (
 --
 
 INSERT INTO `acopcser` (`COSTipSer`, `COSClave`, `COSDescripcion`, `COSDireccion`) VALUES
-('01', '001', 'Facultades de área', 'Transparencia/FacdeAre/FacdeAreCons.php'),
+('01', '001', 'Fracciones', '/Intranet/transparencia/Ejercicio.php'),
 ('01', '002', 'Metas y Objetivos de Área', 'Transparencia/MetYObje/MetYObjeCons.php'),
 ('01', '003', 'Normatividad Aplicable', 'Transparencia/NormApli/NormApliCons.php');
 
@@ -266,6 +285,25 @@ INSERT INTO `ttfadear` (`AConsecutivo`, `AAyuntamiento`, `AEjercicio`, `AFechaIn
 (25, '', 0, '2022-11-25', '2022-11-25', 0, 'hdeno', 'hfunda', 'hhiper', 13, 'notah'),
 (26, '105', 2022, '0000-00-00', '0000-00-00', 10, 'aa', 'aa', 'aa', 0, 'aa'),
 (27, '105', 2022, '2022-11-25', '2022-11-25', 87, 'hola funda', 'hola hiper', 'hnhh', 12, 'nota');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ttfracarea`
+--
+
+CREATE TABLE `ttfracarea` (
+  `FAEjercicio` int(11) NOT NULL,
+  `FAAyuntamiento` varchar(3) NOT NULL,
+  `FAUnidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ttfracarea`
+--
+
+INSERT INTO `ttfracarea` (`FAEjercicio`, `FAAyuntamiento`, `FAUnidad`) VALUES
+(2024, '105', 1);
 
 --
 -- Índices para tablas volcadas
