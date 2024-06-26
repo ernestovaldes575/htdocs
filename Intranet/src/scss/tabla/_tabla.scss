@@ -1,7 +1,7 @@
 @use '../custom' as *;
 
 .tabla{
-    @extend .table, .table-hover, .mt-5, .table-light, .table-striped, .shadow;
+    @extend .table, .mt-5, .table-light, .table-striped, .shadow, .table-responsive, .table-bordered;
 }
 .contenedor-tabla{
     width: 100%;
