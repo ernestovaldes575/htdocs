@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+<meta charset="utf-8">
+<title>transpa2024</title>
+=======
     <meta charset="utf-8">
     <title>Documento sin título</title>
+>>>>>>> 19fd93aec8f65361b2ad061e0d7d214604445ca0
 </head>
 <?php include("ConacSERP.php"); ?>	
 <body>

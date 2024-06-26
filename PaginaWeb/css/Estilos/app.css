@@ -849,8 +849,26 @@ body {
 
 .contenedor-Aviso {
   display: grid;
-  gap: 1em;
+  gap: 5em;
   grid-template-columns: repeat(3, 1fr);
+}
+.contenedor-Aviso .Articulo-1 {
+  grid-column: 1/3;
+}
+.contenedor-Aviso .Articulo-1 p {
+  line-height: 2em;
+}
+.contenedor-Aviso .Articulo-1 h2 {
+  font-weight: 600;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.contenedor-Aviso .Articulo-1 .Titulo-Secundario {
+  margin-top: 2em;
+}
+.contenedor-Aviso .Articulo-2 iframe {
+  height: 100%;
 }
 
 #swiper-1 .swiper-slide img {

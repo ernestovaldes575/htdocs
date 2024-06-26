@@ -2,10 +2,6 @@
 :root{
     font-family: system-ui;
 }
-
-.header__layer .header__layer__contenedor{
-    width: 80%;
-}
 .header__layer .header__layer__contenedor h1{
     width: 50%;
     text-align: center;

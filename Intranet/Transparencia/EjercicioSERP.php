@@ -10,17 +10,16 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT CEJClave,CEJDescri,".
-				  "(SELECT COUNT(*) ".
- 				   "FROM   Transparencia.TTFracArea ".
-				   "WHERE  FAEjercicio = CEJClave AND ".
-						  "FAAyuntamiento = '$ClavAyun' AND ".
-        				  "FAUnidad       = $ConsUnid ) AS TotaRegi ".
-		   "FROM acejercicio ".
-		   "ORDER BY CEJClave";
+					"(SELECT COUNT(*) ".
+					"FROM   Transparencia.TTFracArea ".
+					"WHERE  FAEjercicio = CEJClave AND ".
+							"FAAyuntamiento = '$ClavAyun' AND ".
+							"FAUnidad       = $ConsUnid ) AS TotaRegi ".
+			"FROM acejercicio ".
+			"ORDER BY CEJClave";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetchAll();
-?>

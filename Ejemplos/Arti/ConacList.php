@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Documento sin</title>
-	<link rel="stylesheet" href="../../Intranet/build/css/style.css">
-	<link rel="stylesheet" href="../../bootstrap-icons/font/bootstrap-icons.min.css">
+<meta charset="utf-8">
+<title>Documento sin título</title>
 </head>
 <?php
 	include("ConacListSERP.php");	
