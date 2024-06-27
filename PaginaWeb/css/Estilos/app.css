@@ -857,6 +857,7 @@ body {
 }
 .contenedor-Aviso .Articulo-1 p {
   line-height: 2em;
+  text-wrap: wrap;
 }
 .contenedor-Aviso .Articulo-1 h2 {
   font-weight: 600;
@@ -874,6 +875,7 @@ body {
   .contenedor-Aviso {
     display: grid;
     grid-template-columns: 100%;
+    background-color: aqua;
   }
 }
 
