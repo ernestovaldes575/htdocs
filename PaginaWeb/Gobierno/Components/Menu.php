@@ -1,6 +1,7 @@
-<header class="header text-base">
+<!-- 
+    <header class="header">
     <div class="contenedor__principal navegacion">
-        <a href="" class="a">
+        <a href="/" class="a">
             <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo">
         </a>
         
@@ -52,7 +53,7 @@
                         <a class="elemento1" href="/Conac/Cuenta/index.php">
                             Cuenta Pública
                         </a>
-                        <a class="elemento2" href="/Transparencia/Aviso/aviso_privacidad.php">
+                        <a class="elemento2" href="/PaginaWeb/aviso_privacidad.php">
                             Aviso de Privacidad
                         </a>
                         <a class="elemento3" href="javascript:window.open('/Transparencia/ACUSE%20CUENTA%20PUBLICA%202021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
@@ -66,16 +67,16 @@
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
                     <div class="mini desplaza">
-                        <a class="elemento5" href="/Gobierno/cabildo.php">
+                        <a class="elemento5" href="/PaginaWeb/Gobierno/cabildo.php">
                             Integrantes de Cabildo
                         </a>
-                        <a class="elemento4" href="/Gobierno/vcabildos.php">
+                        <a class="elemento4" href="/PaginaWeb/Gobierno/vcabildos.php">
                             Sesiones de Cabildo
                         </a>
                         <a class="elemento3" href="/Gobierno/vivo.php">
                             Cabildo en vivo
                         </a>
-                        <a class="elemento2" href="/Gobierno/direciones.php">
+                        <a class="elemento2" href="/PaginaWeb/Gobierno/direciones.php">
                             Direcciones
                         </a>
                         <a class="elemento1" href="/Gobierno/normatividad.php">
@@ -123,4 +124,14 @@
             <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo">
         </a>
     </div>
-</header>
+    </header> 
+-->
+<nav
+    class="nav justify-content-center  "
+>
+    <a class="nav-link active" href="#" aria-current="page"
+        >Active link</a
+    >
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#">Disabled link</a>
+</nav>
