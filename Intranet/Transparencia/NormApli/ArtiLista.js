@@ -8,7 +8,6 @@ function (event) {
       }
 else if (event.target.classList.contains('ArtiTrab')) {
         ArtiTrab = event.target.getAttribute('data-Arti');
-	    
         window.location.href = 'FracLista.php?ParCon01='+ArtiTrab;
       } 
 });

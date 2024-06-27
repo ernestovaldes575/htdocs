@@ -2,7 +2,8 @@
 
 $ArCook01 = $_COOKIE['CEncaMae'];
 $AEncaMae = explode("|", $ArCook01);
-$ClavArti = $AEncaMae[0]; 
+$EjerTrab = $AEncaMae[0]; 
+$ClavArti = $AEncaMae[1]; 
 	
 //********************************************************************
 //Informacion de la Lista
@@ -13,13 +14,15 @@ if ( isset($_GET["Param0"]) )
 //Estado de la revision
 if ( isset($_GET["ParCon01"]) ){
 	$NumeInci = $_GET["ParCon01"];
-	$SubIncis = $_GET["ParCon01"];
-	$DescNorm = $_GET["ParCon01"];
+	$SubIncis = $_GET["ParCon02"];
+	$DescNorm = $_GET["ParCon03"];
+	$PeriFrac = $_GET["ParCon04"];
 	
-	$ArCook02 = "$ClavArti|$NumeInci|$SubIncis|$DescNorm|";
+	$ArCook02 = "$EjerTrab|$ClavArti|".
+				"$NumeInci|$SubIncis|$DescNorm|$PeriFrac|";
 	setcookie("CEncaMae", "$ArCook02");
 	
-	
+	header("location: FracAreaList.php");
 }
 
 ?>

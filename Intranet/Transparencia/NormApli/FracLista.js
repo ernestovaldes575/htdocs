@@ -10,9 +10,11 @@ else if (event.target.classList.contains('NumeTrim')) {
         NumeInci = event.target.getAttribute('data-Inciso');
 	    SubIncis = event.target.getAttribute('data-SubInc');
 	    DescNorm = event.target.getAttribute('data-Normat');
+	    PeriFrac = event.target.getAttribute('data-Period');
 	
         window.location.href = 'FracListaConf.php?ParCon01='+NumeInci+
 												'&ParCon02='+SubIncis+
-												'&ParCon03='+DescNorm;;
+												'&ParCon03='+DescNorm+
+												'&ParCon04='+PeriFrac;
       } 
 });
