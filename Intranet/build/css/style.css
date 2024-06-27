@@ -1896,10 +1896,10 @@ progress {
   padding: 0.25rem 0.25rem;
 }
 
-.table-bordered > :not(caption) > * {
+.table-bordered > :not(caption) > *, .tabla > :not(caption) > * {
   border-width: var(--bs-border-width) 0;
 }
-.table-bordered > :not(caption) > * > * {
+.table-bordered > :not(caption) > * > *, .tabla > :not(caption) > * > * {
   border-width: 0 var(--bs-border-width);
 }
 
@@ -1925,7 +1925,7 @@ progress {
   --bs-table-bg-state: var(--bs-table-active-bg);
 }
 
-.table-hover > tbody > tr:hover > *, .tabla > tbody > tr:hover > * {
+.table-hover > tbody > tr:hover > * {
   --bs-table-color-state: var(--bs-table-hover-color);
   --bs-table-bg-state: var(--bs-table-hover-bg);
 }
@@ -2042,7 +2042,7 @@ progress {
   border-color: var(--bs-table-border-color);
 }
 
-.table-responsive {
+.table-responsive, .tabla {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -12395,7 +12395,7 @@ textarea.form-control-lg {
 
 .intra {
   width: 100%;
-  height: 40em;
+  height: 4em;
   background-image: url("/Intranet/img/header.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -12411,7 +12411,10 @@ header img {
 }
 
 .full-height {
-  height: 100vh;
+  height: 100svh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 9.5em;
 }
 
 .contenedor-tabla {
@@ -12524,7 +12527,6 @@ svg {
 }
 
 body {
-  min-height: 100vh;
   font-family: var(--tipo-principal);
   -webkit-hyphens: auto;
   hyphens: auto;

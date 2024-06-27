@@ -50,16 +50,14 @@
 					$ResuSql->execute();
 					$MenuBase = $ResuSql->fetchAll();
 	?>
-	<div class="intra">
-		<div class="container-xl">
-			<h2 class="text-light">
+	<div class="intra d-flex align-items-center">
+		<div class="container-xl d-flex justify-content-between">
+			<h2 class="text-light fs-3 fw-semibold">
 				Menu Intranet
 			</h2>
-			<div>
-				<a href="/Intranet/Intranet.php" class="text-light">
-					Salir
-				</a>
-			</div>
+			<a href="/Intranet/Intranet.php" class="btn-Regresar">
+				Salir
+			</a>
 		</div>
 	</div>
 

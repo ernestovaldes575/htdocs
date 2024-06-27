@@ -11,7 +11,7 @@
 <body>
 <header class="shadow mb-4 bg-white">
 <?php
-	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+	//include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
 ?>
 </header>
@@ -37,7 +37,7 @@
 			<th width="14%">&nbsp;</th>
 		</tr>
 		<?php 
-		  foreach($ResuSql as $RegiTabl){
+		  		foreach($ResuSql as $RegiTabl){
 			  $VC03=$RegiTabl[0];	
 			  $VC04=$RegiTabl[1];	
 			  $VC05=$RegiTabl[2];	

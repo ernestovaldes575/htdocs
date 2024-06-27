@@ -1,0 +1,5 @@
+@use '../custom' as *;
+.full-height{
+    height: 100svh;
+    flex-direction: column;
+}
