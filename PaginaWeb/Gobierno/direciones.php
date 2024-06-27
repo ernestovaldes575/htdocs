@@ -7,7 +7,7 @@
     ?>
 </head>
 <body>
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
     
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="Imagen Presidente" class="img-fluid">
