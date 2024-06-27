@@ -40,7 +40,7 @@ if ( $ResuSql )
    $NumeSubi = $ResuSql['FASubinciso'];	
    $Nomativi = $ResuSql['FNormatividad'];	
    
-   $Carpeta = "A$NumeFrac$NumeInci";
+   $Carpeta = "A$NumeFrac$NumeInci$NumeSubi";
    $Carpeta = ( $NumeSubi == "" )? $Carpeta : $Carpeta.$NumeSubi;
    $ArCook02 = "$EjerTrab|$TrimTrab|". 
 	   		   "$ConsFrac|$NumeFrac|".
