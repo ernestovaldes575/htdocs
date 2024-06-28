@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<link rel="stylesheet" href="/Intranet/CSS/Estilos/style.css">
 </head>
 <script src="Ejercicio.js"></script>
 <body>
@@ -24,34 +24,35 @@
 		<tr>
 			<td width="12%"></td>
 			<td colspan="2"></td>
-			<td>
-			  <a href="/Intranet/menuintranet.php" 
-					class="btn-Regresar">
-			    Regresar
-			    </a>		    </td>
+			<td class="text-end">
+				<a href="/Intranet/menuintranet.php" class="btn-Regresar">
+					Regresar
+				</a>
+			</td>
 		</tr>
-		<tr>
-			<th>Ejercicio</th>
-			<th width="62%">Descripción</th>
-			<th width="12%">Registros</th>
-			<th width="14%">&nbsp;</th>
+		<tr class="text-center">
+			<th class="text-uppercase">Ejercicio</th>
+			<th class="text-uppercase" width="62%">Descripción</th>
+			<th class="text-uppercase" width="12%">Registros</th>
+			<th class="text-uppercase" width="14%">&nbsp;</th>
 		</tr>
 		<?php 
-		  		foreach($ResuSql as $RegiTabl){
-			  $VC03=$RegiTabl[0];	
-			  $VC04=$RegiTabl[1];	
-			  $VC05=$RegiTabl[2];	
+			foreach($ResuSql as $RegiTabl){
+				$VC03=$RegiTabl[0];	
+				$VC04=$RegiTabl[1];	
+				$VC05=$RegiTabl[2];	
 		?>
-		<tr>
+		<tr class="text-center">
 			<td><?=$VC03?></td>
 			<td><?=$VC04?></td>
 			<td><?=$VC05?></td>
 			<td data-titulo="Modificar:">
-	  		  <i class="bi bi-file-earmark-zip btn-Modificar Modi"
-				 data-CaBu='<?= $VC03?>' title="Facción"></i>
+				<i class="bi bi-file-earmark-zip btn-Modificar Modi"
+					data-CaBu='<?= $VC03?>' title="Facción">
+				</i>
 			</td>
 		</tr>
-		<?php	} ?> 
+		<?php } ?> 
 	</table>
 </div>	
 
