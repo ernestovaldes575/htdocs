@@ -1,8 +1,8 @@
-<!-- 
+
     <header class="header">
     <div class="contenedor__principal navegacion">
         <a href="/" class="a">
-            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo">
+            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo" style="width: 5em;">
         </a>
         
         <button class="button">
@@ -121,17 +121,31 @@
             </button>
         </div>
         <a href="" class="a">
-            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo">
+            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo" style="width: 5em;">
         </a>
     </div>
-    </header> 
--->
-<nav
-    class="nav justify-content-center  "
->
-    <a class="nav-link active" href="#" aria-current="page"
-        >Active link</a
-    >
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#">Disabled link</a>
-</nav>
+    </header>
+    <div class="nav__secondary punchline">
+        <div class="contenedor__barra">
+            <img class="barra" src="/PaginaWeb/img/BARRA.webp" alt="BARRA">
+        </div>
+    </div> 
+
+<!-- <div class="border-bottom sticky-top bg-body-tertiary shadow">
+    <nav class="navbar container">
+        <div class="container-fluid d-flex align-items-center">
+            <a href="/" class="navbar-brand">
+                <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" alt="" class="img-fluid" style="width:3.8em;">
+            </a>
+            <ul class="d-flex gap-5">
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+            </ul>
+            <a href="/" class="navbar-brand d-md-inline">
+                <img src="/PaginaWeb/img/escudo.webp" alt="" class="img-fluid" style="width:3em;">
+            </a>
+        </div>
+    </nav>
+</div> -->

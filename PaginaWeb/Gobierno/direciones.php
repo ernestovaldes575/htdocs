@@ -12,9 +12,9 @@
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="Imagen Presidente" class="img-fluid">
     </div>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <main class="d-flex justify-content-center">
-            <h2 class="text-uppercase fs-2 fw-bold">
+            <h2 class="text-uppercase fs-1 fw-bold">
                 Direcciones
             </h2>
         </main>
@@ -104,7 +104,7 @@
                 </div>
                 <?php }?>
             </div>
-        </div> 
+    </div> 
 
     <div class="container">
         <div class="row">
