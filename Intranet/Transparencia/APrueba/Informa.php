@@ -3,7 +3,7 @@
 <head>  
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Fraccion 02b Organigrama</title>
+	<title>Fracc 02B Organigrama</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/css/style.css">
 </head>
@@ -31,9 +31,6 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -65,12 +62,12 @@
 				<tr>
 				  <td>Fecha de Termino</td>
 				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
-					class="form-control" placeholder="Descripción" ></td>
-			  	</tr>
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
 				<tr>
 				  <td>Hipervinculo</td>
-				  <td>				
-				    <?php if ( $TipoMovi == "A" ) { ?>
+				  <td>
+				  <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
 					<?php } else { ?>
 					  	<!-- Subir imagen -->
@@ -79,38 +76,42 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC08 != '' ) { ?> 
+	 					   if ( $VC09 != '' ) { ?> 
 							<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 
-						} //} else {?>
-				  </td>
-				</tr>
+						} //} else {?>	
+						</td>
+				  <!--<input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+						class="form-control" placeholder="Descripción" ></td>-->
+			  </tr>
 				<tr>
-        			<td>Area Responsable</td>				
-        			<td><input name="C09" id ="VC09" type="text" value="<?=$VC09?>"
-					  class="form-control" placeholder="Area"></td>
-      			</tr>
-      			<tr>
-        			<td>Fecha Actualizacion</td>				
-        			<td><input name="C10" id = "VC10" type="date"  value="<?=$VC10?>" class="form-control" placeholder="Actualizacion"></td>
-      			</tr>
-      			<tr>
-        			<td>Fecha de validacion</td>				
-        			<td><input name="C11" id = "VC11" type="date"  value="<?=$VC11?>" class="form-control" placeholder="Validacion"></td>
-      			</tr>
-      			<tr>
-        			<td>Nota</td>				
-        			<td><input name="C12" id = "VC12" type="text" value="<?=$VC12?>" class="form-control" placeholder="Nota"></td>
-      			</tr>
-				
+				  <td>Area Responsable</td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Fecha Actualizacion</td>
+				  <td><input name="C10" id="VC10" type="date" value="<?=$VC10?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
+				  <td>Fecha de validacion</td>
+				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Nota</td>
+				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
 				<tr>
 				  <td></td>
 				  <td><button type="submit" name="Enviar" placeholder="Registrar"
 						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
 							Registrar
 						</button></td>
-			  	</tr>
+			  </tr>
 			</table>
 	</form>	
 </div>
