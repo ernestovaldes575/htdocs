@@ -58,13 +58,13 @@
         
         <article class="article__exp item-2">
             <div class="gallery">
-                <a href="https://dif.zinacantepec.gob.mx/">
+                <a class="image-right" href="https://dif.zinacantepec.gob.mx/">
                     <img src="/PaginaWeb/img/DIF_Edificio.webp" alt="DIF">
                 </a>
-                <a href="https://opdapas.zinacantepec.gob.mx/">
+                <a class="image" href="https://opdapas.zinacantepec.gob.mx/">
                     <img src="/PaginaWeb/img/OPDAPAS_EDIF.webp" alt="OPDAPAS">
                 </a>
-                <a href="https://imcufidez.zinacantepec.gob.mx/">
+                <a class="image" href="https://imcufidez.zinacantepec.gob.mx/">
                     <img src="/PaginaWeb/img/IMCUFIDEZ_ZIN.webp" alt="IMCUFIDEZ">
                 </a>
             </div>
