@@ -59,9 +59,9 @@
 				</td>
 			</tr>
 			<tr>
-				<th>Clave</th>
-				<th width="72%">Subinciso</th>
-				<th width="23%"></th>
+				<th width="10%">Clave</th>
+				<th width="70%">Subinciso</th>
+				<th width="20%"></th>
 			</tr>
 			<?php 
 				foreach($ResSql2 as $RegiTabl){
@@ -70,9 +70,9 @@
 						$VC05 = $RegiTabl[2];
 			?>
 			<tr>
-				<td><?=$VC04?></td>
+				<td class="fw-bold"><?=$VC04?></td>
 				<td><?=$VC05?></td>
-				<td>			 
+				<td class="text-center">			 
 					<i 	class="bi bi-file-arrow-down btn-Modificar AltaArea"
 						data-ConsUnid='<?= $VC03?>' 	
 						title="3er Trimestre">
