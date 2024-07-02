@@ -22,9 +22,9 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td>Ejercicio: <?=$EjerTrab?></td>
-			<td>Fraccion: <?=$NumeFrac?></td>
-			<td>Trimestre:
+			<td>No <?=$EjerTrab?></td>
+			<td>Fecha Inicio</td>	
+			<td>Fecha Termino</td>
             <?=$TrimTrab?></td>
 			<td colspan="2">Inc
 		    iso:
@@ -52,11 +52,9 @@
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['ANumeRegi'];
-			  $VC05 = $RegiTabl['AFechaInicio'];
-			  $VC06 = $RegiTabl['AFechaTermino'];
-			  $VC07 = $RegiTabl['ADenominacion'];
-			  $VC08 = $RegiTabl['AHipervinculo'];
+			  $VC04 = $RegiTabl['AFechaInicio'];
+			  $VC05 = $RegiTabl['AFechaTermino'];
+			 
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

@@ -9,7 +9,7 @@ function css(done){
     src('src/scss/style.scss')
         .pipe(sass())// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest('build/css'))//Generamos los archivos
+        .pipe(dest('CSS/Estilos'))//Generamos los archivos
     done()
 }
 function dev(){

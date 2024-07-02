@@ -1,7 +1,8 @@
-<header class="header text-base">
+
+    <header class="header">
     <div class="contenedor__principal navegacion">
-        <a href="" class="a">
-            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo">
+        <a href="/" class="a">
+            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo" style="width: 5em;">
         </a>
         
         <button class="button">
@@ -52,7 +53,7 @@
                         <a class="elemento1" href="/Conac/Cuenta/index.php">
                             Cuenta Pública
                         </a>
-                        <a class="elemento2" href="/Transparencia/Aviso/aviso_privacidad.php">
+                        <a class="elemento2" href="/PaginaWeb/aviso_privacidad.php">
                             Aviso de Privacidad
                         </a>
                         <a class="elemento3" href="javascript:window.open('/Transparencia/ACUSE%20CUENTA%20PUBLICA%202021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
@@ -66,16 +67,16 @@
                         <i class="bi bi-caret-down-fill"></i>
                     </div>
                     <div class="mini desplaza">
-                        <a class="elemento5" href="/Gobierno/cabildo.php">
+                        <a class="elemento5" href="/PaginaWeb/Gobierno/cabildo.php">
                             Integrantes de Cabildo
                         </a>
-                        <a class="elemento4" href="/Gobierno/vcabildos.php">
+                        <a class="elemento4" href="/PaginaWeb/Gobierno/vcabildos.php">
                             Sesiones de Cabildo
                         </a>
                         <a class="elemento3" href="/Gobierno/vivo.php">
                             Cabildo en vivo
                         </a>
-                        <a class="elemento2" href="/Gobierno/direciones.php">
+                        <a class="elemento2" href="/PaginaWeb/Gobierno/direciones.php">
                             Direcciones
                         </a>
                         <a class="elemento1" href="/Gobierno/normatividad.php">
@@ -120,7 +121,31 @@
             </button>
         </div>
         <a href="" class="a">
-            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo">
+            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo" style="width: 5em;">
         </a>
     </div>
-</header>
+    </header>
+    <div class="nav__secondary punchline">
+        <div class="contenedor__barra">
+            <img class="barra" src="/PaginaWeb/img/BARRA.webp" alt="BARRA">
+        </div>
+    </div> 
+
+<!-- <div class="border-bottom sticky-top bg-body-tertiary shadow">
+    <nav class="navbar container">
+        <div class="container-fluid d-flex align-items-center">
+            <a href="/" class="navbar-brand">
+                <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" alt="" class="img-fluid" style="width:3.8em;">
+            </a>
+            <ul class="d-flex gap-5">
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+                <li>Ejemplo</li>
+            </ul>
+            <a href="/" class="navbar-brand d-md-inline">
+                <img src="/PaginaWeb/img/escudo.webp" alt="" class="img-fluid" style="width:3em;">
+            </a>
+        </div>
+    </nav>
+</div> -->

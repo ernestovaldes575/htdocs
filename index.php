@@ -69,17 +69,18 @@
         </div>
     </main>
     <?php include 'PaginaWeb/EstrPagi/Modulo06.php'?>
-
-    <script src="/scripts/app.js"></script>
-    <script src="/swiperjs/swiper-bundle.min.js"></script>
-    
-    <script src="/scripts/swiper.js"></script>  
+    <script src="/PaginaWeb/scripts/app.js"></script>
+    <script src="/PaginaWeb/swiperjs/swiper-bundle.min.js"></script>
+    <script src="/PaginaWeb/scripts/swiper.js"></script>
+    <script src="/PaginaWeb/scripts/anime.min.js"></script>
+    <script src="/PaginaWeb/scripts/animate.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/PaginaWeb/scripts/main.js"></script>
     <script>
         ScrollReveal().reveal('.effect',{interval:130});
+        // ScrollReveal().reveal('.image',{interval:130});
+        ScrollReveal('.image-right', {origin:'right',reset:false});
     </script>
-    <script src="./scripts/anime.min.js"></script>  
-    <script src="/scripts/animate.js"></script>
-
     <?php include 'PaginaWeb/EstrPagi/Encabezados/Footer.php';?>
 </body>
 </html>

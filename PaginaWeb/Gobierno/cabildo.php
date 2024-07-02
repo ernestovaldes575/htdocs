@@ -10,7 +10,7 @@
     <main class="contenedor-layer">
         <img src="/img/layer/1.png" alt="">
     </main>
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasComSoc.php');?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="">
     </div>
@@ -115,6 +115,7 @@
 
 
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/bootstrap.bundle.min.js"></script>
     <script>ScrollReveal().reveal('.effect',{interval:150});</script>
     <?php include '../Components/Footer.php'?>  
 
