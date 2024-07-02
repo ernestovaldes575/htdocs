@@ -1,7 +1,7 @@
 <?php
     $año = date('Y');
 ?>
-<footer class="footer">
+<footer class="footer reveal-bottom">
     <div class="contenedor__principal">
         <article class="logo">
             <div>
