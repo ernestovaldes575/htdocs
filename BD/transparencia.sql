@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2024 a las 19:11:10
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Tiempo de generación: 02-07-2024 a las 19:39:10
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `acopcser` (
-  `COSTipSer` char(2) COLLATE utf8_spanish2_ci NOT NULL,
-  `COSClave` char(3) COLLATE utf8_spanish2_ci NOT NULL,
-  `COSDescripcion` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
-  `COSDireccion` varchar(80) COLLATE utf8_spanish2_ci NOT NULL
+  `COSTipSer` char(2) NOT NULL,
+  `COSClave` char(3) NOT NULL,
+  `COSDescripcion` varchar(30) NOT NULL,
+  `COSDireccion` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -50,8 +50,8 @@ INSERT INTO `acopcser` (`COSTipSer`, `COSClave`, `COSDescripcion`, `COSDireccion
 --
 
 CREATE TABLE `actipser` (
-  `CTSClave` char(2) COLLATE utf8_spanish2_ci NOT NULL,
-  `CTSDescripcion` varchar(30) COLLATE utf8_spanish2_ci NOT NULL
+  `CTSClave` char(2) NOT NULL,
+  `CTSDescripcion` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -68,14 +68,14 @@ INSERT INTO `actipser` (`CTSClave`, `CTSDescripcion`) VALUES
 --
 
 CREATE TABLE `adpermi` (
-  `PAyuntamiento` char(3) COLLATE utf8_spanish2_ci NOT NULL,
+  `PAyuntamiento` char(3) NOT NULL,
   `PConsServ` int(11) NOT NULL,
-  `PTipoServ` char(2) COLLATE utf8_spanish2_ci NOT NULL,
-  `POpciServ` char(3) COLLATE utf8_spanish2_ci NOT NULL,
-  `PConsulta` char(1) COLLATE utf8_spanish2_ci NOT NULL,
-  `PAlta` char(1) COLLATE utf8_spanish2_ci NOT NULL,
-  `PModifica` char(1) COLLATE utf8_spanish2_ci NOT NULL,
-  `PBaja` char(1) COLLATE utf8_spanish2_ci NOT NULL,
+  `PTipoServ` char(2) NOT NULL,
+  `POpciServ` char(3) NOT NULL,
+  `PConsulta` char(1) NOT NULL,
+  `PAlta` char(1) NOT NULL,
+  `PModifica` char(1) NOT NULL,
+  `PBaja` char(1) NOT NULL,
   `PNumePerm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -99,7 +99,7 @@ INSERT INTO `adpermi` (`PAyuntamiento`, `PConsServ`, `PTipoServ`, `POpciServ`, `
 
 CREATE TABLE `tcarea` (
   `CARClave` int(11) NOT NULL,
-  `CARDescripcion` varchar(150) COLLATE utf8_spanish2_ci NOT NULL
+  `CARDescripcion` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -182,7 +182,7 @@ INSERT INTO `tcarea` (`CARClave`, `CARDescripcion`) VALUES
 
 CREATE TABLE `tcnormatividad` (
   `CNOClave` int(11) NOT NULL,
-  `CNODescripcion` varchar(60) CHARACTER SET utf8mb4 NOT NULL
+  `CNODescripcion` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -214,7 +214,7 @@ CREATE TABLE `ttfracarea` (
   `FATrimes02` int(11) NOT NULL,
   `FATrimes03` int(11) NOT NULL,
   `FATrimes04` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ttfracarea`
@@ -225,7 +225,16 @@ INSERT INTO `ttfracarea` (`FAConsecutivo`, `FAAyuntamiento`, `FAEjercicio`, `FAU
 (2, '105', 2024, 6, '92', '1', '', 'T', -1, -1, -1, -1),
 (3, '105', 2024, 1, '92', '1', '', 'T', -1, -1, -1, -1),
 (7, '105', 2024, 5, '92', '1', '', 'T', -1, -1, -1, -1),
-(8, '105', 2024, 48, '92', '1', '', 'T', -1, -1, -1, -1);
+(8, '105', 2024, 48, '92', '1', '', 'T', -1, -1, -1, -1),
+(9, '105', 2024, 2, '92', '1', '', 'T', -1, -1, -1, -1),
+(10, '105', 2024, 3, '92', '1', '', 'T', -1, -1, -1, -1),
+(11, '105', 2024, 1, '92', '9', '', 'T', -1, -1, -1, -1),
+(12, '105', 2024, 58, '92', '1', '', 'T', -1, -1, -1, -1),
+(13, '105', 2024, 30, '92', '1', '', 'T', -1, -1, -1, -1),
+(14, '105', 2024, 8, '92', '1', '', 'T', -1, -1, -1, -1),
+(15, '105', 2024, 37, '92', '5', '', 'A', -1, -1, -1, -1),
+(16, '105', 2024, 37, '92', '2', '', 'T', -1, -1, -1, -1),
+(17, '105', 2024, 37, '92', '8', '', 'T', -1, -1, -1, -1);
 
 -- --------------------------------------------------------
 
@@ -240,7 +249,7 @@ CREATE TABLE `ttfraccion` (
   `FNormatividad` varchar(133) DEFAULT NULL,
   `FPeriodo` varchar(1) DEFAULT NULL,
   `FSalida` varchar(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `ttfraccion`
@@ -433,7 +442,7 @@ ALTER TABLE `tcarea`
 -- AUTO_INCREMENT de la tabla `ttfracarea`
 --
 ALTER TABLE `ttfracarea`
-  MODIFY `FAConsecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `FAConsecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -31,10 +31,13 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
+		<input type="hidden" name="C03" id="SV03" value="<?=$VC03?>">
+  		<input type="hidden" name="C04" id="SV04" value="<?=$VC04?>">
+  		<input type="hidden" name="C05" id="SV05" value="<?=$VC05?>">
 		
-		<div class="contenedor-tabla">
+		<div class="contenedor-tabla" >
 			<div class="contenedor-tabla-sec">
-			<table class="ListInfo01 tabla">
+			<table class="ListInfo01 tabla" width="200" border="1">
 				<tr class="">
 					<td width="29%" class="text-uppercase" scope="row">
 						Campo
@@ -46,14 +49,7 @@
 					</td>
 				</tr>	
 				<tr>
-					<th>No</th>
-					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
-						class="form-control" placeholder="Titulo">
-					</td>
-				</tr>	
-				<tr>
-					<th>Fecha Inicio</th>
+					<td>Fecha Inicio</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
@@ -66,6 +62,7 @@
 			  </tr>
 				<tr>
 				  <td>Hipervinculo</td>
+				  <td><input type="text" id="VC08" name="C08" value="<?=$VC08?>"></td>
 				  <td>
 				  <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -76,7 +73,7 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
+	 					   if ( $VC08 != '' ) { ?> 
 							<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 

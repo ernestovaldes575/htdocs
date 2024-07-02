@@ -11,7 +11,7 @@
 <body>
 <header class="shadow mb-4 bg-white">
 <?php
-	//include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
 ?>
 </header>

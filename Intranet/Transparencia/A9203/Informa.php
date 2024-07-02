@@ -44,8 +44,7 @@
 							Regresar
 						</a>
 					</td>
-				</tr>
-				<!-- Inicia campos -->
+				</tr>	
 				<tr>
 					<th>No</th>
 					<td>
@@ -116,7 +115,6 @@
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
 				  <td><button type="submit" name="Enviar" placeholder="Registrar"

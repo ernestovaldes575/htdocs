@@ -17,11 +17,11 @@ $AHiper = $_POST['C011'];
 $AAreRes = $_POST['C012'];
 $ANota = $_POST['C013'];
 switch ( $TipoMovi )		
-	{ case "A": $InstSql =  "INSERT art92_iii".
+	{ case "A": $InstSql =  "INSERT a9203".
 			                 "VALUE (NULL,'$AAyuntamiento','$AEjercicio','$FechInic','$FechTermi', 
 							 '$AArea','$ADenomi','$AFun','$AHiper','$AAreRes','$ANota') ";          //Colocar variables Linea 7-8n
 	 			break;
-	 case "M": $InstSql = "UPDATE art92_iii".
+	 case "M": $InstSql = "UPDATE a9203".
 						  "SET AFechaInicio = '$FechInic',".
 							  "AFechaTermino = '$FechTermi',".
 							  "AArea = '$AArea',".
@@ -34,7 +34,7 @@ switch ( $TipoMovi )
 							
 						  "WHERE  AConsecutivo = '$ClavBusq'";
 	 			break;
-	 case "B":  $InstSql = "DELETE FROM art92_iii".
+	 case "B":  $InstSql = "DELETE FROM a9203".
 			    		   "WHERE  AConsecutivo = '$ClavBusq' ";//Modificar el campo llave
 	 			break;
 }
