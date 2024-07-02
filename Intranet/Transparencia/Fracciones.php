@@ -31,6 +31,7 @@
 		<tr class="text-center">
 			<th width="15%">Fracción</th>
 			<th width="15%">Normatividad</th>
+			<th width="15%">Periodo</th>
 			<th width="15%">Trim01</th>
 			<th width="15%">Trim02</th>
 			<th width="15%">Trim03</th>
@@ -47,14 +48,16 @@
 			  
 			  $VC07 = $RegiTabl[4];
 			  
-			  $VC08 = ($RegiTabl[5] == -1 ) ? false: true;
-			  $VC09 = ($RegiTabl[6] == -1 ) ? false: true;
-			  $VC10 = ($RegiTabl[7] == -1 ) ? false: true;
-			  $VC11 = ($RegiTabl[8] == -1 ) ? false: true;
+			  $VC08 = ($RegiTabl[5] == -1 ) ? true: false;
+			  $VC09 = ($RegiTabl[6] == -1 ) ? true: false;
+			  $VC10 = ($RegiTabl[7] == -1 ) ? true: false;
+			  $VC11 = ($RegiTabl[8] == -1 ) ? true: false;
+			  $VC12 = $RegiTabl[9];
 		?>
 		<tr class="text-center">
 			<td><?=$Frac?></td>
 			<td><?=$VC07?> </td>
+			<td><?=$VC12?> </td>
 			<td>
 			  <?php if ($VC08) {?>
 				 <i class="bi bi-file-arrow-down btn-Modificar NumeTrim"

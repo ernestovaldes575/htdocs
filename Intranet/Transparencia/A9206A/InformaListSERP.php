@@ -3,7 +3,7 @@
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
 
 //********************************************************************
-//Informacion de la Lista
+Informacion de la Lista
 $TrimTrab = $ABusqMae[1];	//Trimestre de trabajo 
 $ConsFrac = $ABusqMae[2];	//Consecutivo de la Fraccion del Unidad
 $NumeFrac = $ABusqMae[3];	//Fraccion de trabajo 92,93
@@ -21,9 +21,9 @@ $InstSql = "SELECT AConsecutivo, ANumeRegi, ".
 				  "AHipervinculo ".
 			"FROM a9206a ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				  "AEjercicio = $EjerTrab AND  ".
+				"AEjercicio = $EjerTrab AND  ".
 				  "AConsFrac = $ConsFrac AND ".
-				  "ANumeTrim = '$TrimTrab' ";
+				 "ANumeTrim = '$TrimTrab' ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
