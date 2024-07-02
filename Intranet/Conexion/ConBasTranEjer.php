@@ -1,9 +1,12 @@
 <?php
-
+if(isset($_COOKIE['CBusqMae'])){
 	$ArCook01 = $_COOKIE['CBusqMae'];
 	$ABusqMae = explode("|", $ArCook01);
 	echo '$ABusqMae'.$ABusqMae.'<br>';
 	$EjerTrab = $ABusqMae[0];
+}else{
+	die('Conexion Fallida');
+}
 	
 	//!Servidor
 	// $contraseña = 'E9TQE4QXOP3A';
