@@ -14,7 +14,7 @@ $ArCooki3 = $_COOKIE['CSubiArc'];
 $ASubiArc = explode("|", $ArCooki3);
 $NomArcP = $ASubiArc[4]; 
 
-$InstSql = "UPDATE tt9203facare ". 							//Cambiar Tabla
+$InstSql = "UPDATE a9203 ". 							//Cambiar Tabla
            "SET   AHipervinculo = '".$NomArcP."' ".			//Cambiar campo
 		   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				 "AEjercicio = $EjerTrab AND ".

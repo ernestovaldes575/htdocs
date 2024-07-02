@@ -47,40 +47,38 @@
 				</tr>
 				<!-- Inicia campos -->
 				<tr>
-					<th>No</th>
+					<th>Periodo Informacion</th>
 					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
+						<input name="C06" id="VC06" type="text" value="<?=$VC06?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
-					<th>Fecha Inicio</th>
+					<th>Periodo Informacion (Otro)</th>
 					<td>
-						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
+						<input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
+				
 				<tr>
-					<td></td>
-					<td>
-						
-					</td>
-				</tr>
-				<tr>
-				  <td>Fecha de Termino</td>
+				  <td>Hipervinculo de Informacion</td>
 				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
+				  <td>Area Respsable</td>
+				  <td><input name="C09" id="VC09" type="text" value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Denominacion</td>
-				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
+				  <td>Nota</td>
+				  <td><input  name="C10" id="VC10" type="text"value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+
+			  
+			  
 				<tr>
 				  <td>Fundamento</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
@@ -106,16 +104,7 @@
 				  </td>
 				  
 			  </tr>
-				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Nota</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>

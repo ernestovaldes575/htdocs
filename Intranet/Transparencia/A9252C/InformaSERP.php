@@ -26,7 +26,7 @@ $CRUD = "GET";
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ".
 				   "ADenominacion, AFunadamento, AHipervinculo, ".
 				   "AAreaRespon, ANota ".
-			"FROM  tt9203facare ".
+			"FROM  a9252c ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
@@ -55,7 +55,7 @@ if ($ResuSql)
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  tt9203facare ".
+	 		   "FROM  a9252c ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

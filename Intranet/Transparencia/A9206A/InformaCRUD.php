@@ -47,7 +47,7 @@ switch ( $CRUD )
 								"'$VC08','',$VC10,'$VC11')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9203facare ". 						//Cambiar tabla
+		$InstSql = 	"UPDATE a9206a ". 						//Cambiar tabla
 					"SET    ANumeRegi = $VC03,". 					//Cambiar campo
 						   "AFechaInicio = '$VC04',".				//Cambiar campo
 						   "AFechaTermino = '$VC05', ".				//Cambiar campo
