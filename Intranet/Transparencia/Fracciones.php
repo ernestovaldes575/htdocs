@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<link rel="stylesheet" href="/Intranet/CSS/Estilos/style.css">
 </head>
 <body>
 <script src="Fracciones.js"></script>
@@ -20,23 +20,21 @@
 ?>	
 <!--encabezado--> 
 <div class="container table-responsive">
-	<table width="70%" class="ListInfo tabla">
+	<table class="ListInfo tabla">
 		<tr>
-			<td width="12%"></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td colspan="2"><a href="Ejercicio.php" 
-					class="btn-Regresar">Regresar </a> <i class="bi bi-x-square btn-01 Regre"
-				   title="Regresar">Regresar</i></td>
+			<td colspan="6" class="text-end">
+				<a href="Ejercicio.php" class="btn-Regresar">
+					Regresar
+				</a>
+			</td>
 		</tr>
-		<tr>
-			<th>Fracción</th>
-			<th width="62%">Normatividad</th>
-			<th width="6%">Trim01</th>
-			<th width="6%">Trim02</th>
-			<th width="12%">Trim03</th>
-			<th width="12%">Trim04</th>
+		<tr class="text-center">
+			<th width="15%">Fracción</th>
+			<th width="15%">Normatividad</th>
+			<th width="15%">Trim01</th>
+			<th width="15%">Trim02</th>
+			<th width="15%">Trim03</th>
+			<th width="15%">Trim04</th>
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){

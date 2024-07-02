@@ -7,7 +7,6 @@ if ( isset($_GET["Param2"]) ){
 
 //Consulta
 $InstSql =  "SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ONota".  //Modifac Campos de tabla
-				    " ".
 			"FROM   tt9202borgan ".			//Modificxar Tabla
 			"WHERE  OConsecutivo =  '$ClavBusq' ". //Modificar campo
 			"ORDER BY OConsecutivo ";			//Modificar campo	

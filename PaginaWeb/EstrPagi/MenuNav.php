@@ -26,7 +26,7 @@
                         target="_blank">
                             Pago de Predial
                         </a>
-                        <a class="elemento2" href="/MejoraRegulatoria/index.html">
+                        <a class="elemento2" href="/PaginaWeb/EstrPagi/Construccion.html">
                             Mejora Regulatoria
                         </a>
                     </div>    
@@ -55,7 +55,7 @@
                         <a class="elemento2" href="/PaginaWeb/aviso_privacidad.php">
                             Aviso de Privacidad
                         </a>
-                        <a class="elemento3" href="javascript:window.open('/Transparencia/ACUSE%20CUENTA%20PUBLICA%202021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+                        <a class="elemento3" href="javascript:window.open('/PaginaWeb/Transparencia/ACUSE%20CUENTA%20PUBLICA%202021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
                             Oficio de la entrega de la cuenta Pública 2021
                         </a>
                     </div>
@@ -78,10 +78,10 @@
                         <a class="elemento2" href="/PaginaWeb/Gobierno/direciones.php">
                             Direcciones
                         </a>
-                        <a class="elemento1" href="/Gobierno/normatividad.php">
+                        <a class="elemento1" href="/PaginaWeb/EstrPagi/Construccion.html">
                             Normatividad
                         </a>
-                        <a class="elemento5" href="javascript:window.open('/Gobierno/1ER%20INFORME%20ZINACANTEPEC%20MVV.pdf','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+                        <a class="elemento5" href="javascript:window.open('/PaginaWeb/Gobierno/1ER%20INFORME%20ZINACANTEPEC%20MVV.pdf','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
                             Primer Informe de Gobierno
                         </a>
                     </div>
@@ -161,7 +161,6 @@
         </div>
     </div>
 </div>
-
 <nav class="contenedor priv">
     <div class="contenedor__principal">
         <ul>
