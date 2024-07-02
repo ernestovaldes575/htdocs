@@ -3,5 +3,4 @@
 <title><?=$Titulo?></title>
 <link rel="shortcut icon" href="https://www.simga.com.mx/img/SIMGA03.png">
 <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-<!-- <link rel="stylesheet" href="../../dest/css/style.css"> -->
 <link rel="stylesheet" href="build/css/style.css">
