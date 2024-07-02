@@ -17,7 +17,7 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                <h2 class="titulo">
+                <h2 class="titulo reveal-left">
                     Transparencia
                 </h2>
             </div>
@@ -28,7 +28,7 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                <h2 class="titulo">
+                <h2 class="titulo reveal-right">
                     Ultimas Noticias
                 </h2>
             </div>
@@ -40,7 +40,7 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                <h2 class="titulo">
+                <h2 class="titulo reveal-left">
                     Avisos
                 </h2>
             </div>
@@ -51,7 +51,7 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                <h2 class="titulo">
+                <h2 class="titulo reveal-right">
                     Sitios de Interes
                 </h2>
             </div>
@@ -62,7 +62,7 @@
     <main class="contenedor">
         <div class="contenedor-centrar">
             <div class="contenedor-titulo">
-                <h2 class="titulo">
+                <h2 class="titulo reveal-left">
                     Redes Sociales
                 </h2>   
             </div>
