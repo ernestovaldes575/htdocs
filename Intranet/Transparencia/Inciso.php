@@ -12,7 +12,9 @@ $EjerTrab = $ABusqMae[0];
 $BandMens = false;
 if ( isset($_GET["Param0"]) )
   $BandMens = true;
-  
+
+ $BandMens = true;
+
 if ( isset($_GET["PaAMB01"]) )
  { $ConsFrac = $_GET["PaAMB01"];
    $TrimTrab = $_GET["PaAMB02"];}
