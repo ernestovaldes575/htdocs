@@ -14,7 +14,7 @@ if ( isset($_GET["Param2"]) ){
 $InstSql =  "SELECT  AConsecutivo, AFechaInicio, AFechaTermino, AArea, ADenominacion,". 
             "AFundamento,AHipervinculo,AAreaResp, ANota ".   //modificar
 					
-			"FROM   art92_iii ".			//Modificxar Tabla
+			"FROM  a9203 ".			//Modificxar Tabla
 			//"WHERE  AAyuntamiento = '$ClavAyun' AND ".
 			       //"AEjercicio = $EjerTrab AND ". 
 				   //"AConsecutivo = $ClavBusq "; 		//Modificar campo	

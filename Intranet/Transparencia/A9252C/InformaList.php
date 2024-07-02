@@ -39,9 +39,8 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha</th>
-			<th width="15%">Fecha</th>
-			<th colspan="2">Descripción</th>
+			<th width="15%">Periodo Informal</th>
+			<th colspan="2">Hipervinculo Informacion</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -54,9 +53,6 @@
 			  $VC03 = $RegiTabl['AConsecutivo'];
 			  $VC04 = $RegiTabl['ANumeRegi'];
 			  $VC05 = $RegiTabl['AFechaInicio'];
-			  $VC06 = $RegiTabl['AFechaTermino'];
-			  $VC07 = $RegiTabl['ADenominacion'];
-			  $VC08 = $RegiTabl['AHipervinculo'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

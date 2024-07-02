@@ -7,7 +7,7 @@ $ClavAyun = "105";
 $EjerTrab = 2024;
 //Query
 $InstSql =  "SELECT AConsecutivo, APeriodoInforma, AHiperInformacion ". 
-			"FROM  art92_liic ".	
+			"FROM  a9252c ".	
 			//"WHERE  AAyuntamiento = '$ClavAyun' AND ".
 			       //"AEjercicio = $EjerTrab ";              
 			"ORDER BY AConsecutivo";
