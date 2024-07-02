@@ -38,8 +38,7 @@ if ( isset($_GET["Param4"]) ){
 	setcookie("CMenu", "$ArCooki3");
 	//header("location: CargaCampos.php");
 }
-
-include($_SERVER['DOCUMENT_ROOT'].'/Conexion/conteinf.php');
+include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Archivos/Conexiones/conteinf.php');
 $InstSql = "SHOW TABLES FROM `".$BaseDato."`";
 $ResuSql  = $cone->prepare($InstSql);
 $ResuSql->execute();
@@ -58,9 +57,7 @@ $ResuSql->execute();
   <?php 
     $NumeRegi = 1;
 	while( $Fila = $ResuSql->fetch() )
-	{ $Tabla = $Fila[0]; 
-
-	  ?>
+	{ $Tabla = $Fila[0]; ?>
   <tr valign="top" onMouseOver="this.style.background='#D6D6D6';" onMouseOut="this.style.background = '';">
 	<td><?=$NumeRegi?></td>
 	<td><a href="MenuTabla.php?Param4=<?=$Tabla?>"><?=$Tabla?></a></td>
@@ -118,7 +115,7 @@ $ResuSql->execute();
 					$InstSql = "DESCRIBE ".$BaseDato.".".$TablBaDa." ";
 					$sql2 = $cone->prepare($InstSql);
 					$sql2->execute();
-					While($Fila2 = $sql2->fetch()){
+					While($Fila2 = $sql2->fetch()) {
 						$Campo   = $Fila2[0];
 						$Valor   = $Fila2[1];
 						$Nulo    = $Fila2[3];
@@ -127,9 +124,9 @@ $ResuSql->execute();
 						?>
 						&nbsp;&nbsp;
 						<?=$Campo?> <?=$Valor?> <?=$Nulo?> <?=$Llave?> <?=$Default?><br>
-					<?php } ?>
-				<?php } ?>
-			<?php } ?>
+					<?php } 
+				   } 
+			} ?>
 		</ul>
 
 	</div>
