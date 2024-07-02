@@ -52,7 +52,7 @@
 			  $VC10 = ($RegiTabl[7] == -1 ) ? false: true;
 			  $VC11 = ($RegiTabl[8] == -1 ) ? false: true;
 		?>
-		<tr>
+		<tr class="text-center">
 			<td><?=$Frac?></td>
 			<td><?=$VC07?> </td>
 			<td>
