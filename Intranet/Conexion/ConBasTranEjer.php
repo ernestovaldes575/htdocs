@@ -13,7 +13,7 @@
 	//!Local
 	$contraseña = "";
 	$user = "root";
-	$dbname = "transparencia$EjerTrab";
+	$dbname = "transpa$EjerTrab";
 	//$dbname = "transparencia";
 	
 	try{
