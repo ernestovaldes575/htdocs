@@ -1,7 +1,9 @@
-<nav class="navbar bg-body-tertiary border-bottom shadow">
-	<div class="container fs-2 text-uppercase fw-semibold">
-		<img src="" class="img-fluid logoveda">
-		Ayuntamiento de Zinacantepec
-		<img src="/img/logo/SIMGA01.png" class="logo-simga">
+<nav class="ayunt border-bottom shadow-lg d-flex">
+	<div class="d-md-flex justify-content-between align-items-center container">
+		<img src="/Intranet/img/LogoMurc.webp" alt="LogoMurc" class="img-fluid">
+		<h1 class="fs-3 fw-semibold">
+			Ayuntamiento de Zinacantepec
+		</h1>
+		<img src="/Intranet/img/LogoEscu.webp" alt="LogoEscu" class="img-fluid">
 	</div>
 </nav>

@@ -215,8 +215,6 @@ hr {
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
   color: var(--bs-heading-color);
@@ -12403,7 +12401,7 @@ textarea.form-control-lg {
 }
 
 .logoveda, .logo-simga {
-  width: 18%;
+  width: 5%;
 }
 
 header img {
@@ -12415,6 +12413,10 @@ header img {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 9.5em;
+}
+
+.ayunt img {
+  width: 5%;
 }
 
 .contenedor-tabla {

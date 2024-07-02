@@ -17,7 +17,7 @@
     background-size: cover;
 }
 .logoveda, .logo-simga{
-    width: 18%;
+    width: 5%;
 }
 header{
     img{
@@ -29,4 +29,7 @@ header{
     display: grid;
     grid-template-rows: repeat(3,1fr);
     row-gap: 9.5em;
+}
+.ayunt img{
+    width: 5%;
 }
