@@ -47,10 +47,10 @@
 			  
 			  $VC07 = $RegiTabl[4];
 			  
-			  $VC08 = ($RegiTabl[5] == -1 ) ? false: true;
-			  $VC09 = ($RegiTabl[6] == -1 ) ? false: true;
-			  $VC10 = ($RegiTabl[7] == -1 ) ? false: true;
-			  $VC11 = ($RegiTabl[8] == -1 ) ? false: true;
+			  $VC08 = ($RegiTabl[5] == -1 ) ? true:false;
+			  $VC09 = ($RegiTabl[6] == -1 ) ? true:false;
+			  $VC10 = ($RegiTabl[7] == -1 ) ? true:false;
+			  $VC11 = ($RegiTabl[8] == -1 ) ? true:false;
 		?>
 		<tr class="text-center">
 			<td><?=$Frac?></td>
