@@ -215,6 +215,8 @@ hr {
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
   color: var(--bs-heading-color);
@@ -12415,7 +12417,11 @@ header img {
   row-gap: 9.5em;
 }
 
-.ayunt img {
+.LogoEscu {
+  width: 5%;
+}
+
+.logo-mur {
   width: 5%;
 }
 
