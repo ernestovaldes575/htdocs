@@ -23,11 +23,13 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, OFechTerm,           OHipervin, OAreaResp, OFechAct, OFechValid, ONota".
-			"FROM  transpa2024.tt9202borgan ".									//Cambiar Tabla	
-			"WHERE OAyuntamiento = '$ClavAyun' AND ".				//Cambiar Condicion
-				  "OEjercicio = $EjerTrab AND ".
-				  "OConsecutivo = $CampBusq ".
+$InstSql = 	"SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, ".
+				   "OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ".
+				   "ONota ".
+			"FROM  tt9202borgan ".
+			"WHERE OAyuntam = '$ClavAyun' AND ".
+				"OEjercicio = $EjerTrab AND ".
+				"OConsecutivo = $CampBusq ".
       "ORDER BY OConsecutivo ";
 			
 if ($BandMens)  
@@ -36,26 +38,27 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";  $VC04 = "105"; $VC05 = "2024";							//Definir campos
-$VC06 = "";  $VC07 = "";    $VC08 = "";
-$VC09 = "";  $VC10 = "";    $VC11 = "";   $VC12 = "";
+$VC03 = 0;   $VC04 = ""; $VC05 = "";
+$VC06 = 0;   $VC07 = ""; $VC08 = "";
+$VC09 = "";  $VC10 = 0;  $VC11 = "";
+$VC11 = "";
 if ($ResuSql)
  { //Carga los campos
-  $VC03=$ResuSql['OConsecutivo'];	//campos en base s la base de linea 9
-	$VC04="105"; 
-	$VC05="2024";
-	$VC06=$ResuSql['OFechInicio'];
-	$VC07=$ResuSql['OFechTerm'];
-	$VC08=$ResuSql['OHipervin'];
-	$VC09=$ResuSql['OAreaResp'];
-	$VC10=$ResuSql['OFechAct'];
-	$VC11=$ResuSql['OFechValid'];
-	$VC12=$ResuSql['ONota'];	
+   $VC03 = $ResuSql['OConsecutivo'];	
+   $VC04 = $ResuSql['OAyuntam'];	
+   $VC05 = $ResuSql['OEjercicio'];
+   $VC06 = $ResuSql['OFechInicio'];
+   $VC07 = $ResuSql['OFechTerm'];
+   $VC08 = $ResuSql['OHipervin'];
+   $VC09 = $ResuSql['OAreaResp'];
+   $VC10 = $ResuSql['OFechAct'];	
+   $VC11 = $ResuSql['OFechValid'];
+   $VC12 = $ResuSql['ONota'];		
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(OConsecutivo) IS  NULL THEN 1 ELSE  MAX(OConsecutivo) + 1 END  AS Clave ".
-	 		   "FROM  transpa2024.tt9202borgan ".
+	 		   "FROM  tt9202borgan ".
 			   "WHERE OAyuntamiento = '$ClavAyun' AND ".
 				  "OEjercicio = $EjerTrab AND ";
 				  //"AConsFrac = $ConsFrac AND ".

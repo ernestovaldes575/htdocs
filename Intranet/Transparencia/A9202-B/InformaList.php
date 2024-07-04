@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Fracc 02B Organigrama</title>
+	<title>Facultades de área</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
@@ -40,8 +40,7 @@
 		<tr>
 			<th>No</th>
 			<th>Fecha Inicio</th>
-			<th width="15%">Fecha Termino </th>			 <!--Modificar--> 
-			<!--<th colspan="2">Descripción</th>	 Modificar--> 
+			<th width="15%">Fecha Termino</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -51,29 +50,17 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['OConsecutivo'];	 //Modificar
-			  //$VC04 = $RegiTabl['ANumeRegi'];		 //Modificar
-			  $VC04 = $RegiTabl['OFechaInicio'];	 //Modificar
-			  $VC05 = $RegiTabl['OFechaTermino'];	 //Modificar
-			  //$VC07 = $RegiTabl['ADenominacion'];	 //Modificar 
-			  //$VC08 = $RegiTabl['AHipervinculo'];	 //Modificar
+			  $VC03 = $RegiTabl['OConsecutivo'];
+			  $VC04 = $RegiTabl['OFechaInicio'];
+			  $VC05 = $RegiTabl['OFechaTerm'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td width="13%"><?=$VC03?></td>			 <!--Modificar--> 
-			<td width="20%"><?=$VC04?></td>			 <!--Modificar--> 
-			<td width="20%"><?=$VC05?></td>			 <!--Modificar--> 
-			<!--<td width="34%"><?=$VC07?></td>
-			<td width="7%">
-			<?php if ( $VC08 != '' ) { ?> 
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td><-->
+			<td width="13%"><?=$VC03?></td>
+			<td width="13%"><?=$VC04?></td>
+			<td width="13%"><?=$VC05?></td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

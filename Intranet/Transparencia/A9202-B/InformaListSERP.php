@@ -1,7 +1,7 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
 	include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasTranEjer.php');
-	
+
 //********************************************************************
 //Informacion de la Lista
 $TrimTrab = $ABusqMae[1];	//Trimestre de trabajo 
@@ -16,12 +16,11 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = "SELECT OConsecutivo, OAyuntam, ".						//Modificar campos
+$InstSql = "SELECT OConsecutivo, OAyuntam, ".
 				  "OEjercicio, OFechInicio, OFechTerm ".
-			"FROM  transpa2024. tt9202borgan ".						//Modifica tabla
-			"WHERE OAyuntam  = '$ClavAyun' AND ".				//Modifica condicion
-				  "OEjercicio = $EjerTrab AND  ".
-			"ORDER BY OConsecutivo ";					
+			"FROM  tt9202borgan ".
+			"WHERE OAyuntam = '$ClavAyun' AND ".
+				  "OEjercicio = $EjerTrab AND  ";
 				  //"AConsFrac = $ConsFrac AND ".
 				  //"ANumeTrim = '$TrimTrab' ";
 			
