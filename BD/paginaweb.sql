@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2024 a las 19:11:31
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Tiempo de generación: 04-07-2024 a las 21:59:27
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `acopcser` (
   `COSClave` char(3) NOT NULL,
   `COSDescripcion` varchar(50) NOT NULL,
   `COSDireccion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `acopcser`
@@ -72,7 +72,7 @@ INSERT INTO `acopcser` (`COSTipSer`, `COSClave`, `COSDescripcion`, `COSDireccion
 CREATE TABLE `actipser` (
   `CTSClave` char(2) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `CTSDescripcion` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `actipser`
@@ -105,7 +105,7 @@ CREATE TABLE `adpermi` (
   `PModifica` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PBaja` char(1) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `PNumePerm` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `adpermi`
@@ -148,14 +148,14 @@ CREATE TABLE `btboletinextr` (
   `BSerPubMo` int(11) NOT NULL,
   `BFechModi` date NOT NULL,
   `BEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `btboletinextr`
 --
 
 INSERT INTO `btboletinextr` (`BConsecut`, `BAyuntamiento`, `BPersoExtra`, `BFechExtra`, `BFoto`, `BSerPubMo`, `BFechModi`, `BEstado`) VALUES
-(1, '105', 'Pedro Morales Gonzalez', '2024-03-21', '1_Bole.jpg', 1, '2024-03-22', 'A');
+(1, '105', 'Pedro Morales Gonzalez', '2024-03-21', '1_Bole.jpg', 1, '2024-05-27', 'A');
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE `ccclasifica` (
   `CCLTipoDocu` char(2) NOT NULL,
   `CCLClave` char(2) NOT NULL,
   `CCLDescripcion` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ccclasifica`
@@ -200,7 +200,7 @@ CREATE TABLE `ccsubclasifica` (
   `CSCClasifi` char(2) NOT NULL,
   `CSCClave` char(2) NOT NULL,
   `CSCDescripcion` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ccsubclasifica`
@@ -285,20 +285,18 @@ INSERT INTO `ccsubclasifica` (`CSCClasifi`, `CSCClave`, `CSCDescripcion`) VALUES
 CREATE TABLE `cctipoclas` (
   `CTCClave` char(2) NOT NULL,
   `CTCDescri` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cctipoclas`
 --
 
 INSERT INTO `cctipoclas` (`CTCClave`, `CTCDescri`) VALUES
-('01', 'CONACR'),
+('01', 'CONAC'),
 ('02', 'SFRT'),
 ('03', 'PAE'),
-('04', 'Cuenta publica'),
-('05', 'Presuesto'),
-('06', 'hola mundo'),
-('07', 'hola');
+('04', 'ejemplo'),
+('05', '');
 
 -- --------------------------------------------------------
 
@@ -316,7 +314,7 @@ CREATE TABLE `ctconac` (
   `CNumeCona` int(11) NOT NULL,
   `CDescDocu` varchar(801) NOT NULL,
   `CArchivo` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ctconac`
@@ -342,7 +340,7 @@ INSERT INTO `ctconac` (`CConsect`, `CAyuntamiento`, `CEjercicio`, `CTipo`, `CCla
 CREATE TABLE `ecsexo` (
   `CSEClave` char(1) NOT NULL,
   `CSEDescripcion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ecsexo`
@@ -373,7 +371,7 @@ CREATE TABLE `edplaza` (
   `PFechModi` date NOT NULL,
   `PPlazAcIn` char(1) NOT NULL,
   `PEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `edplaza`
@@ -402,14 +400,14 @@ CREATE TABLE `etempresa` (
   `ESerPubMo` int(11) NOT NULL,
   `EFechModi` date NOT NULL,
   `EEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `etempresa`
 --
 
 INSERT INTO `etempresa` (`EConsecut`, `EAyuntamiento`, `EEmpresa`, `ERespresentante`, `EContacto`, `ETeleCont`, `EHoraAten`, `ECorreo`, `EContra`, `ESerPubMo`, `EFechModi`, `EEstado`) VALUES
-(1, '105', 'Implore Ideal S.A. de C.V', 'xxxx', 'Daniel Serrano', '55 71 98 12 35', '9 a.m a 5 p.m de lun', 'daniel@implore.com.mx', 'd4n13l', 1, '2023-09-22', 'A');
+(1, '105', 'Implore Ideal S.A. de C.V', 'gggg', 'Daniel Serrano', '55 71 98 12 35', '9 a.m a 5 p.m de lun', 'daniel@implore.com.mx', 'd4n13l', 1, '2023-09-22', 'A');
 
 -- --------------------------------------------------------
 
@@ -420,7 +418,7 @@ INSERT INTO `etempresa` (`EConsecut`, `EAyuntamiento`, `EEmpresa`, `ERespresenta
 CREATE TABLE `pcestapagi` (
   `CEPClave` char(2) NOT NULL,
   `CEPDescri` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcestapagi`
@@ -434,8 +432,7 @@ INSERT INTO `pcestapagi` (`CEPClave`, `CEPDescri`) VALUES
 ('05', 'Enviar Sol para Revisar'),
 ('06', 'Recibir Solicitud para Rev'),
 ('07', 'Analisis'),
-('08', 'Publicacion'),
-('9', '');
+('08', 'Publicacion');
 
 -- --------------------------------------------------------
 
@@ -446,7 +443,7 @@ INSERT INTO `pcestapagi` (`CEPClave`, `CEPDescri`) VALUES
 CREATE TABLE `pcmostdoclig` (
   `CMDClave` char(1) NOT NULL,
   `CMDDescri` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcmostdoclig`
@@ -473,7 +470,7 @@ CREATE TABLE `pctipodocu` (
   `CTDAncImgSub` int(11) NOT NULL,
   `CTDLarImgSub` int(11) NOT NULL,
   `CTDTamImgSub` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pctipodocu`
@@ -494,7 +491,7 @@ INSERT INTO `pctipodocu` (`CTDClave`, `CTDDescri`, `CTDCarpeta`, `CTDAncImgPag`,
 CREATE TABLE `pcverdoclig` (
   `CVDClave` char(1) NOT NULL,
   `CVDDescrip` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pcverdoclig`
@@ -540,25 +537,26 @@ CREATE TABLE `ptpagina` (
   `PFechaCier` date DEFAULT NULL,
   `PEstaSegu` char(2) NOT NULL,
   `PEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ptpagina`
 --
 
 INSERT INTO `ptpagina` (`PConsecut`, `PAyuntamiento`, `PUnidad`, `PEjercicio`, `PMesRegi`, `PTipoDocu`, `PTitulo`, `PDescripcion`, `PFechPublI`, `PFechPublF`, `PImagenPagi`, `PDocuLiga`, `PDocumento`, `PLiga`, `PVentRefe`, `PSenaSord`, `PSerPubCre`, `PFechAlta`, `PSerPubRec`, `PFechReci`, `PSerPubRev`, `PFechRevi`, `PSerPubPub`, `PFechPubl`, `PSerPubCier`, `PFechaCier`, `PEstaSegu`, `PEstado`) VALUES
-(13, '105', 37, 2023, '10', '01', 'Palacio', 'Ayuntamiento de Zinacantepec', '2022-01-01', '2024-12-31', '13_I.png', 'N', '', '', 'N', 'N', 1, '2023-10-04', 0, NULL, -1, '0000-00-00', 0, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(14, '105', 37, 2023, '10', '01', 'Palacio', 'Palacio Municipal', '2022-01-01', '2024-12-31', '14_I.jpg', 'N', '', '', 'N', '', 1, '2023-10-04', 0, NULL, -1, '0000-00-00', 0, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(15, '105', 37, 2023, '11', '01', 'Fuente', 'Fuente de Palacio', '2022-01-01', '2024-12-31', '', 'N', '', 'paso asa', 'N', '', 1, '2023-11-11', 0, NULL, -1, '0000-00-00', -1, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(16, '105', 37, 2023, '11', '02', 'Ejemplo 01', 'Ejemplo 01', '2022-01-01', '2023-12-31', '', 'I', '', '', 'N', '', 1, '2023-11-12', 0, NULL, -1, '0000-00-00', -1, '0000-00-00', -1, '0000-00-00', '01', 'A'),
-(17, '105', 37, 2024, '01', '01', 'Reyes Contadoro', 'Los Reyes Magos en Contadero', '2024-01-01', '2024-01-27', '17_I.png', 'N', '', 'ffff', 'N', '', 1, '2024-01-11', 0, NULL, 2, '2024-03-01', -1, '0000-00-00', -1, '0000-00-00', '09', 'A'),
-(18, '105', 37, 2024, '03', '04', 'ejemplo', 'ejemplo01yyyyy', '2024-03-03', '2024-03-03', '18_I.jpg', 'I', '18_I.jpg', '', 'P', '', 1, '2024-03-03', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(19, '105', 37, 2024, '03', '04', 'Noticia 01', 'Noticia 01 Noticia 01', '2024-03-04', '2024-03-30', '19_I.jpg', 'A', '', '', 'V', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(20, '105', 37, 2024, '03', '04', 'Noticia 02', 'Noticia 02 ejemplo de texto de 2050', '2024-03-04', '2024-03-29', '', 'N', '', '', '', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(21, '105', 37, 2024, '03', '04', 'Noticia 03', 'Ejemplo de noticia 03', '2024-03-04', '2024-03-29', '21_I.jpg', 'L', '', 'www.google.com.mx', 'P', '', 1, '2024-03-04', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(22, '105', 37, 2024, '03', '01', 'ejemplo', 'Ejemplo01', '2024-03-06', '2024-03-06', '', 'I', '', '', '', '', 1, '2024-03-06', -1, NULL, 2, '2024-03-06', -1, NULL, -1, NULL, '08', 'A'),
 (23, '', 4, 0, '', '1', '1', 'aa', '0000-00-00', '0000-00-00', '', 'd', '', 'e', 'f', '', 0, '2024-04-03', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
-(24, '105', 48, 2024, '05', '01', 'ejemplo', 'ejemplo', '2024-05-25', '2024-05-31', '', 'N', '', '', 'N', '', 1, '2024-05-25', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A');
+(24, '105', 37, 2024, '05', '01', 'Baner', 'Baner', '2024-05-28', '2024-12-31', '24_I.png', 'N', '', '', 'N', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(25, '105', 37, 2024, '05', '01', 'baner02', 'baner02', '2024-05-28', '2024-12-31', '25_I.png', 'N', '', '', 'N', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(26, '105', 37, 2024, '05', '01', 'Baner03Modi', 'Baner03Modi', '2024-05-28', '2024-12-31', '26_I.png', 'N', '', '', '', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(27, '105', 37, 2024, '05', '02', 'info01', 'info01', '2024-05-28', '2024-12-31', '27_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(28, '105', 37, 2024, '05', '02', 'info02', 'info02', '2024-05-28', '2024-12-31', '28_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(30, '105', 37, 2024, '05', '02', 'info03', 'info03', '2024-05-28', '2024-12-31', '30_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-28', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(31, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '31_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(32, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '32_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(33, '105', 37, 2024, '05', '04', 'Lorem ipsum dolor si', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus sint, inventore distinctio ipsam deleniti molestiae culpa molestias. Quas, adipisci.', '2024-05-29', '2024-12-31', '33_I.jpg', 'I', '', '', 'V', '', 1, '2024-05-29', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(34, '105', 37, 2024, '05', '03', 'Ejemplo01', 'Ejemplo01', '2024-05-31', '2024-12-31', '34_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(35, '105', 37, 2024, '05', '03', 'Ejemplo02', 'Ejemplo02', '2024-05-31', '2024-12-31', '35_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A'),
+(36, '105', 37, 2024, '05', '03', 'Ejemplo03', 'Ejemplo03', '2024-05-31', '2024-12-31', '36_I.jpeg', 'I', '', '', 'V', '', 1, '2024-05-31', -1, NULL, -1, NULL, -1, NULL, -1, NULL, '01', 'A');
 
 -- --------------------------------------------------------
 
@@ -570,7 +568,7 @@ CREATE TABLE `ptserpub` (
   `SConsecutivo` int(11) NOT NULL,
   `SAyuntamiento` char(3) NOT NULL,
   `SNombre` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ptserpub`
@@ -579,6 +577,93 @@ CREATE TABLE `ptserpub` (
 INSERT INTO `ptserpub` (`SConsecutivo`, `SAyuntamiento`, `SNombre`) VALUES
 (1, '105', 'Iliana'),
 (2, '105', 'Angy');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `stcabidire`
+--
+
+CREATE TABLE `stcabidire` (
+  `CAyuntamiento` char(3) NOT NULL,
+  `CCabiDir` char(1) NOT NULL,
+  `CTipo` char(1) NOT NULL,
+  `CNumero` int(11) NOT NULL,
+  `CNombre` varchar(80) NOT NULL,
+  `CCargo` varchar(80) NOT NULL,
+  `CTelefono` varchar(20) NOT NULL,
+  `CDireccion` varchar(80) NOT NULL,
+  `Colonia` varchar(50) NOT NULL,
+  `CodiPost` int(8) NOT NULL,
+  `CImagen` varchar(50) NOT NULL,
+  `CFondo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `stcabidire`
+--
+
+INSERT INTO `stcabidire` (`CAyuntamiento`, `CCabiDir`, `CTipo`, `CNumero`, `CNombre`, `CCargo`, `CTelefono`, `CDireccion`, `Colonia`, `CodiPost`, `CImagen`, `CFondo`) VALUES
+('105', 'C', 'P', 1, 'Manuel Vilchis Viveros', 'Presidente', '7222222222', 'Constitucion 101, San Miguel', 'Centro', 51350, '', ''),
+('105', 'C', 'R', 1, 'José Alfredo Guizar Arreola', 'Primera Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi01.webp', 'color01'),
+('105', 'C', 'R', 2, 'Mayté Jaramillo López', 'Segunda Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi02.webp', 'color03'),
+('105', 'C', 'R', 3, 'Ernesto Guzmán Camacho', 'Tercera Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi03.webp', 'color01'),
+('105', 'C', 'R', 4, 'karen Nayeli Castrejón Gómez', 'Cuarta Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi04.webp', 'color03'),
+('105', 'C', 'R', 5, 'Alfredo Esquivel Cuarenta', 'Quinta Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi05.webp', 'color01'),
+('105', 'C', 'R', 6, 'Leopoldo Romero Mejia', 'Sexta Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi06.webp', 'color01'),
+('105', 'C', 'R', 7, 'Blanca Paulina Vilchis Sánchez', 'Septima Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi07.webp', 'color03'),
+('105', 'C', 'R', 8, 'Leonardo Joaquin Bravo Villanueva', 'Octava Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi08.webp', 'color01'),
+('105', 'C', 'R', 9, 'Alfredo Díaz de Jesús', 'Novena Regiduría', '7229177206', 'Constitucion 101, San Miguel', 'Centro', 51350, 'Regi09.webp', 'color01'),
+('105', 'C', 'S', 1, 'Dulce María Bastida Alvarez', 'Síndico Municipal', '7222183966', 'Constitucion 101, San Miguel', 'Centro', 51350, 'sindico.webp', 'color03');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `stdire`
+--
+
+CREATE TABLE `stdire` (
+  `CAyuntamiento` char(3) NOT NULL,
+  `CTipo` char(1) NOT NULL,
+  `CNumero` int(11) NOT NULL,
+  `CNombre` varchar(80) NOT NULL,
+  `CCargo` varchar(80) NOT NULL,
+  `CTelefono` varchar(25) NOT NULL,
+  `CCorreo` varchar(40) NOT NULL,
+  `CImagen` varchar(50) NOT NULL,
+  `CFondo` char(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `stdire`
+--
+
+INSERT INTO `stdire` (`CAyuntamiento`, `CTipo`, `CNumero`, `CNombre`, `CCargo`, `CTelefono`, `CCorreo`, `CImagen`, `CFondo`) VALUES
+('105', 'D', 1, 'Ernesto Palma Mejía', 'SECRETARÍA DEL AYUNTAMIENTO', '(722)1 57 85 07 ext 129', 'secretaria.ayuntamiento@zinacantepec.gob', 'SriAyto.webp', 'color01'),
+('105', 'D', 2, 'Oscar Bernal Torres', 'TESORERÍA MUNICIPAL', '(722)2187019', 'tesoreria.municipal@zinacantepec.gob.mx', 'tesorero.webp', 'color01'),
+('105', 'D', 4, 'Sandra Jaqueline Mondragón Mendoza', 'DIRECCIÓN DE ADMINISTRACIÓN', '(722)9177206', 'administracion@zinacantepec.gob.mx', 'administracion.webp', 'color03'),
+('105', 'D', 5, 'Valeria Toledo Flores', 'CONTRALORÍA MUNICIPAL', '(722)9177206', 'contraloria.municipal@zinacantepec.gob.m', 'contralora.webp', 'color03'),
+('105', 'D', 6, 'Arturo Galicia Carballar', 'DIRECCIÓN JURÍDICA', ' (722)9177206', 'cordinacion.juridica@zinacantepec.gob.mx', 'juridico.webp', 'color03'),
+('105', 'D', 7, 'Brenda Selene Hernández López', 'UNIDAD DE TRANSPARENCIA', '(722) 917 84 73', 'transparencia@zinacantepec.gob.mx', 'mejoraregulatoria.webp', 'color03'),
+('105', 'D', 8, 'Ismael Enrique Terrón López', 'UIPPE', '(722) 917 84 73', 'uippe@zinacantepec.gob.mx', 'uippe.webp', 'color01'),
+('105', 'D', 9, 'Liliana Estefani Cruz Bacilio', 'MEJORA REGULATORIA', '(722)2188241', 'mejora.regulatoria@zinacantepec.gob.mx', 'mejoraregulatoria.webp', 'color03'),
+('105', 'D', 10, 'Víctor Hugo García Esquivel', 'DIRECCIÓN DE GOBERNACIÓN', '(722) 917 84 73', 'gobernacion@zinacantepec.gob.mx', 'gob.webp', 'color01'),
+('105', 'D', 11, 'Roberto Germán Flores Patoni', 'DESARROLLO ECONÓMICO', '(722)1903771', 'desarrollo.economico@zinacantepec.gob.mx', 'deconomico.webp', 'color01'),
+('105', 'D', 12, 'Uriel Pedro Ramírez Zarza', 'SERVICIOS PÚBLICOS', '(722)917 7188', 'servicios.publicos@zinacantepec.gob.mx', 'serviciosp.webp', 'color03'),
+('105', 'D', 13, 'Dayana Fabiola Julio Pérez', 'MEDIO AMBIENTE', '(722) 917 84 73', 'medio.ambiente@zinacantepec.gob.mx', 'medioambiente.webp', 'color03'),
+('105', 'D', 14, 'Gabriel Valdez Albarrán', 'DIRECCIÓN DE DESARROLLO SOCIAL', '(722)2188241', 'atencion.ciudadana@zinacantepec.gob.mx', 'dsocial.webp', 'color01'),
+('105', 'D', 15, 'Jessica Arroyo Ramírez', 'CULTURA Y TURISMO', '(722) 1903691', 'turismo.cultura@zinacantepec.gob.mx', 'turismo.webp', 'color03'),
+('105', 'D', 16, 'María del Carmen Sánchez Carbajal', 'DIRECCIÓN DE EDUCACIÓN', '(722) 917 84 57', 'educacion@zinacantepec.gob.mx', 'deducacion.webp', 'color03'),
+('105', 'D', 17, 'Aldo Octavio Peña Vilchis', 'DIRECCIÓN DE OBRAS PÚBLICAS', '(722)9177206', 'obras.publicas@zinacantepec.gob.mx', 'dobras.webp', 'color03'),
+('105', 'D', 18, 'Humberto Delgado Fabela', 'DESARROLLO TERRITORIAL Y URBANO', '(722)2180686', 'desarrollo.urbano@zinacantepec.gob.mx', 'durbano.webp', 'color01'),
+('105', 'D', 19, 'Patricia Luna Delgado', 'DESARROLLO METROPOLITANO Y MOVILIDAD', '(722) 917 84 73', 'desarrollo.metropolitano@zinacantepec.go', 'patricia.webp', 'color03'),
+('105', 'D', 20, 'Guillermo Colín Jaramíllo', 'COORDINACIÓN MUNICIPAL DE PROTECCIÓN CIVIL Y BOMBEROS', '(722) 132 0818', 'proteccion.civil@zinacantepec.gob.mx', 'dbomberos.webp', 'color01'),
+('105', 'D', 21, 'Héctor Hugo Osorno Reyes', 'SEGURIDAD PÚBLICA Y TRÁNSITO', '722-190-3502', 'seguridad.publica@zinacantepec.gob.mx', 'seguridad.webp', 'color03'),
+('105', 'I', 1, 'Allexae Trejo Velázquez', 'DIRECCIÓN MUNICIPAL DE LA MUJER', '(722)9177207', 'instituto.mujer@zinacantepec.gob.mx', 'mujer.webp', 'color03'),
+('105', 'I', 2, 'Luis Fernando Ortiz Hill', 'INSTITUTO DE LA JUVENTUD', '(722)9177207', 'instituto.juventud@zinacantepec.gob.mx', 'dinjuve.webp', 'color01'),
+('105', 'O', 1, 'Jessica Rios Lara', 'Presidenta Honorifica del DIF', '(722)9177207', 'imcufidez@zinacantepec.gob.mx', 'dif.webp', 'color01'),
+('105', 'O', 2, 'Iván Saucedo Sánchez', 'OPDAPAS', '(722) 218 3290', 'zinacantepecopdapas@gmail.com', 'dopdapas.webp', 'color01'),
+('105', 'O', 3, 'Daniel Agallo Vicent', 'IMCUFIDEZ', '(722) 9177206', 'imcufidez@zinacantepec.gob.mx', 'incu.webp', 'color01');
 
 -- --------------------------------------------------------
 
@@ -601,7 +686,7 @@ CREATE TABLE `streporte` (
   `RSerPubMo` int(11) NOT NULL,
   `RFechMovi` date NOT NULL,
   `REstado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `streporte`
@@ -628,7 +713,7 @@ CREATE TABLE `stsupervisor` (
   `SSerPubMo` int(11) NOT NULL,
   `SFechModi` date NOT NULL,
   `SEstado` char(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `stsupervisor`
@@ -637,10 +722,9 @@ CREATE TABLE `stsupervisor` (
 INSERT INTO `stsupervisor` (`SConsecut`, `SAyuntamiento`, `SUnidad`, `SNumeEmpl`, `SServPubli`, `SCategoria`, `SFoto`, `SSerPubMo`, `SFechModi`, `SEstado`) VALUES
 (1, '105', 97, '6114', 'Maria del Carmen Guadalupe', 'Inspector', '1_Insp.png', 1, '2023-09-20', 'A'),
 (2, '105', 97, '006180', 'Jesus Escalona Jimenez', 'Inspector', '2_Insp.png', 1, '2023-09-21', 'A'),
-(3, '105', 97, '006115', 'Antonio Davila Zarza', 'Inspector A', '3_Insp.png', 1, '2024-05-29', 'A'),
+(3, '105', 97, '006115', 'Antonio Davila Zarza', 'Inspector', '3_Insp.png', 1, '2023-09-21', 'A'),
 (4, '105', 97, '04586', 'Horacio Reyes Ramirez', 'Lider', '4_Insp.jpg', 1, '2024-03-20', 'A'),
-(5, '105', 97, '', '', '', '', 1, '2024-05-29', 'B'),
-(6, '105', 97, '04589', 'Nombre', 'categoria', '', 1, '2024-05-29', 'B');
+(5, '105', 97, '', '', '', '', 1, '2024-03-21', 'A');
 
 -- --------------------------------------------------------
 
@@ -651,7 +735,7 @@ INSERT INTO `stsupervisor` (`SConsecut`, `SAyuntamiento`, `SUnidad`, `SNumeEmpl`
 CREATE TABLE `stsupeunid` (
   `SAyuntamiento` char(3) NOT NULL,
   `SUnidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `stsupeunid`
@@ -659,8 +743,7 @@ CREATE TABLE `stsupeunid` (
 
 INSERT INTO `stsupeunid` (`SAyuntamiento`, `SUnidad`) VALUES
 ('105', 97),
-('105', 0),
-('105', 1);
+('105', 0);
 
 --
 -- Índices para tablas volcadas
@@ -694,7 +777,6 @@ ALTER TABLE `btboletinextr`
 -- Indices de la tabla `cctipoclas`
 --
 ALTER TABLE `cctipoclas`
-  ADD PRIMARY KEY (`CTCClave`),
   ADD KEY `CTCClave` (`CTCClave`);
 
 --
@@ -734,6 +816,12 @@ ALTER TABLE `ptserpub`
   ADD PRIMARY KEY (`SConsecutivo`);
 
 --
+-- Indices de la tabla `stcabidire`
+--
+ALTER TABLE `stcabidire`
+  ADD KEY `CAyuntamiento` (`CAyuntamiento`);
+
+--
 -- Indices de la tabla `stsupervisor`
 --
 ALTER TABLE `stsupervisor`
@@ -759,7 +847,7 @@ ALTER TABLE `btboletinextr`
 -- AUTO_INCREMENT de la tabla `ptpagina`
 --
 ALTER TABLE `ptpagina`
-  MODIFY `PConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `PConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `ptserpub`
@@ -771,7 +859,7 @@ ALTER TABLE `ptserpub`
 -- AUTO_INCREMENT de la tabla `stsupervisor`
 --
 ALTER TABLE `stsupervisor`
-  MODIFY `SConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `SConsecut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
