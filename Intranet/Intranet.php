@@ -54,11 +54,12 @@
 			<div class="col-xl-3 col-md-5 col-sm-10 shadow">
 				<div class="card">
 					<div class="card-header d-flex justify-content-between align-items-center fw-semibold">
-						Iniciar Sesion<i class="bi bi-person-fill"></i>
+						Iniciar Sesion
+						<i class="bi bi-person-fill"></i>
 					</div>
 					<div class="card-body">
 						<form  method="post" name="formulario" onsubmit="return validarl(this)">
-							<input class="form-control mb-3" id="usuario" type="text" placeholder="XXXXXX" name="InputCla"  />
+							<input class="form-control mb-3" id="usuario" type="text" placeholder="Ingresa Clave" name="InputCla"  />
 							<input class="form-control mb-3" type="text" placeholder="Digita Contraseña" name="InputCon" value="000001"/>
 							<div class="d-grid gap-2 mb-3">
 								<button class="btn btn-primary" type="submit" name="Ingresar" value="Ingresar" >
