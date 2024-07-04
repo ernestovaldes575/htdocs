@@ -25,7 +25,8 @@ if ($BandMens)
      echo 'TipoMovi)'.$TipoMovi.'<br>';
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
-$VC03 = $_POST['C03'];
+
+$VC03 = $_POST['C03'];					//Leer campos
 $VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
@@ -34,35 +35,41 @@ $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
-$VC11 = $_POST['C11'];
+$VC12 = $_POST['C12'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO transpa2024. tt9202borgan ".		//Cambiar tabla
+		$InstSql = "INSERT INTO tt9202borgan ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "'$VC06','$VC07',".				//Cambiar campo
-								 "'$VC08','',$VC09,'$VC10',".		//Cambiar campo
-								 "'$VC10','$VC11', '$VC12')";
+								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
+								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
+								 "'$VC06','$VC07','$VC08'".				//Cambiar campo
+								"'$VC09','$VC10','$VC11','$VC12')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE transpa2024. tt9202borgan ". 			//Cambiar tabla
-					"SET    OFechInicio = '$VC06'". 				//Cambiar campo
+		$InstSql = 	"UPDATE tt9202borgan ". 						//Cambiar tabla
+					"SET    OConsecutivo = $VC03,". 					//Cambiar campo
+						   "OAyuntam = '$VC04',".				//Cambiar campo
+						   "OEjercicio = '$VC05', ".				//Cambiar campo
+						   "OFechInicio = $VC06, ".						//Cambiar campo
 						   "OFechTerm = '$VC07',".				//Cambiar campo
-						   "OHipervin = '$VC08', ".				//Cambiar campo
-						   "OAreaResp = $VC09, ".						//Cambiar campo
-						   "OFechAct = '$VC10',".				//Cambiar campo
-						   "OFechValid = '$VC11',".				//Cambiar campo
-						   "ONota = '$VC12',".				//No considera 
-					"WHERE OAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
+						   "OHipervin = '$VC08',".				//Cambiar campo
+						   "OAreaResp = '$VC09',".				//No considera 
+				   		   "OFechAct = $VC10,".					//Cambiar campo
+						   "OFechValid = '$VC11' ".  					//Cambiar campo
+						   "ONota = '$VC12' ".
+					"WHERE OAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "OEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "OConsecutivo = $CampBusq ";				//Cambiar campo
+				  		  "OConsecutivo = $CampBusq AND ";			//Cambiar campo
+ 						  //"ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM transpa2024. tt9202borgan ". 		//Cambiar tabla
-				   "WHERE OAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
+		$InstSql = "DELETE FROM tt9202borgan ". 					//Cambiar tabla
+				   "WHERE OAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "OEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "OConsecutivo = $CampBusq ";				//Cambiar campo
+				  		  "OConsecutivo = $CampBusq AND ";			//Cambiar campo
+ 						  //"ANumeRegi = $CampBusq";
 	break;	
 }		
 
