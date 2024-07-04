@@ -63,7 +63,7 @@
 					</div>
 					<div class="card-body">
 						<form  method="post" name="formulario" onsubmit="return validarl(this)">
-							<input class="form-control mb-3" id="usuario" type="text" placeholder="XXXXXX" name="InputCla"  />
+							<input class="form-control mb-3" id="usuario" type="text" placeholder="usuario" name="InputCla" value="000001"  />
 							<input class="form-control mb-3" type="text" placeholder="Digita Contraseña" name="InputCon" value="000001"/>
 							<div class="d-grid gap-2 mb-3">
 								<button class="btn btn-primary" type="submit" name="Ingresar" value="Ingresar" >

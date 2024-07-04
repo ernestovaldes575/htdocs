@@ -39,9 +39,9 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha</th>
-			<th width="15%">Fecha</th>
-			<th colspan="2">Descripción</th>
+			<th>Fecha inicio</th>
+			<th width="15%">Fecha termino</th>
+			<th colspan="2">	TFirper</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
