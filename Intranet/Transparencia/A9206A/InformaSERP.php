@@ -23,9 +23,9 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ".
-				   "ADenominacion, AFunadamento, AHipervinculo, ".
-				   "AAreaRespon, ANota ".
+$InstSql = 	"SELECT AEjercicio, AFechaInicio, AFechaTermino, ANombrePrograma, AObjetivo, ".
+				   "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
+				   "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
 			"FROM  a9206a ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
@@ -37,20 +37,35 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = ""; $VC05 = "";
-$VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0; $VC11 = "";
+$VC03 = 0;   $VC04 = "";   $VC05 = "";    $VC06 = 0;    $VC07 = "";  $VC08 = 0; 
+$VC09 = 0;   $VC10 = "";   $VC11 = "";    $VC12 = 0;    $VC13 = "";  $VC14 = 0; 
+$VC15 = "";  $VC16 = 0;    $VC17 = "";    $VC18 = 0;    $VC19 = "";  $VC20 = 0;   
+$VC21 = 0;   $VC22 = 0;    $VC23 = 0;     $VC24 = 0;
+
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['ANumeRegi'];	
-   $VC04 = $ResuSql['AFechaInicio'];	
-   $VC05 = $ResuSql['AFechaTermino'];
-   $VC06 = $ResuSql['AArea'];
-   $VC07 = $ResuSql['ADenominacion'];
-   $VC08 = $ResuSql['AFunadamento'];
-   $VC09 = $ResuSql['AHipervinculo'];
-   $VC10 = $ResuSql['AAreaRespon'];	
-   $VC11 = $ResuSql['ANota'];		
+   $VC03 = $ResuSql['AConsecutivo'];
+   $VC04 = $ResuSql['AAyuntamiento'];
+   $VC05 = $ResuSql['AEjercicio'];	
+   $VC06 = $ResuSql['AFechaInicio'];	
+   $VC07 = $ResuSql['AFechaTermino'];
+   $VC08 = $ResuSql['ANombrePrograma'];
+   $VC09 = $ResuSql['AObjetivo'];
+   $VC10 = $ResuSql['ANombreIndicador'];
+   $VC11 = $ResuSql['ADimensionesAMedir'];
+   $VC12 = $ResuSql['ADefinicionIndicador'];	
+   $VC13 = $ResuSql['AMetodoCalculo'];		
+   $VC14 = $ResuSql['AUnidadMedida'];
+   $VC15 = $ResuSql['AFrecuenciaMedicion'];
+   $VC16 = $ResuSql['ALineaBase'];
+   $VC17 = $ResuSql['AMetasProgramadas'];
+   $VC18 = $ResuSql['AMetasAjustadas'];
+   $VC19 = $ResuSql['AAvance'];
+   $VC20 = $ResuSql['ASentidoIndicador'];
+   $VC21 = $ResuSql['ASentidoIndicadorOtro'];
+   $VC22 = $ResuSql['AFuenteInformacion'];
+   $VC23 = $ResuSql['AAreaResp'];
+   $VC24 = $ResuSql['ANota'];
  } 
 else
  { //Busca el sisguiente registro

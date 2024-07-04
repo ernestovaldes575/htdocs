@@ -28,7 +28,7 @@
             <?=$TrimTrab?></td>
 			<td colspan="2">Inc
 		    iso:
-<?=$NumeInci?>
+             <?=$NumeInci?>
               <?=$NumeSubi?>
             <?=$Nomativi?></td>
 			<td colspan="2">
@@ -38,10 +38,11 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
+		
 			<th>No</th>
 			<th>Fecha inicio</th>
 			<th width="15%">Fecha termino</th>
-			<th colspan="2">	TFirper</th>
+			<th colspan="2">Firper</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -52,11 +53,11 @@
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['ANumeRegi'];
-			  $VC05 = $RegiTabl['AFechaInicio'];
-			  $VC06 = $RegiTabl['AFechaTermino'];
-			  $VC07 = $RegiTabl['ADenominacion'];
-			  $VC08 = $RegiTabl['AHipervinculo'];
+			  $VC04 = $RegiTabl['AAyuntamiento'];
+			  $VC05 = $RegiTabl['TFechInic'];
+			  $VC06 = $RegiTabl['Fechterm'];
+			  $VC07 = $RegiTabl['TFirper'];
+			  
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

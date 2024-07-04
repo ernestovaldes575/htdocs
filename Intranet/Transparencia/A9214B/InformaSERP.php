@@ -23,10 +23,11 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ".
-				   "ADenominacion, AFunadamento, AHipervinculo, ".
-				   "AAreaRespon, ANota ".
-			"FROM  tt9203facare ".
+$InstSql = 	"SELECT 	AConsecutivo, PNumero, PNombrepers, PPrimerapellido, ".
+				   "PSegundoapellido, PDenominasocial, PMontorecursos, ".
+				   "PUnidadterritorial, PEdad".
+           "PSexo, PSexootro ".
+			"FROM  a9214b ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
@@ -37,25 +38,26 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = ""; $VC05 = "";
-$VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0; $VC11 = "";
+$VC03 = 0;   $VC04 = ""; $VC05 = "";  $VC06 = 0;   $VC07 = ""; $VC08 = "";
+$VC09 = "";  $VC10 = 0; $VC11 = "";    $VC12 = 0;   $VC13 = "";  $VC13 = ""; 
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['ANumeRegi'];	
-   $VC04 = $ResuSql['AFechaInicio'];	
-   $VC05 = $ResuSql['AFechaTermino'];
-   $VC06 = $ResuSql['AArea'];
-   $VC07 = $ResuSql['ADenominacion'];
-   $VC08 = $ResuSql['AFunadamento'];
-   $VC09 = $ResuSql['AHipervinculo'];
-   $VC10 = $ResuSql['AAreaRespon'];	
-   $VC11 = $ResuSql['ANota'];		
+   $VC03 = $ResuSql['AConsecutivo'];	
+   $VC04 = $ResuSql['AAyuntamiento'];	
+   $VC05 = $ResuSql['PNumero'];
+   $VC06 = $ResuSql['PNombrepers'];
+   $VC07 = $ResuSql['PPrimerapellido'];
+   $VC08 = $ResuSql['PSegundoapellido'];
+   $VC09 = $ResuSql['APDenominasocial'];
+   $VC10 = $ResuSql['PMontorecursos'];	
+   $VC11 = $ResuSql['PUnidadterritorial'];		
+   $VC12 = $ResuSql['PSexo'];	
+   $VC13 = $ResuSql['PSexootro'];	
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  tt9203facare ".
+	 		   "FROM  a9214b ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

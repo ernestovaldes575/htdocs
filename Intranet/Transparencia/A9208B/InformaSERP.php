@@ -23,9 +23,9 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT TEjercicio, TFechInic, 	TFechterm, TFirper, ".
-				   "	TArea, TActualizacion, AHipervinculo, ".
-				   "TFechvalida, TNota ".
+$InstSql = 	"SELECT TEjercicio, TFechInic, 	TFechterm, 	TFirper, ".
+				   " TArea, TActualizacion, TFechvalida, ".
+				   " TNota ".
 			"FROM  a9208b ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
@@ -39,17 +39,19 @@ $ResuSql = $EjInSql->fetch();
 
 $VC03 = 0;   $VC04 = ""; $VC05 = "";
 $VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0; $VC11 = "";
+$VC09 = "";  $VC10 = 0; 
 if ($ResuSql)
  { //Carga los campos
    $VC03 = $ResuSql['AConsecutivo'];	
-   $VC04 = $ResuSql['TFechInic'];	
-   $VC05 = $ResuSql['	TFechterm'];
-   $VC06 = $ResuSql['TFirper'];
-   $VC07 = $ResuSql['TArea'];
-   $VC08 = $ResuSql['TActualizacion'];
-   $VC09 = $ResuSql['TFechvalida'];
-   $VC10 = $ResuSql['TNota'];	
+   $VC04 = $ResuSql['AAyuntamiento'];	
+   $VC05 = $ResuSql['TEjercicio'];
+   $VC06 = $ResuSql['TFechInic'];
+   $VC07 = $ResuSql['TFechterm'];
+   $VC08 = $ResuSql['TFirper'];
+   $VC09 = $ResuSql['TArea'];
+   $VC10 = $ResuSql['TActualizacion'];
+   $VC11 = $ResuSql['TFechvalida'];
+   $VC12 = $ResuSql['TNota'];	
   	
  } 
 else
