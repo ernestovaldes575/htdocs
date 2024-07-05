@@ -49,11 +49,11 @@ switch ( $CRUD )
 		$InstSql = "INSERT INTO tt9217regisolic ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
+								 "'$VC03','$VC04','$VC05',".			//Cambiar campo
 								 "'$VC06','$VC07','$VC08',".		//Cambiar campo
 								"'$VC09','$VC10','$VC11',". 	    //Cambiar campo
-								"'$VC12','$VC13','$VC14',)".
-								"'$VC15','$VC16','$VC17',)".
+								"'$VC12','$VC13','$VC14',".
+								"'$VC15','$VC16','$VC17',".
 								"'$VC18')";
 		break;
 	case "PUT": //Cambio
