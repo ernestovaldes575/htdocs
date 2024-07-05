@@ -23,22 +23,21 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT PConsecutivo, PAyuntam, PEjercicio, PFechInicio". 
+$InstSql = 	"SELECT PConsecutivo, PAyuntam, PEjercicio, PFechInicio, ". 
 				   "PFechTerm, PTipoProg, PAtenTipoProg, PDenom, PProgMas1, ".
 				   "PAtenProgMas1, PSujetoOblig, PAreaRespDes, PDenomDocNorm, ".
 				   "PHipervDocNorm, PPeriodVigenc, PAtenPeriodVigen, PFechInicioVigen, ".
-				   "PFechTermVigen, PDiseñoc, PObjetivos, PPoblacion, ".
+				   "PFechTermVigen, PDiseño, PObjetivos, PPoblacion, ".
 				   "PNotaMetodol, PMontoPresupApr, PMontoPresupModi, PMontoPresupEjer, ".
 				   "PMontoDeficit, PMontoGtoAdm, PHipervDocModif, PHipervCalend, ".
 				   "PCriterElegibi, PRequisProc, PMontoMin, PMontoMax, ".
 				   "PProcedQuej, PMecanExigi, PMecanCancel, PPeriodoEvalu, ".
 				   "PMecanEvalu, PInstancia, PHipervResult, PSeguimRecom, ".
 				   "PIndicador, PFormPartSocial, PArticOtroProgr, PAtenArticOtrProgr, ".
-
 				   "PDenomProgr, PSujetReglOp, PAtenSujetReglOp, RHipervRegl, ".
 				   "PInformPeriod, PHipervPadron, PAreaRespInfo, PFechValid, ".
-				   "PFechAct, PNota, PConsFrac, PNumeTrim, PNumeRegi".
-			"FROM tt9214aprogsubci  ".
+				   "PFechAct, PNota, PConsFrac, PNumeTrim, PNumeRegi ".
+			"FROM tt9214aprogsubci ".
 			"WHERE PAyuntam = '$ClavAyun' AND ".
 				  "PEjercicio = $EjerTrab AND ".
 				  "PConsecutivo = $CampBusq ";
