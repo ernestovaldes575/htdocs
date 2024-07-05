@@ -62,7 +62,8 @@
 							<input class="form-control mb-3" id="usuario" type="text" placeholder="Ingresa Clave" name="InputCla"  />
 							<input class="form-control mb-3" type="password" placeholder="Digita Contraseña" name="InputCon"/>
 							<div class="d-grid gap-2 mb-3">
-								<button class="btn btn-primary" type="submit" name="Ingresar" value="Ingresar" >
+								<button class="btn btn-primary" type="submit" 
+								name="Ingresar" value="Ingresar" >
 									Iniciar Sesion
 								</button>
 							</div>

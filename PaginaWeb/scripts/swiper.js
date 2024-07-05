@@ -1,3 +1,4 @@
+// console.log('Hola desde SwiperJs');
 const swiper = new Swiper ("#swiper-1",{
     speed: 2000,
     effect:'fade',

@@ -187,9 +187,9 @@ header .button{
 }
 @media screen and (max-width:400px) {
     .escudo_mur {
-        max-width:3.2em;
+        max-width:3em;
         position:absolute;
-        top:3em
+        top:1em
     }
 }
 @media screen and (max-width:520px) {
@@ -204,9 +204,9 @@ header .button{
         display: none;
     }
     .escudo_mur{
-        max-width: 5em;
+        max-width: 3em;
         position: absolute;
-        top: 3em;
+        top: 1em;
     }
     .header .contenedor__principal .h2{
         display: none;
