@@ -1,3 +1,4 @@
+// console.log('Hola desde App');
 const button = document.querySelector('.button');
 const nav = document.querySelector('.nav');
 
@@ -40,5 +41,3 @@ function disminuirTexto() {
         elementosEnlace[i].style.fontSize = (fontSize - 2) + 'px';
     }
 }
-
-console.log('Prueba');

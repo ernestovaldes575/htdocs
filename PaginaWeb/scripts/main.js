@@ -1,4 +1,4 @@
-console.log('Prueba02');
+// console.log('Hola desde ScrollJs');
 function revealFunction(){
     window.sr = ScrollReveal({duration:1000, distance:'250px',easing:'ease-out'});
     sr.reveal('.reveal-left',{origin:'left', reset:true});
