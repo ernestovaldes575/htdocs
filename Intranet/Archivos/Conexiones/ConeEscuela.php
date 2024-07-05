@@ -1,6 +1,6 @@
 <?php
 	$contraseña = "";
- 
+
 	try{
 		$con = new PDO("mysql:host=localhost;dbname=escuela", "root", $contraseña);
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

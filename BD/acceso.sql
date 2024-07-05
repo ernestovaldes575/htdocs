@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2024 a las 21:05:43
+-- Tiempo de generación: 04-07-2024 a las 21:57:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -445,7 +445,7 @@ CREATE TABLE `atusuario` (
 --
 
 INSERT INTO `atusuario` (`UConsecut`, `UAyuntamiento`, `UNumeroEmpleado`, `UStatus`, `UNombre`, `UPaterno`, `UMaterno`, `UUnidad`, `UFoto`, `UFechaAlta`, `UFechaBaja`, `UFechMod`) VALUES
-(1, '105', '04682', 'O', 'Horacio', 'Reyes', 'Ramirez', 37, 'hh', '2021-11-16', '2021-12-01', '2021-11-25'),
+(1, '105', '04682', 'O', 'Horacio', 'Reyes', 'Ramirez', 48, 'hh', '2021-11-16', '2021-12-01', '2021-11-25'),
 (2, '105', '00002', 'O', 'Ernesto', 'Valdes', 'Lujano', 87, '123', '2021-11-02', '2021-11-18', '2021-12-02'),
 (3, '105', '10000', 'O', '? ? ? ? ? ', '? ? ? ? ? ', '? ? ? ? ? ', 0, '123', '0000-00-00', '0000-00-00', '0000-00-00'),
 (4, '105', '10000', 'O', 'OSCAR IVAN', 'DIAZ', '   MACEDO', 0, '123', '0000-00-00', '0000-00-00', '0000-00-00'),
@@ -516,6 +516,12 @@ ALTER TABLE `acopcser`
 --
 ALTER TABLE `adpermi`
   ADD PRIMARY KEY (`PNumePerm`);
+
+--
+-- Indices de la tabla `atusuario`
+--
+ALTER TABLE `atusuario`
+  ADD PRIMARY KEY (`UConsecut`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
