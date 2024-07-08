@@ -38,10 +38,11 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
+		
 			<th>No</th>
 			<th>Fecha</th>
-			<th width="15%">Fecha</th>
-			<th colspan="2">Descripción</th>
+			<th width="15%">Fecha Termino</th>
+			<th colspan="2">Tipo Contratación</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -50,13 +51,14 @@
 			<th width="12%">&nbsp;</th>
 		</tr>
 		<?php 
+		
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['ANumeRegi'];
+			  $VC04 = $RegiTabl['AAyuntamiento'];
 			  $VC05 = $RegiTabl['AFechaInicio'];
 			  $VC06 = $RegiTabl['AFechaTermino'];
-			  $VC07 = $RegiTabl['ADenominacion'];
-			  $VC08 = $RegiTabl['AHipervinculo'];
+			  $VC07 = $RegiTabl['ATipoContratacion'];
+			 
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

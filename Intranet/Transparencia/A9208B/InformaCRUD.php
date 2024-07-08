@@ -34,6 +34,8 @@ $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 //$VC09 = $_POST['C09'];  No considera
 $VC10 = $_POST['C10'];
+$VC11 = $_POST['C11'];
+$VC12 = $_POST['C12'];
 
 
 //Agregar campos
@@ -43,21 +45,25 @@ switch ( $CRUD )
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07',".				//Cambiar campo
-								"'$VC08','',$VC10)";		//Cambiar campo
+								 "'$VC06','$VC07',".
+								 "'$VC08','$VC09',".
+								 "'$VC10','$VC11',".				//
+								"'$VC12')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE  a9208b
 ". 						//Cambiar tabla
 					"SET    AConsecutivo = $VC03,". 					//Cambiar campo
-						   "TFechInic = '$VC04',".				//Cambiar campo
-						   "TFechterm = '$VC05', ".				//Cambiar campo
-						   "TFirper = $VC06, ".						//Cambiar campo
-						   "TArea = '$VC07',".				//Cambiar campo
-						   "TActualizacion = '$VC08',".				//Cambiar campo
+						   "AAyuntamiento = '$VC04',".				//Cambiar campo
+						   "TEjercicio = '$VC05', ".				//Cambiar campo
+						   "TFechInic = $VC06, ".						//Cambiar campo
+						   "TFechterm = '$VC07',".				//Cambiar campo
+						   "TFirper = '$VC08',".				//Cambiar campo
 						  //AHipervinculo = '$VC09',".				//No considera 
-				   		   "TFechvalida = $VC10,".					//Cambiar campo
-						   "TNota= '$VC11' ".  					//Cambiar campo
+				   		   "TArea = $VC9,".					//Cambiar campo
+						   "TActualizacion= '$VC10' ".  					//Cambiar campo
+						   "TFechvalida= '$VC11' ". 
+						   "TNota= '$VC12' ".
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo

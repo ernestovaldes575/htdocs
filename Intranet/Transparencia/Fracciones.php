@@ -48,10 +48,10 @@
 			  
 			  $VC07 = $RegiTabl[4];
 			  
-			  $VC08 = ($RegiTabl[5] == -1 ) ? true:false;
-			  $VC09 = ($RegiTabl[6] == -1 ) ? true:false;
-			  $VC10 = ($RegiTabl[7] == -1 ) ? true:false;
-			  $VC11 = ($RegiTabl[8] == -1 ) ? true:false;
+			  $VC08 = ($RegiTabl[5] == -1 ) ? true: false;
+			  $VC09 = ($RegiTabl[6] == -1 ) ? true: false;
+			  $VC10 = ($RegiTabl[7] == -1 ) ? true: false;
+			  $VC11 = ($RegiTabl[8] == -1 ) ? true: false;
 			  $VC12 = $RegiTabl[9] ;
 		?>
 		<tr class="text-center">
