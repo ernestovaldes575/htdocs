@@ -50,14 +50,14 @@
 				</tr>
 				<!-- Inicia campos -->	
 				<tr>
-					<th>Fecha Inicio</th>
+					<th>Fecha Inicio del periodo que se informa</th>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
 				<tr>
-				  <td>Fecha de Termino</td>
+				  <td>Fecha de Termino del periodo que se informa</td>
 				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 				</tr>
@@ -107,43 +107,43 @@
       			</tr>
 				<tr>
         			<td>Sustento legal para cobro</td>				
-        			<td><input type="text" name="C19" id="VC19" value="<?=$VC19?>"></td>
+        			<td><input type="text" name="C19" id="VC19" value="<?=$VC19?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Lugar de pago </td>				
-        			<td><input type="text" name="C20" id="VC20" value="<?=$VC20?>"></td>
+        			<td><input type="text" name="C20" id="VC20" value="<?=$VC20?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Fundamento juridico </td>				
-        			<td><input type="text" name="C21" id="VC21" value="<?=$VC21?>"></td>
+        			<td><input type="text" name="C21" id="VC21" value="<?=$VC21?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Derechos al usuario</td>				
-        			<td><input type="text" name="C22" id="VC22" value="<?=$VC22?>"></td>
+        			<td><input type="text" name="C22" id="VC22" value="<?=$VC22?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Lugar para reportar anomalias </td>				
-        			<td><input type="text" name="C23" id="VC23" value="<?=$VC23?>"></td>
+        			<td><input type="text" name="C23" id="VC23" value="<?=$VC23?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Otros datos</td>				
-        			<td><input type="text" name="C24" id="VC24" value="<?=$VC24?>"></td>
+        			<td><input type="text" name="C24" id="VC24" value="<?=$VC24?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Hipervinculo informacion adicional </td>				
-        			<td><input type="text" name="C25" id="VC25" value="<?=$VC25?>"></td>
+        			<td><input type="text" name="C25" id="VC25" value="<?=$VC25?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Hipervinculo al sistema </td>				
-        			<td><input type="text" name="C26" id="VC26" value="<?=$VC26?>"></td>
+        			<td><input type="text" name="C26" id="VC26" value="<?=$VC26?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Area Responsable </td>				
-        			<td><input type="text" name="C27" id="VC27" value="<?=$VC27?>"></td>
+        			<td><input type="text" name="C27" id="VC27" value="<?=$VC27?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota </td>				
-        			<td><input type="text" name="C28" id="VC28" value="<?=$VC28?>"></td>
+        			<td><input type="text" name="C28" id="VC28" value="<?=$VC28?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 
 			<!-- Termina  campos -->	
