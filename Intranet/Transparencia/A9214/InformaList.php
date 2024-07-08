@@ -39,8 +39,8 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha de inicio</th>
-			<th width="15%">Fecha de termino</th>
+			<th>Fecha Inicio del periodo que se informa</th>
+			<th>Fecha de termino del periodo que se informa</th>
 			<th colspan="2">Tipo de Programa</th>
 			<th width="6%">
 			 <?php 
