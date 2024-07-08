@@ -38,11 +38,9 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
-		
 			<th>No</th>
-			<th>Fecha inicio</th>
-			<th width="15%">Fecha termino</th>
-			<th colspan="2">Firper</th>
+			<th>Fecha Inicio</th>
+			<th width="15%">Fecha Termino</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -53,28 +51,16 @@
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['AAyuntamiento'];
-			  $VC05 = $RegiTabl['TFechInic'];
-			  $VC06 = $RegiTabl['Fechterm'];
-			  $VC07 = $RegiTabl['TFirper'];
-			  
+			  $VC04 = $RegiTabl['TFechInic'];
+			  $VC05 = $RegiTabl['TFechterm'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
+			<td width="13%"><?=$VC03?></td>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
-			<td width="34%"><?=$VC07?></td>
-			<td width="7%">
-			<?php if ( $VC08 != '' ) { ?> 
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

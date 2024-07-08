@@ -56,7 +56,7 @@
 				<tr>
 					<th>Fecha Inicio</th>
 					<td>
-						<input name="C06" id="VC04" type="date" value="<?=$VC06?>" 
+						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	

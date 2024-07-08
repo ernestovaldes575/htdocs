@@ -16,12 +16,12 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = "SELECT AConsecutivo, AFechaInicio, ".
-				  " AFechaTermino, ANombrePrograma, AObjetivo ".
+$InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
+				  "AEjercicio, AFechaInicio, AFechaTermino ".
 				 
 			"FROM a9206a ".
-		//	"WHERE AAyuntamiento = '$ClavAyun' AND ".
-			//	"AEjercicio = $EjerTrab AND  ".
+		//"WHERE AAyuntamiento = '$ClavAyun' AND ".
+		//	"AEjercicio = $EjerTrab AND  ".
 				//  "AConsFrac = $ConsFrac AND ".
 				// "ANumeTrim = '$TrimTrab' ";
 				"ORDER BY AConsecutivo";

@@ -32,42 +32,95 @@ $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
-//$VC09 = $_POST['C09'];  No considera
+$VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
+$VC12 = $_POST['C12'];					//Leer campos
+$VC13 = $_POST['C13'];
+$VC14 = $_POST['C14'];
+$VC15 = $_POST['C15'];
+$VC16 = $_POST['C16'];
+$VC17 = $_POST['C17']; 
+$VC18 = $_POST['C18'];
+$VC19 = $_POST['C19'];
+$VC20 = $_POST['C20'];					//Leer campos
+$VC21 = $_POST['C21'];
+$VC22 = $_POST['C22'];
+$VC23 = $_POST['C23'];
+$VC24 = $_POST['C24'];
+$VC24 = $_POST['C25'];
+$VC26 = $_POST['C26']; 
+$VC27 = $_POST['C27'];
+$VC28 = $_POST['C28'];
+$VC29 = $_POST['C29'];
+$VC30 = $_POST['C30']; 
+$VC31 = $_POST['C31'];
+$VC32 = $_POST['C32'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9203facare ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07',".				//Cambiar campo
-								"'$VC08','',$VC10,'$VC11')";		//Cambiar campo
+		$InstSql = "INSERT INTO a9218 ".	//Cambiar tabla
+				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			
+								 "$ConsFrac,'$TrimTrab',".			
+								 "$VC03,'$VC04','$VC05',".
+								 "$VC06,'$VC07','$VC08',".
+								 "$VC09,'$VC10','$VC11',".
+								 "$VC12,'$VC13','$VC14',".
+								 "$VC15,'$VC16','$VC17',".
+								 "$VC18,'$VC19','$VC20',".
+								 "$VC21,'$VC22','$VC23',".
+								 "$VC24,'$VC25','$VC26',".
+								 "$VC27,'$VC28','$VC29',".
+								 "$VC30,'$VC31','$VC32',)";
+										//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9203facare ". 						//Cambiar tabla
-					"SET    ANumeRegi = $VC03,". 					//Cambiar campo
-						   "AFechaInicio = '$VC04',".				//Cambiar campo
-						   "AFechaTermino = '$VC05', ".				//Cambiar campo
-						   "AArea = $VC06, ".						//Cambiar campo
-						   "ADenominacion = '$VC07',".				//Cambiar campo
-						   "AFunadamento = '$VC08',".				//Cambiar campo
-						  //AHipervinculo = '$VC09',".				//No considera 
-				   		   "AAreaRespon = $VC10,".					//Cambiar campo
-						   "ANota = '$VC11' ".  					//Cambiar campo
+		$InstSql = 	"UPDATE a9218 ". 						//Cambiar tabla
+					"SET    AConsecutivo  = $VC03,". 				
+						   "AAyuntamiento = '$VC04',".			
+						   "AEjercicio = '$VC05', ".			
+						   "AFechaInicio = $VC06, ".					
+						   "AFechaTermino = '$VC07',".			
+						   "ATipoEvento = '$VC08',".			
+						   "ATipoEventoOtro = '$VC09',".				
+				   		   "AAlcanceConcurso = $VC10,".				
+						   "AAlcanceConcursoOtro = '$VC11' ".  
+						   "ATipoCargo = '$VC12',".			
+						   "ATipoCargoOtro = '$VC13', ".			
+						   "AClavePuesto = $VC14, ".					
+						   "ADenominacionPuesto = '$VC15',".			
+						   "ADenominacionCargo = '$VC16',".			
+						   "ADenominacionUnidad= '$VC17',".				
+				   		   "ASalarioBruto = $VC18,".				
+						   "ASalarioNeto = '$VC19' ".
+						   "AFechaPublicacion = '$VC20',".			
+						   "ANumeroConvocatoria = '$VC21', ".			
+						   "AHipervinculoDoc= $VC22, ".					
+						   "AEstadoProcesoCon = '$VC23',".			
+						   "AEstadoProcesoConOtro= '$VC24',".			
+						   "ATotalCandidatos = '$VC25',".				
+				   		   "ANombrePersona = $VC26,".				
+						   "APrimerApelldio = '$VC27' ".
+						   "ASegundoApellido = $VC28, ".					
+						   "AHipervinculoGanador = '$VC29',".			
+						   "AHipervinculoGanadorOtro = '$VC30',".			
+						   "AAreaResp = '$VC31',".				
+				   		   "ANota = $VC32,".				
+						 
+						   
+						   //
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+ 						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9203facare ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM a9218 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+ 						  //"ANumeRegi = $CampBusq";
 	break;	
 }		
 

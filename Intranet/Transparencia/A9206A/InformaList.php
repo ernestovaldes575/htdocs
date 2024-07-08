@@ -39,61 +39,44 @@
 		</tr>
 		<tr>
 		
-			<th>No</th>
-			<th>Fecha inicio</th>
+		<th>No</th>
+			<th>Fecha Inicio</th>
 			<th width="15%">Fecha Termino</th>
-			<th width="15%">Nombre programa</th>
-			<th>Objetivo</th>
-			<th width="6%">
+			<th width="16%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
-			<th width="12%">&nbsp;</th>
+			<th width="13%">&nbsp;</th>
 		</tr>
 		<?php 
-		
-		
-		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['AFechaInicio'];
-			  $VC05 = $RegiTabl['AFechaTermino'];
-			  $VC06 = $RegiTabl['ANombrePrograma'];
-			  $VC07 = $RegiTabl['AObjetivo'];
-			  
-			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
-				  		 "/$NumeFrac/$TrimTrab/";
-		?>
-		<tr>
-			<td width="13%"><?=$VC03?></td>
-			<td width="13%"><?=$VC04?></td>
-			<td><?=$VC05?></td>
-			<td><?=$VC06?></td>
-			<td><?=$VC07?></td>
+		 foreach($ResuSql as $RegiTabl){
+			$VC03 = $RegiTabl['AConsecutivo'];
+			$VC04 = $RegiTabl['AFechaInicio'];
+			$VC05 = $RegiTabl['AFechaTermino'];
 			
-		
-			
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td>
-			<td data-titulo="Eliminar:">
-	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-Eliminar Elim"
-				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
-				<?php } ?>
-			</td>
-			<td data-titulo="Editar: ">
-				<?php if($Modi == "A" ){ ?>
-					<i class="bi bi-pencil-square btn-Modificar Modi" 
-					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
-				<?php } ?>
-			</td>
-		</tr>
-		<?php	?> 
-	</table>
+			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
+						 "/$NumeFrac/$TrimTrab/";
+	  ?>
+	  <tr>
+		  <td width="13%"><?=$VC03?></td>
+		  <td width="13%"><?=$VC04?></td>
+		  <td width="13%"><?=$VC05?></td>
+		  <td data-titulo="Eliminar:">
+				<?php if($Baja == "A"  ) { ?>
+			  <i class="bi bi-x-square btn-Eliminar Elim"
+			  data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
+			  <?php } ?>
+		  </td>
+		  <td data-titulo="Editar: ">
+			  <?php if($Modi == "A" ){ ?>
+				  <i class="bi bi-pencil-square btn-Modificar Modi" 
+				  data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
+			  <?php } ?>
+		  </td>
+	  </tr>
+	  <?php	} ?> 
+  </table>
 </div>	
 
 <?php

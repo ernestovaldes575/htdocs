@@ -17,11 +17,11 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
-				  "AFechaInicio, AFechaTermino, ATipoContratacion ".
+				  "AEjercicio,AFechaInicio, AFechaTermino ".
 				  
 			"FROM   a9211 ".
-			//"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				//  "AEjercicio = $EjerTrab AND  ".
+			"WHERE AAyuntamiento = '$ClavAyun' AND ".
+				 "AEjercicio = $EjerTrab AND  ";
 				//  "AConsFrac = $ConsFrac AND ".
 				//  "ANumeTrim = '$TrimTrab' ";
 			"ORDER BY AConsecutivo";

@@ -37,14 +37,14 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;     $VC04="105";  	$VC05="2024";   $VC06 = 0; 
+$VC03 = 0;     $VC04="";  	$VC05="";   $VC06 = 0; 
 $VC07 = "";    $VC08 = "";    $VC09 = "";     $VC10 = "";
 $VC11 = 0;     $VC12 = "";    $VC13 = "";
 if ($ResuSql)
  { //Carga los campos
    $VC03 = $ResuSql['AConsecutivo'];	
-   $VC04="105";
-   $VC05="2024";
+   $VC04=$ResuSql['AAyuntamiento'];
+   $VC05=$ResuSql['AEjercicio'];
    $VC06=$ResuSql['AFechaInicio']; 
    $VC07=$ResuSql['AFechaTermino']; 
    $VC08=$ResuSql['AArea']; 
@@ -59,9 +59,9 @@ else
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9203 ".
 			  "WHERE AAyuntamiento = '$ClavAyun' AND ".
-				 "AEjercicio = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ".
-				  "ANumeTrim = '$TrimTrab' ";
+				 "AEjercicio = $EjerTrab ";
+				 // "AConsFrac = $ConsFrac AND ".
+				//  "ANumeTrim = '$TrimTrab' ";
          
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);

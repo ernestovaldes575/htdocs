@@ -33,21 +33,22 @@ if ($BandMens)
   $FechTermi = $_POST['C07'];	
   $AArea = $_POST['C08'];	
   $ADenomi = $_POST['C09'];	
-  $AFun = $_POST['C010'];
-  $AHiper = $_POST['C011'];
-  $AAreRes = $_POST['C012'];
-  $ANota = $_POST['C013'];
+  $AFun = $_POST['C10'];
+  $AHiper = $_POST['C11'];
+  $AAreRes = $_POST['C12'];
+  $ANota = $_POST['C13'];
 
   switch ( $TipoMovi )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9203".						//Cambiar tabla
-				   "VALUES (NULL,'$AAyuntamiento','$AEjercicio','$FechInic','$FechTermi', 
+				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
+								 "$ConsFrac,'$TrimTrab',".	"'$AAyuntamiento','$AEjercicio','$FechInic','$FechTermi', 
 							 '$AArea','$ADenomi','$AFun','$AHiper','$AAreRes','$ANota') "; 		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9203 ". 						//Cambiar tabla
-					"SET AConsecutivo ='C03',".
-					"AAyuntamiento  = 'C04',".
+					"SET AConsecutivo =' $AConsecutivo',".
+					"AAyuntamiento  = '$AAyuntamiento',".
 					"AFechaInicio = '$FechInic',".
 					  "AFechaTermino = '$FechTermi',".
 					  "AArea = '$AArea',".
@@ -65,7 +66,7 @@ if ($BandMens)
 		$InstSql = "DELETE FROM a9203 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun'";
 				           "AEjercicio  = $EjerTrab AND ".		
-				  		  "AConsecutivo = $CampBusq AND ";	
+				  		  "AConsecutivo = $CampBusq ";	
 	break;	
 }		
 
