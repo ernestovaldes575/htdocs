@@ -99,7 +99,7 @@ switch ( $CRUD )
 								"'$VC38','$VC39','$VC40','$VC41','$VC42',".
 								"'$VC43','$VC44','$VC45','$VC46','$VC47',".
 								"'$VC48','$VC49','$VC50','$VC51','$VC52',".
-								"'$VC53','$VC54','$VC55','$VC56','$VC57',)";
+								"'$VC53','$VC54','$VC55','$VC56','$VC57')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9214aprogsubci ". 						//Cambiar tabla
@@ -148,7 +148,7 @@ switch ( $CRUD )
 				   		   "PDenomProgr = $VC48,".					
 						   "PSujetReglOp = '$VC49' ".
 						   "PAtenSujetReglOp = $VC50, ".			
-						   "RHipervRegl = '$VC51',".				
+						   "PHipervRegl = '$VC51',".				
 						   "PInformPeriod = '$VC52',".				
 						  "PHipervPadron = '$VC53',".				 
 				   		   "PAreaRespInfo = $VC54,".					
