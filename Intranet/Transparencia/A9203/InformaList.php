@@ -41,8 +41,6 @@
 			<th>No</th>
 			<th>Fecha Inicio</th>
 			<th width="15%">Fecha Termino</th>
-			<th>Area</th>
-			
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -55,8 +53,6 @@
 			  $VC03 = $RegiTabl['AConsecutivo'];
 			  $VC04 = $RegiTabl['AFechaInicio'];
 			  $VC05 = $RegiTabl['AFechaTermino'];
-			  $VC06 = $RegiTabl['AArea'];
-			 
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
@@ -64,16 +60,7 @@
 		<tr>
 			<td width="13%"><?=$VC03?></td>
 			<td width="13%"><?=$VC04?></td>
-			<td><?=$VC05?></td>
-			<td><?=$VC06?></td>
-			
-			<?php if ( $VC08 != '' ) { ?> 
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td>
+			<td width="13%"><?=$VC05?></td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

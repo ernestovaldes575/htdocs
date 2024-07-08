@@ -23,13 +23,13 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT  AConsecutivo, AFechaInicio, AFechaTermino, AArea, ADenominacion,". 
+$InstSql = 	"SELECT  AConsecutivo,	AAyuntamiento, AEjercicio, AFechaInicio, AFechaTermino, AArea, ADenominacion,". 
             "AFundamento,AHipervinculo,AAreaResp, ANota ". 
 				   
 			"FROM  a9203 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				  "AEjercicio = $EjerTrab AND ".
-				  "AConsecutivo = $CampBusq ";
+				  "AEjercicio = $EjerTrab ";
+				 // "AConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 

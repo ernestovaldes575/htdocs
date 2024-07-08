@@ -46,7 +46,9 @@ if ($BandMens)
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9203 ". 						//Cambiar tabla
-					"SET AFechaInicio = '$FechInic',".
+					"SET AConsecutivo ='C03',".
+					"AAyuntamiento  = 'C04',".
+					"AFechaInicio = '$FechInic',".
 					  "AFechaTermino = '$FechTermi',".
 					  "AArea = '$AArea',".
 					  "ADenominacion= '$ADenomi',".
@@ -57,12 +59,13 @@ if ($BandMens)
 					  	
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";			//
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9203 ". 					//Cambiar tabla
-				   "WHERE AConsecutivo = '$ClavAyun'";
+				   "WHERE AAyuntamiento = '$ClavAyun'";
+				           "AEjercicio  = $EjerTrab AND ".		
+				  		  "AConsecutivo = $CampBusq AND ";	
 	break;	
 }		
 
