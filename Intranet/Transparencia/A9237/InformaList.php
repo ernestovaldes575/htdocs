@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Programas de Subsidio, estimulos y Apoyos</title>
+	<title>Convenios de coordinación, de concentración con el sector privado o público</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
@@ -39,9 +39,9 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha Inicio del periodo que se informa</th>
-			<th>Fecha de termino del periodo que se informa</th>
-			<th colspan="2">Tipo de Programa</th>
+			<th>Tipo de Convenio</th>
+			<th>Denominacion del Convenio</th>
+			<th colspan="2">Fecha de firma del Convenio</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -51,20 +51,19 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['PConsecutivo'];
-			  $VC04 = $RegiTabl['PFechInicio'];
-			  $VC05 = $RegiTabl['PFechTerm'];
-			  $VC06 = $RegiTabl['PTipoProg'];
-			  //$VC07 = $RegiTabl['AHipervinculo'];
+			  $VC03 = $RegiTabl['CCConsecutivo'];
+			  $VC08 = $RegiTabl['CCTipoConv'];
+			  $VC09 = $RegiTabl['CCDenom'];
+			  $VC10 = $RegiTabl['CCFechFirma'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
 			<td><?php echo ($VC03); ?></td>
-			<td width="13%"><?=$VC04?></td>
-			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
+			<td width="13%"><?=$VC08?></td>
+			<td width="13%"><?=$VC09?></td>
+			<td><?=$VC10?></td>
 			
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>

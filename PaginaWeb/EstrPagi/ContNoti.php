@@ -1,4 +1,16 @@
+<?php
+    include($_SERVER['DOCUMENT_ROOT'].'../../htdocs/Intranet/Conexion/ConBasPagWeb.php');
 
+    $InstSql =  "SELECT LTitulo, LDescripcion, ".
+                                "LImagen, LAbrirLiDoIm, LAImagDocu, LPublicacion, ".
+                                "6 - ROUND(LENGTH(LDescripcion) / 30) ".
+                        "FROM stlayers ".  
+                        "WHERE LTipoDocu = '04'";
+    
+    $RespSql = $ConeBase->prepare($InstSql);
+    $RespSql->execute();
+    $ResuEjer = $RespSql->fetchAll();
+?>
     <div class="accordion z-0 shadow-lg" id="accordionPanelsStayOpenExample">
         <?php foreach ( $ResNot01 as $RegTab01){
                     $EjerNoti = $RegTab01[0];

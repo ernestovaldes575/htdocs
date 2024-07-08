@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Programas de Subsidio, estimulos y Apoyos</title>
+	<title>Resultados de Dictaminacion de Estados Financieros</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
@@ -41,7 +41,7 @@
 			<th>No</th>
 			<th>Fecha Inicio del periodo que se informa</th>
 			<th>Fecha de termino del periodo que se informa</th>
-			<th colspan="2">Tipo de Programa</th>
+			<th colspan="2">Ejercicio auditado</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -51,10 +51,10 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['PConsecutivo'];
-			  $VC04 = $RegiTabl['PFechInicio'];
-			  $VC05 = $RegiTabl['PFechTerm'];
-			  $VC06 = $RegiTabl['PTipoProg'];
+			  $VC03 = $RegiTabl['RDConsecutivo'];
+			  $VC04 = $RegiTabl['RDFechInicio'];
+			  $VC05 = $RegiTabl['RDFechTerm'];
+			  $VC06 = $RegiTabl['RDEjerAudit'];
 			  //$VC07 = $RegiTabl['AHipervinculo'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".

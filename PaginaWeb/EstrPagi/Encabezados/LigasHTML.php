@@ -14,4 +14,3 @@
     <link rel="stylesheet" href="/layouts/Main_Sec.css">
     <link rel="stylesheet" href="/layouts/Noticias.css">
     <link rel="stylesheet" href="/layouts/Sociales.css">
-    

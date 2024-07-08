@@ -34,7 +34,7 @@ $InstSql = 	"SELECT PConsecutivo, PAyuntam, PEjercicio, PFechInicio, ".
 				   "PProcedQuej, PMecanExigi, PMecanCancel, PPeriodoEvalu, ".
 				   "PMecanEvalu, PInstancia, PHipervResult, PSeguimRecom, ".
 				   "PIndicador, PFormPartSocial, PArticOtroProgr, PAtenArticOtrProgr, ".
-				   "PDenomProgr, PSujetReglOp, PAtenSujetReglOp, RHipervRegl, ".
+				   "PDenomProgr, PSujetReglOp, PAtenSujetReglOp, PHipervRegl, ".
 				   "PInformPeriod, PHipervPadron, PAreaRespInfo, PFechValid, ".
 				   "PFechAct, PNota, PConsFrac, PNumeTrim, PNumeRegi ".
 			"FROM tt9214aprogsubci ".
@@ -108,7 +108,7 @@ if ($ResuSql)
    $VC48 = $ResuSql['PDenomProgr'];
    $VC49 = $ResuSql['PSujetReglOp'];	
    $VC50 = $ResuSql['PAtenSujetReglOp'];
-   $VC51 = $ResuSql['RHipervRegl'];	
+   $VC51 = $ResuSql['PHipervRegl'];	
    $VC52 = $ResuSql['PInformPeriod'];	
    $VC53 = $ResuSql['PHipervPadron'];	
    $VC54 = $ResuSql['PAreaRespInfo'];
