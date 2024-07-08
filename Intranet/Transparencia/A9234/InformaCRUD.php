@@ -44,51 +44,42 @@ $VC17 = $_POST['C17'];
 $VC18 = $_POST['C18'];
 $VC19 = $_POST['C19'];  
 $VC20 = $_POST['C20'];
-$VC21 = $_POST['C21'];
-$VC22 = $_POST['C22'];
-$VC23 = $_POST['C23'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9230resultdicta ".						//Cambiar tabla
+		$InstSql = "INSERT INTO  tt9234estadisticas  ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
 								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17',".
-								"'$VC18','$VC19','$VC20','$VC21','$VC22',".
-								"'$VC23')";
+								"'$VC13','$VC14','$VC15','$VC16','$VC17')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9230resultdicta ". 						//Cambiar tabla
-					"SET    RDFechInicio = $VC06,". 				//Cambiar campo
-						   "RDFechTerm = '$VC07',".				//Cambiar campo
-						   "RDEjerAudit = '$VC08', ".				//Cambiar campo
-						   "RDHipervEdosF = $VC09, ".			//Cambiar campo
-						   "RDFechEmis = '$VC10',".				//Cambiar campo
-						   "RDHipervDictam = '$VC11',".				//Cambiar campo
-						  "RDTotalObserv = '$VC12',".				//No considera 
-				   		   "RDTotalAclar = $VC13,".					//Cambiar campo
-						   "RDTotalSolven = '$VC14', ".  					//Cambiar campo
-						   "RDNomConta = '$VC15',".				//Cambiar campo
-						  "RDApePatConta = '$VC16',".				//No considera 
-				   		   "RDApeMatConta = $VC17,".					//Cambiar campo
-						   "RDDenom = '$VC18', ".
-						   "RDAreaResp = $VC19, ".			
-						   "RDNota = '$VC20',".				 
-				   		   "RDNumeRegi = $VC23 ".	
-					"WHERE RDAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "RDEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RDConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RDNumeRegi = $CampBusq";
+		$InstSql = 	"UPDATE  tt9234estadisticas  ". 					//Cambiar tabla
+					"SET    EFechInicio = $VC06, ". 				//Cambiar campo
+						   "EFechTerm = '$VC07', ".				//Cambiar campo
+						   "ETemaEstad = '$VC08', ".				//Cambiar campo
+						   "EPeriodAct = $VC09, ".			//Cambiar campo
+						   "EDenom = '$VC10', ".				//Cambiar campo
+						   "EHiperVariable = '$VC11', ".				//Cambiar campo
+						  "EHiperDocTecn = '$VC12', ".				//No considera 
+				   		   "ETiposArch = $VC13, ".					//Cambiar campo
+						   "EHipervBaseD = '$VC14', ".  				//Cambiar campo
+						   "EHiperBancos = '$VC15', ".				//Cambiar campo
+						  "EAreaResp = '$VC16', ".				//No considera 
+				   		   "ENota = $VC17 ".					//Cambiar campo							 	
+					"WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "EEjercicio = $EjerTrab AND ".			//Cambiar campo
+				  		  "EConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "ENumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9230resultdicta ". 					//Cambiar tabla
-				   "WHERE RDAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "RDEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RDConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RDNumeRegi = $CampBusq";
+		$InstSql = "DELETE FROM  tt9234estadisticas  ". 					//Cambiar tabla
+				   "WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "EEjercicio = $EjerTrab AND ".			//Cambiar campo
+				  		  "EConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "ENumeRegi = $CampBusq";
 	break;	
 }		
 
