@@ -10,7 +10,7 @@ if(isset($_COOKIE['CBusqMae'])){
 }
 	
 	//!Servidor
-	// $contraseña = 'E9TQE4QXOP3A';
+	// $contraseña = 'ECPTW5FPST1U';
 	// $user = 'difzinac_intranet';
 	// $dbname = 'difzinac_paginaweb';
 

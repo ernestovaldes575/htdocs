@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2024 a las 19:39:10
+-- Tiempo de generación: 04-07-2024 a las 22:00:07
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -222,19 +222,9 @@ CREATE TABLE `ttfracarea` (
 
 INSERT INTO `ttfracarea` (`FAConsecutivo`, `FAAyuntamiento`, `FAEjercicio`, `FAUnidad`, `FAFraccion`, `FAInciso`, `FASubinciso`, `FAPeriRepo`, `FATrimes01`, `FATrimes02`, `FATrimes03`, `FATrimes04`) VALUES
 (1, '105', 2024, 48, '92', '03', '', 'A', 0, -1, -1, -1),
-(2, '105', 2024, 6, '92', '1', '', 'T', -1, -1, -1, -1),
-(3, '105', 2024, 1, '92', '1', '', 'T', -1, -1, -1, -1),
-(7, '105', 2024, 5, '92', '1', '', 'T', -1, -1, -1, -1),
 (8, '105', 2024, 48, '92', '1', '', 'T', -1, -1, -1, -1),
-(9, '105', 2024, 2, '92', '1', '', 'T', -1, -1, -1, -1),
-(10, '105', 2024, 3, '92', '1', '', 'T', -1, -1, -1, -1),
-(11, '105', 2024, 1, '92', '9', '', 'T', -1, -1, -1, -1),
-(12, '105', 2024, 58, '92', '1', '', 'T', -1, -1, -1, -1),
-(13, '105', 2024, 30, '92', '1', '', 'T', -1, -1, -1, -1),
-(14, '105', 2024, 8, '92', '1', '', 'T', -1, -1, -1, -1),
-(15, '105', 2024, 37, '92', '5', '', 'A', -1, -1, -1, -1),
-(16, '105', 2024, 37, '92', '2', '', 'T', -1, -1, -1, -1),
-(17, '105', 2024, 37, '92', '8', '', 'T', -1, -1, -1, -1);
+(18, '105', 2024, 48, '92', '27', '', '', -1, -1, -1, -1),
+(19, '105', 2024, 48, '92', '27', '', '', -1, -1, -1, -1);
 
 -- --------------------------------------------------------
 
@@ -442,7 +432,7 @@ ALTER TABLE `tcarea`
 -- AUTO_INCREMENT de la tabla `ttfracarea`
 --
 ALTER TABLE `ttfracarea`
-  MODIFY `FAConsecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `FAConsecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

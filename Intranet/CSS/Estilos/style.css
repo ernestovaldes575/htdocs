@@ -12403,7 +12403,7 @@ textarea.form-control-lg {
 }
 
 .logoveda, .logo-simga {
-  width: 18%;
+  width: 5%;
 }
 
 header img {
@@ -12415,6 +12415,14 @@ header img {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 9.5em;
+}
+
+.LogoEscu {
+  width: 5%;
+}
+
+.logo-mur {
+  width: 5%;
 }
 
 .contenedor-tabla {
