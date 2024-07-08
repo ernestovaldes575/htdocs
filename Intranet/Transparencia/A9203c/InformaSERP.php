@@ -23,11 +23,11 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT  AConsecutivo, AFechaInicio, AFechaTermino, AArea, ADenominacion,". 
-            "AFundamento,AHipervinculo,AAreaResp, ANota ". 
-				   
-			"FROM  a9203 ".
-			"WHERE AAyuntamiento = '$ClavAyun' AND ".
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ". //Cambiar campo
+				   "ADenominacion, AFunadamento, AHipervinculo, ".
+				   "AAreaRespon, ANota ".
+			"FROM  tt9203facare ".									//Cambiar Tabla	
+			"WHERE AAyuntamiento = '$ClavAyun' AND ".				//Cambiar Condicion
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
 			
@@ -37,27 +37,25 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;     $VC04="105";  	$VC05="2024";   $VC06 = 0; 
-$VC07 = "";    $VC08 = "";    $VC09 = "";     $VC10 = "";
-$VC11 = 0;     $VC12 = "";    $VC13 = "";
+$VC03 = 0;   $VC04 = ""; $VC05 = "";							//Definir campos
+$VC06 = 0;   $VC07 = ""; $VC08 = "";
+$VC09 = "";  $VC10 = 0; $VC11 = "";
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['AConsecutivo'];	
-   $VC04="105";
-   $VC05="2024";
-   $VC06=$ResuSql['AFechaInicio']; 
-   $VC07=$ResuSql['AFechaTermino']; 
-   $VC08=$ResuSql['AArea']; 
-   $VC09=$ResuSql['ADenominacion']; 
-   $VC10=$ResuSql['AFundamento']; 
-   $VC11=$ResuSql['AHipervinculo']; 
-   $VC12=$ResuSql['AAreaResp']; 
-   $VC13=$ResuSql['ANota'];	
+   $VC03 = $ResuSql['ANumeRegi'];								//Cambiar 	
+   $VC04 = $ResuSql['AFechaInicio'];	
+   $VC05 = $ResuSql['AFechaTermino'];
+   $VC06 = $ResuSql['AArea'];
+   $VC07 = $ResuSql['ADenominacion'];
+   $VC08 = $ResuSql['AFunadamento'];
+   $VC09 = $ResuSql['AHipervinculo'];
+   $VC10 = $ResuSql['AAreaRespon'];	
+   $VC11 = $ResuSql['ANota'];		
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9203 ".
+	 		   "FROM  tt9203facare ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

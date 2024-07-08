@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------
 
-//Funcion de alta 
+///Funcion de alta 
 document.addEventListener('click', 
 function (event) { 
 	 if (event.target.classList.contains('Nuev')) {

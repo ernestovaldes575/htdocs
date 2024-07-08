@@ -22,9 +22,9 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td>No <?=$EjerTrab?></td>
-			<td>Fecha Inicio</td>	
-			<td>Fecha Termino</td>
+			<td>Ejercicio: <?=$EjerTrab?></td>
+			<td>Fraccion: <?=$NumeFrac?></td>
+			<td>Trimestre:
             <?=$TrimTrab?></td>
 			<td colspan="2">Inc
 		    iso:
@@ -39,10 +39,9 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha Inicio</th>
-			<th width="15%">Fecha Termino</th>
-
-			<th colspan="2">Descripción</th>
+			<th>Fecha</th>
+			<th width="15%">Fecha</th>			 <!--Modificar--> 
+			<th colspan="2">Descripción</th>	 <!--Modificar--> 
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -52,19 +51,22 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['AFechaInicio'];
-			  $VC05 = $RegiTabl['AFechaTermino'];
-			 
+			  $VC03 = $RegiTabl['AConsecutivo'];	 //Modificar
+			  $VC04 = $RegiTabl['ANumeRegi'];		 //Modificar
+			  $VC05 = $RegiTabl['AFechaInicio'];	 //Modificar
+			  $VC06 = $RegiTabl['AFechaTermino'];	 //Modificar
+			  $VC07 = $RegiTabl['ADenominacion'];	 //Modificar 
+			  $VC08 = $RegiTabl['AHipervinculo'];	 //Modificar
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td width="13%"><?=$VC03?></td>
-			<td width="13%"><?=$VC04?></td>
-			<td><?=$VC05?></td>
-			
+			<td width="13%"><?=$VC04?></td>			 <!--Modificar--> 
+			<td width="13%"><?=$VC05?></td>			 <!--Modificar--> 
+			<td><?=$VC06?></td>						 <!--Modificar--> 
+			<td width="34%"><?=$VC07?></td>
+			<td width="7%">
 			<?php if ( $VC08 != '' ) { ?> 
 				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 				<i class="bi bi-eye-fill fs-1 text-success"></i>

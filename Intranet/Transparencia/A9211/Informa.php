@@ -56,38 +56,60 @@
 				<tr>
 					<th>Fecha Inicio</th>
 					<td>
-						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
+						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
-				<tr>
-					<td></td>
-					<td>
-						
-					</td>
+				
 				</tr>
 				<tr>
 				  <td>Fecha de Termino</td>
-				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
+				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Denominacion</td>
-				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Fundamento</td>
+				  <td>Tipo Contratacion</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+				<tr>
+				  <td>Tipo Contratacion Otro</td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Partida Presupuestal</td>
+				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
 			  <tr>
-				  <td>Hipervinculo</td>
+				  <td>Nombre</td>
+				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Primer Apellido</td>
+				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Segundo Apellido</td>
+				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Numero Contrato</td>
+				  <td><input name="C14" id="VC14" type="int" value="<?=$VC14?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  
+			  <tr>
+				  <td>Hipervinculo Con</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -98,8 +120,8 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
-							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+	 					   if ( $VC15 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC15?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 
 						} //} else {?>
@@ -107,13 +129,55 @@
 				  
 			  </tr>
 				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+				  <td>Fecha Inicio Con</td>
+				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+
+			  <tr>
+				  <td>Fecha Termino Con</td>
+				  <td><input name="C17" id="VC17" type="text" value="<?=$VC17?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Servicios Contra</td>
+				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Remuneracion</td>
+				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Monto Total</td>
+				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Prestaciones</td>
+				  <td><input name="C21" id="VC21" type="text" value="<?=$VC21?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			  <tr>
+				  <td>Hipervinculo</td>
+				  <td><input name="C22" id="VC22" type="text" value="<?=$VC22?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
 				<tr>
+				  <td>Area Responsable</td>
+				  <td><input name="C23" id="VC23" type="text" value="<?=$VC23?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
 				  <td>Nota</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+				  <td><input name="C24" id="VC24" type="text" value="<?=$VC24?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	

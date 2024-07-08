@@ -32,38 +32,45 @@ $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
-//$VC09 = $_POST['C09'];  No considera
+$VC09 = $_POST['C09']; // No considera
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
+$VC12 = $_POST['C12'];
+$VC13 = $_POST['C13'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9203facare ".						//Cambiar tabla
+		$InstSql = "INSERT INTO a9214b".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07',".				//Cambiar campo
-								"'$VC08','',$VC10,'$VC11')";		//Cambiar campo
+								 "'$VC06','$VC07',".
+								 "'$VC08','$VC09',".				//Cambiar campo
+								 				//Cambiar campo
+								"'$VC10','$VC11','$VC12','$VC13')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9203facare ". 						//Cambiar tabla
-					"SET    ANumeRegi = $VC03,". 					//Cambiar campo
-						   "AFechaInicio = '$VC04',".				//Cambiar campo
-						   "AFechaTermino = '$VC05', ".				//Cambiar campo
-						   "AArea = $VC06, ".						//Cambiar campo
-						   "ADenominacion = '$VC07',".				//Cambiar campo
-						   "AFunadamento = '$VC08',".				//Cambiar campo
-						  //AHipervinculo = '$VC09',".				//No considera 
-				   		   "AAreaRespon = $VC10,".					//Cambiar campo
-						   "ANota = '$VC11' ".  					//Cambiar campo
+		$InstSql = 	"UPDATE a9214b". 						//Cambiar tabla
+					"SET    AConsecutivo  = $VC03,". 					//Cambiar campo
+						   "PNombrepers = '$VC04',".				//Cambiar campo
+						   "PPrimerapellido = '$VC05', ".				//Cambiar campo
+						   "PSegundoapellido = $VC06, ".						//Cambiar campo
+						   "PDenominasocial = '$VC07',".				//Cambiar campo
+						   "PMontorecursos = '$VC08',".		//Cambiar 						
+				   		   "PUnidadterritorial = $VC09,".					//Cambiar campo
+						   "PEdad= '$VC10' ". 
+						   "PSexo = '$VC11' ".
+						  
+						    "PSexootro = '$VC13' ".
+						    					//Cambiar campo
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
  						  "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9203facare ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM a9214b". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo

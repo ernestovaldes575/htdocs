@@ -16,15 +16,13 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = "SELECT AConsecutivo, ANumeRegi, ".						//Modificar campos
-				  "AFechaInicio, AFechaTermino, ADenominacion, ".
-				  "AHipervinculo ".
-			"FROM  tt9203facare ".									//Modifica tabla
-			"WHERE AAyuntamiento = '$ClavAyun' AND ".				//Modifica condicion
-				  "AEjercicio = $EjerTrab AND  ".					
-				  "AConsFrac = $ConsFrac AND ".
-				  "ANumeTrim = '$TrimTrab' ";
-			
+$InstSql = "SELECT AConsecutivo, AAyuntamiento, AEjercicio, ".       "AFechaInicio, AFechaTermino ".
+			"FROM  a9203 ".
+			"WHERE AAyuntamiento = '$ClavAyun' ".
+				 "AEjercicio = $EjerTrab ".
+				 // "AConsFrac = $ConsFrac AND ".
+				//"ANumeTrim = '$TrimTrab' ";
+			"ORDER BY AConsecutivo";
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);

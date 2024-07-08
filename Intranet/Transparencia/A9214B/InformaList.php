@@ -38,10 +38,11 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
+		
 			<th>No</th>
-			<th>Fecha</th>
-			<th width="15%">Fecha</th>
-			<th colspan="2">Descripción</th>
+			<th>Nombre persona</th>
+			<th width="15%">Primer apellido</th>
+			<th colspan="2">Segundo apellido</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -49,14 +50,14 @@
               <?php } ?>            </th>
 			<th width="12%">&nbsp;</th>
 		</tr>
-		<?php 
+		<?php
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['ANumeRegi'];
-			  $VC05 = $RegiTabl['AFechaInicio'];
-			  $VC06 = $RegiTabl['AFechaTermino'];
-			  $VC07 = $RegiTabl['ADenominacion'];
-			  $VC08 = $RegiTabl['AHipervinculo'];
+			  $VC04 = $RegiTabl['PNumero'];
+			  $VC05 = $RegiTabl['PNombrepers'];
+			  $VC06 = $RegiTabl['PPrimerapellido'];
+			  $VC07 = $RegiTabl['PSegundoapellido'];
+			  $VC08 = $RegiTabl['PDenominasocial'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";

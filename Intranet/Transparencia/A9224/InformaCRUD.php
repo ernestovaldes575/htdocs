@@ -51,7 +51,7 @@ $VC24 = $_POST['C24'];
 $VC25 = $_POST['C25'];
 $VC26 = $_POST['C26'];  
 $VC27 = $_POST['C27'];
-$VC18 = $_POST['C28'];
+$VC28 = $_POST['C28'];
 
 //Agregar campos
 switch ( $CRUD )
@@ -59,14 +59,14 @@ switch ( $CRUD )
 		$InstSql = "INSERT INTO tt9224tramreq ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
+								 "'$VC03','$VC04','$VC05',".			//Cambiar campo
 								 "'$VC06','$VC07','$VC08',".		//Cambiar campo
 								"'$VC09','$VC10','$VC11',". 	    //Cambiar campo
-								"'$VC12','$VC13','$VC14',)".
-								"'$VC15','$VC16','$VC17',)".
-								"'$VC18','$VC19','$VC20',)".
-								"'$VC21','$VC22','$VC23',)".
-								"'$VC24','$VC25','$VC26',)".
+								"'$VC12','$VC13','$VC14',".
+								"'$VC15','$VC16','$VC17',".
+								"'$VC18','$VC19','$VC20',".
+								"'$VC21','$VC22','$VC23',".
+								"'$VC24','$VC25','$VC26',".
 								"'$VC27','$VC28','$VC29')";
 		break;
 	case "PUT": //Cambio

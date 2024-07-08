@@ -44,8 +44,7 @@
 							Regresar
 						</a>
 					</td>
-				</tr>
-				<!-- Inicia campos -->
+				</tr>	
 				<tr>
 					<th>No</th>
 					<td>
@@ -53,56 +52,39 @@
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
-				
 				<tr>
 					<th>Fecha Inicio</th>
 					<td>
-						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
+						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
-
+				<tr>
+					<td></td>
+					<td>
+						
+					</td>
+				</tr>
 				<tr>
 				  <td>Fecha de Termino</td>
-				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
+				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Area</td>
-				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Denominacion</td>
-				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Fundamento</td>
-				  <td><input name="C10 id="VC10 type="text" value="<?=$VC10?>" 
+				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-
-			  <tr>
-				  <td>Hipervinculo</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <tr>
-				  <td>Nota</td>
-				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  
-
 			  <tr>
 				  <td>Hipervinculo</td>
 				  <td>				
@@ -122,9 +104,17 @@
 						} //} else {?>
 				  </td>
 				  
-			
 			  </tr>
-			<!-- Termina  campos -->	
+				<tr>
+				  <td>Area Responsable</td>
+				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Nota</td>
+				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
 				<tr>
 				  <td></td>
 				  <td><button type="submit" name="Enviar" placeholder="Registrar"
