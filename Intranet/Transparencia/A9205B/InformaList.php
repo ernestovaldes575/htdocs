@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registro solicitudes de acceso</title>
+	<title>Matriz de Indicadores para Resultados relacionados con temas de Interes Público</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
@@ -40,8 +40,8 @@
 		<tr>
 			<th>No</th>
 			<th>Fecha de inicio del periodo que se informa</th>
-			<th width="15%">Fecha de termino del periodo que se informa</th>
-			<th colspan="2">Fecha de solicitud</th>
+			<th>Fecha de termino del periodo que se informa</th>
+			<th colspan="2">Fecha de validación de la información</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -51,10 +51,10 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['RSConsecutivo'];
-			  $VC04 = $RegiTabl['RSFechInicio'];
-			  $VC05 = $RegiTabl['RSFechTerm'];
-			  $VC06 = $RegiTabl['RSFechSoli'];
+			  $VC03 = $RegiTabl['MConsecutivo'];
+			  $VC04 = $RegiTabl['MFechInicio'];
+			  $VC05 = $RegiTabl['MFechTerm'];
+			  $VC11 = $RegiTabl['MFechValid'];
 			  //$VC07 = $RegiTabl['AHipervinculo'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
@@ -64,7 +64,7 @@
 			<td><?php echo ($VC03); ?></td>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
+			<td><?=$VC11?></td>
 			
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
