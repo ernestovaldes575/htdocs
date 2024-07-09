@@ -12432,6 +12432,10 @@ header img {
   width: 55%;
 }
 
+body {
+  background-color: #f4f6f9;
+}
+
 :root {
   --negro:#393939;
   --tipo-principal:Helvetica,Arial,sans-serif;
