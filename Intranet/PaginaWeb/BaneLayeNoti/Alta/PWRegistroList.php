@@ -1,7 +1,7 @@
 <?php
 	$Titulo = "Facultades de área";
 	include '../../../components/encabezado.php';
-	include '../../../components/EncaPrin.php'
+	include '../../../components/EncaPrin.php';
 ?>
 <script src="PWRegistro.js"></script>
 <body>
