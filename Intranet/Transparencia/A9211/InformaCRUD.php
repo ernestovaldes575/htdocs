@@ -73,8 +73,8 @@ switch ( $CRUD )
 						 "ATipoContratacionOtro = '$VC09',".				
 						 "APartidaPresupuestal = '$VC10',".				//
 						 "ANombre = '$VC11',".	
-				   		 "APrimerApellido = $VC12,".					
-						 "ASegundoApellido = '$VC13' ". 
+				   		 "APrimerApellido = '$VC12',".					
+						 "ASegundoApellido = '$VC13', ". 
 						 "ANumeroContrato = '$VC14',".				
 						 "AHipervinculoCon= '$VC15',".	
 				   		 "AFechaInicioCon= $VC16,".					
@@ -85,11 +85,11 @@ switch ( $CRUD )
 						 "APrestaciones = '$VC21' ". 
 						 "AHipervinculo = '$VC22',".				
 						 "AAreaResp = '$VC23',".				
-				   		 "ANota = $VC24,".					//
+				   		 "ANota = $VC24 ".					//
 						  					//
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
  						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar

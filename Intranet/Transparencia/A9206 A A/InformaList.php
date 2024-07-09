@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head> 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script src="InformaList.js"></script>
 <body>
@@ -42,7 +38,8 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th width="15%">Fecha Termino</th>
-			<th width="16%">
+			<th colspan="2">Nombre programa</th>
+			<th width="15%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
@@ -54,6 +51,7 @@
 			$VC03 = $RegiTabl['AConsecutivo'];
 			$VC04 = $RegiTabl['AFechaInicio'];
 			$VC05 = $RegiTabl['AFechaTermino'];
+			$VC06 = $RegiTabl['ANombrePrograma'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";
@@ -62,6 +60,8 @@
 		  <td width="13%"><?=$VC03?></td>
 		  <td width="13%"><?=$VC04?></td>
 		  <td width="13%"><?=$VC05?></td>
+		  <td width="20%"><?=$VC06?></td>
+		
 		  <td data-titulo="Eliminar:">
 				<?php if($Baja == "A"  ) { ?>
 			  <i class="bi bi-x-square btn-Eliminar Elim"

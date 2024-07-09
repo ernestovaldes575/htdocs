@@ -43,7 +43,7 @@ $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
 $VC03 = 0;   $VC04 = "";  $VC05 = "";  $VC06 = "";  $VC07 = "";  $VC08 = "";
-$VC09 = 0;   $VC10 = "";  $VC11 = "";  $VC12 = "";  $VC12 = "";  $VC14 = "";
+$VC09 = 0;   $VC10 = "";  $VC11 = "";  $VC12 = "";  $VC13 = "";  $VC14 = "";
 $VC15 = "";  $VC16 = "";  $VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";
 $VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";   
 if ($ResuSql)
@@ -77,8 +77,8 @@ else
 	 		   "FROM   a9211 ".
 			    "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				 "AEjercicio = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ";
-				  //"ANumeTrim = '$TrimTrab' ";
+				  "AConsFrac = $ConsFrac AND ".
+				  "ANumeTrim = '$TrimTrab' ";
          
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);

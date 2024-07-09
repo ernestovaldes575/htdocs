@@ -20,9 +20,9 @@ $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
                    " AEjercicio,AFechaInicio, AFechaTermino ".
 			"FROM  a9203 ".
 			"WHERE AAyuntamiento = '$ClavAyun' ".
-				 "AEjercicio = '$EjerTrab' ";
-				 // "AConsFrac = $ConsFrac AND ".
-				//"ANumeTrim = '$TrimTrab' ";
+				 "AEjercicio = '$EjerTrab' ".
+				  "AConsFrac = $ConsFrac AND ".
+				 "ANumeTrim = '$TrimTrab' ";
 			
 			
 if ($BandMens)  
