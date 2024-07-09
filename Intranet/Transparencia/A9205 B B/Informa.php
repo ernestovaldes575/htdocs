@@ -50,7 +50,7 @@
 				</tr>
 				<!-- Inicia campos -->	
 				<tr>
-					<th>Fecha Inicio del periodo que se informa</th>
+					<td>Fecha Inicio del periodo que se informa</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
@@ -75,7 +75,7 @@
       			</tr>
 				<tr>
         			<td>Fecha de actualización de la información</td>				
-        			<td><input type="text" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="date" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota</td>				
