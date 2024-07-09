@@ -4,7 +4,6 @@
 	include '../../../components/EncaPrin.php'
 ?>
 <script src="PWRegistro.js"></script>
-
 <body>
 	<header class="shadow mb-4 bg-white">
 		<?php
@@ -194,5 +193,4 @@
 	//require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/PiePagi.php'); 
 	?>
 </body>
-
 </html>
