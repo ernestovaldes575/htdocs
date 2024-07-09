@@ -58,9 +58,9 @@ switch ( $CRUD )
 						   "MAreaResp = '$VC09', ".					//Cambiar campo
 						   "MFechAct = '$VC10',".				//Cambiar campo
 						   "MFechValid = '$VC11',".				//Cambiar campo
-						   "MNota = '$VC12', ";				//No considera 
-				   		   //"MConsFrac = '$VC13',".					//Cambiar campo
-						   //"MNumeTrim = '$VC14', ".  					//Cambiar campo
+						   "MNota = '$VC12', ".				//No considera 
+				   		   "MConsFrac = '$VC13',".					//Cambiar campo
+						   "MNumeTrim = '$VC14', ".  					//Cambiar campo
 						   "MNumeRegi = '$VC15' ";				//Cambiar campo
 					"WHERE MAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "MEjercicio = $EjerTrab AND ".			//Cambiar campo

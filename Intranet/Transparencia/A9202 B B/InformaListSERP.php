@@ -17,12 +17,12 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT OConsecutivo, OAyuntam, ".
-				  "OEjercicio, OFechInicio, OFechTerm ".
+				  "OEjercicio, OFechInicio, OFechTerm, OFechValid ".
 			"FROM  tt9202borgan ".
 			"WHERE OAyuntam = '$ClavAyun' AND ".
-				  "OEjercicio = $EjerTrab AND  ";
-				  //"AConsFrac = $ConsFrac AND ".
-				  //"ANumeTrim = '$TrimTrab' ";
+				  "OEjercicio = $EjerTrab AND  ".
+				  "OConsFrac = $ConsFrac AND ".
+				  "ONumeTrim = '$TrimTrab' ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 

@@ -25,12 +25,11 @@ $CRUD = "GET";
 //Carga el registro para Consulta
 $InstSql = 	"SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, ".
 				   "OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ".
-				   "ONota ".
+				   "ONota, ONumeRegi ".
 			"FROM  tt9202borgan ".
 			"WHERE OAyuntam = '$ClavAyun' AND ".
 				"OEjercicio = $EjerTrab AND ".
-				"OConsecutivo = $CampBusq ".
-      "ORDER BY OConsecutivo ";
+				"OConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -38,10 +37,11 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = ""; $VC05 = "";
-$VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0;  $VC11 = "";
-$VC11 = "";
+$VC03 = "";   $VC04 = "105"; $VC05 = "2024";
+$VC06 = "";   $VC07 = "";    $VC08 = "";
+$VC09 = "";   $VC10 = "";    $VC11 = "";
+$VC12 = "";   $VC13 = "";   $VC14 = "";    
+$VC15 = "";
 if ($ResuSql)
  { //Carga los campos
    $VC03 = $ResuSql['OConsecutivo'];	
@@ -54,15 +54,18 @@ if ($ResuSql)
    $VC10 = $ResuSql['OFechAct'];	
    $VC11 = $ResuSql['OFechValid'];
    $VC12 = $ResuSql['ONota'];		
+   $VC13 = $ResuSql['OConsFrac'];	
+   $VC14 = $ResuSql['ONumeTrim'];
+   $VC15 = $ResuSql['ONumeRegi'];	
  } 
 else
  { //Busca el sisguiente registro
-	$InstSql = "SELECT CASE WHEN MAX(OConsecutivo) IS  NULL THEN 1 ELSE  MAX(OConsecutivo) + 1 END  AS Clave ".
+	$InstSql = "SELECT CASE WHEN MAX(ONumeRegi) IS  NULL THEN 1 ELSE  MAX(ONumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  tt9202borgan ".
-			   "WHERE OAyuntamiento = '$ClavAyun' AND ".
-				  "OEjercicio = $EjerTrab AND ";
-				  //"AConsFrac = $ConsFrac AND ".
-				  //"ANumeTrim = '$TrimTrab' ";
+			   "WHERE OAyuntam = '$ClavAyun' AND ".
+				  "OEjercicio = $EjerTrab AND ".
+				  "OConsFrac = $ConsFrac AND ".
+				  "ONumeTrim = '$TrimTrab' ";
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();

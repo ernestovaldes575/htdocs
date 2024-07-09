@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
+	<title>Organigrama</title>
 	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="/Intranet/Css/style.css">
 </head>
@@ -40,7 +40,8 @@
 		<tr>
 			<th>No</th>
 			<th>Fecha Inicio</th>
-			<th width="15%">Fecha Termino</th>
+			<th>Fecha Termino</th>
+			<th colspan="2">Fecha de validación de la información</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -53,6 +54,7 @@
 			  $VC03 = $RegiTabl['OConsecutivo'];
 			  $VC04 = $RegiTabl['OFechaInicio'];
 			  $VC05 = $RegiTabl['OFechaTerm'];
+			  $VC11 = $RegiTabl['OFechValid'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
@@ -61,6 +63,7 @@
 			<td width="13%"><?=$VC03?></td>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
+			<td width="13%"><?=$VC11?></td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"
