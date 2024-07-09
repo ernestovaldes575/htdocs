@@ -62,22 +62,22 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9230resultdicta ". 						//Cambiar tabla
-					"SET    RDFechInicio = $VC06,". 				//Cambiar campo
+					"SET    RDFechInicio = '$VC06',". 				//Cambiar campo
 						   "RDFechTerm = '$VC07',".				//Cambiar campo
 						   "RDEjerAudit = '$VC08', ".				//Cambiar campo
-						   "RDHipervEdosF = $VC09, ".			//Cambiar campo
+						   "RDHipervEdosF = '$VC09', ".			//Cambiar campo
 						   "RDFechEmis = '$VC10',".				//Cambiar campo
 						   "RDHipervDictam = '$VC11',".				//Cambiar campo
 						  "RDTotalObserv = '$VC12',".				//No considera 
-				   		   "RDTotalAclar = $VC13,".					//Cambiar campo
-						   "RDTotalSolven = '$VC14', ".  					//Cambiar campo
+				   		   "RDTotalAclar = '$VC13',".					//Cambiar campo
+						   "RDTotalSolven = '$VC14', ".  			//Cambiar campo
 						   "RDNomConta = '$VC15',".				//Cambiar campo
 						  "RDApePatConta = '$VC16',".				//No considera 
-				   		   "RDApeMatConta = $VC17,".					//Cambiar campo
+				   		   "RDApeMatConta = '$VC17',".					//Cambiar campo
 						   "RDDenom = '$VC18', ".
-						   "RDAreaResp = $VC19, ".			
+						   "RDAreaResp = '$VC19', ".			
 						   "RDNota = '$VC20',".				 
-				   		   "RDNumeRegi = $VC23 ".	
+				   		   "RDNumeRegi = '$VC23' ".	
 					"WHERE RDAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "RDEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "RDConsecutivo = $CampBusq AND ".			//Cambiar campo

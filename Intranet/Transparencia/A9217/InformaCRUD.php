@@ -58,18 +58,18 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9217regisolic ". 						//Cambiar tabla
-					"SET    RSFechInicio = $VC06,". 				//Cambiar campo
+					"SET    RSFechInicio = '$VC06',". 				//Cambiar campo
 						   "RSFechTerm = '$VC07',".				//Cambiar campo
 						   "RSFechSoli = '$VC08', ".				//Cambiar campo
-						   "RSFolioSoli = $VC09, ".						//Cambiar campo
+						   "RSFolioSoli = '$VC09', ".					//Cambiar campo
 						   "RSInfoReq = '$VC10',".				//Cambiar campo
 						   "RSRespuesta = '$VC11',".				//Cambiar campo
 						  "RSRecurrida = '$VC12',".				//No considera 
-				   		   "RSRecurrOtro = $VC13,".					//Cambiar campo
-						   "RSDocs = '$VC14' ".  					//Cambiar campo
+				   		   "RSRecurrOtro = '$VC13',".					//Cambiar campo
+						   "RSDocs = '$VC14', ".  					//Cambiar campo
 						   "RSTipoSoli = '$VC15',".				//Cambiar campo
 						  "RSTipoSoliOtro = '$VC16',".				//No considera 
-				   		   "RSAreaResp = $VC17,".					//Cambiar campo
+				   		   "RSAreaResp = '$VC17',".					//Cambiar campo
 						   "RSNota = '$VC18' ".
 					"WHERE RSAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "RSEjercicio = $EjerTrab AND ".			//Cambiar campo

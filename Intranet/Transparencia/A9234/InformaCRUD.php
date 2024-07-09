@@ -57,22 +57,22 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE  tt9234estadisticas  ". 					//Cambiar tabla
-					"SET    EFechInicio = $VC06, ". 				//Cambiar campo
+					"SET    EFechInicio = '$VC06', ". 				//Cambiar campo
 						   "EFechTerm = '$VC07', ".				//Cambiar campo
 						   "ETemaEstad = '$VC08', ".				//Cambiar campo
-						   "EPeriodAct = $VC09, ".			//Cambiar campo
+						   "EPeriodAct = '$VC09', ".			//Cambiar campo
 						   "EDenom = '$VC10', ".				//Cambiar campo
 						   "EHiperVariable = '$VC11', ".				//Cambiar campo
 						  "EHiperDocTecn = '$VC12', ".				//No considera 
-				   		   "ETiposArch = $VC13, ".					//Cambiar campo
+				   		   "ETiposArch = '$VC13', ".					//Cambiar campo
 						   "EHipervBaseD = '$VC14', ".  				//Cambiar campo
 						   "EHiperBancos = '$VC15', ".				//Cambiar campo
 						  "EAreaResp = '$VC16', ".				//No considera 
-				   		   "ENota = $VC17 ".					//Cambiar campo							 	
+				   		   "ENota = '$VC17', ".					//Cambiar campo							 	
 					"WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "EEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "EConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ENumeRegi = $CampBusq";
+						  "EEjercicio = '$EjerTrab' AND ".			//Cambiar campo
+				  		  "EConsecutivo = '$CampBusq' AND ".			//Cambiar campo
+ 						  "ENumeRegi = '$CampBusq'";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM  tt9234estadisticas  ". 					//Cambiar tabla
