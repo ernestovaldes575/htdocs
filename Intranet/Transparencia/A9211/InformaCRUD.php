@@ -53,7 +53,7 @@ $VC24 = $_POST['C24'];
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9211 ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
+				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//
 								 "$VC03,'$VC04','$VC05',".	
 								 "$VC06,'$VC07','$VC08',".
@@ -66,38 +66,38 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9211 ". 						//Cambiar tabla
-					"SET    AConsecutivo  = $VC03,". 					//Cambiar campo
-						   "AFechaInicio= '$VC06',".				//Cambiar campo
-						   "AFechaTermino = '$VC07', ".				//Cambiar campo
-						   "ATipoContratacion = $VC08, ".						//Cambiar campo
-						   "ATipoContratacionOtro = '$VC09',".				//Cambiar campo
-						   "APartidaPresupuestal = '$VC10',".				//
-						  "ANombre = '$VC11',".				//No 
-				   		   "APrimerApellido = $VC12,".					//
-						   "ASegundoApellido = '$VC13' ". 
-						   "ANumeroContrato = '$VC14',".				//
-						  "AHipervinculoCon= '$VC15',".				//No 
-				   		   "AFechaInicioCon= $VC16,".					//
-						   "AFechaTerminoCon = '$VC17' ". 
-						   "AServiciosContra= '$VC18',".				//
-						  "ARemuneracion= '$VC19',".				//No 
-				   		   "AMontoTotal = $VC20,".					//
-						   "APrestaciones = '$VC21' ". 
-						   "AHipervinculo = '$VC22',".				//
-						  "AAreaResp = '$VC23',".				//No 
-				   		   "ANota = $VC24,".					//
+				"SET    AConsecutivo  = $VC03,". 					
+						 "AFechaInicio= '$VC06',".//Cambiar campo
+						 "AFechaTermino = '$VC07', ".	//Cambiar campo
+						 "ATipoContratacion = $VC08,".						
+						 "ATipoContratacionOtro = '$VC09',".				
+						 "APartidaPresupuestal = '$VC10',".				//
+						 "ANombre = '$VC11',".	
+				   		 "APrimerApellido = $VC12,".					
+						 "ASegundoApellido = '$VC13' ". 
+						 "ANumeroContrato = '$VC14',".				
+						 "AHipervinculoCon= '$VC15',".	
+				   		 "AFechaInicioCon= $VC16,".					
+						 "AFechaTerminoCon = '$VC17' ". 
+						 "AServiciosContra= '$VC18',".				
+						 "ARemuneracion= '$VC19',".				 
+				   		 "AMontoTotal = $VC20,".					
+						 "APrestaciones = '$VC21' ". 
+						 "AHipervinculo = '$VC22',".				
+						 "AAreaResp = '$VC23',".				
+				   		 "ANota = $VC24,".					//
 						  					//
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+ 						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9211 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq AND ";		//Cambiar campo
+ 						 // "ANumeRegi = $CampBusq";
 	break;	
 }		
 

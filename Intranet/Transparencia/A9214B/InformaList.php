@@ -40,9 +40,9 @@
 		<tr>
 		
 			<th>No</th>
-			<th>Nombre persona</th>
-			<th width="15%">Primer apellido</th>
-			<th colspan="2">Segundo apellido</th>
+			<th>Fecha Inicio</th>
+			<th width="15%">Fecha Termino</th>
+			<th colspan="2"></th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -53,28 +53,16 @@
 		<?php
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['PNumero'];
-			  $VC05 = $RegiTabl['PNombrepers'];
-			  $VC06 = $RegiTabl['PPrimerapellido'];
-			  $VC07 = $RegiTabl['PSegundoapellido'];
-			  $VC08 = $RegiTabl['PDenominasocial'];
-			  
+			  $VC04 = $RegiTabl['AFechaInicio'];
+			  $VC05 = $RegiTabl['AFechaTermino'];
+			 
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
+			<td width="13%"><?=$VC03?></td>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
-			<td width="34%"><?=$VC07?></td>
-			<td width="7%">
-			<?php if ( $VC08 != '' ) { ?> 
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

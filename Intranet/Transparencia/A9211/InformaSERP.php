@@ -23,13 +23,14 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT AEjercicio, AFechaInicio, AFechaTermino, ATipoContratacion,".
-				   "ATipoContratacionOtro, APartidaPresupuestal, ANombre, ".
-           "APrimerApellido, ASegundoApellido, ANumeroContrato, ".
-           "AHipervinculoCon, AFechaInicioCon, AFechaTerminoCon, ".
-           "AServiciosContra, ARemuneracion, AMontoTotal, ".
-           "APrestaciones, AHipervinculo, AAreaResp, ".
-           "ANota ".
+$InstSql = 	"SELECT AConsecutivo, AAyuntamiento,AEjercicio, AFechaInicio,".  
+            "AFechaTermino, ATipoContratacion, ATipoContratacionOtro,". 
+            "APartidaPresupuestal, ANombre, APrimerApellido, ".
+            "ASegundoApellido, ANumeroContrato,AHipervinculoCon, ".
+            "AFechaInicioCon, AFechaTerminoCon, AServiciosContra, ".
+            " ARemuneracion, AMontoTotal, APrestaciones, ".
+            "AHipervinculo, AAreaResp, ANota ".
+             
 			"FROM   a9211 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
@@ -44,11 +45,11 @@ $ResuSql = $EjInSql->fetch();
 $VC03 = 0;   $VC04 = "";  $VC05 = "";  $VC06 = "";  $VC07 = "";  $VC08 = "";
 $VC09 = 0;   $VC10 = "";  $VC11 = "";  $VC12 = "";  $VC12 = "";  $VC14 = "";
 $VC15 = "";  $VC16 = "";  $VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";
-$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";  
+$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";   
 if ($ResuSql)
  { //Carga los campos
    $VC03 = $ResuSql['AConsecutivo '];	
-   $VC04= $ResuSql['AAyuntamiento'];
+   $VC04 = $ResuSql['AAyuntamiento'];
    $VC05 = $ResuSql['AEjercicio'];
    $VC06 = $ResuSql['AFechaInicio'];
    $VC07 = $ResuSql['AFechaTermino'];
@@ -76,8 +77,8 @@ else
 	 		   "FROM   a9211 ".
 			    "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				 "AEjercicio = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ".
-				  "ANumeTrim = '$TrimTrab' ";
+				  "AConsFrac = $ConsFrac AND ";
+				  //"ANumeTrim = '$TrimTrab' ";
          
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);

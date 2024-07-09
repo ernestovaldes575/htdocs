@@ -22,9 +22,9 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td>No <?=$EjerTrab?></td>
-			<td>Fecha Inicio</td>	
-			<td>Fecha Termino</td>
+			<td>Ejercicio: <?=$EjerTrab?></td>
+			<td>Fraccion: <?=$NumeFrac?></td>
+			<td>Trimestre:
             <?=$TrimTrab?></td>
 			<td colspan="2">Inc
 		    iso:

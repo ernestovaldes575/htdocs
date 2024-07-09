@@ -32,7 +32,7 @@ $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
-//$VC09 = $_POST['C09'];  No considera
+$VC09 = $_POST['C09'];  // No considera
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
@@ -50,37 +50,42 @@ $VC23 = $_POST['C23'];
 $VC24 = $_POST['C24'];
 
 //Agregar campos
-switch ( $CRUD )
+switch ( $CRUD )    
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9206a ".						//Cambiar tabla
-				   "VALUES (NULL,'.$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07','$VC08','$VC09'".
-								 "'$VC10','$VC11','$VC12','$VC13'".
-								 "'$VC14','$VC15','$VC16','$VC17'".
-								 "'$VC18','$VC19','$VC20','$VC21'".	//Cambiar campo
-								"'$VC22','',$VC23,'$VC24')";		//Cambiar campo
+				   "VALUES (NULL, '$ClavAyun',$EjerTrab,".
+				                  "$ConsFrac,'$TrimTrab',".
+				                  "$VC03,'$VC04','$VC05',".			//
+								  "'$VC06','$VC07','$VC08','$VC09'".
+								  "'$VC10','$VC11','$VC12','$VC13'".
+								  "'$VC14','$VC15','$VC16','$VC17'".
+								  "'$VC18','$VC19','$VC20','$VC21'".	
+								  "'$VC22','',$VC23,'$VC24')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9206a ". 						//Cambiar tabla
-				"SET     AFechaInicio = $VC06,". 					//
-						   "AFechaTermino = '$VC07', ".				//
-						   "ANombrePrograma = $VC08, ".						
-						   "AObjetivo = '$VC09',".			
-						   "ANombreIndicador = '$VC010',".		
-				   		   "ADimensionesAMedir = $VC011,".					
-						   "ADefinicionIndicador = '$VC12' ". 
-						   "AMetodoCalculo = '$VC13' ". 
-						   "AUnidadMedida = '$VC14' ". 
-						   "AFrecuenciaMedicion = '$VC15' ". 
-						   "ALineaBase = '$VC16' ".  	
-						   "AMetasProgramadas = '$VC17' ". 
-						   "AMetasAjustadas = '$VC18' ". 
-						   "AAvance = '$VC19' ". 
-						   "ASentidoIndicador = '$VC20' ". 
-						   "ASentidoIndicadorOtro = '$VC21' ". 
-						   "AFuenteInformacion = '$VC22' ". 
-						   "AAreaResp = '$VC23' ". 	
-						   "ANota = '$VC24' ". 	
+				"SET     AConsecutivo = $VC03,".
+				        "AAyuntamiento = $VC04,".
+						"AEjercicio = $VC05,".
+				        "AFechaInicio = $VC06,". 					//
+						"AFechaTermino = '$VC07', ".				//
+						"ANombrePrograma = $VC08,".						
+						"AObjetivo = '$VC09',".			
+						"ANombreIndicador = '$VC010',".		
+				   		"ADimensionesAMedir = $VC011,".					
+						"ADefinicionIndicador = '$VC12' ". 
+						"AMetodoCalculo = '$VC13' ". 
+						"AUnidadMedida = '$VC14' ". 
+						"AFrecuenciaMedicion = '$VC15' ". 
+						"ALineaBase = '$VC16' ".  	
+						"AMetasProgramadas = '$VC17' ". 
+						"AMetasAjustadas = '$VC18' ". 
+						"AAvance = '$VC19' ". 
+						"ASentidoIndicador = '$VC20' ". 
+						"ASentidoIndicadorOtro = '$VC21' ". 
+						"AFuenteInformacion = '$VC22' ". 
+						"AAreaResp = '$VC23' ". 	
+						"ANota = '$VC24' ". 	
 						   
 						   		//Cambiar campo
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
