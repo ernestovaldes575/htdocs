@@ -71,7 +71,7 @@ switch ( $CRUD )
 						   "CCUnidAdm = '$VC11',".				//Cambiar campo
 						  "CCPersonaCov = '$VC12',".				//No considera 
 				   		   "CCObjetivo = '$VC13',".					//Cambiar campo
-						   "CCFuenteRecur = '$VC14', ".  					//Cambiar campo
+						   "CCFuenteRecur = '$VC14', ".  				//Cambiar campo
 						   "CCDescrRec = '$VC15',".				//Cambiar campo
 						  "CCInicioPeriod = '$VC16',".				//No considera 
 				   		   "CCTermPeriod = '$VC17',".					//Cambiar campo

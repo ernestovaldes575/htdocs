@@ -58,15 +58,17 @@ $VC31 = $_POST['C31'];
 $VC32 = $_POST['C32'];
 $VC33 = $_POST['C33'];  
 $VC34 = $_POST['C34'];
-//$VC35 = $_POST['C35'];	Cons Frac no considera
-//$VC36 = $_POST['C36'];	NumTrim no considera
+$VC35 = $_POST['C35'];
+$VC36 = $_POST['C36'];
 $VC37 = $_POST['C37'];
-
+$VC38 = $_POST['C38'];
+$VC39 = $_POST['C39'];
+$VC40 = $_POST['C40'];  
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9226deudapublic ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tt9208bremun  ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
@@ -75,52 +77,55 @@ switch ( $CRUD )
 								"'$VC18','$VC19','$VC20','$VC21','$VC22',".
 								"'$VC23','$VC24','$VC25','$VC26','$VC27',".
 								"'$VC28','$VC29','$VC30','$VC31','$VC32',".
-								"'$VC33','$VC34','$VC35','$VC36','$VC37')";
+								"'$VC33','$VC34','$VC35','$VC36','$VC37',".
+								"'$VC40')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9226deudapublic ". 						//Cambiar tabla
-					"SET    DFechInicio = '$VC06',". 				//Cambiar campo
-						   "DFechTerm = '$VC07',".				//Cambiar campo
-						   "DAcreditado = '$VC08', ".				//Cambiar campo
-						   "DDenominac = '$VC09', ".			//Cambiar campo
-						   "DTipoObli = '$VC10',".				//Cambiar campo
-						   "DAtenTipoObli = '$VC11',".				//Cambiar campo
-						  "DAcreedor = '$VC12',".				//No considera 
-				   		   "DFechContrat = '$VC13',".					//Cambiar campo
-						   "DMontOriContr = '$VC14', ".  					//Cambiar campo
-						   "DPlazoTasaI = '$VC15',".				//Cambiar campo
-						  "DTasaInt = '$VC16',".				//No considera 
-				   		   "DPlazoPagarDeu = '$VC17',".					//Cambiar campo
-						   "DFechVenc = '$VC18', ".
-						   "DRecursGarant = '$VC19', ".			
-						   "DDestinoObli = '$VC20',".				
-						   "DSaldo = '$VC21',".				
-						  "DHipervAutor = '$VC22',".				 
-				   		   "DHiperListado = '$VC23',".					
-						   "DHiperContr = '$VC24', ".  					
-						   "DHiperDoc = '$VC25',".				
-						  "DInfoFinanz = '$VC26',".				 
-				   		   "DInforEnvi = '$VC27',".					
-						   "DInforCuePub = '$VC28', ".
-						   "DFechInscrRO = '$VC29', ".
-						   "DInforDeuPub = '$VC30', ".			
-						   "DInforCuePubCons = '$VC31',".				
-						   "DHipervPropu = '$VC32',".				
-						  "DAreaResp = '$VC33',".				 
-				   		   "DNota = '$VC34',".								
-						  "DNumeRegi = '$VC37' ".				 
-				   		   
-					"WHERE DAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "DEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "DConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "DNumeRegi = $CampBusq";
+		$InstSql = 	"UPDATE tt9208bremun  ". 						//Cambiar tabla
+					"SET    RFechInicio = '$VC06',". 				//Cambiar campo
+						   "RFechTerm = '$VC07',".				//Cambiar campo
+						   "RTipoInte = '$VC08', ".				//Cambiar campo
+						   "RTipoInteOtro = '$VC09', ".			//Cambiar campo
+						   "RClave = '$VC10',".				//Cambiar campo
+						   "RDenomPuest = '$VC11',".				//Cambiar campo
+						  "RDenomCarg = '$VC12',".				//No considera 
+				   		   "RAreaAds = '$VC13',".					//Cambiar campo
+						   "RNombre = '$VC14', ".  					//Cambiar campo
+						   "RPrimerApell = '$VC15',".				//Cambiar campo
+						  "RSegunApell = '$VC16',".				//No considera 
+				   		   "RSexo = '$VC17',".					//Cambiar campo
+						   "RSexoOtro = '$VC18', ".
+						   "RRemunBruta = '$VC19', ".			
+						   "RTipoMoneBrut = '$VC20',".				
+						   "RRemunNeta = '$VC21',".				
+						  "RTipoMoneNet = '$VC22',".				 
+				   		   "RPercepDinero = '$VC23',".					
+						   "RPercepEspec = '$VC24', ".  					
+						   "RIngresos = '$VC25',".				
+						  "RCompensa = '$VC26',".				 
+				   		   "RGratifica = '$VC27',".					
+						   "RPrimas = '$VC28', ".
+						   "RComision = '$VC29', ".
+						   "RDietas = '$VC30', ".			
+						   "RBonos = '$VC31',".				
+						   "REstimulo = '$VC32',".				
+						  "RApoyoEcon = '$VC33',".				 
+				   		   "RPrestacEcon = '$VC34',".					
+						   "RPrestaEspecie = '$VC35', ".  					
+						   "RAreaResp = '$VC36',".				
+						  "RNota = '$VC37',".				 
+						   "RNumeRegi = '$VC40' ".			
+					"WHERE RAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "REjercicio = $EjerTrab AND ".			//Cambiar campo
+				  		  "RConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "RNumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9226deudapublic ". 					//Cambiar tabla
-				   "WHERE DAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "DEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "DConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "DNumeRegi = $CampBusq";
+		$InstSql = "DELETE FROM tt9208bremun ". 					//Cambiar tabla
+				   "WHERE RAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "REjercicio = $EjerTrab AND ".			//Cambiar campo
+				  		  "RConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "RNumeRegi = $CampBusq";
 	break;	
 }		
 

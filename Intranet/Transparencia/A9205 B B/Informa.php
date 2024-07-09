@@ -35,9 +35,9 @@
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
 				<tr class="">
-					<th width="29%" class="text-uppercase" scope="row">
+					<td width="29%" class="text-uppercase" scope="row">
 						Campo
-					</th>
+					</td>
 					<td width="71%">
 						<a class="btn-Regresar container" href="InformaList.php">
 							Regresar
@@ -58,48 +58,24 @@
 						class="form-control" placeholder="Descripción" ></td>
 				</tr>
 				<tr>
-        			<td>Fecha de presentación de la solicitud</td>				
-        			<td><input type="date" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervínculo a la Matriz de Indicadores</td>				
+        			<td><input type="text" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Folio de solicitud</td>				
+        			<td>Área responsable</td>				
         			<td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Informacion requerida</td>				
-        			<td><input type="text" name="C10" id="VC10" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Fecha de validación de la información</td>				
+        			<td><input type="date" name="C10" id="VC10" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Respuesta</td>				
-        			<td><input type="text" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-				<tr>
-        			<td>Recurrida (si/no)</td>				
-        			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-				<tr>
-        			<td>Recurrida (otro)</td>				
-        			<td><input type="text" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-      			<tr>
-        			<td>Documentos proporcionados con la respuesta</td>				
-        			<td><input type="text" name="C14" id="VC14" value="<?=$VC14?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-      			<tr>
-        			<td>Tipo de solicitud</td>				
-        			<td><input type="text" name="C15" id="VC15" value="<?=$VC15?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-      			<tr>
-        			<td>Tipo de solicitud (otro)</td>				
-        			<td><input type="text" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td>
-      			</tr>
-				<tr>
-        			<td>Area Responsable</td>				
-        			<td><input type="text" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Fecha de actualización de la información</td>				
+        			<td><input type="date" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota</td>				
-        			<td><input type="text" name="C18" id="VC18 "value="<?=$VC18?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 
 			<!-- Termina  campos -->	

@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head> 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script src="InformaList.js"></script>
 <body>
@@ -39,8 +35,9 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha Inicio</th>
-			<th width="15%">Fecha Termino</th>
+			<th>Fecha de inicio del periodo que se informa</th>
+			<th>Fecha de termino del periodo que se informa</th>
+			<th colspan="2">Fecha de validación de la información</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -50,17 +47,21 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['OConsecutivo'];
-			  $VC04 = $RegiTabl['OFechaInicio'];
-			  $VC05 = $RegiTabl['OFechaTerm'];
+			  $VC03 = $RegiTabl['MConsecutivo'];
+			  $VC04 = $RegiTabl['MFechInicio'];
+			  $VC05 = $RegiTabl['MFechTerm'];
+			  $VC11 = $RegiTabl['MFechValid'];
+			  //$VC07 = $RegiTabl['AHipervinculo'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td width="13%"><?=$VC03?></td>
+			<td><?php echo ($VC03); ?></td>
 			<td width="13%"><?=$VC04?></td>
 			<td width="13%"><?=$VC05?></td>
+			<td><?=$VC11?></td>
+			
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
 				<i class="bi bi-x-square btn-Eliminar Elim"

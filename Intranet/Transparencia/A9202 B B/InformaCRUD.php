@@ -36,6 +36,9 @@ $VC09 = $_POST['C09'];
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
+$VC13 = $_POST['C13'];
+$VC14 = $_POST['C14'];
+$VC15 = $_POST['C15'];
 
 //Agregar campos
 switch ( $CRUD )
@@ -43,9 +46,10 @@ switch ( $CRUD )
 		$InstSql = "INSERT INTO tt9202borgan ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07','$VC08'".				//Cambiar campo
-								"'$VC09','$VC10','$VC11','$VC12')";		//Cambiar campo
+								 "'$VC03','$VC04','$VC05',".			//Cambiar campo
+								 "'$VC06','$VC07','$VC08',".			//Cambiar campo
+								 "'$VC09','$VC10','$VC11',".
+								"'$VC12','$VC15')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9202borgan ". 						//Cambiar tabla
@@ -59,17 +63,20 @@ switch ( $CRUD )
 				   		   "OFechAct = $VC10,".					//Cambiar campo
 						   "OFechValid = '$VC11' ".  					//Cambiar campo
 						   "ONota = '$VC12' ".
+						   "OConsFrac = '$VC13',".					//Cambiar campo
+						   "ONumeTrim = '$VC14', ".  					//Cambiar campo
+						   "ONumeRegi = '$VC15' ";
 					"WHERE OAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "OEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "OConsecutivo = $CampBusq AND ";			//Cambiar campo
- 						  //"ANumeRegi = $CampBusq";
+				  		  "OConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "ONumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM tt9202borgan ". 					//Cambiar tabla
 				   "WHERE OAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "OEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "OConsecutivo = $CampBusq AND ";			//Cambiar campo
- 						  //"ANumeRegi = $CampBusq";
+				  		  "OConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "ONumeRegi = $CampBusq";
 	break;	
 }		
 

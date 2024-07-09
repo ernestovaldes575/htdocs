@@ -35,9 +35,10 @@
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha de inicio del periodo que se informa</th>
-			<th width="15%">Fecha de termino del periodo que se informa</th>
-			<th colspan="2">Fecha de solicitud</th>
+			<th>Fecha Inicio del periodo que se informa</th>
+			<th>Fecha de termino del periodo que se informa</th>
+			<th colspan="2">Tipo de Integrante del Sujeto Integrado</th>
+			<th colspan="2">Denominacion de Puesto</th>
 			<th width="6%">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -47,20 +48,21 @@
 		</tr>
 		<?php 
 		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['RSConsecutivo'];
-			  $VC04 = $RegiTabl['RSFechInicio'];
-			  $VC05 = $RegiTabl['RSFechTerm'];
-			  $VC06 = $RegiTabl['RSFechSoli'];
-			  //$VC07 = $RegiTabl['AHipervinculo'];
+			  $VC03 = $RegiTabl['RConsecutivo'];
+			  $VC06 = $RegiTabl['RFechInicio'];
+			  $VC07 = $RegiTabl['RFechTerm'];
+			  $VC08 = $RegiTabl['RTipoInte'];
+			  $VC11 = $RegiTabl['RDenomPuest'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
 			<td><?php echo ($VC03); ?></td>
-			<td width="13%"><?=$VC04?></td>
-			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
+			<td width="13%"><?=$VC06?></td>
+			<td width="13%"><?=$VC07?></td>
+			<td><?=$VC08?></td>
+			<td><?=$VC11?></td>
 			
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>

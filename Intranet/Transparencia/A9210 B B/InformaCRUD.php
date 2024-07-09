@@ -53,33 +53,33 @@ switch ( $CRUD )
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
 								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17')";
+								"'$VC13','$VC14','$VC15','$VC16','$VC17','$VC20')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE  tt9234estadisticas  ". 					//Cambiar tabla
-					"SET    EFechInicio = '$VC06', ". 				//Cambiar campo
-						   "EFechTerm = '$VC07', ".				//Cambiar campo
-						   "ETemaEstad = '$VC08', ".				//Cambiar campo
-						   "EPeriodAct = '$VC09', ".			//Cambiar campo
-						   "EDenom = '$VC10', ".				//Cambiar campo
-						   "EHiperVariable = '$VC11', ".				//Cambiar campo
-						  "EHiperDocTecn = '$VC12', ".				//No considera 
-				   		   "ETiposArch = '$VC13', ".					//Cambiar campo
-						   "EHipervBaseD = '$VC14', ".  				//Cambiar campo
-						   "EHiperBancos = '$VC15', ".				//Cambiar campo
-						  "EAreaResp = '$VC16', ".				//No considera 
-				   		   "ENota = '$VC17', ".					//Cambiar campo							 	
-					"WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "EEjercicio = '$EjerTrab' AND ".			//Cambiar campo
-				  		  "EConsecutivo = '$CampBusq' AND ".			//Cambiar campo
- 						  "ENumeRegi = '$CampBusq'";
+		$InstSql = 	"UPDATE  tt9210btotalplazvac ". 					//Cambiar tabla
+					"SET    TFechInicio = '$VC06', ". 				//Cambiar campo
+						   "TFechTerm = '$VC07', ".				//Cambiar campo
+						   "TTotPlazBas = '$VC08', ".				//Cambiar campo
+						   "TTotPBOcup = '$VC09', ".			//Cambiar campo
+						   "TTotPBVacan = '$VC10', ".				//Cambiar campo
+						   "TTotPlazConf = '$VC11', ".				//Cambiar campo
+						  "TTotPCOcup = '$VC12', ".				//No considera 
+				   		   "TTotPCVacan = '$VC13', ".					//Cambiar campo
+						   "TAreaResp = '$VC14', ".  				//Cambiar campo
+						   "TFechAct = '$VC15', ".				//Cambiar campo
+						  "TFechValid = '$VC16', ".				//No considera 
+				   		   "TNota = '$VC17', ".					//Cambiar campo							 	
+					"WHERE TAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "TEjercicio = '$EjerTrab' AND ".			//Cambiar campo
+				  		  "TConsecutivo = '$CampBusq' AND ".			//Cambiar campo
+ 						  "TNumeRegi = '$CampBusq'";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM  tt9234estadisticas  ". 					//Cambiar tabla
-				   "WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "EEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "EConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ENumeRegi = $CampBusq";
+		$InstSql = "DELETE FROM  tt9210btotalplazvac  ". 					//Cambiar tabla
+				   "WHERE TAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "TEjercicio = $EjerTrab AND ".			//Cambiar campo
+				  		  "TConsecutivo = $CampBusq AND ".			//Cambiar campo
+ 						  "TNumeRegi = $CampBusq";
 	break;	
 }		
 

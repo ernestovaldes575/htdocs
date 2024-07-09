@@ -16,13 +16,13 @@ if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
 //Carga el registro para Consulta
-$InstSql = "SELECT OConsecutivo, OAyuntam, ".
-				  "OEjercicio, OFechInicio, OFechTerm ".
-			"FROM  tt9202borgan ".
-			"WHERE OAyuntam = '$ClavAyun' AND ".
-				  "OEjercicio = $EjerTrab AND  ";
-				  //"AConsFrac = $ConsFrac AND ".
-				  //"ANumeTrim = '$TrimTrab' ";
+$InstSql = "SELECT TConsecutivo, TAyuntam, TEjercicio, TFechInicio, ".
+				  "TFechTerm, TTotPlazBas, TTotPlazConf ".
+			"FROM tt9210btotalplazvac ".
+			"WHERE TAyuntam = '$ClavAyun' AND ".
+				  "TEjercicio = $EjerTrab AND  ".
+				  "TConsFrac = $ConsFrac AND ".
+				  "TNumeTrim = '$TrimTrab' ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
