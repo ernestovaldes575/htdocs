@@ -23,12 +23,12 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT AConsecutivo, AAyuntamiento,AEjercicio, AFechaInicio,".  
-            "AFechaTermino, ATipoContratacion, ATipoContratacionOtro,". 
+$InstSql = 	"SELECT  ANumeRegi, AFechaInicio, AFechaTermino,".   
+            " ATipoContratacion, ATipoContratacionOtro,". 
             "APartidaPresupuestal, ANombre, APrimerApellido, ".
-            "ASegundoApellido, ANumeroContrato,AHipervinculoCon, ".
+            "ASegundoApellido, ANumeroContrato,AHipervinculoCon,".
             "AFechaInicioCon, AFechaTerminoCon, AServiciosContra, ".
-            " ARemuneracion, AMontoTotal, APrestaciones, ".
+            " ARemuneracion, AMontoTotal, APrestaciones,".
             "AHipervinculo, AAreaResp, ANota ".
              
 			"FROM   a9211 ".
@@ -42,15 +42,15 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = "";  $VC05 = "";  $VC06 = "";  $VC07 = "";  $VC08 = "";
-$VC09 = 0;   $VC10 = "";  $VC11 = "";  $VC12 = "";  $VC13 = "";  $VC14 = "";
-$VC15 = "";  $VC16 = "";  $VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";
+$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = "";
+$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = ""; 
+$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
+$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";
 $VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";   
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['AConsecutivo '];	
-   $VC04 = $ResuSql['AAyuntamiento'];
-   $VC05 = $ResuSql['AEjercicio'];
+   
+   $VC05 = $ResuSql['ANumeRegi'];
    $VC06 = $ResuSql['AFechaInicio'];
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['ATipoContratacion'];
@@ -92,11 +92,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "ALTA";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "MODIFICAR"; 
 			$CRUD = "PUT";		  break;
-  case "B":	$MesnTiMo = "Eliminar";
+  case "B":	$MesnTiMo = "ELIMINAR";
 			$CRUD = "DELETE";	  break;
  }		
 ?>

@@ -4,8 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/Css/style.css">
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script src="InformaList.js"></script>
 <body>
@@ -26,8 +25,7 @@
 			<td>Fraccion: <?=$NumeFrac?></td>
 			<td>Trimestre:
             <?=$TrimTrab?></td>
-			<td colspan="2">Inc
-		    iso:
+			<td >Inciso:
 <?=$NumeInci?>
               <?=$NumeSubi?>
             <?=$Nomativi?></td>
@@ -38,44 +36,55 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
-			<th>No</th>
+		
+		<th>No</th>
 			<th>Fecha Inicio</th>
-			<th width="15%">Fecha Termino</th>
-			<th width="6%">
+			<th >Fecha Termino</th>
+			<th >Tipo Contratación </th>
+			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
-              <?php } ?>            </th>
-			<th width="12%">&nbsp;</th>
+              <?php } ?>      
+			</th>
+			<!-- <th width="13%">&nbsp;</th> -->
 		</tr>
 		<?php 
-		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['AFechaInicio'];
-			  $VC05 = $RegiTabl['AFechaTermino'];
-			  
-			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
-				  		 "/$NumeFrac/$TrimTrab/";
-		?>
-		<tr>
-			<td width="13%"><?=$VC03?></td>
-			<td width="13%"><?=$VC04?></td>
-			<td width="13%"><?=$VC05?></td>
-			<td data-titulo="Eliminar:">
-	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-Eliminar Elim"
-				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
-				<?php } ?>
-			</td>
-			<td data-titulo="Editar: ">
-				<?php if($Modi == "A" ){ ?>
-					<i class="bi bi-pencil-square btn-Modificar Modi" 
-					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
-				<?php } ?>
-			</td>
-		</tr>
-		<?php	} ?> 
-	</table>
+		$NumeReng = 1;
+		 foreach($ResuSql as $RegiTabl){
+			$VC03 = $RegiTabl['AConsecutivo'];
+			$VC04 = $RegiTabl['AFechaInicio'];
+			$VC05 = $RegiTabl['AFechaTermino'];
+			$VC06 = $RegiTabl['ATipoContratacion'];
+			
+			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
+						 "/$NumeFrac/$TrimTrab/";
+	  ?>
+	  <tr>
+		  <td><?=$NumeReng?></td>
+		  <td><?=$VC04?></td>
+		  <td><?=$VC05?></td>
+		  <td><?=$VC06?></td>
+		
+		  <td data-titulo="Editar: ">
+			  <?php if($Modi == "A" ){ ?>
+				  <i class="bi bi-pencil-square btn-Modificar Modi" 
+				  data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
+			  <?php } ?>
+		  </td>
+		  
+		  <td data-titulo="Eliminar:">
+				<?php if($Baja == "A"  ) { ?>
+			  <i class="bi bi-x-square btn-Eliminar Elim"
+			  data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
+			  <?php } ?>
+		  </td>
+		 
+	  </tr>
+	  <?php
+	$NumeReng++;
+		} ?> 
+  </table>
 </div>	
 
 <?php

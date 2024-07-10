@@ -26,13 +26,12 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
+
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
-$VC09 = $_POST['C09'];   //No considera
+$VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];					//Leer campos
@@ -53,23 +52,23 @@ $VC24 = $_POST['C24'];
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9211 ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//
-								 "$VC03,'$VC04','$VC05',".	
-								 "$VC06,'$VC07','$VC08',".
-								 "$VC09,'$VC10','$VC11',".	
-								 "$VC12,'$VC13','$VC14',".	
-								 "$VC15,'$VC16','$VC17',".
-								 "$VC18,'$VC19','$VC20',".
-								 "$VC21,'$VC22','$VC23',".	//
-								"'$VC24')";		//Cambiar campo
+				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
+								 "'$ConsFrac','$TrimTrab',".			//
+								 "'$VC05','$VC06','$VC07',".	
+								 "'$VC08','$VC09','$VC10',".
+								 "'$VC11','$VC12','$VC13',".	
+								 "'$VC14','$VC15','$VC16',".	
+								 "'$VC17','$VC18','$VC19',".
+								 "'$VC20','$VC21','$VC22',".
+								 "'$VC23','$VC24')";	
+										//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9211 ". 						//Cambiar tabla
-				"SET    AConsecutivo  = $VC03,". 					
+				"SET    AConsecutivo  = '$VC03',". 					
 						 "AFechaInicio= '$VC06',".//Cambiar campo
-						 "AFechaTermino = '$VC07', ".	//Cambiar campo
-						 "ATipoContratacion = $VC08,".						
+						 "AFechaTermino = '$VC07',".	//Cambiar campo
+						 "ATipoContratacion ='$VC08',".						
 						 "ATipoContratacionOtro = '$VC09',".				
 						 "APartidaPresupuestal = '$VC10',".				//
 						 "ANombre = '$VC11',".	
@@ -77,15 +76,15 @@ switch ( $CRUD )
 						 "ASegundoApellido = '$VC13', ". 
 						 "ANumeroContrato = '$VC14',".				
 						 "AHipervinculoCon= '$VC15',".	
-				   		 "AFechaInicioCon= $VC16,".					
-						 "AFechaTerminoCon = '$VC17' ". 
+				   		 "AFechaInicioCon= '$VC16',".					
+						 "AFechaTerminoCon = '$VC17', ". 
 						 "AServiciosContra= '$VC18',".				
 						 "ARemuneracion= '$VC19',".				 
-				   		 "AMontoTotal = $VC20,".					
-						 "APrestaciones = '$VC21' ". 
+				   		 "AMontoTotal = '$VC20',".					
+						 "APrestaciones = '$VC21',". 
 						 "AHipervinculo = '$VC22',".				
 						 "AAreaResp = '$VC23',".				
-				   		 "ANota = $VC24 ".					//
+				   		 "ANota = '$VC24 ".					//
 						  					//
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
