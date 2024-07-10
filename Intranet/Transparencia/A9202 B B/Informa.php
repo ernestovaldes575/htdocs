@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
+	<title>Fraccion 02B-Organigrama</title>
 	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
@@ -108,6 +109,7 @@
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--<script src="/Intranet/Js/ValiForm.js"></script>-->
+<script src="Formulario.js"></script>
 </body>
 </html>
