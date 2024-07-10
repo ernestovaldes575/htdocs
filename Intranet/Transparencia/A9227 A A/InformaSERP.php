@@ -23,10 +23,11 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, AArea, ".
-				   "ADenominacion, AFunadamento, AHipervinculo, ".
-				   "AAreaRespon, ANota ".
-			"FROM  tt9203facare ".
+$InstSql = 	"SELECT AConsecutivo, AAyuntamiento, AEjercicio,". 
+                   "AFechaInicio, AFechaTermino, ADenominacionPrograma,".
+                   "AFechaAprobacion, AHipervinculoPrograma, AAreaResp,".
+                   "ANota ".
+			"FROM a9227a ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
@@ -39,23 +40,24 @@ $ResuSql = $EjInSql->fetch();
 
 $VC03 = 0;   $VC04 = ""; $VC05 = "";
 $VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0; $VC11 = "";
+$VC09 = "";  $VC10 = 0; $VC11 = "";  $VC12 = "";
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['ANumeRegi'];	
-   $VC04 = $ResuSql['AFechaInicio'];	
-   $VC05 = $ResuSql['AFechaTermino'];
-   $VC06 = $ResuSql['AArea'];
-   $VC07 = $ResuSql['ADenominacion'];
-   $VC08 = $ResuSql['AFunadamento'];
-   $VC09 = $ResuSql['AHipervinculo'];
-   $VC10 = $ResuSql['AAreaRespon'];	
-   $VC11 = $ResuSql['ANota'];		
+   $VC03 = $ResuSql['AConsecutivo'];	
+   $VC04 = $ResuSql['AAyuntamiento'];	
+   $VC05 = $ResuSql['AEjercicio'];
+   $VC06 = $ResuSql['AFechaInicio'];
+   $VC07 = $ResuSql['AFechaTermino'];
+   $VC08 = $ResuSql['ADenominacionPrograma'];
+   $VC09 = $ResuSql['AFechaAprobacion'];
+   $VC10 = $ResuSql['AHipervinculoPrograma'];	
+   $VC11 = $ResuSql['AAreaResp'];
+   $VC12 = $ResuSql['ANota'];			
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  tt9203facare ".
+	 		   "FROM a9227a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

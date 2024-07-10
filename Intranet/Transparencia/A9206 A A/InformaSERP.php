@@ -23,14 +23,15 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT AConsecutivo, AAyuntamiento, AEjercicio, ". "AFechaInicio, AFechaTermino, ANombrePrograma, AObjetivo, ".
-				   "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
-				   "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
+$InstSql = 	"SELECT AConsecutivo, AAyuntamiento, AEjercicio, ".
+                    "AFechaInicio, AFechaTermino, ANombrePrograma, AObjetivo, ".
+				            "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
+				            "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
 			"FROM  a9206a ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
-          "ORDER BY OConsecutivo ";
+         // "ORDER BY AConsecutivo ";
           
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -38,10 +39,10 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "";   $VC05 = "";    $VC06 = "";    $VC07 = "";  $VC08 = ""; 
-$VC09 = "";   $VC10 = "";   $VC11 = "";    $VC12 = "";    $VC13 = "";  $VC14 = ""; 
-$VC15 = "";  $VC16 = 0;    $VC17 = "";    $VC18 = "";    $VC19 = "";  $VC20 = 0;   
-$VC21 = 0;   $VC22 = "";    $VC23 = "";     $VC24 = "";
+$VC03 = "";   $VC04 = "105";   $VC05 = "2024";  $VC06 = "";    $VC07 = "";  $VC08 = ""; 
+$VC09 = "";   $VC10 = "";   $VC11 = "";        $VC12 = "";    $VC13 = "";  $VC14 = ""; 
+$VC15 = "";  $VC16 = "";    $VC17 = "";       $VC18 = "";    $VC19 = "";  $VC20 = "";   
+$VC21 = "";   $VC22 = "";    $VC23 = "";     $VC24 = "";
 
 if ($ResuSql)
  { //Carga los campos
@@ -74,8 +75,9 @@ else
 	 		   "FROM  a9206a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ";
-				  //"AConsFrac = $ConsFrac AND ".
-				 // "ANumeTrim = '$TrimTrab' ";
+				  "AConsFrac = $ConsFrac AND ".
+				  "ANumeTrim = '$TrimTrab' ";
+          
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();

@@ -65,8 +65,9 @@ if ($BandMens)
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9203 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun'";
-				           "AEjercicio  = $EjerTrab AND ".		
-				  		  "AConsecutivo = $CampBusq ";	
+				           "AEjercicio = $EjerTrab AND ".			//
+				  		  "AConsecutivo = $CampBusq AND ".			//
+ 						  "ANumeRegi = $CampBusq";	
 	break;	
 }		
 

@@ -67,88 +67,93 @@
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
+				  <td>Denominacion Puesto</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Denominacion</td>
+				  <td>Denominacion Cargo</td>
 				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Fundamento</td>
+				  <td>Nombre</td>
 				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  
 				
 				<tr>
-				  <td>Area Responsable</td>
+				  <td>Primer Apellido</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Nota</td>
+				  <td>Segundo Apellido</td>
 				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
-			  <th>No</th>
-					<td>
-						<input name="C13" id="VC13" type="text" value="<?=$VC13?>"
-						class="form-control" placeholder="Titulo">
-					</td>
-				</tr>	
+				
 				<tr>
-					<th>Fecha Inicio</th>
+					<th>Area Adscripcion</th>
 					<td>
-						<input name="C14" id="VC14" type="date" value="<?=$VC14?>" 
+						<input name="C13" id="VC13" type="date" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
 				
 				<tr>
-				  <td>Fecha de Termino</td>
-				  <td><input name="C15" id="VC15" type="date" value="<?=$VC15?>" 
+				  <td>Nivel Estudios</td>
+				  <td><input name="C14" id="VC14" type="date" value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
-				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
+				  <td>Nivel Estudios (Otro)</td>
+				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Denominacion</td>
-				  <td><input  name="C17" id="VC17" type="text"value="<?=$VC17?>" 
+				  <td>Carrera Generica</td>
+				  <td><input  name="C16" id="VC16" type="text"value="<?=$VC16?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Fundamento</td>
-				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
+				  <td>Experiencia Laboral</td>
+				  <td><input name="C17" id="VC17" type="text" value="<?=$VC17?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  
 			
 				<tr>
-				  <td>Area Responsable</td>
+				  <td>Hipervinculo Curriculum</td>
+				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Sanciones Admon</td>
 				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+	
 				<tr>
-				  <td>Nota</td>
-				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <th>No</th>
+					<th>Sanciones Admon (Otro)</th>
 					<td>
-						<input name="C21" id="VC21" type="text" value="<?=$VC21?>"
-						class="form-control" placeholder="Titulo">
-					</td>
+						<input name="C20" id="VC20" type="date" value="<?=$VC20?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
 				</tr>	
+
 				<tr>
-					<th>Fecha Inicio</th>
+					<th>Area Responsable</th>
+					<td>
+						<input name="C21" id="VC21" type="date" value="<?=$VC21?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>	
+
+				<tr>
+					<th>Nota</th>
 					<td>
 						<input name="C22" id="VC22" type="date" value="<?=$VC22?>" 
 						class="form-control" placeholder="Descripción" >

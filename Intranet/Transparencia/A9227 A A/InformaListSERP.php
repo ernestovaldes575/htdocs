@@ -21,8 +21,8 @@ $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
 				 
 			"FROM a9206a ".
 		//"WHERE AAyuntamiento = '$ClavAyun' AND ".
-		//	"AEjercicio = $EjerTrab AND  ".
-				//  "AConsFrac = $ConsFrac AND ".
+		//"AEjercicio = $EjerTrab AND  ".
+				 // "AConsFrac = $ConsFrac AND ".
 				// "ANumeTrim = '$TrimTrab' ";
 				"ORDER BY AConsecutivo";
 if ($BandMens)  

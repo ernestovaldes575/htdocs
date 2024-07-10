@@ -43,7 +43,7 @@
 			<th width="15%">Fecha</th>
 			<th colspan="2">Descripción</th>
 			<th width="6%">
-			 <?php 
+			<?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>

@@ -57,9 +57,9 @@ switch ( $CRUD )
 						  //AHipervinculo = '$VC09',".				//No considera 
 				   		   "AAreaRespon = $VC10,".					//Cambiar campo
 						   "ANota = '$VC11' ".  					//Cambiar campo
-					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
-						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
+					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//
+						  "AEjercicio = $EjerTrab AND ".			//
+				  		  "AConsecutivo = $CampBusq AND ".			//
  						  "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
