@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
+	<title>Fraccion 10B-Total de Plazas Vacantes</title>
 	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>

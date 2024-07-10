@@ -1,4 +1,3 @@
-console.log("Desde Formulario");
 const btnSubmit = document.querySelector('#PideDato button[type="submit"]');
 
 const correo = {
@@ -28,7 +27,6 @@ function leerCampos(){
         }
     });
 }
-
 function valiText(evt){
     // console.log(evt.target.parentElement);
     console.log(evt.target.value); 
@@ -50,7 +48,6 @@ function valiText(evt){
         comprobarFormulario();
         // comprobarEmail();
 }
-
 function comprobarFormulario(){
     var campos = document.querySelectorAll('#PideDato input');
     var valores = {}
@@ -84,7 +81,6 @@ function validaEmail(correo){
     const resultado = regex.test(correo);
     return resultado;
 }
-
 //!INYECTAR HTML
 function mostrarAlerta(mensaje, referencia){
     limpiarAlerta(referencia);
@@ -93,7 +89,6 @@ function mostrarAlerta(mensaje, referencia){
     error.classList.add('Alerta');
     referencia.appendChild(error);
 }
-
 function limpiarAlerta(referencia){
     const alerta = referencia.querySelector('.Alerta');
         alerta?.remove();

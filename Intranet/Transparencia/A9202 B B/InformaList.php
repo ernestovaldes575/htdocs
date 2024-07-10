@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head> 
+	<title>Fraccion 02B-Organigrama</title>
 	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script src="InformaList.js"></script>
