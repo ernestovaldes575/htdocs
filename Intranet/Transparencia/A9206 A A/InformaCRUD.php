@@ -13,7 +13,7 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
+$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +26,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -52,52 +50,50 @@ $VC24 = $_POST['C24'];
 //Agregar campos
 switch ( $CRUD )    
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9206a ".						//Cambiar tabla
-				   "VALUES (NULL, '$ClavAyun',$EjerTrab,".
-				                  "$ConsFrac,'$TrimTrab',".
-				                  "$VC03,'$VC04','$VC05',".			//
-								  "'$VC06','$VC07','$VC08','$VC09'".
-								  "'$VC10','$VC11','$VC12','$VC13'".
-								  "'$VC14','$VC15','$VC16','$VC17'".
-								  "'$VC18','$VC19','$VC20','$VC21'".	
-								  "'$VC22','',$VC23,'$VC24')";		//Cambiar campo
+		$InstSql = "INSERT INTO a9206a ".
+		/*  */
+				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
+				                  "'$ConsFrac','$TrimTrab','$VC05',".
+								  "'$VC06','$VC07','$VC08','$VC09',".
+								  "'$VC10','$VC11','$VC12','$VC13',".
+								  "'$VC14','$VC15','$VC16','$VC17',".
+								  "'$VC18','$VC19','$VC20','$VC21',".	
+								  "'$VC22','$VC23','$VC24')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9206a ". 						//Cambiar tabla
-				"SET     AConsecutivo = $VC03,".
-				        "AAyuntamiento = $VC04,".
-						"AEjercicio = $VC05,".
-				        "AFechaInicio = $VC06,". 					//
+				"SET    ANumeRegi = '$VC05',".
+				        "AFechaInicio = '$VC06',". 					//
 						"AFechaTermino = '$VC07', ".				//
-						"ANombrePrograma = $VC08,".						
+						"ANombrePrograma = '$VC08',".						
 						"AObjetivo = '$VC09',".			
-						"ANombreIndicador = '$VC010',".		
-				   		"ADimensionesAMedir = $VC011,".					
-						"ADefinicionIndicador = '$VC12' ". 
-						"AMetodoCalculo = '$VC13' ". 
-						"AUnidadMedida = '$VC14' ". 
-						"AFrecuenciaMedicion = '$VC15' ". 
-						"ALineaBase = '$VC16' ".  	
-						"AMetasProgramadas = '$VC17' ". 
-						"AMetasAjustadas = '$VC18' ". 
-						"AAvance = '$VC19' ". 
-						"ASentidoIndicador = '$VC20' ". 
-						"ASentidoIndicadorOtro = '$VC21' ". 
-						"AFuenteInformacion = '$VC22' ". 
-						"AAreaResp = '$VC23' ". 	
+						"ANombreIndicador = '$VC10',".		
+				   		"ADimensionesAMedir = '$VC11',".					
+						"ADefinicionIndicador = '$VC12',". 
+						"AMetodoCalculo = '$VC13', ". 
+						"AUnidadMedida = '$VC14',". 
+						"AFrecuenciaMedicion = '$VC15',". 
+						"ALineaBase = '$VC16', ".  	
+						"AMetasProgramadas = '$VC17',". 
+						"AMetasAjustadas = '$VC18',". 
+						"AAvance = '$VC19',". 
+						"ASentidoIndicador = '$VC20',". 
+						"ASentidoIndicadorOtro = '$VC21',". 
+						"AFuenteInformacion = '$VC22',". 
+						"AAreaResp = '$VC23',". 	
 						"ANota = '$VC24' ". 	
 						   
 						   		//Cambiar campo
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq ";		//Cambiar campo
+				  		 "AConsecutivo = $CampBusq ";		//Cambiar campo
  						  
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9206a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+				  		 "AConsecutivo = $CampBusq  ";			//Cambiar campo
  						 
 	break;	
 }		
