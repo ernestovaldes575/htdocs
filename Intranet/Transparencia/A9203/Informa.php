@@ -52,7 +52,7 @@
 				</tr>	
 				
 				<tr>
-					<td>Fecha Inicio</td>
+					<td>Fecha de inicio del periodo que se informa</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
@@ -60,28 +60,28 @@
 				</tr>	
 
 				<tr>
-				  <td>Fecha de Termino</td>
+				  <td>Fecha de término del periodo que se informa </td>
 				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
+				  <td>Denominación del área</td>
 				  <td><input name="C08" id="VC08" type="int" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Denominacion</td>
+				  <td>Denominación de la norma en la que se establecen sus facultades</td>
 				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Fundamento</td>
-				  <td><input name="C10 id="VC10 type="text" value="<?=$VC10?>" 
+			  <tr>
+				  <td>Fundamento legal</td>
+				  <td><input  name="C10" id="VC10" type="text"value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Hipervinculo </td>
+				  <td>Hipervínculo al fragmento de la norma que establece las facultades que correspondan a cada área </td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -102,7 +102,7 @@
 			  </tr>
 
 			  <tr>
-				  <td>Area Responsable</td>
+				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
 				  <td><input name="C12" id="VC12" type="int" value="<?=$VC12?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>

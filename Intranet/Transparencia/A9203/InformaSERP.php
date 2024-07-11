@@ -38,8 +38,8 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC05 = 1 ;  $VC06 = "";  $VC07 = "";    $VC08 = "";    $VC09 = "";
-$VC10 = "";    $VC12 = "";    $VC13 = "";
+$VC05 = 1 ;   $VC06 = "";  $VC07 = "";    $VC08 = "";    $VC09 = "";
+$VC10 = "";                $VC12 = "";    $VC13 = "";
 
 
 if ($ResuSql)
@@ -51,7 +51,7 @@ if ($ResuSql)
    $VC08=$ResuSql['AArea']; 
    $VC09=$ResuSql['ADenominacion']; 
    $VC10=$ResuSql['AFundamento']; 
-  // $VC11=$ResuSql['AHipervinculo']; 
+   //$VC11=$ResuSql['AHipervinculo']; 
    $VC12=$ResuSql['AAreaResp']; 
    $VC13=$ResuSql['ANota'];	
  } 

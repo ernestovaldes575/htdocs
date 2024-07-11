@@ -24,10 +24,10 @@ if( isset($_GET['PaAMB01']) != ''){
 $CRUD = "GET";
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
-                   "ANombrePrograma,".
-                    "AObjetivo,ANombreIndicador, ".
+                   "ANombrePrograma,AObjetivo,ANombreIndicador,".
 				            "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
 				            "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
+                    
 			       "FROM  a9206a ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
@@ -40,10 +40,11 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC05 = 1;  $VC06 = "";    $VC07 = "";  $VC08 = ""; 
-$VC09 = "";   $VC10 = "";   $VC11 = "";        $VC12 = "";    $VC13 = "";  $VC14 = ""; 
-$VC15 = "";  $VC16 = "";    $VC17 = "";       $VC18 = "";    $VC19 = "";  $VC20 = "";   
-$VC21 = "";   $VC22 = "";    $VC23 = "";     $VC24 = "";
+$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
+$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
+$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
+$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
+$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";
 
 if ($ResuSql)
  { //Carga los campos

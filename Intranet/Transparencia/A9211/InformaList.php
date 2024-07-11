@@ -40,7 +40,7 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Tipo Contratación </th>
+			<th >Tipo de Contratación </th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
