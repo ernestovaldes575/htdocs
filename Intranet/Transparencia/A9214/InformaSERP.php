@@ -23,24 +23,26 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT PConsecutivo, PAyuntam, PEjercicio, PFechInicio, ". 
-				   "PFechTerm, PTipoProg, PAtenTipoProg, PDenom, PProgMas1, ".
-				   "PAtenProgMas1, PSujetoOblig, PAreaRespDes, PDenomDocNorm, ".
-				   "PHipervDocNorm, PPeriodVigenc, PAtenPeriodVigen, PFechInicioVigen, ".
-				   "PFechTermVigen, PDiseño, PObjetivos, PPoblacion, ".
-				   "PNotaMetodol, PMontoPresupApr, PMontoPresupModi, PMontoPresupEjer, ".
-				   "PMontoDeficit, PMontoGtoAdm, PHipervDocModif, PHipervCalend, ".
-				   "PCriterElegibi, PRequisProc, PMontoMin, PMontoMax, ".
-				   "PProcedQuej, PMecanExigi, PMecanCancel, PPeriodoEvalu, ".
-				   "PMecanEvalu, PInstancia, PHipervResult, PSeguimRecom, ".
-				   "PIndicador, PFormPartSocial, PArticOtroProgr, PAtenArticOtrProgr, ".
-				   "PDenomProgr, PSujetReglOp, PAtenSujetReglOp, PHipervRegl, ".
-				   "PInformPeriod, PHipervPadron, PAreaRespInfo, PFechValid, ".
-				   "PFechAct, PNota, PConsFrac, PNumeTrim, PNumeRegi ".
-			"FROM tt9214aprogsubci ".
-			"WHERE PAyuntam = '$ClavAyun' AND ".
-				  "PEjercicio = $EjerTrab AND ".
-				  "PConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT PNumeRegi, PFechInicio, PFechTerm, PTipoProg, ". 
+				           "PAtenTipoProg, PDenom, PProgMas1, PAtenProgMas1,".
+				           "PSujetoOblig, PAreaRespDes, PDenomDocNorm, PHipervDocNorm, ".
+				           "PPeriodVigenc, PAtenPeriodVigen, PFechInicioVigen, ".
+				           "PFechTermVigen, PDiseño, PObjetivos, PPoblacion, ".
+				           "PNotaMetodol, PMontoPresupApr, PMontoPresupModi, ".
+                   "PMontoPresupEjer, PMontoDeficit, PMontoGtoAdm,".
+				           "PHipervDocModif, PHipervCalend, PCriterElegibi,".
+				           "PRequisProc, PMontoMin, PMontoMax, PProcedQuej,".
+				           "PMecanExigi, PMecanCancel, PPeriodoEvalu, ".
+				           "PMecanEvalu, PInstancia, PHipervResult, ".
+                   "PSeguimRecom, PIndicador, PFormPartSocial,".
+				           "PArticOtroProgr, PAtenArticOtrProgr, PDenomProgr,".
+				           "PSujetReglOp, PAtenSujetReglOp, PHipervRegl, ".
+				           "PInformPeriod, PHipervPadron, PAreaRespInfo, ".
+				           "PFechValid, PFechAct, PNota ".
+			      "FROM tt9214aprogsubci ".
+			      "WHERE PAyuntam = '$ClavAyun' AND ".
+				           "PEjercicio = $EjerTrab AND ".
+				           "PConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -48,21 +50,23 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
-$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
-$VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
-$VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   $VC24 = "";  	 $VC25 = "";
-$VC26 = "";   $VC27 = "";  	 $VC28 = "";		$VC29 = "";   $VC30 = "";  	 $VC31 = "";
-$VC32 = "";   $VC33 = "";  	 $VC34 = "";		$VC35 = "";   $VC36 = "";  	 $VC37 = "";
-$VC38 = "";   $VC39 = "";  	 $VC40 = "";		$VC41 = "";   $VC42 = "";  	 $VC43 = "";
-$VC44 = "";   $VC45 = "";  	 $VC46 = "";		$VC47 = "";   $VC48 = "";  	 $VC49 = "";
-$VC50 = "";   $VC51 = "";  	 $VC52 = "";		$VC53 = "";   $VC54 = "";  	 $VC55 = "";
-$VC56 = "";   $VC57 = "";  	 $VC58 = "";
+$VC05 = 1;	  $VC06 = "";    $VC07 = ""; 	  $VC08 = "";
+$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   
+$VC13 = "";  	$VC14 = "";    $VC15 = "";    $VC16 = "";  	 
+$VC17 = "";		$VC18 = "";    $VC19 = "";  	$VC20 = "";
+$VC21 = "";   $VC22 = "";		 $VC23 = "";    $VC24 = "";  	 
+$VC25 = "";   $VC26 = "";    $VC27 = "";  	$VC28 = "";		
+$VC29 = "";   $VC30 = "";  	 $VC31 = "";    $VC32 = "";   
+$VC33 = "";  	$VC34 = "";		 $VC35 = "";    $VC36 = "";  	 
+$VC37 = "";   $VC38 = "";    $VC39 = "";  	$VC40 = "";		
+$VC41 = "";   $VC42 = "";  	 $VC43 = "";    $VC44 = "";   
+$VC45 = "";  	$VC46 = "";		 $VC47 = "";    $VC48 = "";  	 
+$VC49 = "";   $VC50 = "";    $VC51 = "";  	$VC52 = "";		
+$VC53 = "";   $VC54 = "";  	 $VC55 = "";    $VC56 = "";   
+$VC57 = "";  	 
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['PConsecutivo'];	
-   $VC04 = $ResuSql['PAyuntam'];	
-   $VC05 = $ResuSql['PEjercicio'];
+ { //Carga los campos	
+   $VC05 = $ResuSql['PNumeRegi'];
    $VC06 = $ResuSql['PFechInicio'];
    $VC07 = $ResuSql['PFechTerm'];
    $VC08 = $ResuSql['PTipoProg'];
@@ -115,9 +119,6 @@ if ($ResuSql)
    $VC55 = $ResuSql['PFechValid'];
    $VC56 = $ResuSql['PFechAct'];
    $VC57 = $ResuSql['PNota'];
-   $VC58 = $ResuSql['PConsFrac'];
-   $VC59 = $ResuSql['PNumeTrim'];	
-   $VC60 = $ResuSql['PNumeRegi'];
  } 
 else
  { //Busca el sisguiente registro
@@ -139,9 +140,9 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "Alta";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "Modificar"; 
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;

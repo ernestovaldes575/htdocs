@@ -13,7 +13,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +25,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -41,45 +38,43 @@ $VC14 = $_POST['C14'];
 $VC15 = $_POST['C15'];
 $VC16 = $_POST['C16'];  
 $VC17 = $_POST['C17'];
-$VC18 = $_POST['C18'];
-$VC19 = $_POST['C19'];  
-$VC20 = $_POST['C20'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO  tt9234estadisticas  ".						//Cambiar tabla
+		$InstSql = "INSERT INTO  tt9210btotalplazvac  ".			//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
-								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17','$VC20')";
+								 "'$VC05','$VC06','$VC07',".			
+								 "'$VC08','$VC09','$VC10',". 
+								 "'$VC11','$VC12','$VC13',".	    
+								 "'$VC14','$VC15','$VC16',".
+								 "'$VC17')";
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE  tt9210btotalplazvac ". 					//Cambiar tabla
-					"SET    TFechInicio = '$VC06', ". 				//Cambiar campo
-						   "TFechTerm = '$VC07', ".				//Cambiar campo
-						   "TTotPlazBas = '$VC08', ".				//Cambiar campo
-						   "TTotPBOcup = '$VC09', ".			//Cambiar campo
-						   "TTotPBVacan = '$VC10', ".				//Cambiar campo
-						   "TTotPlazConf = '$VC11', ".				//Cambiar campo
-						  "TTotPCOcup = '$VC12', ".				//No considera 
-				   		   "TTotPCVacan = '$VC13', ".					//Cambiar campo
-						   "TAreaResp = '$VC14', ".  				//Cambiar campo
-						   "TFechAct = '$VC15', ".				//Cambiar campo
-						  "TFechValid = '$VC16', ".				//No considera 
-				   		   "TNota = '$VC17', ".					//Cambiar campo							 	
-					"WHERE TAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+		$InstSql = 	"UPDATE  tt9210btotalplazvac ". 				//Cambiar tabla
+					"SET    TNumeRegi = '$VC05', ".
+						   "TFechInicio = '$VC06', ". 				
+						   "TFechTerm = '$VC07', ".					
+						   "TTotPlazBas = '$VC08', ".				
+						   "TTotPBOcup = '$VC09', ".				
+						   "TTotPBVacan = '$VC10', ".				
+						   "TTotPlazConf = '$VC11', ".				
+						   "TTotPCOcup = '$VC12', ".					 
+				   		   "TTotPCVacan = '$VC13', ".				
+						   "TAreaResp = '$VC14', ".  				
+						   "TFechAct = '$VC15', ".						
+						   "TFechValid = '$VC16', ".
+						   "TNota = '$VC17' ".				 
+					"WHERE TAyuntam = '$ClavAyun' AND ".			//Cambiar campo
 						  "TEjercicio = '$EjerTrab' AND ".			//Cambiar campo
-				  		  "TConsecutivo = '$CampBusq' AND ".			//Cambiar campo
- 						  "TNumeRegi = '$CampBusq'";
+				  		  "TConsecutivo = '$CampBusq' ";			//Cambiar campo
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM  tt9210btotalplazvac  ". 					//Cambiar tabla
-				   "WHERE TAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+		$InstSql = "DELETE FROM  tt9210btotalplazvac  ". 			//Cambiar tabla
+				   "WHERE TAyuntam = '$ClavAyun' AND ".				//Cambiar campo
 						  "TEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "TConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "TNumeRegi = $CampBusq";
+				  		  "TConsecutivo = $CampBusq ";				//Cambiar campo
 	break;	
 }		
 

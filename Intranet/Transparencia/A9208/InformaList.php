@@ -19,51 +19,52 @@
 <div class="container table-responsive">
 	<table width="70%" class="ListInfo tabla">
 		<tr>
-			<td>Ejercicio: <?=$EjerTrab?></td>
+		<td>Ejercicio: <?=$EjerTrab?></td>
 			<td>Fraccion: <?=$NumeFrac?></td>
 			<td>Trimestre:
             <?=$TrimTrab?></td>
-			<td colspan="2">Inc
-		    iso:
-<?=$NumeInci?>
-              <?=$NumeSubi?>
-            <?=$Nomativi?></td>
+			<td>Inciso:
+				<?=$NumeInci?>
+              	<?=$NumeSubi?>
+            	<?=$Nomativi?></td>
 			<td colspan="2">
 			  <a href="../Fracciones.php" 
 					class="btn-Regresar">
 			    Regresar
-			    </a>		    </td>
+			  </a>		    
+			</td>
 		</tr>
 		<tr>
 			<th>No</th>
-			<th>Fecha Inicio del periodo que se informa</th>
-			<th>Fecha de termino del periodo que se informa</th>
-			<th colspan="2">Tipo de Integrante del Sujeto Integrado</th>
-			<th colspan="2">Denominacion de Puesto</th>
-			<th width="6%">
+			<th>Fecha Inicio del Periodo que se informa</th>
+			<th>Fecha Término del Periodo que se informa</th>
+			<th>Tipo de Integrante del Sujeto Integrado</th>
+			<th>Denominacion de Puesto</th>
+			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
-			<th width="12%">&nbsp;</th>
+			<!-- <th width="12%">&nbsp;</th> -->
 		</tr>
 		<?php 
+		  $NumeReng = 1;
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['RConsecutivo'];
-			  $VC06 = $RegiTabl['RFechInicio'];
-			  $VC07 = $RegiTabl['RFechTerm'];
-			  $VC08 = $RegiTabl['RTipoInte'];
-			  $VC11 = $RegiTabl['RDenomPuest'];
+			  $VC04 = $RegiTabl['RFechInicio'];
+			  $VC05 = $RegiTabl['RFechTerm'];
+			  $VC06 = $RegiTabl['RTipoInte'];
+			  $VC07 = $RegiTabl['RDenomPuest'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td><?php echo ($VC03); ?></td>
-			<td width="13%"><?=$VC06?></td>
-			<td width="13%"><?=$VC07?></td>
-			<td><?=$VC08?></td>
-			<td><?=$VC11?></td>
+			<td><?=$NumeReng?></td>
+			<td><?=$VC04?></td>
+			<td><?=$VC05?></td>
+			<td><?=$VC06?></td>
+			<td><?=$VC07?></td>
 			
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
@@ -78,7 +79,9 @@
 				<?php } ?>
 			</td>
 		</tr>
-		<?php	} ?> 
+		<?php	
+			$NumeReng ++;
+		} ?> 
 	</table>
 </div>	
 

@@ -13,7 +13,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +25,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -60,10 +57,7 @@ $VC33 = $_POST['C33'];
 $VC34 = $_POST['C34'];
 $VC35 = $_POST['C35'];
 $VC36 = $_POST['C36'];
-$VC37 = $_POST['C37'];
-$VC38 = $_POST['C38'];
-$VC39 = $_POST['C39'];
-$VC40 = $_POST['C40'];  
+$VC37 = $_POST['C37'];  
 
 //Agregar campos
 switch ( $CRUD )
@@ -71,61 +65,60 @@ switch ( $CRUD )
 		$InstSql = "INSERT INTO tt9208bremun  ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
-								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17',".
-								"'$VC18','$VC19','$VC20','$VC21','$VC22',".
-								"'$VC23','$VC24','$VC25','$VC26','$VC27',".
-								"'$VC28','$VC29','$VC30','$VC31','$VC32',".
-								"'$VC33','$VC34','$VC35','$VC36','$VC37',".
-								"'$VC40')";
+								 "'$VC05','$VC06','$VC07','$VC08','$VC09',".			
+								 "'$VC10','$VC11','$VC12','$VC13','$VC14',". 	    
+								 "'$VC15','$VC16','$VC17','$VC18','$VC19',".
+								 "'$VC20','$VC21','$VC22','$VC23','$VC24',".
+								 "'$VC25','$VC26','$VC27','$VC28','$VC29',".
+							 	 "'$VC30','$VC31','$VC32','$VC33','$VC34',".
+								 "'$VC35','$VC36','$VC37')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9208bremun  ". 						//Cambiar tabla
-					"SET    RFechInicio = '$VC06',". 				//Cambiar campo
-						   "RFechTerm = '$VC07',".				//Cambiar campo
-						   "RTipoInte = '$VC08', ".				//Cambiar campo
-						   "RTipoInteOtro = '$VC09', ".			//Cambiar campo
-						   "RClave = '$VC10',".				//Cambiar campo
-						   "RDenomPuest = '$VC11',".				//Cambiar campo
-						  "RDenomCarg = '$VC12',".				//No considera 
-				   		   "RAreaAds = '$VC13',".					//Cambiar campo
-						   "RNombre = '$VC14', ".  					//Cambiar campo
-						   "RPrimerApell = '$VC15',".				//Cambiar campo
-						  "RSegunApell = '$VC16',".				//No considera 
-				   		   "RSexo = '$VC17',".					//Cambiar campo
+					"SET    RNumeRegi = '$VC05',".
+						   "RFechInicio = '$VC06',". 				
+						   "RFechTerm = '$VC07',".				
+						   "RTipoInte = '$VC08', ".				
+						   "RTipoInteOtro = '$VC09', ".			
+						   "RClave = '$VC10',".				
+						   "RDenomPuest = '$VC11',".				
+						   "RDenomCarg = '$VC12',".				 
+				   		   "RAreaAds = '$VC13',".					
+						   "RNombre = '$VC14', ".  					
+						   "RPrimerApell = '$VC15',".				
+						   "RSegunApell = '$VC16',".				 
+				   		   "RSexo = '$VC17',".					
 						   "RSexoOtro = '$VC18', ".
 						   "RRemunBruta = '$VC19', ".			
 						   "RTipoMoneBrut = '$VC20',".				
 						   "RRemunNeta = '$VC21',".				
-						  "RTipoMoneNet = '$VC22',".				 
+						   "RTipoMoneNet = '$VC22',".				 
 				   		   "RPercepDinero = '$VC23',".					
 						   "RPercepEspec = '$VC24', ".  					
 						   "RIngresos = '$VC25',".				
-						  "RCompensa = '$VC26',".				 
+						   "RCompensa = '$VC26',".				 
 				   		   "RGratifica = '$VC27',".					
 						   "RPrimas = '$VC28', ".
 						   "RComision = '$VC29', ".
 						   "RDietas = '$VC30', ".			
 						   "RBonos = '$VC31',".				
 						   "REstimulo = '$VC32',".				
-						  "RApoyoEcon = '$VC33',".				 
+						   "RApoyoEcon = '$VC33',".				 
 				   		   "RPrestacEcon = '$VC34',".					
 						   "RPrestaEspecie = '$VC35', ".  					
 						   "RAreaResp = '$VC36',".				
-						  "RNota = '$VC37',".				 
-						   "RNumeRegi = '$VC40' ".			
-					"WHERE RAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "REjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RNumeRegi = $CampBusq";
+						   "RNota = '$VC37' ".				 			
+					"WHERE RAyuntam = '$ClavAyun' AND ".		
+						  "REjercicio = $EjerTrab AND ".			
+				  		  "RConsecutivo = $CampBusq ";			
+ 						  //"RNumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM tt9208bremun ". 					//Cambiar tabla
-				   "WHERE RAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+				   "WHERE RAyuntam = '$ClavAyun' AND ".			    //Cambiar campo
 						  "REjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RNumeRegi = $CampBusq";
+				  		  "RConsecutivo = $CampBusq ";				//Cambiar campo
+ 						  //"RNumeRegi = $CampBusq";
 	break;	
 }		
 

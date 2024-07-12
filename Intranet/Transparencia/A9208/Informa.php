@@ -28,9 +28,6 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -47,6 +44,13 @@
 				</tr>
 				<!-- Inicia campos -->	
 				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>
+				<tr>
 					<td>Fecha Inicio del periodo que se informa</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
@@ -60,7 +64,7 @@
 				</tr>
 				<tr>
         			<td>Tipo de Integrante del Sujeto Obligado</td>				
-        			<td><input type="text" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Tipo de Integrante del Sujeto Obligado (Otro)</td>				
@@ -80,7 +84,7 @@
       			</tr>
 				<tr>
         			<td>Área de adscripción</td>				
-        			<td><input type="text" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
       			<tr>
         			<td>Nombre</td>				
@@ -96,7 +100,7 @@
       			</tr>
 				<tr>
         			<td>Sexo</td>				
-        			<td><input type="text" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Sexo (otro) </td>				
@@ -172,7 +176,7 @@
       			</tr>
 				<tr>
         			<td>Área responsable de la información </td>				
-        			<td><input type="text" name="C36" id="VC36" value="<?=$VC36?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C36" id="VC36" value="<?=$VC36?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota </td>				
@@ -182,14 +186,14 @@
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+							<?=$MesnTiMo?>
 						</button></td>
-			  </tr>
+			  	</tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>
