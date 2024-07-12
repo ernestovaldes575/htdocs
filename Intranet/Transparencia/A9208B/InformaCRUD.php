@@ -26,43 +26,37 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
-$VC05 = $_POST['C05'];
-$VC06 = $_POST['C06'];
-$VC07 = $_POST['C07'];
-$VC08 = $_POST['C08'];
-$VC09 = $_POST['C09'];  //No considera
-$VC10 = $_POST['C10'];
-$VC11 = $_POST['C11'];
-$VC12 = $_POST['C12'];
-
+  $VC05 = $_POST['C05'];
+  $VC06 = $_POST['C06'];
+  $VC07 = $_POST['C07'];
+  $VC08 = $_POST['C08'];
+  $VC09 = $_POST['C09'];  
+  $VC11 = $_POST['C10'];
+  $VC11 = $_POST['C11'];
+  $VC12 = $_POST['C12'];
+ 
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO  a9208b ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//
-								 "$ConsFrac,'$TrimTrab',".			//
-								 "$VC03,'$VC04','$VC05',".			//
-								 "'$VC06','$VC07',".
-								 "'$VC08','$VC09',".
-								 "'$VC10','$VC11',".				//
-								"'$VC12')";		//Cambiar campo
+				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
+				                  "'$ConsFrac','$TrimTrab','$VC05',".
+								  "'$VC06','$VC07','$VC08','$VC09',".
+								  "'$VC10','$VC11','$VC12')";	//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE  a9208b
 ". 					
-					"SET    AConsecutivo = $VC03,". 					
-						   "AAyuntamiento = '$VC04',".				
-						   "TEjercicio = '$VC05', ".				
-						   "TFechInic = $VC06, ".						
-						   "TFechterm = '$VC07',".				
-						   "TFirper = '$VC08',".				 
-				   		   "TArea = $VC09,".		//Cambiar campo
-						   "TActualizacion= '$VC10'".  					
-						   "TFechvalida= '$VC11' ". 
-						   "TNota= '$VC12' ".
+					"SET    ANumeRegi = '$VC05',".				
+				          "TFechInic = '$VC06',". 					//
+						"TFechterm = '$VC07', ".				//
+						"THirper = '$VC08',".						
+						"TArea = '$VC09',".			
+						"TActualizacion = '$VC10',".		
+				   		"TFechvalida= '$VC11',".					
+						"TNota = '$VC12',". 
+						
 
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		
 						  "AEjercicio = $EjerTrab AND ".	

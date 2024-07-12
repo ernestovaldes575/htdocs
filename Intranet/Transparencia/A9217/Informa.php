@@ -28,9 +28,6 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -46,6 +43,13 @@
 					</td>
 				</tr>
 				<!-- Inicia campos -->	
+				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>
 				<tr>
 					<td>Fecha Inicio del periodo que se informa</td>
 					<td>
@@ -64,7 +68,7 @@
       			</tr>
 				<tr>
         			<td>Folio de solicitud</td>				
-        			<td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Informacion requerida</td>				
@@ -76,7 +80,7 @@
       			</tr>
 				<tr>
         			<td>Recurrida (si/no)</td>				
-        			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Recurrida (otro)</td>				
@@ -88,7 +92,7 @@
       			</tr>
       			<tr>
         			<td>Tipo de solicitud</td>				
-        			<td><input type="text" name="C15" id="VC15" value="<?=$VC15?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C15" id="VC15" value="<?=$VC15?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
       			<tr>
         			<td>Tipo de solicitud (otro)</td>				
@@ -96,7 +100,7 @@
       			</tr>
 				<tr>
         			<td>Area Responsable</td>				
-        			<td><input type="text" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota</td>				
@@ -106,14 +110,14 @@
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50">
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>

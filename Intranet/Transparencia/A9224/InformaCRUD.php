@@ -13,7 +13,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +25,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -35,9 +32,9 @@ $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
-$VC12 = $_POST['C12'];
+// $VC12 = $_POST['C12'];	Hipervinculo
 $VC13 = $_POST['C13'];
-$VC14 = $_POST['C14'];
+// $VC14 = $_POST['C14'];	Hipervinculo
 $VC15 = $_POST['C15'];
 $VC16 = $_POST['C16'];  
 $VC17 = $_POST['C17'];
@@ -48,8 +45,8 @@ $VC21 = $_POST['C21'];
 $VC22 = $_POST['C22'];
 $VC23 = $_POST['C23'];
 $VC24 = $_POST['C24'];
-$VC25 = $_POST['C25'];
-$VC26 = $_POST['C26'];  
+// $VC25 = $_POST['C25'];	Hipervinculo
+// $VC26 = $_POST['C26'];  	Hipervinculo
 $VC27 = $_POST['C27'];
 $VC28 = $_POST['C28'];
 
@@ -58,53 +55,53 @@ switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO tt9224tramreq ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07','$VC08',".		//Cambiar campo
-								"'$VC09','$VC10','$VC11',". 	    //Cambiar campo
-								"'$VC12','$VC13','$VC14',".
-								"'$VC15','$VC16','$VC17',".
-								"'$VC18','$VC19','$VC20',".
-								"'$VC21','$VC22','$VC23',".
-								"'$VC24','$VC25','$VC26',".
-								"'$VC27','$VC28','$VC29')";
+								"$ConsFrac,'$TrimTrab',".			//Cambiar campo
+								"'$VC05','$VC06','$VC07',".			//Cambiar campo
+								"'$VC08','$VC09','$VC10',".		//Cambiar campo
+								"'$VC11','',	 '$VC13',". 	    //Cambiar campo
+								"''		,'$VC15','$VC16',".
+								"'$VC17','$VC18','$VC19',".
+								"'$VC20','$VC21','$VC22',".
+								"'$VC23','$VC24',''		,".
+								"''		,'$VC27','$VC28')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9224tramreq ". 						//Cambiar tabla
-					"SET    TRFechInicio = '$VC06',". 				//Cambiar campo
-						   "TRFechTerm = '$VC07',".				//Cambiar campo
-						   "TRDenom = '$VC08', ".				//Cambiar campo
-						   "TRTipoUsu = '$VC09', ".						//Cambiar campo
-						   "TRDesc = '$VC10',".				//Cambiar campo
-						   "TRModalidad = '$VC11',".				//Cambiar campo
-						  "TRHipervRequ = '$VC12',".				//No considera 
-				   		   "TRDocReque = '$VC13',".					//Cambiar campo
-						   "TRHipervForm = '$VC14', ". 					//Cambiar campo
-						   "TRTiempoRes = '$VC15',".				//Cambiar campo
-						  "TRVigencia = '$VC16',".				//No considera 
-				   		   "TRAreaContact = '$VC17',".					//Cambiar campo
+					"SET    TRNumeRegi = '$VC05',".
+						   "TRFechInicio = '$VC06',". 				
+						   "TRFechTerm = '$VC07',".				
+						   "TRDenom = '$VC08', ".				
+						   "TRTipoUsu = '$VC09', ".						
+						   "TRDesc = '$VC10',".				
+						   "TRModalidad = '$VC11',".				
+						// "TRHipervRequ = '$VC12',".				 
+				   		   "TRDocReque = '$VC13',".					
+						// "TRHipervForm = '$VC14', ". 					
+						   "TRTiempoRes = '$VC15',".				
+						   "TRVigencia = '$VC16',".				 
+				   		   "TRAreaContact = '$VC17',".					
 						   "TRCosto = '$VC18', ".
-						   "TRSustento = '$VC19', ".					//Cambiar campo
-						   "TRLugarPago = '$VC20',".				//Cambiar campo
-						   "TRFundJuri = '$VC21',".				//Cambiar campo
-						  "TRDerech = '$VC22',".				//No considera 
-				   		   "TRLugarRepor = '$VC23',".					//Cambiar campo
-						   "TROtros = '$VC24', ".  					//Cambiar campo
-						   "TRHipervInf = '$VC25',".				//Cambiar campo
-						  "TRHipervSist = '$VC26',".				//No considera 
-				   		   "TRAreaResp = '$VC27',".					//Cambiar campo
+						   "TRSustento = '$VC19', ".					
+						   "TRLugarPago = '$VC20',".				
+						   "TRFundJuri = '$VC21',".				
+						   "TRDerech = '$VC22',".				 
+				   		   "TRLugarRepor = '$VC23',".					
+						   "TROtros = '$VC24', ".  					
+						// "TRHipervInf = '$VC25',".				
+						// "TRHipervSist = '$VC26',".				 
+				   		   "TRAreaResp = '$VC27',".					
 						   "TRNota = '$VC28' ".
-					"WHERE RSAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "RSEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RSConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RSNumeRegi = $CampBusq";
+					"WHERE TRAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+						  "TREjercicio = $EjerTrab AND ".		//Cambiar campo
+				  		  "TRConsecutivo = $CampBusq ";			//Cambiar campo
+ 						//"RSNumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM tt9224tramreq ". 					//Cambiar tabla
 				   "WHERE TRAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "TREjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "TRConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "TRNumeRegi = $CampBusq";
+						  "TREjercicio = $EjerTrab AND ".		//Cambiar campo
+				  		  "TRConsecutivo = $CampBusq ";			//Cambiar campo
+ 						//"TRNumeRegi = $CampBusq";
 	break;	
 }		
 

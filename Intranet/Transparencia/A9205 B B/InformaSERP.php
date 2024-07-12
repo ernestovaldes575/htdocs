@@ -23,9 +23,12 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT MConsecutivo, MAyuntam, MEjercicio, MFechInicio, ".
-				   "MFechTerm, MHipervin, MAreaResp, MFechAct, MFechValid, MNota, ".
-				   "MConsFrac, MNumeTrim, MNumeRegi ".
+			//SELECT `MNumeRegi`, `MFechInicio`, `MFechTerm`, 
+			//		 `MHipervin`, `MAreaResp`, `MFechAct`, 
+			//		 `MFechValid`, `MNota`
+$InstSql = 	"SELECT MNumeRegi, MFechInicio, MFechTerm, ".
+				   "MHipervin, MAreaResp, MFechAct, ".
+				   "MFechValid, MNota ".
 			"FROM  tt9205bmatriz ".
 			"WHERE MAyuntam = '$ClavAyun' AND ".
 				  "MEjercicio = $EjerTrab AND ".
@@ -37,25 +40,20 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";  $VC04 = "105";  $VC05 = "2024";  $VC06 = "";   $VC07 = "";
-$VC08 = "";  $VC09 = "";  $VC10 = "";   $VC11 = "";  $VC12 = "";
-$VC13 = "";  $VC14 = "";  $VC15 = "";  
-
+$VC05 = 1;   $VC06 = "";   $VC07 = "";
+$VC08 = "";  $VC09 = "";   $VC10 = "";   
+$VC11 = "";  $VC12 = "";
+  
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['MConsecutivo'];	
-   $VC04 = $ResuSql['MAyuntam'];	
-   $VC05 = $ResuSql['MEjercicio'];
-   $VC06 = $ResuSql['MFechInicio'];
-   $VC07 = $ResuSql['MFechTerm'];
-   $VC08 = $ResuSql['MHipervin'];
-	 $VC09 = $ResuSql['MAreaResp'];
-	 $VC10 = $ResuSql['MFechAct'];
-	 $VC11 = $ResuSql['MFechValid'];
-	 $VC12 = $ResuSql['MNota'];
-	 $VC13 = $ResuSql['MConsFrac'];
-	 $VC14 = $ResuSql['MNumeTrim'];
-	 $VC15 = $ResuSql['MNumeRegi'];		
+   	$VC05 = $ResuSql['MNumeRegi'];
+   	$VC06 = $ResuSql['MFechInicio'];
+   	$VC07 = $ResuSql['MFechTerm'];
+   	$VC08 = $ResuSql['MHipervin'];
+	$VC09 = $ResuSql['MAreaResp'];
+	$VC10 = $ResuSql['MFechAct'];
+	$VC11 = $ResuSql['MFechValid'];
+	$VC12 = $ResuSql['MNota'];	
  } 
 else
  { //Busca el sisguiente registro
@@ -77,11 +75,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
-			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
-			$CRUD = "PUT";		  break;
-  case "B":	$MesnTiMo = "Eliminar";
-			$CRUD = "DELETE";	  break;
+	case "A":	$MesnTiMo = "Alta";  
+			  $CRUD = "POST";       break;
+	case "M":	$MesnTiMo = "Modificar"; 
+			  $CRUD = "PUT";		  break;
+	case "B":	$MesnTiMo = "Eliminar";
+			  $CRUD = "DELETE";	  break;
  }		
 ?>

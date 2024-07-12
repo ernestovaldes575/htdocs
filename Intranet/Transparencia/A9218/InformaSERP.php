@@ -23,15 +23,16 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT AConsecutivo, AAyuntamiento, AEjercicio, AFechaInicio,". 
-            "AFechaTermino, ATipoEvento, ATipoEventoOtro, AAlcanceConcurso,".  "AAlcanceConcursoOtro, ATipoCargo, ATipoCargoOtro, AClavePuesto,".  "ADenominacionPuesto, ADenominacionCargo, ADenominacionUnidad,". 
-            "ASalarioBruto, ASalarioNeto, AFechaPublicacion, ANumeroConvocatoria,".  "AHipervinculoDoc, AEstadoProcesoCon, AEstadoProcesoConOtro,".  
-            "ATotalCandidatos,ANombrePersona, APrimerApelldio, ASegundoApellido,". "AHipervinculoGanador, AHipervinculoGanadorOtro, AAreaResp, ANota " .
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
+                   "ATipoEvento, ATipoEventoOtro, AAlcanceConcurso,".
+                   "AAlcanceConcursoOtro, ATipoCargo, ATipoCargoOtro,".
+                   "AClavePuesto, ADenominacionPuesto,". "ADenominacionCargo, ADenominacionUnidad, "."ASalarioBruto, ASalarioNeto,".
+                   "AFechaPublicacion, ANumeroConvocatoria,". "AHipervinculoDoc, AEstadoProcesoCon, "."AEstadoProcesoConOtro, ATotalCandidatos,". "ANombrePersona, APrimerApellido, ASegundoApellido,". "AHipervinculoGanador, AHipervinculoGanadorOtro,". "AAreaResp, ANota ".
 
 			"FROM  a9218 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				  "AEjercicio = $EjerTrab AND ".
-				  "AConsecutivo = $CampBusq ";
+				           "AEjercicio = $EjerTrab AND ".
+				           "AConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -39,16 +40,17 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = "";   $VC05 = "";   $VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = 0;   $VC10 = "";   $VC11 = "";   $VC12 = 0;   $VC13 = ""; $VC14 = "";
-$VC15 = 0;   $VC16 = "";   $VC17 = "";   $VC18 = 0;   $VC19 = ""; $VC20 = "";
-$VC21 = 0;   $VC22 = "";   $VC23 = "";   $VC24 = 0;   $VC25 = ""; $VC26 = "";
-$VC27 = 0;   $VC28 = "";   $VC29 = "";   $VC30 = 0;   $VC31 = ""; $VC32 = "";
+$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
+$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";
+$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
+$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = ""; 
+$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";
+$VC25 = "";  $VC26 = "";  $VC27 = "";  $VC28 = "";
+$VC29 = "";  $VC30 = "";  $VC31 = "";  $VC32 = "";  $VC32 = "";
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['AConsecutivo'];	
-   $VC04 = $ResuSql['AAyuntamiento'];	
-   $VC05 = $ResuSql['AEjercicio'];
+  	
+   $VC05 = $ResuSql['ANumeRegi'];	
    $VC06 = $ResuSql['AFechaInicio'];
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['ATipoEvento'];
@@ -73,7 +75,7 @@ if ($ResuSql)
    $VC27 = $ResuSql['APrimerApelldio'];
    $VC28 = $ResuSql['ASegundoApellido'];	
    $VC29 = $ResuSql['AHipervinculoGanador'];		
-   $VC30 = $ResuSql['AHipervinculoGanadorOtro	'];	
+   $VC30 = $ResuSql['AHipervinculoGanadorOtro'];	
    $VC31 = $ResuSql['AAreaResp'];	
    $VC32 = $ResuSql['ANota'];
  } 
@@ -83,8 +85,9 @@ else
 	 		   "FROM  a9218 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ";
+				  "AConsFrac = $ConsFrac ";
 				 // "ANumeTrim = '$TrimTrab' ";
+
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
@@ -97,11 +100,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "ALTA";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "MODIFICAR"; 
 			$CRUD = "PUT";		  break;
-  case "B":	$MesnTiMo = "Eliminar";
+  case "B":	$MesnTiMo = "ELIMINAR";
 			$CRUD = "DELETE";	  break;
  }		
 ?>

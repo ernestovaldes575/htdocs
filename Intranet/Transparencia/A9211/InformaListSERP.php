@@ -17,11 +17,14 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
-				  "AEjercicio,AFechaInicio, AFechaTermino ".
-			"FROM a9211 ".
-			"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				 "AEjercicio = '$EjerTrab' ".
-				 "AConsFrac = $ConsFrac  ";
+				  "AFechaInicio, AFechaTermino, ATipoContratacion ".
+				
+			"FROM  a9211 ".
+		  "WHERE AAyuntamiento = '$ClavAyun' AND ".
+		        "AEjercicio = $EjerTrab AND  ".
+		         "AConsFrac = $ConsFrac ";
+				// "ANumeTrim = '$TrimTrab' ";
+				//"ORDER BY AConsecutivo";
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);

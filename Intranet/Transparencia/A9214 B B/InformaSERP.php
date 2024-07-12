@@ -23,17 +23,15 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT 	AConsecutivo, AAyuntamiento, PNumero, ".
-            "PNombrepers, PPrimerapellido, PSegundoapellido, ".
-				    "PDenominasocial, PMontorecursos, PUnidadterritorial, ".
-				    " PEdad, PSexo, PSexootro";
-           
-			"FROM  a9214b ".
-			"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				  "PNumeroo = $EjerTrab AND ".
-				  "AConsecutivo = $CampBusq ".
-
-          "ORDER BY OConsecutivo ";
+$InstSql = 	"SELECT ANumeRegi, PNombrepers, PPrimerapellido, ".
+            " PSegundoapellido, PDenominasocial, PMontorecursos, ".
+				    "PUnidadterritorial, PEdad, PSexo, PSexootro". 
+				   
+             
+            "FROM  a9214b ".
+            "WHERE AAyuntamiento = '$ClavAyun' AND ".
+                  "PNumero = $EjerTrab AND ".
+                  "AConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -41,14 +39,13 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;    $VC04 = "";   $VC05 = "";    $VC06 = 0;   $VC07 = "";  
-$VC08 = "";   $VC09 = "";   $VC10 = 0;    $VC11 = "";    $VC12 = 0; 
+$VC05 = 1;    $VC06 = "";   $VC07 = "";  $VC08 = "";   
+$VC09 = "";   $VC10 ="";    $VC11 = "";  $VC12 = ""; 
 $VC13 = "";   $VC14 = ""; 
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['AConsecutivo'];	
-   $VC04 = $ResuSql['AAyuntamiento'];	
-   $VC05 = $ResuSql['PNumero'];
+  	
+   $VC05 = $ResuSql['ANumeRegi'];
    $VC06 = $ResuSql['PNombrepers'];
    $VC07 = $ResuSql['PPrimerapellido'];
    $VC08 = $ResuSql['PSegundoapellido'];
@@ -67,8 +64,9 @@ else
 	 		   "FROM  a9214b ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "PNumero = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ";
-				 // "ANumeTrim = '$TrimTrab' ";
+				  "AConsFrac = $ConsFrac AND ".
+				  "ANumeTrim = '$TrimTrab' ";
+
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
@@ -81,11 +79,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "ALTA";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "MODIFICAR"; 
 			$CRUD = "PUT";		  break;
-  case "B":	$MesnTiMo = "Eliminar";
+  case "B":	$MesnTiMo = "ELIMINAR";
 			$CRUD = "DELETE";	  break;
  }		
 ?>

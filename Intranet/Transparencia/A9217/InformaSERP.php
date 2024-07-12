@@ -23,9 +23,10 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT RSConsecutivo, RSAyuntam, RSEjercicio, RSFechInicio, ".
-				   "RSFechTerm, RSFechSoli, RSFolioSoli, RSInfoReq, RSRespuesta, RSRecurrida, ".
-				   "RSRecurrOtro, RSDocs, RSTipoSoli, RSTipoSoliOtro, RSAreaResp, RSNota ".
+$InstSql = 	"SELECT RSNumeRegi, RSFechInicio, RSFechTerm, RSFechSoli,".
+				   "RSFolioSoli, RSInfoReq, RSRespuesta, RSRecurrida,".
+				   "RSRecurrOtro, RSDocs, RSTipoSoli, RSTipoSoliOtro,".
+				   "RSAreaResp, RSNota ".
 			"FROM  tt9217regisolic ".
 			"WHERE RSAyuntam = '$ClavAyun' AND ".
 				  "RSEjercicio = $EjerTrab AND ".
@@ -37,19 +38,17 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";  $VC04 = "105";  $VC05 = "2024";  $VC06 = "";   $VC07 = "";
-$VC08 = "";  $VC09 = "";  $VC10 = "";   $VC11 = "";  $VC12 = "";
-$VC13 = "";  $VC14 = "";  $VC15 = "";   $VC16 = "";  $VC17 = "";
-$VC18 = "";
+$VC05 = 1;   $VC06 = "";  $VC07 = "";	$VC08 = "";  
+$VC09 = "";  $VC10 = "";   $VC11 = "";  $VC12 = "";
+$VC13 = "";  $VC14 = "";  $VC15 = "";   $VC16 = "";  
+$VC17 = "";	 $VC18 = "";
 
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['RSConsecutivo'];	
-   $VC04 = $ResuSql['RSAyuntam'];	
-   $VC05 = $ResuSql['RSEjercicio'];
-   $VC06 = $ResuSql['RSFechInicio'];
-   $VC07 = $ResuSql['RSFechTerm'];
-   $VC08 = $ResuSql['RSFechSoli'];
+ { //Carga los campos	
+   	$VC05 = $ResuSql['RSNumeRegi'];
+   	$VC06 = $ResuSql['RSFechInicio'];
+   	$VC07 = $ResuSql['RSFechTerm'];
+   	$VC08 = $ResuSql['RSFechSoli'];
 	 $VC09 = $ResuSql['RSFolioSoli'];
 	 $VC10 = $ResuSql['RSInfoReq'];
 	 $VC11 = $ResuSql['RSRespuesta'];

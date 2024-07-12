@@ -28,9 +28,6 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -47,6 +44,13 @@
 				</tr>
 				<!-- Inicia campos -->	
 				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>
+				<tr>
 					<td>Fecha Inicio del periodo que se informa</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
@@ -60,10 +64,10 @@
 				</tr>
 				<tr>
         			<td>Tipo de programa social</td>				
-        			<td><input type="text" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Tipo de Prorama social (Otro)</td>				
+        			<td>Tipo de Programa social (Otro)</td>				
         			<td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
@@ -72,7 +76,7 @@
       			</tr>
 				<tr>
         			<td>Programa desarrollado por más de un área (si/no)</td>				
-        			<td><input type="text" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Programa desarrollado por más de un área (otro)</td>				
@@ -91,12 +95,28 @@
         			<td><input type="text" name="C15" id="VC15" value="<?=$VC15?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
       			<tr>
-        			<td>Hipervinculo al documento normativo</td>				
-        			<td><input type="text" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo al documento normativo</td>		
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC16 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC16?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>		
+        			<!-- <td><input type="text" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
         			<td>Periodo de vigencia definido (si/no)</td>				
-        			<td><input type="text" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Periodo de vigencia (otro) </td>				
@@ -147,12 +167,44 @@
         			<td><input type="text" name="C29" id="VC29" value="<?=$VC29?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Hipervinculo documento de modificadiones </td>				
-        			<td><input type="text" name="C30" id="VC30" value="<?=$VC30?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo documento de modificadiones </td>	
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC30 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC30?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C30" id="VC30" value="<?=$VC30?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
-        			<td>Hipervinculo calendario presupuestal </td>				
-        			<td><input type="text" name="C31" id="VC31" value="<?=$VC31?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo calendario presupuestal </td>	
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC31 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC31?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C31" id="VC31" value="<?=$VC31?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				  <tr>
         			<td>Criterios de elegibilidad </td>				
@@ -195,8 +247,24 @@
         			<td><input type="text" name="C41" id="VC41" value="<?=$VC41?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Hipervinculo a resultados de informe </td>				
-        			<td><input type="text" name="C42" id="VC42" value="<?=$VC42?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo a resultados de informe </td>	
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC42 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC42?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C42" id="VC42" value="<?=$VC42?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
         			<td>Seguimiento de recomendaciones</td>				
@@ -224,27 +292,59 @@
       			</tr>
 				<tr>
         			<td>Esta sujeto a reglas de operacion (si/no) </td>				
-        			<td><input type="text" name="C49" id="VC49" value="<?=$VC49?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C49" id="VC49" value="<?=$VC49?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				  <tr>
         			<td>Esta sujeto a reglas de operacion (otro) </td>				
         			<td><input type="text" name="C50" id="VC50" value="<?=$VC50?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Hipervinculo Reglas de operacion </td>				
-        			<td><input type="text" name="C51" id="VC51" value="<?=$VC51?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo Reglas de operacion </td>	
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC51 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC51?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C51" id="VC51" value="<?=$VC51?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
         			<td>Informes periodicos de ejecucion de programa </td>				
         			<td><input type="text" name="C52" id="VC52" value="<?=$VC52?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				  <tr>
-        			<td>Hipervinculo Padron de beneficiarios </td>				
-        			<td><input type="text" name="C53" id="VC53" value="<?=$VC53?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo Padron de beneficiarios </td>	
+					<td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC53 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC53?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C53" id="VC53" value="<?=$VC53?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				  <tr>
         			<td>Area responsable de informacion </td>				
-        			<td><input type="text" name="C54" id="VC54" value="<?=$VC54?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C54" id="VC54" value="<?=$VC54?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				  <tr>
         			<td>Fecha de validacion </td>				
@@ -256,20 +356,21 @@
       			</tr>
 				  <tr>
         			<td>Nota </td>				
-        			<td><input type="text" name="C57" id="VC57" value="<?=$VC57?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="text" name="C57" id="SV57" value="<?=$VC57?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
-						</button></td>
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
+						</button>
+				  </td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>

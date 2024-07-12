@@ -23,20 +23,19 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT RConsecutivo, RAyuntam, REjercicio, RFechInicio, ". 
-				   "RFechTerm, RTipoInte, RTipoInteOtro, RClave, RDenomPuest, ".
-				   "RDenomCarg, RAreaAds, RNombre, RPrimerApell, ".
-				   "RSegunApell, RSexo, RSexoOtro, RRemunBruta, ".
-				   "RTipoMoneBrut, RRemunNeta, RTipoMoneNet, RPercepDinero, ".
-				   "RPercepEspec, RIngresos, RCompensa, RGratifica, ".
-				   "RPrimas, RComision, RDietas, RBonos, ".
-				   "REstimulo, RApoyoEcon, RPrestacEcon, RPrestaEspecie, ".
-				   "RAreaResp, RNota, RConsFrac, RNumeTrim, ".
-				   "RNumeRegi ".
-			"FROM tt9208bremun ".
-			"WHERE RAyuntam = '$ClavAyun' AND ".
-				  "REjercicio = $EjerTrab AND ".
-				  "RConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT RNumeRegi, RFechInicio, RFechTerm, RTipoInte,". 
+				           "RTipoInteOtro, RClave, RDenomPuest, ".
+				           "RDenomCarg, RAreaAds, RNombre, RPrimerApell, ".
+				           "RSegunApell, RSexo, RSexoOtro, RRemunBruta, ".
+				           "RTipoMoneBrut, RRemunNeta, RTipoMoneNet, RPercepDinero, ".
+				           "RPercepEspec, RIngresos, RCompensa, RGratifica, ".
+				           "RPrimas, RComision, RDietas, RBonos, ".
+				           "REstimulo, RApoyoEcon, RPrestacEcon, RPrestaEspecie, ".
+				           "RAreaResp, RNota ".
+			      "FROM tt9208bremun ".
+			      "WHERE RAyuntam = '$ClavAyun' AND ".
+				          "REjercicio = $EjerTrab AND ".
+				          "RConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -44,18 +43,16 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
+$VC05 = 1;	  $VC06 = "";   $VC07 = ""; 	 $VC08 = "";
 $VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
 $VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
 $VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   $VC24 = "";  	 $VC25 = "";
 $VC26 = "";   $VC27 = "";  	 $VC28 = "";		$VC29 = "";   $VC30 = "";  	 $VC31 = "";
 $VC32 = "";   $VC33 = "";  	 $VC34 = "";		$VC35 = "";   $VC36 = "";  	 $VC37 = "";
-$VC38 = "";   $VC39 = "";  	 $VC40 = "";		   
+		   
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['RConsecutivo'];	
-   $VC04 = $ResuSql['RAyuntam'];	
-   $VC05 = $ResuSql['REjercicio'];
+ { //Carga los campos	
+   $VC05 = $ResuSql['RNumeRegi'];
    $VC06 = $ResuSql['RFechInicio'];
    $VC07 = $ResuSql['RFechTerm'];
    $VC08 = $ResuSql['RTipoInte'];
@@ -88,9 +85,6 @@ if ($ResuSql)
    $VC35 = $ResuSql['RPrestaEspecie'];
    $VC36 = $ResuSql['RAreaResp'];
    $VC37 = $ResuSql['RNota'];
-   $VC38 = $ResuSql['RConsFrac'];
-   $VC39 = $ResuSql['RNumeTrim'];	
-   $VC40 = $ResuSql['RNumeRegi'];
  } 
 else
  { //Busca el sisguiente registro
@@ -112,9 +106,9 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "Alta";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "Modificar"; 
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;

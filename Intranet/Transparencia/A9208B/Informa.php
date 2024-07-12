@@ -49,7 +49,7 @@
 				<tr>
 					<th>No</th>
 					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
+						<input name="C05" id="VC05" type="text" value="<?=$VC05?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
@@ -67,7 +67,7 @@
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Firper</td>
+				  <td>Hirpervinculo</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>

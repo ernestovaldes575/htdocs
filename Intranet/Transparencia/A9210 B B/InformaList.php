@@ -24,15 +24,15 @@
 			<td>Trimestre:
             <?=$TrimTrab?></td>
 			<td colspan="2">Inciso:
-<?=$NumeInci?>
-              <?=$NumeSubi?>
-            <?=$Nomativi?></td>
-			<td></td>
+				<?=$NumeInci?>
+              	<?=$NumeSubi?>
+            	<?=$Nomativi?></td>
 			<td colspan="2">
-			  <a href="../Fracciones.php" 
+			  	<a href="../Fracciones.php" 
 					class="btn-Regresar">
-			    Regresar
-			    </a>		    </td>
+			    	Regresar
+			  	</a>		    
+			</td>
 		</tr>
 		<tr>
 			<th>No</th>
@@ -40,45 +40,48 @@
 			<th>Fecha de termino del periodo que se informa</th>
 			<th>Total de plazas de base</th>
 			<th>Total de plazas de confianza</th>
-			<th width="6%">
+			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>            </th>
-			<th width="12%">&nbsp;</th>
+			<!-- <th width="12%">&nbsp;</th> -->
 		</tr>
 		<?php 
+		  $NumeReng = 1;
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['TConsecutivo'];
-			  $VC06 = $RegiTabl['TFechInicio'];
-			  $VC07 = $RegiTabl['TFechTerm'];
-			  $VC08 = $RegiTabl['TTotPlazBas'];
-			  $VC11 = $RegiTabl['TTotPlazConf'];
+			  $VC04 = $RegiTabl['TFechInicio'];
+			  $VC05 = $RegiTabl['TFechTerm'];
+			  $VC06 = $RegiTabl['TTotPlazBas'];
+			  $VC07 = $RegiTabl['TTotPlazConf'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td><?php echo ($VC03); ?></td>
-			<td width="13%"><?=$VC06?></td>
-			<td width="13%"><?=$VC07?></td>
-			<td><?=$VC08?></td>
-			<td><?=$VC11?></td>
+			<td><?=$NumeReng?></td>
+			<td><?=$VC04?></td>
+			<td><?=$VC05?></td>
+			<td><?=$VC06?></td>
+			<td><?=$VC07?></td>
 			
-			<td data-titulo="Eliminar:">
-	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-Eliminar Elim"
-				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
-				<?php } ?>
-			</td>
 			<td data-titulo="Editar: ">
 				<?php if($Modi == "A" ){ ?>
 					<i class="bi bi-pencil-square btn-Modificar Modi" 
 					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
 				<?php } ?>
 			</td>
+			<td data-titulo="Eliminar:">
+	  			<?php if($Baja == "A"  ) { ?>
+				<i class="bi bi-x-square btn-Eliminar Elim"
+				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
+				<?php } ?>
+			</td>
 		</tr>
-		<?php	} ?> 
+		<?php	
+		$NumeReng ++;
+		} ?> 
 	</table>
 </div>	
 
