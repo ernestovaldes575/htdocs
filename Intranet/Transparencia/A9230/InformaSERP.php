@@ -23,15 +23,15 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT RDConsecutivo, RDAyuntam, RDEjercicio, RDFechInicio, ". 
-				   "RDFechTerm, RDEjerAudit, RDHipervEdosF, RDFechEmis, RDHipervDictam, ".
-				   "RDTotalObserv, RDTotalAclar, RDTotalSolven, RDNomConta, ".
-				   "RDApePatConta, RDApeMatConta, RDDenom, RDAreaResp, ".
-				   "RDNota, RDConsFrac, RDNumeTrim, RDNumeRegi ".
-			"FROM tt9230resultdicta ".
-			"WHERE RDAyuntam = '$ClavAyun' AND ".
-				  "RDEjercicio = $EjerTrab AND ".
-				  "RDConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT RDNumeRegi, RDFechInicio, RDFechTerm, RDEjerAudit, ". 
+				           "RDHipervEdosF, RDFechEmis, RDHipervDictam, ".
+				           "RDTotalObserv, RDTotalAclar, RDTotalSolven, RDNomConta, ".
+				           "RDApePatConta, RDApeMatConta, RDDenom, RDAreaResp, ".
+				           "RDNota ".
+			      "FROM tt9230resultdicta ".
+			      "WHERE RDAyuntam = '$ClavAyun' AND ".
+				           "RDEjercicio = $EjerTrab AND ".
+				           "RDConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -39,16 +39,14 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
-$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
-$VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
-$VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   
-
+$VC05 = 1;	  $VC06 = "";    $VC07 = ""; 	  $VC08 = "";
+$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   
+$VC13 = "";  	$VC14 = "";    $VC15 = "";    $VC16 = "";  	 
+$VC17 = "";		$VC18 = "";    $VC19 = "";  	$VC20 = "";
+ 
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['RDConsecutivo'];	
-   $VC04 = $ResuSql['RDAyuntam'];	
-   $VC05 = $ResuSql['RDEjercicio'];
+   $VC05 = $ResuSql['RDNumeRegi'];
    $VC06 = $ResuSql['RDFechInicio'];
    $VC07 = $ResuSql['RDFechTerm'];
    $VC08 = $ResuSql['RDEjerAudit'];
@@ -64,9 +62,6 @@ if ($ResuSql)
    $VC18 = $ResuSql['RDDenom'];
    $VC19 = $ResuSql['RDAreaResp'];	
    $VC20 = $ResuSql['RDNota'];
-   $VC21 = $ResuSql['RDConsFrac'];	
-   $VC22 = $ResuSql['RDNumeTrim'];	
-   $VC23 = $ResuSql['RDNumeRegi'];	
  } 
 else
  { //Busca el sisguiente registro
@@ -94,5 +89,5 @@ switch( $TipoMovi ){
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;
- }		
+ }			
 ?>
