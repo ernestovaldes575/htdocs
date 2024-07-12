@@ -15,8 +15,6 @@
 
 <?php
 	session_start();
-?>
-<?php
 	//Carga las variables
 	$ArCooki1 = $_COOKIE['CMenu'];
 	$AMenu = explode("|", $ArCooki1);
