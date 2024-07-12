@@ -98,12 +98,12 @@
         			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 
-			<!-- Termina  campos -->	
-				<tr>
+			<!-- Termina  campos -->		
+			<tr>
 				  <td></td>
 				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
-							<?=$MesnTiMo?>
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50">
+						<?=$MesnTiMo?>
 						</button></td>
 			   </tr>
 			</table>
@@ -112,3 +112,6 @@
 <!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>
+			
+			
+			

@@ -20,11 +20,11 @@ $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
 				  " AFechaInicio, AFechaTermino, ANombrePrograma ".
 				
 			"FROM a9206a ".
-		//"WHERE AAyuntamiento = '$ClavAyun' AND ".
-		//	"AEjercicio = $EjerTrab AND  ".
-				//  "AConsFrac = $ConsFrac AND ".
+		  "WHERE AAyuntamiento = '$ClavAyun' AND ".
+		        "AEjercicio = $EjerTrab AND  ".
+		         "AConsFrac = $ConsFrac ";
 				// "ANumeTrim = '$TrimTrab' ";
-				"ORDER BY AConsecutivo";
+				//"ORDER BY AConsecutivo";
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);

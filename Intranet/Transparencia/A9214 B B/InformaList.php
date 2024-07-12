@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	
-<?php include "../Encabezado/Ligas.php"?> 
-	
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Facultades de área</title>
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script src="InformaList.js"></script>
 <body>
@@ -37,9 +38,9 @@
 		<tr>
 		
 		<th>No</th>
-			<th>Fecha Inicio</th>
-			<th >Fecha Termino</th>
-			<th >Hipervínculo</th>
+			<th>Nombre de la persona física beneficiada</th>
+			<th >Primer apellido de la persona física beneficiada</th>
+			<th >Segundo apellido de la persona física beneficiada</th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -52,9 +53,9 @@
 		$NumeReng = 1;
 		 foreach($ResuSql as $RegiTabl){
 			$VC03 = $RegiTabl['AConsecutivo'];
-			$VC04 = $RegiTabl['AFechaInicio'];
-			$VC05 = $RegiTabl['AFechaTermino'];
-			$VC06 = $RegiTabl['THirper'];
+			$VC04 = $RegiTabl['PNombrepers'];
+			$VC05 = $RegiTabl['PPrimerapellido'];
+			$VC06 = $RegiTabl['PSegundoapellido'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";

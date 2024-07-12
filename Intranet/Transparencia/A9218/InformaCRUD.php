@@ -26,8 +26,7 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
+
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -60,66 +59,63 @@ $VC32 = $_POST['C32'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9218 ".	//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			
-								 "$ConsFrac,'$TrimTrab',".			
-								 "$VC03,'$VC04','$VC05',".
-								 "$VC06,'$VC07','$VC08',".
-								 "$VC09,'$VC10','$VC11',".
-								 "$VC12,'$VC13','$VC14',".
-								 "$VC15,'$VC16','$VC17',".
-								 "$VC18,'$VC19','$VC20',".
-								 "$VC21,'$VC22','$VC23',".
-								 "$VC24,'$VC25','$VC26',".
-								 "$VC27,'$VC28','$VC29',".
-								 "$VC30,'$VC31','$VC32',)";
+		$InstSql = "INSERT INTO a9218".	//Cambiar tabla
+			 "VALUES (NULL,'$ClavAyun',$EjerTrab,".			
+							"$ConsFrac,'$TrimTrab','$VC05',".			
+							"$VC06,'$VC07','$VC08',".
+							"$VC09,'$VC10','$VC11',".
+							"$VC12,'$VC13','$VC14',".
+							"$VC15,'$VC16','$VC17',".
+							"$VC18,'$VC19','$VC20',".
+							"$VC21,'$VC22','$VC23',".
+							"$VC24,'$VC25','$VC26',".
+						    "$VC27,'$VC28','$VC29',".
+							"$VC30,'$VC31','$VC32',)";
 										//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9218 ". 						//Cambiar tabla
-					"SET    AConsecutivo  = $VC03,". 				
-						   "AAyuntamiento = '$VC04',".			
-						   "AEjercicio = '$VC05', ".			
-						   "AFechaInicio = $VC06, ".					
+					"SET   ANumeRegi = '$VC05',".						
+						   "AFechaInicio = '$VC06', ".					
 						   "AFechaTermino = '$VC07',".			
 						   "ATipoEvento = '$VC08',".			
 						   "ATipoEventoOtro = '$VC09',".				
-				   		   "AAlcanceConcurso = $VC10,".				
-						   "AAlcanceConcursoOtro = '$VC11' ".  
+				   		   "AAlcanceConcurso = '$VC10',".				
+						   "AAlcanceConcursoOtro = '$VC11',".  
 						   "ATipoCargo = '$VC12',".			
-						   "ATipoCargoOtro = '$VC13', ".			
-						   "AClavePuesto = $VC14, ".					
+						   "ATipoCargoOtro = '$VC13',".			
+						   "AClavePuesto = '$VC14',".					
 						   "ADenominacionPuesto = '$VC15',".			
 						   "ADenominacionCargo = '$VC16',".			
 						   "ADenominacionUnidad= '$VC17',".				
-				   		   "ASalarioBruto = $VC18,".				
-						   "ASalarioNeto = '$VC19' ".
+				   		   "ASalarioBruto = '$VC18',".				
+						   "ASalarioNeto = '$VC19',".
 						   "AFechaPublicacion = '$VC20',".			
-						   "ANumeroConvocatoria = '$VC21', ".			
-						   "AHipervinculoDoc= $VC22, ".					
+						   "ANumeroConvocatoria = '$VC21',".			
+						   "AHipervinculoDoc= '$VC22',".					
 						   "AEstadoProcesoCon = '$VC23',".			
 						   "AEstadoProcesoConOtro= '$VC24',".			
 						   "ATotalCandidatos = '$VC25',".				
-				   		   "ANombrePersona = $VC26,".				
-						   "APrimerApelldio = '$VC27' ".
-						   "ASegundoApellido = $VC28, ".					
+				   		   "ANombrePersona = '$VC26',".				
+						   "APrimerApelldio = '$VC27',".
+						   "ASegundoApellido = '$VC28', ".					
 						   "AHipervinculoGanador = '$VC29',".			
 						   "AHipervinculoGanadorOtro = '$VC30',".			
 						   "AAreaResp = '$VC31',".				
-				   		   "ANota = $VC32,".				
+				   		   "ANota = '$VC32',".				
 						 
 						   
 						   //
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
-						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+						  "AEjercicio = '$EjerTrab' AND ".			//Cambiar campo
+				  		  "AConsecutivo = '$CampBusq'  ";			//Cambiar campo
  						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9218 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ";			//Cambiar campo
+				  		  "AConsecutivo = $CampBusq  ";			//Cambiar campo
  						  //"ANumeRegi = $CampBusq";
 	break;	
 }		

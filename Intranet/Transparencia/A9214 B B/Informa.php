@@ -4,8 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/css/style.css">
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
 
@@ -49,12 +48,12 @@
 				<tr>
 					<th>No</th>
 					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
+						<input name="C05" id="VC05" type="text" value="<?=$VC05?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
-					<th>Nombre persona</th>
+					<th>Nombre de la persona física beneficiadaa</th>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
@@ -62,61 +61,61 @@
 				</tr>	
 				
 				<tr>
-				  <td>Primer apellido</td>
-				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
+				  <td>Primer apellido de la persona física beneficiada</td>
+				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Segundo apellido</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Denomina social</td>
-				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Monto recursos</td>
+				  <td>Segundo apellido de la persona física beneficiada</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Denominación social de la persona moral beneficiada</td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Monto (en pesos), recurso, beneficio o apoyo</td>
+				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  
 			  
 				<tr>
 				  <td>Unidad territorial</td>
-				  <td><input name="C09" id="VC09" type="text" value="<?=$VC09?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-				<tr>
-				  <td>Edad</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			 
-				<tr>
-				  <td>Sexo</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
+				<tr>
+				  <td>Edad(en su caso)</td>
+				  <td><input name="C12" id="VC12" type="int" value="<?=$VC12?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
 			 
 				<tr>
-				  <td>Sexo otro</td>
-				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
+				  <td>Sexo(en su caso)</td>
+				  <td><input name="C13" id="VC13" type="int" value="<?=$VC13?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+
+			 
+				<tr>
+				  <td>Atención: Sexo(en su caso) en caso de elegir OTRO llenar este campo</td>
+				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	
-				<tr>
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--script src="/Intranet/Js/ValiForm.js"></script>-->
 </body>
 </html>

@@ -2,10 +2,7 @@
 <html lang="es">
 <head>  
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/css/style.css">
+	<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
 
@@ -48,6 +45,13 @@
 				<!-- Inicia campos -->
 					
 				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>
+				<tr>
 					<td>Fecha Inicio</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
@@ -67,18 +71,18 @@
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Tipo Contratacion Otro</td>
+				  <td>Tipo Contratacion (Otro)</td>
 				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Partida Presupuestal</td>
+				  <td>Partida presupuestal de los recursos</td>
 				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Nombre</td>
+				  <td>Nombre(s)</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
@@ -97,13 +101,13 @@
 
 			  <tr>
 				  <td>Numero Contrato</td>
-				  <td><input name="C14" id="VC14" type="int" value="<?=$VC14?>" 
+				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  
 			  <tr>
-				  <td>Hipervinculo Con</td>
+				  <td>Hipervinculo al contrato</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -123,50 +127,65 @@
 				  
 			  </tr>
 				<tr>
-				  <td>Fecha Inicio Con</td>
+				  <td>Fecha de inicio del contrato</td>
 				  <td><input name="C16" id="VC16" type="date" value="<?=$VC16?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Fecha Termino Con</td>
+				  <td>Fecha de término del contrato</td>
 				  <td><input name="C17" id="VC17" type="date" value="<?=$VC17?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Servicios Contra</td>
+				  <td>Servicios contratados</td>
 				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Remuneracion</td>
-				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
+				  <td>Remuneración mensual bruta o contraprestación</td>
+				  <td><input name="C19" id="VC19" type="float" value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Monto Total</td>
-				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
+				  <td>Monto total a pagar</td>
+				  <td><input name="C20" id="VC20" type="float" value="<?=$VC20?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Prestaciones</td>
+				  <td>Prestaciones (en su caso)</td>
 				  <td><input name="C21" id="VC21" type="text" value="<?=$VC21?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Hipervinculo</td>
-				  <td><input name="C22" id="VC22" type="text" value="<?=$VC22?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>Hipervínculo a la normatividad</td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC22 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC22?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 
 				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C23" id="VC23" type="text" value="<?=$VC23?>" 
+				  <td>Área responsable de la información</td>
+				  <td><input name="C23" id="VC23" type="int" value="<?=$VC23?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  <tr>
@@ -175,16 +194,16 @@
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	
-				<tr>
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--script src="/Intranet/Js/ValiForm.js"></script>-->
 </body>
 </html>

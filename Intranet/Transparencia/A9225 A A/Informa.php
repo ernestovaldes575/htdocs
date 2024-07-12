@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facultades de área</title>
-	<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="/Intranet/css/style.css">
+<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
 
@@ -44,7 +40,8 @@
 							Regresar
 						</a>
 					</td>
-				</tr>	
+				</tr>
+				<!-- Inicia campos -->
 				<tr>
 					<th>No</th>
 					<td>
@@ -55,50 +52,61 @@
 				<tr>
 					<th>Fecha Inicio</th>
 					<td>
-						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
+						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
-				<tr>
-					<td></td>
-					<td>
-						
-					</td>
-				</tr>
+				
+				
 				<tr>
 				  <td>Fecha de Termino</td>
-				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
+				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Denominacion</td>
-				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Fundamento</td>
+				  <td>Prepuesto Anual</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+				<tr>
+				  <td>Presupuesto Capitulo</td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+						class="form-control" placeholder="Descripción" ></td>
+				</tr>
+			 
 			  <tr>
-				  <td>Hipervinculo</td>
+				  <td>Hipervinculo PresEgresos</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
 					<?php } else { ?>
 					  	<!-- Subir imagen -->
-						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC10?>)">
 							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
-							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+	 					   if ( $VC10!= '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC10?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+
+				  <tr>
+				  <td>Hipervinculo Pagina </td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC11?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC11!= '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC11?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 
 						} //} else {?>
@@ -107,24 +115,25 @@
 			  </tr>
 				<tr>
 				  <td>Area Responsable</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Nota</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+			<!-- Termina  campos -->	
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--script src="/Intranet/Js/ValiForm.js"></script>-->
 </body>
 </html>
