@@ -13,7 +13,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,24 +25,19 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
-$VC11 = $_POST['C11'];
-$VC12 = $_POST['C12'];
+// $VC11 = $_POST['C11'];			Hipervinculo
+// $VC12 = $_POST['C12'];			Hipervinculo
 $VC13 = $_POST['C13'];
-$VC14 = $_POST['C14'];
-$VC15 = $_POST['C15'];
+// $VC14 = $_POST['C14'];			Hipervinculo
+// $VC15 = $_POST['C15'];			Hipervinculo
 $VC16 = $_POST['C16'];  
 $VC17 = $_POST['C17'];
-$VC18 = $_POST['C18'];
-$VC19 = $_POST['C19'];  
-$VC20 = $_POST['C20'];
 
 //Agregar campos
 switch ( $CRUD )
@@ -51,35 +45,39 @@ switch ( $CRUD )
 		$InstSql = "INSERT INTO  tt9234estadisticas  ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
-								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17')";
+								 "'$VC05','$VC06','$VC07',".			
+								 "'$VC08','$VC09','$VC10',".
+								 "''	 ,''	 ,'$VC13',". 	    
+								"''		 ,''	 ,'$VC16',".
+								"'$VC17')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE  tt9234estadisticas  ". 					//Cambiar tabla
-					"SET    EFechInicio = '$VC06', ". 				//Cambiar campo
-						   "EFechTerm = '$VC07', ".				//Cambiar campo
-						   "ETemaEstad = '$VC08', ".				//Cambiar campo
-						   "EPeriodAct = '$VC09', ".			//Cambiar campo
-						   "EDenom = '$VC10', ".				//Cambiar campo
-						   "EHiperVariable = '$VC11', ".				//Cambiar campo
-						  "EHiperDocTecn = '$VC12', ".				//No considera 
-				   		   "ETiposArch = '$VC13', ".					//Cambiar campo
-						   "EHipervBaseD = '$VC14', ".  				//Cambiar campo
-						   "EHiperBancos = '$VC15', ".				//Cambiar campo
-						  "EAreaResp = '$VC16', ".				//No considera 
-				   		   "ENota = '$VC17', ".					//Cambiar campo							 	
-					"WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "EEjercicio = '$EjerTrab' AND ".			//Cambiar campo
-				  		  "EConsecutivo = '$CampBusq' AND ".			//Cambiar campo
- 						  "ENumeRegi = '$CampBusq'";
+					"SET    ENumeRegi = '$VC05', ".
+						   "EFechInicio = '$VC06', ". 				
+						   "EFechTerm = '$VC07', ".				
+						   "ETemaEstad = '$VC08', ".				
+						   "EPeriodAct = '$VC09', ".			
+						   "EDenom = '$VC10', ".				
+						// "EHiperVariable = '$VC11', ".				Hipervinculo
+						// "EHiperDocTecn = '$VC12', ".				 	Hipervinculo
+				   		   "ETiposArch = '$VC13', ".					
+						// "EHipervBaseD = '$VC14', ".  				
+						// "EHiperBancos = '$VC15', ".				
+						   "EAreaResp = '$VC16', ".				 
+				   		   "ENota = '$VC17' ".				
+							 	
+					"WHERE EAyuntam = '$ClavAyun' AND ".		
+						  "EEjercicio = '$EjerTrab' AND ".			
+				  		  "EConsecutivo = '$CampBusq' ";			
+ 						//"ENumeRegi = '$CampBusq'";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM  tt9234estadisticas  ". 					//Cambiar tabla
-				   "WHERE EAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+		$InstSql = "DELETE FROM  tt9234estadisticas  ". 			//Cambiar tabla
+				   "WHERE EAyuntam = '$ClavAyun' AND ".				//Cambiar campo
 						  "EEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "EConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ENumeRegi = $CampBusq";
+				  		  "EConsecutivo = $CampBusq ";				//Cambiar campo
+ 						//"ENumeRegi = $CampBusq";
 	break;	
 }		
 

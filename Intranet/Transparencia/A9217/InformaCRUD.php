@@ -26,8 +26,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -46,42 +44,42 @@ $VC18 = $_POST['C18'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9217regisolic ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tt9217regisolic ".					//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07','$VC08',".		//Cambiar campo
-								"'$VC09','$VC10','$VC11',". 	    //Cambiar campo
-								"'$VC12','$VC13','$VC14',".
-								"'$VC15','$VC16','$VC17',".
-								"'$VC18')";
+								 "$ConsFrac,'$TrimTrab',".			
+								 "'$VC05','$VC06','$VC07',".		
+								 "'$VC08','$VC09','$VC10',".		
+								 "'$VC11','$VC12','$VC13',". 	    
+								 "'$VC14','$VC15','$VC16',".
+								 "'$VC17','$VC18')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9217regisolic ". 						//Cambiar tabla
-					"SET    RSFechInicio = '$VC06',". 				//Cambiar campo
-						   "RSFechTerm = '$VC07',".				//Cambiar campo
-						   "RSFechSoli = '$VC08', ".				//Cambiar campo
-						   "RSFolioSoli = '$VC09', ".					//Cambiar campo
-						   "RSInfoReq = '$VC10',".				//Cambiar campo
-						   "RSRespuesta = '$VC11',".				//Cambiar campo
-						  "RSRecurrida = '$VC12',".				//No considera 
-				   		   "RSRecurrOtro = '$VC13',".					//Cambiar campo
-						   "RSDocs = '$VC14', ".  					//Cambiar campo
-						   "RSTipoSoli = '$VC15',".				//Cambiar campo
-						  "RSTipoSoliOtro = '$VC16',".				//No considera 
-				   		   "RSAreaResp = '$VC17',".					//Cambiar campo
+					"SET    RSNumeRegi = '$VC05',".
+						   "RSFechInicio = '$VC06',". 				//Cambiar campo
+						   "RSFechTerm = '$VC07',".				
+						   "RSFechSoli = '$VC08', ".				
+						   "RSFolioSoli = '$VC09', ".					
+						   "RSInfoReq = '$VC10',".				
+						   "RSRespuesta = '$VC11',".				
+						   "RSRecurrida = '$VC12',".				 
+				   		   "RSRecurrOtro = '$VC13',".					
+						   "RSDocs = '$VC14',".  					
+						   "RSTipoSoli = '$VC15',".				
+						   "RSTipoSoliOtro = '$VC16',".				 
+				   		   "RSAreaResp = '$VC17',".					
 						   "RSNota = '$VC18' ".
-					"WHERE RSAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+					"WHERE RSAyuntam = '$ClavAyun' AND ".		
 						  "RSEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RSConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RSNumeRegi = $CampBusq";
+				  		  "RSConsecutivo = $CampBusq ";				//Cambiar campo
+ 						//   "RSNumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM tt9217regisolic ". 					//Cambiar tabla
 				   "WHERE RSAyuntam = '$ClavAyun' AND ".		//Cambiar campo
 						  "RSEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "RSConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "RSNumeRegi = $CampBusq";
+				  		  "RSConsecutivo = $CampBusq ";				//Cambiar campo
+ 						//   "RSNumeRegi = $CampBusq";
 	break;	
 }		
 

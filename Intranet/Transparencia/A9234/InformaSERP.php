@@ -23,15 +23,14 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT EConsecutivo, EAyuntam, EEjercicio, EFechInicio, ". 
-				   "EFechTerm, ETemaEstad, EPeriodAct, EDenom, EHiperVariable, ".
-				   "EHiperDocTecn, ETiposArch, EHipervBaseD, EHiperBancos, ".
-				   "EAreaResp, ENota, EConsFrac, ENumeTrim, ".
-				   "ENumeRegi ".
-			"FROM tt9234estadisticas ".
-			"WHERE EAyuntam = '$ClavAyun' AND ".
-				  "EEjercicio = $EjerTrab AND ".
-				  "EConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT ENumeRegi, EFechInicio, EFechTerm, ETemaEstad, ". 
+				           "EPeriodAct, EDenom, EHiperVariable, EHiperDocTecn, ".
+				           "ETiposArch, EHipervBaseD, EHiperBancos, EAreaResp, ".
+				           "ENota ".
+			      "FROM tt9234estadisticas ".
+			      "WHERE EAyuntam = '$ClavAyun' AND ".
+				          "EEjercicio = $EjerTrab AND ".
+				          "EConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -39,15 +38,14 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
-$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
-$VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";  
+$VC05 = 1;	  $VC06 = "";    $VC07 = ""; 	  $VC08 = "";
+$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   
+$VC13 = "";  	$VC14 = "";    $VC15 = "";    $VC16 = "";
+$VC17 = "";		  
 
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['EConsecutivo'];	
-   $VC04 = $ResuSql['EAyuntam'];	
-   $VC05 = $ResuSql['EEjercicio'];
+   $VC05 = $ResuSql['ENumeRegi'];
    $VC06 = $ResuSql['EFechInicio'];
    $VC07 = $ResuSql['EFechTerm'];
    $VC08 = $ResuSql['ETemaEstad'];
@@ -60,9 +58,6 @@ if ($ResuSql)
    $VC15 = $ResuSql['EHiperBancos'];
    $VC16 = $ResuSql['EAreaResp'];
    $VC17 = $ResuSql['ENota'];
-   $VC18 = $ResuSql['EConsFrac'];
-   $VC19 = $ResuSql['ENumeTrim'];	
-   $VC20 = $ResuSql['ENumeRegi'];
  } 
 else
  { //Busca el sisguiente registro
@@ -90,5 +85,5 @@ switch( $TipoMovi ){
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;
- }		
+ }	
 ?>

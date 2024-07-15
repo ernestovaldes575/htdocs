@@ -23,11 +23,12 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT TRConsecutivo, TRAyuntam, TREjercicio, TRFechInicio, ".
-				   "TRFechTerm, TRDenom, TRTipoUsu, TRDesc, TRModalidad, TRHipervRequ, ".
-           "TRDocReque, TRHipervForm, TRTiempoRes, TRVigencia, TRAreaContact, ".
-           "TRCosto, TRSustento, TRLugarPago, TRFundJuri, TRDerech, TRLugarRepor, ".
-				   "TROtros, TRHipervInf, TRHipervSist, TRAreaResp, TRNota ".
+$InstSql = 	"SELECT TRNumeRegi, TRFechInicio, TRFechTerm, TRDenom, ".
+				    "TRTipoUsu, TRDesc, TRModalidad, TRHipervRequ, ".
+           			"TRDocReque, TRHipervForm, TRTiempoRes, TRVigencia, ".
+					"TRAreaContact, TRCosto, TRSustento, TRLugarPago, ".
+           			"TRFundJuri, TRDerech, TRLugarRepor, TROtros,".
+				    "TRHipervInf, TRHipervSist, TRAreaResp, TRNota ".
 			"FROM  tt9224tramreq ".
 			"WHERE TRAyuntam = '$ClavAyun' AND ".
 				  "TREjercicio = $EjerTrab AND ".
@@ -39,7 +40,7 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";
+$VC05 = 1;
 $VC06 = "";   $VC07 = "";   $VC08 = "";
 $VC09 = "";   $VC10 = "";   $VC11 = "";
 $VC12 = "";   $VC13 = "";   $VC14 = "";
@@ -50,32 +51,30 @@ $VC24 = "";   $VC25 = "";   $VC26 = "";
 $VC27 = "";   $VC28 = "";   
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['TRConsecutivo'];	
-   $VC04 = $ResuSql['TRAyuntam'];	
-   $VC05 = $ResuSql['TREjercicio'];
-   $VC06 = $ResuSql['TRFechInicio'];
-   $VC07 = $ResuSql['TRFechTerm'];
-   $VC08 = $ResuSql['TRDenom'];
-   $VC09 = $ResuSql['TRTipoUsu'];
-   $VC10 = $ResuSql['TRDesc'];	
-   $VC11 = $ResuSql['TRModalidad'];	
-   $VC12=$ResuSql['TRHipervRequ'];
-	$VC13=$ResuSql['TRDocReque'];
-	$VC14=$ResuSql['TRHipervForm'];
-	$VC15=$ResuSql['TRTiempoRes'];
-	$VC16=$ResuSql['TRVigencia'];
-	$VC17=$ResuSql['TRAreaContact'];
-	$VC18=$ResuSql['TRCosto'];
-	$VC19=$ResuSql['TRSustento'];
-	$VC20=$ResuSql['TRLugarPago'];
-	$VC21=$ResuSql['TRFundJuri'];
-	$VC22=$ResuSql['TRDerech'];
-	$VC23=$ResuSql['TRLugarRepor'];
-	$VC24=$ResuSql['TROtros'];
-	$VC25=$ResuSql['TRHipervInf'];
-	$VC26=$ResuSql['TRHipervSist'];
-	$VC27=$ResuSql['TRAreaResp'];
-	$VC28=$ResuSql['TRNota'];	
+    $VC05 = $ResuSql['TRNumeRegi'];
+    $VC06 = $ResuSql['TRFechInicio'];
+    $VC07 = $ResuSql['TRFechTerm'];
+    $VC08 = $ResuSql['TRDenom'];
+    $VC09 = $ResuSql['TRTipoUsu'];
+    $VC10 = $ResuSql['TRDesc'];	
+    $VC11 = $ResuSql['TRModalidad'];	
+    $VC12 = $ResuSql['TRHipervRequ'];
+	$VC13 = $ResuSql['TRDocReque'];
+	$VC14 = $ResuSql['TRHipervForm'];
+	$VC15 = $ResuSql['TRTiempoRes'];
+	$VC16 = $ResuSql['TRVigencia'];
+	$VC17 = $ResuSql['TRAreaContact'];
+	$VC18 = $ResuSql['TRCosto'];
+	$VC19 = $ResuSql['TRSustento'];
+	$VC20 = $ResuSql['TRLugarPago'];
+	$VC21 = $ResuSql['TRFundJuri'];
+	$VC22 = $ResuSql['TRDerech'];
+	$VC23 = $ResuSql['TRLugarRepor'];
+	$VC24 = $ResuSql['TROtros'];
+	$VC25 = $ResuSql['TRHipervInf'];
+	$VC26 = $ResuSql['TRHipervSist'];
+	$VC27 = $ResuSql['TRAreaResp'];
+	$VC28 = $ResuSql['TRNota'];	
  } 
 else
  { //Busca el sisguiente registro
@@ -83,8 +82,8 @@ else
 	 		   "FROM  tt9224tramreq ".
 			   "WHERE TRAyuntam = '$ClavAyun' AND ".
 				  "TREjercicio = $EjerTrab AND ".
-				  "TRConsFrac = $ConsFrac AND ".
-				  "TRNumeTrim = '$TrimTrab' ";
+				  "TRConsFrac = $ConsFrac ";
+				//   "TRNumeTrim = '$TrimTrab' ";
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
@@ -97,11 +96,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "Alta";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "Modificar"; 
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;
- }		
+ }			
 ?>

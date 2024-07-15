@@ -23,19 +23,18 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT DConsecutivo, DAyuntam, DEjercicio, DFechInicio, ". 
-				   "DFechTerm, DAcreditado, DDenominac, DTipoObli, DAtenTipoObli, ".
-				   "DAcreedor, DFechContrat, DMontOriContr, DPlazoTasaI, ".
-				   "DTasaInt, DPlazoPagarDeu, DFechVenc, DRecursGarant, ".
-				   "DDestinoObli, DSaldo, DHipervAutor, DHiperListado, ".
-				   "DHiperContr, DHiperDoc, DInfoFinanz, DInforEnvi, ".
-				   "DInforCuePub, DFechInscrRO, DInforDeuPub, DInforCuePubCons, ".
-				   "DHipervPropu, DAreaResp, DNota, DConsFrac, ".
-				   "DNumeTrim, DNumeRegi ".
-			"FROM  tt9226deudapublic ".
-			"WHERE DAyuntam = '$ClavAyun' AND ".
-				  "DEjercicio = $EjerTrab AND ".
-				  "DConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT DNumeRegi, DFechInicio, DFechTerm, DAcreditado,". 
+				          "DDenominac, DTipoObli, DAtenTipoObli, DAcreedor,".
+				          "DFechContrat, DMontOriContr, DPlazoTasaI, DTasaInt,".
+				          "DPlazoPagarDeu, DFechVenc, DRecursGarant, DDestinoObli,".
+				          "DSaldo, DHipervAutor, DHiperListado, DHiperContr, ".
+				          "DHiperDoc, DInfoFinanz, DInforEnvi, DInforCuePub, ".
+				          "DFechInscrRO, DInforDeuPub, DInforCuePubCons, ".
+				          "DHipervPropu, DAreaResp, DNota ".
+			      "FROM  tt9226deudapublic ".
+			      "WHERE DAyuntam = '$ClavAyun' AND ".
+				          "DEjercicio = $EjerTrab AND ".
+				          "DConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -43,18 +42,18 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
-$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
-$VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
-$VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   $VC24 = "";  	 $VC25 = "";
-$VC26 = "";   $VC27 = "";  	 $VC28 = "";		$VC29 = "";   $VC30 = "";  	 $VC31 = "";
-$VC32 = "";   $VC33 = "";  	 $VC34 = "";		$VC35 = "";   $VC36 = "";  	 $VC37 = "";
+$VC05 = 1;	  $VC06 = "";    $VC07 = ""; 	  $VC08 = "";
+$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   
+$VC13 = "";  	$VC14 = "";    $VC15 = "";    $VC16 = "";  	
+$VC17 = "";		$VC18 = "";    $VC19 = "";  	$VC20 = "";
+$VC21 = "";   $VC22 = "";  	 $VC23 = "";    $VC24 = "";  	 
+$VC25 = "";   $VC26 = "";    $VC27 = "";  	$VC28 = "";		
+$VC29 = "";   $VC30 = "";  	 $VC31 = "";    $VC32 = "";   
+$VC33 = "";  	 $VC34 = "";		
 
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['DConsecutivo'];	
-   $VC04 = $ResuSql['DAyuntam'];	
-   $VC05 = $ResuSql['DEjercicio'];
+ { //Carga los campos	
+   $VC05 = $ResuSql['DNumeRegi'];
    $VC06 = $ResuSql['DFechInicio'];
    $VC07 = $ResuSql['DFechTerm'];
    $VC08 = $ResuSql['DAcreditado'];
@@ -84,9 +83,6 @@ if ($ResuSql)
    $VC32 = $ResuSql['DHipervPropu'];	
    $VC33 = $ResuSql['DAreaResp'];	
    $VC34 = $ResuSql['DNota'];
-   $VC35 = $ResuSql['DConsFrac'];
-   $VC36 = $ResuSql['DNumeTrim'];
-   $VC37 = $ResuSql['DNumeRegi'];
  } 
 else
  { //Busca el sisguiente registro

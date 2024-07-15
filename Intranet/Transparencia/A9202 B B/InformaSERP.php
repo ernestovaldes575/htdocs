@@ -23,13 +23,13 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT OConsecutivo, OAyuntam, OEjercicio, OFechInicio, ".
-				   "OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ".
-				   "ONota, ONumeRegi ".
-			"FROM  tt9202borgan ".
-			"WHERE OAyuntam = '$ClavAyun' AND ".
-				"OEjercicio = $EjerTrab AND ".
-				"OConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT ONumeRegi,  OFechInicio, ".
+                   "OFechTerm, OHipervin, OAreaResp, OFechAct, OFechValid, ".
+                   "ONota ".
+            "FROM   tt9202borgan ".
+            "WHERE  OAyuntam = '$ClavAyun' AND ".
+                   "OEjercicio = $EjerTrab AND ".
+                   "OConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -37,16 +37,13 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";
+$VC05 = 1;
 $VC06 = "";   $VC07 = "";    $VC08 = "";
 $VC09 = "";   $VC10 = "";    $VC11 = "";
-$VC12 = "";   $VC13 = "";   $VC14 = "";    
-$VC15 = "";
+$VC12 = "";   
 if ($ResuSql)
  { //Carga los campos
-   $VC03 = $ResuSql['OConsecutivo'];	
-   $VC04 = $ResuSql['OAyuntam'];	
-   $VC05 = $ResuSql['OEjercicio'];
+   $VC05 = $ResuSql['ONumeRegi'];
    $VC06 = $ResuSql['OFechInicio'];
    $VC07 = $ResuSql['OFechTerm'];
    $VC08 = $ResuSql['OHipervin'];
@@ -54,33 +51,30 @@ if ($ResuSql)
    $VC10 = $ResuSql['OFechAct'];	
    $VC11 = $ResuSql['OFechValid'];
    $VC12 = $ResuSql['ONota'];		
-   $VC13 = $ResuSql['OConsFrac'];	
-   $VC14 = $ResuSql['ONumeTrim'];
-   $VC15 = $ResuSql['ONumeRegi'];	
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ONumeRegi) IS  NULL THEN 1 ELSE  MAX(ONumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  tt9202borgan ".
 			   "WHERE OAyuntam = '$ClavAyun' AND ".
-				  "OEjercicio = $EjerTrab AND ".
-				  "OConsFrac = $ConsFrac AND ".
-				  "ONumeTrim = '$TrimTrab' ";
+               "OEjercicio = $EjerTrab AND ".
+               "OConsFrac = $ConsFrac AND ".
+               "ONumeTrim = '$TrimTrab' ";
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();
   if ($ResuSql)
-    $VC03 = $ResuSql['Clave'];
+    $VC05 = $ResuSql['Clave'];
   }
 
 $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "Alta";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "Modificar"; 
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;

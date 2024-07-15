@@ -27,10 +27,7 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
-		
+
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
@@ -46,6 +43,13 @@
 				</tr>
 				<!-- Inicia campos -->	
 				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>
+				<tr>
 					<td>Fecha Inicio del periodo que se informa</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
@@ -59,31 +63,63 @@
 				</tr>
 				<tr>
         			<td>Ejercicio Auditado</td>				
-        			<td><input type="text" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Hipervinculo a los Estados Financieros Dictaminados</td>				
-        			<td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
+					<td>						
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC09 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+        			<!-- <td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
         			<td>Fecha de emisión del dictamen</td>				
         			<td><input type="date" name="C10" id="VC10" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Hipervinculo al dictamen de estados financieros</td>				
-        			<td><input type="text" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Hipervinculo al dictamen de estados financieros</td>	
+					<td>						
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC11 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC11?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>			
+        			<!-- <td><input type="text" name="C11" id="VC11" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
         			<td>Total de observaciones resultantes</td>				
-        			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Total de aclaraciones efectuadas</td>				
-        			<td><input type="text" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
       			<tr>
         			<td>Total de solventaciones</td>				
-        			<td><input type="text" name="C14" id="VC14" value="<?=$VC14?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C14" id="VC14" value="<?=$VC14?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
       			<tr>
         			<td>Nombre del contador público que realizó el dictamen</td>				
@@ -103,7 +139,7 @@
       			</tr>
 				<tr>
         			<td>Area Responsable</td>				
-        			<td><input type="text" name="C19" id="VC19" value="<?=$VC19?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C19" id="VC19" value="<?=$VC19?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota</td>				
@@ -113,14 +149,16 @@
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
-						</button></td>
+				  <td>
+					<button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50">
+							<?=$MesnTiMo?>
+					</button>
+				  </td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>

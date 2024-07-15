@@ -23,16 +23,15 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
-$InstSql = 	"SELECT CCConsecutivo, CCAyuntam, CCEjercicio, CCPeriodInfor, ". 
-				   "CCPerioInforOtr, CCTipoConv, CCDenom, CCFechFirma, CCUnidAdm, ".
-				   "CCPersonaCov, CCObjetivo, CCFuenteRecur, CCDescrRec, ".
-				   "CCInicioPeriod, CCTermPeriod, CCFechPubliDOF, CCHipervDoc, ".
-				   "CCHipervModif, CCAreaResp, CCNota, CCConsFrac, ".
-				   "CCNumeTrim, CCNumeRegi ".
-			"FROM tt9237conveniocoor ".
-			"WHERE CCAyuntam = '$ClavAyun' AND ".
-				  "CCEjercicio = $EjerTrab AND ".
-				  "CCConsecutivo = $CampBusq ";
+$InstSql = 	"SELECT CCNumeRegi, CCPeriodInfor, CCPerioInforOtr,". 
+				           "CCTipoConv, CCDenom, CCFechFirma, CCUnidAdm, ".
+				           "CCPersonaCov, CCObjetivo, CCFuenteRecur, CCDescrRec, ".
+				           "CCInicioPeriod, CCTermPeriod, CCFechPubliDOF, CCHipervDoc, ".
+				           "CCHipervModif, CCAreaResp, CCNota ".
+			      "FROM tt9237conveniocoor ".
+			      "WHERE CCAyuntam = '$ClavAyun' AND ".
+				          "CCEjercicio = $EjerTrab AND ".
+				          "CCConsecutivo = $CampBusq ";
 			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -40,16 +39,15 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = "";   $VC04 = "105"; $VC05 = "2024";	$VC06 = "";   $VC07 = ""; 	 $VC08 = "";
-$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
-$VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
-$VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   $VC24 = "";  	 $VC25 = "";
+$VC05 = 1;	  $VC06 = "";    $VC07 = ""; 	  $VC08 = "";
+$VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   
+$VC13 = "";  	$VC14 = "";    $VC15 = "";    $VC16 = "";  	 
+$VC17 = "";		$VC18 = "";    $VC19 = "";  	$VC20 = "";
+$VC21 = "";   $VC21 = "";  	 $VC22 = "";		
 
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['CCConsecutivo'];	
-   $VC04 = $ResuSql['CCAyuntam'];	
-   $VC05 = $ResuSql['CCEjercicio'];
+ { //Carga los campos	
+   $VC05 = $ResuSql['CCNumeRegi'];
    $VC06 = $ResuSql['CCPeriodInfor'];
    $VC07 = $ResuSql['CCPerioInforOtr'];
    $VC08 = $ResuSql['CCTipoConv'];
@@ -67,9 +65,6 @@ if ($ResuSql)
    $VC20 = $ResuSql['CCHipervModif'];
    $VC21 = $ResuSql['CCAreaResp'];	
    $VC22 = $ResuSql['CCNota'];	
-   $VC23 = $ResuSql['CCConsFrac'];	
-   $VC24 = $ResuSql['CCNumeTrim'];
-   $VC25 = $ResuSql['CCNumeRegi'];
  } 
 else
  { //Busca el sisguiente registro
@@ -91,11 +86,11 @@ $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/"
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "Alta";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "Modificar"; 
 			$CRUD = "PUT";		  break;
   case "B":	$MesnTiMo = "Eliminar";
 			$CRUD = "DELETE";	  break;
- }		
+ }				
 ?>

@@ -13,7 +13,6 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +25,6 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -45,82 +42,77 @@ $VC18 = $_POST['C18'];
 $VC19 = $_POST['C19'];  
 $VC20 = $_POST['C20'];
 $VC21 = $_POST['C21'];
-$VC22 = $_POST['C22'];
-$VC23 = $_POST['C23'];
-$VC24 = $_POST['C24'];
-$VC25 = $_POST['C25'];
+// $VC22 = $_POST['C22'];	Hipervinculo
+// $VC23 = $_POST['C23'];	Hipervinculo
+// $VC24 = $_POST['C24'];	Hipervinculo
+// $VC25 = $_POST['C25'];	Hipervinculo
 $VC26 = $_POST['C26'];  
 $VC27 = $_POST['C27'];
 $VC28 = $_POST['C28'];
 $VC29 = $_POST['C29'];
 $VC30 = $_POST['C30'];
 $VC31 = $_POST['C31'];
-$VC32 = $_POST['C32'];
+// $VC32 = $_POST['C32'];	Hipervinculo
 $VC33 = $_POST['C33'];  
 $VC34 = $_POST['C34'];
-//$VC35 = $_POST['C35'];	Cons Frac no considera
-//$VC36 = $_POST['C36'];	NumTrim no considera
-$VC37 = $_POST['C37'];
-
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9226deudapublic ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tt9226deudapublic ".				//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "'$VC03','$VC04','$VC05','$VC06','$VC07',".			
-								 "'$VC08','$VC09','$VC10','$VC11','$VC12',". 	    
-								"'$VC13','$VC14','$VC15','$VC16','$VC17',".
-								"'$VC18','$VC19','$VC20','$VC21','$VC22',".
-								"'$VC23','$VC24','$VC25','$VC26','$VC27',".
-								"'$VC28','$VC29','$VC30','$VC31','$VC32',".
-								"'$VC33','$VC34','$VC35','$VC36','$VC37')";
+								"$ConsFrac,'$TrimTrab',".			//Cambiar campo
+								"'$VC05','$VC06','$VC07','$VC08','$VC09',".			
+								"'$VC10','$VC11','$VC12','$VC13','$VC14',". 	    
+								"'$VC15','$VC16','$VC17','$VC18','$VC19',".
+								"'$VC20','$VC21',''		,''		,''		,".
+								"''		,'$VC26','$VC27','$VC28','$VC29',".
+								"'$VC30','$VC31',''		,'$VC33','$VC34')";
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9226deudapublic ". 						//Cambiar tabla
-					"SET    DFechInicio = '$VC06',". 				//Cambiar campo
-						   "DFechTerm = '$VC07',".				//Cambiar campo
-						   "DAcreditado = '$VC08', ".				//Cambiar campo
-						   "DDenominac = '$VC09', ".			//Cambiar campo
-						   "DTipoObli = '$VC10',".				//Cambiar campo
-						   "DAtenTipoObli = '$VC11',".				//Cambiar campo
-						  "DAcreedor = '$VC12',".				//No considera 
-				   		   "DFechContrat = '$VC13',".					//Cambiar campo
-						   "DMontOriContr = '$VC14', ".  					//Cambiar campo
-						   "DPlazoTasaI = '$VC15',".				//Cambiar campo
-						  "DTasaInt = '$VC16',".				//No considera 
-				   		   "DPlazoPagarDeu = '$VC17',".					//Cambiar campo
+					"SET    DNumeRegi = '$VC05',".
+						   "DFechInicio = '$VC06',". 				//Cambiar campo
+						   "DFechTerm = '$VC07',".				
+						   "DAcreditado = '$VC08', ".				
+						   "DDenominac = '$VC09', ".			
+						   "DTipoObli = '$VC10',".				
+						   "DAtenTipoObli = '$VC11',".				
+						   "DAcreedor = '$VC12',".				 
+				   		   "DFechContrat = '$VC13',".					
+						   "DMontOriContr = '$VC14', ".  					
+						   "DPlazoTasaI = '$VC15',".				
+						   "DTasaInt = '$VC16',".				 
+				   		   "DPlazoPagarDeu = '$VC17',".					
 						   "DFechVenc = '$VC18', ".
 						   "DRecursGarant = '$VC19', ".			
 						   "DDestinoObli = '$VC20',".				
 						   "DSaldo = '$VC21',".				
-						  "DHipervAutor = '$VC22',".				 
-				   		   "DHiperListado = '$VC23',".					
-						   "DHiperContr = '$VC24', ".  					
-						   "DHiperDoc = '$VC25',".				
+						// "DHipervAutor = '$VC22',".				No considera		 
+				   		// "DHiperListado = '$VC23',".				No considera	
+						// "DHiperContr = '$VC24', ".  				No considera	
+						// "DHiperDoc = '$VC25',".					No considera
 						  "DInfoFinanz = '$VC26',".				 
 				   		   "DInforEnvi = '$VC27',".					
 						   "DInforCuePub = '$VC28', ".
 						   "DFechInscrRO = '$VC29', ".
 						   "DInforDeuPub = '$VC30', ".			
 						   "DInforCuePubCons = '$VC31',".				
-						   "DHipervPropu = '$VC32',".				
-						  "DAreaResp = '$VC33',".				 
-				   		   "DNota = '$VC34',".								
-						  "DNumeRegi = '$VC37' ".				 
-				   		   
-					"WHERE DAyuntam = '$ClavAyun' AND ".		//Cambiar campo
-						  "DEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "DConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "DNumeRegi = $CampBusq";
+						// "DHipervPropu = '$VC32',".				No considera		
+						   "DAreaResp = '$VC33',".				 
+				   		   "DNota = '$VC34' ".								
+				  
+					"WHERE DAyuntam = '$ClavAyun' AND ".		
+						  "DEjercicio = $EjerTrab AND ".			
+				  		  "DConsecutivo = $CampBusq ";			
+ 						//"DNumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM tt9226deudapublic ". 					//Cambiar tabla
-				   "WHERE DAyuntam = '$ClavAyun' AND ".		//Cambiar campo
+				   "WHERE DAyuntam = '$ClavAyun' AND ".				//Cambiar campo
 						  "DEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "DConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "DNumeRegi = $CampBusq";
+				  		  "DConsecutivo = $CampBusq ";				//Cambiar campo
+ 						//"DNumeRegi = $CampBusq";
 	break;	
 }		
 

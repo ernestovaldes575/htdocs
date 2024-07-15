@@ -27,11 +27,7 @@
 	<form id="PideDato" method="post" name="formulario" action="InformaCRUD.php">	
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
-		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
-		<input type="hidden" name="C03" value="<?=$VC03?>">
-  		<input type="hidden" name="C04" value="<?=$VC04?>">
-  		<input type="hidden" name="C05" value="<?=$VC05?>">
-		
+		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
@@ -46,6 +42,13 @@
 					</td>
 				</tr>
 				<!-- Inicia campos -->	
+				<tr>
+					<td>No</td>
+					<td>
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" >
+					</td>	  
+				</tr>	
 				<tr>
 					<td>Fecha Inicio</td>
 					<td>
@@ -70,17 +73,16 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
+	 					   if ( $VC08 != '' ) { ?> 
 							<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 
 						} //} else {?>
 				  </td>
-				  
 			  	</tr>
 				<tr>
 				  <td>Area Responsable</td>
-				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+				  <td><input  name="C09" id="VC09" type="number"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  	</tr>
 				<tr>
@@ -101,15 +103,15 @@
 			<!-- Termina  campos -->	
 				<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+							<?=$MesnTiMo?>
 						</button></td>
-			  </tr>
+			  	</tr>
 			</table>
 	</form>	
 </div>
 <!--<script src="/Intranet/Js/ValiForm.js"></script>-->
-<script src="Formulario.js"></script>
+<!--<script src="Formulario.js"></script>-->
 </body>
 </html>

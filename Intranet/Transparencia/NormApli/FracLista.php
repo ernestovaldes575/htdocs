@@ -19,7 +19,7 @@
 ?>	
 <!--encabezado--> 
 <div class="container table-responsive">
-	<table width="70%" class="ListInfo tabla">
+	<table width="70%" class="ListInfo tabla" id="tblRegistros">
 		<tr>
 			<td width="5%"></td>
 			<td colspan="2"></td>
