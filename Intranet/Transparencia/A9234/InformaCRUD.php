@@ -31,11 +31,11 @@ $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
-$VC11 = $_POST['C11'];
-$VC12 = $_POST['C12'];
+// $VC11 = $_POST['C11'];			Hipervinculo
+// $VC12 = $_POST['C12'];			Hipervinculo
 $VC13 = $_POST['C13'];
-$VC14 = $_POST['C14'];
-$VC15 = $_POST['C15'];
+// $VC14 = $_POST['C14'];			Hipervinculo
+// $VC15 = $_POST['C15'];			Hipervinculo
 $VC16 = $_POST['C16'];  
 $VC17 = $_POST['C17'];
 
@@ -65,7 +65,8 @@ switch ( $CRUD )
 						// "EHipervBaseD = '$VC14', ".  				
 						// "EHiperBancos = '$VC15', ".				
 						   "EAreaResp = '$VC16', ".				 
-				   		   "ENota = '$VC17', ".												 	
+				   		   "ENota = '$VC17' ".				
+							 	
 					"WHERE EAyuntam = '$ClavAyun' AND ".		
 						  "EEjercicio = '$EjerTrab' AND ".			
 				  		  "EConsecutivo = '$CampBusq' ";			
