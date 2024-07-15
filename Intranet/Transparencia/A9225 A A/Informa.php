@@ -32,9 +32,9 @@
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
 				<tr class="">
-					<td width="29%" class="text-uppercase" scope="row">
+					<th width="29%" class="text-uppercase" scope="row">
 						Campo
-					</td>
+					</th>
 					<td width="71%">
 						<a class="btn-Regresar container" href="InformaList.php">
 							Regresar
@@ -43,14 +43,14 @@
 				</tr>
 				<!-- Inicia campos -->
 				<tr>
-					<th>No</th>
+					<td>No</td>
 					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
-					<th>Fecha Inicio</th>
+					<td>Fecha Inicio</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
