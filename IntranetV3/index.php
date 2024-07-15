@@ -69,6 +69,7 @@ if (isset($_POST["ingresar"])) {
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>App Notas PHP, PDO y SQL Server</title>
 </head>
 <body class="hold-transition login-page">
