@@ -159,7 +159,7 @@
       			</tr>
       			<tr>
         			<td>Area responsable</td>				
-        			<td><input type="text" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td>
+        			<td><input type="number" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
         			<td>Nota</td>				

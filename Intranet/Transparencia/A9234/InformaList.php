@@ -26,7 +26,7 @@
 				<?=$NumeInci?>
               	<?=$NumeSubi?>
             	<?=$Nomativi?></td>
-			<td colspan="2">
+			<td colspan="3">
 			  	<a href="../Fracciones.php" 
 					class="btn-Regresar">
 			    	Regresar
@@ -36,7 +36,7 @@
 		<tr>
 			<th>No</th>
 			<th>Fecha Inicio del periodo que se informa</th>
-			<th>Fecha de termino del periodo que se informa</th>
+			<th>Fecha Termino del periodo que se informa</th>
 			<th>Tema de la estadísticas</th>
 			<th>Periodo de actualizacion de datos</th>
 			<th colspan="2">
