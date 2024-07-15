@@ -79,7 +79,6 @@
 						<?php  echo "</a> "; } 
 						} //} else {?>
 				  </td>
-				  
 			  	</tr>
 				<tr>
 				  <td>Area Responsable</td>
