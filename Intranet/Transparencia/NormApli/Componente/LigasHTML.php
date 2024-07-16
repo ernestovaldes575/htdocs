@@ -4,5 +4,3 @@
 <link rel="shortcut icon" href="/Imagen/SIMGA_intra01.png" type="image/x-icon">
 <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="/Intranet/CSS/Estilos/style.css">
-<link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="/Intranet/Transparencia/">
