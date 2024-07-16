@@ -37,7 +37,7 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Nombre programa </th>
+			<th >Clave del capítulo, con base en la clasificación económica del gasto</th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -52,7 +52,7 @@
 			$VC03 = $RegiTabl['AConsecutivo'];
 			$VC04 = $RegiTabl['AFechaInicio'];
 			$VC05 = $RegiTabl['AFechaTermino'];
-			$VC06 = $RegiTabl['ANombrePrograma'];
+			$VC06 = $RegiTabl['AClaveCapitulo'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";

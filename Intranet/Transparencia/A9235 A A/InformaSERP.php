@@ -22,12 +22,12 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
-//Carga el registro para Consulta
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, ". 
-             "AFechaTermino, AArea, AFechaActualizacion, ".
-             "AFechaValidacion, ANota ".
+//Carga el registro 
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
+             "AClaveCapitulo, AClaveConcepto, AClavePartida,".
+             "ADenominacionCapitulo, AGastoProbado, AGastoModificado,". "AGastoComprometido, AGastoDevengado, AGastoEjercido,". "AGastoPagado, AJustificacionPresupuesto,". "AHipervinculoEgresos, AAreaResp, ANota ".
                     
-			       "FROM  a9231 ".
+			       "FROM  a9235a ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -40,24 +40,40 @@ $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
 $VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
-$VC09 = "";  $VC10 = "";  $VC11 = ""; 
+$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
+$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
+$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
+$VC21 = "";  
 
 if ($ResuSql)
- { //Carga los campos.
-  
+ { //Carga los campos 
+  // ANumeRegi, AFechaInicio, AFechaTermino,". 
+  //"AClaveCapitulo, AClaveConcepto, ,".
+  //", , ,". ", , ,". ", ,". ", ,  ".
+  //
    $VC05 = $ResuSql['ANumeRegi'];	
    $VC06 = $ResuSql['AFechaInicio'];	
    $VC07 = $ResuSql['AFechaTermino'];
-   $VC08 = $ResuSql['AArea'];
-   $VC09 = $ResuSql['AFechaActualizacion'];
-   $VC10 = $ResuSql['AFechaValidacion'];
-   $VC11 = $ResuSql['ANota'];
-   
+   $VC08 = $ResuSql['AClaveCapitulo'];
+   $VC09 = $ResuSql['AClaveConcepto'];
+   $VC10 = $ResuSql['AClavePartida'];
+   $VC11 = $ResuSql['ADenominacionCapitulo'];
+   $VC12 = $ResuSql['AGastoProbado'];	
+   $VC13 = $ResuSql['AGastoModificado'];		
+   $VC14 = $ResuSql['AGastoComprometido'];
+   $VC15 = $ResuSql['AGastoDevengado'];
+   $VC16 = $ResuSql['AGastoEjercido'];
+   $VC17 = $ResuSql['AGastoPagado'];
+   $VC18 = $ResuSql['AJustificacionPresupuesto'];
+   $VC19 = $ResuSql['AHipervinculoEgresos'];
+   $VC20 = $ResuSql['AAreaResp'];
+   $VC21 = $ResuSql['ANota'];
+  
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9231 ".
+	 		   "FROM  a9235a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

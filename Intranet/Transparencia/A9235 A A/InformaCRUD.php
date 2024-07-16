@@ -26,48 +26,69 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
-//$VC09 = $_POST['C09'];  No considera
+$VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
+$VC12 = $_POST['C12'];					//Leer campos
+$VC13 = $_POST['C13'];
+$VC14 = $_POST['C14'];
+$VC15 = $_POST['C15'];
+$VC16 = $_POST['C16'];
+$VC17 = $_POST['C17'];
+$VC18 = $_POST['C18'];  
+$VC19 = $_POST['C19'];
+$VC20 = $_POST['C20'];
+$VC21 = $_POST['C21'];
+
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO tt9203facare ".						//Cambiar tabla
+		$InstSql = "INSERT INTO a9235a ".						//Cambiar tabla
 				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07',".				//Cambiar campo
-								"'$VC08','',$VC10,'$VC11')";		//Cambiar campo
-		break;
+								 "$ConsFrac,'$TrimTrab',".			
+								"$VC05,'$VC06','$VC07',".			
+								"$VC08,'$VC09','$VC10',".
+								"$VC11,'$VC12','$VC13',".			
+								"$VC14,'$VC15','$VC16',".	
+								"$VC17,'$VC18','$VC19',".			
+								"$VC20,'$VC21')";	
+								
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE tt9203facare ". 						//Cambiar tabla
-					"SET    ANumeRegi = $VC03,". 					//Cambiar campo
-						   "AFechaInicio = '$VC04',".				//Cambiar campo
-						   "AFechaTermino = '$VC05', ".				//Cambiar campo
-						   "AArea = $VC06, ".						//Cambiar campo
-						   "ADenominacion = '$VC07',".				//Cambiar campo
-						   "AFunadamento = '$VC08',".				//Cambiar campo
-						  //AHipervinculo = '$VC09',".				//No considera 
-				   		   "AAreaRespon = $VC10,".					//Cambiar campo
-						   "ANota = '$VC11' ".  					//Cambiar campo
+		$InstSql = 	"UPDATE a9235a ". 						//Cambiar tabla 
+					"SET    ANumeRegi = '$VC05',". 	//Cambiar campo
+						   "AFechaInicio = '$VC06',".				
+						   "AFechaTermino = '$VC07', ".				
+						   "AClaveCapitulo = '$VC08', ".						
+						   "AClaveConcepto = '$VC09',".				
+						   "AClavePartida= '$VC10',".				
+						   "ADenominacionCapitulo = '$VC11',".			
+				   		   "AGastoProbado = '$VC12',".					
+						   "AGastoModificado= '$VC13',". 
+						   "AGastoComprometido = '$VC14',".				
+						   "AGastoDevengado = '$VC15', ".				
+						   "AGastoEjercido = '$VC16', ".						
+						   "AGastoPagado = '$VC17',".				
+						   "AJustificacionPresupuesto= '$VC18',".				
+						   "AHipervinculoEgresos = '$VC19',".			
+				   		   "AAreaResp = '$VC20',".					
+						   "ANota= '$VC21' ". 
+						    					
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						  
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM tt9203facare ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM a9235a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						 
 	break;	
 }		
 
