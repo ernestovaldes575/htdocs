@@ -22,39 +22,42 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
-//Carga el registro para Consulta
-$InstSql = 	"SELECT AConsecutivo, AAyuntamiento, AEjercicio, AFechaInicio,". 
-                  " AFechaTermino, APrepuestoAnual, APresupuestoCapitulo, ".   "AHipervinculoPresEgresos, AHipervinculoPagina, AAreaResp, ANota ".
-			   "FROM  a9225a ".
-		   	"WHERE AAyuntamiento = '$ClavAyun' AND ".
-				         "AEjercicio = $EjerTrab AND ".
-				       "AConsecutivo = $CampBusq ";
-			
+//Carga el registro 
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
+                    "APrepuestoAnual, APresupuestoCapitulo,".
+                    "AHipervinculoPresEgresos, AHipervinculoPagina,".
+                    "AAreaResp, ANota ".
+                    
+			       "FROM  a9225a ".
+		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
+				           "AEjercicio = $EjerTrab AND ".
+				           "AConsecutivo = $CampBusq ";
+         // "ORDER BY AConsecutivo ";
+          
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC03 = 0;   $VC04 = ""; $VC05 = "";
-$VC06 = 0;   $VC07 = ""; $VC08 = "";
-$VC09 = "";  $VC10 = 0;  $VC11 = "";
-$VC12 = "";  $VC13 = 0;  
+$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
+$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
+$VC13 = ""; 
+
 if ($ResuSql)
- { //Carga los campos
-   $VC03 = $ResuSql['AConsecutivo '];	
-   $VC04 = $ResuSql['AAyuntamiento'];	
-   $VC05 = $ResuSql['AEjercicio'];
-   $VC06 = $ResuSql['AFechaInicio'];
+ { //Carga los campos 
+  
+   $VC05 = $ResuSql['ANumeRegi'];	
+   $VC06 = $ResuSql['AFechaInicio'];	
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['APrepuestoAnual'];
    $VC09 = $ResuSql['APresupuestoCapitulo'];
-   $VC10 = $ResuSql['AHipervinculoPresEgresos	'];	
-   $VC11 = $ResuSql['AHipervinculoPagina'];	
+  //  $VC10 = $ResuSql['AHipervinculoPresEgresos'];
+  //  $VC11 = $ResuSql['AHipervinculoPagina'];
    $VC12 = $ResuSql['AAreaResp'];	
    $VC13 = $ResuSql['ANota'];		
- } 	
- 
+   
+ } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
@@ -63,23 +66,25 @@ else
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
-  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+          
+  if ($BandMens) 
+  echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();
   if ($ResuSql)
-    $VC03 = $ResuSql['Clave'];
+    $VC05 = $ResuSql['Clave'];
   }
 
 $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
 	
 $MesnTiMo = "";
 switch( $TipoMovi ){
-  case "A":	$MesnTiMo = "Registrar";  
+  case "A":	$MesnTiMo = "ALTA";  
 			$CRUD = "POST";       break;
-  case "M":	$MesnTiMo = "Actualizar"; 
+  case "M":	$MesnTiMo = "MODIFICAR"; 
 			$CRUD = "PUT";		  break;
-  case "B":	$MesnTiMo = "Eliminar";
+  case "B":	$MesnTiMo = "ELIMINAR";
 			$CRUD = "DELETE";	  break;
  }		
 ?>

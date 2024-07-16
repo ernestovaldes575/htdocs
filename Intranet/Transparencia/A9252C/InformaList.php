@@ -23,8 +23,7 @@
 			<td>Fraccion: <?=$NumeFrac?></td>
 			<td>Trimestre:
             <?=$TrimTrab?></td>
-			<td colspan="2">Inc
-		    iso:
+			<td >Inciso:
 <?=$NumeInci?>
               <?=$NumeSubi?>
             <?=$Nomativi?></td>
@@ -35,53 +34,55 @@
 			    </a>		    </td>
 		</tr>
 		<tr>
-			<th>No</th>
-			<th width="15%">Periodo Informal</th>
-			<th colspan="2">Hipervinculo Informacion</th>
-			<th width="6%">
+		
+		<th>No</th>
+			<th>Fecha Inicio</th>
+			<th >Fecha Termino</th>
+			<th >Nombre programa </th>
+			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
-              <?php } ?>            </th>
-			<th width="12%">&nbsp;</th>
+              <?php } ?>      
+			</th>
+			<!-- <th width="13%">&nbsp;</th> -->
 		</tr>
 		<?php 
-		  foreach($ResuSql as $RegiTabl){
-			  $VC03 = $RegiTabl['AConsecutivo'];
-			  $VC04 = $RegiTabl['ANumeRegi'];
-			  $VC05 = $RegiTabl['AFechaInicio'];
-			  
-			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
-				  		 "/$NumeFrac/$TrimTrab/";
-		?>
-		<tr>
-			<td width="13%"><?=$VC04?></td>
-			<td width="13%"><?=$VC05?></td>
-			<td><?=$VC06?></td>
-			<td width="34%"><?=$VC07?></td>
-			<td width="7%">
-			<?php if ( $VC08 != '' ) { ?> 
-				<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=300,height=200,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-				<i class="bi bi-eye-fill fs-1 text-success"></i>
-				</a>	
-			<?php 
-				  } ?>
-			</td>
-			<td data-titulo="Eliminar:">
-	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-Eliminar Elim"
-				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
-				<?php } ?>
-			</td>
-			<td data-titulo="Editar: ">
-				<?php if($Modi == "A" ){ ?>
-					<i class="bi bi-pencil-square btn-Modificar Modi" 
-					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
-				<?php } ?>
-			</td>
-		</tr>
-		<?php	} ?> 
-	</table>
+		$NumeReng = 1;
+		 foreach($ResuSql as $RegiTabl){
+			$VC03 = $RegiTabl['AConsecutivo'];
+			$VC04 = $RegiTabl['AFechaInicio'];
+			$VC05 = $RegiTabl['AFechaTermino'];
+			$VC06 = $RegiTabl['ANombrePrograma'];
+			
+			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
+						 "/$NumeFrac/$TrimTrab/";
+	  ?>
+	  <tr>
+		  <td><?=$NumeReng?></td>
+		  <td><?=$VC04?></td>
+		  <td><?=$VC05?></td>
+		  <td><?=$VC06?></td>
+		
+		  <td data-titulo="Editar: ">
+			  <?php if($Modi == "A" ){ ?>
+				  <i class="bi bi-pencil-square btn-Modificar Modi" 
+				  data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
+			  <?php } ?>
+		  </td>
+		  
+		  <td data-titulo="Eliminar:">
+				<?php if($Baja == "A"  ) { ?>
+			  <i class="bi bi-x-square btn-Eliminar Elim"
+			  data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
+			  <?php } ?>
+		  </td>
+		 
+	  </tr>
+	  <?php
+	$NumeReng++;
+		} ?> 
+  </table>
 </div>	
 
 <?php

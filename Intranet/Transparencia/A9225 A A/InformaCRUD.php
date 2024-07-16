@@ -13,7 +13,7 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
+$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,57 +26,56 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
+
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];   
-$VC10 = $_POST['C10'];
-$VC11 = $_POST['C11'];
+// $VC10 = $_POST['C10'];
+// $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 $VC13 = $_POST['C13'];
 
 //Agregar campos
-switch ( $CRUD )
+switch ( $CRUD )    
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9225a".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05',".			//Cambiar campo
-								 "'$VC06','$VC07',".
-								 "'$VC08','$VC09','$VC10',".				//Cambiar campo
-								"'$VC11','',$VC12,'$VC13')";		//Cambiar campo
+		$InstSql = "INSERT INTO a9225a ".
+		/*  */
+				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
+				                  "'$ConsFrac','$TrimTrab','$VC05',".
+								  "'$VC06','$VC07','$VC08','$VC09',".
+								  "' ','','$VC12','$VC13')";
+								 	
+								//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9225a". 						//Cambiar tabla
-					"SET    AConsecutivo  = $VC03,". 					//Cambiar campo
-						   "AAyuntamiento = '$VC04',".				//Cambiar campo
-						   "AEjercicio = '$VC05', ".				//Cambiar campo
-						   "AFechaInicio = $VC06, ".						//Cambiar campo
-						   "AFechaTermino = '$VC07',".				//Cambiar campo
-						   "APrepuestoAnual = '$VC08',".				//Cambiar campo
-						   "APresupuestoCapitulo = '$VC09',".				//No considera 
-				   		   "AHipervinculoPresEgresos	 = $VC10,".					//Cambiar campo
-						   "AHipervinculoPagina = '$VC11' ". 
-						   "AAreaResp = $VC12,".					//Cambiar campo
-						   "ANota = '$VC13' ". 
-						   					
+		$InstSql = 	"UPDATE a9225a ". 						//Cambiar tabla 
+				"SET   ANumeRegi = '$VC05',".
+				        "AFechaInicio = '$VC06',". 					//
+						"AFechaTermino = '$VC07',".				//
+						"APrepuestoAnual = '$VC08',".						
+						"APresupuestoCapitulo = '$VC09',".			
+						// "AHipervinculoPresEgresos = '$VC10',".		
+				   		// "AHipervinculoPagina = '$VC11',".					
+						"AAreaResp = '$VC12',". 
+						"ANota = '$VC13' ".
+							
+						   
+						   		//Cambiar campo
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "AAyuntamiento = $CampBusq";
+				  		 "AConsecutivo = $CampBusq ";		//Cambiar campo
+ 						  
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9225a". 					//Cambiar tabla
+		$InstSql = "DELETE FROM  a9225a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "AAyuntamiento = $CampBusq";
+				  		 "AConsecutivo = $CampBusq  ";			//Cambiar campo
+ 						 
 	break;	
 }		
-
 //Ejecuta la instruccion
 if ($BandMens)  echo '1)'.$InstSql.'<br>';
 $ResuSql = $ConeBase->prepare($InstSql);

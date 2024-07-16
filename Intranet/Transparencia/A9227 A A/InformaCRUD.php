@@ -45,7 +45,7 @@ switch ( $CRUD )
 								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
 								 "$VC03,'$VC04','$VC05','$VC06',".			//Cambiar campo
 								 "'$VC07','$VC08','$VC09' ".				//Cambiar campo
-								"'$VC10','',$VC11,'$VC12')";		//Cambiar campo
+								"'$VC10','$VC11,'$VC12')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9227a ". 						//Cambiar tabla
