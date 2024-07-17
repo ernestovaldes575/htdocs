@@ -15,12 +15,12 @@ if (isset($_POST["ingresar"])) {
 
     $email = $_POST["email"];
     $pass =  $_POST["password"];
-
+    $band = false;
     if (!empty($email) && !empty($pass)) {
         // Preparamos la consulta SQL
             $query = "SELECT id, email, nombre, telefono, password, es_admin 
                         FROM usuario WHERE email=:email AND password=:password";
-            echo"1)$query";
+            if($band)echo"1)$query";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":email", $email, PDO::PARAM_STR);
         $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
@@ -30,7 +30,7 @@ if (isset($_POST["ingresar"])) {
         $registro = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$registro) {
-            $error = "Acceso inválido";
+            $error = "Email o Contraseña son invalidos";
         } else {
             // Iniciamos la sesión
             $_SESSION['activo'] = true;
@@ -70,7 +70,7 @@ if (isset($_POST["ingresar"])) {
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>App Notas PHP, PDO y SQL Server</title>
+    <title>Intranet</title>
 </head>
 <body class="hold-transition login-page">
     <div class="row">

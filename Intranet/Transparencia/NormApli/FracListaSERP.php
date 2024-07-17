@@ -28,6 +28,5 @@ $InstSql = "SELECT FInciso,FSubinciso,FNormatividad,FPeriodo ".
 if ($BandMens) echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
-$ResuSql = $EjInSql->fetchAll();
-
-?>
+$ResuSql = $EjInSql->fetchAll(PDO::FETCH_OBJ);
+if($BandMens)var_dump($ResuSql);

@@ -1,13 +1,16 @@
-<?php include "includes/header.php";
-
-    //Configurar Zona horaria
-    date_default_timezone_set('America/Mexico_City');
-
+<?php include "includes/header.php";    
+    $band = false;
     //Mostrar Registros
-    $query = "SELECT * FROM notas WHERE usuario_id='$idUsuario'";
-    $stmt = $conn->query($query);   
+    $query =    "SELECT descripcion, fecha, usuario_id, id, titulo
+                FROM notas WHERE usuario_id='$idUsuario'";
+    if($band) echo"$query";
+    
+    //Ejecuta la consulta y obtiene el conjunto de resultados.
+    $stmt = $conn->query($query);
+    
+    //Recuperamos todos los registros como un objeto
     $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
-    var_dump($registros);
+    if($band)var_dump($registros);
 ?>
 <div class="card-header">
     <div class="row">
@@ -15,8 +18,9 @@
             <h3 class="card-title">Lista de notas</h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_nota.php" type="button" class="btn btn-primary btn-xl pull-right w-100">
-                <i class="fa fa-plus"></i> Ingresar nueva nota
+            <a href="crear_nota.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
+                <i class="fa fa-plus"></i> 
+                Ingresar nueva nota
             </a>
         </div>
     </div>
@@ -34,33 +38,40 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($registros as $fila):?>
-            <tr>
-                <td><?php echo  $fila->id;?></td>
-                <td><?php echo  $fila->titulo;?></td>
-                <td><?php echo  $fila->descripcion;?></td>
-                <td><?php echo  $fila->fecha;?></td>
-                <td>
-                    <a href="editar_nota.php?id=<?php echo $fila->id;?>" class="btn btn-warning">
-                        <i class="fas fa-edit"></i>
-                        Editar
-                    </a>
-                    <a href="borrar_nota.php?id=<?php echo $fila->id;?>" class="btn btn-danger">
-                        <i class="fas fa-trash-alt"></i> 
-                        Borrar
-                    </a>
-                </td>
-            </tr>
-            <?php endforeach;?>
+            <?php 
+                foreach ($registros as $fila) : 
+            ?>
+                <tr>
+                    <td>
+                        <?=$fila->id;?>
+                    </td>
+                    <td>
+                        <?=$fila->titulo;?>
+                    </td>
+                    <td>
+                        <?=$fila->descripcion;?>
+                    </td>
+                    <td>
+                        <?=$fila->fecha;?>
+                    </td>
+                    <td>
+                        <a href="editar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-warning">
+                            <i class="fas fa-edit"></i>
+                            Editar
+                        </a>
+                        <a href="borrar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
-<!-- /.card-body -->
-
 
 <?php include "includes/footer.php" ?>
 
-<!-- page script -->
 <script>
     $(function() {
         $('#tblRegistros').DataTable({
