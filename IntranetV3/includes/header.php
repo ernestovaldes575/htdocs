@@ -5,7 +5,7 @@
 		header("Location:panel.php");
 	}
 	
-	// date_default_timezone_set('America/Mexico_City');
+	date_default_timezone_set('America/Mexico_City');
 
 	// echo"hola mundo";
 	$idUsuario = $_SESSION['idUsuario'];
@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<title>Aplicación Horas Extras PHP SQL Server</title>
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 	<!-- DataTables -->

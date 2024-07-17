@@ -1,29 +1,22 @@
 </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-  </div>
-  <!-- /.content-wrapper -->
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+</div>
+<!-- /.content-wrapper -->
 
 
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Master en PHP Moderno 7 y 8
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2020 <a href="https://render2web.com">App Notas PHP, PDO y SQL Server</a>.</strong>
-  </footer>
+<!-- Main Footer -->
+<footer class="main-footer">
+</footer>
 </div>
 <!-- ./wrapper -->
-
 </div>
 </div>
 
@@ -54,4 +47,5 @@
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
 </body>
+
 </html>

@@ -35,9 +35,9 @@
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
 				<tr class="">
-					<td width="29%" class="text-uppercase" scope="row">
+					<th width="29%" class="text-uppercase" scope="row">
 						Campo
-					</td>
+					</th>
 					<td width="71%">
 						<a class="btn-Regresar container" href="InformaList.php">
 							Regresar
@@ -46,23 +46,23 @@
 				</tr>
 				<!-- Inicia campos -->
 				<tr>
-					<th>No</th>
+					<td>No</td>
 					<td>
-						<input name="C05" id="VC05" type="text" value="<?=$VC05?>"
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
-					<th>Nombre de la persona física beneficiadaa</th>
+					<td>Nombre de la persona física beneficiadaa</td>
 					<td>
-						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
+						<input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
 				
 				<tr>
 				  <td>Primer apellido de la persona física beneficiada</td>
-				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
+				  <td><input name="C07" id="VC07" type="text" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>

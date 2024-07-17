@@ -43,34 +43,35 @@ $VC13 = $_POST['C13'];
 				                  "'$ConsFrac','$TrimTrab','$VC05',".
 								  "'$VC06','$VC07','$VC08','$VC09',".
 								  "'$VC10','    ','$VC12','$VC13')";	//Cambiar campo
-		break;
-	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9203 ". 						//Cambiar tabla
-					"SET ANumeRegi = '$VC05',".
-					     "AFechaInicio= '$VC06',".
-					     "AFechaTermino = '$VC07',".
-					     "AArea = '$VC08',".
-					     "ADenominacion= '$VC09',".
-					     "AFundamento= '$VC10',".
-					    // "AHipervinculo= '$VC11',".
-					     "AAreaResp= '$VC12',".
-					     "ANota= '$VC13'".
-						 
-						   
-						   		
-				 "WHERE AAyuntamiento = '$ClavAyun' AND ".	
-				 	    "AEjercicio = '$EjerTrab' AND ".		
-						"AConsecutivo = '$CampBusq' ";		//Cambiar campo
-									
-			 break;
+								  
+	   break;
+			case "PUT": //Cambio
+			$InstSql = 	"UPDATE a9203 ". 				//Cambiar tabla
+					"SET    ANumeRegi = '$VC05',".
+						"AFechaInicio = '$VC06',". 					//
+					    "AFechaTermino = '$VC07', ".				//
+						"AArea = '$VC08',".						
+					    "ADenominacion = '$VC09',".			
+					    "AFundamento = '$VC10',".		
+						"AHipervinculo = '$VC11',".					
+						"AAreaRespr = '$VC12',". 
+						"ANota = '$VC13'". 
+
+												 	
+													 
+															
+			"WHERE AAyuntamiento = '$ClavAyun' AND ".		
+				"AEjercicio = $EjerTrab AND ".			//Cambiar campo
+				"AConsecutivo = $CampBusq ";		//Cambiar campo
+													 
+		 break;
 			 case "DELETE": //Eliminar
-				 $InstSql = "DELETE FROM  a9203 ". 					//Cambiar tabla
-						"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
-							  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-								"AConsecutivo = $CampBusq ";			//Cambiar campo		//
- 						  	
-	break;	
-}		
+			$InstSql = "DELETE FROM a9203 ". 					//Cambiar tabla
+			"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
+					"AEjercicio = $EjerTra AND ".			//Cambiar campo
+					"AConsecutivo = $CampBusq "; 											
+   break;	
+ }			
 
 //Ejecuta la instruccion
 if ($BandMens)  echo '1)'.$InstSql.'<br>';

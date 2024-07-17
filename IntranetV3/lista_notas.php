@@ -1,5 +1,5 @@
-<?php include "includes/header.php" ?>
-<?php
+<?php include "includes/header.php";
+
     //Configurar Zona horaria
     date_default_timezone_set('America/Mexico_City');
 
@@ -7,7 +7,7 @@
     $query = "SELECT * FROM notas WHERE usuario_id='$idUsuario'";
     $stmt = $conn->query($query);   
     $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
-    //var_dump($registros);
+    var_dump($registros);
 ?>
 <div class="card-header">
     <div class="row">
@@ -41,9 +41,14 @@
                 <td><?php echo  $fila->descripcion;?></td>
                 <td><?php echo  $fila->fecha;?></td>
                 <td>
-                    <a href="editar_nota.php?<?php echo $fila->id;?>" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> <i class="fas fa-edit"></i>Editar</a>
-                    &nbsp;
-                    <a href="borrar_nota.php" class="btn btn-danger"><i class="bi bi-pencil-fill"></i> <i class="fas fa-trash-alt"></i> Borrar</a>
+                    <a href="editar_nota.php?id=<?php echo $fila->id;?>" class="btn btn-warning">
+                        <i class="fas fa-edit"></i>
+                        Editar
+                    </a>
+                    <a href="borrar_nota.php?id=<?php echo $fila->id;?>" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> 
+                        Borrar
+                    </a>
                 </td>
             </tr>
             <?php endforeach;?>

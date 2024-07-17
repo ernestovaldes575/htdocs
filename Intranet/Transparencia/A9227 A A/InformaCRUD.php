@@ -26,14 +26,12 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//
-$VC04 = $_POST['C04'];
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
-$VC10 = $_POST['C10'];
+//$VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 
@@ -41,35 +39,34 @@ $VC12 = $_POST['C12'];
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9227a ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//Cambiar campo
-								 "$VC03,'$VC04','$VC05','$VC06',".			//Cambiar campo
-								 "'$VC07','$VC08','$VC09' ".				//Cambiar campo
-								"'$VC10','',$VC11,'$VC12')";		//Cambiar campo
+				 "VALUES (NULL,'$ClavAyun','$EjerTrab',".			//Cambiar campo
+							 "'$ConsFrac','$TrimTrab',".			
+							 "'$VC05','$VC06',".			
+							 "'$VC07','$VC08','$VC09',".				
+							 "'  ','$VC11','$VC12')";		
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9227a ". 						//Cambiar tabla
-					"SET    AConsecutivo  = $VC03,". 					//Cambiar campo
-						   "AAyuntamiento = '$VC04',".				//Cambiar campo
-						   "AEjercicio = '$VC05', ".				//Cambiar campo
-						   "AFechaInicio = $VC06, ".						//Cambiar campo
-						   "AFechaTermino = '$VC07',".				
-						   "ADenominacionPrograma = '$VC08',".				//Cambiar campo
-						  "AFechaAprobacion = '$VC09',".				
-				   		   "AHipervinculoPrograma = $VC10,".					//Cambiar campo
-						   "AAreaResp = '$VC11' ".  
-						   "ANota = '$VC12' ". 					//Cambiar campo
-					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
-						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				"SET   ANumeRegi = '$VC05',".				
+	                   "AFechaInicio = '$VC06',".						
+					   "AFechaTermino = '$VC07',".				
+					   "ADenominacionPrograma = '$VC08',".				
+					   "AFechaAprobacion = '$VC09',".
+			        //"AHipervinculoPrograma = '$VC10',".								
+					   "AAreaResp = '$VC11',".  
+					   "ANota = '$VC12'". 	//Cambiar campo
+
+	   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
+						  "AEjercicio = $EjerTrab AND ".//Cambiar campo
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						//   "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9227a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
-						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+						  "AEjercicio = $EjerTrab AND ".	//Cambiar campo
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						 
 	break;	
 }		
 
