@@ -13,7 +13,7 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
+$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -26,8 +26,7 @@ if ($BandMens)
      echo 'CampBusq)'.$CampBusq.'<br>';
   }
 
-$VC03 = $_POST['C03'];					//Leer campos
-$VC04 = $_POST['C04'];
+
 $VC05 = $_POST['C05'];
 $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
@@ -65,9 +64,8 @@ $VC33 = $_POST['C33'];
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9228".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			//
-								 "'$VC03','$VC04','$VC05',".	
+				"VALUES (NULL,'$ClavAyun',$EjerTrab,".		
+					    "$ConsFrac,'$TrimTrab','$VC05',".			 	
 								 "'$VC06','$VC07','$VC08',".
 								 "'$VC09','$VC10','$VC11',".
 								 "'$VC12','$VC13','$VC14',".
@@ -80,29 +78,50 @@ switch ( $CRUD )
 								 "'$VC33')";		//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9228". 						
-					"SET    AFechaInicio = $VC06, ".	
-						    "AFechaTermino = '$VC07',".					   "AEjercicioAuditado = '$VC08',".					   "APeriodoAuditado = '$VC09',". 
-				   		    "ARubro = $VC10,".					         	 
-							"ARubroOtro = '$VC11' ".  
-						    "ATipoAuditoria = '$VC12',".					   "ANumeroAuditoria = '$VC13', ".					   "AOrganoAuditoria= $VC14, ".							   "ANomenclaturaNotificacion = '$VC15',".					   "ANomenclaturainfoRevisado= '$VC16',".					   "ANomenclaturaSolicitud = '$VC17',". 
-				   		    "AObjetivoAuditoria = $VC18,".						   "ARubrosRevision = '$VC19' ". 
-						    "AFundamentoLegal = '$VC20',".					   "ANumeroOficio = '$VC21', ".					   "AHiperNotifiResultados = $VC22, ".							   "ATotalHallazgos = '$VC23',".					   "AHipervinculoRecomen = '$VC24',".					   "AHipervinculoInformes = '$VC25',". 
-				   		    "AAccionOrganoFiscalizador= $VC26,".						   "AAreaRecibeResultados = '$VC27' ".
-						    "ATotalAclaraciones = $VC28, ".							   "AHipervinculoAclaraciones = '$VC29',".					   "ATotalAcciones = '$VC30',".					   "AHipervinculoProgramaAnual = '$VC31',". 
-				   		    "AAreaResp = $VC32,".	             					   "ANota = '$VC33' ".  
+		$InstSql = 	"UPDATE a9228 ". 						
+					
+	     "SET    ANumeRegi = $VC05, ".
+				 "AFechaInicio = $VC06, ".	
+				 "AFechaTermino = '$VC07',".					   
+				 "AEjercicioAuditado = '$VC08',".					   
+				 "APeriodoAuditado = '$VC09',". 
+				 "ARubro = $VC10,".					         	 
+				 "ARubroOtro = '$VC11',".  
+				 "ATipoAuditoria = '$VC12',".					  
+				 "ANumeroAuditoria = '$VC13', ".	
+				 "AOrganoAuditoria = '$VC14',". 				  
+			     "ANomenclaturaNotificacion = '$VC15',".					   
+				 "ANomenclaturainfoRevisado= '$VC16',".					  
+				 "ANomenclaturaSolicitud = '$VC17',". 
+				 "AObjetivoAuditoria = '$VC18',". 
+				 "ARubrosRevision = '$VC19',". 
+				 "AFundamentoLegal = '$VC20',".					
+				 "ANumeroOficio = '$VC21', ".					  
+				 "AHiperNotifiResultados = '$VC22', ".						
+				 "ATotalHallazgos = '$VC23',".					  
+				 "AHipervinculoRecomen = '$VC24',".					 
+				 "AHipervinculoInformes = '$VC25',". 
+				 "AAccionOrganoFiscalizador= '$VC26',".						  
+				 "AAreaRecibeResultados = '$VC27',".
+				 "ATotalAclaraciones = $VC28, ".							 
+				 "AHipervinculoAclaraciones = '$VC29',".	
+				 "ATotalAcciones = '$VC30',".				  
+				 "AHipervinculoProgramaAnual = '$VC31',". 
+				 "AAreaResp = '$VC32',". 
+	             "ANota = '$VC33' ".
+				  
+
 							
-										"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
+		"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
-	break;
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						 
 	case "DELETE": //Eliminar
 		$InstSql = "DELETE FROM a9228". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
-				  		  "AConsecutivo = $CampBusq AND ".			//Cambiar campo
- 						  "ANumeRegi = $CampBusq";
+				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
+ 						 
 	break;	
 }		
 

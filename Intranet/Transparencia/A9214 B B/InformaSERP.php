@@ -23,7 +23,9 @@ if( isset($_GET['PaAMB01']) != ''){
 
 $CRUD = "GET";
 //Carga el registro para Consulta
- $InstSql = 	"SELECT ANumeRegi, PNombrepers, PPrimerapellido, PSegundoapellido, PDenominasocial, PMontorecursos, PUnidadterritorial, PEdad, PSexo, PSexootro ".
+ $InstSql = 	"SELECT ANumeRegi, PNombrepers, PPrimerapellido,".
+                      "PSegundoapellido, PDenominasocial, PMontorecursos,".
+                      "PUnidadterritorial, PEdad, PSexo, PSexootro ".
                       
                "FROM  a9214b ".
                "WHERE AAyuntamiento = '$ClavAyun' AND ".
@@ -42,7 +44,7 @@ $CRUD = "GET";
   $VC13 = "";  $VC14 = ""; 
 
   if ($ResuSql)
-   { //Carga los campos 
+   { //Carga los campos  
     
      $VC05 = $ResuSql['ANumeRegi'];	
      $VC06 = $ResuSql['PNombrepers'];	

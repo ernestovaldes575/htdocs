@@ -43,7 +43,11 @@
 					</td>
 				</tr>
 				<!-- Inicia campos -->
-					
+				
+				<tr>
+				  <td>No</td>
+				  <td><input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" ></td>	
 				
 				<tr>
 				  <td>Fecha Inicio</td>
@@ -96,16 +100,16 @@
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	
-				<tr>
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--script src="/Intranet/Js/ValiForm.js"></script>-->
 </body>
 </html>
