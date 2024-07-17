@@ -38,7 +38,7 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Tip Evento</th>
+			<th >Tipo Evento</th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -53,7 +53,7 @@
 			$VC03 = $RegiTabl['AConsecutivo'];
 			$VC04 = $RegiTabl['AFechaInicio'];
 			$VC05 = $RegiTabl['AFechaTermino'];
-			$VC06 = $RegiTabl['TipoEvento'];
+			$VC06 = $RegiTabl['ATipoEvento'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";

@@ -89,6 +89,17 @@ if ($ResuSql)
  } 
 else
  { //Busca el sisguiente registro
+
+  //Cargar Catalogo tcarea
+ 	$InstSql = "SELECT CARClave  AS Clave, CARDescri AS Descri ". 
+   "FROM tcarea ".
+   "ORDER BY CARClave ";
+ if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat01 = $EjInSql->fetchall();
+
+ 
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9228 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".

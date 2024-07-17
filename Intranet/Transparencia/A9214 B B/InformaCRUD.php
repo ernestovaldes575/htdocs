@@ -50,7 +50,7 @@ switch ( $CRUD )
 
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9214b". 		
+		$InstSql = 	"UPDATE a9214b ". 		
 		//Cambiar tabla 
 
 		    "SET  ANumeRegi = '$VC05',". 

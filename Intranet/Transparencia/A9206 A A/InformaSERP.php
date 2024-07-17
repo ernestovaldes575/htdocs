@@ -43,7 +43,7 @@ $ResuSql = $EjInSql->fetch();
 $VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
 $VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
 $VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
-$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
+$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "02";   
 $VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";
 
 if ($ResuSql)
@@ -71,7 +71,19 @@ if ($ResuSql)
    $VC24 = $ResuSql['ANota'];
  } 
 else
- { //Busca el sisguiente registro
+ { 
+  //Cargar Catalogo tcsentindi
+	$InstSql = "SELECT CSIClave AS Clave, CSIDescri AS Descri ". 
+             "FROM tcsentindi ".
+             "ORDER BY CSIClave";
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+  $EjInSql = $ConeBase->prepare($InstSql);
+  $EjInSql->execute();
+  $ResCat01 = $EjInSql->fetchall();
+
+   
+  
+    //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9206a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
@@ -79,8 +91,7 @@ else
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
           
-  if ($BandMens) 
-  echo '1)'.$InstSql.'<br>'; 
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();

@@ -63,7 +63,7 @@ $VC33 = $_POST['C33'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9228".						//Cambiar tabla
+		$InstSql = "INSERT INTO a9228 ".						//Cambiar tabla
 				"VALUES (NULL,'$ClavAyun',$EjerTrab,".		
 					    "$ConsFrac,'$TrimTrab','$VC05',".			 	
 								 "'$VC06','$VC07','$VC08',".
@@ -80,12 +80,12 @@ switch ( $CRUD )
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9228 ". 						
 					
-	     "SET    ANumeRegi = $VC05, ".
-				 "AFechaInicio = $VC06, ".	
+	     "SET    ANumeRegi = '$VC05', ".
+				 "AFechaInicio = '$VC06', ".	
 				 "AFechaTermino = '$VC07',".					   
 				 "AEjercicioAuditado = '$VC08',".					   
 				 "APeriodoAuditado = '$VC09',". 
-				 "ARubro = $VC10,".					         	 
+				 "ARubro = '$VC10',".					         	 
 				 "ARubroOtro = '$VC11',".  
 				 "ATipoAuditoria = '$VC12',".					  
 				 "ANumeroAuditoria = '$VC13', ".	
@@ -103,21 +103,20 @@ switch ( $CRUD )
 				 "AHipervinculoInformes = '$VC25',". 
 				 "AAccionOrganoFiscalizador= '$VC26',".						  
 				 "AAreaRecibeResultados = '$VC27',".
-				 "ATotalAclaraciones = $VC28, ".							 
+				 "ATotalAclaraciones = '$VC28', ".							 
 				 "AHipervinculoAclaraciones = '$VC29',".	
 				 "ATotalAcciones = '$VC30',".				  
 				 "AHipervinculoProgramaAnual = '$VC31',". 
 				 "AAreaResp = '$VC32',". 
 	             "ANota = '$VC33' ".
-				  
-
+				
 							
 		"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo
  						 
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9228". 					//Cambiar tabla
+		$InstSql = "DELETE FROM a9228 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo

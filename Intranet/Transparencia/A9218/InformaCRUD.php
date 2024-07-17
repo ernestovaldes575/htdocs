@@ -59,7 +59,7 @@ $VC32 = $_POST['C32'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9218".	//Cambiar tabla
+		$InstSql = "INSERT INTO a9218 ".	//Cambiar tabla
 			 "VALUES (NULL,'$ClavAyun','$EjerTrab',".			
 							"'$ConsFrac','$TrimTrab','$VC05',".			
 							"'$VC06','$VC07','$VC08',".
@@ -74,8 +74,8 @@ switch ( $CRUD )
 										//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9218 ". 						//Cambiar tabla
-			  "SET   ANumeRegi = '$VC05',".						
+		$InstSql = 	"UPDATE a9218 ". 		//Cambiar tabla
+		       "SET   ANumeRegi = '$VC05',".						
 					"AFechaInicio = '$VC06', ".					
 				    "AFechaTermino = '$VC07',".			
 					"ATipoEvento = '$VC08',".			
@@ -97,7 +97,7 @@ switch ( $CRUD )
 					"AEstadoProcesoConOtro= '$VC24',".			
 					"ATotalCandidatos = '$VC25',".				
 				   	"ANombrePersona = '$VC26',".				
-					"APrimerApelldio = '$VC27',".
+					"APrimerApellido = '$VC27',".
 					"ASegundoApellido = '$VC28',".					
 					"AHipervinculoGanador = '$VC29',".			
 					"AHipervinculoGanadorOtro = '$VC30',".			
@@ -108,7 +108,7 @@ switch ( $CRUD )
 						   //
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = '$EjerTrab' AND ".			//Cambiar campo
-				  		  "AConsecutivo = '$CampBusq'  ";			//Cambiar campo
+				  		  "AConsecutivo = '$CampBusq' ";			//Cambiar campo
  						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar

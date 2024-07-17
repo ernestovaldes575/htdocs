@@ -59,16 +59,7 @@ if ($ResuSql)
    $VC12 = $ResuSql['ADefinicionIndicador'];	
    $VC13 = $ResuSql['AMetodoCalculo'];		
    $VC14 = $ResuSql['AUnidadMedida'];
-   $VC15 = $ResuSql['AFrecuenciaMedicion'];
-   $VC16 = $ResuSql['ALineaBase'];
-   $VC17 = $ResuSql['AMetasProgramadas'];
-   $VC18 = $ResuSql['AMetasAjustadas'];
-   $VC19 = $ResuSql['AAvance'];
-   $VC20 = $ResuSql['ASentidoIndicador'];
-   $VC21 = $ResuSql['ASentidoIndicadorOtro'];
-   $VC22 = $ResuSql['AFuenteInformacion'];
-   $VC23 = $ResuSql['AAreaResp'];
-   $VC24 = $ResuSql['ANota'];
+   
  } 
 else
  { //Busca el sisguiente registro
@@ -78,6 +69,8 @@ else
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
+
+  
           
   if ($BandMens) 
   echo '1)'.$InstSql.'<br>'; 
