@@ -44,7 +44,8 @@ if (isset($_POST["editarNota"])) {
 <div class="row">
     <div class="col-sm-12">
         <?php if (isset($mensaje)) : ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show bg-success" role="alert">
+                <i class="bi bi-check-lg"></i>
                 <strong><?php echo $mensaje; ?></strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -69,12 +70,12 @@ if (isset($_POST["editarNota"])) {
 <div class="card-header">
     <div class="row">
         <div class="col-md-9">
-            <h3 class="card-title">Editar una nota</h3>
+            <h3 class="fw-bold card-title">Editar una nota</h3>
         </div>
     </div>
 </div>
 <!-- /.card-header -->
-<div class="card-body">
+<div class="card-body shadow">
     <div class="row">
         <div class="col-12">
             <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
@@ -88,14 +89,16 @@ if (isset($_POST["editarNota"])) {
                     <?php if ($nota) echo $nota->descripcion; ?>
                     </textarea>
                 </div>
-                <button type="submit" name="editarNota" class="btn btn-primary">
-                    <i class="fas fa-cog"></i>
-                    Editar Nota
-                </button>
-                <a href="lista_notas.php" class="btn btn-secondary">
-                    <i class="bi bi-box-arrow-right"></i>
-                    Regresar
-                </a>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" name="editarNota" class="btn btn-primary fw-semibold shadow">
+                        <i class="bi bi-pencil-fill"></i>
+                        Editar Nota
+                    </button>
+                    <a href="lista_notas.php" class="btn btn-secondary fw-semibold shadow">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Regresar
+                    </a>
+                </div>
             </form>
         </div>
     </div>

@@ -42,16 +42,11 @@
 			</thead>
 			<tbody>
 				<?php
-				foreach ($ResuSql as $RegiTabl) {
-					$VC03 = $RegiTabl[0];
-					$VC04 = $RegiTabl[1];
-					$VC05 = $RegiTabl[2];
-					$VC06 = $RegiTabl[3];
-				?>
+				foreach($ResuSql as $fila) {?>
 					<tr>
-						<td class="text-center"><?= $VC03 ?></td>
-						<td class="text-center"><?= $VC04 ?></td>
-						<td class="text-center"><?= $VC05 ?></td>
+						<td class="text-center"><?=$fila->FInciso;?></td>
+						<td class="text-center"><?=$fila->FSubinciso;?></td>
+						<td class="text-center"><?=$fila->FNormatividad;?></td>
 						<td class="text-center">
 							<i class="bi bi-file-arrow-down btn-Modificar NumeTrim" data-Inciso='<?= $VC03 ?>' data-SubInc='<?= $VC04 ?>' data-Normat='<?= $VC05 ?>' data-Period='<?= $VC06 ?>' title="3er Trimestre">
 							</i>
