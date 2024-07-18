@@ -61,16 +61,18 @@
 		  <td><?=$VC05?></td>
 		  <td><?=$VC06?></td>
 		
-		  <td data-titulo="Eliminar:">
-				<?php if($Baja == "A"  ) { ?>
-			  <i class="bi bi-x-square btn-Eliminar Elim"
-			  data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
-			  <?php } ?>
-		  </td>
+		  
 		  <td data-titulo="Editar: ">
 			  <?php if($Modi == "A" ){ ?>
 				  <i class="bi bi-pencil-square btn-Modificar Modi" 
 				  data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
+			  <?php } ?>
+		  </td>
+
+		  <td data-titulo="Eliminar:">
+				<?php if($Baja == "A"  ) { ?>
+			  <i class="bi bi-x-square btn-Eliminar Elim"
+			  data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
 			  <?php } ?>
 		  </td>
 	  </tr>

@@ -7,11 +7,12 @@
 
         //Validar sí está vacio
         if(empty($titulo) || empty($descripcion)){
-            $error = "Error, algunos datos obligatorios";
+            $error = "¡Error, algunos datos son obligatorios!";
         }else{
             //Cuando la validación es correcta
             $query =    "INSERT INTO notas(titulo, descripcion, fecha, usuario_id)
                         VALUES(:titulo, :descripcion, :fecha, :usuario_id)";
+
             $fechaActual = date('Y-m-d');
             $stmt = $conn->prepare($query);
             $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
@@ -20,6 +21,7 @@
             $stmt->bindParam(":usuario_id", $idUsuario, PDO::PARAM_INT);
             
             $resultado = $stmt->execute();
+
             if($resultado){
                 $mensaje = "Registro de nota creado correctamente";
             }else{
@@ -31,8 +33,9 @@
     <div class="row">
         <div class="col-sm-12">
             <?php if(isset($mensaje)): ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong><?php echo $mensaje; ?></strong>
+                <div class="alert alert-success alert-dismissible fade show bg-success shadow" role="alert">
+                    <i class="bi bi-check-lg"></i>
+                    <strong><?php echo $mensaje;?></strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -40,11 +43,11 @@
             <?php endif; ?>
         </div>
     </div>
-
-<div class="row">
+    <div class="row">
         <div class="col-sm-12">
             <?php if(isset($error)): ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show bg-danger shadow" role="alert">
+                    <i class="bi bi-exclamation-diamond-fill"></i>
                     <strong><?php echo $error; ?></strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -54,33 +57,43 @@
         </div>
     </div>
 
-<div class="card-header">
-    <div class="row">
-        <div class="col-md-9">
-            <h3 class="card-title">Crear una nota nueva</h3>
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <h3 class="card-title fw-bold">
+                    Crear una nota nueva
+                </h3>
+            </div>
         </div>
     </div>
-</div>
 <!-- /.card-header -->
-<div class="card-body">
+<div class="card-body shadow">
     <div class="row">
         <div class="col-12">
             <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Título:</label>
-                    <input type="text" name="titulo" class="form-control">
+                    <input type="text" id="titulo" name="titulo" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" rows="3"></textarea>
+                    <textarea id="descripcion" class="form-control" name="descripcion" rows="3"></textarea>
                 </div>
-                <button type="submit" name="registrarNota" 
-                class="btn btn-primary"><i class="fas fa-cog"></i> Crear Nota</button>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" name="registrarNota" class="btn btn-success fw-semibold shadow">
+                        <i class="bi bi-plus-lg"></i>
+                        Crear Nota
+                    </button>
+                    <a href="lista_notas.php" class="btn btn-secondary fw-semibold shadow">
+                        <i class="bi bi-box-arrow-left"></i>
+                        Regresar
+                    </a>
+                </div>
         </div>
         </form>
     </div>
 </div>
-</div>
+</>
 <!-- /.card-body -->
 
 

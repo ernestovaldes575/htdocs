@@ -59,7 +59,7 @@ switch ( $CRUD )
  							 "'$VC21','$VC22')";		
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9221". 
+		$InstSql = 	"UPDATE a9221 ". 
 			// Cambiar tabla 
 			    "SET    ANumeRegi = '$VC05',".
 				        "AFechaInicio = '$VC06',". 					//

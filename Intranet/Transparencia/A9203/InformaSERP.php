@@ -32,8 +32,7 @@ $InstSql = 	"SELECT  ANumeRegi, AFechaInicio, AFechaTermino,".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
 			
-if ($BandMens)  
-   echo '1)'.$InstSql.'<br>'; 
+if ($BandMens) echo '1)'.$InstSql.'<br>';  
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
