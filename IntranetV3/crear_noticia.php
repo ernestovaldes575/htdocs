@@ -66,7 +66,6 @@ if(isset($_POST["registrarNota"])){
             <?php endif; ?>
         </div>
     </div>
-
     <div class="card-header">
         <div class="row">
             <div class="col-md-9">
