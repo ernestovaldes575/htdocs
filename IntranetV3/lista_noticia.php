@@ -58,7 +58,7 @@
                             <i class="fas fa-edit"></i>
                             Editar
                         </a>
-                        <a href="borrar_nota.php?id=<?=$fila->id?>" class="btn btn-danger">
+                        <a href="borrar_noticia.php?id=<?=$fila->id?>" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
                             Borrar
                         </a>
