@@ -72,7 +72,7 @@ if ($ResuSql)
    $VC24 = $ResuSql['AEstadoProcesoConOtro'];
    $VC25 = $ResuSql['ATotalCandidatos'];
    $VC26 = $ResuSql['ANombrePersona'];
-   $VC27 = $ResuSql['APrimerApelldio'];
+   $VC27 = $ResuSql['APrimerApellido'];
    $VC28 = $ResuSql['ASegundoApellido'];	
    $VC29 = $ResuSql['AHipervinculoGanador'];		
    $VC30 = $ResuSql['AHipervinculoGanadorOtro'];	

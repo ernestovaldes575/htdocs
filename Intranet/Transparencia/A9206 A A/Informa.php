@@ -129,8 +129,32 @@
 			  </tr>
 			  <tr>
 				  <td>Sentido Indicador</td>
-				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>
+				  <!-- <select name="select" >
+					<option value="01">Asendente</option>
+					<option value="02" >Desendente</option>
+					<option value="03" selected>No Aplica</option>
+					<option value="04">Otro</option>
+				  </select> -->
+				  <?php /*
+		 			foreach($ResCat01 as $RegiTabl){
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						echo "Clave: $CC03 <br> ";
+					} */?>
+				  <select name="C20" class="form-control">			
+				  <?php 
+		 			foreach($ResCat01 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC20 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC04</option> ";
+					} ?>
+				  </select> 	
+				  	
+				  <!-- <input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
+						class="form-control" placeholder="Descripción" > -->
+				</td>
 			  </tr>
 			  <tr>
 				  <td>Sentido Indicador Otro</td>

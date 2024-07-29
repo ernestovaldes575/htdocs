@@ -35,9 +35,9 @@
 		<tr>
 		
 		<th>No</th>
-			<th>Fecha Inicio</th>
-			<th >Fecha Termino</th>
-			<th >Nombre programa </th>
+			<th>Período que se informa (Semestral)</th>
+			<th >atención: en este campo se mostrará el valor que se agregue al sistema, de acuerdo al valor seleccionado del campo (Período que se informa (Semestral)), para los criterios fecha de inicio y termino del período que se informa</th>
+			<th >Descripción del bien</th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -45,14 +45,15 @@
               <?php } ?>      
 			</th>
 			<!-- <th width="13%">&nbsp;</th> -->
+			
 		</tr>
 		<?php 
 		$NumeReng = 1;
 		 foreach($ResuSql as $RegiTabl){
 			$VC03 = $RegiTabl['AConsecutivo'];
-			$VC04 = $RegiTabl['AFechaInicio'];
-			$VC05 = $RegiTabl['AFechaTermino'];
-			$VC06 = $RegiTabl['ANombrePrograma'];
+			$VC04 = $RegiTabl['APeriodoInforma'];
+			$VC05 = $RegiTabl['APeriodoInformaOtro'];
+			$VC06 = $RegiTabl['ADescripcionBien'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";

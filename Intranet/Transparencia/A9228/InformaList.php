@@ -63,6 +63,7 @@
 		  <td><?=$VC05?></td>
 		  <td><?=$VC06?></td>
 		
+		  
 		  <td data-titulo="Editar: ">
 			  <?php if($Modi == "A" ){ ?>
 				  <i class="bi bi-pencil-square btn-Modificar Modi" 
