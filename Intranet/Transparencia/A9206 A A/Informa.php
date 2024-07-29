@@ -168,9 +168,10 @@
 			  </tr>
 			  <tr>
 				  <td>Area Responsable</td>
-				  <td><input name="C24" id="VC24" type="text" value="<?=$VC24?>" 
-				  class="form-control" placeholder="Descripción" ></td>
+				  <td><input name="C23" id="VC23" type="text" value="<?=$VC23?>" 
+						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+
 			  <tr>
 				  <td>Nota</td>
 				  <td><input name="C24" id="VC24" type="text" value="<?=$VC24?>" 

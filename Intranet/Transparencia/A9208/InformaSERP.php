@@ -43,7 +43,7 @@ $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC05 = 1;	  $VC06 = "";   $VC07 = ""; 	 $VC08 = "";
+$VC05 = 1;	  $VC06 = "";   $VC07 = ""; 	  $VC08 = "01";
 $VC09 = "";   $VC10 = "";  	 $VC11 = "";		$VC12 = "";   $VC13 = "";  	 $VC14 = "";
 $VC15 = "";   $VC16 = "";  	 $VC17 = "";		$VC18 = "";   $VC19 = "";  	 $VC20 = "";
 $VC21 = "";   $VC21 = "";  	 $VC22 = "";		$VC23 = "";   $VC24 = "";  	 $VC25 = "";
@@ -87,7 +87,20 @@ if ($ResuSql)
    $VC37 = $ResuSql['RNota'];
  } 
 else
- { //Busca el sisguiente registro
+{ 
+  //Cargar Catalogo Tipo Integrante
+	$InstSql = "SELECT CTIClave AS Clave, CTIDescri AS Descri ". 
+             "FROM tc8tipointe ".
+             "ORDER BY CTIClave";
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+  $EjInSql = $ConeBase->prepare($InstSql);
+  $EjInSql->execute();
+  $ResCat01 = $EjInSql->fetchall();
+
+  //Cargar Catalogo de Area Responsable
+  include "../fcarea.php";
+
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(RNumeRegi) IS  NULL THEN 1 ELSE  MAX(RNumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  tt9208bremun ".
 			   "WHERE RAyuntam = '$ClavAyun' AND ".

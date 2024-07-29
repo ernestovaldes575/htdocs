@@ -72,7 +72,7 @@ if ($ResuSql)
  } 
 else
  { 
-  //Cargar Catalogo tcsentindi
+  //Cargar Catalogo
 	$InstSql = "SELECT CSIClave AS Clave, CSIDescri AS Descri ". 
              "FROM tcsentindi ".
              "ORDER BY CSIClave";
@@ -80,8 +80,6 @@ else
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResCat01 = $EjInSql->fetchall();
-
-   
   
     //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".

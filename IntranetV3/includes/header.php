@@ -98,6 +98,22 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a href="lista_usuarios.php" class="nav-link">
+								<i class="nav-icon fas fa-users"></i>
+								<p>
+									Lista de Usuarios
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="lista_noticia.php" class="nav-link">
+								<i class="bi bi-newspaper"></i>
+								<p>
+									Lista Noticias
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a href="salir.php" class="nav-link">
 								<i class="nav-icon fas fa-sign-out-alt"></i>
 								<p>
