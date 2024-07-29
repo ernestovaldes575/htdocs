@@ -1,5 +1,4 @@
-<?php include "includes/header.php" ?>
-<?php
+<?php include "includes/header.php";
 //Validamos si recibimos el ID
 if (isset($_GET["id"])) {
     $idNota = $_GET['id'];

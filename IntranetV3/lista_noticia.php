@@ -1,16 +1,19 @@
 <?php 
-    include "includes/header.php";    
+    include "includes/header.php";
     include "Funciones/functionSELECT.php";
-    //Funciones que recibe argumentos.
-    $registroNotas = obtenerRegistros($conn, 'notas', $idUsuario);
+    $RutaImag = "imagenes/";
+    //Llamado de la funcion la cual envia argumentos
+    $registrosNoticias = obtenerRegistros($conn, 'noticias', $idUsuario);
 ?>
-<div class="card-header">
+    <div class="card-header">
     <div class="row">
         <div class="col-md-9">
-            <h3 class="card-title">Lista de notas</h3>
+            <h3 class="card-title fw-semibold">
+                Lista de notas
+            </h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_nota.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
+            <a href="crear_noticia.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
                 <i class="fa fa-plus"></i> 
                 Ingresar nueva nota
             </a>
@@ -22,48 +25,52 @@
     <table id="tblRegistros" class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Fecha creación</th>
+                <th>Imagen</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <?php 
-                foreach ($registroNotas as $fila) : 
-            ?> 
+            <?php
+                foreach($registrosNoticias as $fila){
+            ?>
                 <tr>
                     <td>
-                        <?=$fila->id;?>
+                        <?=$fila->titulo?>
                     </td>
                     <td>
-                        <?=$fila->titulo;?>
+                        <?=$fila->descripcion?>
                     </td>
                     <td>
-                        <?=$fila->descripcion;?>
+                        <?=$fila->fecha?>
                     </td>
                     <td>
-                        <?=$fila->fecha;?>
+                        <a href="<?=$RutaImag?><?=$fila->nomb_imag?>" class="link-success fw-bold">
+                            <i class="bi bi-image">
+                                <?=$fila->nomb_imag?>
+                            </i>
+                        </a>
                     </td>
                     <td>
-                        <a href="editar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-warning">
+                        <a href="editar_noticia.php?id=<?=$fila->id?>" class="btn btn-warning">
                             <i class="fas fa-edit"></i>
                             Editar
                         </a>
-                        <a href="borrar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-danger">
+                        <a href="borrar_nota.php?id=<?=$fila->id?>" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
                             Borrar
                         </a>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+            <?php
+                }
+            ?>
         </tbody>
     </table>
 </div>
-
 <?php include "includes/footer.php" ?>
-
 <script>
     $(function() {
         $('#tblRegistros').DataTable({
