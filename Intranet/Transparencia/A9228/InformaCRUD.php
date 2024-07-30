@@ -63,7 +63,7 @@ $VC33 = $_POST['C33'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9228 ".						//Cambiar tabla
+		$InstSql = "INSERT INTO a9228 ".			//Cambiar tabla
 				"VALUES (NULL,'$ClavAyun',$EjerTrab,".		
 					    "$ConsFrac,'$TrimTrab','$VC05',".			 	
 								 "'$VC06','$VC07','$VC08',".

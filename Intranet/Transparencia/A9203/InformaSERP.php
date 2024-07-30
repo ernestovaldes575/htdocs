@@ -55,13 +55,21 @@ if ($ResuSql)
    $VC13=$ResuSql['ANota'];	
  } 
 else
- { //Busca el sisguiente registro
+ { 
+  
+  
+  
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9203 ".
 			  "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
+
+
+
+
 
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
