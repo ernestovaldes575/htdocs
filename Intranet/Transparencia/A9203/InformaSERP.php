@@ -56,9 +56,12 @@ if ($ResuSql)
  } 
 else
  { 
-  
-  
-  
+  //Cargar Catalogo de Denominacion area Area Responsable
+  include "../fcarea.php";
+
+  //Cargar Catalogo de Area Responsable
+        include "../fcarea.php";
+
   //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9203 ".
