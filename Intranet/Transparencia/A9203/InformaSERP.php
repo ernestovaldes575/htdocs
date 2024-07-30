@@ -56,7 +56,7 @@ if ($ResuSql)
  } 
 else
  { 
-  //Cargar Catalogo de Denominacion area Area Responsable
+  //Cargar Catalogo de Denominacion Area Responsable
   include "../fcarea.php";
 
   //Cargar Catalogo de Area Responsable
