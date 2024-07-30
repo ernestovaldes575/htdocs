@@ -1,54 +1,56 @@
 <?php
     include "includes/header.php";
     if(isset($_GET["id"])){
-        $idNota = $_GET['id'];
-        echo("ID:$idNota");
+        $idNoticia = $_GET['id'];
+        echo("ID:$idNoticia");
     }
     //?Obtenemos los datos de las noticias por su ID
     $query = "SELECT * FROM noticias WHERE id=:id";
     $stmt = $conn->prepare($query);
 
-    $stmt->bindParam(":id", $idNota, PDO::PARAM_INT);
+    $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
     $stmt->execute();
     $noticia = $stmt->fetch(PDO::FETCH_OBJ);
     
     if(isset($_POST["editarNoticia"])){
-        
-    $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
-    //Obtener el nombre original del Archivo
-    $imagen = $_FILES["imagen"]["name"];
-    //Obtener la ruta temporal del archivo en el servidor
-    $imagenTmp = $_FILES["imagen"]["tmp_name"];
-    //Obtener el codigo de error de la subida del archivo
-    $errorArchivo = $_FILES["imagen"]["error"];
-    
+        $titulo = $_POST["titulo"];
+        $descripcion = $_POST["descripcion"];
+        $imagen = $_FILES["imagen"];
+
+
     // Validar si está vacío
     if(empty($titulo) || empty($descripcion) || empty($imagen)){
         $error = "¡Error, algunos datos son obligatorios!";
-    }else{
-        // Verificar errores de subida de archivos
-        if($errorArchivo != UPLOAD_ERR_OK) {
-            $error = "Error en la subida del archivo: ".$errorArchivo;
-        }else{
-            //Mover el archivo subido a una carpeta en el servidor
-            //Asegúrate de que esta carpeta exista y tenga permisos adecuados
-            $carpetaDestino = "ImagenNoticias/"; 
-            if(!file_exists($carpetaDestino)){
-                mkdir($carpetaDestino, 0777, true);
-            }
-            $rutaImagen = $carpetaDestino . basename($imagen);
-            
-            if (move_uploaded_file($imagenTmp, $rutaImagen)) {
-                // Cuando la validación es correcta
-                $query =   "UPDATE  noticias SET titulo=:titulo,descripcion=:descripcion,      
-                            nomb_imag=:nomb_imag WHERE id=:id";
-                $stmt = $conn->prepare($query);
+    }
 
-                $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
-                $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
-                $stmt->bindParam(":nomb_imag", $imagen, PDO::PARAM_STR);
-                $stmt->bindParam(":id", $idNota, PDO::PARAM_INT);
+    //Ruta para crear carpeta
+    $carpetaImagenes = 'imagenes/';
+    //Valida si una carpeta existe
+    if(!is_dir($carpetaImagenes)){  
+        mkdir($carpetaImagenes,0777,true);
+    }
+    if($imagen["name"]){
+        //Eliminar imagen previa
+        unlink($carpetaImagenes.$noticia->nomb_imag);
+    }else{
+        echo "No hay una imagen";
+    }   
+    //Generar un nombre unicos
+    $nombreImagen = md5(uniqid(rand(),true)) .".jpg";
+
+    //Subir la imagen
+    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . '/' . $nombreImagen);
+
+    //Cuando la validación es correcta
+    $query =   "UPDATE  noticias 
+                SET titulo=:titulo,descripcion=:descripcion, nomb_imag=:nombreImagen 
+                WHERE id=:id";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
+    $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
+    $stmt->bindParam(":nomb_imag", $imagen, PDO::PARAM_STR);
+    $stmt->bindParam(":id", $idNota, PDO::PARAM_INT);
                 
                 $resultado = $stmt->execute();
                 if($resultado){
@@ -57,9 +59,6 @@
                     $error = "Error, no se pudo crear la nota";
                 }
             }
-        }
-    }
-}
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -98,7 +97,7 @@
 <div class="card-body shadow">
     <div class="row">
         <div class="col-12">
-            <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+            <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Título:</label>
                     <input type="text" name="titulo" class="form-control" 
