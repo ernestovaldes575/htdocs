@@ -73,7 +73,21 @@ if ($ResuSql)
    $VC24 = $ResuSql['ANota'];	
  } 
 else
- { //Busca el sisguiente registro
+ { 
+  
+  
+  
+  //Cargar Catalogo sentido indicador
+	$InstSql = "SELECT CTCClave AS Clave, CTCDescri AS Descri ". 
+  "FROM tcsentindi ".
+  "ORDER BY CSIClave";
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$ResCat01 = $EjInSql->fetchall();
+  
+  
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM   a9211 ".
 			    "WHERE AAyuntamiento = '$ClavAyun' AND ".

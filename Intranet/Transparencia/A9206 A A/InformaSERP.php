@@ -72,7 +72,10 @@ if ($ResuSql)
  } 
 else
  { 
-  //Cargar Catalogo
+   //Cargar Catalogo de Area Responsable
+   include "../fcarea.php";
+
+  //Cargar Catalogo sentido indicador
 	$InstSql = "SELECT CSIClave AS Clave, CSIDescri AS Descri ". 
              "FROM tcsentindi ".
              "ORDER BY CSIClave";

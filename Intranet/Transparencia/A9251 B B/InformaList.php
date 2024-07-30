@@ -39,7 +39,7 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Nombre programa </th>
+			<th >Area </th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -51,10 +51,11 @@
 		<?php 
 		$NumeReng = 1;
 		 foreach($ResuSql as $RegiTabl){
+			
 			$VC03 = $RegiTabl['AConsecutivo'];
 			$VC04 = $RegiTabl['AFechaInicio'];
 			$VC05 = $RegiTabl['AFechaTermino'];
-			$VC06 = $RegiTabl['ANombrePrograma'];
+			$VC06 = $RegiTabl['AArea'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 						 "/$NumeFrac/$TrimTrab/";
