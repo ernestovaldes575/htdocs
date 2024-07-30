@@ -2,39 +2,34 @@
     <div class="contenedor-centrar">
         <article class="Noticias-Grid">
             <?php
-                $BandInst = false;
-                include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConBasPagWeb.php');
-                $InstSql =  "SELECT PTitulo, PEjercicio, PMesRegi, PImagenPagi, PDocuLiga, ". 
-                                    "PDocumento, PLiga, PVentRefe, CTDCarpeta, PDescripcion ".
-                            "FROM ptpagina ".
-                            "INNER JOIN pctipodocu ON CTDClave = PTipoDocu ".
-                            "WHERE PAyuntamiento = $ClavAyun ".
-                            "AND PTipoDocu = '04'";
-                    if($BandInst) echo "<br>$InstSql<br>";
-                        $RespSql = $ConeBase->prepare($InstSql);
-                        $RespSql->execute();
-                        $ResuEjer = $RespSql->fetchAll();
-                    foreach($ResuEjer as $RegTab01){
-                            $EjerTrab = $RegTab01['PEjercicio'];
-                            $MesTraba = $RegTab01['PMesRegi'];
-                            $ImagNoti = $RegTab01['PImagenPagi'];
-                            $CarpNoti = $RegTab01['CTDCarpeta'];
-                            $DescNoti = $RegTab01['PDescripcion'];
-                            $TituNoti = $RegTab01['PTitulo'];
-                            $ImagPagi = "/ExpeElectroni/$ClavAyun/$EjerTrab/$MesTraba/$CarpNoti /$ImagNoti";
+            include($_SERVER['DOCUMENT_ROOT'].'../../htdocs/IntranetV3/conexion_sqlserver.php');
+                $query = "SELECT * FROM noticias LIMIT 3;";
+                $stmt = $conn->query($query);
+                $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
+                $RutaImag = "../../IntranetV3/imagenes/";
+
+                foreach ($registros as $fila):
+                    $titulo = $fila->titulo;
+                    $descripcion = $fila->descripcion;
+                    $imagen = $fila->nomb_imag;
+                
+                    // Limitar la descripción a 160 caracteres
+                    if (mb_strlen($descripcion) > 150) {
+                        $descripcion = mb_substr($descripcion, 0, 160) . '...';
+                    }
             ?>
             <div class="card-contenido">
                 <div class="img__not">
-                    <img src="<?=$ImagPagi?>" alt="Not1">
+                    <img src="<?=$RutaImag?><?=$fila->nomb_imag?>" alt="Not1">
                 </div>
                 <div class="card__Not">
                     <a href="#" class="titulo">
                         <span>
-                            <?=$TituNoti?>
+                            <?=$fila->titulo?>
                         </span>
                     </a>
                     <p class="text-contenido">
-                        <?=$DescNoti?>
+                        <?=$fila->descripcion?>
                     </p>
                     <a href="" class="action">
                         Más
@@ -42,7 +37,7 @@
                     </div>
                 </div>
                 <?php
-                }
+                endforeach;
                 ?>
             </article>
         </div>

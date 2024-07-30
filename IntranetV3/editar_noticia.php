@@ -18,47 +18,43 @@
         $imagen = $_FILES["imagen"];
 
 
-    // Validar si está vacío
-    if(empty($titulo) || empty($descripcion) || empty($imagen)){
+    //Validar si está vacío
+    if(empty($titulo) || empty($descripcion) || empty($imagen['name'])){
         $error = "¡Error, algunos datos son obligatorios!";
-    }
-
-    //Ruta para crear carpeta
-    $carpetaImagenes = 'imagenes/';
-    //Valida si una carpeta existe
-    if(!is_dir($carpetaImagenes)){  
-        mkdir($carpetaImagenes,0777,true);
-    }
-    if($imagen["name"]){
-        //Eliminar imagen previa
-        unlink($carpetaImagenes.$noticia->nomb_imag);
     }else{
-        echo "No hay una imagen";
-    }   
-    //Generar un nombre unicos
-    $nombreImagen = md5(uniqid(rand(),true)) .".jpg";
+        //Ruta para crear carpeta
+        $carpetaImagenes = 'imagenes/';
+        //Valida si una carpeta existe
+        if(!is_dir($carpetaImagenes)){  
+            mkdir($carpetaImagenes,0777,true);
+        }
+        if($imagen["name"]){
+            //Eliminar imagen previa
+            unlink($carpetaImagenes.$noticia->nomb_imag);
+        }    
+            //Generar un nombre unicos
+            $nombreImagen = md5(uniqid(rand(),true)) .".jpg";
+            //Subir la imagen
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . '/' . $nombreImagen);
+            //Cuando la validación es correcta
+            $query =   "UPDATE  noticias 
+                        SET titulo=:titulo,descripcion=:descripcion, nomb_imag=:nomb_imag 
+                        WHERE id=:id";
+            $stmt = $conn->prepare($query);
 
-    //Subir la imagen
-    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . '/' . $nombreImagen);
-
-    //Cuando la validación es correcta
-    $query =   "UPDATE  noticias 
-                SET titulo=:titulo,descripcion=:descripcion, nomb_imag=:nombreImagen 
-                WHERE id=:id";
-
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
-    $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
-    $stmt->bindParam(":nomb_imag", $imagen, PDO::PARAM_STR);
-    $stmt->bindParam(":id", $idNota, PDO::PARAM_INT);
+            $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
+            $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
+            $stmt->bindParam(":nomb_imag", $nombreImagen, PDO::PARAM_STR);
+            $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
                 
-                $resultado = $stmt->execute();
-                if($resultado){
-                    $mensaje = "Registro de nota creado correctamente";
-                }else{
-                    $error = "Error, no se pudo crear la nota";
+            $resultado = $stmt->execute();
+            if($resultado){
+                $mensaje = "Registro de nota creado correctamente";
+            }else{
+                $error = "Error, no se pudo crear la nota";
                 }
-            }
+        }
+    }
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -105,9 +101,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" rows="3">
-                    <?php if($noticia) echo $noticia->descripcion; ?>
-                    </textarea>
+                    <textarea class="form-control" name="descripcion" rows="3"><?php if($noticia) echo $noticia->descripcion;?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>

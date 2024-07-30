@@ -1,16 +1,17 @@
 <?php 
     include "includes/header.php";    
     include "Funciones/functionSELECT.php";
-    //Funciones que recibe argumentos.
+    // Funciones que recibe argumentos.
     $registroNotas = obtenerRegistros($conn, 'notas', $idUsuario);
 ?>
+
 <div class="card-header">
     <div class="row">
         <div class="col-md-9">
-            <h3 class="card-title">Lista de notas</h3>
+            <h3 class="card-title">Noticias</h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_nota.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
+            <a href="crear_nota.php" class="btn btn-primary btn-xl w-100 fw-semibold shadow">
                 <i class="fa fa-plus"></i> 
                 Ingresar nueva nota
             </a>
@@ -26,34 +27,22 @@
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Fecha creación</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <?php 
-                foreach ($registroNotas as $fila) : 
-            ?> 
+            <?php foreach ($registroNotas as $fila): ?> 
                 <tr>
+                    <td><?=$fila->id;?></td>
+                    <td><?=$fila->titulo;?></td>
+                    <td><?=strlen($fila->descripcion) > 160 ? substr($fila->descripcion, 0, 160) . '...' : $fila->descripcion;?></td>
+                    <td><?=$fila->fecha;?></td>
                     <td>
-                        <?=$fila->id;?>
-                    </td>
-                    <td>
-                        <?=$fila->titulo;?>
-                    </td>
-                    <td>
-                        <?=$fila->descripcion;?>
-                    </td>
-                    <td>
-                        <?=$fila->fecha;?>
-                    </td>
-                    <td>
-                        <a href="editar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-warning">
-                            <i class="fas fa-edit"></i>
-                            Editar
+                        <a href="editar_nota.php?id=<?=$fila->id;?>" class="btn btn-warning btn-sm me-1">
+                            <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="borrar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-danger">
-                            <i class="fas fa-trash-alt"></i>
-                            Borrar
+                        <a href="borrar_nota.php?id=<?=$fila->id;?>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Borrar
                         </a>
                     </td>
                 </tr>
@@ -64,8 +53,9 @@
 
 <?php include "includes/footer.php" ?>
 
+<!-- JavaScript for DataTables -->
 <script>
-    $(function() {
+    $(document).ready(function() {
         $('#tblRegistros').DataTable({
             "paging": true,
             "lengthChange": false,
@@ -74,6 +64,9 @@
             "info": true,
             "autoWidth": false,
             "responsive": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
+            }
         });
     });
 </script>
