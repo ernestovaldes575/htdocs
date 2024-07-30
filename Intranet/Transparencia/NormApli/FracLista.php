@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 	<?php
 		include '../NormApli/Componente/LigasHTML.php';
 	?>
@@ -18,11 +14,11 @@
 		?>
 	</header>
 	<?php
-	include 'FracListaSERP.php';
+		include 'FracListaSERP.php';
 	?>
 	<!--encabezado-->
-	<div class="container table-responsive card mb-5 p-5">
-		<table width="70%" class="ListInfo tabla table table-striped table-bordered" id="tblRegistros">
+	<div class="container table-responsive">
+		<table width="70%" class="ListInfo tabla table" id="tblRegistros">
 			<thead>
 				<tr>
 					<td width="8%"></td>
@@ -48,7 +44,12 @@
 						<td class="text-center"><?=$fila->FSubinciso;?></td>
 						<td class="text-center"><?=$fila->FNormatividad;?></td>
 						<td class="text-center">
-							<i class="bi bi-file-arrow-down btn-Modificar NumeTrim" data-Inciso='<?= $VC03 ?>' data-SubInc='<?= $VC04 ?>' data-Normat='<?= $VC05 ?>' data-Period='<?= $VC06 ?>' title="3er Trimestre">
+							<i class="bi bi-file-arrow-down btn-Modificar NumeTrim" 
+							data-Inciso='<?=$fila->FInciso?>' 
+							data-SubInc='<?=$fila->FSubinciso?>' 
+							data-Normat='<?=$fila->FNormatividad?>' 
+							data-Period='<?=$fila->FPeriodo?>' 
+							title="3er Trimestre">
 							</i>
 						</td>
 					</tr>
@@ -65,7 +66,7 @@
 	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 
-	<script>
+	<!-- <script>
 		$(function() {
 			$('#tblRegistros').DataTable({
 				"paging": true,
@@ -77,7 +78,7 @@
 				"responsive": true,
 			});
 		});
-	</script>
+	</script> -->
 
 	<?php
 	//require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/PiePagi.php'); 
