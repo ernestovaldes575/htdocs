@@ -73,18 +73,19 @@ if ($ResuSql)
    $VC24 = $ResuSql['ANota'];	
  } 
 else
- { 
+ {
   
+    //Cargar Catalogo de Area Responsable
+    include "../fcarea.php";
   
-  
-  //Cargar Catalogo sentido indicador
-	$InstSql = "SELECT CTCClave AS Clave, CTCDescri AS Descri ". 
-  "FROM tcsentindi ".
-  "ORDER BY CSIClave";
-if ($BandMens) echo '1)'.$InstSql.'<br>'; 
-$EjInSql = $ConeBase->prepare($InstSql);
-$EjInSql->execute();
-$ResCat01 = $EjInSql->fetchall();
+  //Cargar Catalogo tipo contrato
+	$InstSql = "SELECT 	CTCClave AS Clave, CTCDescri AS Descri ". 
+  "FROM tctipocontra ".
+  "ORDER BY CTCClave";
+ if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat03 = $EjInSql->fetchall();
   
   
   //Busca el sisguiente registro

@@ -66,7 +66,34 @@ if ($ResuSql)
    $VC22 = $ResuSql['ANota'];		
  } 
 else
- { //Busca el sisguiente registro
+ { 
+  
+  //Cargar Catalogo de Nivel maximo de estudios
+  $InstSql = "SELECT CNMEClave AS Clave, CNMEDescri AS Descri ". 
+    "FROM tcnivemaxest ".
+    "ORDER BY CNMEClave";
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$ResCat09 = $EjInSql->fetchall();
+
+  
+  //Cargar Catalogo de ¿Ha tenido sanciones administrativas?
+  $InstSql = "SELECT CSAClave AS Clave, 	CSADescri AS Descri ". 
+    "FROM  tcsancadmi ".
+    "ORDER BY CSAClave";
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$ResCat10 = $EjInSql->fetchall();
+
+
+//Cargar Catalogo de Area Responsable
+        include "../fcarea.php";
+
+  
+  
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9221 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".

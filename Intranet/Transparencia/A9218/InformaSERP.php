@@ -80,7 +80,48 @@ if ($ResuSql)
    $VC32 = $ResuSql['ANota'];
  } 
 else
- { //Busca el sisguiente registro
+ {  
+
+   //catalogo del Estado del proceso del concurso
+   $InstSql = "SELECT CEPClave AS Clave, CEPDescri AS Descri ". 
+   "FROM tcestaproc ".
+   "ORDER BY CEPClave";
+ if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat08 = $EjInSql->fetchall();
+
+  //Cargar Catalogo de Area Responsable
+  include "../fcarea.php";
+
+   //catalogo tipo de cargo o puesto
+   $InstSql = "SELECT CTCClave AS Clave, CTCDescri AS Descri ". 
+   "FROM tctipocarg ".
+   "ORDER BY CTCClave";
+ if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat07 = $EjInSql->fetchall();
+
+//catalogo alcanse del concurso
+   $InstSql = "SELECT CACClave AS Clave, CACDescri AS Descri ". 
+   "FROM tcalcaconc ".
+   "ORDER BY CACClave";
+ if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat06 = $EjInSql->fetchall();
+  
+   //catalogo tipo de evento
+  $InstSql = "SELECT CTEClave AS Clave, CTEDescri AS Descri ". 
+  "FROM tctipoeven ".
+  "ORDER BY CTEClave";
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+$EjInSql = $ConeBase->prepare($InstSql);
+$EjInSql->execute();
+$ResCat05 = $EjInSql->fetchall();
+  
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9218 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
