@@ -1,4 +1,6 @@
-<?php include "includes/header.php";
+<?php 
+    include "includes/header.php";
+    include "Funciones/functionSELECT.php";
     if(isset($_GET["id"])){
         $idNoticia = $_GET['id'];
     }
@@ -14,12 +16,13 @@
     if (isset($_POST["borrarNota"])){
             //Sí valida todos los campos
             //Consulta
-            $query = "DELETE FROM noticias WHERE id=:id";
-            $stmt = $conn->prepare($query);
-            $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
+            //? $query = "DELETE FROM noticias WHERE id=:id";
+            //? $stmt = $conn->prepare($query);
+            //? $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
             //Ejecuta la consulta   
-            $resultado = $stmt->execute();
-            
+            //? $resultado = $stmt->execute();
+            $resultado = eliminarRegistros($conn, 'noticias', $idNoticia);
+
             if ($resultado){
                 $mensaje = "Registro de nota borrado correctamente";
             } else {
