@@ -57,38 +57,38 @@
 				
 				<tr>
 				  <td>atención: en este campo se mostrará el valor que se agregue al sistema, de acuerdo al valor seleccionado del campo (Período que se informa), para los criterios fecha de inicio y termino del período que se informa</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Concepto de los ingresos con base en las disposiciones aplicables en la materia</td>
 				  <td><input name="C07" id="VC07" type="text" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
+				  <td>Concepto de los ingresos con base en las disposiciones aplicables en la materia</td>
+				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
 				  <td>Tipo de los ingresos</td>
-				  <td><input  name="C08" id="VC08" type="text"value="<?=$VC08?>" 
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
 				  <td>Monto de los ingresos por concepto</td>
-				  <td><input name="C09" id="VC09" type="text" value="<?=$VC09?>" 
+				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Fuente de los ingresos</td>
-				  <td><input  name="C10" id="VC10" type="text"value="<?=$VC10?>" 
+				  <td><input  name="C11" id="VC11" type="text"value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  <tr>
 				  <td>Denominación de la entidad o dependencia que entregó los ingresos</td>
-				  <td><input  name="C11" id="VC11" type="text"value="<?=$VC11?>" 
+				  <td><input  name="C12" id="VC12" type="text"value="<?=$VC12?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Fecha de los ingresos recibidos </td>
-				  <td><input name="C12" id="VC12" type="date" value="<?=$VC12?>" 
+				  <td><input name="C13" id="VC13" type="date" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  <tr>
@@ -103,8 +103,8 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
-							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+	 					   if ( $VC13 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC13?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 
 						} //} else {?>
@@ -113,12 +113,22 @@
 			  </tr>
 				<tr>
 				  <td>Área responsable de la información</td>
-				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C14" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC14 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC14?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Nota</td>
-				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
+				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	

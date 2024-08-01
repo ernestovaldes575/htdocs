@@ -22,6 +22,22 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//carga de catlogos arias, rubro
+$AIdenCat ="2|02|11|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
+
+$InstSql = "SELECT CRClave AS Clave, CRDescri AS Descri ". 
+    "FROM tcrubro ".
+    "ORDER BY CRClave";
+if ($BandMens) echo '1)'.$InstSql.'<br>'; 
+ $EjInSql = $ConeBase->prepare($InstSql);
+ $EjInSql->execute();
+ $ResCat11 = $EjInSql->fetchall();
+
+
+
 //Carga el registro para Consulta
    $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
                "AEjercicioAuditado, APeriodoAuditado, ARubro,".

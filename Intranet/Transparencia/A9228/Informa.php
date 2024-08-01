@@ -71,9 +71,19 @@
 			  </tr>
 				<tr>
 				  <td>Rubro</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			 </tr>
+				  <td>
+					<select name="C10" class="form-control">			
+				  <?php 
+		 			foreach($ResCat11 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC10 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 			  
 			 
 				<tr>
@@ -140,8 +150,24 @@
 			  </tr>
 				<tr>
 				  <td>Hipervínculo al oficio o documento de notificación de resultados</td>
-				  <td><input name="C22" id="VC22" type="text" value="<?=$VC22?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC22 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC22?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
+			  </tr>
 			  </tr>
 				<tr>
 				  <td>Por rubro sujeto a revisión especificar el número total de hallazgos, observaciones, conclusiones, recomendaciones, o lo que derive</td>
@@ -150,15 +176,44 @@
 			  </tr>
 				<tr>
 				  <td>Hipervínculo a las recomendaciones hechas</td>
-				  <td><input name="C24" id="VC24" type="text" value="<?=$VC24?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			 </tr>
-			  
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC24 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC24?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
+			  </tr>
 			 
 				<tr>
 				  <td>Hipervínculos a los informes finales, de revisión y/o dictamen</td>
-				  <td><input name="C25" id="VC25" type="text" value="<?=$VC25?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC25 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC25?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>Acción implementada por el órgano fiscalizador</td>
@@ -179,8 +234,23 @@
 
 			  <tr>
 				  <td>Hipervínculo al Informe aclaraciones por y promovidas OF</td>
-				  <td><input name="C29" id="VC29" type="text" value="<?=$VC29?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC29 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC29?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>El total de acciones pendientes por solventar y/o aclarar ante el órgano fiscalizador</td>
@@ -190,14 +260,39 @@
 
 			  <tr>
 				  <td>Hipervínculo al programa anual de auditorías</td>
-				  <td><input name="C31" id="VC31" type="text" value="<?=$VC31?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC31 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC31?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>Área responsable de la información</td>
-				  <td><input name="C32" id="VC32" type="text" value="<?=$VC32?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C32" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC32 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC32?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 
 			  <tr>
 				  <td>Nota</td>

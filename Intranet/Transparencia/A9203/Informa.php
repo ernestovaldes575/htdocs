@@ -21,6 +21,7 @@
 	include 'InformaSERP.php';	
 ?>
 <!-- <caption>
+	
 <?=	$DescTiSe?>	
 </caption> -->
 <div>
@@ -102,7 +103,7 @@
 						</a>
 						<!-- Visualizar Image -->
 						<?php 
-	 					   if ( $VC11!= '' ) { ?> 
+	 					   if ( $VC11 != '' ) { ?> 
 							<a href="javascript:window.open('<?=$RutaArch.$VC11?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
 							<i class="bi bi-eye-fill fs-1 text-success"></i>
 						<?php  echo "</a> "; } 

@@ -4,7 +4,7 @@ if(isset($_COOKIE['CBusqMae'])){
 	$ABusqMae = explode("|", $ArCook01);
 	//echo '$ABusqMae'.$ABusqMae.'<br>';
 	$EjerTrab = $ABusqMae[0];
-	echo "EjerTrab=$EjerTrab";
+	//echo "EjerTrab=$EjerTrab";
 }else{
 	die('Conexion Fallida');
 }

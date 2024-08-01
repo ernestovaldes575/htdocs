@@ -167,14 +167,14 @@
 			  
 				<tr>
 				  <td>Salario Bruto</td>
-				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
+				  <td><input name="C18" id="VC18" type="int" value="<?=$VC18?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			 
 				<tr>
 				  <td>Salario Neto Mensual</td>
-				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
+				  <td><input name="C19" id="VC19" type="int" value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 

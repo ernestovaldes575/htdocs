@@ -22,6 +22,11 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//Cargar Catalogo de Area Responsable
+$AIdenCat ="1|02|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro 
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
              "AClaveCapitulo, AClaveConcepto, AClavePartida,".
@@ -31,8 +36,8 @@ $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
-         // "ORDER BY AConsecutivo ";
-          
+         
+                   
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
@@ -47,10 +52,7 @@ $VC21 = "";
 
 if ($ResuSql)
  { //Carga los campos 
-  // ANumeRegi, AFechaInicio, AFechaTermino,". 
-  //"AClaveCapitulo, AClaveConcepto, ,".
-  //", , ,". ", , ,". ", ,". ", ,  ".
-  //
+  
    $VC05 = $ResuSql['ANumeRegi'];	
    $VC06 = $ResuSql['AFechaInicio'];	
    $VC07 = $ResuSql['AFechaTermino'];

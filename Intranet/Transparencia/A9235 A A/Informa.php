@@ -142,9 +142,19 @@
 			  </tr>
 				<tr>
 				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
-				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C20" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC20 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC20?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Nota</td>
 				  <td><input name="C21" id="VC21" type="text" value="<?=$VC21?>" 

@@ -157,13 +157,13 @@
 
 			  <tr>
 				  <td>Remuneración mensual bruta o contraprestación</td>
-				  <td><input name="C19" id="VC19" type="float" value="<?=$VC19?>" 
+				  <td><input name="C19" id="VC19" type="int" value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
 				  <td>Monto total a pagar</td>
-				  <td><input name="C20" id="VC20" type="float" value="<?=$VC20?>" 
+				  <td><input name="C20" id="VC20" type="int" value="<?=$VC20?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 

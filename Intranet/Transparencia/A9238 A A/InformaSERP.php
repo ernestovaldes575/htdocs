@@ -22,6 +22,9 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//Cargar catalo de arias
+include "../fcarea.php";
+
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
                    "ANombrePrograma,AObjetivo,ANombreIndicador,".

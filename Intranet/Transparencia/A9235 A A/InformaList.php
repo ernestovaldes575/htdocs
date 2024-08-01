@@ -48,6 +48,7 @@
 		</tr>
 		<?php 
 		$NumeReng = 1;
+		
 		 foreach($ResuSql as $RegiTabl){
 			$VC03 = $RegiTabl['AConsecutivo'];
 			$VC04 = $RegiTabl['AFechaInicio'];

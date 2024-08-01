@@ -52,8 +52,8 @@
 		$NumeReng = 1;
 		 foreach($ResuSql as $RegiTabl){
 			$VC03 = $RegiTabl['AConsecutivo'];
-			$VC04 = $RegiTabl['AFechaInicio'];
-			$VC05 = $RegiTabl['AFechaTermino'];
+			$VC04 = $RegiTabl['TFechInic'];
+			$VC05 = $RegiTabl['TFechterm'];
 			$VC06 = $RegiTabl['THirper'];
 			
 			$RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
