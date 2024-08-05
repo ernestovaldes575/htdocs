@@ -7294,7 +7294,7 @@ textarea.form-control-lg {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, .encabezado-prin {
   display: flex !important;
 }
 
@@ -7720,7 +7720,7 @@ textarea.form-control-lg {
   justify-content: center !important;
 }
 
-.justify-content-between {
+.justify-content-between, .encabezado-prin {
   justify-content: space-between !important;
 }
 
@@ -11975,4 +11975,34 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.encabezado-prin .logo {
+  width: 15em;
+}
+
+.formulario {
+  height: 50vh;
+}
+
+.logoveda, .logo-simga {
+  width: 5%;
+}
+
+header img {
+  width: 10%;
+}
+
+.full-height {
+  height: 100svh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 9.5em;
+}
+
+.LogoEscu {
+  width: 5%;
+}
+
+.logo-mur {
+  width: 5%;
 }
