@@ -1,21 +1,22 @@
-<?php 
+<?php
+    //READ
     include "includes/header.php";
     include "Funciones/functionSELECT.php";
-    $RutaImag = "imagenes/";
+    $RutaImag = "Avisos/";
     //Llamado de la funcion la cual envia argumentos
-    $registrosNoticias = obtenerRegistros($conn, 'noticias', $idUsuario);
+    $registrosNoticias = obtenerRegistros($conn, 'Avisos', $idUsuario);
 ?>
-<div class="card-header">
+    <div class="card-header">
     <div class="row">
         <div class="col-md-9">
             <h3 class="card-title fw-semibold">
-                Noticias
+                Avisos
             </h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_noticia.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
+            <a href="crear_aviso.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
                 <i class="fa fa-plus"></i> 
-                Ingresar nueva noticia
+                Ingresar Nuevo Aviso
             </a>
         </div>
     </div>
@@ -26,7 +27,6 @@
         <thead>
             <tr>
                 <th>Título</th>
-                <th>Descripción</th>
                 <th>Fecha creación</th>
                 <th>Imagen</th>
                 <th></th>
@@ -41,15 +41,12 @@
                         <?=$fila->titulo?>
                     </td>
                     <td>
-                        <?=$fila->descripcion?>
-                    </td>
-                    <td>
                         <?=$fila->fecha?>
                     </td>
                     <td>
-                        <a href="<?=$RutaImag?><?=$fila->nomb_imag?>" class="link-success fw-bold">
+                        <a href="<?=$RutaImag?><?=$fila->nombImag?>" class="link-success fw-bold">
                             <i class="bi bi-image">
-                                <?=$fila->nomb_imag?>
+                                <?=$fila->nombImag?>
                             </i>
                         </a>
                     </td>
@@ -58,7 +55,7 @@
                             <i class="fas fa-edit"></i>
                             Editar
                         </a>
-                        <a href="borrar_noticia.php?id=<?=$fila->id?>" class="btn btn-danger">
+                        <a href="borrar_aviso.php?id=<?=$fila->id?>" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
                             Borrar
                         </a>

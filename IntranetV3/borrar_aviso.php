@@ -1,29 +1,25 @@
 <?php 
     include "includes/header.php";
     include "Funciones/functionSELECT.php";
+    $RutaImag = 'Avisos/';
 
     if(isset($_GET["id"])){
-        $idNoticia = $_GET['id'];
+        $idAviso = $_GET['id'];
     }
-    //Obtenemos los datos de nuetra noticia
-    $query = "SELECT * FROM noticias WHERE id=:id";
+    //Obtenemos los datos de nuetros avisos
+    $query = "SELECT * FROM Avisos WHERE id=:id";
     $stmt = $conn->prepare($query);
 
-    $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
+    $stmt->bindParam(":id", $idAviso, PDO::PARAM_INT);
     $stmt->execute();
+    $aviso = $stmt->fetch(PDO::FETCH_OBJ);
 
-    $noticia = $stmt->fetch(PDO::FETCH_OBJ);
+    //?Eliminar Archivo de la carpeta Avisos
+    unlink('Avisos/'.$aviso->nombImag);
 
-    if (isset($_POST["borrarNoticia"])){
-            //Sí valida todos los campos
-            //Consulta
-            //? $query = "DELETE FROM noticias WHERE id=:id";
-            //? $stmt = $conn->prepare($query);
-            //? $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
-            //Ejecuta la consulta   
-            //? $resultado = $stmt->execute();
-            $resultado = eliminarRegistros($conn, 'noticias', $idNoticia);
-
+    if (isset($_POST["borrarAviso"])){
+            //Funcion para Borrar Registro
+            $resultado = eliminarRegistros($conn, 'Avisos', $idAviso);
             if ($resultado){
                 $mensaje = "Registro de nota borrado correctamente";
             } else {
@@ -72,27 +68,26 @@
         <div class="col-12">
             <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
-                    <label for="titulo" class="form-label">Título:</label>
+                    <label for="titulo" class="form-label fw-semibold">Título:</label>
                     <input type="text" name="titulo" 
                     class="form-control" readonly
-                    value="<?php if($noticia) echo $noticia->titulo;?>">
+                    value="<?php if($aviso) echo $aviso->titulo;?>">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label">
-                        Descripción:
-                    </label>
-                    <textarea class="form-control" name="descripcion" rows="3" readonly><?php if($noticia) echo $noticia->descripcion;?></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen:</label>
-                    <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen" readonly value="<?php if($noticia) echo $noticia->nomb_imag;?>">
+                    <label for="imagen" class="form-label fw-semibold">Imagen:</label>
+                    <a href="<?=$RutaImag?><?php if($aviso) echo $aviso->nombImag;?>" 
+                        class="fw-semibold d-block">
+                        <i class="bi bi-card-image"></i>
+                        <?php if($aviso) echo $aviso->nombImag;?>
+                    </a>
+                    <!-- <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen" readonly value="<?php //if($aviso) echo $aviso->nombImag;?>"> -->
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" name="borrarNoticia" class="btn btn-danger shadow fw-semibold">
+                    <button type="submit" name="borrarAviso" class="btn btn-danger shadow fw-semibold">
                         <i class="bi bi-trash"></i>
                         Borrar Noticia
                     </button>
-                    <a href="lista_noticia.php" class="btn btn-secondary shadow fw-semibold">
+                    <a href="lista_aviso.php" class="btn btn-secondary shadow fw-semibold">
                         <i class="bi bi-box-arrow-left"></i>
                         Regresar
                     </a>

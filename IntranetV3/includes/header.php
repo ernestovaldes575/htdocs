@@ -12,7 +12,7 @@
 	// echo"$idUsuario";
 	// echo"$nombre";
 	// echo"$email";
-	//incluir base de datos
+	//?incluir base de datos
 	include_once("conexion_sqlserver.php");
 ?>
 <!DOCTYPE html>
@@ -74,7 +74,15 @@
             </a>
             <a href="lista_noticia.php" class="nav-link text-white">
 				<i class="bi bi-newspaper"></i>
-                <span class="ms-2">Lista Noticias</span>
+                <span class="ms-2">Noticias</span>
+            </a>
+            <a href="lista_aviso.php" class="nav-link text-white">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span class="ms-2">Avisos</span>
+            </a>
+            <a href="lista_banner.php" class="nav-link text-white">
+                <i class="bi bi-card-image"></i>
+                <span class="ms-2">Banner</span>
             </a>
             <a href="salir.php" class="nav-link text-white link-bg-nger">
 			<i class="bi bi-box-arrow-left"></i>

@@ -1,21 +1,19 @@
 <?php
-session_start();
-// Validamos si la sesión está activa
-if (!empty($_SESSION['activo'])) {
-    header("location:panel.php");
-    exit; // Asegura que el script se detenga después de redirigir
-}
+    session_start();
+    // Validamos si la sesión está activa
+    if (!empty($_SESSION['activo'])) {
+        header("location:panel.php");
+        exit; // Asegura que el script se detenga después de redirigir
+    }
+    // Incluimos el archivo de conexión a la base de datos
+    include_once("conexion_sqlserver.php");
 
-// Incluimos el archivo de conexión a la base de datos
-include_once("conexion_sqlserver.php");
+    $error = ""; // Variable para almacenar mensajes de error
 
-$error = ""; // Variable para almacenar mensajes de error
-
-if (isset($_POST["ingresar"])) {
-
-    $email = $_POST["email"];
-    $pass =  $_POST["password"];
-    $band = false;
+    if (isset($_POST["ingresar"])) {
+        $email = $_POST["email"];
+        $pass =  $_POST["password"];
+        $band = false;
     if (!empty($email) && !empty($pass)) {
         // Preparamos la consulta SQL
             $query = "SELECT id, email, nombre, telefono, password, es_admin 

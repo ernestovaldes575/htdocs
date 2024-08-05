@@ -1,29 +1,25 @@
 <?php 
     include "includes/header.php";
     include "Funciones/functionSELECT.php";
+    $RutaImag = 'Banner/';
 
     if(isset($_GET["id"])){
-        $idNoticia = $_GET['id'];
+        $idBanner = $_GET['id'];
     }
-    //Obtenemos los datos de nuetra noticia
-    $query = "SELECT * FROM noticias WHERE id=:id";
+    //Obtenemos los datos de nuetros avisos
+    $query = "SELECT * FROM banner WHERE id=:id";
     $stmt = $conn->prepare($query);
 
-    $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
+    $stmt->bindParam(":id", $idBanner, PDO::PARAM_INT);
     $stmt->execute();
+    $banner = $stmt->fetch(PDO::FETCH_OBJ);
 
-    $noticia = $stmt->fetch(PDO::FETCH_OBJ);
+    //?Eliminar Archivo de la carpeta Avisos
+    unlink('Banner/'.$banner->nombImag);
 
-    if (isset($_POST["borrarNoticia"])){
-            //Sí valida todos los campos
-            //Consulta
-            //? $query = "DELETE FROM noticias WHERE id=:id";
-            //? $stmt = $conn->prepare($query);
-            //? $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
-            //Ejecuta la consulta   
-            //? $resultado = $stmt->execute();
-            $resultado = eliminarRegistros($conn, 'noticias', $idNoticia);
-
+    if (isset($_POST["borrarBannner"])){
+            //Funcion para Borrar Registro
+            $resultado = eliminarRegistros($conn, 'banner', $idBanner);
             if ($resultado){
                 $mensaje = "Registro de nota borrado correctamente";
             } else {
@@ -61,7 +57,7 @@
     <div class="row">
         <div class="col-md-9">
             <h3 class="card-title fw-semibold">
-                Editar una nota
+                Borrar un Banner
             </h3>
         </div>
     </div>
@@ -72,27 +68,26 @@
         <div class="col-12">
             <form role="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
-                    <label for="titulo" class="form-label">Título:</label>
+                    <label for="titulo" class="form-label fw-semibold">Título:</label>
                     <input type="text" name="titulo" 
                     class="form-control" readonly
-                    value="<?php if($noticia) echo $noticia->titulo;?>">
+                    value="<?php if($banner) echo $banner->titulo;?>">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label">
-                        Descripción:
-                    </label>
-                    <textarea class="form-control" name="descripcion" rows="3" readonly><?php if($noticia) echo $noticia->descripcion;?></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen:</label>
-                    <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen" readonly value="<?php if($noticia) echo $noticia->nomb_imag;?>">
+                    <label for="imagen" class="form-label fw-semibold">Imagen:</label>
+                    <a href="<?=$RutaImag?><?php if($banner) echo $banner->nombImag;?>" 
+                        class="fw-semibold d-block">
+                        <i class="bi bi-card-image"></i>
+                        <?php if($banner) echo $banner->nombImag;?>
+                    </a>
+                    <!-- <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen" readonly value="<?php //if($aviso) echo $aviso->nombImag;?>"> -->
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" name="borrarNoticia" class="btn btn-danger shadow fw-semibold">
+                    <button type="submit" name="borrarBanner" class="btn btn-danger shadow fw-semibold">
                         <i class="bi bi-trash"></i>
-                        Borrar Noticia
+                        Borrar Banner
                     </button>
-                    <a href="lista_noticia.php" class="btn btn-secondary shadow fw-semibold">
+                    <a href="lista_banner.php" class="btn btn-secondary shadow fw-semibold">
                         <i class="bi bi-box-arrow-left"></i>
                         Regresar
                     </a>

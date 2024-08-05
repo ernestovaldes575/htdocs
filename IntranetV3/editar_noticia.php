@@ -2,7 +2,7 @@
     include "includes/header.php";
     if(isset($_GET["id"])){
         $idNoticia = $_GET['id'];
-        echo("ID:$idNoticia");
+        // echo("ID:$idNoticia");
     }
     //?Obtenemos los datos de las noticias por su ID
     $query = "SELECT * FROM noticias WHERE id=:id";
@@ -11,7 +11,9 @@
     $stmt->bindParam(":id", $idNoticia, PDO::PARAM_INT);
     $stmt->execute();
     $noticia = $stmt->fetch(PDO::FETCH_OBJ);
-    
+    //Ruta de carpeta de las imagenes
+    $RutaImag = "imagenes/";
+
     if(isset($_POST["editarNoticia"])){
         $titulo = $_POST["titulo"];
         $descripcion = $_POST["descripcion"];
@@ -100,11 +102,17 @@
                     value="<?php if ($noticia) echo $noticia->titulo; ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción:</label>
-                    <textarea class="form-control" name="descripcion" rows="3"><?php if($noticia) echo $noticia->descripcion;?></textarea>
+                    <label for="descripcion" class="form-label">Descripción (Minimo 120 Palabras):</label>
+                    <div id="contador" class="contador">Caracteres: 0/120</div>
+                    <textarea class="form-control" name="descripcion" rows="3" id="textArea" maxlength="300"><?php if($noticia) echo $noticia->descripcion;?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>
+                    <a href="<?=$RutaImag?><?php if ($noticia) echo $noticia->nomb_imag;?>">
+                        <i class="bi bi-image">
+                            <?php if ($noticia) echo $noticia->nomb_imag;?>
+                        </i>
+                    </a>
                     <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" 
                     name="imagen" 
                     value="<?php if ($noticia) echo $noticia->nomb_imag;?>">
@@ -141,5 +149,13 @@
             "autoWidth": false,
             "responsive": true,
         });
+    });
+    const input = document.querySelector("#textArea");
+    const contador = document.querySelector("#contador");
+    const maxCaracteres = 120; // Define el máximo de caracteres
+
+    input.addEventListener('input', function(){
+        const numeCara = textArea.value.length;
+        contador.textContent = `Caracteres:${numeCara}/${maxCaracteres}`;
     });
 </script>

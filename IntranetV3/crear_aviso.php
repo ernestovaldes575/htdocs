@@ -1,13 +1,14 @@
 <?php
+//Create
 include "includes/header.php";
-if(isset($_POST["registrarNota"])){
+if(isset($_POST["registrarAviso"])){
     // Obtener Valores
     $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
     $imagen = $_FILES['imagen'];
 
     //Ruta para crear carpeta
-    $carpetaImagenes = 'imagenes/';
+    $carpetaImagenes = 'Avisos/';
+
     //Valida si una carpeta existe
     if(!is_dir($carpetaImagenes)){  
         mkdir($carpetaImagenes,0777,true);
@@ -20,13 +21,12 @@ if(isset($_POST["registrarNota"])){
     move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . '/' . $nombreImagen);
     // exit;
 
-    $query =    "INSERT INTO noticias(titulo, descripcion, fecha, nomb_imag, usuario_id)
-                    VALUES(:titulo, :descripcion, :fecha, :nombreImagen, :usuario_id)";
+    $query =    "INSERT INTO Avisos(titulo, fecha, nombImag, usuario_id)
+                    VALUES(:titulo, :fecha, :nombreImagen, :usuario_id)";
                     
                 $fechaActual = date('Y-m-d');
                 $stmt = $conn->prepare($query);
                 $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
-                $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
                 $stmt->bindParam(":fecha", $fechaActual, PDO::PARAM_STR);
                 $stmt->bindParam(":nombreImagen", $nombreImagen, PDO::PARAM_STR);
                 $stmt->bindParam(":usuario_id", $idUsuario, PDO::PARAM_INT);
@@ -85,20 +85,15 @@ if(isset($_POST["registrarNota"])){
                     <input type="text" id="titulo" name="titulo" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción Min-120 Max-130</label>
-                    <div id="contador" class="contador">Caracteres: 0/120</div>
-                    <textarea id="descripcion" class="form-control" name="descripcion" rows="3" maxlength="130"></textarea>
-                </div>
-                <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>
                     <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen">
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" name="registrarNota" class="btn btn-success fw-semibold shadow">
+                    <button type="submit" name="registrarAviso" class="btn btn-success fw-semibold shadow">
                         <i class="bi bi-plus-lg"></i>
                         Crear Nota
                     </button>
-                    <a href="lista_noticia.php" class="btn btn-secondary fw-semibold shadow">
+                    <a href="lista_aviso.php" class="btn btn-secondary fw-semibold shadow">
                         <i class="bi bi-box-arrow-left"></i>
                         Regresar
                     </a>

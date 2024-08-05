@@ -1,32 +1,32 @@
 <?php
+//Create
 include "includes/header.php";
-if(isset($_POST["registrarNota"])){
+if(isset($_POST["registrarBanner"])){
     // Obtener Valores
     $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
     $imagen = $_FILES['imagen'];
 
     //Ruta para crear carpeta
-    $carpetaImagenes = 'imagenes/';
+    $carpetaImagenes = 'Banner/';
+
     //Valida si una carpeta existe
     if(!is_dir($carpetaImagenes)){  
         mkdir($carpetaImagenes,0777,true);
     }
     // exit;
-    //Generar un nombre unicos
+    //Generar un nombre unico
     $nombreImagen = md5(uniqid(rand(),true)) .".jpg";
 
     //Subir la imagen
     move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . '/' . $nombreImagen);
     // exit;
 
-    $query =    "INSERT INTO noticias(titulo, descripcion, fecha, nomb_imag, usuario_id)
-                    VALUES(:titulo, :descripcion, :fecha, :nombreImagen, :usuario_id)";
+    $query =    "INSERT INTO banner(titulo, fecha, nombImag, usuario_id)
+                VALUES(:titulo, :fecha, :nombreImagen, :usuario_id)";
                     
                 $fechaActual = date('Y-m-d');
                 $stmt = $conn->prepare($query);
                 $stmt->bindParam(":titulo", $titulo, PDO::PARAM_STR);
-                $stmt->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
                 $stmt->bindParam(":fecha", $fechaActual, PDO::PARAM_STR);
                 $stmt->bindParam(":nombreImagen", $nombreImagen, PDO::PARAM_STR);
                 $stmt->bindParam(":usuario_id", $idUsuario, PDO::PARAM_INT);
@@ -70,7 +70,7 @@ if(isset($_POST["registrarNota"])){
         <div class="row">
             <div class="col-md-9">
                 <h3 class="card-title fw-bold">
-                    Crear una nueva noticia
+                    Crear nuevo Banner
                 </h3>
             </div>
         </div>
@@ -85,20 +85,15 @@ if(isset($_POST["registrarNota"])){
                     <input type="text" id="titulo" name="titulo" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción Min-120 Max-130</label>
-                    <div id="contador" class="contador">Caracteres: 0/120</div>
-                    <textarea id="descripcion" class="form-control" name="descripcion" rows="3" maxlength="130"></textarea>
-                </div>
-                <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>
                     <input type="file" id="imagen" accept="image/jpeg, image/png" class="form-control" name="imagen">
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" name="registrarNota" class="btn btn-success fw-semibold shadow">
+                    <button type="submit" name="registrarBanner" class="btn btn-success fw-semibold shadow">
                         <i class="bi bi-plus-lg"></i>
-                        Crear Nota
+                        Crear Banner
                     </button>
-                    <a href="lista_noticia.php" class="btn btn-secondary fw-semibold shadow">
+                    <a href="lista_banner.php" class="btn btn-secondary fw-semibold shadow">
                         <i class="bi bi-box-arrow-left"></i>
                         Regresar
                     </a>
@@ -123,18 +118,5 @@ if(isset($_POST["registrarNota"])){
             "autoWidth": false,
             "responsive": true,
         });
-    });
-    const input = document.querySelector("#descripcion");
-    const contador = document.querySelector("#contador");
-    const maxCaracteres = 120; // Define el máximo de caracteres
-
-    input.addEventListener('input', function(){
-        const numeCara = descripcion.value.length;
-        contador.textContent = `Caracteres:${numeCara}/${maxCaracteres}`;
-        if($numeCara >= $maxCaracteres){
-            contador.style.color = 'red';
-        }else{
-            contador.style.color = '#555';
-        }
     });
 </script>
