@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.4.19",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.2",
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.77.5"
