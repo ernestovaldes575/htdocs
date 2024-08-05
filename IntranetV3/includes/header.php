@@ -28,8 +28,10 @@
 	<!-- Font Awesome 6 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-tbK1zQ5tnAgdKrrOd/nnzR0NwQiw5ZcyVt1O79c6YF41RYRgfZz69/6x5k5Qv4Ka" crossorigin="anonymous">
 	<!-- Bootstrap 5 CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/Estilos/style.css">
 	<style>
 		a {
 			text-decoration: none;
@@ -84,9 +86,9 @@
                 <i class="bi bi-card-image"></i>
                 <span class="ms-2">Banner</span>
             </a>
-            <a href="salir.php" class="nav-link text-white link-bg-nger">
+            <a href="salir.php" class="nav-link text-white link-bg-nger bg-danger mt-2">
 			<i class="bi bi-box-arrow-left"></i>
-                <span class="ms-2">Salir</span>
+                <span class="ms-2 fw-semibold">Salir</span>
             </a>
         </nav>
     </aside>

@@ -68,9 +68,12 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/Estilos/style.css">
     <title>Intranet</title>
 </head>
-<body class="hold-transition login-page">
+<body>
+    <?php include 'includes/Encabezado.php';?>
     <div class="row">
         <div class="col-sm-12">
             <?php if(isset($error)): ?>
