@@ -47,7 +47,7 @@ $VC24 = $_POST['C24'];
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9211 ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tta9211 ".						//Cambiar tabla
 				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
 								 "'$ConsFrac','$TrimTrab',".			//
 								 "'$VC05','$VC06','$VC07',".	
@@ -60,7 +60,7 @@ switch ( $CRUD )
 										//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9211 ". 						//Cambiar tabla
+		$InstSql = 	"UPDATE tta9211 ". 						//Cambiar tabla
 				"SET     ANumeRegi = '$VC05',".				
 						 "AFechaInicio= '$VC06',".//Cambiar campo
 						 "AFechaTermino = '$VC07',".	//Cambiar campo
@@ -88,7 +88,7 @@ switch ( $CRUD )
  						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9211 ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM tta9211 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq  ";		//Cambiar campo

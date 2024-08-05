@@ -19,7 +19,7 @@ if ( isset($_GET["Param0"]) )
 $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
 				  " AFechaInicio, AFechaTermino, ADenominacionPrograma ".
 				
-			"FROM a9227a ".
+			"FROM tta9227a ".
 		  "WHERE AAyuntamiento = '$ClavAyun' AND ".
 		        "AEjercicio = $EjerTrab AND  ".
 		         "AConsFrac = $ConsFrac ";

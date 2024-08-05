@@ -38,7 +38,7 @@ if ($BandMens)
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9252c ".			//Cambiar tabla
+		$InstSql = "INSERT INTO tta9252c ".			//Cambiar tabla
 
 			    "VALUES (NULL,'$ClavAyun','$EjerTrab',".			
 							"'$ConsFrac','$TrimTrab','$VC05',".			
@@ -47,7 +47,7 @@ switch ( $CRUD )
 
 		break;
 	case "PUT": //Cambio `ANumeRegi`,ANumeRegi`, `APeriodoInforma`, `APeriodoInformaOtro`, `AHiperInformacion`, `AAreaResp`, `ANota
-		$InstSql = 	"UPDATE a9252c ". 			
+		$InstSql = 	"UPDATE tta9252c ". 			
 		
 					  "SET  ANumeRegi = '$VC05',". 					
 						   "APeriodoInforma = '$VC06', ".					
@@ -63,7 +63,7 @@ switch ( $CRUD )
  						 
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9252c ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM tta9252c ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq  ";			//Cambiar campo

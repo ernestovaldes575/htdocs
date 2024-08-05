@@ -26,26 +26,16 @@ $CRUD = "GET";
 // carga de catalogos 
   $AIdenCat ="2|01|02|";
  //Cargar Catalogo de Area Responsable
- include "../fcarea.php";
+ include "../Catalogos.php";
 
- //Cargar Catalogo sentido indicador
-
-//  $InstSql = "SELECT CSIClave AS Clave, CSIDescri AS Descri ". 
-//             "FROM tcsentindi ".
-//             "ORDER BY CSIClave";
-//  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
-//  $EjInSql = $ConeBase->prepare($InstSql);
-//  $EjInSql->execute();
-//  $ResCat01 = $EjInSql->fetchall();
- 
 
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
                    "ANombrePrograma,AObjetivo,ANombreIndicador,".
 				            "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
-				            "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
+				            "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota ".
                     
-			       "FROM  a9206a ".
+			       "FROM  tta9206a ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -91,7 +81,7 @@ else
  {
     //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9206a ".
+	 		   "FROM  tta9206a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

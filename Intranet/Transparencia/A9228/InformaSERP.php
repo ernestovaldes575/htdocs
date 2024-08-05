@@ -11,7 +11,7 @@ $Nomativi = $ABusqMae[6];	//Normatividad
 
 //********************************************************************
 //Informacion de la Lista
-$BandMens = false;
+$BandMens = true;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
@@ -22,37 +22,19 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+
+
 //carga de catlogos arias, rubro
 $AIdenCat ="2|02|11|";
 //Cargar Catalogos 
 include "../Catalogos.php";
 
 
-$InstSql = "SELECT CRClave AS Clave, CRDescri AS Descri ". 
-    "FROM tcrubro ".
-    "ORDER BY CRClave";
-if ($BandMens) echo '1)'.$InstSql.'<br>'; 
- $EjInSql = $ConeBase->prepare($InstSql);
- $EjInSql->execute();
- $ResCat11 = $EjInSql->fetchall();
-
-
-
 //Carga el registro para Consulta
-   $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
-               "AEjercicioAuditado, APeriodoAuditado, ARubro,".
-               "ARubroOtro, ATipoAuditoria, ANumeroAuditoria,".
-               "AOrganoAuditoria, ANomenclaturaNotificacion,".
-               "ANomenclaturainfoRevisado, ANomenclaturaSolicitud,".
-               "AObjetivoAuditoria, ARubrosRevision, AFundamentoLegal,".
-               "ANumeroOficio, AHiperNotifiResultados, ATotalHallazgos,". "AHipervinculoRecomen, AHipervinculoInformes,".
-               "AAccionOrganoFiscalizador, AAreaRecibeResultados,".
-               "ATotalAclaraciones, AHipervinculoAclaraciones,".
-               "ATotalAcciones, AHipervinculoProgramaAnual, AAreaResp,".
-               "ANota ".
-                    
-			    "FROM  a9228 ".
-		      "WHERE AAyuntamiento = '$ClavAyun' AND ".
+   $InstSql = 	"SELECT  ANumeRegi, AFechaInicio, AFechaTermino, AEjercicioAuditado, APeriodoAuditado, ARubro, ARubroOtro, ATipoAuditoria, ANumeroAuditoria, AOrganoAuditoria, ANomenclaturaNotificacion, ANomenclaturainfoRevisado, ANomenclaturaSolicitud, AObjetivoAuditoria, ARubrosRevision, AFundamentoLegal, ANumeroOficio, AHiperNotifiResultados, ATotalHallazgos, AHipervinculoRecomen, AHipervinculoInformes, AAccionOrganoFiscalizador, AAreaRecibeResultados, ATotalAclaraciones, AHipervinculoAclaraciones, ATotalAcciones, AHipervinculoProgramaAnual, AAreaResp, ANota".
+                 
+			             "FROM  tta9228 ".
+		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
           
@@ -72,7 +54,8 @@ $VC29 = "";  $VC30 = "";  $VC31 = "";  $VC32 = "";
 $VC33 = "";  
 
 if ($ResuSql)
- { //Carga los campos 
+ { //Carga los campos $ResuSql
+  
    $VC05 = $ResuSql['ANumeRegi'];	
    $VC06 = $ResuSql['AFechaInicio'];	
    $VC07 = $ResuSql['AFechaTermino'];
@@ -106,18 +89,8 @@ if ($ResuSql)
 else
  { //Busca el sisguiente registro
 
-  //Cargar Catalogo tcarea
- 	$InstSql = "SELECT CARClave  AS Clave, CARDescri AS Descri ". 
-   "FROM tcarea ".
-   "ORDER BY CARClave ";
- if ($BandMens) echo '1)'.$InstSql.'<br>'; 
- $EjInSql = $ConeBase->prepare($InstSql);
- $EjInSql->execute();
- $ResCat01 = $EjInSql->fetchall();
-
- 
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9228 ".
+	 		   "FROM  tta9228 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

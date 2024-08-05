@@ -33,11 +33,11 @@ $InstSql = 	"SELECT ANumeRegi, AFechaInicio, ".
              "AFechaTermino, AArea, AFechaActualizacion, ".
              "AFechaValidacion, ANota ".
                     
-			       "FROM  a9231 ".
+			       "FROM  tta9231 ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
-         // "ORDER BY AConsecutivo ";
+         
           
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -63,7 +63,7 @@ if ($ResuSql)
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9231 ".
+	 		   "FROM  tta9231 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
