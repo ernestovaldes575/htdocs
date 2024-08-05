@@ -31,7 +31,7 @@ $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
-//$VC10 = $_POST['C10'];
+$VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 
@@ -43,7 +43,7 @@ switch ( $CRUD )
 							 "'$ConsFrac','$TrimTrab',".			
 							 "'$VC05','$VC06',".			
 							 "'$VC07','$VC08','$VC09',".				
-							 "'  ','$VC11','$VC12')";		
+							 "'$VC10','$VC11','$VC12')";		
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9227a ". 						//Cambiar tabla
@@ -52,7 +52,7 @@ switch ( $CRUD )
 					   "AFechaTermino = '$VC07',".				
 					   "ADenominacionPrograma = '$VC08',".				
 					   "AFechaAprobacion = '$VC09',".
-			        //"AHipervinculoPrograma = '$VC10',".								
+			           "AHipervinculoPrograma = '$VC10',".								
 					   "AAreaResp = '$VC11',".  
 					   "ANota = '$VC12'". 	//Cambiar campo
 

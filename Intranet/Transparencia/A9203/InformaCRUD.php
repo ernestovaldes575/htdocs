@@ -10,10 +10,6 @@ $FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 //Informacion de la Lista
 //Bandera de visualizar msg
 $BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
-
-$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -32,7 +28,7 @@ $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
 $VC10 = $_POST['C10'];
-//$VC11 = $_POST['C11'];
+$VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 $VC13 = $_POST['C13'];
 
@@ -42,7 +38,7 @@ $VC13 = $_POST['C13'];
 				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
 				                  "'$ConsFrac','$TrimTrab','$VC05',".
 								  "'$VC06','$VC07','$VC08','$VC09',".
-								  "'$VC10','    ','$VC12','$VC13')";	//Cambiar campo
+								  "'$VC10','$VC11','$VC12','$VC13')";	//Cambiar campo
 								  
 	   break;
 			case "PUT": //Cambio
@@ -53,7 +49,7 @@ $VC13 = $_POST['C13'];
 						"AArea = '$VC08',".						
 					    "ADenominacion = '$VC09',".			
 					    "AFundamento = '$VC10',".		
-						// "AHipervinculo = '$VC11',".					
+						"AHipervinculo = '$VC11',".					
 						"AAreaResp = '$VC12',". 
 						"ANota = '$VC13' ". 
 										 										  "WHERE AAyuntamiento = '$ClavAyun' AND ".		
@@ -95,5 +91,6 @@ if ($CRUD == "POST")
 $PagiRegr = ($CRUD == "DELETE") ? "location: InformaList.php" :
 								  "location: Informa.php?PaAMB01=M&PaAMB02=".$CampBusq ; 
 
-if (!$BandMens) header($PagiRegr);	
+if (!$BandMens) 
+ header($PagiRegr);	
 ?>

@@ -54,7 +54,7 @@
 					</td>
 				</tr>	
 				<tr>
-					<th>Fecha Inicio</th>
+					<td>Fecha Inicio</td>
 					<td>
 						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
@@ -68,8 +68,23 @@
 			  </tr>
 				<tr>
 				  <td>Hirpervinculo</td>
-				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC08 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC08?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>Area</td>

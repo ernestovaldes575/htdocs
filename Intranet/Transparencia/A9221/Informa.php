@@ -95,16 +95,33 @@
 				<tr>
 					<td>Área o unidad administrativa de adscripción</td>
 					<td>
-						<input name="C13" id="VC13" type="int" value="<?=$VC13?>" 
-						class="form-control" placeholder="Numero" >
-					</td>	  
-				</tr>	
-				
+					<select name="C13" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC13 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Nivel máximo de estudios</td>
-				  <td><input name="C14" id="VC14" type="int" value="<?=$VC14?>" 
-						class="form-control" placeholder="Numero" ></td>
-			  </tr>
+				  <td>
+					<select name="C14" class="form-control">			
+				  <?php 
+		 			foreach($ResCat09 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC14 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC14?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Atención: Nivel máximo de estudios en caso de elegir OTRO llenar este campo</td>
 				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
@@ -124,14 +141,39 @@
 			
 				<tr>
 				  <td>Hipervinculo Curriculum</td>
-				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC18 != '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC18?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 				<tr>
 				  <td>¿Ha tenido sanciones administrativas?</td>
-				  <td><input name="C19" id="VC19" type="int" value="<?=$VC19?>" 
-						class="form-control" placeholder="Numero" ></td>
-			  </tr>
+				  <td>
+					<select name="C19" class="form-control">			
+				  <?php 
+		 			foreach($ResCat10 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC19 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC19?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 	
 				<tr>
 					<td>Atención: ¿Ha tenido sanciones administrativas? en caso de elegir OTRO llenar este campo</td>
@@ -144,10 +186,18 @@
 				<tr>
 					<td>Área responsable de la información</td>
 					<td>
-						<input name="C21" id="VC21" type="int" value="<?=$VC21?>" 
-						class="form-control" placeholder="Numero" >
-					</td>	  
-				</tr>	
+					<select name="C21" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC21 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC21?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>	
 
 				<tr>
 					<td>Nota</td>

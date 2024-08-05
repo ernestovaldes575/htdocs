@@ -9,9 +9,6 @@ $FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 //********************************************************************
 //Informacion de la Lista
 //Bandera de visualizar msg
-$BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
 
 $BandMens = false;
 //*****************************************************************

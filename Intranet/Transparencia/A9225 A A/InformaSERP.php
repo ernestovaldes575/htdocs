@@ -22,6 +22,11 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//Cargar Catalogo de Area Responsable
+$AIdenCat ="1|02|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro 
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
                     "APrepuestoAnual, APresupuestoCapitulo,".
@@ -52,8 +57,8 @@ if ($ResuSql)
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['APrepuestoAnual'];
    $VC09 = $ResuSql['APresupuestoCapitulo'];
-  //  $VC10 = $ResuSql['AHipervinculoPresEgresos'];
-  //  $VC11 = $ResuSql['AHipervinculoPagina'];
+   $VC10 = $ResuSql['AHipervinculoPresEgresos'];
+   $VC11 = $ResuSql['AHipervinculoPagina'];
    $VC12 = $ResuSql['AAreaResp'];	
    $VC13 = $ResuSql['ANota'];		
    

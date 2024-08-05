@@ -45,8 +45,8 @@ switch ( $CRUD )
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9231 ". 	//Cambiar tabla
-				"SET    ANumeRegi = '$VC05', ".						
-						 "AFechaInicio = $VC06, ".						
+				"SET    ANumeRegi = '$VC05',".						
+						 "AFechaInicio = '$VC06', ".						
 						 "AFechaTermino = '$VC07',".				
 						 "AArea = '$VC08',".				
 						 "AFechaActualizacion = '$VC09',".	

@@ -13,7 +13,7 @@ $BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
-$BandMens = false;
+$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -40,7 +40,7 @@ $VC15 = $_POST['C15'];
 $VC16 = $_POST['C16'];
 $VC17 = $_POST['C17'];
 $VC18 = $_POST['C18'];  
-$VC19 = $_POST['C19'];
+// $VC19 = $_POST['C19'];
 $VC20 = $_POST['C20'];
 $VC21 = $_POST['C21'];
 
@@ -49,14 +49,14 @@ $VC21 = $_POST['C21'];
 switch ( $CRUD )
 { 	case "POST": //Alta
 		$InstSql = "INSERT INTO a9235a ".						//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".			//Cambiar campo
-								 "$ConsFrac,'$TrimTrab',".			
-								"$VC05,'$VC06','$VC07',".			
-								"$VC08,'$VC09','$VC10',".
-								"$VC11,'$VC12','$VC13',".			
-								"$VC14,'$VC15','$VC16',".	
-								"$VC17,'$VC18','$VC19',".			
-								"$VC20,'$VC21')";	
+				   "VALUES (NULL,'$ClavAyun','$EjerTrab',".			//Cambiar campo
+								 "'$ConsFrac','$TrimTrab',".			
+								"'$VC05','$VC06','$VC07',".			
+								"'$VC08','$VC09','$VC10',".
+								"'$VC11','$VC12','$VC13',".			
+								"'$VC14','$VC15','$VC16',".	
+								"'$VC17','$VC18',' ',".			
+								"'$VC20','$VC21')";	
 								
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE a9235a ". 						//Cambiar tabla 
@@ -74,7 +74,7 @@ switch ( $CRUD )
 						   "AGastoEjercido = '$VC16', ".						
 						   "AGastoPagado = '$VC17',".				
 						   "AJustificacionPresupuesto= '$VC18',".				
-						   "AHipervinculoEgresos = '$VC19',".			
+						  // "AHipervinculoEgresos = '$VC19',".			
 				   		   "AAreaResp = '$VC20',".					
 						   "ANota= '$VC21' ". 
 						    					

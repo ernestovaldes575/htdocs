@@ -22,6 +22,11 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+ //carga de catalogos  arias, tipo evento, alcanse de concurso, tipo de cargo o puesto, estado del proceso del concurso
+$AIdenCat ="5|02|05|06|07|08|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
                    "ATipoEvento, ATipoEventoOtro, AAlcanceConcurso,".
@@ -80,47 +85,7 @@ if ($ResuSql)
    $VC32 = $ResuSql['ANota'];
  } 
 else
- {  
-
-   //catalogo del Estado del proceso del concurso
-   $InstSql = "SELECT CEPClave AS Clave, CEPDescri AS Descri ". 
-   "FROM tcestaproc ".
-   "ORDER BY CEPClave";
- if ($BandMens) echo '1)'.$InstSql.'<br>'; 
- $EjInSql = $ConeBase->prepare($InstSql);
- $EjInSql->execute();
- $ResCat08 = $EjInSql->fetchall();
-
-  //Cargar Catalogo de Area Responsable
-  include "../fcarea.php";
-
-   //catalogo tipo de cargo o puesto
-   $InstSql = "SELECT CTCClave AS Clave, CTCDescri AS Descri ". 
-   "FROM tctipocarg ".
-   "ORDER BY CTCClave";
- if ($BandMens) echo '1)'.$InstSql.'<br>'; 
- $EjInSql = $ConeBase->prepare($InstSql);
- $EjInSql->execute();
- $ResCat07 = $EjInSql->fetchall();
-
-//catalogo alcanse del concurso
-   $InstSql = "SELECT CACClave AS Clave, CACDescri AS Descri ". 
-   "FROM tcalcaconc ".
-   "ORDER BY CACClave";
- if ($BandMens) echo '1)'.$InstSql.'<br>'; 
- $EjInSql = $ConeBase->prepare($InstSql);
- $EjInSql->execute();
- $ResCat06 = $EjInSql->fetchall();
-  
-   //catalogo tipo de evento
-  $InstSql = "SELECT CTEClave AS Clave, CTEDescri AS Descri ". 
-  "FROM tctipoeven ".
-  "ORDER BY CTEClave";
-if ($BandMens) echo '1)'.$InstSql.'<br>'; 
-$EjInSql = $ConeBase->prepare($InstSql);
-$EjInSql->execute();
-$ResCat05 = $EjInSql->fetchall();
-  
+ { 
   //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  a9218 ".
