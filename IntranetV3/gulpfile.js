@@ -5,5 +5,5 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
 function css(done){
-    src('')
+    src('src/')
 }
