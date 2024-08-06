@@ -78,7 +78,9 @@
         <div class="d-flex align-items-center justify-content-center">
             <div class="card shadow col-xl-3">
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg">Ingrese sus datos para iniciar sesión</p>
+                    <p class="login-box-msg">
+                        Ingrese sus datos para iniciar sesión
+                    </p>
                     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" name="email" placeholder="Ingresa el email">
@@ -102,7 +104,7 @@
                                     Acceso
                             </button>
                             </div>
-                        </div>
+                      Idiv>
                     </form>
                 </div>
             </div>
