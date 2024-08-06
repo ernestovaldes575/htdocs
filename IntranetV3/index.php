@@ -5,6 +5,7 @@
         header("location:panel.php");
         exit; // Asegura que el script se detenga después de redirigir
     }
+
     // Incluimos el archivo de conexión a la base de datos
     include_once("conexion_sqlserver.php");
 
@@ -47,9 +48,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -73,51 +72,43 @@
     <title>Intranet</title>
 </head>
 <body>
-    <?php include 'includes/Encabezado.php';?>
-    <div class="row">
-        <div class="col-sm-12">
-            <?php if(isset($error)): ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong><?php echo $error; ?></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    
+    <div class="full-height">
+        <?php include 'includes/Encabezado.php';?>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="card shadow col-xl-3">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Ingrese sus datos para iniciar sesión</p>
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" name="email" placeholder="Ingresa el email">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" name="password" placeholder="Ingresa el password">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="submit" name="ingresar" class="btn btn-primary d-block w-100 shadow-lg"><i class="fas fa-user"></i> Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            <?php endif; ?>
-        </div>
-    </div>
-    <div class="login-box">
-        <div class="login-logo"></div>
-        <!-- /.login-logo -->
-        <div class="card shadow">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Ingrese sus datos para iniciar sesión</p>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Ingresa el email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Ingresa el password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <button type="submit" name="ingresar" class="btn btn-primary d-block w-100 shadow-lg"><i class="fas fa-user"></i> Ingresar</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
+    
+    
+
     <!-- REQUIRED SCRIPTS -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
