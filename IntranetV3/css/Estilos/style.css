@@ -7326,7 +7326,7 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow {
+.shadow, .btn-Enviar {
   box-shadow: var(--bs-box-shadow) !important;
 }
 
@@ -8376,7 +8376,7 @@ textarea.form-control-lg {
   font-weight: 600 !important;
 }
 
-.fw-bold {
+.fw-bold, .btn-Enviar {
   font-weight: 700 !important;
 }
 
@@ -8481,7 +8481,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-light {
+.text-light, .btn-Enviar {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
