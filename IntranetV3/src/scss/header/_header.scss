@@ -22,9 +22,8 @@ header{
     grid-template-rows: repeat(3,1fr);
     row-gap: 9.5em;
 }
-.LogoEscu{
-    width: 5%;
-}
-.logo-mur{
-    width: 5%;
+@media screen and (max-width: 425px) {
+    .logo{
+        width: 1.5em;
+    }
 }
