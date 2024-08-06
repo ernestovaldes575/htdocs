@@ -20,7 +20,7 @@ $InstSql = "SELECT AConsecutivo, AAyuntamiento,".
 				  "APeriodoInforma, APeriodoInformaOtro,".
 				  "AHiperInformacion ".
 				
-			"FROM a9252c ".
+			"FROM tta9252c ".
 		  "WHERE AAyuntamiento = '$ClavAyun' AND ".
 		        "AEjercicio = $EjerTrab AND  ".
 		         "AConsFrac = $ConsFrac ";

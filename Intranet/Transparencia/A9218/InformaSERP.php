@@ -34,7 +34,7 @@ $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
                    "AClavePuesto, ADenominacionPuesto,". "ADenominacionCargo, ADenominacionUnidad, "."ASalarioBruto, ASalarioNeto,".
                    "AFechaPublicacion, ANumeroConvocatoria,". "AHipervinculoDoc, AEstadoProcesoCon, "."AEstadoProcesoConOtro, ATotalCandidatos,". "ANombrePersona, APrimerApellido, ASegundoApellido,". "AHipervinculoGanador, AHipervinculoGanadorOtro,". "AAreaResp, ANota ".
 
-			"FROM  a9218 ".
+			"FROM  tta9218 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -88,7 +88,7 @@ else
  { 
   //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9218 ".
+	 		   "FROM  tta9218 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac ";
