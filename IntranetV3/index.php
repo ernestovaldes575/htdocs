@@ -50,22 +50,15 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <!-- Ionicons -->   
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- daterange picker -->
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- Bootstrap4 Duallistbox -->
-    <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="css/Estilos/style.css">
@@ -76,7 +69,7 @@
     <div class="full-height">
         <?php include 'includes/Encabezado.php';?>
         <div class="d-flex align-items-center justify-content-center">
-            <div class="card shadow col-xl-3">
+            <div class="card shadow col-xl-3 col-md-5">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">
                         Ingrese sus datos para iniciar sesión
@@ -104,7 +97,6 @@
                                     Acceso
                             </button>
                             </div>
-                      Idiv>
                     </form>
                 </div>
             </div>
