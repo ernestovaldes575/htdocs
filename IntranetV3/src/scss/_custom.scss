@@ -1,2 +1,7 @@
+//?Reescribir colores de bootstrap
+$verde: #36A420;
+//?Asignamos la paleta de colores a bootstrap
+$success:$verde;
+
 //?Importamos Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';

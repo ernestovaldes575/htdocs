@@ -1,0 +1,5 @@
+@use '../custom' as *;
+
+.btn-Enviar{
+    @extend .btn, .btn-success;
+}
