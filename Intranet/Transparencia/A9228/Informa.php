@@ -27,6 +27,7 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
+		<input type="hidden" name="C03" id="SV04" value="<?=$AConsecutivo?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -42,33 +43,34 @@
 					</td>
 				</tr>
 				<!-- Inicia campos -->
+				
 				<tr>
 				  <td>No</td>
 				  <td><input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <tr>
-				  <td>Fecha de inicio del periodo que se informa</td>
+						class="form-control" placeholder="Descripción" ></td>	
+				
+				<tr>
+				  <td>Fecha Inicio</td>
 				  <td><input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				
 				<tr>
-				  <td>Fecha de término del periodo que se informa</td>
+				  <td>Fecha Termino</td>
 				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Ejercicio auditado</td>
-				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+				  <td><input  name="C08" id="VC08" type="int"value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
 				  <td>Periodo auditado</td>
-				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+				  <td><input name="C09" id="VC09" type="int" value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+			  
+			  
 				<tr>
 				  <td>Rubro</td>
 				  <td>
@@ -84,29 +86,24 @@
 					</td>					
         			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
-			  
-			 
 				<tr>
-				  <td>Atención: Rubro en caso de elegir OTRO llenar este campo</td>
+				  <td>atención: Rubro en caso de elegir OTRO llenar este campo</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+			  <tr>
 				  <td>Tipo de Auditoría</td>
 				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
 						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
 			  </tr>
 				<tr>
 				  <td>Número de Auditoría</td>
 				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" ></td>
-			  </tr>	
-				
+			  </tr>
 				<tr>
 				  <td>Órgano que realizó la revisión o auditoría</td>
-				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 
+				  <td><input  name="C14" id="VC14" type="text"value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
@@ -114,18 +111,18 @@
 				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+			  
+				
 				<tr>
 				  <td>Nomenclatura, número o folio del oficio o documento  de solicitud de información que  será revisada</td>
-				  <td><input  name="C16" id="VC16" type="text"value="<?=$VC16?>" 
+				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+			  <tr>
 				  <td>Nomenclatura, número o folio que identifique el oficio o documento de solicitud de información</td>
 				  <td><input name="C17" id="VC17" type="text" value="<?=$VC17?>" 
 						class="form-control" placeholder="Descripción" ></td>
-			 </tr>
-			  
-			 
+			  </tr>
 				<tr>
 				  <td>Objetivo(s) de la realización de la auditoría</td>
 				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
@@ -133,22 +130,22 @@
 			  </tr>
 				<tr>
 				  <td>Rubros sujetos a revisión</td>
-				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
+				  <td><input  name="C19" id="VC19" type="text"value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-
-			  <tr>
+				<tr>
 				  <td>Fundamento legal (normas y legislaciones aplicables a la auditoría)</td>
 				  <td><input name="C20" id="VC20" type="text" value="<?=$VC20?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-
-				<tr>
+			  <tr>
 				  <td>Número de oficio de notificación de resultados</td>
 				  <td><input name="C21" id="VC21" type="text" value="<?=$VC21?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+				
+				
+			  <tr>
 				  <td>Hipervínculo al oficio o documento de notificación de resultados</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
@@ -168,14 +165,13 @@
 				  </td>
 				  
 			  </tr>
-			  </tr>
-				<tr>
+			  <tr>
 				  <td>Por rubro sujeto a revisión especificar el número total de hallazgos, observaciones, conclusiones, recomendaciones, o lo que derive</td>
-				  <td><input  name="C23" id="VC23" type="text"value="<?=$VC23?>" 
+				  <td><input name="C23" id="VC23" type="text" value="<?=$VC23?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Hipervínculo a las recomendaciones hechas</td>
+			  <tr>
+			  <td>Hipervínculo a las recomendaciones hechas</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -194,9 +190,9 @@
 				  </td>
 				  
 			  </tr>
-			 
-				<tr>
-				  <td>Hipervínculos a los informes finales, de revisión y/o dictamen</td>
+
+			  <tr>
+			  <td>Hipervínculos a los informes finales, de revisión y/o dictamen</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -217,23 +213,22 @@
 			  </tr>
 				<tr>
 				  <td>Acción implementada por el órgano fiscalizador</td>
-				  <td><input name="C26" id="VC26" type="text" value="<?=$VC26?>" 
+				  <td><input  name="C26" id="VC26" type="text"value="<?=$VC26?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-
-			  <tr>
+				<tr>
 				  <td>Servidor(a) público(a) y/o área responsable de recibir los resultados</td>
 				  <td><input name="C27" id="VC27" type="text" value="<?=$VC27?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
+			  <tr>
 				  <td>El total de solventaciones y/ o aclaraciones realizadas</td>
 				  <td><input name="C28" id="VC28" type="text" value="<?=$VC28?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Hipervínculo al Informe aclaraciones por y promovidas OF</td>
+			  <td>Hipervínculo al Informe aclaraciones por y promovidas OF</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -252,14 +247,14 @@
 				  </td>
 				  
 			  </tr>
-				<tr>
+			  <tr>
 				  <td>El total de acciones pendientes por solventar y/o aclarar ante el órgano fiscalizador</td>
 				  <td><input name="C30" id="VC30" type="text" value="<?=$VC30?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Hipervínculo al programa anual de auditorías</td>
+			  <td>Hipervínculo al programa anual de auditorías</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -278,8 +273,10 @@
 				  </td>
 				  
 			  </tr>
-				<tr>
-				  <td>Área responsable de la información</td>
+
+
+			  <tr>
+				  <td>Area Responsable de la informacion</td>
 				  <td>
 					<select name="C32" class="form-control">			
 				  <?php 
@@ -294,12 +291,11 @@
         			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC32?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 
-			  <tr>
+				  <tr>
 				  <td>Nota</td>
 				  <td><input name="C33" id="VC33" type="text" value="<?=$VC33?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-
 			<!-- Termina  campos -->	
 			<tr>
 				  <td></td>

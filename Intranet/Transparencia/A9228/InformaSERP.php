@@ -11,7 +11,7 @@ $Nomativi = $ABusqMae[6];	//Normatividad
 
 //********************************************************************
 //Informacion de la Lista
-$BandMens = true;
+$BandMens = false;
 if ( isset($_GET["Param0"]) )
 	$BandMens = true;
 
@@ -22,87 +22,85 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
-
-
-//carga de catlogos arias, rubro
+//Cargar Catalogo de Area Responsable
 $AIdenCat ="2|02|11|";
 //Cargar Catalogos 
 include "../Catalogos.php";
 
 
 //Carga el registro para Consulta
-   $InstSql = 	"SELECT  ANumeRegi, AFechaInicio, AFechaTermino, AEjercicioAuditado, APeriodoAuditado, ARubro, ARubroOtro, ATipoAuditoria, ANumeroAuditoria, AOrganoAuditoria, ANomenclaturaNotificacion, ANomenclaturainfoRevisado, ANomenclaturaSolicitud, AObjetivoAuditoria, ARubrosRevision, AFundamentoLegal, ANumeroOficio, AHiperNotifiResultados, ATotalHallazgos, AHipervinculoRecomen, AHipervinculoInformes, AAccionOrganoFiscalizador, AAreaRecibeResultados, ATotalAclaraciones, AHipervinculoAclaraciones, ATotalAcciones, AHipervinculoProgramaAnual, AAreaResp, ANota".
-                 
-			             "FROM  tta9228 ".
-		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
-				           "AEjercicio = $EjerTrab AND ".
-				           "AConsecutivo = $CampBusq ";
-          
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, 
+                    AEjercicioAuditado, APeriodoAuditado, ARubro, ARubroOtro, ATipoAuditoria, ANumeroAuditoria, AOrganoAuditoria, ANomenclaturaNotificacion, ANomenclaturainfoRevisado, ANomenclaturaSolicitud, AObjetivoAuditoria, ARubrosRevision, AFundamentoLegal, ANumeroOficio, AHiperNotifiResultados, ATotalHallazgos, AHipervinculoRecomen, AHipervinculoInformes, AAccionOrganoFiscalizador, AAreaRecibeResultados, ATotalAclaraciones, AHipervinculoAclaraciones, ATotalAcciones, AHipervinculoProgramaAnual, AAreaResp, ANota ".
+
+		  	"FROM tta9228 ".
+			  "WHERE AAyuntamiento = '$ClavAyun' AND ".
+				         "AEjercicio = $EjerTrab AND ".
+				       "AConsecutivo = $CampBusq ";
+			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
-$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
-$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
-$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
-$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";
-$VC25 = "";  $VC26 = "";  $VC27 = "";  $VC28 = "";   
-$VC29 = "";  $VC30 = "";  $VC31 = "";  $VC32 = "";
-$VC33 = "";  
+$VC05 = 1;   $VC06 = "";   $VC07 = "";  $VC08 = 1;  
+$VC09 = "";  $VC10 = "";   $VC11 = "";  $VC12 = "";  
+$VC13 = "";  $VC14 = "";   $VC15 = "";  $VC16 = "";
+$VC17 = "";  $VC18 = "";   $VC19 = "";  $VC20 = ""; 
+$VC21 = "";  $VC22 = "";   $VC23 = "";  $VC24 = ""; 
+$VC25 = "";  $VC26 = "";   $VC27 = "";  $VC28 = ""; 
+$VC29 = "";  $VC30 = "";   $VC31 = "";  $VC32 = ""; 
+$VC33 = "";   
 
 if ($ResuSql)
- { //Carga los campos $ResuSql
+ { //Carga los campos
+   
   
-   $VC05 = $ResuSql['ANumeRegi'];	
-   $VC06 = $ResuSql['AFechaInicio'];	
+   $VC05 = $ResuSql['ANumeRegi'];
+   $VC06 = $ResuSql['AFechaInicio'];
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['AEjercicioAuditado'];
    $VC09 = $ResuSql['APeriodoAuditado'];
-   $VC10 = $ResuSql['ARubro'];
+   $VC10 = $ResuSql['ARubro'];	
    $VC11 = $ResuSql['ARubroOtro'];
-   $VC12 = $ResuSql['ATipoAuditoria'];	
+   $VC12 = $ResuSql['ATipoAuditoria'];
    $VC13 = $ResuSql['ANumeroAuditoria'];
    $VC14 = $ResuSql['AOrganoAuditoria'];
    $VC15 = $ResuSql['ANomenclaturaNotificacion'];
    $VC16 = $ResuSql['ANomenclaturainfoRevisado'];
    $VC17 = $ResuSql['ANomenclaturaSolicitud'];
-   $VC18 = $ResuSql['AObjetivoAuditoria'];
+   $VC18 = $ResuSql['AObjetivoAuditoria'];	
    $VC19 = $ResuSql['ARubrosRevision'];
-   $VC20 = $ResuSql['AFundamentoLegal'];
+   $VC20 = $ResuSql['AFundamentoLegal'];	
    $VC21 = $ResuSql['ANumeroOficio'];
    $VC22 = $ResuSql['AHiperNotifiResultados'];
    $VC23 = $ResuSql['ATotalHallazgos'];
    $VC24 = $ResuSql['AHipervinculoRecomen'];
    $VC25 = $ResuSql['AHipervinculoInformes'];
-   $VC26 = $ResuSql['AAccionOrganoFiscalizador'];
-   $VC27 = $ResuSql['AAreaRecibeResultados'];
-   $VC28 = $ResuSql['ATotalAclaraciones'];
+   $VC25 = $ResuSql['AAccionOrganoFiscalizador'];	
+   $VC26 = $ResuSql['AAreaRecibeResultados'];
+   $VC27 = $ResuSql['ATotalAclaraciones'];
+   $VC28 = $ResuSql['ATotalHallazgos'];
    $VC29 = $ResuSql['AHipervinculoAclaraciones'];
    $VC30 = $ResuSql['ATotalAcciones'];
-   $VC31 = $ResuSql['AHipervinculoProgramaAnual'];
+   $VC31 = $ResuSql['AHipervinculoProgramaAnual'];	
    $VC32 = $ResuSql['AAreaResp'];
-   $VC33 = $ResuSql['ANota'];
+   $VC33 = $ResuSql['ANota'];				
  } 
 else
  { //Busca el sisguiente registro
-
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  tta9228 ".
+	 		   "FROM tta9228 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
-          
-  if ($BandMens) 
-  echo '1)'.$InstSql.'<br>'; 
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();
   if ($ResuSql)
-    $VC05 = $ResuSql['Clave'];
+    $VC03 = $ResuSql['Clave'];
   }
 
 $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";
