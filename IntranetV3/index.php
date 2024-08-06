@@ -98,8 +98,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <button type="submit" name="ingresar" class="btn btn-primary d-block w-100 shadow-lg">
-                                    <i class="fas fa-user"></i>
+                                <button type="submit" name="ingresar" class="btn btn-primary d-block w-100 shadow-lg fw-semibold">
                                     Acceso
                             </button>
                             </div>
