@@ -62,12 +62,11 @@
     <title>Intranet</title>
 </head>
 <body>
-    
     <div class="full-height">
         <?php include 'includes/Encabezado.php';?>
         <div class="d-flex align-items-center justify-content-center">
             <div class="card shadow col-xl-3 col-md-5 col-sm-10">
-                <div class="card-header d-flex justify-content-between align-items-center fw-semibold">
+                <div class="card-header d-flex justify-content-between align-items-center fw-bold">
                     Intranet
                     <i class="bi bi-person-fill"></i>
                 </div>
@@ -93,7 +92,7 @@
     </div>
     
     
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- REQUIRED SCRIPTS -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

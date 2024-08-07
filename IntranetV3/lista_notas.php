@@ -11,7 +11,7 @@
             <h3 class="card-title">Noticias</h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_nota.php" class="btn btn-primary btn-xl w-100 fw-semibold shadow">
+            <a href="crear_nota.php" class="btn btn-primary btn-xl w-100 fw-semibold shadow text-light">
                 <i class="fa fa-plus"></i> 
                 Ingresar nueva nota
             </a>
@@ -35,14 +35,22 @@
                 <tr>
                     <td><?=$fila->id;?></td>
                     <td><?=$fila->titulo;?></td>
-                    <td><?=strlen($fila->descripcion) > 160 ? substr($fila->descripcion, 0, 160) . '...' : $fila->descripcion;?></td>
-                    <td><?=$fila->fecha;?></td>
                     <td>
-                        <a href="editar_nota.php?id=<?=$fila->id;?>" class="btn btn-warning btn-sm me-1">
-                            <i class="fas fa-edit"></i> Editar
+                        <?=strlen($fila->descripcion) > 160 ? substr($fila->descripcion, 0, 160) . '...' : $fila->descripcion;?>
+                    </td>
+                    <td>
+                        <?=$fila->fecha;?>
+                    </td>
+                    <td>
+                        <a href="editar_nota.php?id=<?=$fila->id;?>" 
+                        class="btn btn-warning">
+                        <i class="bi bi-pencil-fill"></i>
+                            Editar
                         </a>
-                        <a href="borrar_nota.php?id=<?=$fila->id;?>" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i> Borrar
+                        <a href="borrar_nota.php?id=<?=$fila->id;?>" 
+                        class="btn btn-danger">
+                            <i class="bi bi-trash-fill"></i>
+                            Borrar
                         </a>
                     </td>
                 </tr>
