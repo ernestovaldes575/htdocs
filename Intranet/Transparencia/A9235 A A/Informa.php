@@ -27,6 +27,7 @@
 		<input type="hidden" name="C00" id="SV01" value="<?=$CRUD?>">
 		<input type="hidden" name="C01" id="SV02" value="<?=$TipoMovi?>">
 		<input type="hidden" name="C02" id="SV03" value="<?=$CampBusq?>">
+		<input type="hidden" name="C03" id="SV04" value="<?=$AConsecutivo?>">
 		
 		<div class="contenedor-tabla">
 			<div class="contenedor-tabla-sec">
@@ -42,86 +43,85 @@
 					</td>
 				</tr>
 				<!-- Inicia campos -->
-				<tr>
-					<td>No</td>
-					<td>
-						<input name="C05" id="VC05" type="number" value="<?=$VC05?>"
-						class="form-control" placeholder="Titulo">
-					</td>
-				</tr>	
-				<tr>
-					<td>Fecha de inicio del periodo que se informa</td>
-					<td>
-						<input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" >
-					</td>	  
-				</tr>	
 				
 				<tr>
-				  <td>Fecha de término del periodo que se informa</td>
+				  <td>No</td>
+				  <td><input name="C05" id="VC05" type="number" value="<?=$VC05?>" 
+						class="form-control" placeholder="Descripción" ></td>	
+				
+				<tr>
+				  <td>Fecha Inicio</td>
+				  <td><input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+				<tr>
+				  <td>Fecha Termino</td>
 				  <td><input name="C07" id="VC07" type="date" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Clave del capítulo, con base en la clasificación económica del gasto</td>
-				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
+				  <td>Clave del capitulo, con base en la clasificacion economica del gasto</td>
+				  <td><input  name="C08" id="VC08" type="text"value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Clave del concepto, con base en la clasificación económica del gasto</td>
+
+			  <tr>
+				  <td>Clave del concepto, con base en la clasificacion econimica del gasto</td>
 				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Clave de la partida, con base en la clasificación económica del gasto</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+			  <tr>
+				  <td>Clave de la partida, con base en la clasificacion economica del gasto</td>
+				  <td><input  name="C10" id="VC10" type="text"value="<?=$VC10?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  
+			  <tr>
+				  <td>Denominacion del capitulo, concepto o partida, con base en locale_get_display_region clasificacion del gasto </td>
+				  <td><input  name="C11" id="VC11" type="text"value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  <tr>
-				  <td>Denominación del capítulo, concepto o partida, con base en la clasificación económica del gasto</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
+				  <td>Gasto aprobado por capitulo, concepto o partida; con base en la clasificacion econimica del gasto</td>
+				  <td><input  name="C12" id="VC12" type="text"value="<?=$VC12?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  
+			  <tr>
+				  <td>Gasto modificado por capitulo, concepto o partida; con base en la clasificacion economica del gasto</td>
+				  <td><input  name="C13" id="VC13" type="text"value="<?=$VC13?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
+				  <td>Gasto comprometido por capitulo, concepto o partida; con base en la clsificacion economica del gasto</td>
+				  <td><input  name="C14" id="VC14" type="text"value="<?=$VC14?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  
+			  <tr>
+				  <td>Gasto devengado por capitulo, concepto o partida; con base en la clasificacion economica del gasto </td>
+				  <td><input  name="C15" id="VC15" type="text"value="<?=$VC15?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
+				  <td>Gasto ejercido por capitulo; concepto o partida con base en la clasificacion economica del gasto</td>
+				  <td><input  name="C16" id="VC16" type="text"value="<?=$VC16?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  
+			  <tr>
+				  <td>Gasto pagado por capitulo, concepto o partida; con base en la clasificacion economica del gasto</td>
+				  <td><input  name="C17" id="VC17" type="text"value="<?=$VC17?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
+				  <td>Justificacion de la modificacion del presupuesto, en su caso</td>
+				  <td><input  name="C18" id="VC18" type="text"value="<?=$VC18?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  <tr>
-				  <td>Gasto aprobado por capítulo, concepto o partida; con base en la clasificación económica del gasto</td>
-				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <tr>
-				  <td>Gasto modificado por capítulo, concepto o partida; con base en la clasificación económica del gasto</td>
-				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Gasto comprometido por capítulo, concepto o partida; con base en la clasificación económica de gasto</td>
-				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Gasto devengado por capítulo, concepto o partida; con base en la clasificación económica del gasto</td>
-				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Gasto ejercido por capítulo, concepto o partida con base en la clasificación económica del gasto</td>
-				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Gasto pagado por capítulo, concepto o partida; con base en la clasificación económica del gasto</td>
-				  <td><input name="C17" id="VC17" type="text" value="<?=$VC17?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
-			  <tr>
-				  <td>Justificación de la modificación del presupuesto, en su caso</td>
-				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Hipervínculo al Estado analítico del ejercicio del Presupuesto de Egresos</td>
+			  <td>Hipervinculo al Estado analitico del ejercito del presupuesto de Eegreso</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -141,7 +141,7 @@
 				  
 			  </tr>
 				<tr>
-				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
+				  <td>Area(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la informacion</td>
 				  <td>
 					<select name="C20" class="form-control">			
 				  <?php 

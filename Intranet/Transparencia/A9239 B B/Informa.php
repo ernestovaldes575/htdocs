@@ -52,7 +52,7 @@
 				
 				<tr>
 				  <td>Período que se informa (Trimestral)</td>
-				  <td><input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
+				  <td><input name="C06" id= "VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  <tr>

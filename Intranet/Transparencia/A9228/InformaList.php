@@ -37,7 +37,7 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Ejercicio auditado </th>
+			<th >Ejercicio auditado  </th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
@@ -45,6 +45,7 @@
               <?php } ?>      
 			</th>
 			<!-- <th width="13%">&nbsp;</th> -->
+
 		</tr>
 		<?php 
 		$NumeReng = 1;
@@ -63,7 +64,6 @@
 		  <td><?=$VC05?></td>
 		  <td><?=$VC06?></td>
 		
-		  
 		  <td data-titulo="Editar: ">
 			  <?php if($Modi == "A" ){ ?>
 				  <i class="bi bi-pencil-square btn-Modificar Modi" 

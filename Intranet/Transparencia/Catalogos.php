@@ -133,6 +133,6 @@ if ( $Cata11 )
   // if ($BandMens) echo '1)'.$InstSql.'<br>'; 
     $EjInSql = $ConeBase->prepare($InstSql);
     $EjInSql->execute();
-    $ResCat011 = $EjInSql->fetchall();
+    $ResCat11 = $EjInSql->fetchall();
 }
 ?>
