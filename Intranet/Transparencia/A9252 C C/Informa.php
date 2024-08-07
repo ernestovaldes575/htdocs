@@ -53,7 +53,7 @@
 					<td>Periodo Informacion</td>
 					<td>
 						<input name="C06" id="VC06" type="int" value="<?=$VC06?>"
-						class="form-control" placeholder="Titulo">
+						class="form-control" placeholder="Descripción">
 					</td>
 				</tr>	
 				<tr>
