@@ -6,6 +6,9 @@
     --color-nav:#70635A;
     --color-text:#323232;
 }
+.navbar{
+    background-color:#70635A;
+}
 /* * */
 header{
     width: 100%;
@@ -125,7 +128,7 @@ header .button{
 }
 .nav__secondary {
     width:100%;
-    margin-top:.5em
+    margin-top: .5em;
 }   
 .nav__secondary{
     .contenedor__barra{
@@ -184,6 +187,14 @@ header .button{
     background-color:#2b3044;
     /* box-shadow:0 1px 2px #2b3044,0 4px 16px #2b3044; */
     border-radius:1em
+}
+@media screen and (max-width: 991px) {
+    .sidebar{
+        // background-color: #70635A;
+        background-color: rgba(255,255,255,0.37);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
 }
 @media screen and (max-width:400px) {
     .escudo_mur {

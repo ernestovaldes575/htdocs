@@ -39,19 +39,25 @@
                         $ResuFond = $RegTab01[5];
                         $RutaImag = 'Directorio/';
             ?>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card shadow mb-5 border-solid" style="width: 22rem;">
-                    <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <div class="card shadow mb-5 border-solid" style="width: 18rem;">
+                    <img src="<?=$RutaImag?><?=$ResuImag?>" 
+                        class="img-fluid" alt="Imagen-Cabildo" 
+                        style="width: 100%; height: 20em">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold text-center text-lg"><?=$ResuNomb?></h5>
-                        <h5 class="card-title fw-semibold text-center text-base"><?=$ResuCarg?></h5>
+                        <h5 class="card-title fw-bold text-center text-lg">
+                            <?=$ResuNomb?>
+                        </h5>
+                        <h5 class="card-title fw-semibold text-center text-base">
+                            <?=$ResuCarg?>
+                        </h5>
                         <p class="card-text text-center">
-                        <i class="bi bi-telephone-fill"></i>
-                        <?=$ResuTele?>
+                            <i class="bi bi-telephone-fill"></i>
+                            <?=$ResuTele?>
                         </p>
                         <p class="card-text text-center">
-                        <i class="bi bi-envelope-at-fill"></i>
-                        <?=$ResuCorr?>
+                            <i class="bi bi-envelope-at-fill"></i>
+                            <?=$ResuCorr?>
                         </p>
                     </div>
                 </div>

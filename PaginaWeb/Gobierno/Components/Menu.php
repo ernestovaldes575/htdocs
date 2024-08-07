@@ -1,4 +1,4 @@
-<header class="header">
+<!-- <header class="header">
     <div class="contenedor__principal navegacion">
         <a href="/" class="a">
             <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo" style="width: 3em;">
@@ -119,41 +119,110 @@
             <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo" style="width: 3em;">
         </a>
     </div>
-</header>
+</header> -->
 
-<div class="nav__secondary punchline">
-    <div class="contenedor__barra">
-        <img class="barra" src="/PaginaWeb/img/BARRA.webp" alt="BARRA">
-    </div>
-</div>
-
-<nav class="navbar navbar-expand-lg container fixed-top" style="background-color:#70635A;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand" href="/">
             <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo" style="width: 3em;">
         </a>
-        <button class="navbar-toggler border-none" 
-                type="button" 
-                data-bs-toggle="offcanvas" 
-                data-bs-target="#offcanvasNavbar" 
-                aria-controls="offcanvasNavbar" 
-                aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler border-0 navbar-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Sidebar -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <h5 class="offcanvas-title fw-semibold text-light" id="offcanvasNavbarLabel">
+                    Zinacantepec
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <ul class="navbar-nav d-flex justify-content-center flex-grow-1 pe-3 " style="font-size: .9em">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link text-light" href="/" aria-current="page">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tramites y Servicios
+                        </a>
+                        <ul class="dropdown-menu shadow" style="background-color:#BEBEBE;">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Action
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Transparencia
+                        </a>
+                        <ul class="dropdown-menu shadow" style="background-color:#BEBEBE;">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Action
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gobierno
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li>
+                                <a class="dropdown-item text-wrap" href="/PaginaWeb/Gobierno/cabildo.php">
+                                    Integrantes de Cabildo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-wrap" href="/Gobierno/vivo.php">
+                                    Sesiones de Cabildo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-wrap" href="/Gobierno/vivo.php">
+                                    Cabildo en vivo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-wrap" href="/PaginaWeb/Gobierno/direciones.php">
+                                    Direcciones
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-wrap" href="/Gobierno/normatividad.php">
+                                    Normatividad
+                                </a>
+                            </li>  
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-wrap" 
+                                    href="javascript:window.open('/Gobierno/1ER%20INFORME%20ZINACANTEPEC%20MVV.pdf','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+                                    Primer Informe de Gobierno
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link text-light" href="#">
+                            Intranet
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            Comunicación Social
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            Turismo
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -163,6 +232,12 @@
         </a>
     </div>
 </nav>
+
+<div class="nav__secondary punchline" style="margin-top: 5.2em;">
+    <div class="contenedor__barra">
+        <img class="barra" src="/PaginaWeb/img/BARRA.webp" alt="BARRA">
+    </div>
+</div>
 <!-- <div class="border-bottom sticky-top bg-body-tertiary shadow">
         <nav class="navbar container">
             <div class="container-fluid d-flex align-items-center">
