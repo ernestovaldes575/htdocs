@@ -98,7 +98,9 @@ else
   $ResCat01 = $EjInSql->fetchall();
 
   //Cargar Catalogo de Area Responsable
-  include "../fcarea.php";
+  include "../tcarea.php";
+  //Cargar Catalogo de Sexo
+  include "../tcsexo.php";
 
   //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(RNumeRegi) IS  NULL THEN 1 ELSE  MAX(RNumeRegi) + 1 END  AS Clave ".

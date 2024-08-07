@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-<?php include "../Encabezado/Ligas.php"?>>
+<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
 
@@ -64,7 +64,7 @@
 			  </tr>
 				<tr>
 				  <td>Descripción del bien</td>
-				  <td><input name="C08" id="VC08" type="jhdbjcb" value="<?=$VC08?>" 
+				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>

@@ -78,7 +78,7 @@
         			<!-- <td><input type="number" name="C08" id="VC08" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
 				<tr>
-        			<td>Tipo de Integrante del Sujeto Obligado (Otro)</td>				
+        			<td>*Atención*: Tipo de integrante del Sujeto obligado en caso de elegir OTRO llenar este campo</td>				
         			<td><input type="text" name="C09" id="VC09" value="<?=$VC09?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
@@ -94,8 +94,19 @@
         			<td><input type="text" name="C12" id="VC12" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Área de adscripción</td>				
-        			<td><input type="number" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Área de adscripción</td>	
+					<td>
+					<select name="C13" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC13 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>			
+        			<!-- <td><input type="number" name="C13" id="VC13" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td> -->
       			</tr>
       			<tr>
         			<td>Nombre</td>				
@@ -110,11 +121,21 @@
         			<td><input type="text" name="C16" id="VC16" value="<?=$VC16?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>
-        			<td>Sexo</td>				
-        			<td><input type="number" name="C17" id="VC17" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td>
+        			<td>Sexo</td>	
+					<td>
+						<select name="C17" class="form-control">			
+				  		<?php 
+		 					foreach($ResCat03 as $RegiTabl){ 
+							$CC03 = $RegiTabl['Clave'];
+							$CC04 = $RegiTabl['Descri'];
+							$CampSele = ( $CC03 == $VC17 )? "selected" : ""; 
+ 							echo "<option value='$CC03' $CampSele>$CC04</option> ";
+						} ?>
+				  		</select>
+					</td>			
       			</tr>
 				<tr>
-        			<td>Sexo (otro) </td>				
+        			<td>*Atención*: Sexo en caso de elegir OTRO llenar este campo</td>				
         			<td><input type="text" name="C18" id="VC18 "value="<?=$VC18?>" class="form-control" placeholder="Descripción"></td>
       			</tr>
 				<tr>

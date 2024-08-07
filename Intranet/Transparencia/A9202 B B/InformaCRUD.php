@@ -55,8 +55,8 @@ switch ( $CRUD )
 		$InstSql = 	"UPDATE tt9202borgan ". 						//Cambiar tabla
 					"SET    ONumeRegi = '$VC05', ".				
 						   "OFechInicio = '$VC06', ".					
-						   "OFechTerm = '$VC07',".				
-						   "OAreaResp = '$VC09',".				 
+						   "OFechTerm = '$VC07',".	
+						   "OAreaResp = '$VC09',".						 
 				   		   "OFechAct = '$VC10',".					
 						   "OFechValid = '$VC11', ".  					
 						   "ONota = '$VC12' ".
