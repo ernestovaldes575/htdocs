@@ -56,7 +56,11 @@ if ($ResuSql)
 	$VC12 = $ResuSql['MNota'];	
  } 
 else
- { //Busca el sisguiente registro
+ { 
+	//Cargar Catalogo de Area Responsable
+	include "../tcarea.php";
+	
+	//Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(MNumeRegi) IS  NULL THEN 1 ELSE  MAX(MNumeRegi) + 1 END  AS Clave ".
 	 		   "FROM  tt9205bmatriz ".
 			   "WHERE MAyuntam = '$ClavAyun' AND ".
