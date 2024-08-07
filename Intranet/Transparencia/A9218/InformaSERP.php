@@ -22,6 +22,11 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+ //carga de catalogos  arias, tipo evento, alcanse de concurso, tipo de cargo o puesto, estado del proceso del concurso
+$AIdenCat ="5|02|05|06|07|08|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
                    "ATipoEvento, ATipoEventoOtro, AAlcanceConcurso,".
@@ -29,7 +34,7 @@ $InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,".
                    "AClavePuesto, ADenominacionPuesto,". "ADenominacionCargo, ADenominacionUnidad, "."ASalarioBruto, ASalarioNeto,".
                    "AFechaPublicacion, ANumeroConvocatoria,". "AHipervinculoDoc, AEstadoProcesoCon, "."AEstadoProcesoConOtro, ATotalCandidatos,". "ANombrePersona, APrimerApellido, ASegundoApellido,". "AHipervinculoGanador, AHipervinculoGanadorOtro,". "AAreaResp, ANota ".
 
-			"FROM  a9218 ".
+			"FROM  tta9218 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -80,9 +85,10 @@ if ($ResuSql)
    $VC32 = $ResuSql['ANota'];
  } 
 else
- { //Busca el sisguiente registro
+ { 
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9218 ".
+	 		   "FROM  tta9218 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac ";

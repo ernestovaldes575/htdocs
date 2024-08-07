@@ -10,10 +10,6 @@ $FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 //Informacion de la Lista
 //Bandera de visualizar msg
 $BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
-
-$BandMens = false;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -37,34 +33,34 @@ $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];					//Leer campos
 $VC13 = $_POST['C13'];
 $VC14 = $_POST['C14'];
-//$VC15 = $_POST['C15'];
+$VC15 = $_POST['C15'];
 $VC16 = $_POST['C16'];
 $VC17 = $_POST['C17'];
 $VC18 = $_POST['C18'];  
 $VC19 = $_POST['C19'];
 $VC20 = $_POST['C20'];
 $VC21 = $_POST['C21'];
-//$VC22 = $_POST['C22'];  
+$VC22 = $_POST['C22'];  
 $VC23 = $_POST['C23'];
 $VC24 = $_POST['C24'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9211 ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tta9211 ".						//Cambiar tabla
 				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
 								 "'$ConsFrac','$TrimTrab',".			//
 								 "'$VC05','$VC06','$VC07',".	
 								 "'$VC08','$VC09','$VC10',".
 								 "'$VC11','$VC12','$VC13',".	
-								 "'$VC14','     ','$VC16',".	
+								 "'$VC14','$VC15','$VC16',".	
 								 "'$VC17','$VC18','$VC19',".
-								 "'$VC20','$VC21','    ',".
+								 "'$VC20','$VC21','$VC22',".
 								 "'$VC23','$VC24')";	
 										//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9211 ". 						//Cambiar tabla
+		$InstSql = 	"UPDATE tta9211 ". 						//Cambiar tabla
 				"SET     ANumeRegi = '$VC05',".				
 						 "AFechaInicio= '$VC06',".//Cambiar campo
 						 "AFechaTermino = '$VC07',".	//Cambiar campo
@@ -75,14 +71,14 @@ switch ( $CRUD )
 				   		 "APrimerApellido = '$VC12',".					
 						 "ASegundoApellido = '$VC13', ". 
 						 "ANumeroContrato = '$VC14',".				
-						 //"AHipervinculoCon= '$VC15',".	
+						 "AHipervinculoCon= '$VC15',".	
 				   		 "AFechaInicioCon= '$VC16',".					
 						 "AFechaTerminoCon = '$VC17', ". 
 						 "AServiciosContra= '$VC18',".				
 						 "ARemuneracion= '$VC19',".				 
 				   		 "AMontoTotal = '$VC20',".					
 						 "APrestaciones = '$VC21',". 
-						 //"AHipervinculo = '$VC22',".				
+						 "AHipervinculo = '$VC22',".				
 						 "AAreaResp = '$VC23',".				
 				   		 "ANota = '$VC24' ".					//
 						  					//
@@ -92,7 +88,7 @@ switch ( $CRUD )
  						 // "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9211 ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM tta9211 ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		  "AConsecutivo = $CampBusq  ";		//Cambiar campo

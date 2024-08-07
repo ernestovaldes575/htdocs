@@ -17,9 +17,10 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT AConsecutivo, AAyuntamiento, ".
-				  " AFechaInicio, AFechaTermino, ANombrePrograma ".
+				  "APeriodoInforma, APeriodoInformaOtro,".
+				   "AFechaResolucion ".
 				
-			"FROM a9243b ".
+			"FROM tta9243b ".
 		  "WHERE AAyuntamiento = '$ClavAyun' AND ".
 		        "AEjercicio = $EjerTrab AND  ".
 		         "AConsFrac = $ConsFrac ";

@@ -91,9 +91,19 @@
 			  </tr>
 				<tr>
 				  <td>Area Responsable</td>
-				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C11" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC11 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC11?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Nota</td>
 				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 

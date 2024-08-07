@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>  
-<?php include "../Encabezado/Ligas.php"?>>
+<?php include "../Encabezado/Ligas.php"?>
 </head>
 <script language="JavaScript" src="Informa.js"></script>
 
@@ -64,7 +64,7 @@
 			  </tr>
 				<tr>
 				  <td>Descripción del bien</td>
-				  <td><input name="C08" id="VC08" type="jhdbjcb" value="<?=$VC08?>" 
+				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
@@ -91,9 +91,19 @@
 			  </tr>
 			  <tr>
 				  <td>Área responsable de la información</td>
-				  <td><input name="C13" id="VC13" type="int" value="<?=$VC13?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C13" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC13 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 			  <tr>
 				  <td>Nota</td>
 				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 

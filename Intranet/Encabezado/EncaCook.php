@@ -21,3 +21,4 @@
 	$Alta = $AModulo[5];
 	$Modi = $AModulo[6];
 	$Baja = $AModulo[7];
+?>

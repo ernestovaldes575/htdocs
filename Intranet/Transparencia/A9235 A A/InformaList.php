@@ -37,14 +37,14 @@
 		<th>No</th>
 			<th>Fecha Inicio</th>
 			<th >Fecha Termino</th>
-			<th >Clave del capítulo, con base en la clasificación económica del gasto</th>
+			<th >Clave del capítulo, con base en la clasificación económica del gasto </th>
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
                <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
               <?php } ?>      
 			</th>
-			<!-- <th width="13%">&nbsp;</th> -->
+			<!-- <th width="13%">&nbsp;</th> --> 
 		</tr>
 		<?php 
 		$NumeReng = 1;

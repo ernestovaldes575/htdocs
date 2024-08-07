@@ -10,10 +10,6 @@ $FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 //Informacion de la Lista
 //Bandera de visualizar msg
 $BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
-
-$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -32,32 +28,32 @@ $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];   
-// $VC10 = $_POST['C10'];
-// $VC11 = $_POST['C11'];
+$VC10 = $_POST['C10'];
+$VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 $VC13 = $_POST['C13'];
 
 //Agregar campos
 switch ( $CRUD )    
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9225a ".
+		$InstSql = "INSERT INTO tta9225a ".
 		/*  */
 				   "VALUES (NULL, '$ClavAyun','$EjerTrab',".
 				                  "'$ConsFrac','$TrimTrab','$VC05',".
 								  "'$VC06','$VC07','$VC08','$VC09',".
-								  "' ','','$VC12','$VC13')";
+								  "'$VC10','$VC11','$VC12','$VC13')";
 								 	
 								//Cambiar campo
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9225a ". 						//Cambiar tabla 
+		$InstSql = 	"UPDATE tta9225a ". 						//Cambiar tabla 
 				"SET   ANumeRegi = '$VC05',".
 				        "AFechaInicio = '$VC06',". 					//
 						"AFechaTermino = '$VC07',".				//
 						"APrepuestoAnual = '$VC08',".						
 						"APresupuestoCapitulo = '$VC09',".			
-						// "AHipervinculoPresEgresos = '$VC10',".		
-				   		// "AHipervinculoPagina = '$VC11',".					
+						"AHipervinculoPresEgresos = '$VC10',".		
+				   		"AHipervinculoPagina = '$VC11',".					
 						"AAreaResp = '$VC12',". 
 						"ANota = '$VC13' ".
 							
@@ -69,7 +65,7 @@ switch ( $CRUD )
  						  
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM  a9225a ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM  tta9225a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".			//Cambiar campo
 				  		 "AConsecutivo = $CampBusq  ";			//Cambiar campo

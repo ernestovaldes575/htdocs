@@ -10,10 +10,6 @@ $FracTrab = $ABusqMae[3];	//Fraccion de trabajo 92,93
 //Informacion de la Lista
 //Bandera de visualizar msg
 $BandMens = false;
-if ( isset($_GET["Param0"]) )
-	$BandMens = true;
-
-$BandMens = true;
 //*****************************************************************
 //Para operacion A B C
 $CRUD 	  = $_POST['C00'];
@@ -41,7 +37,7 @@ $VC14 = $_POST['C14'];
 //Agregar campos
 switch ( $CRUD )    
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9214b ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tta9214b ".						//Cambiar tabla
 				  "VALUES (NULL,   '$ClavAyun','$EjerTrab',".
 				                  "'$ConsFrac','$TrimTrab','$VC05',".
 								  "'$VC06','$VC07','$VC08','$VC09',".
@@ -50,7 +46,7 @@ switch ( $CRUD )
 
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9214b ". 		
+		$InstSql = 	"UPDATE tta9214b ". 		
 		//Cambiar tabla 
 
 		    "SET  ANumeRegi = '$VC05',". 
@@ -72,7 +68,7 @@ switch ( $CRUD )
 									
  break;
 	case "DELETE": //Eliminar
-				 $InstSql = "DELETE FROM a9214b ". 					//Cambiar tabla
+				 $InstSql = "DELETE FROM tta9214b ". 					//Cambiar tabla
 					"WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 							"AEjercicio = $EjerTrab AND ".			//Cambiar campo
 							"AConsecutivo = $CampBusq ";			//Cambiar campo

@@ -67,9 +67,19 @@
 			  </tr>
 				<tr>
 				  <td>Tipo Evento</td>
-				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>
+					<select name="C08" class="form-control">			
+				  <?php 
+		 			foreach($ResCat05 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC08 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC08?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Tipo Evento (Otro)</td>
 				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
@@ -77,66 +87,94 @@
 			  </tr>
 				<tr>
 				  <td>Alcance Concurso</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			 
+				  <td>
+					<select name="C10" class="form-control">			
+				  <?php 
+		 			foreach($ResCat06 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC10 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC10?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
-				  <td>Alcance Concurso (Otro)</td>
+				  <td>atención: Alcance del concurso en caso de elegir OTRO llenar este campo</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Tipo Cargo</td>
-				  <td><input name="C12" id="VC12" type="text" value="<?=$VC12?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
+				  <td>Tipo Cargo o puesto</td>
+				  <td>
+					<select name="C12" class="form-control">			
+				  <?php 
+		 			foreach($ResCat07 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC12 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 			
 				<tr>
-				  <td>Tipo Cargo (Otro)</td>
+				  <td>atención: Tipo de cargo o puesto en caso de elegir OTRO llenar este campo</td>
 				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			
 				<tr>
-				  <td>Clave Puesto</td>
+				  <td>Clave o nivel del puesto</td>
 				  <td><input name="C14" id="VC14" type="int" value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			 
 				<tr>
-				  <td>Denominacion Puesto</td>
+				  <td>Denominación del puesto</td>
 				  <td><input name="C15" id="VC15" type="text" value="<?=$VC15?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  
 				<tr>
-				  <td>Denominacion Cargo</td>
+				  <td>Denominación del cargo o función</td>
 				  <td><input name="C16" id="VC16" type="text" value="<?=$VC16?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			  
 				<tr>
-				  <td>Denominacion Unidad</td>
-				  <td><input name="C17" id="VC17" type="text" value="<?=$VC17?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>Denominación del área o unidad</td>
+				  <td>
+					<select name="C17" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC17 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC17?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 
 			  
 				<tr>
 				  <td>Salario Bruto</td>
-				  <td><input name="C18" id="VC18" type="text" value="<?=$VC18?>" 
+				  <td><input name="C18" id="VC18" type="int" value="<?=$VC18?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			 
 				<tr>
-				  <td>Salario Neto</td>
-				  <td><input name="C19" id="VC19" type="text" value="<?=$VC19?>" 
+				  <td>Salario Neto Mensual</td>
+				  <td><input name="C19" id="VC19" type="int" value="<?=$VC19?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
@@ -156,16 +194,41 @@
 
 				<tr>
 				  <td>Hipervinculo Documento</td>
-				  <td><input name="C22" id="VC22" type="text" value="<?=$VC22?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC22!= '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC22?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 
 			  
 				<tr>
-				  <td>Estado Proceso Con</td>
-				  <td><input name="C23" id="VC23" type="text" value="<?=$VC23?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>Estado del proceso del concurso</td>
+				  <td>
+					<select name="C23" class="form-control">			
+				  <?php 
+		 			foreach($ResCat08 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC23 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC23?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 
 			
 				<tr>
@@ -183,44 +246,67 @@
 
 			 
 				<tr>
-				  <td>Nombre Persona</td>
+				  <td>Nombre(s) de la persona aceptada</td>
 				  <td><input name="C26" id="VC26" type="text" value="<?=$VC26?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			
 				<tr>
-				  <td>Primer Apellido</td>
+				  <td>Primer apellido de la persona aceptada</td>
 				  <td><input name="C27" id="VC27" type="text" value="<?=$VC27?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			  </tr>	<tr>
-				  <td>Segundo Apellido</td>
+				  <td>Segundo apellido de la persona aceptada</td>
 				  <td><input name="C28" id="VC28" type="text" value="<?=$VC28?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			 
 				<tr>
-				  <td>Hipervinculo Ganador</td>
-				  <td><input name="C29" id="VC29" type="text" value="<?=$VC29?>" 
-						class="form-control" placeholder="Descripción" ></td>
+				  <td>Hipervínculo a la versión pública del acta o documento que al(la) ganador(a)</td>
+				  <td>				
+				    <?php if ( $TipoMovi == "A" ) { ?>
+					    Registrar la información para realizar el hipervinculo 
+					<?php } else { ?>
+					  	<!-- Subir imagen -->
+						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
+							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
+						</a>
+						<!-- Visualizar Image -->
+						<?php 
+	 					   if ( $VC29!= '' ) { ?> 
+							<a href="javascript:window.open('<?=$RutaArch.$VC29?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+							<i class="bi bi-eye-fill fs-1 text-success"></i>
+						<?php  echo "</a> "; } 
+						} //} else {?>
+				  </td>
+				  
 			  </tr>
 
-			
 				<tr>
-				  <td>Hipervinculo Ganador (Otro)</td>
+				  <td>En su caso, hipervínculo al sistema electrónico de convocatorias y/o concursos</td>
 				  <td><input name="C30" id="VC30" type="text" value="<?=$VC30?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 
 			
 				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C31" id="VC31" type="text" value="<?=$VC31?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-
+				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
+				  <td>
+					<select name="C31" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC31 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC31?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 			 
 				<tr>
 				  <td>Nota</td>

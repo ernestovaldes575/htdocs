@@ -22,12 +22,18 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+// carga de catalogos arias, nivel maximo de estudios, sanciones administrativas
+$AIdenCat ="3|02|09|10|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+ 
+
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, AFechaInicio,".
                     "AFechaTermino, ADenominacionPuesto,". "ADenominacionCargo, ANombre, APrimerApellido,".
                     "ASegundoApellido, AAreaAdscripcion,". "ANivelEstudios, ANivelEstudiosOtro,". "ACarreraGenerica, AExperienciaLaboral,". "AHipervinculoCurriculum, ASancionesAdmon,". "ASancionesAdmonOtro, AAreaResp, ANota ".
 
-			"FROM  a9221 ".
+			"FROM  tta9221 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $CampBusq ";
@@ -66,9 +72,10 @@ if ($ResuSql)
    $VC22 = $ResuSql['ANota'];		
  } 
 else
- { //Busca el sisguiente registro
+ {
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9221 ".
+	 		   "FROM  tta9221 ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsecutivo = $ConsFrac AND ".

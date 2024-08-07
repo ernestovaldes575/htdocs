@@ -22,17 +22,21 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//Cargar Catalogo de Area Responsable
+$AIdenCat ="1|02|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro para Consulta
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
-                   "ANombrePrograma,AObjetivo,ANombreIndicador,".
-				            "ADimensionesAMedir, ADefinicionIndicador, AMetodoCalculo, ".
-				            "AUnidadMedida, AFrecuenciaMedicion, ALineaBase, AMetasProgramadas, ". "AMetasAjustadas, AAvance, ASentidoIndicador, ASentidoIndicadorOtro, ". "AFuenteInformacion, AAreaResp, ANota  ".
+$InstSql = 	"SELECT ANumeRegi, APeriodoInforma,".
+                    "APeriodoInformaOtro, AFechaResolucion,".
+                    "AHiperResolucion, AAreaResp, ANota ".
                     
-			       "FROM  a9206a ".
+			       "FROM  tta9243b ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
-         // "ORDER BY AConsecutivo ";
+         
           
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
@@ -41,39 +45,25 @@ $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
 $VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
-$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
-$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
-$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
-$VC21 = "";  $VC22 = "";  $VC23 = "";  $VC24 = "";
+$VC09 = "";  $VC10 = "";  $VC11 = "";  
 
 if ($ResuSql)
- { //Carga los campos
+ { //Carga los campos 
   
    $VC05 = $ResuSql['ANumeRegi'];	
-   $VC06 = $ResuSql['AFechaInicio'];	
-   $VC07 = $ResuSql['AFechaTermino'];
-   $VC08 = $ResuSql['ANombrePrograma'];
-   $VC09 = $ResuSql['AObjetivo'];
-   $VC10 = $ResuSql['ANombreIndicador'];
-   $VC11 = $ResuSql['ADimensionesAMedir'];
-   $VC12 = $ResuSql['ADefinicionIndicador'];	
-   $VC13 = $ResuSql['AMetodoCalculo'];		
-   $VC14 = $ResuSql['AUnidadMedida'];
-   $VC15 = $ResuSql['AFrecuenciaMedicion'];
-   $VC16 = $ResuSql['ALineaBase'];
-   $VC17 = $ResuSql['AMetasProgramadas'];
-   $VC18 = $ResuSql['AMetasAjustadas'];
-   $VC19 = $ResuSql['AAvance'];
-   $VC20 = $ResuSql['ASentidoIndicador'];
-   $VC21 = $ResuSql['ASentidoIndicadorOtro'];
-   $VC22 = $ResuSql['AFuenteInformacion'];
-   $VC23 = $ResuSql['AAreaResp'];
-   $VC24 = $ResuSql['ANota'];
+   $VC06 = $ResuSql['APeriodoInforma'];	
+   $VC07 = $ResuSql['APeriodoInformaOtro'];
+   $VC08 = $ResuSql['AFechaResolucion'];
+   $VC09 = $ResuSql['AHiperResolucion'];
+   $VC10 = $ResuSql['AAreaResp'];
+   $VC11 = $ResuSql['ANota'];
+   
+   
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9206a ".
+	 		   "FROM  tta9243b ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

@@ -27,7 +27,7 @@ $InstSql = 	"SELECT ANumeRegi,TFechInic, TFechterm, ".
                     "TFirper, TArea, TActualizacion, ".
 				            "TFechvalida,TNota ".
 				           
-		        	"FROM  a9208b ".
+		        	"FROM  tta9208b ".
 		        	"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				             "AEjercicio = $EjerTrab AND ".
 				             "AConsecutivo = $CampBusq ";
@@ -59,7 +59,7 @@ if ($ResuSql)
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9208b ".
+	 		   "FROM  tta9208b ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

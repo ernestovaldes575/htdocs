@@ -22,70 +22,73 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
-//Carga el registro 
-$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino,". 
-             "AClaveCapitulo, AClaveConcepto, AClavePartida,".
-             "ADenominacionCapitulo, AGastoProbado, AGastoModificado,". "AGastoComprometido, AGastoDevengado, AGastoEjercido,". "AGastoPagado, AJustificacionPresupuesto,". "AHipervinculoEgresos, AAreaResp, ANota ".
-                    
-			       "FROM  a9235a ".
-		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
-				           "AEjercicio = $EjerTrab AND ".
-				           "AConsecutivo = $CampBusq ";
-         // "ORDER BY AConsecutivo ";
-          
+//Cargar Catalogo de Area Responsable
+$AIdenCat ="1|02|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
+
+//Carga el registro para Consulta
+$InstSql = 	"SELECT ANumeRegi, AFechaInicio, AFechaTermino, 
+                    AClaveCapitulo, AClaveConcepto, AClavePartida, ADenominacionCapitulo, AGastoProbado, AGastoModificado, AGastoComprometido, AGastoDevengado, AGastoEjercido, AGastoPagado, AJustificacionPresupuesto, AHipervinculoEgresos, AAreaResp, ANota ".
+
+		  	"FROM tta9235a ".
+			  "WHERE AAyuntamiento = '$ClavAyun' AND ".
+				         "AEjercicio = $EjerTrab AND ".
+				       "AConsecutivo = $CampBusq ";
+			
 if ($BandMens)  
    echo '1)'.$InstSql.'<br>'; 
 $EjInSql = $ConeBase->prepare($InstSql);
 $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
-$VC05 = 1;   $VC06 = "";  $VC07 = "";  $VC08 = ""; 
-$VC09 = "";  $VC10 = "";  $VC11 = "";  $VC12 = "";  
-$VC13 = "";  $VC14 = "";  $VC15 = "";  $VC16 = "";
-$VC17 = "";  $VC18 = "";  $VC19 = "";  $VC20 = "";   
-$VC21 = "";  
-
+$VC05 = 1;   $VC06 = "";   $VC07 = "";
+$VC08 = "";  $VC09 = "";   $VC10 = ""; 
+$VC11 = "";  $VC12 = "";   $VC13 = ""; 
+$VC14 = "";  $VC15 = "";   $VC16 = "";  
+$VC17 = "";  $VC18 = "";   $VC19 = ""; 
+$VC20 = "";  $VC21 = "";   
 if ($ResuSql)
- { //Carga los campos 
-  // ANumeRegi, AFechaInicio, AFechaTermino,". 
-  //"AClaveCapitulo, AClaveConcepto, ,".
-  //", , ,". ", , ,". ", ,". ", ,  ".
-  //
-   $VC05 = $ResuSql['ANumeRegi'];	
-   $VC06 = $ResuSql['AFechaInicio'];	
+ { //Carga los campos  
+  
+   $VC05 = $ResuSql['ANumeRegi'];
+   $VC06 = $ResuSql['AFechaInicio'];
    $VC07 = $ResuSql['AFechaTermino'];
    $VC08 = $ResuSql['AClaveCapitulo'];
    $VC09 = $ResuSql['AClaveConcepto'];
-   $VC10 = $ResuSql['AClavePartida'];
+   $VC10 = $ResuSql['AClavePartida'];	
    $VC11 = $ResuSql['ADenominacionCapitulo'];
-   $VC12 = $ResuSql['AGastoProbado'];	
-   $VC13 = $ResuSql['AGastoModificado'];		
+   $VC12 = $ResuSql['AGastoProbado'];
+   $VC13 = $ResuSql['AGastoModificado'];
    $VC14 = $ResuSql['AGastoComprometido'];
    $VC15 = $ResuSql['AGastoDevengado'];
    $VC16 = $ResuSql['AGastoEjercido'];
    $VC17 = $ResuSql['AGastoPagado'];
-   $VC18 = $ResuSql['AJustificacionPresupuesto'];
+   $VC18 = $ResuSql['AJustificacionPresupuesto'];	
    $VC19 = $ResuSql['AHipervinculoEgresos'];
-   $VC20 = $ResuSql['AAreaResp'];
+   $VC20 = $ResuSql['AAreaResp'];	
    $VC21 = $ResuSql['ANota'];
-  
+   $VC21 = $ResuSql['ANota'];
+ 
+  		
  } 
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9235a ".
+
+	 		      "FROM tta9235a ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
-				  "AEjercicio = $EjerTrab AND ".
-				  "AConsFrac = $ConsFrac AND ".
-				  "ANumeTrim = '$TrimTrab' ";
-          
-  if ($BandMens) 
-  echo '1)'.$InstSql.'<br>'; 
+				          "AEjercicio = $EjerTrab AND ".
+				           "AConsFrac = $ConsFrac AND ".
+				           "ANumeTrim = '$TrimTrab' ";
+                   
+  if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();
   $ResuSql = $EjInSql->fetch();
   if ($ResuSql)
-    $VC05 = $ResuSql['Clave'];
+    $VC03 = $ResuSql['Clave'];
   }
 
 $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen/$FracTrab/$TrimTrab/";

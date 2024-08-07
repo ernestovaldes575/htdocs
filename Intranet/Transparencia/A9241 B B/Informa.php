@@ -32,9 +32,9 @@
 			<div class="contenedor-tabla-sec">
 			<table class="ListInfo01 tabla">
 				<tr class="">
-					<td width="29%" class="text-uppercase" scope="row">
+					<th width="29%" class="text-uppercase" scope="row">
 						Campo
-					</td>
+					</th>
 					<td width="71%">
 						<a class="btn-Regresar container" href="InformaList.php">
 							Regresar
@@ -43,86 +43,80 @@
 				</tr>
 				<!-- Inicia campos -->
 				<tr>
-					<th>No</th>
+					<td>No</td>
 					<td>
-						<input name="C03" id="VC03" type="text" value="<?=$VC03?>"
+						<input name="C05" id="VC05" type="number" value="<?=$VC05?>"
 						class="form-control" placeholder="Titulo">
 					</td>
 				</tr>	
 				<tr>
-					<th>Fecha Inicio</th>
+					<td>Período que se informa (Trimestral)</td>
 					<td>
-						<input name="C04" id="VC04" type="date" value="<?=$VC04?>" 
+						<input name="C06" id="VC06" type="int" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" >
 					</td>	  
 				</tr>	
+				
 				<tr>
-					<td></td>
-					<td>
-						
-					</td>
-				</tr>
-				<tr>
-				  <td>Fecha de Termino</td>
-				  <td><input name="C05" id="VC05" type="date" value="<?=$VC05?>" 
+				  <td>atención: en este campo se mostrará el valor que se agregue al sistema, de acuerdo al valor seleccionado del campo (Período que se informa (Trimestral)), para los criterios fecha de inicio y termino del período que se informa</td>
+				  <td><input name="C07" id="VC07" type="text" value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Area</td>
-				  <td><input name="C06" id="VC06" type="text" value="<?=$VC06?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Denominacion</td>
-				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-				<tr>
-				  <td>Fundamento</td>
+				  <td>Denominación del mecanismo de participación ciudadana</td>
 				  <td><input name="C08" id="VC08" type="text" value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-			  <tr>
-				  <td>Hipervinculo</td>
-				  <td>				
-				    <?php if ( $TipoMovi == "A" ) { ?>
-					    Registrar la información para realizar el hipervinculo 
-					<?php } else { ?>
-					  	<!-- Subir imagen -->
-						<a href="#" onclick="CarImgPa(<?= $CampBusq?>,<?=$VC03?>)">
-							<i class="bi bi-file-arrow-up-fill text-dark fs-1"></i>
-						</a>
-						<!-- Visualizar Image -->
-						<?php 
-	 					   if ( $VC09 != '' ) { ?> 
-							<a href="javascript:window.open('<?=$RutaArch.$VC09?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
-							<i class="bi bi-eye-fill fs-1 text-success"></i>
-						<?php  echo "</a> "; } 
-						} //} else {?>
-				  </td>
-				  
-			  </tr>
 				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
+				  <td>Resultados</td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 				<tr>
-				  <td>Nota</td>
+				  <td>Número total de participantes</td>
+				  <td><input name="C10" id="VC10" type="int" value="<?=$VC10?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			  <tr>
+				  <td>Respuesta del sujeto obligado a los resultados, descripción sintética de lo que se tomó en cuenta</td>
 				  <td><input name="C11" id="VC11" type="text" value="<?=$VC11?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-			<!-- Termina  campos -->	
+			 
 				<tr>
+				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
+				   <td>
+					<select name="C12" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC12 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC12?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
+				<tr>
+				  <td>Nota</td>
+				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
+			 
+			<!-- Termina  campos -->	
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
-						</button></td>
+				  <td>
+					<button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50">
+							<?=$MesnTiMo?>
+					</button>
+				  </td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!-- <script src="/Intranet/Js/ValiForm.js"></script> -->
 </body>
 </html>

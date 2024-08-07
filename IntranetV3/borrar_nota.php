@@ -28,7 +28,7 @@
             //Ejecuta la consulta   
             $resultado = $stmt->execute();
             
-            if ($resultado) {
+            if ($resultado){
                 $mensaje = "Registro de nota borrado correctamente";
             } else {
                 $error = "Error, no se pudo borrar la nota";
@@ -40,7 +40,7 @@
         <?php if (isset($mensaje)) : ?>
             <div class="alert alert-warning alert-dismissible bg-warning shadow" role="alert">
                 <i class="bi bi-info-circle-fill"></i>
-                <strong><?php echo $mensaje; ?></strong>
+                <strong><?=$mensaje;?></strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

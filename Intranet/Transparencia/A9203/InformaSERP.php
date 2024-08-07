@@ -22,12 +22,17 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//carga de catalogos  arias
+$AIdenCat ="1|02|00|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro para Consulta/
 $InstSql = 	"SELECT  ANumeRegi, AFechaInicio, AFechaTermino,".
                     "AArea, ADenominacion, AFundamento,". 
                      "AHipervinculo, AAreaResp, ANota ". 
 				   
-			"FROM  a9203 ".
+			"FROM  tta9203 ".
 			"WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -38,7 +43,7 @@ $EjInSql->execute();
 $ResuSql = $EjInSql->fetch();
 
 $VC05 = 1 ;   $VC06 = "";  $VC07 = "";    $VC08 = "";    $VC09 = "";
-$VC10 = "";                $VC12 = "";    $VC13 = "";
+$VC10 = "";   $VC11 = "";  $VC12 = "";    $VC13 = "";
 
 
 if ($ResuSql)
@@ -50,19 +55,20 @@ if ($ResuSql)
    $VC08=$ResuSql['AArea']; 
    $VC09=$ResuSql['ADenominacion']; 
    $VC10=$ResuSql['AFundamento']; 
-   //$VC11=$ResuSql['AHipervinculo']; 
+   $VC11=$ResuSql['AHipervinculo']; 
    $VC12=$ResuSql['AAreaResp']; 
    $VC13=$ResuSql['ANota'];	
  } 
 else
- { //Busca el sisguiente registro
+ { 
+ 
+  //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9203 ".
+	 		   "FROM  tta9203 ".
 			  "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".
 				  "ANumeTrim = '$TrimTrab' ";
-
   if ($BandMens) echo '1)'.$InstSql.'<br>'; 
   $EjInSql = $ConeBase->prepare($InstSql);
   $EjInSql->execute();

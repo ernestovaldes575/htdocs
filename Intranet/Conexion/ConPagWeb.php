@@ -7,8 +7,8 @@
 
 	//!Servidor
 	// $db_contraseña = "ECPTW5FPST1U";
-	// $db_usuario = "difzinac_intranet";
-	// $db_nombre = "difzinac_paginaweb";
+	// $db_usuario = "intranet";
+	// $db_nombre = "paginaweb";
 	
 	try{
 		$ConeBase = new PDO("mysql:host=localhost;dbname=$db_nombre", "$db_usuario", $db_contraseña);

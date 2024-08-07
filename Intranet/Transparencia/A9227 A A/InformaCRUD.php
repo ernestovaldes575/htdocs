@@ -31,28 +31,28 @@ $VC06 = $_POST['C06'];
 $VC07 = $_POST['C07'];
 $VC08 = $_POST['C08'];
 $VC09 = $_POST['C09'];  
-//$VC10 = $_POST['C10'];
+$VC10 = $_POST['C10'];
 $VC11 = $_POST['C11'];
 $VC12 = $_POST['C12'];
 
 //Agregar campos
 switch ( $CRUD )
 { 	case "POST": //Alta
-		$InstSql = "INSERT INTO a9227a ".						//Cambiar tabla
+		$InstSql = "INSERT INTO tta9227a ".						//Cambiar tabla
 				 "VALUES (NULL,'$ClavAyun','$EjerTrab',".			//Cambiar campo
 							 "'$ConsFrac','$TrimTrab',".			
 							 "'$VC05','$VC06',".			
 							 "'$VC07','$VC08','$VC09',".				
-							 "'  ','$VC11','$VC12')";		
+							 "'$VC10','$VC11','$VC12')";		
 		break;
 	case "PUT": //Cambio
-		$InstSql = 	"UPDATE a9227a ". 						//Cambiar tabla
+		$InstSql = 	"UPDATE tta9227a ". 						//Cambiar tabla
 				"SET   ANumeRegi = '$VC05',".				
 	                   "AFechaInicio = '$VC06',".						
 					   "AFechaTermino = '$VC07',".				
 					   "ADenominacionPrograma = '$VC08',".				
 					   "AFechaAprobacion = '$VC09',".
-			        //"AHipervinculoPrograma = '$VC10',".								
+			           "AHipervinculoPrograma = '$VC10',".								
 					   "AAreaResp = '$VC11',".  
 					   "ANota = '$VC12'". 	//Cambiar campo
 
@@ -62,7 +62,7 @@ switch ( $CRUD )
  						//   "ANumeRegi = $CampBusq";
 	break;
 	case "DELETE": //Eliminar
-		$InstSql = "DELETE FROM a9227a ". 					//Cambiar tabla
+		$InstSql = "DELETE FROM tta9227a ". 					//Cambiar tabla
 				   "WHERE AAyuntamiento = '$ClavAyun' AND ".		//Cambiar campo
 						  "AEjercicio = $EjerTrab AND ".	//Cambiar campo
 				  		  "AConsecutivo = $CampBusq ";			//Cambiar campo

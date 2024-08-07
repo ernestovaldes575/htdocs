@@ -1,24 +1,17 @@
-<?php include "includes/header.php";    
-    $band = false;
-    //Mostrar Registros
-    $query =    "SELECT descripcion, fecha, usuario_id, id, titulo
-                FROM notas WHERE usuario_id='$idUsuario'";
-    if($band) echo"$query";
-    
-    //Ejecuta la consulta y obtiene el conjunto de resultados.
-    $stmt = $conn->query($query);
-    
-    //Recuperamos todos los registros como un objeto
-    $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
-    if($band)var_dump($registros);
+<?php 
+    include "includes/header.php";    
+    include "Funciones/functionSELECT.php";
+    // Funciones que recibe argumentos.
+    $registroNotas = obtenerRegistros($conn, 'notas', $idUsuario);
 ?>
+
 <div class="card-header">
     <div class="row">
         <div class="col-md-9">
-            <h3 class="card-title">Lista de notas</h3>
+            <h3 class="card-title">Noticias</h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_nota.php" type="button" class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow">
+            <a href="crear_nota.php" class="btn btn-primary btn-xl w-100 fw-semibold shadow text-light">
                 <i class="fa fa-plus"></i> 
                 Ingresar nueva nota
             </a>
@@ -34,33 +27,29 @@
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Fecha creación</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <?php 
-                foreach ($registros as $fila) : 
-            ?>
+            <?php foreach ($registroNotas as $fila): ?> 
                 <tr>
+                    <td><?=$fila->id;?></td>
+                    <td><?=$fila->titulo;?></td>
                     <td>
-                        <?=$fila->id;?>
-                    </td>
-                    <td>
-                        <?=$fila->titulo;?>
-                    </td>
-                    <td>
-                        <?=$fila->descripcion;?>
+                        <?=strlen($fila->descripcion) > 160 ? substr($fila->descripcion, 0, 160) . '...' : $fila->descripcion;?>
                     </td>
                     <td>
                         <?=$fila->fecha;?>
                     </td>
                     <td>
-                        <a href="editar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-warning">
-                            <i class="fas fa-edit"></i>
+                        <a href="editar_nota.php?id=<?=$fila->id;?>" 
+                        class="btn btn-warning">
+                        <i class="bi bi-pencil-fill"></i>
                             Editar
                         </a>
-                        <a href="borrar_nota.php?id=<?php echo $fila->id; ?>" class="btn btn-danger">
-                            <i class="fas fa-trash-alt"></i>
+                        <a href="borrar_nota.php?id=<?=$fila->id;?>" 
+                        class="btn btn-danger">
+                            <i class="bi bi-trash-fill"></i>
                             Borrar
                         </a>
                     </td>
@@ -72,8 +61,9 @@
 
 <?php include "includes/footer.php" ?>
 
+<!-- JavaScript for DataTables -->
 <script>
-    $(function() {
+    $(document).ready(function() {
         $('#tblRegistros').DataTable({
             "paging": true,
             "lengthChange": false,
@@ -82,6 +72,9 @@
             "info": true,
             "autoWidth": false,
             "responsive": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
+            }
         });
     });
 </script>

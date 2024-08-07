@@ -95,7 +95,7 @@
 			 
 				<tr>
 				  <td>Sexo(en su caso)</td>
-				  <td><input name="C13" id="VC13" type="int" value="<?=$VC13?>" 
+				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 

@@ -22,13 +22,18 @@ if( isset($_GET['PaAMB01']) != ''){
  }	
 
 $CRUD = "GET";
+//Cargar Catalogo de Area Responsable
+$AIdenCat ="1|02|";
+//Cargar Catalogos 
+include "../Catalogos.php";
+
 //Carga el registro para Consulta
 $InstSql = 	"SELECT ANumeRegi, APeriodoInforma,".
                     "APeriodoInformaOtro, ADescripcionBien,".
                     "ACausaAlta, AFechaAlta, AValorInmueble,".
                     "AAreaResp, ANota ".
                     
-			       "FROM  a9238e ".
+			       "FROM  tta9238e ".
 		      	 "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				           "AEjercicio = $EjerTrab AND ".
 				           "AConsecutivo = $CampBusq ";
@@ -61,7 +66,7 @@ if ($ResuSql)
 else
  { //Busca el sisguiente registro
 	$InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-	 		   "FROM  a9238e ".
+	 		   "FROM  tta9238e ".
 			   "WHERE AAyuntamiento = '$ClavAyun' AND ".
 				  "AEjercicio = $EjerTrab AND ".
 				  "AConsFrac = $ConsFrac AND ".

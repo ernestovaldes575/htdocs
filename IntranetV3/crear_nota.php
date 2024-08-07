@@ -80,7 +80,7 @@
                     <textarea id="descripcion" class="form-control" name="descripcion" rows="3"></textarea>
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <button type="submit" name="registrarNota" class="btn btn-success fw-semibold shadow">
+                    <button type="submit" name="registrarNota" class="btn-Enviar">
                         <i class="bi bi-plus-lg"></i>
                         Crear Nota
                     </button>

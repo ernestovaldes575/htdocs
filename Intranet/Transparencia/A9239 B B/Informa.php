@@ -51,32 +51,32 @@
 				</tr>	
 				
 				<tr>
-				  <td>Fecha de Termino</td>
-				  <td><input name="C06" id="VC06" type="date" value="<?=$VC06?>" 
+				  <td>Período que se informa (Trimestral)</td>
+				  <td><input name="C06" id= "VC06" type="date" value="<?=$VC06?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Area</td>
-				  <td><input name="C07" id="VC07" type="text" value="<?=$VC07?>" 
+			  <tr>
+				  <td>atención: en este campo se mostrará el valor que se agregue al sistema, de acuerdo al valor seleccionado del campo (Período que se informa (Trimestral)), para los criterios fecha de inicio y termino del período que se informa</td>
+				  <td><input  name="C07" id="VC07" type="text"value="<?=$VC07?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-				<tr>
-				  <td>Denominacion</td>
+			  <tr>
+				  <td>Caso del que trata la recomendación</td>
 				  <td><input  name="C08" id="VC08" type="text"value="<?=$VC08?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
+			  <tr>
+				  <td>Fecha en la que se recibió la notificación de la recomendación ( formato: "dd/mm/aaaa" ) </td>
+				  <td><input  name="C09" id="VC09" type="text"value="<?=$VC09?>" 
+						class="form-control" placeholder="Descripción" ></td>
+			  </tr>
 				<tr>
-				  <td>Fechdnlsn</td>
-				  <td><input name="C09" id="VC09" type="date" value="<?=$VC09?>" 
+				  <td>Número de recomendación</td>
+				  <td><input  name="C10" id="VC10" type="text"value="<?=$VC10?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
-			  <tr>
-				  <td>Fundamento</td>
-				  <td><input name="C10" id="VC10" type="text" value="<?=$VC10?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
-			  <tr>
-				  <td>Hipervinculo</td>
+				<tr>
+				  <td>Hipervínculo al portal de la CNDH, sección de casos especiales</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -96,7 +96,7 @@
 				  
 			  </tr>
 			  <tr>
-				  <td>Hipervinculo</td>
+				  <td>Hipervínculo al buscador de recomendaciones Inter.</td>
 				  <td>				
 				    <?php if ( $TipoMovi == "A" ) { ?>
 					    Registrar la información para realizar el hipervinculo 
@@ -115,27 +115,38 @@
 				  </td>
 				  
 			  </tr>
+			  
 				<tr>
-				  <td>Area Responsable</td>
-				  <td><input name="C13" id="VC13" type="text" value="<?=$VC13?>" 
-						class="form-control" placeholder="Descripción" ></td>
-			  </tr>
+				  <td>Área(s) responsable(s) que genera(n), posee(n), publica(n) y actualizan la información</td>
+				  <td>
+					<select name="C13" class="form-control">			
+				  <?php 
+		 			foreach($ResCat02 as $RegiTabl){ 
+						$CC03 = $RegiTabl['Clave'];
+						$CC04 = $RegiTabl['Descri'];
+						$CampSele = ( $CC03 == $VC13 )? "selected" : ""; 
+ 						echo "<option value='$CC03' $CampSele>$CC03  $CC04</option> ";
+					} ?>
+				  </select>
+					</td>					
+        			<!-- <td><input type="number" name="C36" id="VC36" value="<?=$VC13?>" class="form-control" placeholder="Descripción"></td> -->
+      			</tr>
 				<tr>
 				  <td>Nota</td>
 				  <td><input name="C14" id="VC14" type="text" value="<?=$VC14?>" 
 						class="form-control" placeholder="Descripción" ></td>
 			  </tr>
 			<!-- Termina  campos -->	
-				<tr>
+			<tr>
 				  <td></td>
-				  <td><button type="submit" name="Enviar" placeholder="Registrar"
-						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" disabled>
-							Registrar
+				  <td><button type="submit" name="Enviar" placeholder="<?=$MesnTiMo?>"
+						value="<?=$MesnTiMo?>" class="btn-Submit container opacity-50" >
+						<?=$MesnTiMo?>
 						</button></td>
 			  </tr>
 			</table>
 	</form>	
 </div>
-<script src="/Intranet/Js/ValiForm.js"></script>
+<!--script src="/Intranet/Js/ValiForm.js"></script>-->
 </body>
 </html>

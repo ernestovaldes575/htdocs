@@ -27,7 +27,7 @@ $CRUD = "GET";
                       "PSegundoapellido, PDenominasocial, PMontorecursos,".
                       "PUnidadterritorial, PEdad, PSexo, PSexootro ".
                       
-               "FROM  a9214b ".
+               "FROM  tta9214b ".
                "WHERE AAyuntamiento = '$ClavAyun' AND ".
                      "AEjercicio = $EjerTrab AND ".
                      "AConsecutivo = $CampBusq ";
@@ -61,7 +61,7 @@ $CRUD = "GET";
   else
    { //Busca el sisguiente registro
     $InstSql = "SELECT CASE WHEN MAX(ANumeRegi) IS  NULL THEN 1 ELSE  MAX(ANumeRegi) + 1 END  AS Clave ".
-            "FROM  a9214b ".
+            "FROM  tta9214b ".
            "WHERE AAyuntamiento = '$ClavAyun' AND ".
             "AEjercicio = $EjerTrab AND ".
             "AConsFrac = $ConsFrac AND ".
