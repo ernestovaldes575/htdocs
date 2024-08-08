@@ -40,7 +40,7 @@
                         $RutaImag = 'Directorio/';
             ?>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <div class="card shadow mb-5 border-solid" style="width: 18rem;">
+                <div class="card shadow mb-5 border-solid" style="width: 17rem;">
                     <img src="<?=$RutaImag?><?=$ResuImag?>" 
                         class="img-fluid" alt="Imagen-Cabildo" 
                         style="width: 100%; height: 20em">
@@ -88,7 +88,7 @@
                             $RutaImag = 'Directorio/';
                 ?>
                 <div class="col-md-6 d-flex justify-content-center">
-                    <div class="card shadow mb-5" style="width: 22rem;">
+                    <div class="card shadow mb-5" style="width: 18rem;">
                         <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-center text-lg">
@@ -136,7 +136,7 @@
                         if($BandInst) echo "2)$RutaImag<br>";
             ?>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card shadow mb-5" style="width: 20rem;">
+                <div class="card shadow mb-5" style="width: 16rem;">
                     <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-center text-lg">
@@ -159,7 +159,9 @@
         <?php }?>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/app.js"></script>
     <?php include 'Components/Footer.php';?>
 </body>
 </html>

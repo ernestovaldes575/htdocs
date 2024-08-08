@@ -95,22 +95,22 @@ header .button{
     cursor: pointer;
 }
 /** Fin Menu Hamburguesa */
-.btn-gray i, .btn-invert i, .font-control, .bi-facebook{
-    cursor: pointer;
-    font-size: 1.5em;
-    background-color: #ec4899;
-    color: white;
-    border: solid .1em #2828289c;
-    padding: .1em .1em;
-    border-radius: .5em;
-    font-weight: 700;   
-}
-.font-controls{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
+// .btn-gray i, .btn-invert i, .font-control, .bi-facebook{
+//     cursor: pointer;
+//     font-size: 1.5em;
+//     background-color: #ec4899;
+//     color: white;
+//     border: solid .1em #2828289c;
+//     padding: .1em .1em;
+//     border-radius: .5em;
+//     font-weight: 700;   
+// }
+    // .font-controls{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     gap: 1em;
+    // }
 /* ? Cierre Info */
 .contenedor__principal {
     width:80%;
@@ -150,16 +150,16 @@ header .button{
 .header__secundario .contenedor__principal__flex {
 
 }
-.btn-gray i,.btn-invert i {
-    cursor:pointer;
-    font-size:1.5em;
-    background-color:#ec4899;
-    color:#fff;
-    border:.1em solid #2828289c;
-    padding:.1em;
-    border-radius:.5em;
-    font-weight:700
-}
+// .btn-gray i,.btn-invert i {
+//     cursor:pointer;
+//     font-size:1.5em;
+//     background-color:#ec4899;
+//     color:#fff;
+//     border:.1em solid #2828289c;
+//     padding:.1em;
+//     border-radius:.5em;
+//     font-weight:700
+// }
 .header__secundario .font-control:hover{
     background-color:#f49929;
     color:#fff;
@@ -212,7 +212,7 @@ header .button{
 }
 @media screen and ( max-width:1024px){
     .escudo{
-        display: none;
+        // display: none;
     }
     .escudo_mur{
         max-width: 3em;

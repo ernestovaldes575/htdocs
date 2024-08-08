@@ -124,13 +124,23 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" class="escudo_mur" alt="Logo" style="width: 3em;">
+            <img src="/PaginaWeb/img/LOGO-PRINCIPAL.webp" 
+                class="escudo_mur img-fluid" 
+                alt="Logo" 
+                style="width: 3em;">
         </a>
-        <button class="navbar-toggler border-0 navbar-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler border-0 text-light fs-1" 
+                type="button" 
+                data-bs-toggle="offcanvas" 
+                data-bs-target="#offcanvasNavbar" 
+                aria-controls="offcanvasNavbar" 
+                aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
         </button>
         <!-- Sidebar -->
-        <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="sidebar offcanvas offcanvas-end d-flex"
+                tabindex="-1" id="offcanvasNavbar" 
+                aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title fw-semibold text-light" id="offcanvasNavbarLabel">
                     Zinacantepec
@@ -138,7 +148,9 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav d-flex justify-content-center flex-grow-1 pe-3 " style="font-size: .9em">
+                    <ul class="navbar-nav d-flex justify-content-center 
+                            flex-grow-1 pe-3" 
+                    style="font-size: .9em">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="/" aria-current="page">
                             Inicio
@@ -148,7 +160,7 @@
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tramites y Servicios
                         </a>
-                        <ul class="dropdown-menu shadow" style="background-color:#BEBEBE;">
+                        <ul class="dropdown-menu shadow">
                             <li>
                                 <a class="dropdown-item" href="#">
                                     Action
@@ -160,7 +172,7 @@
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Transparencia
                         </a>
-                        <ul class="dropdown-menu shadow" style="background-color:#BEBEBE;">
+                        <ul class="dropdown-menu shadow">
                             <li>
                                 <a class="dropdown-item" href="#">
                                     Action
@@ -169,7 +181,11 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-light" 
+                            href="#" 
+                            role="button" 
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="false">
                             Gobierno
                         </a>
                         <ul class="dropdown-menu shadow">
@@ -225,10 +241,39 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="navbar-nav justify-content-center 
+                            flex-grow-1 gap-2 pe-3 flex-lg-row flex-sm-row" 
+                    style="font-size: .9em">
+                    <li class="nav-item">
+                        <button class="bg-danger p-1 text-light rounded-2 border border-white shadow">
+                            <i class="bi bi-droplet-half "></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="bg-danger p-1 btn-invert text-light rounded-2 border border-white shadow">
+                            <i class="bi bi-palette"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button onclick="aumentarTexto()" 
+                            class="bg-danger p-1 text-light rounded-2 border border-white shadow">
+                            A+
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button onclick="disminuirTexto()" 
+                            class="bg-danger p-1 text-light rounded-2 border border-white shadow">
+                            A-
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
         <a href="/">
-            <img src="/PaginaWeb/img/escudo.webp" class="escudo animate" alt="Logo" style="width: 3em;">
+            <img src="/PaginaWeb/img/escudo.webp" 
+                class="escudo d-none d-xl-block d-sm-none" 
+                alt="Logo" 
+                style="width: 3em;">
         </a>
     </div>
 </nav>
