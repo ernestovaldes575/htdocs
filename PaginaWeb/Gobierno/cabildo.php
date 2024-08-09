@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <?php 
+        $ClavAyun = 105;
         $Titulo = "Integrantes de Cabildo";
-        include 'Components/Encabezado.php'
+        include '../EstrPagi/Encabezados/LigasHTML.php'
     ?>
 </head>
 <body>
-    <main class="contenedor-layer">
+    <!-- <main class="contenedor-layer">
         <img src="/img/layer/1.png" alt="">
-    </main>
+    </main> -->
+    <?php include '../EstrPagi/MenuNav.php';?>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="">
@@ -167,5 +169,7 @@
 <div class="footer-2 uppercase">
     ©Copyright <?=$año?> | Ayuntamiento de Zinacantepec
 </div>
+<script src="../scripts/bootstrap.bundle.min.js"></script>
+<script src="../scripts/app.js"></script>
 </body>
 </html>

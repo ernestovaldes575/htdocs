@@ -33,26 +33,54 @@
                             Inicio
                         </a>
                     </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tramites y Servicios
                         </a>
-                        <ul class="dropdown-menu shadow">
+                        <ul class="dropdown-menu dropdown-menu-dark shadow fs-6">
                             <li>
-                                <a class="dropdown-item" href="#">
-                                    Action
+                                <a class="dropdown-item " 
+                                    href="https://sfpya.edomexico.gob.mx/predial/index.jsp">
+                                    Pago Predial
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="https://www.zinacantepec.gob.mx/MejoraRegulatoria/index.html">
+                                    Mejora Regulatoria
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown ">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Transparencia
                         </a>
-                        <ul class="dropdown-menu shadow">
+                        <ul class="dropdown-menu dropdown-menu-dark shadow fs-6 " style="max-width: 500px;">
                             <li>
-                                <a class="dropdown-item" href="#">
-                                    Action
+                                <a class="dropdown-item" 
+                                href="https://acortar.link/zKS5XK">
+                                    Ipomex
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" 
+                                href="https://zinacantepec.gob.mx/conac.php">
+                                    Conac
+                                </a>
+                            </li>
+                            <li>
+                                <a class="elemento2 dropdown-item" 
+                                href="/PaginaWeb/aviso_privacidad.php">
+                                    Aviso de Privacidad
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-break" 
+                                href="javascript:window.open('/PaginaWeb/Transparencia/ACUSE CUENTA PUBLICA 2021.pdf','Acuse de Cuenta Publica','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
+                                    Oficio de la entrega de la cuenta Pública 2021
                                 </a>
                             </li>
                         </ul>
@@ -65,19 +93,21 @@
                             aria-expanded="false">
                             Gobierno
                         </a>
-                        <ul class="dropdown-menu shadow">
+                        <ul class="dropdown-menu dropdown-menu-dark shadow fs-6">
                             <li>
                                 <a class="dropdown-item text-wrap" href="/PaginaWeb/Gobierno/cabildo.php">
                                     Integrantes de Cabildo
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-wrap" href="/Gobierno/vivo.php">
+                                <a class="dropdown-item text-wrap" 
+                                href="https://zinacantepec.gob.mx/vcabildos.php">
                                     Sesiones de Cabildo
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-wrap" href="/Gobierno/vivo.php">
+                                <a class="dropdown-item text-wrap" 
+                                href="https://zinacantepec.gob.mx/vivo.php">
                                     Cabildo en vivo
                                 </a>
                             </li>
@@ -108,7 +138,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
+                        <a class="nav-link text-light" href="/PaginaWeb/EstrPagi/Construccion.html">
                             Comunicación Social
                         </a>
                     </li>

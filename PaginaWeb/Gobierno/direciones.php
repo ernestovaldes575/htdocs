@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <?php 
+        $ClavAyun = 105;
         $Titulo = 'Directores';
-        include 'Components/Encabezado.php'
+        include '../EstrPagi/Encabezados/LigasHTML.php';
     ?>
 </head>
 <body>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
-    
+    <?php include '../EstrPagi/MenuNav.php';?>
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="Imagen Presidente" class="img-fluid">
     </div>
