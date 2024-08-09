@@ -44,7 +44,7 @@
                         }
                     ?>
                     <div class="swiper-slide">
-                        <a href="<?=$InicHtml?>">
+                        <a href="javascript:window.open('<?=$ImagPagi?>','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">
                             <img src="<?=$ImagPagi?>" alt="">
                         </a>
                     </div>

@@ -89,9 +89,8 @@
             </ul>
         </div>
     </main>
-    <?php include '../../EstrPagi/Encabezados/Footer.php'?>
-    <script src="/scripts/app.js"></script>
-    <script src="../../../scripts/app.js"></script>
-    <script src="../../../swiperjs/swiper-bundle.min.js"></script>
+    <?php include 'EstrPagi/Encabezados/Footer.php'?>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 <html>

@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <?php 
+        $ClavAyun = 105;
         $Titulo = 'Directores';
-        include 'Components/Encabezado.php'
+        include '../EstrPagi/Encabezados/LigasHTML.php';
     ?>
 </head>
 <body>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
-    
+    <?php include '../EstrPagi/MenuNav.php';?>
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="Imagen Presidente" class="img-fluid">
     </div>
@@ -39,19 +40,25 @@
                         $ResuFond = $RegTab01[5];
                         $RutaImag = 'Directorio/';
             ?>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card shadow mb-5 border-solid" style="width: 22rem;">
-                    <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <div class="card shadow mb-5 border-solid" style="width: 17rem;">
+                    <img src="<?=$RutaImag?><?=$ResuImag?>" 
+                        class="img-fluid" alt="Imagen-Cabildo" 
+                        style="width: 100%; height: 20em">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold text-center text-lg"><?=$ResuNomb?></h5>
-                        <h5 class="card-title fw-semibold text-center text-base"><?=$ResuCarg?></h5>
+                        <h5 class="card-title fw-bold text-center text-lg">
+                            <?=$ResuNomb?>
+                        </h5>
+                        <h5 class="card-title fw-semibold text-center text-base">
+                            <?=$ResuCarg?>
+                        </h5>
                         <p class="card-text text-center">
-                        <i class="bi bi-telephone-fill"></i>
-                        <?=$ResuTele?>
+                            <i class="bi bi-telephone-fill"></i>
+                            <?=$ResuTele?>
                         </p>
                         <p class="card-text text-center">
-                        <i class="bi bi-envelope-at-fill"></i>
-                        <?=$ResuCorr?>
+                            <i class="bi bi-envelope-at-fill"></i>
+                            <?=$ResuCorr?>
                         </p>
                     </div>
                 </div>
@@ -82,7 +89,7 @@
                             $RutaImag = 'Directorio/';
                 ?>
                 <div class="col-md-6 d-flex justify-content-center">
-                    <div class="card shadow mb-5" style="width: 22rem;">
+                    <div class="card shadow mb-5" style="width: 18rem;">
                         <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-center text-lg">
@@ -130,7 +137,7 @@
                         if($BandInst) echo "2)$RutaImag<br>";
             ?>
             <div class="col-md-4 d-flex justify-content-center">
-                <div class="card shadow mb-5" style="width: 20rem;">
+                <div class="card shadow mb-5" style="width: 16rem;">
                     <img src="<?=$RutaImag?><?=$ResuImag?>" class="img-fluid" alt="Imagen-Cabildo">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-center text-lg">
@@ -153,7 +160,9 @@
         <?php }?>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/app.js"></script>
     <?php include 'Components/Footer.php';?>
 </body>
 </html>
