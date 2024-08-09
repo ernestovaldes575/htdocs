@@ -39,10 +39,16 @@
 			<th>Fecha Inicio</th>
 			<th>Fecha Termino</th>
 			<th>Fecha de validación de la información</th>
-			<th colspan="2">
+			<th>
 			 <?php 
 			   if ($Alta == "A"){ ?>
-               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
+               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR UNA PERSONA" data-id='0'></i>
+              <?php } ?>            
+			</th>
+			<th>
+			 <?php 
+			   if ($Alta == "A"){ ?>
+               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR GRUPO" data-id='0'></i>
               <?php } ?>            
 			</th>
 			<!-- <th width="12%">&nbsp;</th> -->

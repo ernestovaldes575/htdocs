@@ -44,12 +44,13 @@ switch ( $CRUD )
 			`OAreaResp`, `OFechAct`, `OFechValid`, 
 			`ONota` FROM `tt9202borgan`
 	*/ 
+
 		$InstSql = "INSERT INTO tt9202borgan ".				//Cambiar tabla
-				   "VALUES (NULL,'$ClavAyun',$EjerTrab,".	
-							"$ConsFrac,'$TrimTrab','$VC05',".	
-							"'$VC06','$VC07','',".			
-							"'$VC09','$VC10','$VC11',".
-							"'$VC12')";		
+				    "VALUES (NULL,'$ClavAyun',$EjerTrab,".	
+							 "$ConsFrac,'$TrimTrab','$VC05',".	
+							 "'$VC06','$VC07','',".			
+							 "'$VC09','$VC10','$VC11',".
+							 "'$VC12')";		
 		break;
 	case "PUT": //Cambio
 		$InstSql = 	"UPDATE tt9202borgan ". 						//Cambiar tabla
