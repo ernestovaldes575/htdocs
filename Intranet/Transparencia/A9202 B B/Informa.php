@@ -41,6 +41,7 @@
 						</a>
 					</td>
 				</tr>
+				 <?php include "../registros.php"?> 
 				<!-- Inicia campos -->	
 				<tr>
 					<td>No</td>

@@ -42,7 +42,7 @@
 			<th colspan="2">
 			 <?php 
 			   if ($Alta == "A"){ ?>
-               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR" data-id='0'></i>
+               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR UNA PERSONA" data-id='0'></i>
               <?php } ?>            
 			</th>
 			<!-- <th width="12%">&nbsp;</th> -->
