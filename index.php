@@ -14,58 +14,48 @@
     ?>
     <?php include 'PaginaWeb/EstrPagi/Modulo01.php';?>
 
-    <main class="contenedor">
-        <div class="contenedor-centrar">
-            <div class="contenedor-titulo">
-                <h2 class="titulo reveal-left">
-                    Transparencia
-                </h2>
-            </div>
+    <main class="container">
+        <div class="py-5">
+            <h2 class="text-center fs-1 fw-bold text-uppercase">
+                Transparencia
+            </h2>
         </div>
     </main>
     <?php include 'PaginaWeb/EstrPagi/Modulo02.php';?>
     
-    <main class="contenedor">
-        <div class="contenedor-centrar">
-            <div class="contenedor-titulo">
-                <h2 class="titulo reveal-right">
-                    Ultimas Noticias
-                </h2>
-            </div>
+    <main class="container">
+        <div class="py-5">
+            <h2 class="text-center fs-1 fw-bold text-uppercase">
+                Ultimas Noticias
+            </h2>
         </div>
-    </main> 
-    <?php include 'PaginaWeb/EstrPagi/Modulo03.php';?>
+    </main>
+    <?php //include 'PaginaWeb/EstrPagi/Modulo03.php';?>
 
     <!-- Avisos -->
-    <main class="contenedor">
-        <div class="contenedor-centrar">
-            <div class="contenedor-titulo">
-                <h2 class="titulo reveal-left">
-                    Avisos
-                </h2>
-            </div>
+    <main class="container">
+        <div class="py-5">
+            <h2 class="text-center fs-1 fw-bold text-uppercase">
+                Avisos
+            </h2>
         </div>
-    </main> 
+    </main>
     <?php include 'PaginaWeb/EstrPagi/Modulo04.php'?>
 
-    <main class="contenedor">
-        <div class="contenedor-centrar">
-            <div class="contenedor-titulo">
-                <h2 class="titulo reveal-right">
-                    Sitios de Interes
-                </h2>
-            </div>
+    <main class="container">
+        <div class="py-5">
+            <h2 class="text-center fs-1 fw-bold text-uppercase">
+                Sitios de Interes
+            </h2>
         </div>
     </main>
     <?php include 'PaginaWeb/EstrPagi/Modulo05.php'?>
     
-    <main class="contenedor">
-        <div class="contenedor-centrar">
-            <div class="contenedor-titulo">
-                <h2 class="titulo reveal-left">
-                    Redes Sociales
-                </h2>   
-            </div>
+    <main class="container">
+        <div class="py-5">
+            <h2 class="text-center fs-1 fw-bold text-uppercase">
+                Redes Sociales
+            </h2>
         </div>
     </main>
     <?php include 'PaginaWeb/EstrPagi/Modulo06.php'?>

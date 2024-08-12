@@ -133,7 +133,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
+                        <a class="nav-link text-light" href="/Intranet/Intranet.php">
                             Intranet
                         </a>
                     </li>

@@ -13,6 +13,7 @@
                 overflow: hidden;
                 @include m.telefono{
                     font-size: 2em;
+                    background-color: aqua;
                 }
                 @include m.telefonoSlim{
                     font-size: 1.5em;
