@@ -1,8 +1,10 @@
 //?Reescribir colores de bootstrap
 $verde: #36A420;
 $azul: #1877F2;
+$negro: #313A46;
 //?Asignamos la paleta de colores a bootstrap
 $success:$verde;
 $primary:$azul;
+$dark:$negro;
 //?Importamos Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
