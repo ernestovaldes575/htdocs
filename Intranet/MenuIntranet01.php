@@ -1,66 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<?php 
-		$Titulo = 'Menu Intranet';
-		include 'components/encabezado.php';
-		include 'components/logoHeader.php';
-	?>
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Intranet</title>
+	<link rel="shortcut icon" href="Archivos/Img/logoEnc.ico"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="/build/css/style.css">
+</head> 
 <body>
-	<?php 
-		session_start();
-		$ConeInEx = $_SESSION['ConeInEx'];
-		// echo "Conexion: $ConeInEx";
-		//Carga las variables
-		$ArCooki1 = $_COOKIE['CMenu'];
-		$AMenu = explode("|", $ArCooki1);
-		$Nivel  = $AMenu[0]; 
-		$OpcMen = $AMenu[1]; 
-		$OpcSub = $AMenu[2];
-		// echo "Nivel=$Nivel<br>";
-		// echo "OpcMen=$OpcMen<br>";
-		// echo "OpcSub=$OpcSub<br>";
+	<header class="header">
+		<img class="img-1" src="http://201.122.44.34/img/SIMGA_intra01.png" alt="">
+		<img class="img-2" src="http://201.122.44.34/img/SIMGA02.png" alt="">
+	</header>
 
-		//Carga las variables
-		$ArCooki2 = $_COOKIE['CEncaAcc'];
-		$AEncaMae = explode("|", $ArCooki2);
-		$ConsUsua = $AEncaMae[0]; 
-		$ClavAyun = $AEncaMae[1];
-		$DescAyun = $AEncaMae[2];
-		$ConsUnid = $AEncaMae[3];
-		$DescUnid = $AEncaMae[4];
-		$EjerTrab = $AEncaMae[5];
+<?php
+	session_start();
+?>
+<?php
+	//Carga las variables
+	$ArCooki1 = $_COOKIE['CMenu'];
+	$AMenu = explode("|", $ArCooki1);
+	$Nivel  = $AMenu[0]; 
+	$OpcMen = $AMenu[1]; 
+	$OpcSub = $AMenu[2];
+	echo "Nivel=$Nivel<br>";
+	echo "OpcMen=$OpcMen<br>";
+	echo "OpcSub=$OpcSub<br>";
 
-		$BandMens = false;
-		if(isset($_GET["Param0"]) ){
-			$BandMens = true;
-		}
+	//Carga las variables
+	$ArCooki2 = $_COOKIE['CEncaAcc'];
+	$AEncaMae = explode("|", $ArCooki2);
+	$ConsUsua = $AEncaMae[0]; 
+	$ClavAyun = $AEncaMae[1];
+	$DescAyun = $AEncaMae[2];
+	$ConsUnid = $AEncaMae[3];
+	$DescUnid = $AEncaMae[4];
+	$EjerTrab = $AEncaMae[5];
+	
+	$BandMens = false;
+	if(isset($_GET["Param0"]) ){
+		$BandMens = true;
+	}
 
-		include_once 'Archivos/Conexiones/conexion.php';
+	include_once 'Archivos/Conexiones/conexion.php';
 
-		$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
-					"FROM acceso.atpermen ".
-					"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
-					"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
+	$InstSql = 	"SELECT CMEClave,CMEDescri,CMEBasDat ".
+				"FROM acceso.atpermen ".
+				"INNER JOIN acceso.acmenu ON CMEClave=PMenu ".
+				"WHERE PAyuntamiento='".$ClavAyun."' and PConsServ='".$ConsUsua."'";
 
-				if ($BandMens)  
-					echo '1)<br>'.$InstSql.'<br><br>';		   
-					$ResuSql = $conexion->prepare($InstSql);
-					$ResuSql->execute();
-					$MenuBase = $ResuSql->fetchAll();
-	?>
-	<div class="intra d-flex align-items-center">
-		<div class="container-xl d-flex justify-content-between">
-			<h2 class="text-light fs-3 fw-semibold">
-				Menu Intranet
-			</h2>
-			<a href="/Intranet/Intranet.php" class="btn-Regresar">
-				Salir
-			</a>
-		</div>
-	</div>
-
+			if ($BandMens)  echo '1)<br>'.$InstSql.'<br><br>';		   
+				$ResuSql = $conexion->prepare($InstSql);
+				$ResuSql->execute();
+				$MenuBase = $ResuSql->fetchAll();
+?>
 	<div class="table-responsive container-sm">
 		<table class="tabla mt-4">
 			<?php 
@@ -113,7 +106,7 @@
 								"WHERE PAyuntamiento = '".$ClavAyun."' AND ".
 											"PConsServ ='".$ConsUsua."' AND ". 
 											"PTipoServ = '".$OpcSub."'";
-					// echo "3)$InstSql";
+					echo "3)$InstSql";
 				if ($BandMens)  echo '3)<br>'.$InstSql.'<br><br>';
 					$ResSql3 = $conexion->prepare($InstSql);
 					$ResSql3->execute();
@@ -125,8 +118,7 @@
 					?>
 			<tr>
 				<td>
-					<a href="ModuloIntra.php?Param1=<?=$CMEBasDat?>&Param2=<?=$CTSClave?>&Param3=<?=$CTSDescripcion?>&Param4=<?=$COSClave?>&Param5=<?=$COSDescripcion?>&Param6=<?=$COSDireccion?>" 
-					class="enlace_tercero text-decoration-none	text-black fw-semibold">
+					<a href="ModuloIntra.php?Param1=<?=$CMEBasDat?>&Param2=<?=$CTSClave?>&Param3=<?=$CTSDescripcion?>&Param4=<?=$COSClave?>&Param5=<?=$COSDescripcion?>&Param6=<?=$COSDireccion?>" class="enlace_tercero">
 					<i class="bi bi-file-earmark-check-fill"></i>
 						<?=$COSDescripcion?>
 					</a>	
@@ -139,6 +131,11 @@
 			}
 			?>
 		</table>
-		
+		<div class="container mt-4 d-grid">
+			<a href="/Intranet/Intranet.php" 
+			class="btn-Regresar">
+				Salir
+			</a>
+		</div>	
 </body>
 </html>
