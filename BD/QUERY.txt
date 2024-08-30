@@ -1,0 +1,3 @@
+Update `ttfraccion` 
+SET `FInciso` = '0'+`FInciso` 
+WHERE length(`FInciso`)=1; 
