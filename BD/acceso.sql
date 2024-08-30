@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 02-07-2024 a las 21:07:34
+-- Tiempo de generación: 31-08-2024 a las 01:20:43
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.0.23
-=======
--- Tiempo de generación: 02-07-2024 a las 21:05:43
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
->>>>>>> d15de72f5970293a1e4fab780428b31379f80c23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -117,7 +111,8 @@ INSERT INTO `acmenu` (`CMEClave`, `CMETitulo`, `CMEDescri`, `CMEBasDat`, `CMECon
 (5, 'Des. Economico', 'Des. Economico', 'deseconomico', 'ConBasDesEcon', '1'),
 (6, 'Pagina Web', 'Pagina Web', 'Paginaweb', '', ''),
 (10, 'Seguimiento', 'Seguimiento', 'Seguimiento', '', ''),
-(11, 'Transparencia24', 'Transparencia', 'transpa2024', 'trans', '');
+(11, 'Transparencia24', 'Transparencia', 'transpa2024', 'trans', ''),
+(12, 'Entrega', 'Entrega', 'Entrega', 'ConeEntre', '');
 
 -- --------------------------------------------------------
 
@@ -428,7 +423,8 @@ INSERT INTO `atpermen` (`PAyuntamiento`, `PConsServ`, `PMenu`) VALUES
 ('105', 1, 4),
 ('105', 1, 5),
 ('105', 1, 6),
-('105', 1, 10);
+('105', 1, 10),
+('105', 1, 12);
 
 -- --------------------------------------------------------
 
