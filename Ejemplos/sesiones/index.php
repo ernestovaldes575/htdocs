@@ -4,6 +4,10 @@
     
         $_SESSION["usuario"] = htmlentities($_POST["usuario"]);
         $_SESSION["email"] = htmlentities($_POST["email"]);
+        
+        $Nivel = 1;
+		$ArCooki2 = $Nivel.'|||';
+		$_SESSION["CMenu"] = $ArCooki2;
 
         //?Redireccion
         header("Location: session.php");

@@ -6,6 +6,9 @@
     --color-nav:#70635A;
     --color-text:#323232;
 }
+.navbar{
+    background-color:#70635A;
+}
 /* * */
 header{
     width: 100%;
@@ -30,13 +33,13 @@ header .ul{
     position: relative;
     max-width: 5em;
     aspect-ratio: 10/9;
-    top: 2em;
+    top: 1em;
 }
 .escudo{
     position: relative;
     max-width: 4em;
     aspect-ratio: 8/9;
-    top: 2em;
+    top: 1em;
 }   
 .nav .ul .li:hover .mini__secondary{
     display: flex;
@@ -49,65 +52,65 @@ header .ul{
 }
 
 /*? Menu Flotante  */
-.nav .ul .li .mini{
-    display: none;
-    position: absolute;
-    width: 5em;
-    background-color: c.$Gray-500;
-    transition: all .2s ease-in-out;
-}
-.nav .ul .li:hover .mini{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 25em;
-    @include m.neo(20px);
-}
-.mini a{
-    padding: .6em;
-    transition: all .2s ease-in-out;
-    color: white;
-}
-.mini .elemento1:hover{
-    background-color: #743089;
-}
-.mini .elemento2:hover{
-    background-color: #FECC0D;
-}
-.mini .elemento3:hover{
-    background-color: #EA5095;
-}
-.mini .elemento4:hover{
-    background-color: #00A8E2;
-}
-.mini .elemento5:hover{
-    background-color: #96C11F;
-}
+// .nav .ul .li .mini{
+//     display: none;
+//     position: absolute;
+//     width: 5em;
+//     background-color: c.$Gray-500;
+//     transition: all .2s ease-in-out;
+// }
+// .nav .ul .li:hover .mini{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     width: 25em;
+//     @include m.neo(20px);
+// }
+// .mini a{
+//     padding: .6em;
+//     transition: all .2s ease-in-out;
+//     color: white;
+// }
+// .mini .elemento1:hover{
+//     background-color: #743089;
+// }
+// .mini .elemento2:hover{
+//     background-color: #FECC0D;
+// }
+// .mini .elemento3:hover{
+//     background-color: #EA5095;
+// }
+// .mini .elemento4:hover{
+//     background-color: #00A8E2;
+// }
+// .mini .elemento5:hover{
+//     background-color: #96C11F;
+// }
 /** Menu Hamburgesa */
-.header .button{
-    display: none;
-}
-header .button{
-    display: none;
-    cursor: pointer;
-}
+// .header .button{
+//     display: none;
+// }
+// header .button{
+//     display: none;
+//     cursor: pointer;
+// }
 /** Fin Menu Hamburguesa */
-.btn-gray i, .btn-invert i, .font-control, .bi-facebook{
-    cursor: pointer;
-    font-size: 1.5em;
-    background-color: #ec4899;
-    color: white;
-    border: solid .1em #2828289c;
-    padding: .1em .1em;
-    border-radius: .5em;
-    font-weight: 700;   
-}
-.font-controls{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
+// .btn-gray i, .btn-invert i, .font-control, .bi-facebook{
+//     cursor: pointer;
+//     font-size: 1.5em;
+//     background-color: #ec4899;
+//     color: white;
+//     border: solid .1em #2828289c;
+//     padding: .1em .1em;
+//     border-radius: .5em;
+//     font-weight: 700;   
+// }
+    // .font-controls{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     gap: 1em;
+    // }
 /* ? Cierre Info */
 .contenedor__principal {
     width:80%;
@@ -125,7 +128,7 @@ header .button{
 }
 .nav__secondary {
     width:100%;
-    margin-top:.5em
+    margin-top: 5.5em;
 }   
 .nav__secondary{
     .contenedor__barra{
@@ -147,16 +150,16 @@ header .button{
 .header__secundario .contenedor__principal__flex {
 
 }
-.btn-gray i,.btn-invert i {
-    cursor:pointer;
-    font-size:1.5em;
-    background-color:#ec4899;
-    color:#fff;
-    border:.1em solid #2828289c;
-    padding:.1em;
-    border-radius:.5em;
-    font-weight:700
-}
+// .btn-gray i,.btn-invert i {
+//     cursor:pointer;
+//     font-size:1.5em;
+//     background-color:#ec4899;
+//     color:#fff;
+//     border:.1em solid #2828289c;
+//     padding:.1em;
+//     border-radius:.5em;
+//     font-weight:700
+// }
 .header__secundario .font-control:hover{
     background-color:#f49929;
     color:#fff;
@@ -185,11 +188,19 @@ header .button{
     /* box-shadow:0 1px 2px #2b3044,0 4px 16px #2b3044; */
     border-radius:1em
 }
+@media screen and (max-width: 991px) {
+    .sidebar{
+        // background-color: #70635A;
+        background-color: rgba(255,255,255,0.37);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
 @media screen and (max-width:400px) {
     .escudo_mur {
-        max-width:3.2em;
+        max-width:3em;
         position:absolute;
-        top:3em
+        top:1em
     }
 }
 @media screen and (max-width:520px) {
@@ -201,12 +212,12 @@ header .button{
 }
 @media screen and ( max-width:1024px){
     .escudo{
-        display: none;
+        // display: none;
     }
     .escudo_mur{
-        max-width: 5em;
+        max-width: 3em;
         position: absolute;
-        top: 3em;
+        top: 1em;
     }
     .header .contenedor__principal .h2{
         display: none;

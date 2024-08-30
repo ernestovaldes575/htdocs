@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <?php 
+        $ClavAyun = 105;
         $Titulo = "Integrantes de Cabildo";
-        include 'Components/Encabezado.php'
+        include '../EstrPagi/Encabezados/LigasHTML.php'
     ?>
 </head>
 <body>
-    <main class="contenedor-layer">
+    <!-- <main class="contenedor-layer">
         <img src="/img/layer/1.png" alt="">
-    </main>
+    </main> -->
+    <?php include '../EstrPagi/MenuNav.php';?>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Conexion/ConPagWeb.php');?>
     <div class="container">
         <img src="https://www.zinacantepec.gob.mx/cabildo/CABILDO-01.png" alt="">
@@ -117,7 +119,57 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/bootstrap.bundle.min.js"></script>
     <script>ScrollReveal().reveal('.effect',{interval:150});</script>
-    <?php include '../Components/Footer.php'?>  
-
+    <?php
+    $año = date('Y');
+?>
+<footer class="footer reveal-bottom">
+    <div class="contenedor__principal">
+        <article class="logo">
+            <div>
+                <img src="/PaginaWeb/img/logveda.webp" alt="">
+                <p>
+                    Jardin Constitucion 101, Centro, 51350 San Miguel Zinacantepec, Méx.
+                </p>
+                <p>
+                    <i class="bi bi-telephone"></i>
+                    (722)9177206
+                </p>
+            </div>
+        </article>
+        <article class="enlaces" class="text-xl">
+            <div>
+                <h2 class="uppercase">Gobierno</h2>
+                <ul>
+                    <li><a href="#" >Integrantes de Cabildo</a></li>
+                    <li><a href="#">Sesiones de Cabildo</a></li>
+                    <li><a href="#">Direcciones</a></li>
+                    <li><a href="#">Normatividad</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="uppercase">Transparencia</h2>
+                <ul>
+                    <li><a href="#">IPOMEX</a></li>
+                    <li><a href="#">CONAC</a></li>
+                    <li><a href="#">Sistema de Atención Mexiquense</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="uppercase">Otros Enlaces</h2>
+                <ul>
+                    <li><a href="#">Intranet</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Datos Abiertos</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</footer>
+<div class="footer-2 uppercase">
+    ©Copyright <?=$año?> | Ayuntamiento de Zinacantepec
+</div>
+<script src="../scripts/bootstrap.bundle.min.js"></script>
+<script src="../scripts/app.js"></script>
 </body>
 </html>

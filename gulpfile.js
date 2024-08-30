@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 function css(done){
     src('src/scss/app.scss')
-        .pipe(sass({outputStyle:'expanded'}))// {outputStyle:'expanded'}Compilamos SASS
+        .pipe(sass({outputStyle:'compressed'}))// {outputStyle:'expanded'}Compilamos SASS
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('PaginaWeb/css/Estilos/'))//Generamos los archivos
     done()
