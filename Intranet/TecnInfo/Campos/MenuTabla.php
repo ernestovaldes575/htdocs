@@ -52,7 +52,6 @@ $ResuSql->execute();
 	<td>No</td>
 	<td>Tabla</td>
 	<td>Campos</td>
-	<td>Generar</td>
   </tr>
   <?php 
     $NumeRegi = 1;
@@ -65,6 +64,12 @@ $ResuSql->execute();
 	  <?php 
 	    if ( $TablBaDa == $Tabla ){ ?>
 		  <table>
+		    <tr>
+				<td colspan="6">Estructura de la Tabla</td>
+				<td>
+				  <a href="CargaCampos.php">Configurar</a>
+				</td>
+			</tr>
 			<tr>
 				<td width="30">No</td>
 				<td width="100">Campo</td>
@@ -72,8 +77,9 @@ $ResuSql->execute();
 				<td width="50">Nulo</td>
 				<td width="50">Llave</td>
 				<td width="50">Default</td>
+				<td width="50">Comentario</td>
 			</tr>
-	  <?php	$InstSql = "DESCRIBE ".$BaseDato.".".$TablBaDa." ";
+	  <?php	$InstSql = "SHOW FULL COLUMNS FROM ".$BaseDato.".".$TablBaDa." ";
 			$sql2 = $cone->prepare($InstSql);
 			$sql2->execute();
 			$NumeCamp = 1;
@@ -82,7 +88,9 @@ $ResuSql->execute();
 				$Valor   = $Fila2[1];
 				$Nulo    = $Fila2[3];
 				$Llave   = $Fila2[4];
-				$Default = $Fila2[5]; ?>
+				$Default = $Fila2[5];
+				$Comenta = $Fila2[8];		
+				 ?>
 			<tr>
 				<td><?=$NumeCamp?></td>
 				<td><?=$Campo?></td>
@@ -90,6 +98,7 @@ $ResuSql->execute();
 				<td><?=$Nulo?></td>
 				<td><?=$Llave?></td>
 				<td><?=$Default?></td>
+				<td><?=$Comenta?></td>
 			</tr>
 			<?php
 			   $NumeCamp++; 
@@ -98,7 +107,6 @@ $ResuSql->execute();
 	  <?php 
 	    } //if ( $TablBaDa == $Tabla )  ?> 	  	  	  
 	</td>
-	<td><a href="CargaCampos.php">Gen</a></td>
   </tr>
   <?php 
      $NumeRegi++;

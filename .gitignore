@@ -1,2 +1,3 @@
 #Ignorar directorios de dependencias generadas
 /node_modules
+node_modules
