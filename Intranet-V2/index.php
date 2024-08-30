@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Validamos si la sesión está activa
-    if (!empty($_SESSION['activo'])) {
+    if(!empty($_SESSION['activo'])) {
         header("location:panel.php");
         exit; // Asegura que el script se detenga después de redirigir
     }
@@ -11,39 +11,40 @@
 
     $error = ""; // Variable para almacenar mensajes de error
 
-    if (isset($_POST["ingresar"])) {
+    if (isset($_POST["ingresar"])){
         $email = $_POST["email"];
         $pass =  $_POST["password"];
         $band = false;
-    if (!empty($email) && !empty($pass)) {
-        // Preparamos la consulta SQL
+        if (!empty($email) && !empty($pass)){
+            // Preparamos la consulta SQL
             $query = "SELECT id, email, nombre, telefono, password, es_admin 
                         FROM usuario WHERE email=:email AND password=:password";
-            if($band)echo"1)$query";
-        $stmt = $conn->prepare($query);
-        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-        $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
+                if($band)echo"1)$query";
+                $stmt = $conn->prepare($query);
+                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+                $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
 
         // Ejecutamos la consulta
         $resultado = $stmt->execute();
         $registro = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$registro) {
+        if(!$registro){
             $error = "Email o Contraseña son invalidos";
-        } else {
+        }else{
             // Iniciamos la sesión
             $_SESSION['activo'] = true;
             $_SESSION['idUsuario'] = $registro['id'];
             $_SESSION['nombre'] = $registro['nombre'];
             $_SESSION['email'] = $registro['email'];
             $_SESSION['esAdmin'] = $registro['es_admin'];
+            
             header("Location: panel.php");
             exit; // Asegura que el script se detenga después de redirigir
         }
-    } else {
-        $error = "Error, algunos campos están vacíos";
+        }else {
+            $error = "Error, algunos campos están vacíos";
+        }
     }
-}
 ?>
 <!doctype html>
 <html lang="es">

@@ -16,7 +16,7 @@ setcookie("CSubiArc", "",time()-1);
 setcookie("CImpoArc", "",time()-1);
 
 if( trim($_GET['Param1']) != ''){
-    $ConsInci = $_GET["Param1"];	#Consecutivo de la noticia a trabajar}
+   $ConsInci = $_GET["Param1"];	#Consecutivo de la noticia a trabajar}
 	$NumeRegi = $_GET["Param2"]; 
 }
 

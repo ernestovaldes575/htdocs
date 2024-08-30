@@ -7,6 +7,9 @@
             $stmt = $conn->query($query);
             // Recuperamos todos los registros como un objeto
             $registros = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+
+            
         if ($bandMens) var_dump($registros);
             return $registros;
     }

@@ -1,4 +1,4 @@
-<nav class="py-3 navbar bg-primary sticky-top navbar-expand-xl shadow header">
+<nav class="py-3 navbar bg-primary sticky-top navbar-expand-xl shadow">
     <div class="container-xl">
         <a class="navbar-brand d-xl-none d-md-block text-light" href="#">
             Zinacantepec
@@ -48,6 +48,6 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid p-0 header">
-    <img src="img/BARRA.webp" alt="BARRA" style="width:100%;" class="img-fluid barra">
+<div class="container-fluid p-0">
+    <img src="img/BARRA.webp" alt="BARRA" class="img-fluid barra">
 </div>

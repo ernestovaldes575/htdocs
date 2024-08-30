@@ -1,10 +1,10 @@
 <?php
 session_start();
 //Validamos si la sesion esta activa
-if (!$_SESSION['activo']) {
-    header("Location:panel.php");
-}
-date_default_timezone_set('America/Mexico_City');
+    if (!$_SESSION['activo']) {
+        header("Location:panel.php");
+    }
+    date_default_timezone_set('America/Mexico_City');
 // echo"hola mundo";
 $idUsuario = $_SESSION['idUsuario'];
 $nombre = $_SESSION['nombre'];

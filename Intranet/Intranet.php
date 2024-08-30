@@ -10,9 +10,10 @@
 <body>
 	<?php 
 		session_start();
-		$_SESSION["ConeInEx"] = 'Interno';//Interno/Externo
+		//Interno/Externo
+		$_SESSION["ConeInEx"] = 'Interno';
 		include_once "Archivos/Files/fecha.php";
-		require("Archivos/Conexiones/conlogin.php");
+		require("Conexion/conlogin.php");
 		if(isset($_POST['Ingresar'])){
 			$usuario = htmlentities(addslashes($_POST["InputCla"]));
 			$password = htmlentities(addslashes($_POST["InputCon"]));

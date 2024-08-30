@@ -37,6 +37,16 @@
             $_SESSION['nombre'] = $registro['nombre'];
             $_SESSION['email'] = $registro['email'];
             $_SESSION['esAdmin'] = $registro['es_admin'];
+
+            $EstaSecc = true;
+            $ConsAcce = $registro['id'];
+            $NombAcce = $registro['nombre'];
+            $CorrAcce = $registro['email'];
+            $EstaSecc = $registro['es_admin'];
+
+            $AAcceso = "$EstaSecc||||||";
+
+            $_SESSION['SAcceso'] = $AAcceso;
             header("Location: panel.php");
             exit; // Asegura que el script se detenga después de redirigir
         }
