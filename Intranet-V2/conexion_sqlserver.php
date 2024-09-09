@@ -1,13 +1,13 @@
 <?php
     //?Servidor
-    $db_nombre = "usuario";
-    $db_usuario = "Intranet";
-    $db_contraseña = "ECPTW5FPST1U";
+    // $db_nombre = "usuario";
+    // $db_usuario = "Intranet";
+    // $db_contraseña = "ECPTW5FPST1U";
 
     //!Local
-    // $db_nombre = "notas_php";
-    // $db_usuario = "root";
-    // $db_contraseña = "";
+    $db_nombre = "notas_php";
+    $db_usuario = "root";
+    $db_contraseña = "";
 
     //?Cadena de conexión
     $ConeBase = "mysql:host=localhost;dbname=$db_nombre";

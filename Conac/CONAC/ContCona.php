@@ -16,7 +16,7 @@
             </button>
         </h2>
         <div id="accordionCollapse<?=$EjerTrab?>"
-            class="accordion-collapse collapse bg-white
+            class="accordion-collapse collapse bg-white 
             <?php if($RegTab01 === reset($ResuEjer)) echo 'show';?>">
             <!-- Contenedor Cuerpo 1 INICIO-->
             <div class="accordion-body">

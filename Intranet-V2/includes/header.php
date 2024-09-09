@@ -1,10 +1,10 @@
 <?php
 session_start();
 //Validamos si la sesion esta activa
-if (!$_SESSION['activo']) {
-    header("Location:panel.php");
-}
-date_default_timezone_set('America/Mexico_City');
+    if (!$_SESSION['activo']) {
+        header("Location:panel.php");
+    }
+    date_default_timezone_set('America/Mexico_City');
 // echo"hola mundo";
 $idUsuario = $_SESSION['idUsuario'];
 $nombre = $_SESSION['nombre'];
@@ -38,10 +38,10 @@ include_once("conexion_sqlserver.php");
             text-decoration: none;
         }
 
-        .sidebar {
+        /* .sidebar {
             height: 100vh;
             overflow-y: auto;
-        }
+        } */
 
         .brand-link {
             text-decoration: none;
@@ -50,8 +50,9 @@ include_once("conexion_sqlserver.php");
 </head>
 
 <body class="d-flex">
+
     <!-- Sidebar -->
-    <aside class="sidebar bg-dark text-white p-3 flex-shrink-0 sticky-top">
+    <aside class="bg-dark text-white p-3 flex-shrink-0 min-vh-100 d-none d-md-block sticky-top">
         <div class="brand-link d-flex align-items-center mb-3">
             <img src="img/LOGO-PRINCIPAL.webp" alt="AdminL-Logo" class="brand-image rounded-circle me-2" style="width: 50px;">
             <span class="fs-4">
@@ -98,32 +99,53 @@ include_once("conexion_sqlserver.php");
             </a>
         </nav>
     </aside>
-
     <!-- Main Content -->
-    <div class="flex-grow-1">
-
+    <div class="flex-grow-1 container-fluid">
         <!-- Page Content -->
-        <div class="content-wrapper">
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Intranet</h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <nav class="navbar shadow mb-5 py-3 bg-body-tertiary">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand fs-4 fw-semibold ">
+                    Intranet
+                </a>
+                <button class="btn btn-dark shadow d-block d-md-none"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions"
+                    aria-controls="offcanvasWithBothOptions">
+                    <i class="bi bi-list text-white"></i>
+                </button>
+            </div>
+        </nav>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <!-- Card Content -->
+        <div class="offcanvas offcanvas-start bg-dark"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel">
+                    Intranet
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <a href="lista_noticia.php" class="nav-link text-white">
+                    <i class="bi bi-newspaper"></i>
+                    <span class="ms-2">Noticias</span>
+                </a>
+                <a href="lista_aviso.php" class="nav-link text-white ">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span class="ms-2">Avisos</span>
+                </a>
+                <a href="lista_banner.php" class="nav-link text-white">
+                    <i class="bi bi-card-image"></i>
+                    <span class="ms-2">Banner</span>
+                </a>
+                <a href="salir.php" class="nav-link text-white mt-2 d-flex justify-content-start">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span class="ms-2 fw-semibold">Salir</span>
+                </a>
+            </div>
+        </div>
 
-                                <!-- Bootstrap 5 JS -->
-                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-
-</html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

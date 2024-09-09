@@ -1,9 +1,9 @@
-<?php 
-    include "includes/header.php";
-    include "Funciones/functionSELECT.php";
-    $RutaImag = "imagenes/";
-    //Llamado de la funcion la cual envia argumentos
-    $registrosNoticias = obtenerRegistros($conn, 'noticias', $idUsuario);
+<?php
+include "includes/header.php";
+include "Funciones/functionSELECT.php";
+$RutaImag = "imagenes/";
+//Llamado de la funcion la cual envia argumentos
+$registrosNoticias = obtenerRegistros($conn, 'noticias', $idUsuario);
 ?>
 <div class="card-header">
     <div class="row">
@@ -13,16 +13,16 @@
             </h3>
         </div>
         <div class="col-md-3">
-            <a href="crear_noticia.php" type="button" 
+            <a href="crear_noticia.php" type="button"
                 class="btn btn-primary btn-xl pull-right w-100 fw-semibold shadow text-light">
-                <i class="fa fa-plus"></i> 
+                <i class="fa fa-plus"></i>
                 Ingresar nueva noticia
             </a>
         </div>
     </div>
 </div>
 <!-- /.card-header -->
-<div class="card-body">
+<div class="card-body table-responsive">
     <table id="tblRegistros" class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -35,38 +35,38 @@
         </thead>
         <tbody>
             <?php
-                foreach($registrosNoticias as $fila){
+            foreach ($registrosNoticias as $fila) {
             ?>
                 <tr>
                     <td>
-                        <?=$fila->titulo?>
+                        <?= $fila->titulo ?>
                     </td>
                     <td>
-                        <?=$fila->descripcion?>
+                        <?= $fila->descripcion ?>
                     </td>
                     <td>
-                        <?=$fila->fecha?>
+                        <?= $fila->fecha ?>
                     </td>
                     <td>
-                        <a href="<?=$RutaImag?><?=$fila->nomb_imag?>" class="link-success fw-bold">
+                        <a href="<?= $RutaImag ?><?= $fila->nomb_imag ?>" class="link-success fw-bold">
                             <i class="bi bi-image">
-                                <?=$fila->nomb_imag?>
+                                <?= $fila->nomb_imag ?>
                             </i>
                         </a>
                     </td>
                     <td>
-                        <a href="editar_noticia.php?id=<?=$fila->id?>" class="btn btn-warning">
+                        <a href="editar_noticia.php?id=<?= $fila->id ?>" class="btn btn-warning">
                             <i class="fas fa-edit"></i>
                             Editar
                         </a>
-                        <a href="borrar_noticia.php?id=<?=$fila->id?>" class="btn btn-danger">
+                        <a href="borrar_noticia.php?id=<?= $fila->id ?>" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
                             Borrar
                         </a>
                     </td>
                 </tr>
             <?php
-                }
+            }
             ?>
         </tbody>
     </table>

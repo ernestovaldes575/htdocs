@@ -1,4 +1,8 @@
 @use '../custom' as *;
+body{
+    background-color: #f0f0f0f2;
+    color: #313A46;
+}
 .encabezado-prin{
     @extend .d-flex, .justify-content-between;
     .logo{

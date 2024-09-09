@@ -1,0 +1,22 @@
+01;Efectivo
+02;Cheque nominativo
+03;Transferencia electr¢nica de fondos
+04;Tarjeta de cr‚dito
+05;Monedero electr¢nico
+06;Dinero electr¢nico
+08;Vales de despensa
+12;Daci¢n en pago
+13;Pago por subrogaci¢n
+14;Pago por consignaci¢n
+15;Condonaci¢n
+17;Compensaci¢n
+23;Novaci¢n
+24;Confusi¢n
+25;Remisi¢n de deuda
+26;Prescripci¢n o caducidad
+27;A satisfacci¢n del acreedor
+28;Tarjeta de d‚bito
+29;Tarjeta de servicios
+30;Aplicaci¢n de anticipos
+31;Intermediario pagos
+99;Por definir

@@ -9,6 +9,8 @@ const body = document.querySelector('body');
 
 
 button.addEventListener('click', desplegable);
+
+
 btnGray.addEventListener('click', changeGray);
 btnInvert.addEventListener('click', changeInvert);
 
@@ -16,6 +18,7 @@ btnInvert.addEventListener('click', changeInvert);
 function desplegable(){
     nav.classList.toggle('activo');
 }
+
 function changeGray(){
     body.classList.toggle('bg-gray')
 }

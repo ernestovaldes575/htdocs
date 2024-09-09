@@ -8,8 +8,7 @@
 	?>
 </head>
 <body>
-	<?php
-		include 'components/EncaPrin.php';
+	<?php 
 		session_start();
 		$ConeInEx = $_SESSION['ConeInEx'];
 		// echo "Conexion: $ConeInEx";
