@@ -17,7 +17,7 @@ if ( isset($_GET["Param0"]) )
 
 //Carga el registro para Consulta
 $InstSql = "SELECT OConsecutivo, OAyuntam, ".
-				  "OEjercicio, OFechInicio, OFechTerm, OFechValid ".
+				  "OEjercicio, OFechInicio, OFechTerm, OFechValid, ONota ".
 			"FROM  tt9202borgan ".
 			"WHERE OAyuntam = '$ClavAyun' AND ".
 				  "OEjercicio = $EjerTrab AND  ".

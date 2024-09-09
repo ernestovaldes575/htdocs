@@ -1,0 +1,10 @@
+SELECT        SAyuntamiento, SConsecut, '25939' AS Edif, '2' AS TipoIntr, '0' AS Puesto, '' AS Cargo, SFechaAlta, '' AS Tele, '' AS Exte, '' AS Nota
+FROM            ATSerPub
+WHERE        (SAyuntamiento = '0105')
+
+
+INSERT INTO TTA9207
+SELECT        SAyuntamiento, SConsecut, '25939' AS Edif, '2' AS TipoIntr, '0' AS Puesto, '' AS Cargo, SFechaAlta, '' AS Tele, '' AS Exte, '' AS Nota
+FROM            ATSerPub
+WHERE        (SAyuntamiento = '0105')
+ORDER BY SConsecut
