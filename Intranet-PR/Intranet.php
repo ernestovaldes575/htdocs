@@ -51,7 +51,7 @@
 	// }
 	// }
 	?>
-		<?php
+	<?php
 	session_start();
 
 	// Verificamos si el usuario ya está logueado y redirigimos si es así.
@@ -87,16 +87,16 @@
 			// Si hay resultado, el usuario es correcto
 			if ($result) {
 				//?Configuramos la sesión para el usuario logueado
-				$_SESSION ['activo'] = true;
+				$_SESSION['activo'] = true;
 				$idUsuario = $result['AConsecut'];
-				$Ayunt= $result['AAyuntamiento'];
+				$Ayunt = $result['AAyuntamiento'];
 				$DescAyun = $result['CAYDescripcion'];
 				$UnidAdmi = $result['AUnidAdmi'];
 				$Descripc = $result['CUNDescripcion'];
 
 				$Cookie01 = "$idUsuario|$Ayunt|$DescAyun|$UnidAdmi|$Descripc|";
-				$_SESSION ['CEncaAcc'] = $Cookie01;
-				
+				$_SESSION['CEncaAcc'] = $Cookie01;
+
 				$_SESSION['CMenu'] = "1||||";
 
 

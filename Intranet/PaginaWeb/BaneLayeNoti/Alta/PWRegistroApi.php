@@ -53,8 +53,8 @@ if ( isset($_POST['C00']) ){
 	$DondAbri = $_POST['C09'];//Ventana, Pagina 
 }	
 
-switch ( $CRUD )
-{ case "GET": 
+switch ( $CRUD ){
+	case "GET": 
 		//Carga el registro para ABC	
 		if( isset($_GET['PaAMB01']) != ''){	
 			$TipoMovi = $_GET["PaAMB01"];	#Tipo de Movimiento 
@@ -254,15 +254,20 @@ if ( $CRUD != "GET"){
 		header($PagiRegr); 
 	} 
 }else
-if(isset($_GET['PaAMB01']) != ''){
-    $MesnTiMo = "";
-    switch( $TipoMovi ){
-		case "A":	$MesnTiMo = "Registrar";  
-					$CRUD = "POST";         break;
-		case "M":	$MesnTiMo = "Actualizar"; 
-					$CRUD = "PUT";		  break;
-		case "B":	$MesnTiMo = "Eliminar";
-					$CRUD = "DELETE";		  break;
+
+	if(isset($_GET['PaAMB01']) != ''){
+		$MesnTiMo = "";
+		switch( $TipoMovi ){
+			case "A":	$MesnTiMo = "Registrar";  
+						$CRUD = "POST";         
+				break;
+			case "M":	$MesnTiMo = "Actualizar"; 
+						$CRUD = "PUT";		  
+				break;
+			case "B":	$MesnTiMo = "Eliminar";
+						$CRUD = "DELETE";		  
+				break;
+				default;
+		}
+		echo($CRUD);
 	}
-	echo($CRUD);
-}

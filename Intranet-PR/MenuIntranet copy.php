@@ -45,7 +45,7 @@
 
 
 
-	$BandMens = false;
+	$BandMens = true;
 	if (isset($_GET["Param0"])) {
 		$BandMens = true;
 	}

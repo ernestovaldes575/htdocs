@@ -15,7 +15,7 @@
     @extend .btn, .text-decoration-none, .btn-danger, .shadow, .text-uppercase, .fw-semibold;
 }
 .btn-Submit{
-    @extend .btn, .btn-primary , .shadow, .text-uppercase, .fw-semibold;
+    @extend .btn, .btn-primary , .shadow-lg, .text-uppercase, .text-white, .fw-semibold;
 }
 .Alerta{
     @extend .container, .bg-danger, .shadow, .text-white, .fw-semibold, .p-2, .mt-2, .text-center;
