@@ -1,0 +1,288 @@
+<head>
+    <% EncaHtml = "Planeacion"; %>
+	<!--#include virtual="/Encabezado/EncaLiga.asp" -->
+</head>
+
+
+
+
+  //Carga el Servidor Publico que imprimio recibos
+  EjecInst  = "INSERT INTO NTAccesos "
+  EjecInst += "VALUES ('"+ClavAyun+"',"+ConsAcce+",'Imprime timbre','Imprimio Timbre de Qn:"+NumQuiSe+" Ejer:"+EjerQuin+" SP:"+NumeEmpl+" ',GetDate())"
+  //Response.Write("RutaTimb:"+EjecInst+"<br>")
+  EjecComa.CommandText = EjecInst	
+  EjecComa.Execute()
+
+
+//Encabezado
+AAcceso = new Array();
+AAcceso =  String(Request.Cookies("CAcceso")).split("|")
+ConsAcce  = AAcceso[0] 
+ConsUnid  = AAcceso[1] 
+ClavUnid   = AAcceso[2] 
+DescUnid  = AAcceso[3] 
+ClavAyto   = AAcceso[4] 
+DescAyto  = AAcceso[5] 
+TipoADOI  = AAcceso[6] 
+DescADOI = AAcceso[7] 
+ClavEjer    = AAcceso[8]  
+DescEjer   = AAcceso[9] 
+GoMaZina = AAcceso[10] 
+
+//Permisos
+AModulo = String(Request.Cookies("CModulo")).split("|")
+DescServ = AModulo[1]
+DescOpci = AModulo[3]
+Cons = String(AModulo[4])
+Alta = String(AModulo[5])
+Modi = String(AModulo[6])
+Baja = String(AModulo[7])
+
+
+
+-----------------------------------------------------------
+-----------------------  FUNCIONES-------------------------
+//Ampliar el tiempo para la carga
+Server.ScriptTimeout=1800000 
+
+Quitar la coma a los numeros
+valcamp = String(valcamp).replace(/,/gi,'')
+
+Formato de fecha
+CONVERT(smalldatetime,'25/01/2020',103) //de string a fecha
+Convert(char,DFechaOficio,103) //de fecha a string
+
+ //Remplaza los valores a la instrucción SQL
+  for (i = 3; i<=55; i++)
+    { campo = (i<10)? "C000"+i:"C00"+i  
+	  valcamp  = Request.Form(campo)
+	  CambPara="EjecInst =  EjecInst.replace(/"+campo+"/gi,'"+valcamp+"')"
+	  eval(CambPara)
+	} // for (i = 3;
+
+-----------------------------------------------------------
+Pasara money a caracter
+LTRIM(CONVERT(CHAR,CCASueldoQn,108)) as CCASueldoQn
+
+
+-----------------------------------------------------------
+//Fecha del Sistema  
+FecDia = (new Date().getDate()<10) ? "0"+new Date().getDate():new Date().getDate() 
+FecMes = MesEjer[Number(new Date().getMonth())+1]
+FecAño = new Date().getYear()
+FechSist = FecDia+" de "+FecMes+" del "+FecAño 
+
+
+-----------------------------------------------------------
+Sincronizar dos pantallas
+ Response.Write("<script> location.href='ConsultaLista.asp'; parent.frames.TablaMovi.location.reload(); </script>") 
+
+
+
+
+-----------------------------------------------------------
+---------------------  INSTRUCCIONES SQL ------------------
+
+//Codigo para Traer el ultimo consecutivo
+//Trae la Secuencia
+   if ( TipoMovi == "A")
+   { EjecInst  = "Select @@IDENTITY as Cons "
+	 EjecComa.CommandText =  EjecInst
+	 Dummy = EjecComa.Execute();
+	 ConsJust = Dummy.Fields.Item("Cons").Value }
+
+
+-----------------------------------------------------------
+//para rellenar de 0 una clave
+SELECT     REPLICATE('0', 4 - LEN(CONVERT(char, MAX(RFolio) + 1))) + CONVERT(char, MAX(RFolio) + 1) AS Expr1, 4 - LEN(CONVERT(char, MAX(RFolio) + 1)) AS Expr2
+FROM         PTTransferencia
+
+
+-----------------------------------------------------------
+Pasara money a caracter
+LTRIM(CONVERT(CHAR,CCASueldoQn,108)) as CCASueldoQn
+
+
+-----------------------------------------------------------
+---------------------  Funciones de HTML ------------------
+
+
+//Para habilitar un texto con url
+<span onclick="abrir('<%=ExpeSegu%>')" style="cursor: pointer" >abrir una imagen</span>
+
+
+
+-----------------------------------------------------------
+//Para llamar en una ventana nueva
+<a href="javascript:window.open('http://norfipc.com/','','width=600,height=400,left=50,top=50,resizable=yes,scrollbars=yes');void 0">Nueva nueva ventana</a><br />
+
+
+
+//Para activar el scroll
+mas claro
+<tr onMouseOver="this.style.background='#D6D6D6';" onMouseOut="this.style.background = '';"> 
+
+mas oscuro
+<tr onmouseover="this.style.background ='#A3A3A3';" onMouseOut="this.style.background = '';" align="right" valign="top">
+
+-----------------------------------------------------------
+---------------------  Salto de Pagina  -----------
+
+//En el encabezado
+<style type="text/css">
+  @media all {
+   div.saltopagina{
+      display: none;
+   }
+}
+
+@media print{
+div.saltopagina{
+      display:block;
+      page-break-before:always;
+   }
+	 .oculto {display:none}
+} 
+</style>
+
+//En donde se requiere el Salto de Pagina
+<% Response.Write("<div class='saltopagina'></div>") %>
+-----------------------------------------------------------
+---------------------  Funciones de  Javascript -----------
+
+
+Para quitar el enter 
+
+document.onkeydown = function()
+ { //Retorno
+   if (window.event && window.event.keyCode == 13)
+	 window.event.keyCode = 9;   //Tabulador return false;     
+	
+   if(window.event && window.event.keyCode == 27)
+	 window.close(); //return false;     
+} 
+
+
+
+-----------------------------------------------------------
+//Para validar una ventana
+
+<script language="javascript">
+function GeneCale(Param1)
+{ 
+if (confirm("Cuenta con el Sistema de Nomina")) 
+  { Ruta  = "EjercicioCalen.asp?Param1=" + Param1
+    Dime = "width=450 height=350 top=10 left=10 scrollbars"
+    Cata = window.open(Ruta,"Genera Calendario",Dime)
+  }
+  else 
+    alert("Gracias")
+} 
+</script>
+
+
+-----------------------------------------------------------
+//Para cerrar una ventana y sincronizar la raiz
+
+function Reporte(Param)
+{ Ruta  = "RepTransfer.asp?Param1="+Param			//Archivo donde se guarda los parametros
+  Dime = "width=950 height=350 top=10 left=10 scrollbars"
+  Cata = window.open(Ruta,"Carga_Imagen",Dime)
+}
+
+
+-----------------------------------------------------------
+//Sincronizar un Iframe
+<script language="javascript">
+window.close();
+opener.top.ListaCaja.location.reload();
+</script>
+
+//de un Iframe a la pagina principal
+Pagina = "xxx.asp"
+top.location.href= Pagina
+
+
+-----------------------------------------------------------
+//Sincroniza un iframe dentro de otro iframe
+<script language="javascript">
+window.close();
+opener.top.DetaBene.ListRequ.location.reload();
+</script>
+
+
+-----------------------------------------------------------					   
+function  CargaValor(NumeRegi)
+{ 
+  var keyCode=0 ;
+  keyCode=window.event.keyCode
+  //alert(keyCode)
+  switch  ( keyCode )
+  { 
+	  case 8: break; 
+	  default: //Tamaño
+			   //alert(keyCode)
+	           if ( (keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) 
+	             { ImprDeci(NumeRegi);  }
+			   else	 	
+	 			{ EjecInst = "document.PideDato.T"+NumeRegi+".value=0; "  
+				  eval (EjecInst);
+				  EjecInst = "document.PideDato.T"+NumeRegi+".focus(); "  
+				  eval (EjecInst);
+				  EjecInst = "document.PideDato.T"+NumeRegi+".select(); "  
+				  eval (EjecInst);
+				  
+				   }
+			  break;	  
+   }
+}
+
+
+-----------------------------------------------------------
+function ImprDeci(NumeRegi)
+{  
+  EjecInst = "Numero=document.PideDato.T"+NumeRegi+".value "  
+  eval (EjecInst);
+  Monto = String(Numero).split(".")
+
+  //Parte Entera
+  PartEnte = String(Monto[0]).split("")
+  LongCamp = PartEnte.length;
+   
+  //Verifica que no sea negativo
+  Tope = 0
+  if (PartEnte[0] == '-')
+   Tope = 1
+  
+  ValoNuev = "";
+  j = 1;
+  for (i=LongCamp,j=1; i != Tope; i--,j++ )
+	{ if (j == 4 || j == 7 || j == 10 || j == 13)
+	     ValoNuev = ","+ValoNuev;
+	  ValoNuev = PartEnte[i-1] + ValoNuev;
+	}
+  
+  if (Tope == 1)
+  	ValoNuev = '-' + ValoNuev;
+
+  //Unir la entera con la fraccion
+  ValoFrac=".00"
+  if ( String(Monto[1]) != "undefined" )
+   {   PartFrac = String(Monto[1]).split("")
+       LongCamp = PartFrac.length;
+       ValoFrac = ".";
+	   switch (LongCamp)
+	    { case 0:  ValoFrac = ".00"; break;
+		  case 1:  ValoFrac = "."+PartFrac[0]+"0"; break;
+		  default: ValoFrac = "."+PartFrac[0]+PartFrac[1]; break;
+		 }
+	    //for (i=0; i<Deci && Deci<=LongCamp; i++)
+	    // ValoFrac += PartFrac[i];
+      }  
+	  
+  ValoNuev = ValoNuev + ValoFrac
+  //alert(ValoNuev)
+  EjecInst = "document.PideDato.T"+NumeRegi+".value= '" +String(ValoNuev)+"'"
+  eval (EjecInst);
+}
+

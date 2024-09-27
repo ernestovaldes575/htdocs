@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-08-2024 a las 01:20:43
+-- Tiempo de generación: 27-09-2024 a las 21:18:13
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.0.23
 
@@ -342,7 +342,7 @@ CREATE TABLE `adacceso` (
 --
 
 INSERT INTO `adacceso` (`AAyuntamiento`, `AConsecut`, `ANivel`, `AMenu`, `ASubmenu`) VALUES
-('105', 1, 3, 2, '01');
+('105', 1, 1, 0, '');
 
 -- --------------------------------------------------------
 
