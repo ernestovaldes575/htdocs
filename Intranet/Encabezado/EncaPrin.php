@@ -1,4 +1,4 @@
-<!-- <nav class="ayunt border-bottom shadow-lg d-flex">
+<nav class="ayunt border-bottom shadow-lg d-flex">
 	<div class="d-md-flex justify-content-between align-items-center container">
 		<a href="/" class="logo-mur">
 			<img src="/Intranet/img/LogoMurc.webp" alt="LogoMurc" class="img-fluid">
@@ -8,18 +8,4 @@
 		</h1>
 		<img src="/Intranet/img/LogoEscu.webp" alt="LogoEscu" class="img-fluid LogoEscu">
 	</div>
-</nav> -->
-
-<div class="container row mx-auto py-3">
-	<div class="col-md-3 d-flex justify-content-start align-items-center">
-		<img src="/Intranet/img/LogoMurc.webp" alt="LogoMurc" class="img-fluid d-none d-md-inline" style="width: 3em;">
-	</div>
-	<div class="col-md-6 text-center d-flex justify-content-center align-items-center">
-		<h1 class="fs-3 fw-semibold">
-			Ayuntamiento Zinacantepec
-		</h1>
-	</div>
-	<div class="col-md-3 d-flex justify-content-end align-items-center">
-		<img src="/Intranet/img/LogoEscu.webp" alt="LogoEscu" class="img-fluid d-none d-md-inline" style="width: 3em;">
-	</div>
-</div>
+</nav>

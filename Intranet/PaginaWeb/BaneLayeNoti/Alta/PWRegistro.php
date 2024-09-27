@@ -13,8 +13,8 @@
 
 <body> 
 	<header class="shadow mb-4 bg-white">
-	<?php
-		//Varibales Globales
+	<?php 
+   		//Varibales Globales
 		include($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaCook.php');
    		//Encabezado	
 		require_once($_SERVER['DOCUMENT_ROOT'].'/Intranet/Encabezado/EncaPrin.php'); 
@@ -27,11 +27,9 @@
 		include 'PWRegistroApi.php';	
 		//echo "Valor CRUD: $CRUD";
 	?>
-
-	<!-- <caption>
-	<?=$DescTiSe?>	
-	</caption> -->
-
+		<!-- <caption>
+			<?=	$DescTiSe?>	
+		</caption> -->
 <div>
 	<form id="PideDato" method="post" name="formulario" onsubmit="validarFormulario()" action="PWRegistroApi.php">
 		<input type="hidden" name="C00" id="VS01" value="<?=$CRUD?>">

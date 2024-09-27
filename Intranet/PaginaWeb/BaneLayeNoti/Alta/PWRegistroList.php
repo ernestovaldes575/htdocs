@@ -77,11 +77,11 @@
 				include('PWRegistroListA.php');
 			?>
 				<tr>
-					<td><?=$VC06?></td>
-					<td><?=$VC07?></td>
-					<td><?=$VC08?></td>
-					<td><?=$VC09?></td>
-					<td><?=$VC10?></td>
+					<td><?= $VC06 ?></td>
+					<td><?= $VC07 ?></td>
+					<td><?= $VC08 ?></td>
+					<td><?= $VC09 ?></td>
+					<td><?= $VC10 ?></td>
 					<td>
 						<?php if ($VC19 == "01") { ?>
 
