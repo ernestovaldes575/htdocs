@@ -27,14 +27,14 @@
 				<?=$NumeInci?>
               	<?=$NumeSubi?>
             	<?=$Nomativi?></td>
-			<td colspan="2">
+			<td colspan="3">
 			  <a href="../Fracciones.php" 
 					class="btn-Regresar">
 			    Regresar
 			  </a>		    
 			</td>
 		</tr>
-		<tr>
+		<tr align="center">
 			<th>No</th>
 			<th>Fecha Inicio</th>
 			<th>Fecha Termino</th>
@@ -42,14 +42,13 @@
 			<th>
 			 <?php 
 			   if ($Alta == "A"){ ?>
-               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR UNA PERSONA" data-id='0'></i>
-              <?php } ?>            
-			</th>
+               <i class="bi bi-plus-lg btn-Nuevo NuevUno" title="Alta de Uno" data-id='0'></i>
+              <?php } ?> </th>
 			<th>
-			 <?php 
+			<?php 
 			   if ($Alta == "A"){ ?>
-               <i class="bi bi-plus-lg Nuev btn-Nuevo" title="AGREGAR GRUPO" data-id='0'></i>
-              <?php } ?>            
+               <i class="bi bi-align-middle btn-Nuevo NuevList" title="Alta de Lista" data-id='0'></i>
+              <?php } ?>	
 			</th>
 			<!-- <th width="12%">&nbsp;</th> -->
 		</tr>
@@ -57,33 +56,39 @@
 		  $NumeReng = 1;
 		  foreach($ResuSql as $RegiTabl){
 			  $VC03 = $RegiTabl['OConsecutivo'];
-			  $VC04 = $RegiTabl['OFechInicio'];
-			  $VC05 = $RegiTabl['OFechTerm'];
-			  $VC06 = $RegiTabl['OFechValid'];
+			  $VC06 = $RegiTabl['OFechInicio'];
+			  $VC07 = $RegiTabl['OFechTerm'];
+			  $VC11 = $RegiTabl['OFechValid'];
 			  
 			  $RutaArch = "/ExpeElectroni/$ClavAyun/$EjerTrab/Transparen".
 				  		 "/$NumeFrac/$TrimTrab/";
 		?>
 		<tr>
-			<td><?=$NumeReng?></td>
-			<td><?=$VC04?></td>
-			<td><?=$VC05?></td>
+			<td><?=$NumeReng?></td> 
 			<td><?=$VC06?></td>
+			<td><?=$VC07?></td>
+			<td><?=$VC11?></td>
 			<td data-titulo="Editar: ">
 				<?php if($Modi == "A" ){ ?>
-					<i class="bi bi-pencil-square btn-Modificar Modi" 
-					data-CaBu="<?= $VC03?>" title="MODIFICAR"></i>
+					<i class="bi bi-pencil-square btn-Modificar ModiUno" 
+					data-CaBu="<?= $VC03?>" title="Modificar uno"></i>
+				<?php } ?>
+			</td>
+			<td data-titulo="Editar: ">
+				<?php if($Modi == "A" ){ ?>
+					<i class="bi bi-file-earmark-ruled btn-Modificar ModiList" 
+					data-CaBu="<?= $VC03?>" title="Modificar Lista"></i>
 				<?php } ?>
 			</td>
 			<td data-titulo="Eliminar:">
 	  			<?php if($Baja == "A"  ) { ?>
-				<i class="bi bi-x-square btn-Eliminar Elim"
-				data-CaBu='<?= $VC03?>' title="ELIMINAR"></i>
+				<i class="bi bi-x-square btn-Eliminar ElimUno "
+				data-CaBu='<?= $VC03?>' title="Eliminar"></i>
 				<?php } ?>
 			</td>
 		</tr>
 		<?php
-		    $NumeReng ++;
+			$NumeReng ++;
 	    } ?> 
 	</table>
 </div>	
